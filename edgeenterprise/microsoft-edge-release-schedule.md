@@ -1,0 +1,63 @@
+---
+title: Microsoft Edge 发布计划
+ms.author: aguta
+author: dan-wesley
+manager: srugh
+ms.date: 08/27/2020
+audience: ITPro
+ms.topic: conceptual
+ms.prod: microsoft-edge
+ms.localizationpriority: high
+ms.collection: M365-modern-desktop
+description: Microsoft Edge 发布计划
+ms.openlocfilehash: 0ed1960fc0be2b0489e92ed46e3444abf7dc40d9
+ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "10979413"
+---
+# <span data-ttu-id="d2434-103">Microsoft Edge 发布计划</span><span class="sxs-lookup"><span data-stu-id="d2434-103">Microsoft Edge release schedule</span></span>
+
+<span data-ttu-id="d2434-104">本文介绍了 Microsoft Edge 的版本节奏和预期的发布时间表。</span><span class="sxs-lookup"><span data-stu-id="d2434-104">This article describes the release cadence and anticipated release schedule for Microsoft Edge.</span></span>
+
+## <span data-ttu-id="d2434-105">版本节奏</span><span class="sxs-lookup"><span data-stu-id="d2434-105">Release cadence</span></span>
+
+<span data-ttu-id="d2434-106">Microsoft 提供了四个称为“频道”的选项，用于管理为 Microsoft Edge 更新新功能的频率。</span><span class="sxs-lookup"><span data-stu-id="d2434-106">Microsoft provides four options, called channels, to manage how often Microsoft Edge is updated with new features.</span></span> <span data-ttu-id="d2434-107">Microsoft Edge 团队计划每六周向 Beta 和 Stable 频道推送一次公开更新。</span><span class="sxs-lookup"><span data-stu-id="d2434-107">The Microsoft Edge team plans to push public updates to the Beta and Stable channels every six weeks.</span></span> <span data-ttu-id="d2434-108">有关我们的频道、其发布周期和支持级别的详细信息，请参阅[频道概述](https://docs.microsoft.com/DeployEdge/microsoft-edge-channels#channel-overview)。</span><span class="sxs-lookup"><span data-stu-id="d2434-108">For more information about our channels, their release cycle, and support levels, see the [Channel overview](https://docs.microsoft.com/DeployEdge/microsoft-edge-channels#channel-overview).</span></span>
+
+## <span data-ttu-id="d2434-109">发布计划</span><span class="sxs-lookup"><span data-stu-id="d2434-109">Release schedule</span></span>
+
+<span data-ttu-id="d2434-110">下表列出了 Beta 和 Stable 频道的计划发布日期。</span><span class="sxs-lookup"><span data-stu-id="d2434-110">The following table lists the planned release dates for the Beta and Stable channels.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="d2434-111">发布日期是大概日期，并且可能会根据版本状态而有所不同。</span><span class="sxs-lookup"><span data-stu-id="d2434-111">Release dates are approximate and might vary based on build status.</span></span>
+
+### <span data-ttu-id="d2434-112">Microsoft Edge 版本</span><span class="sxs-lookup"><span data-stu-id="d2434-112">Microsoft Edge releases</span></span>
+
+| <span data-ttu-id="d2434-113">版本</span><span class="sxs-lookup"><span data-stu-id="d2434-113">Version</span></span> | <span data-ttu-id="d2434-114">发布状态</span><span class="sxs-lookup"><span data-stu-id="d2434-114">Release status</span></span> | <span data-ttu-id="d2434-115">Beta 渠道</span><span class="sxs-lookup"><span data-stu-id="d2434-115">Beta Channel</span></span><br><span data-ttu-id="d2434-116">发布周</span><span class="sxs-lookup"><span data-stu-id="d2434-116">Release week</span></span> | <span data-ttu-id="d2434-117">稳定渠道</span><span class="sxs-lookup"><span data-stu-id="d2434-117">Stable Channel</span></span><br><span data-ttu-id="d2434-118">发布周</span><span class="sxs-lookup"><span data-stu-id="d2434-118">Release week</span></span> |
+|---------|-----|------|--------|
+| <span data-ttu-id="d2434-119">81</span><span class="sxs-lookup"><span data-stu-id="d2434-119">81</span></span> | <span data-ttu-id="d2434-120">已发布</span><span class="sxs-lookup"><span data-stu-id="d2434-120">Released</span></span><br><span data-ttu-id="d2434-121">版本</span><span class="sxs-lookup"><span data-stu-id="d2434-121">Version</span></span> | <span data-ttu-id="d2434-122">2020-02-20</span><span class="sxs-lookup"><span data-stu-id="d2434-122">02-20-2020</span></span><br>[<span data-ttu-id="d2434-123">81.0.416.12</span><span class="sxs-lookup"><span data-stu-id="d2434-123">81.0.416.12</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-81041612-february-20) | <span data-ttu-id="d2434-124">04-13-2020</span><span class="sxs-lookup"><span data-stu-id="d2434-124">04-13-2020</span></span><br>[<span data-ttu-id="d2434-125">81.0.416.53</span><span class="sxs-lookup"><span data-stu-id="d2434-125">81.0.416.53</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-81041653-april-13) |
+| <span data-ttu-id="d2434-126">82</span><span class="sxs-lookup"><span data-stu-id="d2434-126">82</span></span> | <span data-ttu-id="d2434-127">已发布</span><span class="sxs-lookup"><span data-stu-id="d2434-127">Released</span></span> | [<span data-ttu-id="d2434-128">已取消</span><span class="sxs-lookup"><span data-stu-id="d2434-128">Cancelled</span></span>](https://blogs.windows.com/msedgedev/2020/03/20/update-stable-channel-releases/) | [<span data-ttu-id="d2434-129">已取消</span><span class="sxs-lookup"><span data-stu-id="d2434-129">Cancelled</span></span>](https://blogs.windows.com/msedgedev/2020/03/20/update-stable-channel-releases/) |
+| <span data-ttu-id="d2434-130">83</span><span class="sxs-lookup"><span data-stu-id="d2434-130">83</span></span> | <span data-ttu-id="d2434-131">已发布</span><span class="sxs-lookup"><span data-stu-id="d2434-131">Released</span></span><br><span data-ttu-id="d2434-132">版本</span><span class="sxs-lookup"><span data-stu-id="d2434-132">Version</span></span> | <span data-ttu-id="d2434-133">2020-04-22</span><span class="sxs-lookup"><span data-stu-id="d2434-133">04-22-2020</span></span><br>[<span data-ttu-id="d2434-134">83.0.478.13</span><span class="sxs-lookup"><span data-stu-id="d2434-134">83.0.478.13</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-83047813-april-22) | <span data-ttu-id="d2434-135">05-21-2020</span><span class="sxs-lookup"><span data-stu-id="d2434-135">05-21-2020</span></span><br> [<span data-ttu-id="d2434-136">83.0.478.37</span><span class="sxs-lookup"><span data-stu-id="d2434-136">83.0.478.37</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-83047837-may-21) |
+| <span data-ttu-id="d2434-137">84</span><span class="sxs-lookup"><span data-stu-id="d2434-137">84</span></span> | <span data-ttu-id="d2434-138">已发布</span><span class="sxs-lookup"><span data-stu-id="d2434-138">Released</span></span><br><span data-ttu-id="d2434-139">版本</span><span class="sxs-lookup"><span data-stu-id="d2434-139">Version</span></span> | <span data-ttu-id="d2434-140">2020-06-02</span><span class="sxs-lookup"><span data-stu-id="d2434-140">06-02-2020</span></span><br>[<span data-ttu-id="d2434-141">84.0.522.11</span><span class="sxs-lookup"><span data-stu-id="d2434-141">84.0.522.11</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-84052211-june-2) | <span data-ttu-id="d2434-142">2020-07-16</span><span class="sxs-lookup"><span data-stu-id="d2434-142">07-16-2020</span></span><br> [<span data-ttu-id="d2434-143">84.0.522.40</span><span class="sxs-lookup"><span data-stu-id="d2434-143">84.0.522.40</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-84052240-july-16) |
+| **<span data-ttu-id="d2434-144">85</span><span class="sxs-lookup"><span data-stu-id="d2434-144">85</span></span>** | <span data-ttu-id="d2434-145">已发布</span><span class="sxs-lookup"><span data-stu-id="d2434-145">Released</span></span><br><span data-ttu-id="d2434-146">版本</span><span class="sxs-lookup"><span data-stu-id="d2434-146">Version</span></span> | **<span data-ttu-id="d2434-147">07-28-2020</span><span class="sxs-lookup"><span data-stu-id="d2434-147">07-28-2020</span></span>**<br>**[<span data-ttu-id="d2434-148">85.0.564.18</span><span class="sxs-lookup"><span data-stu-id="d2434-148">85.0.564.18</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-85056418-july-28)**  | **<span data-ttu-id="d2434-149">08-27-2020</span><span class="sxs-lookup"><span data-stu-id="d2434-149">08-27-2020</span></span>**<br>**[<span data-ttu-id="d2434-150">85.0.564.41</span><span class="sxs-lookup"><span data-stu-id="d2434-150">85.0.564.41</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-85056441-august-27)** |
+| <span data-ttu-id="d2434-151">86</span><span class="sxs-lookup"><span data-stu-id="d2434-151">86</span></span> | <span data-ttu-id="d2434-152">目标版本</span><span class="sxs-lookup"><span data-stu-id="d2434-152">Target release</span></span> | <span data-ttu-id="d2434-153">2020 年 9 月 7 日当周</span><span class="sxs-lookup"><span data-stu-id="d2434-153">Week of 09-07-2020</span></span> | <span data-ttu-id="d2434-154">2020 年 10 月 8 日当周</span><span class="sxs-lookup"><span data-stu-id="d2434-154">Week of 10-08-2020</span></span> |
+| <span data-ttu-id="d2434-155">87</span><span class="sxs-lookup"><span data-stu-id="d2434-155">87</span></span> | <span data-ttu-id="d2434-156">目标版本</span><span class="sxs-lookup"><span data-stu-id="d2434-156">Target release</span></span> | <span data-ttu-id="d2434-157">2020 年 10 月 19 日当周</span><span class="sxs-lookup"><span data-stu-id="d2434-157">Week of 10-19-2020</span></span> | <span data-ttu-id="d2434-158">2020 年 11 月 19 日当周</span><span class="sxs-lookup"><span data-stu-id="d2434-158">Week of 11-19-2020</span></span> |
+| <span data-ttu-id="d2434-159">88</span><span class="sxs-lookup"><span data-stu-id="d2434-159">88</span></span> | <span data-ttu-id="d2434-160">目标版本</span><span class="sxs-lookup"><span data-stu-id="d2434-160">Target release</span></span> | <span data-ttu-id="d2434-161">2020 年 12 月 7 日当周</span><span class="sxs-lookup"><span data-stu-id="d2434-161">Week of 12-07-2020</span></span> | <span data-ttu-id="d2434-162">2021 年 1 月 21 日当周</span><span class="sxs-lookup"><span data-stu-id="d2434-162">Week of 01-21-2021</span></span> |
+| <span data-ttu-id="d2434-163">89</span><span class="sxs-lookup"><span data-stu-id="d2434-163">89</span></span> | <span data-ttu-id="d2434-164">目标版本</span><span class="sxs-lookup"><span data-stu-id="d2434-164">Target release</span></span> | <span data-ttu-id="d2434-165">2021 年 2 月 1 日当周</span><span class="sxs-lookup"><span data-stu-id="d2434-165">Week of 02-01-2021</span></span> | <span data-ttu-id="d2434-166">2021 年 3 月 4 日当周</span><span class="sxs-lookup"><span data-stu-id="d2434-166">Week of 03-04-2021</span></span> |
+
+## <span data-ttu-id="d2434-167">发布流程</span><span class="sxs-lookup"><span data-stu-id="d2434-167">Release Process</span></span>
+
+<span data-ttu-id="d2434-168">Beta 和 Stable 主要版本的触发因素是等效的 Chromium 版本。</span><span class="sxs-lookup"><span data-stu-id="d2434-168">The trigger for Beta and Stable major releases is an equivalent Chromium release.</span></span>
+
+## <span data-ttu-id="d2434-169">渐进式部署</span><span class="sxs-lookup"><span data-stu-id="d2434-169">Progressive rollouts</span></span>
+
+<span data-ttu-id="d2434-170">Stable 频道的日期参考（已发布/发布周）参考渐进式部署的开始日期。</span><span class="sxs-lookup"><span data-stu-id="d2434-170">The date reference (Released/Release week) for the Stable channel references the beginning of the progressive roll out.</span></span>
+
+<span data-ttu-id="d2434-171">我们使用渐进式部署模型，这意味着任何给定设备的新版本都可能会在未来几天内错开提供。</span><span class="sxs-lookup"><span data-stu-id="d2434-171">We use a progressive rollout model which means that new release availability for any given device could be staggered over upcoming days.</span></span> <span data-ttu-id="d2434-172">有关详细信息，请参阅 [Microsoft Edge Stable 频道的渐进式部署](microsoft-edge-update-progressive-rollout.md)。</span><span class="sxs-lookup"><span data-stu-id="d2434-172">For more information, see [Progressive rollouts for Microsoft Edge Stable Channel](microsoft-edge-update-progressive-rollout.md).</span></span>
+
+## <span data-ttu-id="d2434-173">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d2434-173">See also</span></span>
+
+- [<span data-ttu-id="d2434-174">Microsoft Edge Enterprise 登录页面</span><span class="sxs-lookup"><span data-stu-id="d2434-174">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
+- [<span data-ttu-id="d2434-175">Microsoft Edge 频道</span><span class="sxs-lookup"><span data-stu-id="d2434-175">Microsoft Edge channels</span></span>](microsoft-edge-channels.md)
+- [<span data-ttu-id="d2434-176">渠道下载</span><span class="sxs-lookup"><span data-stu-id="d2434-176">Channel downloads</span></span>](https://www.microsoft.com/edge/business/download)
