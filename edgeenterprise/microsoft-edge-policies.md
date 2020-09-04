@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 08/12/2020
+ms.date: 09/01/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 8b514b1c1cbcaf64e8c44497522c368f71e7a0a0
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 9320d7e7b161e6d92421b05262391642b0fe1c2d
+ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979385"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "10993722"
 ---
 # Microsoft Edge - 策略
 最新版本的 Microsoft Edge 包含以下策略。 可以使用这些策略来配置在你的组织中运行 Microsoft Edge 的方式。
@@ -82,6 +82,8 @@ ms.locfileid: "10979385"
 |[PopupsAllowedForUrls](#popupsallowedforurls)|在特定网站上允许弹出窗口|
 |[PopupsBlockedForUrls](#popupsblockedforurls)|在特定网站上阻止弹出窗口|
 |[RegisteredProtocolHandlers](#registeredprotocolhandlers)|注册协议处理程序|
+|[SpotlightExperiencesAndRecommendationsEnabled](#spotlightexperiencesandrecommendationsenabled)|选择用户是否可接收自定义的背景图像和文本、建议、通知，
+以及有关 Microsoft 服务的提示|
 |[WebUsbAllowDevicesForUrls](#webusballowdevicesforurls)|授予特定网站连接到特定 USB 设备的访问权限|
 |[WebUsbAskForUrls](#webusbaskforurls)|在特定网站上允许 WebUSB|
 |[WebUsbBlockedForUrls](#webusbblockedforurls)|在特定网站上阻止 WebUSB|
@@ -224,6 +226,8 @@ ms.locfileid: "10979385"
 |[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled)|已启用 DNS 拦截检查|
 |[DefaultBrowserSettingEnabled](#defaultbrowsersettingenabled)|将 Microsoft Edge 设为默认浏览器|
 |[DefaultSearchProviderContextMenuAccessAllowed](#defaultsearchprovidercontextmenuaccessallowed)|允许默认搜索提供程序快捷菜单搜索访问|
+|[DefaultSensorsSetting](#defaultsensorssetting)|默认传感器设置|
+|[DefaultSerialGuardSetting](#defaultserialguardsetting)|控制串行 API 的使用|
 |[DelayNavigationsForInitialSiteListDownload](#delaynavigationsforinitialsitelistdownload)|要求企业模式站点列表在选项卡导航前可用
 |
 |[DeleteDataOnMigration](#deletedataonmigration)|迁移时删除旧的浏览器数据|
@@ -257,6 +261,7 @@ ms.locfileid: "10979385"
 |[ForceGoogleSafeSearch](#forcegooglesafesearch)|强制实施 Google 安全搜索|
 |[ForceLegacyDefaultReferrerPolicy](#forcelegacydefaultreferrerpolicy)|使用 no-referrer-when-downgrade 的默认引用者策略。（已弃用）|
 |[ForceNetworkInProcess](#forcenetworkinprocess)|强制网络代码在浏览器进程中运行（已过时）|
+|[ForceSync](#forcesync)|强制同步浏览器数据，但不显示同步许可提示|
 |[ForceYouTubeRestrict](#forceyoutuberestrict)|强制最低 YouTube 受限模式|
 |[FullscreenAllowed](#fullscreenallowed)|允许全屏模式|
 |[GloballyScopeHTTPAuthCacheEnabled](#globallyscopehttpauthcacheenabled)|启用全局范围的 HTTP 身份验证缓存|
@@ -277,11 +282,13 @@ ms.locfileid: "10979385"
 |[ImportSearchEngine](#importsearchengine)|允许导入搜索引擎设置|
 |[ImportShortcuts](#importshortcuts)|允许导入快捷方式|
 |[InPrivateModeAvailability](#inprivatemodeavailability)|配置 InPrivate 模式可用性|
+|[InsecureFormsWarningsEnabled](#insecureformswarningsenabled)|启用不安全窗体的警告|
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|控制 IntensiveWakeUpThrottling 的功能|
 |[InternetExplorerIntegrationEnhancedHangDetection](#internetexplorerintegrationenhancedhangdetection)|为 Internet Explorer 模式配置增强的挂起检测|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|配置 Internet Explorer 集成|
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|配置企业模式站点列表|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|指定从 Internet Explorer 模式页面启动时未配置网站的“页内”导航行为|
+|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允许 Internet Explorer 模式测试|
 |[IsolateOrigins](#isolateorigins)|针对特定源启用网站隔离|
 |[LocalProvidersEnabled](#localprovidersenabled)|允许来自本地提供程序的建议|
 |[ManagedFavorites](#managedfavorites)|配置收藏夹|
@@ -320,6 +327,10 @@ ms.locfileid: "10979385"
 |[SecurityKeyPermitAttestation](#securitykeypermitattestation)|无需相应权限即可使用直接安全密钥证明的网站或域|
 |[SendIntranetToInternetExplorer](#sendintranettointernetexplorer)|将所有 Intranet 站点都发送到 Internet Explorer|
 |[SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices)|发送站点信息以改进 Microsoft 服务（已弃用）|
+|[SensorsAllowedForUrls](#sensorsallowedforurls)|允许访问特定网站上的传感器|
+|[SensorsBlockedForUrls](#sensorsblockedforurls)|阻止访问特定网站上的传感器|
+|[SerialAskForUrls](#serialaskforurls)|在特定网站上允许串行 API|
+|[SerialBlockedForUrls](#serialblockedforurls)|在特定网站上阻止串行 API|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在收藏夹栏中显示 Microsoft Office 快捷方式|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|启用签名的 HTTP Exchange (SXG) 支持|
 |[SitePerProcess](#siteperprocess)|对每个网站启用网站隔离|
@@ -341,6 +352,7 @@ ms.locfileid: "10979385"
 |[URLBlocklist](#urlblocklist)|阻止对 URL 列表的访问|
 |[UserAgentClientHintsEnabled](#useragentclienthintsenabled)|启用“User-Agent 客户端提示”功能（已弃用）|
 |[UserDataDir](#userdatadir)|设置用户数据目录|
+|[UserDataSnapshotRetentionLimit](#userdatasnapshotretentionlimit)|限制保留用于紧急回退的用户数据快照数量|
 |[UserFeedbackAllowed](#userfeedbackallowed)|允许用户反馈|
 |[VideoCaptureAllowed](#videocaptureallowed)|允许或阻止视频捕获|
 |[VideoCaptureAllowedUrls](#videocaptureallowedurls)|无需请求许可即可访问视频捕获设备的网站|
@@ -569,7 +581,7 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = {"pattern":"https://www.contoso.com","filter":{"ISSUER":{"CN":"certificate issuer name", "L": "certificate issuer location", "O": "certificate issuer org", "OU": "certificate issuer org unit"}, "SUBJECT":{"CN":"certificate subject name", "L": "certificate subject location", "O": "certificate subject org", "OU": "certificate subject org unit"}}}
+SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = "{\"pattern\":\"https://www.contoso.com\",\"filter\":{\"ISSUER\":{\"CN\":\"certificate issuer name\", \"L\": \"certificate issuer location\", \"O\": \"certificate issuer org\", \"OU\": \"certificate issuer org unit\"}, \"SUBJECT\":{\"CN\":\"certificate subject name\", \"L\": \"certificate subject location\", \"O\": \"certificate subject org\", \"OU\": \"certificate subject org unit\"}}}"
 
 ```
 
@@ -632,8 +644,8 @@ SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = {"pattern":"ht
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -695,8 +707,8 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -762,8 +774,8 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -1135,13 +1147,13 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = [*.]contoso.edu
   - 在 Windows 和 macOS 上自 77 或更高版本起
 
   #### 描述
-  确定 [PluginsAllowedForUrls](#pluginsallowedforurls) 或 [PluginsBlockedForUrls](#pluginsblockedforurls) 未涵盖的网站是否可以自动运行 Adobe Flash 插件。 可选择“BlockPlugins”以在所有网站上阻止 Adobe Flash，也可选择“ClickToPlay”以允许 Adobe Flash 运行，但要求用户单击占位符来启动它。 无论何种情况，[PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls) 策略都优先于“DefaultPluginsSetting”。
+  先检查 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然后再检查此策略。 选项为 "ClickToPlay" 和 "BlockPlugins"。 如果将此策略设置为 "BlockPlugins"，则所有网站均将拒绝该插件。 点击 "ClickToPlay" 可运行 Flash 插件，但用户需单击占位以启动。
 
-仅对 [PluginsAllowedForUrls](#pluginsallowedforurls) 策略中显式列出的域允许自动播放。 如果想要对所有网站启用自动播放，请考虑向此列表添加 http://* 和 https://*。
+                                                                                                                                                                                                                                            
 
-如果未配置此策略，用户可以手动更改此设置。
+如果未设置此策略，会使用 BlockPlugins，用户可以更改此设置。
 
-以前的“1”选项集是“全部允许”性质的，但此功能现在仅由 [PluginsAllowedForUrls](#pluginsallowedforurls) 策略处理。  使用“1”的现有策略将在即点即用模式下运行。
+注意：仅对 [PluginsAllowedForUrls](#pluginsallowedforurls) 策略中显式列出的域允许自动播放。 若要为所有网站打开"自动播放"，请将 http://* 和 https://* 添加到允许的 URL 列表中。
 
 策略选项映射：
 
@@ -1391,8 +1403,8 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -1444,8 +1456,8 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -1497,8 +1509,8 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\1 = https://www.example.com
-SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = [*.]example.edu
+SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.edu"
 
 ```
 
@@ -1550,8 +1562,8 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = [*.]example.e
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\1 = https://www.example.com
-SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = [*.]example.edu
+SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.edu"
 
 ```
 
@@ -1603,8 +1615,8 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = [*.]example.e
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -1656,8 +1668,8 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -1771,8 +1783,8 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainList\1 = www.example.com
-SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainList\2 = [*.]example.edu
+SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainList\1 = "www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainList\2 = "[*.]example.edu"
 
 ```
 
@@ -1824,8 +1836,8 @@ SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainLis
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -1877,8 +1889,8 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -1932,8 +1944,8 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = http://contoso.edu:8080
+SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8080"
 
 ```
 
@@ -1987,8 +1999,8 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = http://contoso.edu:80
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = http://contoso.edu:8080
+SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8080"
 
 ```
 
@@ -2040,8 +2052,8 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = http://contoso.edu:80
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -2093,8 +2105,8 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -2177,6 +2189,51 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
   </dict>
 </array>
 ```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SpotlightExperiencesAndRecommendationsEnabled
+  #### 选择用户是否可接收自定义的背景图像和文本、建议、通知，
+以及有关 Microsoft 服务的提示
+  
+  
+  #### 支持的版本：
+  - 在 86 版或更高版本的 Windows 上
+
+  #### 描述
+  选择用户是否可接收自定义的背景图像和文本、建议、通知及 Microsoft 服务提示。
+
+如果启用或未配置此设置，将启用聚焦体验和建议。
+
+如果禁用此设置，聚焦体验和建议将关闭。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+  - 布尔
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称： SpotlightExperiencesAndRecommendationsEnabled
+  - GP 名称：选择用户是否可接收自定义的背景图像和文本、建议、通知及 Microsoft 服务提示
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：SpotlightExperiencesAndRecommendationsEnabled
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000001
+```
+
+
   
 
   [返回页首](#microsoft-edge---policies)
@@ -2300,8 +2357,8 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -2355,8 +2412,8 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -2476,10 +2533,10 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\1 = UTF-8
-SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\2 = UTF-16
-SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\3 = GB2312
-SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = ISO-8859-1
+SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\1 = "UTF-8"
+SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\2 = "UTF-16"
+SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\3 = "GB2312"
+SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 
 ```
 
@@ -2543,7 +2600,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = ISO-8859-1
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://search.contoso.com/searchbyimage/upload
+"https://search.contoso.com/searchbyimage/upload"
 ```
 
 
@@ -2597,7 +2654,7 @@ https://search.contoso.com/searchbyimage/upload
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-content={imageThumbnail},url={imageURL},sbisrc={SearchSource}
+"content={imageThumbnail},url={imageURL},sbisrc={SearchSource}"
 ```
 
 
@@ -2649,7 +2706,7 @@ content={imageThumbnail},url={imageURL},sbisrc={SearchSource}
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-mis
+"mis"
 ```
 
 
@@ -2703,7 +2760,7 @@ mis
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-My Intranet Search
+"My Intranet Search"
 ```
 
 
@@ -2759,7 +2816,7 @@ My Intranet Search
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://search.contoso.com/search?q={searchTerms}
+"https://search.contoso.com/search?q={searchTerms}"
 ```
 
 
@@ -2817,7 +2874,7 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://search.contoso.com/suggest?q={searchTerms}
+"https://search.contoso.com/suggest?q={searchTerms}"
 ```
 
 
@@ -2853,7 +2910,7 @@ https://search.contoso.com/suggest?q={searchTerms}
 - "地址栏" （"重定向"），新建选项卡页面搜索框使用地址栏在新选项卡上搜索。
 
 策略选项映射：
-        
+  
 
 * bing (bing) = 搜索框（推荐）
 
@@ -2883,7 +2940,7 @@ https://search.contoso.com/suggest?q={searchTerms}
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-bing
+"bing"
 ```
 
 
@@ -2941,7 +2998,7 @@ bing
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = hosted_app
+SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
 
 ```
 
@@ -2990,8 +3047,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = hosted_app
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\1 = extension_id1
-SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = extension_id2
+SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\1 = "extension_id1"
+SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
 
 ```
 
@@ -3045,8 +3102,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = extension_id2
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\1 = extension_id1
-SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = extension_id2
+SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\1 = "extension_id1"
+SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 ```
 
@@ -3076,7 +3133,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = extension_id2
 
 此策略优先于可能冲突的 [ExtensionInstallBlocklist](#extensioninstallblocklist) 策略。 当从强制安装列表中删除某个扩展时，Microsoft Edge 会自动卸载该扩展。
 
-对于未加入 Microsoft Active Directory 域的 Windows 设备，强制安装仅限于 Microsoft Store 中提供的扩展。
+强制安装仅限于 Microsoft Edge 加载项网站中列出的不属于以下实例的应用和扩展：已加入 Microsoft Active Directory 域的 Windows 实例、已注册用于设备管理的 Windows 10 专业版或企业版实例，以及通过 MDM 管理的或通过 MCX 加入到域的 macOS 实例。
 
 请注意，用户可以使用开发人员工具修改任何扩展的源代码，这可能会使扩展无法正常工作。 如果需要考虑此问题，请设置 [DeveloperToolsAvailability](#developertoolsavailability) 策略。
 
@@ -3116,8 +3173,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = extension_id2
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\1 = gbchcmhmhahfdphkhkmpfmihenigjmpp;https://edge.microsoft.com/extensionwebstorebase/v1/crx
-SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = abcdefghijklmnopabcdefghijklmnop
+SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\1 = "gbchcmhmhahfdphkhkmpfmihenigjmpp;https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnopabcdefghijklmnop"
 
 ```
 
@@ -3173,7 +3230,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = abcdefghijklmnopa
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = https://corp.contoso.com/*
+SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.contoso.com/*"
 
 ```
 
@@ -3484,7 +3541,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-contoso.com
+"contoso.com"
 ```
 
 
@@ -3534,7 +3591,7 @@ contoso.com
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-basic,digest,ntlm,negotiate
+"basic,digest,ntlm,negotiate"
 ```
 
 
@@ -3584,7 +3641,7 @@ basic,digest,ntlm,negotiate
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-*contoso.com,contoso.com
+"*contoso.com,contoso.com"
 ```
 
 
@@ -3770,8 +3827,8 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\1 = com.native.messaging.host.name1
-SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = com.native.messaging.host.name2
+SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\1 = "com.native.messaging.host.name1"
+SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messaging.host.name2"
 
 ```
 
@@ -3825,8 +3882,8 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = com.native.messagi
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\1 = com.native.messaging.host.name1
-SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = com.native.messaging.host.name2
+SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\1 = "com.native.messaging.host.name1"
+SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messaging.host.name2"
 
 ```
 
@@ -4057,7 +4114,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = com.native.messagi
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://contoso.com/change_password.html
+"https://contoso.com/change_password.html"
 ```
 
 
@@ -4109,8 +4166,8 @@ https://contoso.com/change_password.html
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\1 = https://contoso.com/login.html
-SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = https://login.contoso.com
+SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\1 = "https://contoso.com/login.html"
+SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.contoso.com"
 
 ```
 
@@ -4236,7 +4293,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = https://login.c
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-{ "idPattern": ".*public", "namePattern": ".*Color" }
+"{ \"idPattern\": \".*public\", \"namePattern\": \".*Color\" }"
 ```
 
 
@@ -4496,7 +4553,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = https://login.c
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://www.contoso.com, https://www.fabrikam.com
+"https://www.contoso.com, https://www.fabrikam.com"
 ```
 
 
@@ -4572,7 +4629,7 @@ https://www.contoso.com, https://www.fabrikam.com
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-direct
+"direct"
 ```
 
 
@@ -4626,7 +4683,7 @@ direct
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://internal.contoso.com/example.pac
+"https://internal.contoso.com/example.pac"
 ```
 
 
@@ -4680,7 +4737,7 @@ https://internal.contoso.com/example.pac
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-123.123.123.123:8080
+"123.123.123.123:8080"
 ```
 
 
@@ -4932,8 +4989,8 @@ Microsoft Defender SmartScreen 下载保护服务不会检查这些域上托管�
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\1 = mydomain.com
-SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = myuniversity.edu
+SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\1 = "mydomain.com"
+SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.edu"
 
 ```
 
@@ -5205,7 +5262,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = myuniversity.ed
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://www.contoso.com
+"https://www.contoso.com"
 ```
 
 
@@ -5224,18 +5281,18 @@ https://www.contoso.com
   
   
   #### 支持的版本：
-  - 在 Windows 和 macOS 上自 85 或更高版本起
+  - 在 Windows 和 macOS 上自 86 或更高版本起
 
   #### 描述
   可在 Microsoft Edge 中的新选项卡页面布局上配置允许使用的背景图像类型。
 
 如果未配置此策略，则将启用新选项卡页面上的所有背景图像类型。
 
-                                           
+             
 
-                                            
+           
 
-                                          
+            
 
 策略选项映射：
 
@@ -5462,7 +5519,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://www.fabrikam.com
+"https://www.fabrikam.com"
 ```
 
 
@@ -5774,8 +5831,8 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\1 = https://contoso.com
-SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = https://www.fabrikam.com
+SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\1 = "https://contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.com"
 
 ```
 
@@ -6247,9 +6304,9 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = https://www.fabrikam.c
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\1 = mydomain.com
-SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\2 = [*.]mydomain2.com
-SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\3 = [*.].mydomain2.com
+SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\1 = "mydomain.com"
+SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\2 = "[*.]mydomain2.com"
+SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\3 = "[*.].mydomain2.com"
 
 ```
 
@@ -6294,8 +6351,8 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\3 = [*.].mydomain2.com
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 
 ```
 
@@ -6572,7 +6629,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = [*.]contoso.edu
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-en
+"en"
 ```
 
 
@@ -6664,8 +6721,8 @@ en
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\1 = https://www.contoso.com/
-SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = https://[*.]contoso.edu/
+SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\1 = "https://www.contoso.com/"
+SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contoso.edu/"
 
 ```
 
@@ -6750,17 +6807,17 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = https://[*.]contoso
 
  
 
-                                                
+            
 
-                       
+        
 
-                        
+      
 
-                       
+        
 
-                   
+       
 
-                         
+       
 
 无论此策略的值如何，Microsoft Edge 旧版中的浏览器数据将始终在首次运行时以静默方式迁移。
 
@@ -7001,11 +7058,11 @@ URL 模式必须按[https://go.microsoft.com/fwlink/?linkid=2095322](https://go.
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\1 = example.com
-SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\2 = https://ssl.server.com
-SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\3 = hosting.com/good_path
-SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\4 = https://server:8080/path
-SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = .exact.hostname.com
+SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\1 = "example.com"
+SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\2 = "https://ssl.server.com"
+SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\3 = "hosting.com/good_path"
+SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\4 = "https://server:8080/path"
+SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com"
 
 ```
 
@@ -7044,7 +7101,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = .exact.hostname.com
 
 如果没有设置此策略，则只有用户已经指定为自动打开的文件类型才会在下载时自动打开。
 
-                                                                                                                                                                                                           
+                                                     
 
 此策略仅在加入 Microsoft Active Directory 域的 Windows 实例、已注册设备管理的 Windows 10 专业版或企业版实例，或者通过 MDM 托管或通过 MCX 加入域的 macOS 实例上可用。
 
@@ -7070,8 +7127,8 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = .exact.hostname.com
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\1 = exe
-SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = txt
+SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\1 = "exe"
+SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
 ```
 
@@ -7801,8 +7858,8 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = txt
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCas\1 = sha256/AAAAAAAAAAAAAAAAAAAAAA==
-SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCas\2 = sha256//////////////////////w==
+SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCas\1 = "sha256/AAAAAAAAAAAAAAAAAAAAAA=="
+SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCas\2 = "sha256//////////////////////w=="
 
 ```
 
@@ -7860,8 +7917,8 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCa
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLegacyCas\1 = sha256/AAAAAAAAAAAAAAAAAAAAAA==
-SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLegacyCas\2 = sha256//////////////////////w==
+SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLegacyCas\1 = "sha256/AAAAAAAAAAAAAAAAAAAAAA=="
+SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLegacyCas\2 = "sha256//////////////////////w=="
 
 ```
 
@@ -7917,8 +7974,8 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUrls\1 = contoso.com
-SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUrls\2 = .contoso.com
+SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUrls\1 = "contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUrls\2 = ".contoso.com"
 
 ```
 
@@ -8108,7 +8165,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 
 如果未配置此策略，则不会对可接受的服务和导出目标强制实施任何限制。
 
-                                                     
+              
 
 策略选项映射：
 
@@ -8138,7 +8195,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = pinterest_suggestions
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pinterest_suggestions"
 
 ```
 
@@ -8503,7 +8560,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = pint
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://go.microsoft.com/fwlink/?linkid=2080734
+"https://go.microsoft.com/fwlink/?linkid=2080734"
 ```
 
 
@@ -8577,7 +8634,7 @@ https://go.microsoft.com/fwlink/?linkid=2080734
   - 在 Windows 7 和 macOS 上自 77 或更高版本起
 
   #### 描述
-      
+   
 
   如果将此策略设置为 true，Microsoft Edge 将检查它是否为默认浏览器，并且在可能的情况下会自动注册。
 
@@ -8670,6 +8727,127 @@ Windows 管理员注意事项：此策略仅适用于运行 Windows 7 的电脑�
   - 示例值：
 ``` xml
 <true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### DefaultSensorsSetting
+  #### 默认传感器设置
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  设置网站是否可访问和使用诸如运动和光传感器等传感器。 可完全阻止或允许网站获取对传感器的访问权限。
+
+将策略设置为 “1” 可允许网站访问和使用传感器。 将策略设置为 “2” 将拒绝对传感器的访问。
+
+对于特定 URL 模式，可以使用 [SensorsAllowedForUrls](#sensorsallowedforurls) 和 [SensorsBlockedForUrls](#sensorsblockedforurls) 策略来替代此策略。
+
+如果未配置此策略，则网站可以访问和使用传感器，用户可以更改此设置。 这是 [SensorsAllowedForUrls](#sensorsallowedforurls) 和 [SensorsBlockedForUrls](#sensorsblockedforurls)的全局默认值。
+
+策略选项映射：
+
+* AllowSensors (1) = 允许网站访问传感器
+
+* BlockSensors (2) = 不允许任何网站访问传感器
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 整型
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：DefaultSensorsSetting
+  - GP 名称：默认传感器设置
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：DefaultSensorsSetting
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000002
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：DefaultSensorsSetting
+  - 示例值：
+``` xml
+<integer>2</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### DefaultSerialGuardSetting
+  #### 控制串行 API 的使用
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  
+设置网站是否可以访问串行端口。 可以完全阻止访问，也可以在网站每次想要访问串行端口时询问用户。
+
+将策略设置为 “3” 可允许网站请求访问串行端口。 将策略设置为 "2" 将拒绝访问串行端口。
+
+对于特定 URL 模式，可以使用 [SerialAskForUrls](#serialaskforurls) 和 [SerialBlockedForUrls](#serialblockedforurls) 策略来替代此策略。
+
+如果未配置此策略，则默认情况下，网站可以询问用户是否能访问串行端口，用户可以更改此设置。
+
+策略选项映射：
+
+* BlockSerial (2) = 不允许任何网站通过串行 API 向串行端口请求访问
+
+* AskSerial (3) = 允许网站向用户请求访问串行端口的许可
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 整型
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：DefaultSerialGuardSetting
+  - GP 名称：控制串行 API 的使用
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：DefaultSerialGuardSetting
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000002
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：DefaultSerialGuardSetting
+  - 示例值：
+``` xml
+<integer>2</integer>
 ```
   
 
@@ -9100,7 +9278,7 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-${user_home}/Edge_cache
+"${user_home}/Edge_cache"
 ```
 
 
@@ -9216,7 +9394,7 @@ ${user_home}/Edge_cache
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-off
+"off"
 ```
 
 
@@ -9270,7 +9448,7 @@ off
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://dns.example.net/dns-query{?dns}
+"https://dns.example.net/dns-query{?dns}"
 ```
 
 
@@ -9325,8 +9503,8 @@ https://dns.example.net/dns-query{?dns}
   ##### 示例值：
 ```
 
-      Linux-based OSes (including Mac): /home/${user_name}/Downloads
-      Windows: C:\Users\${user_name}\Downloads
+"\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
+                                              
 ```
 
 
@@ -9556,7 +9734,7 @@ https://dns.example.net/dns-query{?dns}
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = ExampleDeprecatedFeature_EffectiveUntil20080902
+SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "ExampleDeprecatedFeature_EffectiveUntil20080902"
 
 ```
 
@@ -9575,8 +9753,8 @@ SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = Example
 
   ### EnableDomainActionsDownload
   #### 启用 Microsoft 中的域操作下载（已过时）
-                       
         
+  
   
   
   >已过时：该策略已过时，Microsoft Edge 版本 84 后将无法正常工作。
@@ -9877,8 +10055,8 @@ Microsoft 会保留一个列表，列出出于兼容性原因要对某些域执�
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\1 = {'domains': ['https://contoso.com', 'contoso2.com'], 'file_extension': 'jnlp'}
-SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {'domains': ['*'], 'file_extension': 'swf'}
+SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\1 = {"domains": ["https://contoso.com", "contoso2.com"], "file_extension": "jnlp"}
+SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {"domains": ["*"], "file_extension": "swf"}
 
 ```
 
@@ -10396,8 +10574,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
   ### ForceNetworkInProcess
   #### 强制网络代码在浏览器进程中运行（已过时）
-                       
         
+  
   
   
   
@@ -10442,6 +10620,60 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 ```
 
 
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### ForceSync
+  #### 强制同步浏览器数据，但不显示同步许可提示
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  强制 Microsoft Edge 中的数据同步。 此策略还会阻止用户关闭同步。
+
+如果未配置此策略，用户将可以启用或禁用同步。 如果启用此策略，用户将不能关闭同步。
+
+若要使此策略按预期工作，[BrowserSignin](#browsersignin) 策略必须配置，或者必须设置为"启用"。 如果 [ForceSync](#forcesync) 设置为"已禁用"，则 [BrowserSignin](#browsersignin) 将不会生效。
+
+[SyncDisabled](#syncdisabled) 不可配置，或者必须设置为 False。 如果设置为 True，则 [ForceSync](#forcesync) 不会生效。
+
+0 = 不会自动启动同步并显示同步许可（默认） 1 = 为 Azure AD/Azure AD 降级用户配置文件启用强制同步，并且不显示同步许可提示
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 布尔
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：ForceSync
+  - GP 名称：强制同步浏览器数据，但不显示同步许可提示
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ForceSync
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000001
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：ForceSync
+  - 示例值：
+``` xml
+<true/>
+```
   
 
   [返回页首](#microsoft-edge---policies)
@@ -10696,7 +10928,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = meet
+SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 ```
 
@@ -11561,6 +11793,54 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = meet
 
   [返回页首](#microsoft-edge---policies)
 
+  ### InsecureFormsWarningsEnabled
+  #### 启用不安全窗体的警告
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  此策略控制嵌入浏览器中安全（HTTPS）网站的非安全窗体（通过 HTTP 提交的窗体）的处理。
+如果启用此策略或不对其进行设置，则在提交不安全窗体时将显示完整的页面警告。 此外，如果窗体域获得焦点，将在窗体域旁显示警告气泡，并且将对这些窗体禁用自动填充。
+如果禁用此策略，则不会显示不安全窗体的警告，并且自动填充将正常工作。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 布尔
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：InsecureFormsWarningsEnabled
+  - GP 名称：启用不安全窗体的警告
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InsecureFormsWarningsEnabled
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000001
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：InsecureFormsWarningsEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### IntensiveWakeUpThrottlingEnabled
   #### 控制 IntensiveWakeUpThrottling 的功能
   
@@ -11756,7 +12036,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = meet
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://internal.contoso.com/sitelist.xml
+"https://internal.contoso.com/sitelist.xml"
 ```
 
 
@@ -11829,6 +12109,54 @@ https://internal.contoso.com/sitelist.xml
 
   [返回页首](#microsoft-edge---policies)
 
+  ### InternetExplorerIntegrationTestingAllowed
+  #### 允许 Internet Explorer 模式测试
+  
+  
+  #### 支持的版本：
+  - 在 86 版或更高版本的 Windows 上
+
+  #### 描述
+  此策略是 “ie-mode-test” 标志策略的替代项。 它允许用户从 UI 菜单选项中打开 IE 模式选项卡。
+
+       此设置与以下策略配合使用：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) （设置为 'IEMode'） 和 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 策略 （列表至少有一个条目）。
+
+       如果启用此策略，用户可以从 UI 选项打开“IE 模式”选项卡，并将“当前网站”导航到 IE 模式网站。
+
+       如果禁用此策略，用户将不能直接看到菜单中的 UI 选项。
+
+       如果未配置此策略，则可以手动设置 “ie-mode-test” 标志。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+  - 布尔
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：InternetExplorerIntegrationTestingAllowed
+  - GP 名称：允许 Internet Explorer 模式测试
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InternetExplorerIntegrationTestingAllowed
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000000
+```
+
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### IsolateOrigins
   #### 针对特定源启用网站隔离
   
@@ -11865,7 +12193,7 @@ https://internal.contoso.com/sitelist.xml
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-https://contoso.com/,https://fabrikam.com/
+"https://contoso.com/,https://fabrikam.com/"
 ```
 
 
@@ -12317,7 +12645,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 在 Windows 7、Windows 8 和 macOS 上，此策略控制使用情况和故障相关数据的发送。 如果未配置此策略，Microsoft Edge 将默认使用用户首选项。
 
 若要启用此策略，必需将 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 设置为“启用”。 如果 [MetricsReportingEnabled](#metricsreportingenabled) 或 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 未配置或已禁用，则不会将此数据发送到 Microsoft。
-                                                                                                                                                                                
+                                            
 
 此策略仅在加入 Microsoft Active Directory 域的 Windows 实例、已注册设备管理的 Windows 10 专业版或企业版实例，或者通过 MDM 托管或通过 MCX 加入域的 macOS 实例上可用。
 
@@ -12645,8 +12973,8 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\1 = http://testserver.contoso.com/
-SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 = *.contoso.com
+SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\1 = "http://testserver.contoso.com/"
+SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 = "*.contoso.com"
 
 ```
 
@@ -13303,7 +13631,7 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-.*@contoso.com
+".*@contoso.com"
 ```
 
 
@@ -13355,15 +13683,15 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-${roaming_app_data}\edge-profile
+"${roaming_app_data}\\edge-profile"
 ```
 
 
-           
-              
-      
+     
+     
+   
+ 
     
-             
    
   
 
@@ -13411,11 +13739,11 @@ ${roaming_app_data}\edge-profile
 ```
 
 
-           
-              
-      
-    
-    
+     
+     
+   
+ 
+ 
    
   
 
@@ -13565,7 +13893,7 @@ ${roaming_app_data}\edge-profile
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-tls1
+"tls1"
 ```
 
 
@@ -13622,8 +13950,8 @@ tls1
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = [*.]contoso.edu
+SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 
 ```
 
@@ -13874,7 +14202,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = [*.]contoso.edu
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = https://contoso.com
+SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://contoso.com"
 
 ```
 
@@ -13953,7 +14281,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = https://contos
 在 Windows 7、Windows 8 和 macOS 上，此策略控制发送有关已访问网站的信息。 如果未配置此策略，Microsoft Edge 将默认使用用户首选项。
 
 若要启用此策略，必需将 [MetricsReportingEnabled](#metricsreportingenabled) 设置为“已启用”。 如果 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 或 [MetricsReportingEnabled](#metricsreportingenabled) 未配置或已禁用，则不会将此数据发送到 Microsoft。
-                                                                                                                                                                            
+                                           
 
   #### 支持的功能：
   - 可以强制：是
@@ -13986,6 +14314,242 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = https://contos
   - 示例值：
 ``` xml
 <false/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SensorsAllowedForUrls
+  #### 允许访问特定网站上的传感器
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  基于 URL 模式，定义一个可访问并使用诸如运动和光传感器等传感器的网站列表。
+
+如果未配置此策略，则所有网站都将使用 [DefaultSensorsSetting](#defaultsensorssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
+
+对于与此策略不匹配的 URL 模式，将使用以下优先级顺序：[SensorsBlockedForUrls](#sensorsblockedforurls) 策略（如果有匹配）、[DefaultSensorsSetting](#defaultsensorssetting) 策略（如果已设置）或用户的个人设置。
+
+此策略中定义的 URL 模式与 [SensorsBlockedForUrls](#sensorsblockedforurls) 策略中配置的不冲突。 不能同时允许和阻止一个 URL。
+
+有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 字符串列表
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：SensorsAllowedForUrls
+  - GP 名称：允许访问特定网站上的传感器
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\2 = "[*.]contoso.edu"
+
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：SensorsAllowedForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.contoso.com</string>
+  <string>[*.]contoso.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SensorsBlockedForUrls
+  #### 阻止访问特定网站上的传感器
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  基于 URL 模式，定义一个不能访问运动和光传感器等传感器的网站列表。
+
+如果未配置此策略，则所有网站都将使用 [DefaultSensorsSetting](#defaultsensorssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
+
+对于与此策略不匹配的 URL 模式，将使用以下优先级顺序： [SensorsAllowedForUrls](#sensorsallowedforurls) 策略（如果有匹配）、[DefaultSensorsSetting](#defaultsensorssetting) 策略（如果已设置）或用户的个人设置。
+
+此策略中定义的 URL 模式与 [SensorsAllowedForUrls](#sensorsallowedforurls) 策略中配置的不冲突。 不能同时允许和阻止一个 URL。
+
+有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 字符串列表
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：SensorsBlockedForUrls
+  - GP 名称：阻止访问特定网站上的传感器
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\2 = "[*.]contoso.edu"
+
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：SensorsBlockedForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.contoso.com</string>
+  <string>[*.]contoso.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SerialAskForUrls
+  #### 在特定网站上允许串行 API
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  根据 URL 模式定义可要求用户授予串行端口访问权限的网站列表。
+
+如果未配置此策略，则所有网站都将使用 [DefaultSerialGuardSetting](#defaultserialguardsetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
+
+对于与此策略不匹配的 URL 模式，将使用以下优先级顺序：[SerialBlockedForUrls](#serialblockedforurls) 策略（如果有匹配）、[DefaultSerialGuardSetting](#defaultserialguardsetting) 策略（如果已设置）或用户的个人设置。
+
+此策略中定义的 URL 模式与 [SerialBlockedForUrls](#serialblockedforurls) 策略中配置的不冲突。 不能同时允许和阻止一个 URL。
+
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 字符串列表
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：SerialAskForUrls
+  - GP 名称：在特定网站上允许串行 API
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
+
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：SerialAskForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.contoso.com</string>
+  <string>[*.]contoso.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SerialBlockedForUrls
+  #### 在特定网站上阻止串行 API
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  根据 URL 模式定义不能要求用户授予串行端口访问权限的网站列表。
+
+如果未配置此策略，则所有网站都将使用 [DefaultSerialGuardSetting](#defaultserialguardsetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
+
+对于与此策略不匹配的 URL 模式，将使用以下优先级顺序：[SerialAskForUrls](#serialaskforurls) 策略（如果有匹配）、[DefaultSerialGuardSetting](#defaultserialguardsetting) 策略（如果已设置）或用户的个人设置。
+
+此策略中的 URL 模式不能与 [SerialAskForUrls](#serialaskforurls) 策略中配置的 URL 模式冲突。 不能同时允许和阻止一个 URL。
+
+有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 字符串列表
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：SerialBlockedForUrls
+  - GP 名称：在特定网站上阻止串行 API
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
+
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：SerialBlockedForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.contoso.com</string>
+  <string>[*.]contoso.edu</string>
+</array>
 ```
   
 
@@ -14231,8 +14795,8 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = https://contos
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\1 = fr
-SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\2 = es
+SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\1 = "fr"
+SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\2 = "es"
 
 ```
 
@@ -14283,8 +14847,8 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\2 = es
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\1 = fr
-SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = es
+SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\1 = "fr"
+SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
 ```
 
@@ -14483,7 +15047,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = es
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = favorites
+SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 
 ```
 
@@ -14517,9 +15081,9 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = favorites
 
 如果禁用此策略，Microsoft Edge 将对使用本地安装的 CA 证书进行身份验证的连接禁用这些安全保护。 对于通过公共信任的 CA 证书进行身份验证的连接，始终启用这些保护。
 
-                                                                                                                                                                                                                                                      
+                                                               
 
-                                                                                                                                                                                                             
+                                                    
 
 此策略可用于测试任何受影响的代理并对其进行升级。 受影响的代理预期会连接失败，并且出现错误代码 ERR_TLS13_DOWNGRADE_DETECTED。
 
@@ -14601,9 +15165,9 @@ Tls 1.3 所需的 TLS 1.3 密码套件 TLS_AES_128_GCM_SHA256 （0x1301），此
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\1 = 0x1303
-SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\2 = 0xcca8
-SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = 0xcca9
+SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\1 = "0x1303"
+SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\2 = "0xcca8"
+SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
 ```
 
@@ -14928,11 +15492,11 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = 0xcca9
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\1 = contoso.com
-SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\2 = https://ssl.server.com
-SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\3 = hosting.com/good_path
-SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\4 = https://server:8080/path
-SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = .exact.hostname.com
+SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\1 = "contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\2 = "https://ssl.server.com"
+SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\3 = "hosting.com/good_path"
+SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\4 = "https://server:8080/path"
+SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
 ```
 
@@ -14995,14 +15559,14 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = .exact.hostname.com
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\1 = contoso.com
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\2 = https://ssl.server.com
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\3 = hosting.com/bad_path
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\4 = https://server:8080/path
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\5 = .exact.hostname.com
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\6 = file://*
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\7 = custom_scheme:*
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = *
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\1 = "contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\2 = "https://ssl.server.com"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\3 = "hosting.com/bad_path"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\4 = "https://server:8080/path"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\5 = ".exact.hostname.com"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\6 = "file://*"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\7 = "custom_scheme:*"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
 ```
 
@@ -15118,7 +15682,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = *
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-${users}/${user_name}/Edge
+"${users}/${user_name}/Edge"
 ```
 
 
@@ -15128,6 +15692,50 @@ ${users}/${user_name}/Edge
 ``` xml
 <string>${users}/${user_name}/Edge</string>
 ```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### UserDataSnapshotRetentionLimit
+  #### 限制保留用于紧急回退的用户数据快照数量
+  
+  
+  #### 支持的版本：
+  - 在 86 版或更高版本的 Windows 上
+
+  #### 描述
+  按照每个主要版本的更新，Microsoft Edge 将创建用户浏览数据部分的快照，以便在将来的紧急情况下需要临时版本回退时使用。 如果对用户拥有相应快照的版本执行了临时回退，则快照中的数据会被还原。 这可让用户保留书签和自动填充数据等设置。
+
+如果未设置此策略，将使用“3 张快照”的默认值。
+
+如果你设置了此策略，旧的快照将根据需要被删除，以便遵守你设置的限制。 如果将此策略设置为 “0”，则不会执行任何快照。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+  - 整型
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：UserDataSnapshotRetentionLimit
+  - GP 名称：限制保留用于紧急回退情况的用户数据快照数量
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：UserDataSnapshotRetentionLimit
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000003
+```
+
+
   
 
   [返回页首](#microsoft-edge---policies)
@@ -15266,8 +15874,8 @@ ${users}/${user_name}/Edge
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\1 = https://www.contoso.com/
-SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = https://[*.]contoso.edu/
+SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\1 = "https://www.contoso.com/"
+SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contoso.edu/"
 
 ```
 
@@ -15420,8 +16028,8 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   ### WebComponentsV0Enabled
   #### 重新启用 Web Components v0 API 直至 M84（已过时）
-                       
         
+  
   
   
   >已过时：该策略已过时，Microsoft Edge 版本 84 后将无法正常工作。
@@ -15473,8 +16081,8 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   ### WebDriverOverridesIncompatiblePolicies
   #### 允许 WebDriver 替代不兼容的策略（已过时）
-                       
         
+  
   
   
   >已过时：该策略已过时，Microsoft Edge 版本 84 后将无法正常工作。
@@ -15569,8 +16177,8 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 值类型：REG_SZ 列表
   ##### 示例值：
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\1 = https://www.contoso.com
-SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = *contoso.com*
+SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
 ```
 
@@ -15638,7 +16246,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = *contoso.com*
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-default
+"default"
 ```
 
 
@@ -15688,7 +16296,7 @@ default
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-10000-11999
+"10000-11999"
 ```
 
 
@@ -15710,7 +16318,7 @@ default
   - 在 84 版或更高版本的 Windows 上
 
   #### 描述
-  此策略已弃用，因为未来版本中的类似功能将取代该策略，请参阅https://crbug.com/1032820。 在 Microsoft Edge version 87 将不起作用。
+  此策略已弃用，因为未来版本中的类似功能将取代该策略，请参阅https://crbug.com/1032820。
 
 使用 Windows 来解析所有浏览器网络的代理，而不是内置在 Microsoft Edge 中的代理解析器。 Windows 代理解析器支持 Windows 代理功能，如DirectAccess/NRPT。
 
