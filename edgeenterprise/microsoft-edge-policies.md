@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/01/2020
+ms.date: 09/10/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 9320d7e7b161e6d92421b05262391642b0fe1c2d
-ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
+ms.openlocfilehash: d19d12dbda0e4b40b4b91b94ca92c58f2a469105
+ms.sourcegitcommit: 1f9149bf2e7c751520b68ef96e18e1f959975fb9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "10993722"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "11005815"
 ---
 # Microsoft Edge - 策略
 最新版本的 Microsoft Edge 包含以下策略。 可以使用这些策略来配置在你的组织中运行 Microsoft Edge 的方式。
@@ -58,6 +58,8 @@ ms.locfileid: "10993722"
 |[CookiesBlockedForUrls](#cookiesblockedforurls)|在特定站点上阻止 Cookie|
 |[CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)|将来自特定网站的 Cookie 限制为当前会话|
 |[DefaultCookiesSetting](#defaultcookiessetting)|配置 Cookie|
+|[DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting)|控制文件系统 API 在读取中的使用|
+|[DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting)|控制文件系统 API 在写入中的使用|
 |[DefaultGeolocationSetting](#defaultgeolocationsetting)|默认地理位置设置|
 |[DefaultImagesSetting](#defaultimagessetting)|默认图像设置|
 |[DefaultInsecureContentSetting](#defaultinsecurecontentsetting)|控制不安全内容异常的使用|
@@ -67,6 +69,10 @@ ms.locfileid: "10993722"
 |[DefaultPopupsSetting](#defaultpopupssetting)|默认弹出窗口设置|
 |[DefaultWebBluetoothGuardSetting](#defaultwebbluetoothguardsetting)|控制 Web 蓝牙 API 的使用|
 |[DefaultWebUsbGuardSetting](#defaultwebusbguardsetting)|控制 WebUSB API 的使用|
+|[FileSystemReadAskForUrls](#filesystemreadaskforurls)|允许在这些网站上通过文件系统 API 进行读取访问|
+|[FileSystemReadBlockedForUrls](#filesystemreadblockedforurls)|阻止在这些网站上通过文件系统 API 进行读取访问|
+|[FileSystemWriteAskForUrls](#filesystemwriteaskforurls)|允许在这些网站上对文件和目录进行写入访问|
+|[FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls)|阻止在这些网站上对文件和目录进行写入访问|
 |[ImagesAllowedForUrls](#imagesallowedforurls)|在这些网站上允许图像|
 |[ImagesBlockedForUrls](#imagesblockedforurls)|在这些网站上阻止图像|
 |[InsecureContentAllowedForUrls](#insecurecontentallowedforurls)|在指定网站上允许不安全内容|
@@ -139,6 +145,7 @@ ms.locfileid: "10993722"
 |[PrintHeaderFooter](#printheaderfooter)|打印页眉和页脚|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|将系统默认打印机设置为默认打印机|
 |[PrintingEnabled](#printingenabled)|启用打印|
+|[PrintingPaperSizeDefault](#printingpapersizedefault)|默认打印页面大小|
 |[UseSystemPrintDialog](#usesystemprintdialog)|使用系统打印对话框打印|
 ### [*代理服务器*](#proxy-server-policies)
 |策略名称|标题|
@@ -163,7 +170,7 @@ ms.locfileid: "10993722"
 |[HomepageIsNewTabPage](#homepageisnewtabpage)|将新选项卡页设置为主页|
 |[HomepageLocation](#homepagelocation)|配置主页 URL|
 |[NewTabPageAllowedBackgroundTypes](#newtabpageallowedbackgroundtypes)|配置新选项卡页面布局允许使用的背景类型|
-|[NewTabPageCompanyLogo](#newtabpagecompanylogo)|设置新选项卡页公司徽标（已弃用）|
+|[NewTabPageCompanyLogo](#newtabpagecompanylogo)|设置新选项卡页公司徽标（已过时）|
 |[NewTabPageHideDefaultTopSites](#newtabpagehidedefaulttopsites)|从新选项卡页隐藏默认热门网站|
 |[NewTabPageLocation](#newtabpagelocation)|配置新选项卡页 URL|
 |[NewTabPageManagedQuickLinks](#newtabpagemanagedquicklinks)|设置新选项卡页快速链接|
@@ -853,6 +860,118 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### DefaultFileSystemReadGuardSetting
+  #### 控制文件系统 API 在读取中的使用
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  如果将此策略设置为 3，则网站可以使用文件系统 API 请求对主机操作系统的文件系统进行读取访问。 如果将此策略设置为 2，则会拒绝访问。
+
+如果未设置此策略，网站可以请求访问。 用户可以更改此设置。
+
+策略选项映射：
+
+* BlockFileSystemRead (2) = 不允许任何网站通过文件系统 API 请求对文件和目录的读取权限
+
+* AskFileSystemRead (3) = 允许网站通过文件系统 API 请求用户授予对文件和目录的读取权限
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 整型
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：DefaultFileSystemReadGuardSetting
+  - GP 名称：控制文件系统 API 在读取中的使用
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：DefaultFileSystemReadGuardSetting
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000002
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：DefaultFileSystemReadGuardSetting
+  - 示例值：
+``` xml
+<integer>2</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### DefaultFileSystemWriteGuardSetting
+  #### 控制文件系统 API 在写入中的使用
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  如果将此策略设置为 3，则网站可以使用文件系统 API 请求对主机操作系统的文件系统进行写入访问。 如果将此策略设置为 2，则会拒绝访问。
+
+如果未设置此策略，网站可以请求访问。 用户可以更改此设置。
+
+策略选项映射：
+
+* BlockFileSystemWrite (2) = 不允许任何网站通过文件系统 API 请求对文件和目录的写入权限
+
+* AskFileSystemWrite (3) = 允许网站请求用户授予对文件和目录的写入权限
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 整型
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：DefaultFileSystemWriteGuardSetting
+  - GP 名称：控制文件系统 API 在写入中的使用
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：DefaultFileSystemWriteGuardSetting
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000002
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：DefaultFileSystemWriteGuardSetting
+  - 示例值：
+``` xml
+<integer>2</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### DefaultGeolocationSetting
   #### 默认地理位置设置
   
@@ -1149,7 +1268,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   #### 描述
   先检查 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然后再检查此策略。 选项为 "ClickToPlay" 和 "BlockPlugins"。 如果将此策略设置为 "BlockPlugins"，则所有网站均将拒绝该插件。 点击 "ClickToPlay" 可运行 Flash 插件，但用户需单击占位以启动。
 
-                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                    
 
 如果未设置此策略，会使用 BlockPlugins，用户可以更改此设置。
 
@@ -1364,6 +1483,234 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 示例值：
 ``` xml
 <integer>2</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### FileSystemReadAskForUrls
+  #### 允许在这些网站上通过文件系统 API 进行读取访问
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  通过设置策略，你可以列出一些 URL 模式，指定哪些网站可以通过文件系统 API 请求用户向他们授予对主机操作系统文件系统中的文件或目录的访问权限。
+
+不设置该策略意味着对所有网站应用 [DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting)（如果已设置）。 如果未设置该策略，则应用用户的个人设置。
+
+URL 模式不得与 [FileSystemReadBlockedForUrls](#filesystemreadblockedforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
+
+有关有效 URL 模式的详细信息，请参阅 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 字符串列表
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：FileSystemReadAskForUrls
+  - GP 名称：允许在这些网站上通过文件系统 API 进行读取访问
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：FileSystemReadAskForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### FileSystemReadBlockedForUrls
+  #### 阻止在这些网站上通过文件系统 API 进行读取访问
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  如果设置了此策略，则可以列出一些 URL 模式，指定哪些网站无法通过文件系统 API 请求用户向他们授予对主机操作系统文件系统中的文件或目录的访问权限。
+
+如果未设置此策略，则会对所有网站应用 [DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting)（如果已设置）。 如果未设置该策略，则应用用户的个人设置。
+
+URL 模式不得与 [FileSystemReadAskForUrls](#filesystemreadaskforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
+
+有关有效 URL 模式的详细信息，请参阅 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 字符串列表
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：FileSystemReadBlockedForUrls
+  - GP 名称：阻止在这些网站上通过文件系统 API 进行读取访问
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：FileSystemReadBlockedForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### FileSystemWriteAskForUrls
+  #### 允许在这些网站上对文件和目录进行写入访问
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  如果设置了此策略，则可以列出一些 URL 模式，指定哪些网站可以请求用户向他们授予对主机操作系统文件系统中的文件或目录的写入权限。
+
+如果未设置此策略，则会对所有网站应用 [DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting)（如果已设置）。 如果未设置该策略，则应用用户的个人设置。
+
+URL 模式不得与 [FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
+
+有关有效 URL 模式的详细信息，请参阅 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 字符串列表
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：FileSystemWriteAskForUrls
+  - GP 名称：允许在这些网站上对文件和目录进行写入访问
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：FileSystemWriteAskForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### FileSystemWriteBlockedForUrls
+  #### 阻止在这些网站上对文件和目录进行写入访问
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  如果设置了此策略，则可以列出一些 URL 模式，指定哪些网站无法请求用户向他们授予对主机操作系统文件系统中的文件或目录的写入权限。
+
+如果未设置此策略，则会对所有网站应用 [DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting)（如果已设置）。 如果未设置该策略，则应用用户的个人设置。
+
+URL 模式不得与 [FileSystemWriteAskForUrls](#filesystemwriteaskforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
+
+有关有效 URL 模式的详细信息，请参阅 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 字符串列表
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：FileSystemWriteBlockedForUrls
+  - GP 名称：阻止在这些网站上对文件和目录进行写入访问
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：FileSystemWriteBlockedForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
 ```
   
 
@@ -4459,6 +4806,73 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [返回页首](#microsoft-edge---policies)
 
+  ### PrintingPaperSizeDefault
+  #### 默认打印页面大小
+  
+  
+  #### 支持的版本：
+  - 在 Windows 和 macOS 上自 86 或更高版本起
+
+  #### 描述
+  覆盖默认打印页面大小。
+
+名称应包含列出的格式之一；如果所需的纸张尺寸不在列表中，则名称应包含“自定义”。 如果提供了“自定义”值，则应指定 custom_size 属性。 它描述了所需的高度和宽度（以微米为单位）。 否则，则不应指定 custom_size 属性。 违反这些规则的策略将被忽略。
+
+如果该页面大小在用户选择的打印机上不可用，则将忽略此策略。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - Dictionary
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：PrintingPaperSizeDefault
+  - GP 名称：默认打印页面大小
+  - GP 路径（强制）：管理模板/Microsoft Edge/打印
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：PrintingPaperSizeDefault
+  - 值类型：REG_SZ
+  ##### 示例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
+  "custom_size": {
+    "height": 297000, 
+    "width": 210000
+  }, 
+  "name": "custom"
+}
+```
+
+
+  #### Mac 信息和设置
+  - 首选项项名称：PrintingPaperSizeDefault
+  - 示例值：
+``` xml
+<key>PrintingPaperSizeDefault</key>
+<dict>
+  <key>custom_size</key>
+  <dict>
+    <key>height</key>
+    <integer>297000</integer>
+    <key>width</key>
+    <integer>210000</integer>
+  </dict>
+  <key>name</key>
+  <string>custom</string>
+</dict>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### UseSystemPrintDialog
   #### 使用系统打印对话框打印
   
@@ -5288,11 +5702,11 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果未配置此策略，则将启用新选项卡页面上的所有背景图像类型。
 
-             
+    
 
-           
+     
 
-            
+   
 
 策略选项映射：
 
@@ -5341,14 +5755,15 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   [返回页首](#microsoft-edge---policies)
 
   ### NewTabPageCompanyLogo
-  #### 设置新选项卡页公司徽标（已弃用）
-  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
+  #### 设置新选项卡页公司徽标（已过时）
+                                                                                                                 
   
+  >已过时：该策略已过时，Microsoft Edge 版本 85 后将无法正常工作。
   #### 支持的版本：
-  - 在 Windows 和 macOS 上自 79 或更高版本起
+  - 在 Windows 和 macOS 上自 79 起至 85
 
   #### 描述
-  弃用此策略，因为它无法正常工作，建议不要使用它。 在 Microsoft Edge version 86 将不起作用。
+  由于操作要求的更改，此策略未按预期工作。 因此，它已过时，不应使用。
 
 指定要在 Microsoft Edge 的新选项卡页上使用的公司徽标。
 
@@ -5375,7 +5790,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   #### Windows 信息和设置
   ##### 组策略 (ADMX) 信息
   - GP 唯一名称：NewTabPageCompanyLogo
-  - GP 名称：设置新选项卡页公司徽标（已弃用）
+  - GP 名称：设置新选项卡页公司徽标（已过时）
   - GP 路径（强制）：管理模板/Microsoft Edge/启动、主页和新选项卡页
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -6807,17 +7222,17 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
  
 
-            
+   
 
-        
+  
 
-      
+   
 
-        
+  
 
-       
+    
 
-       
+    
 
 无论此策略的值如何，Microsoft Edge 旧版中的浏览器数据将始终在首次运行时以静默方式迁移。
 
@@ -7101,7 +7516,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
 
 如果没有设置此策略，则只有用户已经指定为自动打开的文件类型才会在下载时自动打开。
 
-                                                     
+              
 
 此策略仅在加入 Microsoft Active Directory 域的 Windows 实例、已注册设备管理的 Windows 10 专业版或企业版实例，或者通过 MDM 托管或通过 MCX 加入域的 macOS 实例上可用。
 
@@ -8165,7 +8580,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 
 如果未配置此策略，则不会对可接受的服务和导出目标强制实施任何限制。
 
-              
+     
 
 策略选项映射：
 
@@ -9504,7 +9919,7 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
 ```
 
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
-                                              
+             
 ```
 
 
@@ -9753,7 +10168,7 @@ SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "Exampl
 
   ### EnableDomainActionsDownload
   #### 启用 Microsoft 中的域操作下载（已过时）
-        
+  
   
   
   
@@ -10574,7 +10989,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
   ### ForceNetworkInProcess
   #### 强制网络代码在浏览器进程中运行（已过时）
-        
+  
   
   
   
@@ -12645,7 +13060,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 在 Windows 7、Windows 8 和 macOS 上，此策略控制使用情况和故障相关数据的发送。 如果未配置此策略，Microsoft Edge 将默认使用用户首选项。
 
 若要启用此策略，必需将 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 设置为“启用”。 如果 [MetricsReportingEnabled](#metricsreportingenabled) 或 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 未配置或已禁用，则不会将此数据发送到 Microsoft。
-                                            
+           
 
 此策略仅在加入 Microsoft Active Directory 域的 Windows 实例、已注册设备管理的 Windows 10 专业版或企业版实例，或者通过 MDM 托管或通过 MCX 加入域的 macOS 实例上可用。
 
@@ -13687,11 +14102,11 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 ```
 
 
-     
-     
+  
+  
    
  
-    
+ 
    
   
 
@@ -13739,8 +14154,8 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 ```
 
 
-     
-     
+  
+  
    
  
  
@@ -14281,7 +14696,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 在 Windows 7、Windows 8 和 macOS 上，此策略控制发送有关已访问网站的信息。 如果未配置此策略，Microsoft Edge 将默认使用用户首选项。
 
 若要启用此策略，必需将 [MetricsReportingEnabled](#metricsreportingenabled) 设置为“已启用”。 如果 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 或 [MetricsReportingEnabled](#metricsreportingenabled) 未配置或已禁用，则不会将此数据发送到 Microsoft。
-                                           
+             
 
   #### 支持的功能：
   - 可以强制：是
@@ -15081,9 +15496,9 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 
 如果禁用此策略，Microsoft Edge 将对使用本地安装的 CA 证书进行身份验证的连接禁用这些安全保护。 对于通过公共信任的 CA 证书进行身份验证的连接，始终启用这些保护。
 
-                                                               
+                                                            
 
-                                                    
+             
 
 此策略可用于测试任何受影响的代理并对其进行升级。 受影响的代理预期会连接失败，并且出现错误代码 ERR_TLS13_DOWNGRADE_DETECTED。
 
@@ -16028,7 +16443,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   ### WebComponentsV0Enabled
   #### 重新启用 Web Components v0 API 直至 M84（已过时）
-        
+  
   
   
   
@@ -16081,7 +16496,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   ### WebDriverOverridesIncompatiblePolicies
   #### 允许 WebDriver 替代不兼容的策略（已过时）
-        
+  
   
   
   
