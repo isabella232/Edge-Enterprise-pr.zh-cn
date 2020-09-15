@@ -3,19 +3,19 @@ title: Microsoft Edge 企业隐私设置
 ms.author: likravit
 author: dan-wesley
 manager: srugh
-ms.date: 05/26/2020
+ms.date: 09/09/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 配置 Microsoft Edge 企业隐私设置
-ms.openlocfilehash: 2b7a33087ae5110c53d18b3192486d4ae62fa540
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 25b475206734634df9995f568a6d4e8c52e9f9de
+ms.sourcegitcommit: 16984537c8f5c9c60e92f41f0f869231fb79ccd0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979358"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "11005490"
 ---
 # 配置 Microsoft Edge 策略以支持企业隐私
 
@@ -23,20 +23,45 @@ Microsoft 致力于为企业提供在 Microsoft Edge 中进行与数据收集相
 
 ## 概述
 
-默认情况下，部署在非 Windows 平台上的 Microsoft Edge 不会将诊断数据或网站信息发送到 Microsoft。 将 Microsoft Edge 部署到 Windows 10 时，默认会根据用户的 [Windows 诊断数据设置](https://go.microsoft.com/fwlink/?linkid=2099569)发送诊断数据。
+将 Microsoft Edge 部署到 Windows 10 时，默认会根据用户的 [Windows 诊断数据设置](https://go.microsoft.com/fwlink/?linkid=2099569)发送诊断数据。
 
-你也可以使用以下组策略配置 Microsoft Edge 处理组织数据收集的方式：
+将 Microsoft Edge 部署到非 Windows 平台上时，将按照以下组策略的设置收集诊断数据：
 
-- [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled)：启用使用情况和故障相关数据报告。
-- [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)：发送站点信息以改进 Microsoft 服务。
+- （已弃用）[MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled)：启用使用情况和故障相关数据报告。 此策略将在 Microsoft Edge 版本 89 中过时。
+- （已弃用）[SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)：发送站点信息以改进 Microsoft 服务。 此策略将在 Microsoft Edge 版本 89 中过时。
+
+之前已弃用的策略将被 Windows 10 上的[允许遥测](https://go.microsoft.com/fwlink/?linkid=2099569)和所有其他平台的[DiagnosticData](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#diagnosticdata) 策略取代。  
 
 ## 配置策略设置
 
 开始之前，请先下载并使用最新的 Microsoft Edge 策略模板（有关详细信息，请参阅[配置 Microsoft Edge](configure-microsoft-edge.md)。）
 
-### 启用使用情况和故障相关数据报告
+### 发送有关浏览器使用情况的必需和可选诊断数据
 
-此策略允许向 Microsoft 发送关于 Microsoft Edge 的使用情况和故障相关数据的报告。
+如果已配置 [DiagnosticData](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#diagnosticdata) 策略，则其优先级高于 [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) 和[SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)。
+
+#### 必需和可选诊断数据
+
+收集必需诊断数据可确保 Microsoft Edge 安全、最新且按预期运行。
+
+可选诊断数据包括有关如何使用浏览器、访问的网站和崩溃报告的数据，以帮助保持 Microsoft Edge 安全、最新且按预期运行，同时用于为所有用户改进 Microsoft Edge 和其他 Microsoft 产品和服务。
+
+> [!NOTE]
+> Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据收集，IT 管理员必须使用 Windows 诊断数据组策略。 根据 Windows 版本的不同，此策略将为**允许遥测**或**允许诊断数据**。 详细了解 [Windows 10 诊断数据收集](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization)。
+
+使用以下设置之一配置 **DiagnosticData**：
+
+- 关闭（不推荐）(0) 会关闭必需和可选诊断数据收集。 
+- 必需数据 (1) 会发送必需诊断数据，但关闭可选诊断数据收集。 Microsoft Edge 会发送必需诊断数据，以确保 Microsoft Edge 安全、最新且按预期运行。 
+- 可选数据 (2) 会发送可选诊断数据，包括有关浏览器使用情况、访问的网站和发送到 Microsoft 的崩溃报告的数据，以帮助保持 Microsoft Edge 安全、最新且按预期运行，同时用于为所有用户改进 Microsoft Edge 和其他 Microsoft 产品和服务。
+
+对于 Windows 7、Windows 8/8.1 和 macOS，此策略控制向 Microsoft 发送必需和可选数据。
+
+如果未配置或已禁用此策略，Microsoft Edge 将默认使用用户首选项。
+
+### （已弃用）启用使用情况和故障相关数据报告
+
+**MetricsReportingEnabled** 策略允许向 Microsoft 发送关于 Microsoft Edge 的使用情况和故障相关数据的报告。
 
 Microsoft Edge 收集一系列必需的数据，以确保产品保持最新状态、安全可靠且正常运行。 此数据包括来自 Microsoft Edge 的有关 Microsoft Edge 安装的当前数据收集许可、应用版本和安装状态的基本设备连接和配置信息。通过禁用策略可关闭此数据集合。
 
@@ -46,15 +71,17 @@ Microsoft Edge 收集一系列必需的数据，以确保产品保持最新状�
 
 - 如果未配置此策略，Microsoft Edge 将默认使用 Windows 诊断数据设置。
 - 如果启用此策略，则只有将 Windows 诊断数据设置设为**增强**或**完整**时，Microsoft Edge 才会发送使用情况数据。
+  - 如果启用此策略，Microsoft Edge 将仅发送使用情况数据（如果 [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices) 也处于启用状态）。
 - 如果禁用此策略，Microsoft Edge 将不会发送使用情况数据。 基于 Windows 诊断数据设置发送故障相关数据。 [详细了解 Windows 诊断数据设置](https://go.microsoft.com/fwlink/?linkid=2099569)。
 
 在 Windows 7、8 和 macOS 上运行 Microsoft Edge 时：
 
 - 如果未配置此策略，Microsoft Edge 将默认使用用户的首选项。
+-  如果启用此策略，Microsoft Edge 将仅发送使用情况数据（如果 [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices) 也处于启用状态）。
 
-### 发送站点信息以改进 Microsoft 服务
+### （已弃用）发送站点信息以改进 Microsoft 服务
 
-此策略支持将有关在 Microsoft Edge 中访问的网站的信息发送到 Microsoft，以改进 Microsoft 产品和服务（如搜索）。
+**SendSiteInformationToImproveServices** 策略允许向 Microsoft 发送关于在 Microsoft Edge 中访问的网站的信息，以改进 Microsoft 产品和服务（如搜索）。
 
 启用此策略可将有关在 Microsoft Edge 中访问的网站的信息发送到 Microsoft。 禁用此策略以便不将有关在 Microsoft Edge 中访问的网站的信息发送到 Microsoft。 在这两种情况下，用户不能更改或覆盖设置。
 
@@ -62,31 +89,31 @@ Microsoft Edge 收集一系列必需的数据，以确保产品保持最新状�
 
 - 如果未配置此策略，Microsoft Edge 将默认使用 Windows 诊断数据设置。
 - 如果启用此策略，则只有将 Windows 诊断数据设置设为**完整**时，Microsoft Edge 才会发送有关所访问网站的信息。
+  - 如果启用此策略，Microsoft Edge 将仅发送使用情况数据（如果 [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) 也处于启用状态）。 
 - 如果禁用此策略，Microsoft Edge 将不会发送有关所访问网站的信息。 要[详细了解 Windows 诊断数据设置](https://go.microsoft.com/fwlink/?linkid=2099569)，请执行以下操作。
 
 在 Windows 7、8 和 macOS 上运行 Microsoft Edge 时：
 
+- 如果启用此策略，Microsoft Edge 将仅发送使用情况数据（如果 [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) 也处于启用状态）。
 - 如果未配置此策略，Microsoft Edge 将默认使用用户的首选项。
 
 ## 实现详细信息
 
-为了让 Windows 10 了解我们的实现及其对 Windows 诊断数据设置的依赖性，下表介绍了相关配置（如果未配置**启用使用情况和故障相关数据报告**和**发送站点信息以改进 Microsoft 服务**）。
+对于非 Windows 10 设备： 
+- 如果已配置 [DiagnosticData](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#diagnosticdata) 策略，则其优先级高于 [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) 和[SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)。 
+- 如果未配置 [DiagnosticData](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#diagnosticdata) 策略，Microsoft Edge将侦听 [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) 和[SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)。  
 
-| Windows 诊断数据设置 | 启用使用情况和故障相关数据报告 | 发送站点信息以改进 Microsoft 服务 |
+为了让 Windows 10 了解我们依赖 Windows 诊断数据设置的实现，下表列出了是否将 **必需**和**可选** 诊断数据发送到 Microsoft。
+
+| Windows 诊断数据设置 | 必需诊断数据  | 可选诊断数据 |
 |---------------------------------|-----------------------------------------------|-----------------------------------------------------|
 | 安全性                        | 未发送                                      | 未发送                                            |
-| 基本                           | 未发送                                      | 未发送                                            |
+| 基本                           | 已发送                                      | 未发送                                            |
 | 增强                        | 已发送                                          | 未发送                                            |
 | 完整                            | 已发送                                          | 已发送                                                |
 
-根据先前的表，如果 Windows 10 的配置不正确，我们将恢复为较小的数据收集设置。
-
-例如：
-
-- 将“启用使用情况和故障相关数据报告”策略设置为**已启用**，但将 Windows 诊断数据设置设为**基本**。 我们不会发送使用情况和故障相关数据。
-- 已将“发送网站信息以改进 Microsoft 服务”策略设置为**已禁用**，但将 Windows 诊断数据设置设为**完整**。 我们不会发送有关所访问网站的信息。
-
-对先前设置的正确实现方法是将“启用使用情况和故障相关数据报告”策略设为**已启用**，然后将 Windows 诊断数据设置设为**增强**或**完整**。
+> [!IMPORTANT]
+> Microsoft Edge 将支持适用于 Microsoft Edge 版本86 – 88（含）的 **MetricsReportingEnabled**  和** SendSiteInfoToImproveServices**。 在 Microsoft Edge 版本 89 中，将不再支持 **MetricsReportingEnabled**  和 **SendSiteInfoToImproveServices**，并且将默认为非 Windows 10 平台使用 **DiagnosticData**，或默认为 Windows 10 使用**允许遥测**策略。
 
 ## 其他隐私策略选项
 
