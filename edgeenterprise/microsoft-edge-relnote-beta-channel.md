@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: 2bcd18cd18c9b5be1f4b3b39137aea09889bbc2f
-ms.sourcegitcommit: db44b524973df8ac811b09e6b71c25be9ba92bbc
+ms.openlocfilehash: 75ae113b7e4b39a76b70d9c0f85bc484f63e3c1a
+ms.sourcegitcommit: 468b75d86803ad1531d7bed8e6c1a562a00ebe50
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "11015358"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "11026892"
 ---
 # Microsoft Edge Beta 渠道的发行说明
 
@@ -35,7 +35,6 @@ ms.locfileid: "11015358"
 * **Internet Explorer 模式：**
 
    * 让用户使用 Microsoft Edge 用户界面 (UI) 在 Internet Explorer 模式下测试网站。 从Microsoft Edge 版本 86 开始，管理员可以为用户启用一个 UI 选项，让用户在 Internet Explorer 模式加载一个选项卡，以进行测试，或者在网站被添加到网站列表的 XML 中之前作为替代。
-   * 让用户在需要 IE 模式的网站上提供反馈。 用户可使用 Microsoft Edge UI 选项向你发送反馈。 你可以将此 UI 选项配置为通过组策略可见，然后选择想要如何接收此信息（通过电子邮件或自定义表单）。
 
 * **使用下载管理器从磁盘删除下载。** 用户现在无需离开浏览器即可从磁盘中删除其载的文件。 全新“删除下载”功能位于下载架或下载页面的弹出菜单中。
 
