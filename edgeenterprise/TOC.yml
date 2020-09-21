@@ -1,4 +1,4 @@
-# last revised 09/02/2020
+# last revised 09/20/2020
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -59,8 +59,6 @@
           href: microsoft-edge-sysupdate-windows-updates.md
 - name: 部署 Microsoft Edge
   items:
-    - name: 视频 - 部署 Microsoft Edge
-      href: microsoft-edge-video-deploy.md
     - name: 使用配置服务器部署到 Windows
       href: 'https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
     - name: 使用 Intune 部署到 Windows
@@ -83,8 +81,6 @@
       href: configure-microsoft-edge-on-mac-jamf.md
 - name: 使用 Microsoft Edge 企业版功能
   items:
-    - name: 视频 - Microsoft Edge 和 Microsoft 搜索
-      href: microsoft-edge-video-search.md
     - name: 配置和试验
       href: edge-configuration-and-experiments.md
     - name: 身份支持和配置
@@ -115,8 +111,6 @@
           href: edge-ie-mode-faq.md
 - name: Microsoft Edge 安全
   items:
-    - name: 视频-安全性、兼容性和可管理性
-      href: microsoft-edge-video-security-compatibility-manageability.md
     - name: 安全性概述
       href: security-overview.md
     - name: Microsoft Edge 终结点的允许列表
@@ -163,5 +157,15 @@
           href: edge-learnmore-create-user-directory-vars.md
         - name: 使用 Microsoft Edge 回退 for 企业版
           href: edge-learnmore-rollback.md
+- name: Microsoft Edge 视频
+  items:
+    - name: Microsoft Edge 视频集合
+      href: microsoft-edge-videos.md
+    - name: 视频 - 部署 Microsoft Edge
+      href: microsoft-edge-video-deploy.md
+    - name: 视频 - Microsoft Edge 和 Microsoft 搜索
+      href: microsoft-edge-video-search.md
+    - name: 视频-安全性、兼容性和可管理性
+      href: microsoft-edge-video-security-compatibility-manageability.md
 - name: 常见问题
   href: faqs-edge-in-the-enterprise.md
