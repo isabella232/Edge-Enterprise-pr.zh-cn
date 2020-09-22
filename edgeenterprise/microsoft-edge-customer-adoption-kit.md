@@ -3,25 +3,25 @@ title: Microsoft Edge 客户采用材料
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 06/30/2020
+ms.date: 09/20/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 客户采用材料
-ms.openlocfilehash: ce3db319fb813e069131700b8de97c51e510333a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 219316b6c89d73b25a7d34eac3bee88b16857f2b
+ms.sourcegitcommit: 8e350aa719ccdb0a8c76c1c145875efff28a8f23
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979371"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "11030609"
 ---
 # Microsoft Edge 的客户采用材料
 
-为支持新 Microsoft Edge 的部署和采用，请查看以下已收集材料和资源。
+为支持新 Microsoft Edge 的部署和采用，请参阅以下已收集材料和资源。 将提供已收集的 Zip 文件供你下载。
 
-有其他材料可用时，请返回查看。
+有其他可用材料时，请返回查看。
 
 ## 客户采用工具包
 
@@ -29,31 +29,43 @@ ms.locfileid: "10979371"
 
 - IT 部署指南
 - 用户入门指南
+- 公告电子邮件
+- 提示与技巧电子邮件
 - 数字标牌
 
-## IT 部署指南
+> [!NOTE]
+> 正在更新采用工具包资料，更新完成后将提供下载。
+<!--
+[Download customer adoption kit](https://download.microsoft.com/download/0/4/2/0426ffdf-e33c-4177-b0f8-a13a43719c63/Commercial%Adoption%Kit%-%Microsoft%Edge.zip)-->
+
+### IT 部署指南
 
 使用本指南开始部署计划，了解如何在你的环境中开始部署 Microsoft Edge。
 
-[获取《 IT 部署指南》](media/customer-adoption-not-md/commercial-deployment-guide-microsoft-edge.pdf)
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-deployment-guide-4.png" alt-text="Microsoft Mechanics 视频系列":::
 
-## 用户入门指南
+### 用户入门指南
 
 使用本指南对新 Microsoft Edge 的用户进行培训。 这本指南包括 UI、菜单和功能概览。 指南里还包括帮助用户入门的提示。
 
-[获取《用户入门指南》](media/customer-adoption-not-md/microsoft-edge-how-to-get-started-user-guide.pdf)
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-get-started-guide.png" alt-text="用户入门指南…":::
 
-## 数字标牌
+### 电子邮件模板
 
-使用以下数字标牌，通知用户有关新 Microsoft Edge 的信息。
+使用这些电子邮件模板宣布新的 Microsoft Edge 可供用户使用，并提供有关如何充分利用浏览器的提示和技巧。
 
-[Microsoft Edge – 企业版新选项卡页](media/customer-adoption-not-md/microsoft-edge-digital-signage-enterprise-new-tab-page.pdf)
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-email-template.png" alt-text="提示和技巧的电子邮件模板":::
 
-[Microsoft Edge – 多个配置文件和跨平台](https://officedocs-cdn.azureedge.net/microsoft-edge-digital-signage-multiple-profiles-and-cross-platform.pdf)
+### 数字标牌
 
-[Microsoft Edge – 必应中的 Microsoft 搜索](https://officedocs-cdn.azureedge.net/microsoft-edge-digital-signage-microsoft-search-in-bing.pdf)
+使用以下数字标牌，通知用户有关新 Microsoft Edge 的信息：
 
-[Microsoft Edge – 安全性](media/customer-adoption-not-md/microsoft-edge-digital-signage-security.pdf)
+- 企业版新选项卡页面
+- 多个配置文件和跨平台
+- Microsoft 必应搜索
+- 安全性
+
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-new-tab-page.png" alt-text="“新建选项卡”页面":::
 
 ## 其他学习资源
 
