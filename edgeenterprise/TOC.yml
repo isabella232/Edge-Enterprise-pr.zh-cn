@@ -1,4 +1,4 @@
-# last revised 09/20/2020
+# last revised 09/21/2020
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -89,6 +89,8 @@
       href: microsoft-edge-enterprise-state-roaming.md
     - name: Microsoft Edge 展台模式
       href: microsoft-edge-kiosk-mode.md
+    - name: 配置 Microsoft Edge 展台模式
+      href: microsoft-edge-configure-kiosk-mode.md
     - name: Microsoft Edge 同步
       href: microsoft-edge-enterprise-sync.md
     - name: Active Directory 用户的本地同步
@@ -111,6 +113,8 @@
           href: edge-ie-mode-faq.md
 - name: Microsoft Edge 安全
   items:
+    - name: 企业的安全性
+      href: ms-edge-security-for-business.md
     - name: 安全性概述
       href: security-overview.md
     - name: Microsoft Edge 终结点的允许列表
