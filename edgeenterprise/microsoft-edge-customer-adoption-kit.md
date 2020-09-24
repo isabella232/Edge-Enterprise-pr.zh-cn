@@ -3,19 +3,19 @@ title: Microsoft Edge 客户采用材料
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 09/20/2020
+ms.date: 09/22/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 客户采用材料
-ms.openlocfilehash: 219316b6c89d73b25a7d34eac3bee88b16857f2b
-ms.sourcegitcommit: 8e350aa719ccdb0a8c76c1c145875efff28a8f23
+ms.openlocfilehash: 68b984faad3b36c0926ece070ca052e81e764e0e
+ms.sourcegitcommit: 858227653fc89532d1d274735f53280e27b2a8c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "11030609"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "11072629"
 ---
 # Microsoft Edge 的客户采用材料
 
@@ -33,10 +33,7 @@ ms.locfileid: "11030609"
 - 提示与技巧电子邮件
 - 数字标牌
 
-> [!NOTE]
-> 正在更新采用工具包资料，更新完成后将提供下载。
-<!--
-[Download customer adoption kit](https://download.microsoft.com/download/0/4/2/0426ffdf-e33c-4177-b0f8-a13a43719c63/Commercial%Adoption%Kit%-%Microsoft%Edge.zip)-->
+[下载客户采用工具包](https://www.microsoft.com/download/details.aspx?id=102119)
 
 ### IT 部署指南
 
