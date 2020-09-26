@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 0561f403bb385792767c3666be18bb6cf680edaf
+ms.openlocfilehash: 146043b518f02b8581498c273db4327682993609
 ms.sourcegitcommit: d4f2b62b41f0e40ec6b22aeca436b2c261658bd8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "11078120"
+ms.locfileid: "11078163"
 ---
 # Microsoft Edge - 策略
 最新版本的 Microsoft Edge 包含以下策略。 可以使用这些策略来配置在你的组织中运行 Microsoft Edge 的方式。
@@ -1269,8 +1269,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   先检查 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然后再检查此策略。 选项为 "ClickToPlay" 和 "BlockPlugins"。 如果将此策略设置为 "BlockPlugins"，则所有网站均将拒绝该插件。 点击 "ClickToPlay" 可运行 Flash 插件，但用户需单击占位以启动。
 
 如果未配置此策略，用户可以手动更改此设置。
-
-                                                                                     
 
 注意：仅对 [PluginsAllowedForUrls](#pluginsallowedforurls) 策略中显式列出的域允许自动播放。 若要为所有网站打开"自动播放"，请将 http://* 和 https://* 添加到允许的 URL 列表中。
 
@@ -3257,7 +3255,6 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 - "地址栏" （"重定向"），新建选项卡页面搜索框使用地址栏在新选项卡上搜索。
 
 策略选项映射：
-  
 
 * bing (bing) = 搜索框（推荐）
 
@@ -4411,12 +4408,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 ```
 
 
-  
-  
-   
- 
- 
-   
   
 
   [返回页首](#microsoft-edge---policies)
@@ -5702,12 +5693,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果未配置此策略，则将启用新选项卡页面上的所有背景图像类型。
 
-    
-
-     
-
-   
-
 策略选项映射：
 
 * DisableImageOfTheDay (1) = 禁用每日背景图像类型
@@ -5756,7 +5741,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   ### NewTabPageCompanyLogo
   #### 设置新选项卡页公司徽标（已过时）
-                                                                                                                 
   
   >已过时：该策略已过时，Microsoft Edge 版本 85 后将无法正常工作。
   #### 支持的版本：
@@ -6641,8 +6625,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
 如果禁用此策略或未配置此策略，则不允许页面在页面关闭期间发送同步 XHR 请求。
 
-  
-
   #### 支持的功能：
   - 可以强制：是
   - 可以推荐：否
@@ -7220,20 +7202,6 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
   #### 描述
   如果启用此策略，则指定浏览器中所有支持的数据类型和设置将在首次运行时以静默方式自动导入。 在首次运行体验期间，也将跳过导入部分。
 
- 
-
-   
-
-  
-
-   
-
-  
-
-    
-
-    
-
 无论此策略的值如何，Microsoft Edge 旧版中的浏览器数据将始终在首次运行时以静默方式迁移。
 
 如果此策略设置为 'FromDefaultBrowser'，则将导入与受管理设备上的默认浏览器对应的数据类型。
@@ -7264,7 +7232,6 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
 如果该策略设置 'FromSafari' 的值，则不再将用户数据导入 Microsoft Edge。 这是由于 Mac 上的完全磁盘访问工作方式造成的。
 在 macOS Mojave 及更高版本上，再也不可能自动将 Safari 数据导入到 Microsoft Edge 中。
- 
 
 从 Microsoft Edge 83 版开始，如果此策略设置为 'FromMozillaFirefox' 的值，则将从 Mozilla Firefox 导入以下数据类型：
 1. 收藏夹或书签
@@ -7515,8 +7482,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
 用户已经指定自动打开的文件类型将在下载时继续打开。 用户将继续能够指定自动打开的其他文件类型。
 
 如果没有设置此策略，则只有用户已经指定为自动打开的文件类型才会在下载时自动打开。
-
-              
 
 此策略仅在加入 Microsoft Active Directory 域的 Windows 实例、已注册设备管理的 Windows 10 专业版或企业版实例，或者通过 MDM 托管或通过 MCX 加入域的 macOS 实例上可用。
 
@@ -8202,10 +8167,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
   #### 描述
   此策略已弃用，因为它仅作为一种短期机制提供，目的是让企业能够在发现与内置证书验证程序不兼容时有更多的时间来更新环境和报告问题。
- 
-  
-
-  
 
 在 Microsoft Edge 版本 87 将不起作用，因此计划在 Mac OS X 中删除此策略。
 
@@ -8579,8 +8540,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 如果启用此策略，将阻止与指定列表匹配的服务和导出目标。
 
 如果未配置此策略，则不会对可接受的服务和导出目标强制实施任何限制。
-
-     
 
 策略选项映射：
 
@@ -9049,8 +9008,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
   - 在 Windows 7 和 macOS 上自 77 或更高版本起
 
   #### 描述
-   
-
   如果将此策略设置为 true，Microsoft Edge 将检查它是否为默认浏览器，并且在可能的情况下会自动注册。
 
 如果将此策略设置为 False，则会阻止 Microsoft Edge 检查其是否为默认值，并将关闭此选项的用户控件。
@@ -9917,9 +9874,7 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   - 值类型：REG_SZ
   ##### 示例值：
 ```
-
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
-             
 ```
 
 
@@ -10168,9 +10123,6 @@ SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "Exampl
 
   ### EnableDomainActionsDownload
   #### 启用 Microsoft 中的域操作下载（已过时）
-  
-  
-  
   
   >已过时：该策略已过时，Microsoft Edge 版本 84 后将无法正常工作。
   #### 支持的版本：
@@ -10990,10 +10942,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   ### ForceNetworkInProcess
   #### 强制网络代码在浏览器进程中运行（已过时）
   
-  
-  
-  
-  
   >已过时：该策略已过时，Microsoft Edge 版本83 后将无法正常工作。
   #### 支持的版本：
   - 在 78 版至83版本的 Windows 上
@@ -11005,10 +10953,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
 默认情况下，此策略处于禁用状态。 如果启用，则在网络进程被沙盒屏蔽时，用户会遇到安全问题。
 
-
- 
-
-  
   #### 支持的功能：
   - 可以强制：是
   - 可以推荐：否
@@ -12484,7 +12428,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2105106](https://go.microsoft.com/fwlink/?linkid=2105106)
 
 策略选项映射：
-  
 
 * Default (0) = 默认值
 
@@ -12534,13 +12477,13 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   #### 描述
   此策略是 “ie-mode-test” 标志策略的替代项。 它允许用户从 UI 菜单选项中打开 IE 模式选项卡。
 
-  此设置与以下策略配合使用：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) （设置为 'IEMode'） 和 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 策略 （列表至少有一个条目）。
+       此设置与以下策略配合使用：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) （设置为 'IEMode'） 和 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 策略 （列表至少有一个条目）。
 
-  如果启用此策略，用户可以从 UI 选项打开“IE 模式”选项卡，并将“当前网站”导航到 IE 模式网站。
+       如果启用此策略，用户可以从 UI 选项打开“IE 模式”选项卡，并将“当前网站”导航到 IE 模式网站。
 
-  如果禁用此策略，用户将不能直接看到菜单中的 UI 选项。 
-  
-  如果未配置此策略，则可以手动设置 “ie-mode-test” 标志。
+       如果禁用此策略，用户将不能直接看到菜单中的 UI 选项。
+
+       如果未配置此策略，则可以手动设置 “ie-mode-test” 标志。
 
   #### 支持的功能：
   - 可以强制：是
@@ -13042,8 +12985,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   ### MetricsReportingEnabled
   #### 启用使用情况和故障相关数据报告（已弃用）
   >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
-   
-  
   
   #### 支持的版本：
   - 在 Windows 和 macOS 上自 77 或更高版本起
@@ -13060,11 +13001,9 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 在 Windows 7、Windows 8 和 macOS 上，此策略控制使用情况和故障相关数据的发送。 如果未配置此策略，Microsoft Edge 将默认使用用户首选项。
 
 若要启用此策略，必需将 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 设置为“启用”。 如果 [MetricsReportingEnabled](#metricsreportingenabled) 或 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 未配置或已禁用，则不会将此数据发送到 Microsoft。
-           
 
 此策略仅在加入 Microsoft Active Directory 域的 Windows 实例、已注册设备管理的 Windows 10 专业版或企业版实例，或者通过 MDM 托管或通过 MCX 加入域的 macOS 实例上可用。
 
-  
   #### 支持的功能：
   - 可以强制：是
   - 可以推荐：否
@@ -13301,53 +13240,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
   
 
-
- 
-   
- 
-
-   
-  
-
-   
-
-   
-
-  
- 
-  
- 
-
-  
-   
-
-   
-  
-   
-   
-  
-   
- 
-   
-   
-   
-  
- 
- 
-   
- 
-   
-
-
-  
-  
-   
- 
- 
-   
-  
-
- 
   [返回页首](#microsoft-edge---policies)
 
   ### OverrideSecurityRestrictionsOnInsecureOrigin
@@ -14103,12 +13995,6 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
 
   
-  
-   
- 
- 
-   
-  
 
   [返回页首](#microsoft-edge---policies)
 
@@ -14154,12 +14040,6 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 ```
 
 
-  
-  
-   
- 
- 
-   
   
 
   [返回页首](#microsoft-edge---policies)
@@ -14677,8 +14557,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   ### SendSiteInfoToImproveServices
   #### 发送站点信息以改进 Microsoft 服务（已弃用）
   >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
-   
-  
   
   #### 支持的版本：
   - 在 Windows 和 macOS 上自 77 或更高版本起
@@ -14688,7 +14566,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
 此策略允许向 Microsoft 发送有关在 Microsoft Edge 中访问过的网站的信息，以改进搜索等服务。
 
-   
 启用此策略后，可将有关在 Microsoft Edge 中访问过的网站的信息发送给 Microsoft。 禁用此策略后，不会向 Microsoft 发送有关在 Microsoft Edge 中访问过的网站的信息。 在这两种情况下，用户不能更改或覆盖设置。
 
 在 Windows 10 上，如果未配置此策略，Microsoft Edge 将默认使用 Windows 诊断数据设置。 启用此策略后，如果 Windows 诊断数据设置设为“完整”，Microsoft Edge 将仅发送有关在 Microsoft Edge 中访问过的网站的信息。 如果禁用此策略，Microsoft Edge 将不会发送有关所访问网站的信息。 详细了解 Windows 诊断数据设置：[https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
@@ -14696,7 +14573,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 在 Windows 7、Windows 8 和 macOS 上，此策略控制发送有关已访问网站的信息。 如果未配置此策略，Microsoft Edge 将默认使用用户首选项。
 
 若要启用此策略，必需将 [MetricsReportingEnabled](#metricsreportingenabled) 设置为“已启用”。 如果 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 或 [MetricsReportingEnabled](#metricsreportingenabled) 未配置或已禁用，则不会将此数据发送到 Microsoft。
-             
 
   #### 支持的功能：
   - 可以强制：是
@@ -14982,8 +14858,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
 指定是否在收藏夹栏中包含 Office.com 的快捷方式。 For users signed into Microsoft Edge the shortcut takes users to their Microsoft Office apps and docs. If you enable or don't configure this policy, users can choose whether to see the shortcut by changing the toggle in the favorites bar context menu.
 If you disable this policy, the shortcut isn't shown.
-
-                                                       
 
   #### 支持的功能：
   - 可以强制：是
@@ -15291,8 +15165,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
 此策略不会影响音频、视频和图像以外其他类型的混合内容。
 
-
-  
   #### 支持的功能：
   - 可以强制：是
   - 可以推荐：否
@@ -15387,8 +15259,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   #### 描述
   禁用 Microsoft Edge 中的数据同步。 此策略还可防止出现同步同意提示。
 
-
- 
 如果未设置此策略或未按建议应用此策略，用户将能够打开或关闭同步。 如果将此策略应用为强制，用户将无法打开同步。
 
   #### 支持的功能：
@@ -15483,7 +15353,6 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
   ### TLS13HardeningForLocalAnchorsEnabled
   #### 为本地信任密钥启用 TLS 1.3 安全功能（已过时）
   
-  
   >已过时：该策略已过时，Microsoft Edge 版本 85 后将无法正常工作。
   #### 支持的版本：
   - 在 Windows 和 macOS 上，自 81 起至 85
@@ -15496,10 +15365,6 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 如果启用或未设置此策略，Microsoft Edge 将为所有连接启用这些安全保护。
 
 如果禁用此策略，Microsoft Edge 将对使用本地安装的 CA 证书进行身份验证的连接禁用这些安全保护。 对于通过公共信任的 CA 证书进行身份验证的连接，始终启用这些保护。
-
-                                                            
-
-             
 
 此策略可用于测试任何受影响的代理并对其进行升级。 受影响的代理预期会连接失败，并且出现错误代码 ERR_TLS13_DOWNGRADE_DETECTED。
 
@@ -15763,8 +15628,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 如果禁用或未配置此策略，用户可以设置自己的跟踪防护级别。
 
 策略选项映射：
-   
- 
 
 * TrackingPreventionOff (0) = 关闭（无跟踪防护）
 
@@ -16445,9 +16308,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ### WebComponentsV0Enabled
   #### 重新启用 Web Components v0 API 直至 M84（已过时）
   
-  
-  
-  
   >已过时：该策略已过时，Microsoft Edge 版本 84 后将无法正常工作。
   #### 支持的版本：
   - 在 Windows 和 macOS 上自 80 起至 84
@@ -16498,15 +16358,11 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ### WebDriverOverridesIncompatiblePolicies
   #### 允许 WebDriver 替代不兼容的策略（已过时）
   
-  
-  
-  
   >已过时：该策略已过时，Microsoft Edge 版本 84 后将无法正常工作。
   #### 支持的版本：
   - 在 Windows 和 macOS 上自 77 起至 84
 
   #### 描述
-  
   
 此策略不起作用，因为 WebDriver 现在与所有现有策略兼容。
 
