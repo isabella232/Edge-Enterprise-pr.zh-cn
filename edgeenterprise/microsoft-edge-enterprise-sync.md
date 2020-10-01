@@ -3,19 +3,19 @@ title: Microsoft Edge Enterprise Sync
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 09/15/2020
+ms.date: 09/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Enterprise Sync
-ms.openlocfilehash: d9cd643142d0f6744664a5071c5000b820583e41
-ms.sourcegitcommit: 06c365faeea6070f103fe867cc2da13539ae4680
+ms.openlocfilehash: d5868fb496c036d750925bb5ae6dfa3de0293fd2
+ms.sourcegitcommit: 8a4479a1b034c3c13ea03ee3a2374a1af332cb38
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "11016341"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "11091944"
 ---
 # Microsoft Edge Enterprise Sync
 
@@ -33,8 +33,6 @@ ms.locfileid: "11016341"
 - 地址等（表单填写）
 - 收藏
 - “设置”
-- 浏览历史记录
-- 打开选项卡
 
 用户同意后即可启用同步功能，并且用户可以针对上面列出的每种数据类型打开或关闭同步功能。
 
@@ -80,7 +78,7 @@ ms.locfileid: "11016341"
 
 #### 已同步的数据是否已加密？ 
 
-数据使用 TLS 1.2 或更高版本在传输中加密。 除浏览器历史记录和打开的选项卡数据类型外，大多数数据类型还可以使用 AES256 在 Microsoft 服务中进行静态加密。 若要防止这些数据类型同步，可应用 [SavingBrowserHistoryDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#savingbrowserhistorydisabled) 策略。
+数据使用 TLS 1.2 或更高版本在传输中加密。 大多数的数据类型在休眠时，都会在 Microsoft 服务中使用 AES256 进行额外的加密。 
 
 #### Microsoft Edge 的同步数据存储在哪里？
 
