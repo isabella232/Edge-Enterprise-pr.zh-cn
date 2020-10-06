@@ -3,19 +3,19 @@ title: 适用于企业的 Microsoft Edge 安全
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 09/30/2020
+ms.date: 10/02/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 适用于企业的 Microsoft Edge 安全
-ms.openlocfilehash: 313d1837d85fe23ab910741e28f95b77ffd7029d
-ms.sourcegitcommit: fbfe796b2717573dc221b9d4509a1662d9bbb452
+ms.openlocfilehash: 018353c4f85bc380d85554d058d029dfde959257
+ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "11091681"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "11094736"
 ---
 # 适用于企业的 Microsoft Edge 安全
 
@@ -46,7 +46,7 @@ Microsoft Edge 是 Windows 10 上唯一本机支持硬件隔离功能的浏览�
 
 除了抵御外部威胁之外，IT 管理员还必须防范内部风险。 可靠且大规模地保护敏感公司数据是 IT 管理员的头等大事，尤其是在劳动力分散的情况下。 Microsoft Edge 是唯一一个无需其他软件即可本机支持 Azure AD 条件访问、Windows 信息保护和新的 Microsoft 端点数据丢失防护 (DLP) 的浏览器。
 
-**Microsoft Edge 是唯一本机支持条件访问的浏览器**。 [Microsoft Edge 对条件访问的支持](https://docs.microsoft.com/DeployEdge/security-overview#conditional-access)使组织可以轻松地将身份信号用作其访问控制决策的一部分。 [条件访问](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)是 Azure Active Directory 工具用于将信号聚集在一起、制定决策和执行组织策略的工具。 条件访问是新的身份驱动控制平面的核心。 若要在 Chrome 上获得条件访问支持，需使用额外插件。
+**Microsoft Edge 是唯一本机支持条件访问的浏览器**。 [Microsoft Edge 对条件访问的支持](ms-edge-security-conditional-access.md)使组织可以轻松地将身份信号用作其访问控制决策的一部分。 [条件访问](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)是 Azure Active Directory 工具用于将信号聚集在一起、制定决策和执行组织策略的工具。 条件访问是新的身份驱动控制平面的核心。 若要在 Chrome 上获得条件访问支持，需使用额外插件。
 
 > [!NOTE]
 > Azure AD 条件访问需要 Microsoft 365 E3 或更高版本的订阅。
