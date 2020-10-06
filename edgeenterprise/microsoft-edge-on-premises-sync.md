@@ -3,19 +3,19 @@ title: Active Directory (AD) 用户的本地同步
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 08/21/2020
+ms.date: 10/05/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Active Directory (AD) 用户的本地同步
-ms.openlocfilehash: 89f061072fdaa748d317ca8dc0c290893cfdfd6c
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: ce7fd912bc8cbd71e12444d58073e43df6b138db
+ms.sourcegitcommit: bd68077356a944b99a424d03b444b04aa60272dd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979372"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "11099741"
 ---
 # Active Directory (AD) 用户的本地同步
 
@@ -30,7 +30,7 @@ ms.locfileid: "10979372"
 
 ## 工作原理
 
-Microsoft Edge 允许配置文件与 Active Directory (AD) 帐户关联，而 Active Directory (AD) 帐户不能与云同步一起使用。启用本地同步后，AD 配置文件中的数据将保存到名为 profile.pb 的文件中。 默认情况下，此文件存储在 *%APP_DATA%/Microsoft/Edge* 中。 写入此文件后，它可以在不同的计算机之间移动，并且用户数据将在每台计算机上读取和写入。
+Microsoft Edge 允许配置文件与 Active Directory (AD) 帐户关联，而 Active Directory (AD) 帐户不能与云同步一起使用。启用本地同步后，AD 配置文件中的数据将保存到名为 profile.pb 的文件中。 默认情况下，此文件存储在 *%APPDATA%/Microsoft/Edge* 中。 写入此文件后，它可以在不同的计算机之间移动，并且用户数据将在每台计算机上读取和写入。
 
 ## 使用本地同步
 
@@ -46,7 +46,7 @@ Microsoft Edge 允许配置文件与 Active Directory (AD) 帐户关联，而 Ac
 
 ### 更改用户数据的位置（可选）
 
-默认情况下，用户数据存储在 *%APP_DATA%/Microsoft/Edge* 下名为 **profile.pb** 的文件中。 若要更改此文件的位置，请配置 [RoamingProfileLocation](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilelocation) 策略。
+默认情况下，用户数据存储在 *%APPDATA%/Microsoft/Edge* 下名为 **profile.pb** 的文件中。 若要更改此文件的位置，请配置 [RoamingProfileLocation](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilelocation) 策略。
 
 ## 启用本地同步时的用户体验更改
 
