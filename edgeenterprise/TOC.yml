@@ -1,4 +1,4 @@
-# last revised 10/02/2020
+# last revised 10/05/2020
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -85,10 +85,8 @@
       href: edge-configuration-and-experiments.md
     - name: 身份支持和配置
       href: microsoft-edge-security-identity.md
-    - name: Microsoft Edge 和企业状态漫游
+    - name: Microsoft Edge and Enterprise State Roaming
       href: microsoft-edge-enterprise-state-roaming.md
-    - name: Microsoft Edge kiosk mode
-      href: microsoft-edge-kiosk-mode.md
     - name: Configure Microsoft Edge kiosk mode
       href: microsoft-edge-configure-kiosk-mode.md
     - name: Microsoft Edge Sync
