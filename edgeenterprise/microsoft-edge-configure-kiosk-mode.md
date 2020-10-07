@@ -3,19 +3,19 @@ title: 配置 Microsoft Edge 展台模式
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 09/24/2020
+ms.date: 10/05/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 配置 Microsoft Edge 展台模式
-ms.openlocfilehash: 17852cc7c7e4921a0fbef7d09a3f1c3d3cccf49f
-ms.sourcegitcommit: b1285b7745eb41b241d706b401f8ce78fa33b227
+ms.openlocfilehash: 799b3dd4b7fc96f0b8e5cb718bca98fd4f38ec15
+ms.sourcegitcommit: 78905f66f4a6590a57c8f2bf808af92106b62996
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "11078662"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "11094859"
 ---
 # 配置 Microsoft Edge 展台模式
 
@@ -23,8 +23,6 @@ ms.locfileid: "11078662"
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 87 或更高版本。
-
-有关旧版 Microsoft Edge 展台模式（版本 45 和更早版本）的信息，请参阅[部署 Microsoft Edge 站台模式](https://aka.ms/edgekioskmode)。
 
 ## 概述
 
@@ -35,7 +33,7 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
 
 这两种体验都在运行 Microsoft Edge InPrivate 会话，以保护用户数据。
 
-## 设置 Microsoft Edge 展台模式  
+## 设置 Microsoft Edge 展台模式
 
 现在可以使用 Microsoft Edge Canary 渠道版本 87 测试一组初始展台模式功能。 可以从 [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/download) 页面下载 Microsoft Edge Canary。
 
@@ -43,9 +41,9 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
 
 提供以下功能：
 
-- InPrivate 导航。 通过在会话结束时删除浏览器数据和下载来保护用户数据。
+- InPrivate 导航通过在会话结束时删除浏览器数据和下载来保护用户数据。
 - 配置退出时删除下载的策略。
-- 在处于非活动状态特定时间段后重置用户会话。
+- 在处于非活动状态特定时间段后重置用户会话的选项。
 - 初始锁定功能集。 提供以下功能：
 
   - 鼠标上下文菜单
@@ -56,14 +54,14 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
 > [!NOTE]
 > 随着展台模式的发展，将提供更多功能。
 
-### 使用展台模式功能
+## 使用展台模式功能
 
 可使用以下 Windows 10 命令行选项来调用 Microsoft Edge 展台模式功能：
 
 - 展台模式数字/交互式标牌： `msedge.exe --kiosk www.contoso.com --edge-kiosk-type=fullscreen`
 - 展台模式公共浏览： `msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing`
 
-#### 其他命令行选项
+### 其他命令行选项
 
 - `--no-first-run` ：禁用首次 Microsoft Edge 运行体验。
 - `--kiosk-idle-timeout-minutes` ：更改从上次用户活动到 Microsoft Edge 展台模式重置用户会话前的时间（以分钟为单位）。 支持以下值：
@@ -75,13 +73,23 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
     - 0 - 关闭计时器
     - 1-1440 分钟，用于在空闲计时器上重置
 
-## 设置具有分配的访问权限的展台模式
+## Microsoft Edge 与指派访问
 
-具有分配的访问权限的 Microsoft Edge 展台模式可用于测试最新的 [Windows 10 Insider Preview 版本](https://insider.windows.com/)（版本 20215 或更高版本）以及 [Microsoft Edge Dev 渠道](https://www.microsoftedgeinsider.com/download)版本 87.0.644.4 或更高版本。
+### 单应用展台
+
+Microsoft Edge 目前支持具有以下锁定体验、数字/交互标志和公共浏览的单一应用的相同 Microsoft 旧版展台模式类型的子集。  
+
+具有分配的访问权限的展台模式可用于测试最新的  [Windows 10 Insider Preview 版本](https://insider.windows.com/)（版本 20215 或更高版本）以及  [Microsoft Edge Dev 渠道](https://www.microsoftedgeinsider.com/download)版本 87.0.644.4 或更高版本。
 
 **如何获得 Windows 预览体验成员预览版？**
 
-若要在电脑上安装 Windows 10 Insider Preview 内部版本，请按照[开始使用 Windows 10 Insider Preview 版本](https://docs.microsoft.com/windows-insider/get-started)中的说明进行操作。
+若要在电脑上安装 Windows 10 Insider Preview 内部版本，请按照 [开始使用 Windows 10 Insider Preview 版本](https://docs.microsoft.com/windows-insider/get-started)中的说明进行操作。
+
+### 多应用展台。
+
+可用 Windows 10 上的[多应用指派访问](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)（相当于旧版 Microsoft Edge 的“普通浏览”展台模式类型）运行 Microsoft Edge。 要为 Microsoft Edge 配置多应用指派访问，请按照关于[如何设置多应用展台](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)的说明进行操作。 （Microsoft Edge Stable 渠道的 AUMID 为 **MSEdge**）。
+
+配置 Microsoft Edge 展台模式：将 Microsoft Edge 用于多应用指派访问时，你可以使用 [Microsoft Edge 浏览器策略](https://review.docs.microsoft.com/en-us/DeployEdge/microsoft-edge-policies)配置浏览体验以满足你的独特要求。
 
 ### 使用 Windows 设置进行配置
 
@@ -153,9 +161,9 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 我们将添加以下功能：
 
 - “结束会话”按钮
-- 只读 URL 地址栏  
+- 只读地址栏  
   - 可通过组策略配置
-  - 启用后，将阻止用户编辑地址栏 URL 以尝试导航到其他页面。
+  - 启用后，将阻止用户编辑地址栏并导航到其他页面。
 
 - 更多锁定功能：
 
