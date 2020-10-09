@@ -1,4 +1,4 @@
-# last revised 10/05/2020
+# last revised 10/08/2020
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -79,17 +79,17 @@
       href: configure-microsoft-edge-on-mac.md
     - name: 使用 Jamf 为 macOS 配置
       href: configure-microsoft-edge-on-mac-jamf.md
-- name: Use Microsoft Edge enterprise features
+- name: 使用 Microsoft Edge 企业版功能
   items:
-    - name: Configurations and experimentation
+    - name: 配置和试验
       href: edge-configuration-and-experiments.md
     - name: 身份支持和配置
       href: microsoft-edge-security-identity.md
-    - name: Microsoft Edge and Enterprise State Roaming
+    - name: Microsoft Edge 和企业状态漫游
       href: microsoft-edge-enterprise-state-roaming.md
-    - name: Configure Microsoft Edge kiosk mode
+    - name: 配置 Microsoft Edge 展台模式
       href: microsoft-edge-configure-kiosk-mode.md
-    - name: Microsoft Edge Sync
+    - name: Microsoft Edge 同步
       href: microsoft-edge-enterprise-sync.md
     - name: Active Directory 用户的本地同步
       href: microsoft-edge-on-premises-sync.md
@@ -109,17 +109,19 @@
           href: edge-ie-mode-site-discovery.md
         - name: IE 模式 FAQ
           href: edge-ie-mode-faq.md
-- name: Microsoft Edge Security
+- name: Microsoft Edge 安全
   items:
-    - name: Security for your business
+    - name: 企业的安全性
       href: ms-edge-security-for-business.md
-    - name: Allow list for Microsoft Edge endpoints
+    - name: Microsoft Edge 终结点的允许列表
       href: microsoft-edge-security-endpoints.md
-    - name: Protect against potentially unwanted applications
+    - name: ' (DLP) 的数据丢失防护'
+      href: microsoft-edge-security-dlp.md
+    - name: 阻止潜在的有害应用程序
       href: microsoft-edge-potentially-unwanted-apps.md
-    - name: Support for Azure AD Conditional Access
+    - name: Azure AD 条件访问支持
       href: ms-edge-security-conditional-access.md
-    - name: Support for Application Guard
+    - name: 应用程序防护支持
       href: microsoft-edge-security-windows-defender-application-guard.md
     - name: Microsoft Defender SmartScreen 支持
       href: microsoft-edge-security-smartscreen.md
@@ -151,25 +153,27 @@
           href: edge-learnmore-inpage-nav.md
         - name: 混合内容下载
           href: edge-learnmore-mixed-content-downloads.md
-        - name: Progressive rollouts for Stable channel updates
+        - name: Stable 渠道更新的渐进式部署
           href: microsoft-edge-update-progressive-rollout.md
-        - name: Provision favorites for Microsoft Edge
+        - name: 预配 Microsoft Edge 收藏夹
           href: edge-learnmore-provision-favorites.md
-        - name: Regular Expression 2 (re2.h) syntax
+        - name: 正则表达式 2 (re2.h) 语法
           href: edge-learnmore-regex.md
-        - name: User data directory variables
+        - name: 用户数据目录变量
           href: edge-learnmore-create-user-directory-vars.md
-        - name: Using Microsoft Edge rollback for enterprises
+        - name: 使用 Microsoft Edge 回退 for 企业版
           href: edge-learnmore-rollback.md
-- name: Microsoft Edge Videos
+- name: Microsoft Edge 视频
   items:
-    - name: Microsoft Edge video collection
+    - name: Microsoft Edge 视频集合
       href: microsoft-edge-videos.md
-    - name: Video - Deploy Microsoft Edge
+    - name: 视频 - 部署 Microsoft Edge
       href: microsoft-edge-video-deploy.md
-    - name: Video - Microsoft Edge and Microsoft Search
+    - name: '视频-Microsoft Edge 和数据丢失防护 (DLP) '
+      href: microsoft-edge-video-security-dlp.md
+    - name: 视频 - Microsoft Edge 和 Microsoft 搜索
       href: microsoft-edge-video-search.md
-    - name: 'Video - Security, compatibility, and manageability'
+    - name: 视频-安全性、兼容性和可管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
-- name: Frequently asked questions
+- name: 常见问题
   href: faqs-edge-in-the-enterprise.md
