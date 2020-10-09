@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/24/2020
+ms.date: 09/28/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 146043b518f02b8581498c273db4327682993609
-ms.sourcegitcommit: d4f2b62b41f0e40ec6b22aeca436b2c261658bd8
+ms.openlocfilehash: dc780166f05afd7d667f901a1198ce125831d01b
+ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "11078163"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "11094606"
 ---
 # Microsoft Edge - 策略
 最新版本的 Microsoft Edge 包含以下策略。 可以使用这些策略来配置在你的组织中运行 Microsoft Edge 的方式。
@@ -36,10 +36,11 @@ ms.locfileid: "11078163"
 |[应用程序防护设置](#application-guard-settings)|[Cast](#cast)|
 |[内容设置](#content-settings)|[默认搜索提供程序](#default-search-provider)|
 |[Extensions](#extensions)|[HTTP 身份验证](#http-authentication)|
-|[本机消息传递](#native-messaging)|[密码管理器和保护](#password-manager-and-protection)|
-|[打印](#printing)|[代理服务器](#proxy-server)|
-|[SmartScreen 设置](#smartscreen-settings)|[启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)|
-|[附加](#additional)|
+|[展台模式设置](#kiosk-mode-settings)|[本机消息传递](#native-messaging)|
+|[密码管理器和保护](#password-manager-and-protection)|[打印](#printing)|
+|[代理服务器](#proxy-server)|[SmartScreen 设置](#smartscreen-settings)|
+|[启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)|[附加](#additional)|
+
 
 ### [*应用程序防护设置*](#application-guard-settings-policies)
 |策略名称|标题|
@@ -117,13 +118,17 @@ ms.locfileid: "11078163"
 ### [*HTTP 身份验证*](#http-authentication-policies)
 |策略名称|标题|
 |-|-|
-|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|允许跨源 HTTP 基本身份验证提示|
+|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|允许跨域 HTTP 身份验证提示|
 |[AuthNegotiateDelegateAllowlist](#authnegotiatedelegateallowlist)|指定 Microsoft Edge 可将用户凭据委派到的服务器列表|
 |[AuthSchemes](#authschemes)|支持的身份验证方案|
 |[AuthServerAllowlist](#authserverallowlist)|配置允许的身份验证服务器列表|
 |[DisableAuthNegotiateCnameLookup](#disableauthnegotiatecnamelookup)|在协商 Kerberos 身份验证时禁用 CNAME 查找|
 |[EnableAuthNegotiatePort](#enableauthnegotiateport)|在 Kerberos SPN 中包括非标准端口|
 |[NtlmV2Enabled](#ntlmv2enabled)|控制是否启用 NTLMv2 身份验证|
+### [*展台模式设置*](#kiosk-mode-settings-policies)
+|策略名称|标题|
+|-|-|
+|[KioskDeleteDownloadsOnExit](#kioskdeletedownloadsonexit)|删除 Microsoft Edge 关闭时作为展台会话的一部分下载的文件|
 ### [*本机消息传递*](#native-messaging-policies)
 |策略名称|标题|
 |-|-|
@@ -560,11 +565,21 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 在 Windows 和 macOS 上自 77 或更高版本起
 
   #### 描述
-  根据 URL 模式指定网站列表，如果网站请求客户端证书，则 Microsoft Edge 应自动为其选择客户端证书。
+  通过设置策略，您可以生成一个 URL 模式列表，这些模式指定 Microsoft Edge 可以为其自动选择客户端证书的站点。 该值是一个字符串化的 JSON 字典数组，每个字典的格式为 { "pattern": "$URL_PATTERN", "filter" : $FILTER }，其中 $URL_PATTERN 是内容设置模式。 $FILTER 限制浏览器自动从中选择的客户端证书。 独立于筛选器，仅选择与服务器证书请求匹配的证书。
 
-该值必须是字符串化 JSON 字典的数组。 每个字典的格式必须为 { "pattern": "$URL_PATTERN", "filter" : $FILTER }，其中 $URL_PATTERN 是内容设置模式。 $FILTER 将限制浏览器自动选择的客户端证书。 独立于筛选器，将仅选择与服务器的证书请求匹配的证书。 例如，如果 $FILTER 的格式为 { "ISSUER": { "CN": "$ISSUER_CN" } }，此外仅选择由 CommonName 为 $ISSUER _CN 的证书颁发的客户端证书。 如果 $FILTER 包含“ISSUER”和“SUBJECT”部分，则客户端证书必须满足两个条件才能被选中。 如果 $FILTER 指定组织（“O”），则证书必须至少有一个组织与指定的值匹配才能被选中。 如果 $FILTER 指定组织单位（“OU”），则证书必须至少有一个组织单位与指定的值匹配才能被选中。 如果 $FILTER 是空字典 {}，则不会额外限制客户端证书的选择。
+"$FILTER" 部分的用法示例：
 
-如果未配置此策略，则不会对任何网站执行自动选择。
+* 当 $FILTER 设置为 { "ISSUER": { "CN": "$ISSUER_CN" } } 时，只选择由 CommonName 为 $ISSUER\u CN 的证书颁发的客户端证书。
+
+* 当 $FILTER 同时包含“证书颁发者”和“使用者”部分时，只选择满足这两个条件的客户端证书。
+
+* 当 $FILTER 包含具有 “O” 值的“使用者”部分时，证书至少需要一个与指定值匹配的组织才能被选择。
+
+* 当 $FILTER 包含具有 “OU” 值的“使用者”部分时，证书至少需要一个与指定值匹配的组织单位才能选择。
+
+* 当 $FILTER 设置为 {} 时，客户端证书的选择不受额外限制。 请注意，web 服务器提供的过滤器仍然适用。
+
+如果不设置策略，任何站点都不会自动选择。
 
   #### 支持的功能：
   - 可以强制：是
@@ -2040,9 +2055,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
   - 在 Windows 和 macOS 上自 80 或更高版本起
 
   #### 描述
-  允许你将所有 Cookie 恢复为旧的 SameSite 行为。 还原为旧行为会导致未指定 SameSite 属性的 Cookie 被视为“SameSite=None”，并不再要求“SameSite=None”Cookie 具有“Secure”属性。
+  允许你将所有 Cookie 恢复为旧的 SameSite 行为。 还原为旧行为会导致未指定 SameSite 属性的 Cookie 被视为 “SameSite=None”，删除了 “SameSite=None” Cookie 携带 “Secure” 属性的要求，并在评估两个站点是否为同一站点时跳过方案比较。
 
-如果未设置此策略，则未指定 SameSite 属性的 Cookie 的默认行为将取决于 SameSite-by-default 功能的其他配置源。 此功能可以通过实地测试或在 edge://flags 中启用 same-site-by-default-cookies 标志来设置。
+如果不设置此策略，Cookie 的 SameSite 行为将取决于 SameSite-by-default 功能、Cookies-without-SameSite-must-be-secure 功能、和 Schemeful Same-Site 功能的其他资源。 这些功能也可以通过字段试用或 same-site-by-default-cookies 标志、cookies-without-same-site-must-be-secure、schemeful-same-site flag in edge://flags 来配置。
 
 策略选项映射：
 
@@ -2098,7 +2113,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
   #### 描述
   为域设置的 Cookie 与指定的模式匹配时，将还原为旧 SameSite 行为。
 
-还原为旧行为会导致未指定 SameSite 属性的 Cookie 被视为“SameSite=None”，并不再要求“SameSite=None”Cookie 具有“Secure”属性。
+还原为旧行为会导致未指定 SameSite 属性的 Cookie 被视为 “SameSite=None”，删除了 “SameSite=None” Cookie 携带 “Secure” 属性的要求，并在评估两个站点是否为同一站点时跳过方案比较。
 
 如果未设置此策略，则将使用全局默认值。 全局默认值也将用于你指定的模式未涵盖的域上的 Cookie。
 
@@ -3802,16 +3817,16 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   [返回页首](#microsoft-edge---policies)
 
   ### AllowCrossOriginAuthPrompt
-  #### 允许跨源 HTTP 基本身份验证提示
+  #### 允许跨域 HTTP 身份验证提示
   
   
   #### 支持的版本：
   - 在 Windows 和 macOS 上自 77 或更高版本起
 
   #### 描述
-  控制页面上的第三方子内容是否可以打开 HTTP 基本身份验证对话框。
+  控制页面上的第三方图像是否可以显示身份验证提示。
 
-通常，这将被禁用，以抵御网络钓鱼威胁。 如果未配置此策略，则该策略会被禁用，并且第三方子内容无法打开 HTTP 基本身份验证对话框。
+通常，这将被禁用，以抵御网络钓鱼威胁。 如果不配置此策略，它将被禁用，并且第三方映像无法显示身份验证提示。
 
   #### 支持的功能：
   - 可以强制：是
@@ -3824,7 +3839,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   #### Windows 信息和设置
   ##### 组策略 (ADMX) 信息
   - GP 唯一名称：AllowCrossOriginAuthPrompt
-  - GP 名称：允许跨源 HTTP 基本身份验证提示
+  - GP 名称: 允许跨域 HTTP 身份验证提示
   - GP 路径（强制）：管理模板/Microsoft Edge/HTTP 身份验证
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -4129,6 +4144,56 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 ``` xml
 <true/>
 ```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ## 展台模式设置策略
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### KioskDeleteDownloadsOnExit
+  #### 删除 Microsoft Edge 关闭时作为展台会话的一部分下载的文件
+  
+  
+  #### 支持的版本：
+  - 在 87 版或更高版本的 Windows 上
+
+  #### 描述
+  注意：只有使用“--Edge kiosk type”命令行参数启动 Edge 时，才支持此策略。
+
+如果启用此策略，则每次关闭 Microsoft Edge 时，都会删除作为展台会话一部分下载的文件。
+
+如果禁用或未配置此策略，则当 Microsoft Edge 关闭时，作为展台会话一部分下载的文件不会被删除。
+
+有关配置展台模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578)。
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+  - 布尔
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP 唯一名称：KioskDeleteDownloadsOnExit
+  - GP 名称：删除 Microsoft Edge 关闭时作为展台会话的一部分下载的文件
+  - GP 路径（强制）：管理模板/Microsoft Edge/展台模式设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：KioskDeleteDownloadsOnExit
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000001
+```
+
+
   
 
   [返回页首](#microsoft-edge---policies)
@@ -9172,8 +9237,7 @@ Windows 管理员注意事项：此策略仅适用于运行 Windows 7 的电脑�
   - 在 Windows 和 macOS 上自 86 或更高版本起
 
   #### 描述
-  
-设置网站是否可以访问串行端口。 可以完全阻止访问，也可以在网站每次想要访问串行端口时询问用户。
+  设置网站是否可以访问串行端口。 可以完全阻止访问，也可以在网站每次想要访问串行端口时询问用户。
 
 将策略设置为 “3” 可允许网站请求访问串行端口。 将策略设置为 "2" 将拒绝访问串行端口。
 
@@ -10895,7 +10959,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 在 Windows 和 macOS 上自 81 或更高版本起
 
   #### 描述
-  此策略已弃用，因为它仅作为一种短期机制提供，目的是让企业能够在发现与当前默认引用者策略不兼容时有更多的时间来更新其 Web 内容。 在 Microsoft Edge version 86 将不起作用。
+  此策略已弃用，因为它仅作为一种短期机制提供，目的是让企业能够在发现与当前默认引用者策略不兼容时有更多的时间来更新其 Web 内容。 在 Microsoft Edge version 88 将不起作用。
 
 通过逐步部署，Microsoft Edge 的默认引用者策略已从其当前的 no-referrer-when-downgrade 值增强为更安全的 strict-origin-when-cross-origin。
 
@@ -10995,7 +11059,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
 如果未配置此策略，用户将可以启用或禁用同步。 如果启用此策略，用户将不能关闭同步。
 
-若要使此策略按预期工作，[BrowserSignin](#browsersignin) 策略必须配置，或者必须设置为"启用"。 如果 [ForceSync](#forcesync) 设置为"已禁用"，则 [BrowserSignin](#browsersignin) 将不会生效。
+若要使此策略按预期工作，[BrowserSignin](#browsersignin) 策略必须配置，或者必须设置为"启用"。 如果 [BrowserSignin](#browsersignin) 设置为"已禁用"，则 [ForceSync](#forcesync) 将不会生效。
 
 [SyncDisabled](#syncdisabled) 不可配置，或者必须设置为 False。 如果设置为 True，则 [ForceSync](#forcesync) 不会生效。
 
@@ -11368,7 +11432,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 - 如果 Windows 帐户为 Azure AD 或 MSA 类型，用户仍将自动登录到 Microsoft Edge。
 
-- 默认情况下不会启用同步，用户将能够从同步设置打开同步。
+-默认情况下不会启用同步，并且系统会提示用户选择是否要在浏览器启动时同步。 可使用 [ForceSync](#forcesync) 或 [SyncDisabled](#syncdisabled) 策略来配置同步和同步许可提示。
 
 如果禁用或未配置此策略，将显示首次运行体验和初始屏幕。
 
@@ -11379,6 +11443,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 -[NewTabPageLocation](#newtabpagelocation)
 
 -[NewTabPageSetFeedType](#newtabpagesetfeedtype)
+
+-[ForceSync](#forcesync)
 
 -[SyncDisabled](#syncdisabled)
 
@@ -12477,13 +12543,13 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   #### 描述
   此策略是 “ie-mode-test” 标志策略的替代项。 它允许用户从 UI 菜单选项中打开 IE 模式选项卡。
 
-       此设置与以下策略配合使用：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) （设置为 'IEMode'） 和 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 策略 （列表至少有一个条目）。
+此设置与以下策略配合使用：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) （设置为 'IEMode'） 和 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 策略 （列表至少有一个条目）。
 
-       如果启用此策略，用户可以从 UI 选项打开“IE 模式”选项卡，并将“当前网站”导航到 IE 模式网站。
+如果启用此策略，用户可以从 UI 选项打开“IE 模式”选项卡，并将“当前网站”导航到 IE 模式网站。
 
-       如果禁用此策略，用户将不能直接看到菜单中的 UI 选项。
+如果禁用此策略，用户将不能直接看到菜单中的 UI 选项。
 
-       如果未配置此策略，则可以手动设置 “ie-mode-test” 标志。
+如果未配置此策略，则可以手动设置 “ie-mode-test” 标志。
 
   #### 支持的功能：
   - 可以强制：是
@@ -12524,9 +12590,13 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   #### 描述
   指定要在各自进程中单独运行的源。
+
 此策略还会隔离由子域命名的源 - 例如，指定 https://contoso.com/ 将导致 https://foo.contoso.com/ 作为 https://contoso.com/ 站点的一部分被隔离。
+
 如果启用该策略，则逗号分隔列表中的每个命名源将在其自己的进程中运行。
+
 如果禁用此策略，则“IsolateOrigins”和“SitePerProcess”功能都将被禁用。 用户仍然可以通过命令行标志手动启用“IsolateOrigins”策略。
+
 如果未配置该策略，则用户可以更改此设置。
 
   #### 支持的功能：
@@ -14152,9 +14222,9 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
   - 在 Windows 和 macOS 上自 77 或更高版本起
 
   #### 描述
-  设置 SSL 的最低支持版本。 如果未配置此策略，Microsoft Edge 将使用默认最低版本 TLS 1.0。
+  设置支持的 TLS 的最低版本。 如果未配置此策略，Microsoft Edge 将使用默认最低版本 TLS 1.0。
 
-如果启用此策略，则可以将最低版本设置为以下值之一：'TLSv1'、'TLSv1.1' 或 'TLSv1.2'。 设置后，Microsoft Edge 不会使用低于指定版本的任何 SSL/TLS 版本。 任何无法识别的值都将被忽略。
+如果启用此策略，Microsoft Edge 将不会使用低于指定版本的任何 SSL/TLS 版本。 任何无法识别的值都将被忽略。
 
 策略选项映射：
 
@@ -14953,9 +15023,10 @@ If you disable this policy, the shortcut isn't shown.
   - 在 Windows 和 macOS 上自 77 或更高版本起
 
   #### 描述
-  
-“SitePerProcess”策略可用于防止用户选择退出默认行为，即隔离所有网站。 请注意，也可以使用 [IsolateOrigins](#isolateorigins) 策略来隔离其他更精细的来源。
+  “SitePerProcess”策略可用于防止用户选择退出默认行为，即隔离所有网站。 请注意，也可以使用 [IsolateOrigins](#isolateorigins) 策略来隔离其他更精细的来源。
+
 如果启用此策略，则用户不能选择退出默认行为，即每个网站在其自己的进程中运行。
+
 如果禁用或未配置此策略，用户可以选择退出网站隔离。  （例如，通过使用 edge://flags 中的“禁用网站隔离”条目。）禁用或未配置该策略不会关闭网站隔离。
 
 
@@ -16232,16 +16303,9 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
   - 在 Windows 和 macOS 上自 80 或更高版本起
 
   #### 描述
-  指定一个网站列表，这些网站静默安装，无需用户交互，用户不能卸载或禁用这些网站。
+  配置此策略以指定一个无需用户交互即可自行安装的网页应用列表，并且用户无法卸载或关闭这些应用程序。
 
-策略的每个列表项都是具有以下成员的对象：
-  - “url”，这是必需的。 “url”应为要安装的 Web 应用的 URL。
-
-可选成员的值为：
-  - “launch_container”应为“window”或“tab”，以指示安装 Web 应用后如何打开它。
-  - 如果应在 Windows 上创建桌面快捷方式，则“create_desktop_shortcut”应为 true。
-
-如果省略“default_launch_container”，则应用将默认在选项卡中打开。 无论“default_launch_container”的值如何，用户都可以更改将在其中打开应用的容器。 如果省略“create_desktop_shortcuts”，则不会创建桌面快捷方式。
+策略的每个列表项都是包含一个强制成员的对象：URL（要安装的 web 应用的 URL）和 2 个可选成员：default_launch_container（指定 web 应用打开的窗口模式 - 新选项卡为默认）和 create_desktop_shortcut（如果要创建 Linux 和 Windows 桌面快捷方式，则为 True）。
 
   #### 支持的功能：
   - 可以强制：是
@@ -16363,8 +16427,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 在 Windows 和 macOS 上自 77 起至 84
 
   #### 描述
-  
-此策略不起作用，因为 WebDriver 现在与所有现有策略兼容。
+  此策略不起作用，因为 WebDriver 现在与所有现有策略兼容。
 
 此策略允许 WebDriver 功能的用户替代可能干扰其操作的策略。
 
