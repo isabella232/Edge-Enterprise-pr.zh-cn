@@ -139,6 +139,8 @@
       href: microsoft-edge-policies.md
     - name: 更新策略参考
       href: microsoft-edge-update-policies.md
+    - name: WebView2 策略引用
+      href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
         - name: ClickOnce 和 DirectInvoke
@@ -167,9 +169,11 @@
   items:
     - name: Microsoft Edge 视频集合
       href: microsoft-edge-videos.md
+    - name: 视频-使用应用程序防护的浏览器隔离
+      href: microsoft-edge-video-security-application-guard.md
     - name: 视频 - 部署 Microsoft Edge
       href: microsoft-edge-video-deploy.md
-    - name: '视频-Microsoft Edge 和数据丢失防护 (DLP) '
+    - name: '视频-数据丢失防护 (DLP) '
       href: microsoft-edge-video-security-dlp.md
     - name: 视频 - Microsoft Edge 和 Microsoft 搜索
       href: microsoft-edge-video-search.md
