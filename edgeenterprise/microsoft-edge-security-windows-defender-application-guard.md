@@ -3,19 +3,19 @@ title: Microsoft Edge 和 Microsoft Defender 应用程序防护
 ms.author: srugh
 author: dan-wesley
 manager: seanlyn
-ms.date: 10/02/2020
+ms.date: 10/12/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
-ms.openlocfilehash: 7052c8cee9282c0ca2f5cafaa608e7e4e71d111d
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: fcf9bb6e36ddd5e014bd8176643554bfe3ff8fd4
+ms.sourcegitcommit: b813f91803b8f0f27489634f49e7e0585b746d48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094756"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "11114360"
 ---
 # Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
 
@@ -122,3 +122,4 @@ IE 模式支持应用程序防护功能，但我们预计不会在 IE 模式下�
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Defender 高级威胁防护](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)
+- [视频：使用应用程序防护实现 Microsoft Edge 浏览器隔离](https://www.youtube.com/watch?v=zQjaRqNXMqw&t=3s)

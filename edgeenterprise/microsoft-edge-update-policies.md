@@ -3,7 +3,7 @@ title: Microsoft Edge 更新策略文档
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 06/10/2020
+ms.date: 10/07/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,28 +11,26 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 更新程序支持的所有策略的文档
-ms.openlocfilehash: d772d8dd6f60b89e9bd12a77b740e5fad699756a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: feb7859f062ae39e2bbfe08d8e478386defb85cf
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979322"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105566"
 ---
 # Microsoft Edge - 更新策略
 最新版本的 Microsoft Edge 包含以下策略，你可以使用这些策略控制更新 Microsoft Edge 的方式和时间。
 
-           
 有关 Microsoft Edge 中可用的其他策略的信息，请查看 [Microsoft Edge 浏览器策略引用](microsoft-edge-policies.md)
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
-
 ## 可用策略
 这些表列出了本版本 Microsoft Edge 中提供的所有与更新相关的组策略。 使用表中的链接获取有关特定策略的更多详细信息。
 
 |||
 |-|-|
 |[应用程序](#applications)|[首选项](#preferences)|
-|[代理服务器](#proxy-server)||
+|[代理服务器](#proxy-server)|[Microsoft Edge Web 视图](#microsoft-edge-webview)|
 
 ### [应用程序](#applications-policies)
 |策略名称|标题|
@@ -44,6 +42,7 @@ ms.locfileid: "10979322"
 |[Allowsxs](#allowsxs)|允许 Microsoft Edge 并行浏览器体验|
 |[CreateDesktopShortcutDefault](#createdesktopshortcutdefault)|安装默认项时阻止创建快捷方式|
 |[CreateDesktopShortcut](#createdesktopshortcut)|安装时阻止创建快捷方式（按渠道）|
+|[RollbackToTargetVersion](#rollbacktotargetversion)|回退到目标版本（按渠道）|
 |[TargetVersionPrefix](#targetversionprefix)|目标版本覆盖（各渠道）|
 
 ### [首选项](#preferences-policies)
@@ -59,12 +58,11 @@ ms.locfileid: "10979322"
 |[ProxyPacUrl](#proxypacurl)|代理 .pac 文件的 URL|
 |[ProxyServer](#proxyserver)|代理服务器的地址或 URL|
 
-                 
-      
-  
-             
-            
-                  
+### [Microsoft Edge Web 视图](#microsoft-edge-webview-policies)
+|策略名称|标题|
+|-|-|
+|[安装](#install-webview)|允许安装|
+|[更新](#update-webview)|更新策略替代|
 
 ## 应用程序策略
 
@@ -74,19 +72,21 @@ ms.locfileid: "10979322"
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
 #### 描述
-可指定所有渠道的默认行为，以在使用 Microsoft Edge 更新时允许或阻止更新 Microsoft Edge。
+可指定所有渠道的默认行为，以允许或阻止域连接设备上的Microsoft Edge。
 
 通过为那些特定渠道启用“[允许安装](#install)”策略，可为个别渠道覆盖此策略。
 
-如果禁用此策略，则会禁止通过 Microsoft Edge 更新安装 Microsoft Edge。 这仅当用户运行 Microsoft Edge 更新，并且未配置“[允许安装](#install)”策略时，才会影响 Microsoft Edge 软件的安装。
+如果禁用此策略，则会阻止 Microsoft Edge的安装。 只有当 "[允许安装](#install)" 策略设置为 "未配置" 时，才会影响Microsoft Edge软件的安装。
 
 此策略不会阻止运行 Microsoft Edge 更新，也不会阻止用户使用其他方法安装 Microsoft Edge 软件。
+
+此策略仅在加入Microsoft® Active Directory®域的Windows实例上可用。
 #### Windows 信息和设置
 ##### 组策略 (ADMX) 信息
 - GP 唯一名称：InstallDefault
 - GP 名称：允许安装默认项
 - GP 路径：Administrative Templates/Microsoft Edge Update/Applications
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称：InstallDefault
@@ -114,12 +114,14 @@ ms.locfileid: "10979322"
   如果你选择手动更新，请确保使用应用的手动更新机制（如果有）定期检查更新。 如果你禁用更新，请定期检查更新，然后将它们分发给用户。
 
   如果你未启用和配置此策略，Microsoft Edge 更新将处理“[更新策略替代](#update)”策略指定的可用更新。
+
+  此策略仅在加入Microsoft® Active Directory®域的Windows实例上可用。
 #### Windows 信息和设置
 ##### 组策略 (ADMX) 信息
 - GP 唯一名称：UpdateDefault
 - GP 名称：更新策略替代默认值
 - GP 路径：Administrative Templates/Microsoft Edge Update/Applications
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称：UpdateDefault
@@ -135,14 +137,16 @@ ms.locfileid: "10979322"
 #### 允许安装
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
-#### 说明
-指定是否可以使用 Microsoft Edge 更新来安装 Microsoft Edge 渠道。
+#### 描述
+指定是否可以在域连接的设备上安装Microsoft Edge通道。
 
-  如果你为某个渠道启用此策略，则用户可以通过 Microsoft Edge 更新来安装该 Microsoft Edge 渠道。
+  如果为渠道启用此策略，则不会阻止 Microsoft Edge 的安装。
 
-  如果你为某个渠道禁用此策略，则用户无法通过 Microsoft Edge 更新来安装该 Microsoft Edge 渠道。
+  如果为渠道启用此策略，则会阻止 Microsoft Edge 的安装。
 
-  如果没有为渠道配置此策略，则“[允许安装默认项](#installdefault)”策略配置将确定用户是否可以通过 Microsoft Edge 更新来安装该 Microsoft Edge 渠道。
+  如果没有为渠道配置此策略，则“[允许安装默认项](#installdefault)”策略配置将决定用户是否可以安装Microsoft Edge的该渠道。
+
+  此策略仅在加入Microsoft® Active Directory®域的Windows实例上可用。
 #### Windows 信息和设置
 ##### 组策略 (ADMX) 信息
 - GP 唯一名称：安装
@@ -152,7 +156,7 @@ ms.locfileid: "10979322"
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Beta
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Canary
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Dev
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称： 
@@ -175,15 +179,19 @@ ms.locfileid: "10979322"
 #### 描述
 指定 Microsoft Edge 更新如何处理 Microsoft Edge 中的可用更新。
 
-  如果你启用此策略，Microsoft Edge 更新将根据你配置以下选项的方式处理 Microsoft Edge 更新：
-   - 始终允许更新：通过定期更新检查或通过手动更新检查，在发现更新时始终应用更新。
-   - 仅限自动无提示更新：仅在定期更新检查找到更新后才应用更新。
-   - 仅限手动更新：仅当用户运行手动更新检查时才应用更新。 （并非所有应用都为此选项提供接口。）
-   - 已禁用更新：从不应用更新。
+如果你启用此策略，Microsoft Edge 更新将根据你配置以下选项的方式处理 Microsoft Edge 更新：
+  - 始终允许更新：通过定期更新检查或通过手动更新检查，在发现更新时始终应用更新。
+  - 仅限自动无提示更新：仅在定期更新检查找到更新后才应用更新。
+  - 仅限手动更新：仅当用户运行手动更新检查时才应用更新。 （并非所有应用都为此选项提供接口。）
+  - 已禁用更新：从不应用更新。
 
-  如果你选择手动更新，请确保使用应用的手动更新机制（如果有）定期检查更新。 如果你禁用更新，请定期检查更新，然后将它们分发给用户。
+如果你选择手动更新，请确保使用应用的手动更新机制（如果有）定期检查更新。 如果你禁用更新，请定期检查更新，然后将它们分发给用户。
 
-  如果你未启用和配置此策略，Microsoft Edge 更新将处理“[更新策略替代默认值](#updatedefault)”策略指定的可用更新。
+如果你未启用和配置此策略，Microsoft Edge 更新将处理“[更新策略替代默认值](#updatedefault)”策略指定的可用更新。
+
+有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2136406](https://go.microsoft.com/fwlink/?linkid=2136406)。
+
+此策略仅在加入Microsoft® Active Directory®域的Windows实例上可用。
 #### Windows 信息和设置
 ##### 组策略 (ADMX) 信息
 - GP 唯一名称：更新
@@ -193,7 +201,7 @@ ms.locfileid: "10979322"
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Beta
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Canary
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Dev
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称： 
@@ -228,7 +236,7 @@ ms.locfileid: "10979322"
 - GP 唯一名称：Allowsxs
 - GP 名称：允许 Microsoft Edge 并行浏览器体验
 - GP 路径：Administrative Templates/Microsoft Edge Update/Applications
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称：Allowsxs
@@ -256,7 +264,7 @@ ms.locfileid: "10979322"
 - GP 唯一名称：CreateDesktopShortcutDefault
 - GP 名称：安装默认项时阻止创建快捷方式
 - GP 路径：Administrative Templates/Microsoft Edge Update/Applications
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称：CreateDesktopShortcutDefault
@@ -288,7 +296,7 @@ ms.locfileid: "10979322"
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Beta
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Canary
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Dev
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称： 
@@ -296,6 +304,55 @@ ms.locfileid: "10979322"
   - (Beta): CreateDesktopShortcut{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
   - (Canary): CreateDesktopShortcut{65C35B14-6C1D-4122-AC46-7148CC9D6497}
   - (Dev): CreateDesktopShortcut{0D50BFEC-CD6A-4F9A-964C-C7416E3ACB10}
+- 值类型：REG_DWORD
+##### 示例值：
+```
+0x00000001
+```
+[返回页首](#microsoft-edge---update-policies)
+
+
+### RollbackToTargetVersion
+#### 回退到目标版本
+>Microsoft Edge 更新 1.3.133.3 和更高版本
+
+#### 描述
+指定 Microsoft Edge 更新应将 Microsoft Edge 的安装回退到 "[目标版本覆盖](#targetversionprefix)" 中指定的版本。
+
+除非"[目标版本替代](#targetversionprefix)" 设置为 "开"，并且将 "[更新策略替代](#update)" 设置为 "开启" 状态之一（始终允许更新、仅自动无提示更新，仅限手动更新），否则该策略无效。
+
+如果禁用该策略或不对其进行配置，则安装的版本高于由 "[目标版本替代](#targetversionprefix)" 所指定的版本则将保留原样。
+
+如果启用此策略，则当前版本高于由 "[目标版本替代](#targetversionprefix)" 指定的安装将降级到目标版本。
+
+我们建议用户安装最新版本的 Microsoft Edge 浏览器，以确保受到最新安全更新的保护。 回退到较早版本存在遇到已知安全问题的风险。 该策略旨在作为一种临时修复措施，以解决Microsoft Edge浏览器更新中所面临的问题。
+
+在暂时回退浏览器版本之前，建议你为组织中的所有用户启用同步（[https://go.microsoft.com/fwlink/?linkid=2133032](https://go.microsoft.com/fwlink/?linkid=2133032)）。 如果未启用同步，则有可能造成永久性浏览数据丢失。 使用本政策，风险自担。
+
+注意：可在此处查看所有可供回退的版本 [https://aka.ms/EdgeEnterprise](https://aka.ms/EdgeEnterprise)。
+
+此政策适用于Microsoft Edge 86或更高版本。
+
+有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2133918](https://go.microsoft.com/fwlink/?linkid=2133918)。
+
+此策略仅在加入Microsoft® Active Directory®域的Windows实例上可用。
+#### Windows 信息和设置
+##### 组策略 (ADMX) 信息
+- GP 唯一名称：RollbackToTargetVersion
+- GP 名称：回退到目标版本
+- GP 路径： 
+  - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge
+  - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Beta
+  - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Canary
+  - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Dev
+- GP ADMX文件名：msedgeupdate.admx
+##### Windows 注册表设置
+- 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- 值名称： 
+  - （稳定版）：RollbackToTargetVersion{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
+  - （Beta版）：RollbackToTargetVersion{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
+  - （Canary版）：RollbackToTargetVersion{65C35B14-6C1D-4122-AC46-7148CC9D6497}
+  - （开发者版）：RollbackToTargetVersion{0D50BFEC-CD6A-4F9A-964C-C7416E3ACB10}
 - 值类型：REG_DWORD
 ##### 示例值：
 ```
@@ -316,6 +373,10 @@ ms.locfileid: "10979322"
 如果设备的 Microsoft Edge 版本高于指定的值，Microsoft Edge 将保留较新版本，不会降级到指定版本。
 
 如果指定版本不存在，或格式不正确，Microsoft Edge 将保留当前版本，不会自动更新为未来版本。
+
+有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2136707](https://go.microsoft.com/fwlink/?linkid=2136707)。
+
+此策略仅在加入Microsoft® Active Directory®域的Windows实例上可用。
 #### Windows 信息和设置
 ##### 组策略 (ADMX) 信息
 - GP 唯一名称：TargetVersionPrefix
@@ -325,7 +386,7 @@ ms.locfileid: "10979322"
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Beta
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Canary
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Dev
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称： 
@@ -357,7 +418,7 @@ ms.locfileid: "10979322"
 - GP 唯一名称：AutoUpdateCheckPeriodMinutes
 - GP 名称：自动更新检查期间替代
 - GP 路径：Administrative Templates/Microsoft Edge Update/Preferences
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称：AutoUpdateCheckPeriodMinutes
@@ -383,7 +444,7 @@ ms.locfileid: "10979322"
 - GP 名称：每天中取消自动更新检查的时间段
   - 选项 { Hour, Minute, Duration }
 - GP 路径：Administrative Templates/Microsoft Edge Update/Preferences
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称： 
@@ -401,8 +462,6 @@ start min  : 0x00000002
 
 
 ## 代理服务器策略
-  
-  
 
 [返回页首](#microsoft-edge---update-policies)
 ### ProxyMode
@@ -426,7 +485,7 @@ start min  : 0x00000002
 - GP 唯一名称：ProxyMode
 - GP 名称：选择指定代理服务器设置的方式
 - GP 路径：Administrative Templates/Microsoft Edge Update/Proxy Server
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称：ProxyMode
@@ -455,7 +514,7 @@ fixed_servers
 - GP 唯一名称：ProxyPacUrl
 - GP 名称：代理 .pac 文件的 URL
 - GP 路径：Administrative Templates/Microsoft Edge Update/Proxy Server
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称：ProxyPacUrl
@@ -484,7 +543,7 @@ https://www.microsoft.com
 - GP 唯一名称：ProxyServer
 - GP 名称：代理服务器的地址或 URL
 - GP 路径：Administrative Templates/Microsoft Edge Update/Proxy Server
-- GP ADMX 文件名：edgeupdate.admx
+- GP ADMX文件名：msedgeupdate.admx
 ##### Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称：ProxyServer
@@ -492,6 +551,68 @@ https://www.microsoft.com
 ##### 示例值：
 ```
 https://www.microsoft.com
+```
+[返回页首](#microsoft-edge---update-policies)
+
+
+## - Microsoft Edge Web 视图策略
+
+[返回页首](#microsoft-edge---update-policies)
+### 安装（WebView）
+#### 允许安装
+>Microsoft Edge 更新 1.3.127.1 和更高版本
+
+#### 描述
+指定是否可以使用 Microsoft Edge 更新来安装 Microsoft Edge Web 视图。
+
+  - 如果启用此策略，用户可以通过 Microsoft Edge 更新来安装该 Microsoft Edge Web 视图。
+  - 如果禁用此策略，用户无法通过 Microsoft Edge 更新来安装该 Microsoft Edge Web 视图。
+  - 如果没有配置此策略，则“[允许安装默认项](#installdefault)”策略配置将决定用户是否可以通过 Microsoft Edge 更新来安装该 Microsoft Edge WebView。
+#### Windows 信息和设置
+##### 组策略 (ADMX) 信息
+- GP 唯一名称：安装
+- GP 名称：允许安装
+- GP 路径：Administrative Templates/Microsoft Edge Update/Microsoft Edge WebView
+- GP ADMX文件名：msedgeupdate.admx
+##### Windows 注册表设置
+- 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- 值名称： 
+  - 安装{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}
+- 值类型：REG_DWORD
+##### 示例值：
+```
+0x00000001
+```
+[返回页首](#microsoft-edge---update-policies)
+
+
+### 更新（WebView）
+#### 更新策略替代
+>Microsoft Edge 更新 1.3.127.1 和更高版本
+
+#### 描述
+可针对 Microsoft Edge Web 视图指定启用或不启用自动更新。 Microsoft Edge Web 视图是应用程序用来显示 Web 内容的组件。
+默认情况下启用自动更新。 禁用 Microsoft Edge Web Edge 自动更新可能会导致依赖于此组件的应用程序出现兼容性问题。
+
+  如果你启用此策略，Microsoft Edge 更新将根据你配置以下选项的方式处理 Microsoft Edge Web 视图更新：
+  - 始终允许更新：自动下载和应用更新
+  - 禁用更新：从不下载或应用更新。
+
+  如果未启用此策略，则自动下载并应用更新。
+#### Windows 信息和设置
+##### 组策略 (ADMX) 信息
+- GP 唯一名称：更新
+- GP 名称：更新策略替代
+- GP 路径：Administrative Templates/Microsoft Edge Update/Microsoft Edge WebView
+- GP ADMX文件名：msedgeupdate.admx
+##### Windows 注册表设置
+- 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- 值名称： 
+  - Update{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}
+- 值类型：REG_DWORD
+##### 示例值：
+```
+0x00000001
 ```
 [返回页首](#microsoft-edge---update-policies)
 
