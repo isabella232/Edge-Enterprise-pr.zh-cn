@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 906a8cdd73e07efc5662e9b3ea51d8b7a2f03079
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 9a0a9157f1176f935ba2462ee34abb3ebb708b66
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094746"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105726"
 ---
 # Microsoft Edge - 策略
 最新版本的 Microsoft Edge 包含以下策略。 可以使用这些策略来配置在你的组织中运行 Microsoft Edge 的方式。
@@ -118,7 +118,7 @@ ms.locfileid: "11094746"
 ### [*HTTP 身份验证*](#http-authentication-policies)
 |策略名称|标题|
 |-|-|
-|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|Allow cross-origin HTTP Authentication prompts|
+|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|允许跨域 HTTP 身份验证提示|
 |[AuthNegotiateDelegateAllowlist](#authnegotiatedelegateallowlist)|指定 Microsoft Edge 可将用户凭据委派到的服务器列表|
 |[AuthSchemes](#authschemes)|支持的身份验证方案|
 |[AuthServerAllowlist](#authserverallowlist)|配置允许的身份验证服务器列表|
@@ -256,7 +256,7 @@ ms.locfileid: "11094746"
 |[DownloadRestrictions](#downloadrestrictions)|允许下载限制|
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|启用“集锦”功能|
 |[EditFavoritesEnabled](#editfavoritesenabled)|允许用户编辑收藏夹|
-|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|在有限时间内重新启用已弃用的 Web 平台功能|
+|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Re-enable deprecated web platform features for a limited time (obsolete)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|启用 Microsoft 中的域操作下载（已过时）|
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|启用联机 OCSP/CRL 检查|
 |[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|当本地信任密钥发布证书时，允许使用 SHA-1 对证书进行签名（已弃用）|
@@ -346,6 +346,7 @@ ms.locfileid: "11094746"
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在收藏夹栏中显示 Microsoft Office 快捷方式（已弃用）|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|启用签名的 HTTP Exchange (SXG) 支持|
 |[SitePerProcess](#siteperprocess)|对每个网站启用网站隔离|
+|[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|启用拼写检查|
 |[SpellcheckLanguage](#spellchecklanguage)|启用特定拼写检查语言|
 |[SpellcheckLanguageBlocklist](#spellchecklanguageblocklist)|强制禁用拼写检查语言|
@@ -565,21 +566,21 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 在 Windows 和 macOS 上自 77 或更高版本起
 
   #### 描述
-  Setting the policy lets you make a list of URL patterns that specify sites for which Microsoft Edge can automatically select a client certificate. The value is an array of stringified JSON dictionaries, each with the form { "pattern": "$URL_PATTERN", "filter" : $FILTER }, where $URL_PATTERN is a content setting pattern. $FILTER restricts the client certificates the browser automatically selects from. Independent of the filter, only certificates that match the server's certificate request are selected.
+  通过设置策略，您可以生成一个 URL 模式列表，这些模式指定 Microsoft Edge 可以为其自动选择客户端证书的站点。 该值是一个字符串化的 JSON 字典数组，每个字典的格式为 { "pattern": "$URL_PATTERN", "filter" : $FILTER }，其中 $URL_PATTERN 是内容设置模式。 $FILTER 限制浏览器自动从中选择的客户端证书。 独立于筛选器，仅选择与服务器证书请求匹配的证书。
 
-Examples for the usage of the $FILTER section:
+"$FILTER" 部分的用法示例：
 
-* When $FILTER is set to { "ISSUER": { "CN": "$ISSUER_CN" } }, only client certificates issued by a certificate with the CommonName $ISSUER_CN are selected.
+* 当 $FILTER 设置为 { "ISSUER": { "CN": "$ISSUER_CN" } } 时，只选择由 CommonName 为 $ISSUER\u CN 的证书颁发的客户端证书。
 
-* When $FILTER contains both the "ISSUER" and the "SUBJECT" sections, only client certificates that satisfy both conditions are selected.
+* 当 $FILTER 同时包含“证书颁发者”和“使用者”部分时，只选择满足这两个条件的客户端证书。
 
-* When $FILTER contains a "SUBJECT" section with the "O" value, a certificate needs at least one organization matching the specified value to be selected.
+* 当 $FILTER 包含具有 “O” 值的“使用者”部分时，证书至少需要一个与指定值匹配的组织才能被选择。
 
-* When $FILTER contains a "SUBJECT" section with a "OU" value, a certificate needs at least one organizational unit matching the specified value to be selected.
+* 当 $FILTER 包含具有 “OU” 值的“使用者”部分时，证书至少需要一个与指定值匹配的组织单位才能选择。
 
-* When $FILTER is set to {}, the selection of client certificates is not additionally restricted. Note that filters provided by the web server still apply.
+* 当 $FILTER 设置为 {} 时，客户端证书的选择不受额外限制。 请注意，web 服务器提供的过滤器仍然适用。
 
-If you leave the policy unset, there's no autoselection for any site.
+如果不设置策略，任何站点都不会自动选择。
 
   #### 支持的功能：
   - 可以强制：是
@@ -2055,9 +2056,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
   - 在 Windows 和 macOS 上自 80 或更高版本起
 
   #### 描述
-  允许你将所有 Cookie 恢复为旧的 SameSite 行为。 Reverting to legacy behavior causes cookies that don't specify a SameSite attribute to be treated as if they were "SameSite=None", removes the requirement for "SameSite=None" cookies to carry the "Secure" attribute, and skips the scheme comparison when evaluating if two sites are same-site.
+  允许你将所有 Cookie 恢复为旧的 SameSite 行为。 还原为旧行为会导致未指定 SameSite 属性的 Cookie 被视为 “SameSite=None”，删除了 “SameSite=None” Cookie 携带 “Secure” 属性的要求，并在评估两个站点是否为同一站点时跳过方案比较。
 
-If you don't set this policy, the default SameSite behavior for cookies will depend on other configuration sources for the SameSite-by-default feature, the Cookies-without-SameSite-must-be-secure feature, and the Schemeful Same-Site feature. These features can also be configured by a field trial or the same-site-by-default-cookies flag, the cookies-without-same-site-must-be-secure flag, or the schemeful-same-site flag in edge://flags.
+如果不设置此策略，Cookie 的 SameSite 行为将取决于 SameSite-by-default 功能、Cookies-without-SameSite-must-be-secure 功能、和 Schemeful Same-Site 功能的其他资源。 这些功能也可以通过字段试用或 same-site-by-default-cookies 标志、cookies-without-same-site-must-be-secure、schemeful-same-site flag in edge://flags 来配置。
 
 策略选项映射：
 
@@ -2113,7 +2114,7 @@ If you don't set this policy, the default SameSite behavior for cookies will dep
   #### 描述
   为域设置的 Cookie 与指定的模式匹配时，将还原为旧 SameSite 行为。
 
-Reverting to legacy behavior causes cookies that don't specify a SameSite attribute to be treated as if they were "SameSite=None", removes the requirement for "SameSite=None" cookies to carry the "Secure" attribute, and skips the scheme comparison when evaluating if two sites are same-site.
+还原为旧行为会导致未指定 SameSite 属性的 Cookie 被视为 “SameSite=None”，删除了 “SameSite=None” Cookie 携带 “Secure” 属性的要求，并在评估两个站点是否为同一站点时跳过方案比较。
 
 如果未设置此策略，则将使用全局默认值。 全局默认值也将用于你指定的模式未涵盖的域上的 Cookie。
 
@@ -3817,16 +3818,16 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   [返回页首](#microsoft-edge---policies)
 
   ### AllowCrossOriginAuthPrompt
-  #### Allow cross-origin HTTP Authentication prompts
+  #### 允许跨域 HTTP 身份验证提示
   
   
   #### 支持的版本：
   - 在 Windows 和 macOS 上自 77 或更高版本起
 
   #### 描述
-  Controls whether third-party images on a page can show an authentication prompt.
+  控制页面上的第三方图像是否可以显示身份验证提示。
 
-通常，这将被禁用，以抵御网络钓鱼威胁。 If you don't configure this policy, it's disabled and third-party images can't show an authentication prompt.
+通常，这将被禁用，以抵御网络钓鱼威胁。 如果不配置此策略，它将被禁用，并且第三方映像无法显示身份验证提示。
 
   #### 支持的功能：
   - 可以强制：是
@@ -3839,7 +3840,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   #### Windows 信息和设置
   ##### 组策略 (ADMX) 信息
   - GP 唯一名称：AllowCrossOriginAuthPrompt
-  - GP 名称: Allow cross-origin HTTP Authentication prompts
+  - GP 名称: 允许跨域 HTTP 身份验证提示
   - GP 路径（强制）：管理模板/Microsoft Edge/HTTP 身份验证
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -10123,14 +10124,16 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   [返回页首](#microsoft-edge---policies)
 
   ### EnableDeprecatedWebPlatformFeatures
-  #### 在有限时间内重新启用已弃用的 Web 平台功能
+  #### Re-enable deprecated web platform features for a limited time (obsolete)
   
-  
+  >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
   #### 支持的版本：
-  - 在 Windows 和 macOS 上自 77 或更高版本起
+  - On Windows and macOS since 77, until 86
 
   #### 描述
-  指定要临时重新启用的已弃用 Web 平台功能的列表。
+  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
+
+指定要临时重新启用的已弃用 Web 平台功能的列表。
 
 通过此策略，可在有限的时间内重新启用已弃用的 Web 平台功能。 功能由字符串标记标识。
 
@@ -10157,7 +10160,7 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   #### Windows 信息和设置
   ##### 组策略 (ADMX) 信息
   - GP 唯一名称：EnableDeprecatedWebPlatformFeatures
-  - GP 名称：在有限时间内重新启用已弃用的 Web 平台功能
+  - GP name: Re-enable deprecated web platform features for a limited time (obsolete)
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -14222,9 +14225,9 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
   - 在 Windows 和 macOS 上自 77 或更高版本起
 
   #### 描述
-  Sets the minimum supported version of TLS. 如果未配置此策略，Microsoft Edge 将使用默认最低版本 TLS 1.0。
+  设置支持的 TLS 的最低版本。 如果未配置此策略，Microsoft Edge 将使用默认最低版本 TLS 1.0。
 
-If you enable this policy, Microsoft Edge won't use any version of SSL/TLS lower than the specified version. 任何无法识别的值都将被忽略。
+如果启用此策略，Microsoft Edge 将不会使用低于指定版本的任何 SSL/TLS 版本。 任何无法识别的值都将被忽略。
 
 策略选项映射：
 
@@ -15058,6 +15061,58 @@ If you disable this policy, the shortcut isn't shown.
 
   #### Mac 信息和设置
   - 首选项项名称：SitePerProcess
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SpeechRecognitionEnabled
+  #### Configure Speech Recognition
+  
+  
+  #### 支持的版本：
+  - On Windows and macOS since 87 or later
+
+  #### 描述
+  Set whether websites can use the W3C Web Speech API to recognize speech from the user. The Microsoft Edge implementation of the Web Speech API uses Azure Cognitive Services, so voice data will leave the machine.
+
+If you enable or don't configure this policy, web-based applications that use the Web Speech API can use Speech Recognition.
+
+If you disable this policy, Speech Recognition is not available through the Web Speech API.
+
+Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 布尔
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP unique name: SpeechRecognitionEnabled
+  - GP name: Configure Speech Recognition
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - Value Name: SpeechRecognitionEnabled
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000001
+```
+
+
+  #### Mac 信息和设置
+  - Preference Key Name: SpeechRecognitionEnabled
   - 示例值：
 ``` xml
 <true/>

@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/28/2020
+ms.date: 10/02/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: dc780166f05afd7d667f901a1198ce125831d01b
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 9a0a9157f1176f935ba2462ee34abb3ebb708b66
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094606"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105536"
 ---
 # Microsoft Edge - 策略
 最新版本的 Microsoft Edge 包含以下策略。 可以使用这些策略来配置在你的组织中运行 Microsoft Edge 的方式。
@@ -256,7 +256,7 @@ ms.locfileid: "11094606"
 |[DownloadRestrictions](#downloadrestrictions)|允许下载限制|
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|启用“集锦”功能|
 |[EditFavoritesEnabled](#editfavoritesenabled)|允许用户编辑收藏夹|
-|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|在有限时间内重新启用已弃用的 Web 平台功能|
+|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Re-enable deprecated web platform features for a limited time (obsolete)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|启用 Microsoft 中的域操作下载（已过时）|
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|启用联机 OCSP/CRL 检查|
 |[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|当本地信任密钥发布证书时，允许使用 SHA-1 对证书进行签名（已弃用）|
@@ -346,6 +346,7 @@ ms.locfileid: "11094606"
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在收藏夹栏中显示 Microsoft Office 快捷方式（已弃用）|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|启用签名的 HTTP Exchange (SXG) 支持|
 |[SitePerProcess](#siteperprocess)|对每个网站启用网站隔离|
+|[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|启用拼写检查|
 |[SpellcheckLanguage](#spellchecklanguage)|启用特定拼写检查语言|
 |[SpellcheckLanguageBlocklist](#spellchecklanguageblocklist)|强制禁用拼写检查语言|
@@ -10123,14 +10124,16 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   [返回页首](#microsoft-edge---policies)
 
   ### EnableDeprecatedWebPlatformFeatures
-  #### 在有限时间内重新启用已弃用的 Web 平台功能
+  #### Re-enable deprecated web platform features for a limited time (obsolete)
   
-  
+  >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
   #### 支持的版本：
-  - 在 Windows 和 macOS 上自 77 或更高版本起
+  - On Windows and macOS since 77, until 86
 
   #### 描述
-  指定要临时重新启用的已弃用 Web 平台功能的列表。
+  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
+
+指定要临时重新启用的已弃用 Web 平台功能的列表。
 
 通过此策略，可在有限的时间内重新启用已弃用的 Web 平台功能。 功能由字符串标记标识。
 
@@ -10157,7 +10160,7 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   #### Windows 信息和设置
   ##### 组策略 (ADMX) 信息
   - GP 唯一名称：EnableDeprecatedWebPlatformFeatures
-  - GP 名称：在有限时间内重新启用已弃用的 Web 平台功能
+  - GP name: Re-enable deprecated web platform features for a limited time (obsolete)
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -15058,6 +15061,58 @@ If you disable this policy, the shortcut isn't shown.
 
   #### Mac 信息和设置
   - 首选项项名称：SitePerProcess
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SpeechRecognitionEnabled
+  #### Configure Speech Recognition
+  
+  
+  #### 支持的版本：
+  - On Windows and macOS since 87 or later
+
+  #### 描述
+  Set whether websites can use the W3C Web Speech API to recognize speech from the user. The Microsoft Edge implementation of the Web Speech API uses Azure Cognitive Services, so voice data will leave the machine.
+
+If you enable or don't configure this policy, web-based applications that use the Web Speech API can use Speech Recognition.
+
+If you disable this policy, Speech Recognition is not available through the Web Speech API.
+
+Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
+
+  #### 支持的功能：
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+  - 布尔
+
+  #### Windows 信息和设置
+  ##### 组策略 (ADMX) 信息
+  - GP unique name: SpeechRecognitionEnabled
+  - GP name: Configure Speech Recognition
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - Value Name: SpeechRecognitionEnabled
+  - 值类型：REG_DWORD
+  ##### 示例值：
+```
+0x00000001
+```
+
+
+  #### Mac 信息和设置
+  - Preference Key Name: SpeechRecognitionEnabled
   - 示例值：
 ``` xml
 <true/>
