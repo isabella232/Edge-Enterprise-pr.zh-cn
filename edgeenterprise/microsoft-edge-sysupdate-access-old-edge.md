@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何访问旧版 Microsoft Edge。
-ms.openlocfilehash: e5a97a487dc6b3a45504a721e460a69103b0174e
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: e4733d020f3a681ded50e5a087fe086d39362201
+ms.sourcegitcommit: f7f7eb69d2298b0f9779a9fd28e3c4e297ef2e05
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979333"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "11125514"
 ---
 # 在安装 Microsoft Edge 的新版本后访问旧版 Microsoft Edge
 
@@ -35,6 +35,8 @@ ms.locfileid: "10979333"
 > 将于 2021 年 3 月 9 日终止对 Microsoft Edge 旧版桌面应用的支持，取而代之的是新版 Microsoft Edge。 这意味着在该日期之后 Microsoft Edge 旧版将不再接收安全更新。 此更改适用于在 Microsoft Edge 旧版桌面应用中运行的所有体验。 [了解详细信息](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666)。
 
 ## 开始之前
+> [!NOTE]
+> 从 Windows 10 版本 20H2 开始，不再包含 Microsoft Edge 旧版。 从 Windows 10 该版本开始，不支持并行使用体验。
 
 本文中的过程适用于已用最新安全更新进行更新的系统。 安装 Microsoft Edge 的新版本后，将隐藏旧版本（旧版 Microsoft Edge）。 默认情况下，所有尝试启动旧版本的操作都将用户重定向到新安装的 Microsoft Edge 版本。 本文介绍如何在安装 Microsoft Edge 后继续使用 Microsoft Edge 旧版本。
 
