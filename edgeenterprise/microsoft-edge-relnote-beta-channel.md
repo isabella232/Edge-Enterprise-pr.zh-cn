@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: 57cd68d9366dd80812617f98934d44918b76926c
-ms.sourcegitcommit: a54037baf06d6f2e30b9485cfd397468b3174a86
+ms.openlocfilehash: 4269214a4c6a1c0d8fd62a8fd84cd9bf4f3e2b09
+ms.sourcegitcommit: d1f56745f91f36f8cfb437cfae3aaa7f816ff61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "11133199"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "11133290"
 ---
 # Microsoft Edge Beta 渠道的发行说明
 
@@ -29,11 +29,7 @@ ms.locfileid: "11133199"
 
 ### 功能更新
 
-- **会自动将不兼容的网站从 Internet Explorer 重新定向到 Microsoft Edge**。  使用 Microsoft Edge 87 稳定版的更新，在 Internet Explorer 中显示不兼容信息的公共网站将默认自动重定向到 Microsoft Edge。 可通过配置[从Internet Explorer重定向到Microsoft Edge 中所述的策略来禁用此功能，以便与现代网站](https://docs.microsoft.com/deployedge/edge-learnmore-neededge)兼容。
-- ** 在云端手动重置Microsoft Edge同步数据 **。 我们正在引入一种从产品内来重置Microsoft Edge同步数据的方式。 这确保了用户数据从 Microsoft 服务中清除，同时也解决了以前需要支持票据的某些产品问题。
 - **已启用展台模式隐私功能**。 从 Microsoft Edge 87版本开始，将启用帮助企业实现用户数据隐私的展台模式功能。 这些功能将启用以下体验，例如，在退出时清除用户数据、删除已下载的文件，以及在指定的空闲时间后重置配置的启动体验。 深入了解如何 [配置 Microsoft Edge 的展台模式](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)
-- **单一登录（SSO）现在适用于下级 Windows 中的 Azure Active Directory （Azure AD）帐户。** 已登录到下层 Microsoft Windows（版本 7 和 8.1）上的 Microsoft Edge 的用户将自动登录到配置为允许使用工作或学校帐户单一登录的网站（例如，sharepoint.com、office.com 和 bing.com）。
-- **使用 Web 单一登录（SSO）自动注册 Microsoft 账户**。 已在下层 Windows 上登录的 Microsoft Edge 用户现在将自动登录到配置为允许使用 Microsoft 帐户进行 SSO 的网站（例如，bing.com、office.com、msn.com 和 outlook.com）。
 - **在默认情况下启用 ClickOnce 部署**。 Microsoft Edge 87 中默认启用 ClickOnce，这可减少企业部署软件的障碍，并更好地与 Microsoft Edge 旧版浏览器行为保持一致。 从 Microsoft Edge 87 开始，ClickOnceEnabled 策略的“未配置”状态将反映新的默认已启用 ClickOnce 状态（与先前默认“已禁用”状态相比）。
 - **企业新选项卡页面（NTP）将生产力与可定制的、与工作相关的源内容整合在一起**。 企业 NTP 将我们提供给用工作或学校账户登录的用户 Office 365 生产率页面与与个性化的、与工作相关的公司和行业信息源融合在一起，并将这些信息源组织在单个页面中。 用户将能够识别熟悉的 Office 365 内容和由 Bing 提供支持的 Microsoft 搜索商业版。 此外，他们可以轻松地翻转到一个可自定义的 "我的信息源"，其中包含与用户、其公司或行业相关的内容和模块，以及组织所提供的其他源的选择。 [了解详细信息](https://docs.microsoft.com/microsoft-365/admin/manage/manage-industry-news?view=o365-worldwide&preserve-view=true)。
 
@@ -128,7 +124,7 @@ ms.locfileid: "11133199"
 * **安全性：**
 
   * 安全 DNS (DNS-over-HTTPS) 支持。  从 Microsoft Edge 版本 86 开始，可以使用设置来控制非托管设备上的安全 DNS。 用户无法访问已托管设备上的这些设置，但 IT 管理员可以使用 [dnsoverhttpsmode](https://docs.microsoft.com/deployedge/microsoft-edge-policies#dnsoverhttpsmode) 组策略启用或禁用安全 DNS。
-  * 如果联机泄露中发现了你的密码，Microsoft Edge 会提醒你。 Microsoft Edge 会针对已知违例凭据的存储库检查你的密码，并在找到匹配项时提醒你。
+
 
 * **使用组策略向全新选项卡页面 (NTP) 中添加自定义图像。** 从 Microsoft Edge 版本 86 开始，NTP 可以选择使用自定义用户提供的图像来替换默认图像。 组策略也支持管理此图像属性的功能。
 
