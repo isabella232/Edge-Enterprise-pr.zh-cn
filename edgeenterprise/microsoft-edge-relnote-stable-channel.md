@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 10/20/2020
+ms.date: 10/22/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 864c8e9946f5114f2cdf6908ad88fbbe5ca9dd7a
-ms.sourcegitcommit: f7f7eb69d2298b0f9779a9fd28e3c4e297ef2e05
+ms.openlocfilehash: 1ff3ec8266cfb2f8be59fb8b39b597791bc1e2ac
+ms.sourcegitcommit: ab912e0629e3f060220f28cdecb414d292b0e37d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "11125534"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "11133760"
 ---
 # Microsoft Edge Stable 渠道发行说明
 
@@ -23,6 +23,10 @@ ms.locfileid: "11125534"
 
 > [!NOTE]
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 若要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 86.0.622.51：10 月 22 日
+
+[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#october-22-2020)列出安全更新
 
 ## 版本 86.0.622.48：10 月 20 日
 
