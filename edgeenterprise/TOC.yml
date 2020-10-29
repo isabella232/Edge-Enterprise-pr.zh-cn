@@ -143,6 +143,8 @@
       href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
+        - name: 企业新建选项卡页的向后兼容性
+          href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
         - name: 用于配置代理设置的命令行选项
