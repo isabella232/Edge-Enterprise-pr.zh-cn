@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 政策文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 10/16/2020
+ms.date: 10/27/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 4298b25f7f158bc54f798442b4426494f046fa68
-ms.sourcegitcommit: 7d160257010f75b86b89c8802d0dd27f1f8761ef
+ms.openlocfilehash: 3ca9adb18ef41581bb016451015cf0aca0aa63c9
+ms.sourcegitcommit: 91abbcdd4918065d4ec1151587fc1fa92486dbf3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "11134441"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "11136211"
 ---
 # Microsoft Edge WebView2 - 策略
 
@@ -40,8 +40,8 @@ ms.locfileid: "11134441"
 
 |策略名称|标题|
 |-|-|
-|[browserExecutableFolder](#browserexecutablefolder)|配置浏览器可执行文件文件夹的位置|
-|[releaseChannelPreference](#releasechannelpreference)|设置发布渠道搜索顺序首选项|
+|[BrowserExecutableFolder](#browserexecutablefolder)|配置浏览器可执行文件文件夹的位置|
+|[ReleaseChannelPreference](#releasechannelpreference)|设置发布渠道搜索顺序首选项|
 
 
 
@@ -50,7 +50,7 @@ ms.locfileid: "11134441"
 
   [返回页首](#microsoft-edge-webview2---policies)
 
-  ### browserExecutableFolder
+  ### BrowserExecutableFolder
 
   #### 配置浏览器可执行文件文件夹的位置
 
@@ -80,7 +80,7 @@ ms.locfileid: "11134441"
 
   ##### 组策略 (ADMX) 信息
 
-  - GP 唯一名称：browserExecutableFolder
+  - GP 唯一名称：BrowserExecutableFolder
   - GP 名称：配置浏览器可执行文件文件夹的位置
   - GP 路径（强制）：管理模板/Microsoft Edge WebView2/加载器替代设置
   - GP 路径（推荐）：不适用
@@ -88,7 +88,7 @@ ms.locfileid: "11134441"
 
   ##### Windows 注册表设置
 
-  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder
   - 路径（推荐）：不适用
   - 值名称：REG_SZ 列表
   - 值类型：REG_SZ 列表
@@ -96,7 +96,7 @@ ms.locfileid: "11134441"
   ##### 示例值：
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Value: C:\\Program Files\\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64"
+SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder = "Name: *, Value: C:\\Program Files\\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64"
 
 ```
 
@@ -104,7 +104,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
 
   [返回页首](#microsoft-edge-webview2---policies)
 
-  ### releaseChannelPreference
+  ### ReleaseChannelPreference
 
   #### 设置发布渠道搜索顺序首选项
 
@@ -136,7 +136,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
 
   ##### 组策略 (ADMX) 信息
 
-  - GP 唯一名称：releaseChannelPreference
+  - GP 唯一名称：ReleaseChannelPreference
   - GP 名称：设置发布渠道搜索顺序首选项
   - GP 路径（强制）：管理模板/Microsoft Edge WebView2/加载器替代设置
   - GP 路径（推荐）：不适用
@@ -144,7 +144,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
 
   ##### Windows 注册表设置
 
-  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\WebView2\releaseChannelPreference
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference
   - 路径（推荐）：不适用
   - 值名称：REG_SZ 列表
   - 值类型：REG_SZ 列表
@@ -152,7 +152,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
   ##### 示例值：
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebView2\releaseChannelPreference = "Name: *, Value: 1"
+SOFTWARE\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference = "Name: *, Value: 1"
 
 ```
 
