@@ -3,19 +3,19 @@ title: 从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站
 ms.author: laannade
 author: dan-wesley
 manager: ratetali
-ms.date: 10/19/2020
+ms.date: 11/03/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容
-ms.openlocfilehash: ce9e8dabdff25cc3ba375746ec82ddd78b6d7694
-ms.sourcegitcommit: cf991cc4bd2e70169902cbda9ddc870d70e31ca2
+ms.openlocfilehash: d822bf4cef76fe4c0298133b47ed80f5d1242b3d
+ms.sourcegitcommit: 73fec3998f26d110252ace621be01f1c1142cf57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "11120517"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "11151092"
 ---
 # 从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容
 
@@ -74,14 +74,14 @@ ms.locfileid: "11120517"
 - 如果启用此策略，重定向所需的 BHO 将不会安装，并且你的用户将继续看到 Internet Explorer 上某些网站的不兼容消息。 如果已安装 BHO，则在下一次更新 Microsoft Edge 稳定频道时，会将其卸载。
 - 如果禁用或未配置此策略，将安装 BHO。 这是默认行为。
 
-除了需要 BHO， 还有一个 **RedirectSitesFromInternetExplorerRedirectMode** 依赖，需要设置为“站点列表”或“未配置”。
+除了需要 BHO 外，还需要依赖 **RedirectSitesFromInternetExplorerRedirectMode**，其需要设置为“基于不兼容网站的网站列表重定向网站”或“未配置”。
 
 ### 策略：RedirectSitesFromInternetExplorerRedirectMode
 
  此策略对应于 Microsoft Edge **默认浏览器**设置“允许 Internet Explorer 在 Microsoft Edge 中打开网站”。 可通过 *edge://settings/defaultbrowser* URL 来访问此设置。  
 
 - 如果未配置此策略或将其设置为“站点列表”，则 Internet Explorer 会将不兼容的网站重定向到 Microsoft Edge。 这是默认行为。
-- 如果禁用此策略，不兼容的网站不会重定向到 Microsoft Edge。
+- 若要禁用此策略，请选择“**已启用**”，然后在“选项：将不兼容的网站从 Internet Explorer 重新定向到 Microsoft Edge”下的下拉列表中，选择“**禁用**”。 在此状态下，不兼容的网站不会重定向到 Microsoft Edge。
 
 > [!NOTE]
 > 如果你所在的个人设备并非由组织管理，你将在 **Internet Explorer 兼容性**下看到名为“允许在 Internet Explorer 模式中加载的网站”的另一个设置。
@@ -104,11 +104,11 @@ ms.locfileid: "11120517"
 
 如果想要在更新到 Microsoft Edge 稳定版本 87 之前禁用重定向，请执行以下步骤：
 
-1. 将 **RedirectSitesFromInternetExplorerRedirectMode** 策略设为 **“启用”**。 策略生效后，此设置将立即停止重定向。
+1. 将 **RedirectSitesFromInternetExplorerPreventBHOInstall** 策略设为 **“启用”**。
 
 如果想要在更新到 Microsoft Edge 稳定版本 87 之后禁用重定向，请执行以下步骤：
 
-1. 将 **RedirectSitesFromInternetExplorerRedirectMode** 策略设为 **“禁用”**。 策略生效后，此设置将立即停止重定向。
+1. 将 **RedirectSitesFromInternetExplorerRedirectMode** 策略设置为“**已启用**”，然后在“选项：将不兼容的网站从 Internet Explorer 重新定向到 Microsoft Edge”下的下拉列表中，选择“**禁用**”。 策略生效后，此设置将立即停止重定向。
 2. 将 **RedirectSitesFromInternetExplorerPreventBHOInstall** 策略设为 **“启用”**。 策略生效后，将在下一次 Microsoft Edge 更新后卸载 BHO。
 
 ## 另请参阅
