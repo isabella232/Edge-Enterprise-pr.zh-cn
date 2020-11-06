@@ -3,19 +3,19 @@ title: 计划 Microsoft Edge 部署
 ms.author: cjacks
 author: appcompatguy
 manager: saudm
-ms.date: 04/23/2020
+ms.date: 11/04/2020
 audience: ITPro
 ms.topic: procedural
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 计划 Microsoft Edge 部署
-ms.openlocfilehash: 3ac3d050578ca4f230ed7e775aefb73f11abb3c0
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: a6c24dcc8c2f53bd6813a0dea9584cd6b5df8285
+ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979272"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "11155249"
 ---
 # 计划 Microsoft Edge 部署
 
@@ -23,6 +23,19 @@ ms.locfileid: "10979272"
 
 >[!NOTE]
 >本文适用于 Microsoft Edge 版本 77 或更高版本。
+
+以下部分针对 Microsoft Edge 部署规划提供了具体指导。
+
+- [评估浏览器环境和要求](#evaluate-your-existing-browser-environment-and-browser-needs)
+- [确保 Windows 10 设备准备就绪](#make-sure-your-windows-10-devices-are-ready)
+- [选择部署方法](#determine-your-deployment-methodology)
+- [进行站点发现](#do-site-discovery)
+- [选择渠道策略](#determine-your-channel-strategy)
+- [确定和配置策略](#define-and-configure-policies)
+- [测试应用兼容性](#do-app-compatibility-testing)
+- [Microsoft Edge 试点](#deploy-microsoft-edge-to-a-pilot-group)
+- [评估试点](#validate-your-deployment)
+- [在企业中部署 Microsoft Edge](#broad-deployment-of-microsoft-edge)
 
 ## 评估现有浏览器环境和浏览器需求
 
@@ -157,9 +170,11 @@ Microsoft Edge 的应用程序兼容性相当高 - 因此，Microsoft 提供以�
 2. 如果适用于 Internet Explorer，那么将在 Internet Explorer 模式下适用于 Microsoft Edge。
 3. 如果适用于 Google Chrome，则将适用于 Microsoft Edge。
 
-如果你具有一款未能兑现此承诺的应用程序，那么我们将坚守承诺，使用 [Microsoft 应用保证](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure)来解决此问题。
+如果你有一款应用程序，而我们未在该应用中兑现我们的兼容性承诺，那么我们将坚守承诺，使用 [Microsoft 应用保证](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure)来解决此问题。
 
-尽管有此承诺，但我们知道许多组织必须验证某些应用程序的合规性或风险管理原因。 尽管我们希望简单直接地测试应用，但此过程务必要做到严格有序。
+### 内部业务线应用测试
+
+尽管我们有兼容性承诺，但我们知道许多组织必须验证某些应用程序的合规性或风险管理原因。 尽管我们希望简单直接地测试应用，但此过程务必要做到严格有序。
 
 有两种方法可以执行应用兼容性测试：
 
@@ -167,6 +182,10 @@ Microsoft Edge 的应用程序兼容性相当高 - 因此，Microsoft 提供以�
 2. 试验测试。 少量用户使用他们自己的设备在其日常工作环境中验证应用程序。
 
 选择最适合每个应用的方法来管理风险，无需在兼容性测试方面过度投资。
+
+### 第三方应用支持
+
+除了自己的业务线应用之外，很多组织还使用由外部来源提供的应用。 [准备好使用 Microsoft Edge](deploy-edge-ready-for-edge.md) 文章有一个列表，其中列出了可能已在你的组织中使用的 Web 应用程序。 此列表提供提供商支持声明链接，在将其产品与 Microsoft Edge 结合使用时可进行查看。
 
 ## 将 Microsoft Edge 部署到试点组
 
