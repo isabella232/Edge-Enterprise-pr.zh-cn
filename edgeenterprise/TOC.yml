@@ -1,4 +1,4 @@
-# last revised 10/15/2020
+# last revised 11/03/2020
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -25,6 +25,8 @@
       href: microsoft-edge-roadmap.md
     - name: 计划 Microsoft Edge 部署
       href: deploy-edge-plan-deployment.md
+    - name: 准备好进行 Microsoft Edge
+      href: deploy-edge-ready-for-edge.md
     - name: 发布信息
       items:
         - name: 发布计划
