@@ -25,7 +25,7 @@
       href: microsoft-edge-roadmap.md
     - name: 计划 Microsoft Edge 部署
       href: deploy-edge-plan-deployment.md
-    - name: 准备好进行 Microsoft Edge
+    - name: Microsoft Edge 就绪
       href: deploy-edge-ready-for-edge.md
     - name: 发布信息
       items:
@@ -111,6 +111,10 @@
           href: edge-ie-mode-site-discovery.md
         - name: IE 模式 FAQ
           href: edge-ie-mode-faq.md
+        - name: 其他指南
+          items:
+            - name: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
+              href: edge-ie-mode-add-guidance-cookieshare.md
 - name: Microsoft Edge 安全
   items:
     - name: 企业的安全性
