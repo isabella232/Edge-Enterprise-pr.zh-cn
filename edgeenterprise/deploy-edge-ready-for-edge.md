@@ -3,19 +3,19 @@ title: Microsoft Edge 就绪
 ms.author: bshiers
 author: dan-wesley
 manager: chstaab
-ms.date: 11/04/2020
+ms.date: 11/06/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 就绪
-ms.openlocfilehash: 06fd37dfa910c05db091cf764552ec93471dcbef
-ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
+ms.openlocfilehash: eb4f03fd831eda4b4773b87469ceeb896e3fe08a
+ms.sourcegitcommit: 2e8906d1090263efe83d628be06dbe910cb82bf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "11155356"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "11157685"
 ---
 # Microsoft Edge 就绪
 
@@ -24,6 +24,17 @@ ms.locfileid: "11155356"
 ## Web 应用程序兼容性和支持
 
 为了帮助你规划 Microsoft Edge 的部署，我们已编译了可能正在组织中使用的 web 应用程序的列表。 此列表可用于确定 web 应用程序是否已准备好使用 Microsoft Edge，这是由 web 应用程序提供商的公共支持语句记录的。
+
+### 添加到应用程序列表
+
+该列表会在客户参与反馈中标识为支持语句，定期更新。
+
+如果你是 web 应用提供商，并且想要将支持语句纳入客户参考，请发送以下信息至 [isvoutreach@microsoft.com](mailto:isvoutreach@microsoft.com)。
+
+- 产品名称
+- 支持的版本（如果适用）
+- 提供程序名称
+- 公共支持语句 URL
 
 ### 应用程序列表
 
