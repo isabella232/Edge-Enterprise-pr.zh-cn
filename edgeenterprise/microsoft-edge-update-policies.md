@@ -1,9 +1,9 @@
 ---
 title: Microsoft Edge 更新策略文档
 ms.author: stmoody
-author: brianalt-msft
+author: dan-wesley
 manager: tahills
-ms.date: 10/07/2020
+ms.date: 11/12/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,14 +11,15 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 更新程序支持的所有策略的文档
-ms.openlocfilehash: feb7859f062ae39e2bbfe08d8e478386defb85cf
-ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
+ms.openlocfilehash: 0cdcda984efff8d10a84431e44c49ffbf28ddf07
+ms.sourcegitcommit: c2ac4f889b625210b9365a60a447482fb5b4c9d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "11105566"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "11167304"
 ---
 # Microsoft Edge - 更新策略
+
 最新版本的 Microsoft Edge 包含以下策略，你可以使用这些策略控制更新 Microsoft Edge 的方式和时间。
 
 有关 Microsoft Edge 中可用的其他策略的信息，请查看 [Microsoft Edge 浏览器策略引用](microsoft-edge-policies.md)
