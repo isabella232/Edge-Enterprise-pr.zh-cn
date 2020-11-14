@@ -1,4 +1,4 @@
-# last revised 11/03/2020
+# last revised 11/06/2020
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -113,6 +113,8 @@
           href: edge-ie-mode-faq.md
         - name: 其他指南
           items:
+            - name: 将 IE 模式添加到 "打开方式" 上下文菜单
+              href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
               href: edge-ie-mode-add-guidance-cookieshare.md
 - name: Microsoft Edge 安全
