@@ -1,0 +1,101 @@
+---
+title: 将 Internet Explorer 模式添加到“打开方式”上下文菜单
+ms.author: shisub
+author: dan-wesley
+manager: srugh
+ms.date: 11/13/2020
+audience: ITPro
+ms.topic: conceptual
+ms.prod: microsoft-edge
+ms.localizationpriority: high
+ms.collection: M365-modern-desktop
+description: 将 Internet Explorer 模式添加到“打开方式”上下文菜单
+ms.openlocfilehash: 6453cd2587e3bec10404d2491914debb999fcf3f
+ms.sourcegitcommit: e3c80274a9b8ef15761c968214b3cba593476132
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "11168479"
+---
+# 将 Internet Explorer 模式添加到“打开方式”上下文菜单
+
+本文介绍如何将 Microsoft Edge 和 Internet Explorer 模式与桌面应用程序的文件扩展名相关联。
+
+> [!NOTE]
+> 本文适用于 Microsoft Edge 版本 86 或更高版本。
+
+## 与 Internet Explorer 模式的文件扩展名关联指南
+
+以下说明显示了一个将 Microsoft Edge 和 IE 模式与 .mht 文件类型相关联的条目。 请使用以下步骤作为设置文件关联的指南。
+
+> [!NOTE]
+> 你可以使用策略**设置默认关联配置文件**，从而将特定文件扩展名设置为默认情况下在 Internet Explorer 模式下打开。 有关详细信息，请参阅[策略 CSP - ApplicationDefaults](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
+
+1. 使用 Microsoft Edge 频道定义一个新的 ProgID，用于以 Internet Explorer 模式打开。 ProgID 包括应用程序名称和图标以及 msedge.exe 的完整路径。
+
+```markdown
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\Application]
+"ApplicationCompany"="Microsoft Corporation"
+"ApplicationName"="Microsoft Edge with IE Mode"
+"ApplicationIcon"="C:\\<edge_installation_dir>\\msedge.exe,4"
+"AppUserModelId"=""
+```
+
+```markdown
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\DefaultIcon]
+@="C:\\<edge_installation_dir>\\msedge.exe,4"
+```
+
+2. 配置 shell 更新以传递使用 IE 模式打开所需的命令行。
+
+```markdown
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\shell\open\command]
+@="\"C:\\<edge_installation_dir>\\msedge.exe\" -ie-mode-file-url -- \"%1\""
+```
+
+3. 最后，将 .mht 文件扩展名与新的 ProgID 关联。 将你的 ProgID 添加为值名称，其值类型为 REG_SZ。
+
+```markdown
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.mht\OpenWithProgids]
+"MSEdgeIEModeMHT"=hex(0):
+```
+
+设置上例中所述的注册表项后，用户将在“**打开方式**菜单上看到一个附加选项，可使用 Microsoft Edge \<channel\> 和 IE 模式打开 .mht 文件。
+
+## 注册表示例
+
+你可以将以下代码片段另存为 .reg 文件并将其导入注册表。
+
+```markdown
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.mht\OpenWithProgids]
+"MSEdgeIEModeMHT"=hex(0):
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\Application]
+"ApplicationCompany"="Microsoft Corporation"
+"ApplicationName"="Microsoft Edge with IE Mode"
+"ApplicationIcon"="C:\\<edge_installation_dir>\\msedge.exe,4"
+"AppUserModelId"=""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\DefaultIcon]
+@="C:\\<edge_installation_dir>\\msedge.exe,4"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\shell]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\shell\open]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\shell\open\command]
+@="\"C:\\<edge_installation_dir>\\msedge.exe\" -ie-mode-file-url -- \"%1\""
+
+```
+
+## 另请参阅
+
+- [关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
+- [可配置的网站信息](https://docs.microsoft.com/deployedge/edge-learnmore-configurable-sites-ie-mode)
+- [其他企业模式信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [设置文件类型关联](https://docs.microsoft.com/windows/win32/shell/fa-file-types)
+- [Microsoft Edge Enterprise 登陆页面](https://aka.ms/EdgeEnterprise)

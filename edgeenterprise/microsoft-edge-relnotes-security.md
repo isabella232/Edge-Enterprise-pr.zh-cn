@@ -3,23 +3,27 @@ title: Microsoft Edge 安全更新的发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 11/11/2020
+ms.date: 11/13/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: ce88dc7eb33355b76a073c4de54fd5f043c9d947
-ms.sourcegitcommit: ac0d3fe9a2d0b3023abd2cc22868579aa9942a9b
+ms.openlocfilehash: c6367b803994a975f07bd38f375835c17625d905
+ms.sourcegitcommit: 2b6808a4d1878fd2da886f9c6c56f592c6b200e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "11166020"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "11168757"
 ---
 # Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge Stable 渠道更新中包含的安全补丁的信息。
+
+## 2020 年 11 月 13 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定渠道（版本 86.0.622.69）**，其中包含 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2020-16013](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16013) 和 [CVE-2020-16017](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16017)。 有关详细信息，请参阅[安全更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
 ## 2020 年 11 月 11 日
 
@@ -27,11 +31,11 @@ Microsoft 已发布最新的 **Microsoft Edge 稳定频道 (版本 86.0.622.68) 
 
 ## 2020 年 11 月 4 日
 
-Microsoft 已发布最新的 **Microsoft Edge 稳定渠道（版本 86.0.622.63）**，其中包含 Chromium 项目的最新安全更新。 此更新包含 [CVE-2020-16009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16009)，Chromium 团队已将其报告为活跃漏洞。 有关详细信息，请参阅[安全更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
+Microsoft 已发布最新的 **Microsoft Edge 稳定渠道（版本 86.0.622.63）**，其中包含 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2020-16009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16009)。 有关详细信息，请参阅[安全更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
 ## 2020 年 10 月 22 日
 
-Microsoft 已发布最新的 **Microsoft Edge 稳定渠道（版本 86.0.622.51）**，其中包含 Chromium 项目的最新安全更新。 此更新包含[ CVE-2020-15999 ](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15999)，Chromium 团队已将其报告为活跃漏洞。 有关详细信息，请参阅[安全更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
+Microsoft 已发布最新的 **Microsoft Edge 稳定渠道（版本 86.0.622.51）**，其中包含 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2020-15999](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15999)。 有关详细信息，请参阅[安全更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
 ## 2020 年 10 月 9 日
 

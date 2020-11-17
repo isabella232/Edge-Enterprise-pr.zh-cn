@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/04/2020
+ms.date: 11/13/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 0e708707ae8465aa49ee49dcec542881a5080a57
-ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
+ms.openlocfilehash: e191d9487a0e6c0d72f2f4b47d6b6c413449cb71
+ms.sourcegitcommit: 2b6808a4d1878fd2da886f9c6c56f592c6b200e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "11155309"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "11168797"
 ---
 # Microsoft Edge - 策略
 
@@ -28,18 +28,6 @@ ms.locfileid: "11155309"
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
-
-## 新的和已弃用的策略
-
-下表列出了对于此更新新的和已弃用的策略。
-
-| 名称 | 状态 |
-|-|-|
-| [WebWidgetAllowed](#webwidgetallowed) | 新增 |
-| [ProxyBypassList](#proxybypasslist) | 已弃用 |
-| [ProxyMode](#proxymode) | 已弃用 |
-| [ProxyPacUrl](#proxypacurl) | 已弃用 |
-| [ProxyServer](#proxyserver) | 已弃用 |
 
 ## 可用策略
 
@@ -4004,15 +3992,23 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
   #### 描述
 
-  控制可安装的扩展类型并限制运行时访问。
+  设置策略可控制 Microsoft Edge 中可以安装哪些应用和扩展、它们可以与哪些主机进行交互并限制运行时访问。
 
-此设置定义允许的扩展类型以及它们可以与哪些主机交互。 该值是一个字符串列表，其中每个字符串应为以下内容之一：“extension”、“theme”、“user_script”和“hosted_app”。 有关这些类型的详细信息，请参阅 Microsoft Edge 扩展文档。
+如果未设置此策略，则对可接受的扩展和应用类型没有任何限制。
 
-请注意，此策略还会影响使用 [ExtensionInstallForcelist](#extensioninstallforcelist) 策略强制安装的扩展。
+不会安装类型不在列表中的扩展和应用。 每个值应为以下字符串之一：
 
-如果启用此策略，则只安装与列表中的类型匹配的扩展。
+* “extension”
 
-如果未配置此策略，则不会对可接受的扩展类型强制实施任何限制。
+* “theme”
+
+* “user_script”
+
+* “hosted_app”
+
+有关这些类型的详细信息，请参阅 Microsoft Edge 扩展文档。
+
+注意：此策略还会影响使用 [ExtensionInstallForcelist](#extensioninstallforcelist) 强制安装的扩展和应用。
 
   #### 支持的功能：
 
@@ -4203,27 +4199,21 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
   #### 描述
 
-  指定静默安装、无需用户交互并且用户不能卸载或禁用（“强制安装”）的扩展。 扩展请求的所有权限都是隐式授予的，无需用户交互，包括扩展的未来版本所请求的任何其他权限。 此外，还为 enterprise.deviceAttributes 和 enterprise.platformKeys 扩展 API 授予权限。 （这两个 API 仅适用于强制安装的扩展。）
+  设置此策略以指定无需用户交互、无提示安装的应用和扩展的列表。 用户无法卸载或关闭此设置。 权限是隐式授予的，包括 enterprise.deviceAttributes 和 enterprise.platformKeys 扩展 API。 注意：这 2 个 API 不适用于未强制安装的应用和扩展。
 
-此策略优先于可能冲突的 [ExtensionInstallBlocklist](#extensioninstallblocklist) 策略。 当从强制安装列表中删除某个扩展时，Microsoft Edge 会自动卸载该扩展。
+如果未设置此策略，则不会自动安装任何应用或扩展，用户可以卸载 Microsoft Edge 中的任何应用。
 
-强制安装仅限于 Microsoft Edge 加载项网站中列出的不属于以下实例的应用和扩展：已加入 Microsoft Active Directory 域的 Windows 实例、已注册用于设备管理的 Windows 10 专业版或企业版实例，以及通过 MDM 管理的或通过 MCX 加入到域的 macOS 实例。
+此策略取代了 [ExtensionInstallBlocklist](#extensioninstallblocklist) 策略。 如果以前强制安装的应用或扩展已从此列表中删除，则 Microsoft Edge 将自动卸载它。
 
-请注意，用户可以使用开发人员工具修改任何扩展的源代码，这可能会使扩展无法正常工作。 如果需要考虑此问题，请设置 [DeveloperToolsAvailability](#developertoolsavailability) 策略。
+在 Microsoft Windows 实例上，只有当实例加入 Microsoft Active Directory 域并运行 Windows 10 专业版时，才能强制安装 Microsoft Edge Add-ons 网站外部的应用和扩展。
 
-使用以下格式将扩展添加到列表中：
+在 macOS 实例上，只有当实例是通过 MDM 管理或通过 MCX 加入域时，才能强制安装 Microsoft Edge 加载项网站外部的应用和扩展。
 
-[extensionID];[updateURL]
+任何扩展的源代码都可以由使用开发人员工具的用户更改，这可能导致扩展无法正常工作。 如果这是个问题，请配置 DeveloperToolsDisabled 策略。
 
-- extensionID - 处于开发人员模式时在 edge://extensions 上找到的 32 个字母的字符串。
+策略的每个列表项都是一个字符串，其包含扩展 ID 和“更新”URL（可选），用分号 (;) 分隔。 扩展 ID 是在开发人员模式下找到的 32 个字母字符串，例如在 edge://extensions 上。 如果指定，“更新”URL 应指向更新清单 XML 文档 ([https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043))。 默认情况下，使用 Microsoft Edge Add-ons 网站的更新 URL。 此策略中设置的“更新”URL 仅用于初始安装；后续扩展更新使用扩展清单中的更新 URL。
 
-- updateURL（可选）是应用或扩展的更新清单 XML 文档的地址，如 [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) 中所述。 如果想要从 Chrome Web Store 安装扩展，请提供 Chrome Web Store 更新的 URL，https://clients2.google.com/service/update2/crx。 请注意，此策略中设置的更新 URL 仅用于初始安装；扩展的后续更新将使用扩展清单中指示的更新 URL。 如果未设置 updateURL，则会假定扩展名承载在 Microsoft Store 中，并使用以下更新 URL（ https://edge.microsoft.com/extensionwebstorebase/v1/crx)。
-
-例如，gggmmkjegpiggikcnhidnjjhmicpibll;https://edge.microsoft.com/extensionwebstorebase/v1/crx 将从 Microsoft Store“更新”URL 安装 Microsoft Online 应用。 有关托管扩展的详细信息，请参阅：[https://go.microsoft.com/fwlink/?linkid=2095044](https://go.microsoft.com/fwlink/?linkid=2095044)。
-
-如果未配置此策略，则不会自动安装任何扩展，用户可以卸载 Microsoft Edge 中的任何扩展。
-
-请注意，此策略不适用于 InPrivate 模式。
+注意：此策略不适用于 InPrivate 模式。 阅读有关托管扩展 (https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 的信息。
 
   #### 支持的功能：
 

@@ -3,19 +3,19 @@ title: 适用于企业的 Microsoft Edge 安全
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 11/09/2020
+ms.date: 11/11/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 适用于企业的 Microsoft Edge 安全
-ms.openlocfilehash: 465dbc2a7e90d205630f559d8a7b7d582f0467ae
-ms.sourcegitcommit: 10e18ce8a9585bb54c2716939fce93e1c6e708fd
+ms.openlocfilehash: e2f45d49d8f4960f3f2263098ff2eb7d0103b6ea
+ms.sourcegitcommit: 5efa7f6196804da205c3deff4ba7917a94ffcf4f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "11160951"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "11165942"
 ---
 # 适用于企业的 Microsoft Edge 安全
 
@@ -27,7 +27,7 @@ Microsoft Edge 建立在 Chromium 开放源代码项目（与 Google Chrome 核�
 
 ### 抵御网站钓鱼和恶意软件的最高级别防护
 
-根据 [NSS Labs 的一项独立研究](https://www.nsslabs.com/tested-technologies/web-browser-security-wbs/)，相比 Google Chrome 的安全浏览，内置在 Microsoft Edge 中的 SmartScreen 可阻止更多的网络钓鱼和恶意软件尝试。 SmartScreen 可在用户联机工作时提供网站和下载的实时信誉检查，它是 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一部分，它汲取从 Microsoft 庞大的全球资产、研究人员和合作伙伴网络产生的信号和见解。 通过对基于云的动态危险网站和下载列表进行检查，Microsoft Edge 有助于检测和阻止快速消失的短暂威胁。  
+根据 NSS Labs 的一项独立研究，相比 Google Chrome 的安全浏览，内置在 Microsoft Edge 中的 SmartScreen 可阻止更多的[网络钓鱼](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Phishing_Report_Q2_2020.pdf)和[恶意软件](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Malware_Report_Q2_2020.pdf)企图。 SmartScreen 可在用户联机工作时提供网站和下载的实时信誉检查，它是 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一部分，它汲取从 Microsoft 庞大的全球资产、研究人员和合作伙伴网络产生的信号和见解。 通过对基于云的动态危险网站和下载列表进行检查，Microsoft Edge 有助于检测和阻止快速消失的短暂威胁。  
 
 [在 NSS Labs 测试期间](https://www.nsslabs.com/tested-technologies/web-browser-security-wbs/)，[带有 SmartScreen 的 Microsoft Edge](https://docs.microsoft.com//DeployEdge/microsoft-edge-security-smartscreen) 阻止了 95.5% 的网络钓鱼尝试和 98.5% 的恶意软件尝试，而 Chrome 安全浏览的比率分别为 86.9% 和86.0%。
 
@@ -56,7 +56,7 @@ Microsoft Edge 是 Windows 10 上唯一本机支持硬件隔离功能的浏览�
 > [!NOTE]
 > Windows 信息保护 (WIP) 配置要求许可 Microsoft Intune 或 Microsoft Endpoint Configuration Manager，或者使用第三方移动设备管理 (MDM) 解决方案，这可能有额外的许可要求。
 
-**Microsoft 端点 DLP 仅在 Microsoft Edge 本机受支持。**（Microsoft 端点 DLP 当前正处于公开预览阶段，预计将在 2020 年晚些时候公开发布。） Microsoft 端点数据丢失防护 (DLP) 与 Microsoft 安全中心集成，并将信息保护扩展到 Microsoft Edge，以帮助警告用户不符合要求的活动，并防止用户在联机工作时丢失数据。 它可以发现并标记企业内部符合管理员定义的标准的敏感数据，例如包含信用卡号或政府 ID（例如身份证号）、财务信息等的文件。Microsoft 信息保护策略可以部署到 Microsoft Endpoint DLP，而无需进行额外的重新配置，包括敏感内容标识符和 IT 管理员已自定义的策略。 这是面向 IT 管理员的信息保护无缝部署。
+**Microsoft EDGE DLP 仅在 Microsoft Edge 中以本机方式支持**。 Microsoft 端点数据丢失防护 (DLP) 与 Microsoft 安全中心集成，并将信息保护扩展到 Microsoft Edge，以帮助警告用户不符合要求的活动，并防止用户在联机工作时丢失数据。 它可以发现并标记企业内部符合管理员定义的标准的敏感数据，例如包含信用卡号或政府 ID（例如身份证号）、财务信息等的文件。Microsoft 信息保护策略可以部署到 Microsoft Endpoint DLP，而无需进行额外的重新配置，包括敏感内容标识符和 IT 管理员已自定义的策略。 这是面向 IT 管理员的信息保护无缝部署。
 
 > [!NOTE]
 > Microsoft 端点数据丢失防护需要 Microsoft 365 E5 或 Microsoft 365 E5 合规性订阅。
