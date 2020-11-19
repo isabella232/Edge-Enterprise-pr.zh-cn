@@ -3,19 +3,19 @@ title: Microsoft Edge 中的数据丢失防护
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 10/08/2020
+ms.date: 11/18/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 中的数据丢失防护 (DLP)
-ms.openlocfilehash: 59c1b68c0526a49a2ee30283893707852514828d
-ms.sourcegitcommit: 2af303fc97e8493024e2359fa2e8be162ab95a59
+ms.openlocfilehash: 72f670caf34a09cdfc7f47575f688c2a39d3c221
+ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "11104600"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "11176939"
 ---
 # Microsoft Edge 中的数据丢失防护 (DLP)
 
@@ -27,14 +27,19 @@ ms.locfileid: "11104600"
 
 Microsoft Edge 原身支持两种不同的DLP解决方案，即Microsoft Endpoint DLP和Windows信息保护（WIP）。
 
-## Microsoft Endpoint DLP
+## 使用 Microsoft 终结点数据丢失防护（终结点 DLP）
 
-Microsoft Endpoint DLP 是新一代的DLP，其采用了以数据为中心的保护等现代概念。 其内置于 Windows 10 和 Microsoft Edge 中，因此不需要在设备上安装额外的代理或插件。 若要了解有关端点 DLP 的详细信息，请参阅 [了解 Microsoft 365 端点数据丢失防护](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide)。
+Microsoft 终结点 DLP 是运用现代概念（例如以数据为中心的保护）的下一代数据丢失防护。 它内置在 Windows 10 和 Microsoft Edge 中，因此无需在设备上具备其他代理或插件。
 
 > [!NOTE]
-> 本文适用于 Microsoft Edge 版本 85 或更高版本。
+> 这适用于 Microsoft Edge 85 或更高版本。
 
-Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合规活动的审计事件。
+若要详细了解终结点 DLP：
+
+- [了解 Microsoft 365 终结点数据丢失防护](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide)
+- [终结点数据丢失防护入门](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide)
+
+Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合规活动的审核事件。
 
 可在运行 Windows 10 的设备上审核和管理的用户活动包括以下活动：
 

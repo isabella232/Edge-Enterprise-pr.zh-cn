@@ -3,19 +3,19 @@ title: 适用于企业的 Microsoft Edge 安全
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 11/11/2020
+ms.date: 11/18/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 适用于企业的 Microsoft Edge 安全
-ms.openlocfilehash: e2f45d49d8f4960f3f2263098ff2eb7d0103b6ea
-ms.sourcegitcommit: 5efa7f6196804da205c3deff4ba7917a94ffcf4f
+ms.openlocfilehash: 52e55c64aad193072c44f6bc76e5c66808a5439d
+ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "11165942"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "11176949"
 ---
 # 适用于企业的 Microsoft Edge 安全
 
@@ -56,10 +56,12 @@ Microsoft Edge 是 Windows 10 上唯一本机支持硬件隔离功能的浏览�
 > [!NOTE]
 > Windows 信息保护 (WIP) 配置要求许可 Microsoft Intune 或 Microsoft Endpoint Configuration Manager，或者使用第三方移动设备管理 (MDM) 解决方案，这可能有额外的许可要求。
 
-**Microsoft EDGE DLP 仅在 Microsoft Edge 中以本机方式支持**。 Microsoft 端点数据丢失防护 (DLP) 与 Microsoft 安全中心集成，并将信息保护扩展到 Microsoft Edge，以帮助警告用户不符合要求的活动，并防止用户在联机工作时丢失数据。 它可以发现并标记企业内部符合管理员定义的标准的敏感数据，例如包含信用卡号或政府 ID（例如身份证号）、财务信息等的文件。Microsoft 信息保护策略可以部署到 Microsoft Endpoint DLP，而无需进行额外的重新配置，包括敏感内容标识符和 IT 管理员已自定义的策略。 这是面向 IT 管理员的信息保护无缝部署。
+**Microsoft 终结点数据丢失防护（终结点 DLP）仅在 Microsoft Edge 中以本机方式受到支持**。 终结点 DLP 与 Microsoft 安全中心集成并将信息保护扩展到 Microsoft Edge，从而帮助就不合规的活动提醒用户，并在用户联机工作时防止数据丢失。 它可以发现并标记企业内部符合管理员定义的标准的敏感数据，例如包含信用卡号或政府 ID（例如身份证号）、财务信息等的文件。Microsoft 信息保护策略可以部署到 Microsoft Endpoint DLP，而无需进行额外的重新配置，包括敏感内容标识符和 IT 管理员已自定义的策略。 这是面向 IT 管理员的信息保护无缝部署。
+
+若要详细了解终结点 DLP 的先决条件及其设置方式，请转到[终结点数据丢失防护入门](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide)。
 
 > [!NOTE]
-> Microsoft 端点数据丢失防护需要 Microsoft 365 E5 或 Microsoft 365 E5 合规性订阅。
+> 要使用 Microsoft 终结点数据丢失防护功能，需具备 Microsoft 365 E5 或 Microsoft 365 E5 合规性订阅。
 
 ## 另请参阅
 
