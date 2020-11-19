@@ -1,23 +1,23 @@
 ---
-title: 将 Internet Explorer 模式添加到“打开方式”上下文菜单
+title: 将文件扩展名与 Internet Explorer 模式关联
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 11/13/2020
+ms.date: 11/16/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: 将 Internet Explorer 模式添加到“打开方式”上下文菜单
-ms.openlocfilehash: 6453cd2587e3bec10404d2491914debb999fcf3f
-ms.sourcegitcommit: e3c80274a9b8ef15761c968214b3cba593476132
+description: 将文件扩展名与 Internet Explorer 模式关联
+ms.openlocfilehash: c80732239b911f7cd3d615e9ce1e480db2749f17
+ms.sourcegitcommit: fc0ac6bb6655d1f6e2de7c838f275779cd7a5de6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "11168479"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "11175175"
 ---
-# 将 Internet Explorer 模式添加到“打开方式”上下文菜单
+# 将文件扩展名与 Internet Explorer 模式关联
 
 本文介绍如何将 Microsoft Edge 和 Internet Explorer 模式与桌面应用程序的文件扩展名相关联。
 

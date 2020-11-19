@@ -3,19 +3,19 @@ title: 从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站
 ms.author: laannade
 author: dan-wesley
 manager: ratetali
-ms.date: 11/03/2020
+ms.date: 11/16/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容
-ms.openlocfilehash: d822bf4cef76fe4c0298133b47ed80f5d1242b3d
-ms.sourcegitcommit: 73fec3998f26d110252ace621be01f1c1142cf57
+ms.openlocfilehash: c9c64a55df3aeecaebaab3675296c5594612b94f
+ms.sourcegitcommit: fc0ac6bb6655d1f6e2de7c838f275779cd7a5de6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "11151092"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "11175195"
 ---
 # 从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容
 
@@ -31,7 +31,7 @@ ms.locfileid: "11151092"
 当用户转到与 Internet Explorer 不兼容的网站时，它们将被自动重定向到 Microsoft Edge。 本文介绍重定向的用户体验，以及用于配置或禁用自动重定向的组策略。
 
 > [!NOTE]
-> Microsoft 将保留已知与 Internet Explorer 不兼容的所有网站的列表。
+> Microsoft 将保留已知与 Internet Explorer 不兼容的所有网站的列表。 有关详细信息，请参阅 [请求更新不兼容站点列表](https://docs.microsoft.com/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
 
 ## 重定向体验
 
@@ -113,5 +113,6 @@ ms.locfileid: "11151092"
 
 ## 另请参阅
 
-- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
+- [请求更新不兼容站点列表](https://docs.microsoft.com/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
+- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 策略](https://docs.microsoft.com/deployedge/microsoft-edge-policies)
