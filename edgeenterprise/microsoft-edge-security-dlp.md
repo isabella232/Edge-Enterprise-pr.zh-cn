@@ -3,59 +3,64 @@ title: Microsoft Edge 中的数据丢失防护
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 10/08/2020
+ms.date: 11/18/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 中的数据丢失防护 (DLP)
-ms.openlocfilehash: 59c1b68c0526a49a2ee30283893707852514828d
-ms.sourcegitcommit: 2af303fc97e8493024e2359fa2e8be162ab95a59
+ms.openlocfilehash: 72f670caf34a09cdfc7f47575f688c2a39d3c221
+ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "11104600"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "11176939"
 ---
-# <span data-ttu-id="d8f3d-103">Microsoft Edge 中的数据丢失防护 (DLP)</span><span class="sxs-lookup"><span data-stu-id="d8f3d-103">Data Loss Prevention (DLP) in Microsoft Edge</span></span>
+# <span data-ttu-id="941ca-103">Microsoft Edge 中的数据丢失防护 (DLP)</span><span class="sxs-lookup"><span data-stu-id="941ca-103">Data Loss Prevention (DLP) in Microsoft Edge</span></span>
 
-<span data-ttu-id="d8f3d-104">数据丢失防护（DLP）是一套识别和保护企业敏感数据免受未经授权即泄露的技术系统。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-104">Data loss prevention (DLP) is a system of technologies that identify and safeguard sensitive enterprise data from unauthorized disclosure.</span></span> <span data-ttu-id="d8f3d-105">为遵守商业标准和行业法规，组织必须保护敏感信息，防止其未经授权的泄露。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-105">To comply with business standards and industry regulations, organizations must protect sensitive information and prevent its unauthorized disclosure.</span></span> <span data-ttu-id="d8f3d-106">敏感信息包括财务数据或个人身份信息（PII），例如信用卡号码、社会保险号码或健康记录等。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-106">Sensitive information includes financial data or personally identifiable information (PII) such as credit card numbers, social security numbers, or health records, among many other things.</span></span>
+<span data-ttu-id="941ca-104">数据丢失防护（DLP）是一套识别和保护企业敏感数据免受未经授权即泄露的技术系统。</span><span class="sxs-lookup"><span data-stu-id="941ca-104">Data loss prevention (DLP) is a system of technologies that identify and safeguard sensitive enterprise data from unauthorized disclosure.</span></span> <span data-ttu-id="941ca-105">为遵守商业标准和行业法规，组织必须保护敏感信息，防止其未经授权的泄露。</span><span class="sxs-lookup"><span data-stu-id="941ca-105">To comply with business standards and industry regulations, organizations must protect sensitive information and prevent its unauthorized disclosure.</span></span> <span data-ttu-id="941ca-106">敏感信息包括财务数据或个人身份信息（PII），例如信用卡号码、社会保险号码或健康记录等。</span><span class="sxs-lookup"><span data-stu-id="941ca-106">Sensitive information includes financial data or personally identifiable information (PII) such as credit card numbers, social security numbers, or health records, among many other things.</span></span>
 
-<span data-ttu-id="d8f3d-107">远程工作更加强调使用DLP。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-107">Remote work has increased the emphasis on using DLP.</span></span> <span data-ttu-id="d8f3d-108">随着个人与工作活动在设备上的使用的增加，企业发现在工作场所之外未经授权共享企业数据的风险亦正在增加。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-108">With the growing use of personal and work activities on devices, enterprises are seeing an increased risk of unauthorized sharing of corporate data outside the workplace.</span></span>
+<span data-ttu-id="941ca-107">远程工作更加强调使用DLP。</span><span class="sxs-lookup"><span data-stu-id="941ca-107">Remote work has increased the emphasis on using DLP.</span></span> <span data-ttu-id="941ca-108">随着个人与工作活动在设备上的使用的增加，企业发现在工作场所之外未经授权共享企业数据的风险亦正在增加。</span><span class="sxs-lookup"><span data-stu-id="941ca-108">With the growing use of personal and work activities on devices, enterprises are seeing an increased risk of unauthorized sharing of corporate data outside the workplace.</span></span>
 
-<span data-ttu-id="d8f3d-109">这种用户活动的融合也扩散到了设备上，数据通过各种公共和私有网络在个人和企业设备之间移动。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-109">This blending of user activities has spread to devices as well, where data is moved between personal and corporate devices over a variety of public and private networks.</span></span> <span data-ttu-id="d8f3d-110">最终的结果是敏感数据暴露的风险大大增加。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-110">The net result is a dramatically increased risk of exposing sensitive data.</span></span>
+<span data-ttu-id="941ca-109">这种用户活动的融合也扩散到了设备上，数据通过各种公共和私有网络在个人和企业设备之间移动。</span><span class="sxs-lookup"><span data-stu-id="941ca-109">This blending of user activities has spread to devices as well, where data is moved between personal and corporate devices over a variety of public and private networks.</span></span> <span data-ttu-id="941ca-110">最终的结果是敏感数据暴露的风险大大增加。</span><span class="sxs-lookup"><span data-stu-id="941ca-110">The net result is a dramatically increased risk of exposing sensitive data.</span></span>
 
-<span data-ttu-id="d8f3d-111">Microsoft Edge 原身支持两种不同的DLP解决方案，即Microsoft Endpoint DLP和Windows信息保护（WIP）。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-111">Microsoft Edge natively supports two different DLP solutions, Microsoft Endpoint DLP and Windows Information Protection (WIP).</span></span>
+<span data-ttu-id="941ca-111">Microsoft Edge 原身支持两种不同的DLP解决方案，即Microsoft Endpoint DLP和Windows信息保护（WIP）。</span><span class="sxs-lookup"><span data-stu-id="941ca-111">Microsoft Edge natively supports two different DLP solutions, Microsoft Endpoint DLP and Windows Information Protection (WIP).</span></span>
 
-## <span data-ttu-id="d8f3d-112">Microsoft Endpoint DLP</span><span class="sxs-lookup"><span data-stu-id="d8f3d-112">Microsoft Endpoint DLP</span></span>
+## <span data-ttu-id="941ca-112">使用 Microsoft 终结点数据丢失防护（终结点 DLP）</span><span class="sxs-lookup"><span data-stu-id="941ca-112">Microsoft Endpoint data loss prevention (Endpoint DLP)</span></span>
 
-<span data-ttu-id="d8f3d-113">Microsoft Endpoint DLP 是新一代的DLP，其采用了以数据为中心的保护等现代概念。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-113">Microsoft Endpoint DLP is the next generation of DLP using modern concepts such as data-centric protection.</span></span> <span data-ttu-id="d8f3d-114">其内置于 Windows 10 和 Microsoft Edge 中，因此不需要在设备上安装额外的代理或插件。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-114">It's  built-in to Windows 10 and Microsoft Edge so it doesn't need additional agents or plugins on the device.</span></span> <span data-ttu-id="d8f3d-115">若要了解有关端点 DLP 的详细信息，请参阅 [了解 Microsoft 365 端点数据丢失防护](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide)。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-115">To learn more about endpoint DLP, read [Learn about Microsoft 365 Endpoint data loss prevention](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide).</span></span>
+<span data-ttu-id="941ca-113">Microsoft 终结点 DLP 是运用现代概念（例如以数据为中心的保护）的下一代数据丢失防护。</span><span class="sxs-lookup"><span data-stu-id="941ca-113">Microsoft Endpoint DLP is the next generation of data loss prevention using modern concepts such as data-centric protection.</span></span> <span data-ttu-id="941ca-114">它内置在 Windows 10 和 Microsoft Edge 中，因此无需在设备上具备其他代理或插件。</span><span class="sxs-lookup"><span data-stu-id="941ca-114">It's built-in to Windows 10 and Microsoft Edge so it doesn't need additional agents or plugins on the device.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d8f3d-116">本文适用于 Microsoft Edge 版本 85 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-116">This applies to Microsoft Edge version 85 or later.</span></span>
+> <span data-ttu-id="941ca-115">这适用于 Microsoft Edge 85 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="941ca-115">This applies to Microsoft Edge version 85 or later.</span></span>
 
-<span data-ttu-id="d8f3d-117">Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合规活动的审计事件。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-117">Microsoft Edge enforces admin configured policies for sensitive files and records audit events for non-compliant activities.</span></span>
+<span data-ttu-id="941ca-116">若要详细了解终结点 DLP：</span><span class="sxs-lookup"><span data-stu-id="941ca-116">To learn more about Endpoint DLP:</span></span>
 
-<span data-ttu-id="d8f3d-118">可在运行 Windows 10 的设备上审核和管理的用户活动包括以下活动：</span><span class="sxs-lookup"><span data-stu-id="d8f3d-118">Some of the user activities that you can audit and manage on devices running Windows 10 include the following activities:</span></span>
+- [<span data-ttu-id="941ca-117">了解 Microsoft 365 终结点数据丢失防护</span><span class="sxs-lookup"><span data-stu-id="941ca-117">Learn about Microsoft 365 Endpoint data loss prevention</span></span>](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide)
+- [<span data-ttu-id="941ca-118">终结点数据丢失防护入门</span><span class="sxs-lookup"><span data-stu-id="941ca-118">Get started with Endpoint data loss prevention</span></span>](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide)
 
-- <span data-ttu-id="d8f3d-119">文件上传：保护敏感文件上传到未经授权的云端位置。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-119">File Upload: Protect sensitive file upload to unauthorized cloud locations.</span></span> <span data-ttu-id="d8f3d-120">接下来的3张屏幕截图显示了用户试图将敏感数据文件放到其本地存储上的序列。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-120">The next 3 screenshots show a sequence where a user tries to drop a sensitive data file on to their local storage.</span></span>
-- <span data-ttu-id="d8f3d-121">剪贴板保护：防止从文件中复制敏感数据。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-121">Clipboard Protection: Protect sensitive data from being copied out of the file.</span></span>
-- <span data-ttu-id="d8f3d-122">打印保护：防止打印敏感文件。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-122">Print Protection: Protect sensitive file from being printed.</span></span>
-- <span data-ttu-id="d8f3d-123">保存到 USB/网络：防止可移动 USB 存储或未经授权的网络位置保存敏感文件。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-123">Save to USB/Network: Protect sensitive file from being saved to removable USB storage or unauthorized network locations.</span></span>
+<span data-ttu-id="941ca-119">Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合规活动的审核事件。</span><span class="sxs-lookup"><span data-stu-id="941ca-119">Microsoft Edge enforces admin configured policies for sensitive files and records audit events for non-compliant activities.</span></span>
 
-<span data-ttu-id="d8f3d-124">有关可供审核和管理的用户活动的更多详细信息，请参阅[可监视并执行操作的端点活动](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on)。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-124">For more detailed information about user activities you can audit and manage, see [Endpoint activities you can monitor and take action on](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on).</span></span>
+<span data-ttu-id="941ca-120">可在运行 Windows 10 的设备上审核和管理的用户活动包括以下活动：</span><span class="sxs-lookup"><span data-stu-id="941ca-120">Some of the user activities that you can audit and manage on devices running Windows 10 include the following activities:</span></span>
 
-## <span data-ttu-id="d8f3d-125">Windows 信息保护</span><span class="sxs-lookup"><span data-stu-id="d8f3d-125">Windows Information Protection</span></span>
+- <span data-ttu-id="941ca-121">文件上传：保护敏感文件上传到未经授权的云端位置。</span><span class="sxs-lookup"><span data-stu-id="941ca-121">File Upload: Protect sensitive file upload to unauthorized cloud locations.</span></span> <span data-ttu-id="941ca-122">接下来的3张屏幕截图显示了用户试图将敏感数据文件放到其本地存储上的序列。</span><span class="sxs-lookup"><span data-stu-id="941ca-122">The next 3 screenshots show a sequence where a user tries to drop a sensitive data file on to their local storage.</span></span>
+- <span data-ttu-id="941ca-123">剪贴板保护：防止从文件中复制敏感数据。</span><span class="sxs-lookup"><span data-stu-id="941ca-123">Clipboard Protection: Protect sensitive data from being copied out of the file.</span></span>
+- <span data-ttu-id="941ca-124">打印保护：防止打印敏感文件。</span><span class="sxs-lookup"><span data-stu-id="941ca-124">Print Protection: Protect sensitive file from being printed.</span></span>
+- <span data-ttu-id="941ca-125">保存到 USB/网络：防止可移动 USB 存储或未经授权的网络位置保存敏感文件。</span><span class="sxs-lookup"><span data-stu-id="941ca-125">Save to USB/Network: Protect sensitive file from being saved to removable USB storage or unauthorized network locations.</span></span>
 
-<span data-ttu-id="d8f3d-126">查看 [对 Windows 信息保护](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection)的支持，其描述了 Microsoft Edge 支持 Windows 信息保护（WIP）的方式。</span><span class="sxs-lookup"><span data-stu-id="d8f3d-126">Check out [Support for Windows Information Protection](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection), which describes how Microsoft Edge supports Windows Information Protection (WIP).</span></span> <span data-ttu-id="d8f3d-127">可在以下部分中了解系统要求、优点及支持的功能：</span><span class="sxs-lookup"><span data-stu-id="d8f3d-127">You can learn moe about system requirements, benefits, and supported features in the following sections:</span></span>
+<span data-ttu-id="941ca-126">有关可供审核和管理的用户活动的更多详细信息，请参阅[可监视并执行操作的端点活动](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on)。</span><span class="sxs-lookup"><span data-stu-id="941ca-126">For more detailed information about user activities you can audit and manage, see [Endpoint activities you can monitor and take action on](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on).</span></span>
 
-- [<span data-ttu-id="d8f3d-128">系统要求</span><span class="sxs-lookup"><span data-stu-id="d8f3d-128">System Requirements</span></span>](https://docs.microsoft.com/deployedge/:microsoft-edge-security-windows-information-protection#system-requirements)
-- [<span data-ttu-id="d8f3d-129">Windows信息保护的优势</span><span class="sxs-lookup"><span data-stu-id="d8f3d-129">Windows Information Protection Benefits</span></span>](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#windows-information-protection-benefits)
-- [<span data-ttu-id="d8f3d-130">Microsoft Edge 支持的 WIP 功能</span><span class="sxs-lookup"><span data-stu-id="d8f3d-130">WIP features supported in Microsoft Edge</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-information-protection#wip-features-supported-in-microsoft-edge)
+## <span data-ttu-id="941ca-127">Windows 信息保护</span><span class="sxs-lookup"><span data-stu-id="941ca-127">Windows Information Protection</span></span>
 
-## <span data-ttu-id="d8f3d-131">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d8f3d-131">See also</span></span>
+<span data-ttu-id="941ca-128">查看 [对 Windows 信息保护](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection)的支持，其描述了 Microsoft Edge 支持 Windows 信息保护（WIP）的方式。</span><span class="sxs-lookup"><span data-stu-id="941ca-128">Check out [Support for Windows Information Protection](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection), which describes how Microsoft Edge supports Windows Information Protection (WIP).</span></span> <span data-ttu-id="941ca-129">可在以下部分中了解系统要求、优点及支持的功能：</span><span class="sxs-lookup"><span data-stu-id="941ca-129">You can learn moe about system requirements, benefits, and supported features in the following sections:</span></span>
 
-- [<span data-ttu-id="d8f3d-132">Microsoft Edge Enterprise 登录页面</span><span class="sxs-lookup"><span data-stu-id="d8f3d-132">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
-- [<span data-ttu-id="d8f3d-133">视频：数据丢失防护 - Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="d8f3d-133">Video: Data loss prevention - Microsoft Edge</span></span>](https://www.youtube.com/watch?v=dLD04U9eTqg)
-- [<span data-ttu-id="d8f3d-134">防止数据丢失概述</span><span class="sxs-lookup"><span data-stu-id="d8f3d-134">Overview of data loss prevention</span></span>](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide)
-- [<span data-ttu-id="d8f3d-135">使用 Windows 信息保护系统来保护企业数据</span><span class="sxs-lookup"><span data-stu-id="d8f3d-135">Protect your enterprise data using Windows Information Protection</span></span>](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
+- [<span data-ttu-id="941ca-130">系统要求</span><span class="sxs-lookup"><span data-stu-id="941ca-130">System Requirements</span></span>](https://docs.microsoft.com/deployedge/:microsoft-edge-security-windows-information-protection#system-requirements)
+- [<span data-ttu-id="941ca-131">Windows信息保护的优势</span><span class="sxs-lookup"><span data-stu-id="941ca-131">Windows Information Protection Benefits</span></span>](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#windows-information-protection-benefits)
+- [<span data-ttu-id="941ca-132">Microsoft Edge 支持的 WIP 功能</span><span class="sxs-lookup"><span data-stu-id="941ca-132">WIP features supported in Microsoft Edge</span></span>](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-information-protection#wip-features-supported-in-microsoft-edge)
+
+## <span data-ttu-id="941ca-133">另请参阅</span><span class="sxs-lookup"><span data-stu-id="941ca-133">See also</span></span>
+
+- [<span data-ttu-id="941ca-134">Microsoft Edge Enterprise 登录页面</span><span class="sxs-lookup"><span data-stu-id="941ca-134">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
+- [<span data-ttu-id="941ca-135">视频：数据丢失防护 - Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="941ca-135">Video: Data loss prevention - Microsoft Edge</span></span>](https://www.youtube.com/watch?v=dLD04U9eTqg)
+- [<span data-ttu-id="941ca-136">防止数据丢失概述</span><span class="sxs-lookup"><span data-stu-id="941ca-136">Overview of data loss prevention</span></span>](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide)
+- [<span data-ttu-id="941ca-137">使用 Windows 信息保护系统来保护企业数据</span><span class="sxs-lookup"><span data-stu-id="941ca-137">Protect your enterprise data using Windows Information Protection</span></span>](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
