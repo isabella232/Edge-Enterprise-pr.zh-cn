@@ -8,25 +8,25 @@ ms.locfileid: "11162215"
 ---
 <!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
 
-## 2020 年 11 月 02 日当周
+## 2020 年 11 月 2 日那一周
 
 
 | 发布时间 |主题标题 | “更改” |
 |------|------------|--------|
-| 2020 年 11 月 2 日 | [Microsoft Edge Stable 渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>次要版本 86.0.622.61 Bug 修复。 | 修改时间 |
-| 2020 年 11 月 2 日 | [从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容](/DeployEdge/edge-learnmore-neededge)<br>更新“配置重定向”。 | 修改时间 |
+| 2020 年 11 月 2 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>次要版本 86.0.622.61 Bug 修复。 | 修改时间 |
+| 2020 年 11 月 2 日 | [从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容](/DeployEdge/edge-learnmore-neededge)<br>更新配置重定向。 | 修改时间 |
 | 2020 年 11 月 2 日 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>次要版本 87.0.664.24 Bug 修复。 | 修改时间 |
 | 2020 年 11 月 3 日 | [从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容](/DeployEdge/edge-learnmore-neededge)<br>更新策略信息。 | 修改时间 |
-| 2020 年 11 月 4 日 | [有关企业中 Edge 的常见问题](/DeployEdge/faqs-edge-in-the-enterprise)<br>使用 WSUS 部署 Microsoft Edge 的支持更新。 | 修改时间 |
-| 2020 年 11 月 4 日 | [Microsoft Edge 安全更新的发行说明](/DeployEdge/microsoft-edge-relnotes-security)<br>Stable 次要版本 86.0.622.63 安全发布。 标注至 CVE-2020-16009。 | 修改时间 |
-| 2020 年 11 月 4 日 | [Microsoft Edge Stable 渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>Stable 次版本 86.0.622.63。 标注至安全更新和 CVE-2020-16009。 | 修改时间 |
-| 2020 年 11 月 4 日 | [规划 Microsoft Edge 部署](/DeployEdge/deploy-edge-plan-deployment)<br>更新“应用程序测试和支持”部分。 | 修改时间 |
+| 2020 年 11 月 4 日 | [有关企业中 Edge 使用的常见问题](/DeployEdge/faqs-edge-in-the-enterprise)<br>使用 WSUS 部署 Microsoft Edge 的支持更新。 | 修改时间 |
+| 2020 年 11 月 4 日 | [Microsoft Edge 安全更新的发行说明](/DeployEdge/microsoft-edge-relnotes-security)<br>稳定渠道次要版本 86.0.622.63 安全发布。 请调用 CVE-2020-16009。 | 修改时间 |
+| 2020 年 11 月 4 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>稳定渠道次要版本 86.0.622.63。 请调用安全更新和 CVE-2020-16009。 | 修改时间 |
+| 2020 年 11 月 4 日 | [规划 Microsoft Edge 部署](/DeployEdge/deploy-edge-plan-deployment)<br>更新应用程序测试和支持部分。 | 修改时间 |
 | 2020 年 11 月 4 日 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies)<br>1 个新策略和 4 个已弃用策略更新。 | 修改时间 |
 | 2020 年 11 月 4 日 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies)<br>刷新策略文章格式。 | 修改时间 |
-| 2020 年 11 月 6 日 | [Microsoft Edge 就绪](/DeployEdge/deploy-edge-ready-for-edge)<br>有关第三方应用程序兼容性和支持的信息。 | 新增 |
+| 2020 年 11 月 6 日 | [Microsoft Edge 准备就绪](/DeployEdge/deploy-edge-ready-for-edge)<br>有关第三方应用程序兼容性和支持的信息。 | 新增 |
 
 
-## 2020 年 10 月 26 日当周
+## 2020 年 10 月 26 日那一周
 
 
 | 发布时间 |主题标题 | “更改” |
