@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/13/2020
+ms.date: 11/19/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: e191d9487a0e6c0d72f2f4b47d6b6c413449cb71
-ms.sourcegitcommit: 2b6808a4d1878fd2da886f9c6c56f592c6b200e1
+ms.openlocfilehash: 77d79f36ba91c5966ffb8dde66ba7ec14934f39e
+ms.sourcegitcommit: fc6f86f92f2fecac89028d77524d123bfaf2111d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "11168797"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "11181983"
 ---
 # Microsoft Edge - 策略
 
@@ -28,6 +28,17 @@ ms.locfileid: "11168797"
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
+
+## 新的和已弃用的策略
+
+下表列出了此更新的新和已弃用的策略。
+
+| 名称 | 状态 |
+|-|-|
+|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)| 新增 |
+|[BlockExternalExtensions](#blockexternalextensions) | 新增 |
+|[ShowMicrosoftRewards](#showmicrosoftrewards) | 新增 |
+|[ProactiveAuthEnabled](#proactiveauthenabled) | 已弃用 |
 
 ## 可用策略
 
@@ -41,8 +52,9 @@ ms.locfileid: "11168797"
 |[展台模式设置](#kiosk-mode-settings)|[本机消息传递](#native-messaging)|
 |[密码管理器和保护](#password-manager-and-protection)|[性能](#performance)|
 |[打印](#printing)|[代理服务器](#proxy-server)|
-|[SmartScreen 设置](#smartscreen-settings)|[启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)|
-|[附加](#additional)|
+|[睡眠选项卡设置](#sleeping-tabs-settings)|[SmartScreen 设置](#smartscreen-settings)|
+|[启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)|[附加](#additional)|
+
 
 ### [*应用程序防护设置*](#application-guard-settings-policies)
 
@@ -116,6 +128,7 @@ ms.locfileid: "11168797"
 
 |策略名称|标题|
 |-|-|
+|[BlockExternalExtensions](#blockexternalextensions)|阻止安装外部扩展|
 |[ExtensionAllowedTypes](#extensionallowedtypes)|配置允许的扩展类型|
 |[ExtensionInstallAllowlist](#extensioninstallallowlist)|允许安装特定扩展|
 |[ExtensionInstallBlocklist](#extensioninstallblocklist)|控制无法安装的扩展|
@@ -180,6 +193,13 @@ ms.locfileid: "11168797"
 |[ProxyPacUrl](#proxypacurl)|设置代理 .pac 文件 URL（已弃用）|
 |[ProxyServer](#proxyserver)|配置代理服务器的地址或 URL|
 |[ProxySettings](#proxysettings)|代理设置|
+### [*睡眠选项卡设置*](#sleeping-tabs-settings-policies)
+
+|策略名称|标题|
+|-|-|
+|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)|屏蔽特定网站上的睡眠选项卡|
+|[SleepingTabsEnabled](#sleepingtabsenabled)|配置睡眠选项卡|
+|[SleepingTabsTimeout](#sleepingtabstimeout)|为睡眠选项卡设置后台选项卡闲置时长|
 ### [*SmartScreen 设置*](#smartscreen-settings-policies)
 
 |策略名称|标题|
@@ -342,7 +362,7 @@ ms.locfileid: "11168797"
 |[PaymentMethodQueryEnabled](#paymentmethodqueryenabled)|允许网站查询可用的付款方式|
 |[PersonalizationReportingEnabled](#personalizationreportingenabled)|通过向 Microsoft 发送浏览历史记录，允许对广告、搜索和新闻进行个性化设置|
 |[PinningWizardAllowed](#pinningwizardallowed)|允许固定到任务栏向导|
-|[ProactiveAuthEnabled](#proactiveauthenabled)|启用主动身份验证|
+|[ProactiveAuthEnabled](#proactiveauthenabled)|启用主动身份验证 (已弃用) |
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|启用完整选项卡促销内容|
 |[PromptForDownloadLocation](#promptfordownloadlocation)|询问在何处保存下载的文件|
 |[QuicAllowed](#quicallowed)|允许 QUIC 协议|
@@ -371,6 +391,7 @@ ms.locfileid: "11168797"
 |[SensorsBlockedForUrls](#sensorsblockedforurls)|阻止访问特定网站上的传感器|
 |[SerialAskForUrls](#serialaskforurls)|在特定网站上允许串行 API|
 |[SerialBlockedForUrls](#serialblockedforurls)|在特定网站上阻止串行 API|
+|[ShowMicrosoftRewards](#showmicrosoftrewards)|展示 Microsoft Rewards体验|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在收藏夹栏中显示 Microsoft Office 快捷方式（已弃用）|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|启用签名的 HTTP Exchange (SXG) 支持|
 |[SitePerProcess](#siteperprocess)|对每个网站启用网站隔离|
@@ -3980,6 +4001,71 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
   [返回页首](#microsoft-edge---policies)
 
+  ### BlockExternalExtensions
+
+  #### 阻止安装外部扩展
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  控制外部扩展的安装。
+
+如果启用此设置，将阻止安装外部扩展。
+
+如果禁用此设置或将其保留为未设置，则允许安装外部扩展。
+
+外部扩展及其安装记录在 https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options 。
+
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称： BlockExternalExtensions
+  - GP 名称：阻止外部扩展的安装
+  - GP 路径（强制）：管理模板/Microsoft Edge/扩展
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称： BlockExternalExtensions
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  #### Mac 信息和设置
+  
+  - 首选键名称： BlockExternalExtensions
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### ExtensionAllowedTypes
 
   #### 配置允许的扩展类型
@@ -6583,6 +6669,225 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
 
   [返回页首](#microsoft-edge---policies)
 
+  ## 睡眠选项卡设置策略
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SleepingTabsBlockedForUrls
+
+  #### 屏蔽特定网站上的睡眠选项卡
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  根据 URL 模式，定义一个不允许通过睡眠选项卡进入睡眠状态的网站列表。
+
+如果禁用策略 [SleepingTabsEnabled](#sleepingtabsenabled) ，则此列表将无效，并且任何网站都不会自动进入睡眠状态。
+
+如果未配置此策略，则所有网站都有资格进入睡眠状态，除非用户的个人配置阻止它们。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 字符串列表
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称： SleepingTabsBlockedForUrls
+  - GP 名称：屏蔽特定网站上的睡眠选项卡
+  - GP 路径 (强制) ：管理模板/Microsoft Edge/休眠选项卡设置
+  - GP 路径（推荐）：管理模板/Microsoft Edge-默认设置（用户可以覆盖) /睡眠选项卡设置
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls
+  - 路径（推荐）： SOFTWARE\Policies\Microsoft\Edge\Recommended\SleepingTabsBlockedForUrls
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### 示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu"
+
+```
+
+  #### Mac 信息和设置
+  
+  - 首选键名称： SleepingTabsBlockedForUrls
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.contoso.com</string>
+  <string>[*.]contoso.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SleepingTabsEnabled
+
+  #### 配置睡眠选项卡
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  此策略设置允许你配置是否启用睡眠选项卡。 睡眠选项卡通过将空闲的后台选项卡进入睡眠状态来减少 CPU、电池和内存使用。 Microsoft Edge 使用试探法避免后台执行有用操作的选项卡进入睡眠状态，例如显示通知、播放声音和流视频。 默认情况下，睡眠选项卡处于开启状态。
+
+通过配置策略 [SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)，可以阻止单个网站进入睡眠状态。
+
+如果启用此设置，将启用睡眠选项卡。
+
+如果禁用此设置，睡眠选项卡将关闭。
+
+如果未配置此设置，则用户可以选择是否使用睡眠选项卡。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称： SleepingTabsEnabled
+  - GP 名称：配置睡眠选项卡
+  - GP 路径 (强制) ：管理模板/Microsoft Edge/休眠选项卡设置
+  - GP 路径（推荐）：管理模板/Microsoft Edge-默认设置（用户可以覆盖) /睡眠选项卡设置
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称： SleepingTabsEnabled
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  #### Mac 信息和设置
+  
+  - 首选键名称： SleepingTabsEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SleepingTabsTimeout
+
+  #### 为睡眠选项卡设置后台选项卡闲置时长
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  此策略设置允许你配置以秒为单位的超时，如果启用睡眠选项卡，则闲置的后台选项卡将在此后自动进入睡眠状态。 默认情况下，此超时为7200秒 (2 小时)。
+
+仅当启用策略 [SleepingTabsEnabled](#sleepingtabsenabled) 或未配置，并且用户已启用睡眠选项卡设置时，选项卡才会自动进入睡眠状态。
+
+如果未配置此策略，则用户可以选择超时值。
+
+策略选项映射：
+
+* 5Minutes (300) = 处于非活动状态5分钟
+
+* 15Minutes (900) = 处于非活动状态15 分钟
+
+* 30Minutes (1800) =处于非活动状态 30 分钟
+
+* 1Hour (3600) = 处于非活动状态1小时
+
+* 2Hours (7200) = 处于非活动状态2小时
+
+* 3Hours (10800) = 处于非活动状态3 小时
+
+* 6Hours (21600) = 处于非活动状态6 小时
+
+* 12Hours (43200) = 处于非活动状态12小时
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 整型
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称： SleepingTabsTimeout
+  - GP 名称：为睡眠选项卡设置后台 选项卡的不活动超时
+  - GP 路径 (强制) ：管理模板/Microsoft Edge/休眠选项卡设置
+  - GP 路径（推荐）：管理模板/Microsoft Edge-默认设置（用户可以覆盖) /睡眠选项卡设置
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称： SleepingTabsTimeout
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000384
+```
+
+  #### Mac 信息和设置
+  
+  - 首选键名称： SleepingTabsTimeout
+  - 示例值：
+``` xml
+<integer>900</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ## SmartScreen 设置策略
 
   [返回页首](#microsoft-edge---policies)
@@ -7363,7 +7668,9 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
 
   配置新选项卡页的默认 URL。
 
-此策略确定创建新选项卡时打开的页面（包括打开新窗口时）。 如果启动页设置为打开新选项卡页，则该策略也会影响启动页。
+此策略的推荐版本目前无法使用，其功能与强制版本完全相同。
+
+此策略确定创建新选项卡时（包括打开新窗口时）打开的页面。 如果启动页设置为打开新选项卡页，则该策略也会影响启动页。
 
 此策略不确定启动时打开哪个页面；它由 [RestoreOnStartup](#restoreonstartup) 策略控制。 如果该策略设置为打开新选项卡页，则不会影响主页。
 
@@ -7891,7 +8198,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
   - 可以强制：是
   - 可以推荐：否
-  - 动态策略刷新：是
+  - 动态策略刷新：否 - 需要重新启动浏览器
 
   #### 数据类型：
 
@@ -16761,9 +17068,9 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
   ### ProactiveAuthEnabled
 
-  #### 启用主动身份验证
+  #### 启用主动身份验证 (已弃用) 
 
-  
+  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
   
   #### 支持的版本：
 
@@ -16771,11 +17078,13 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
   #### 描述
 
-  让你可配置是否打开主动身份验证。
+  此策略已弃用，因为它不能独立于浏览器登录而工作。 它无法在 Microsoft Edge 版本 91 中适用。 如果要配置浏览器登录，请使用 [BrowserSigning](#browsersignin) 策略。
 
-如果启用此策略，Microsoft Edge 将尝试使用 Microsoft 服务主动对已登录用户进行身份验证。 Microsoft Edge 会定期检查联机服务，查找是否有更新清单包含控制如何执行此操作的配置。
+允许你配置是否在 Microsoft Edge 中开启主动身份验证。
 
-如果禁用此策略，Microsoft Edge 不会尝试使用 Microsoft 服务主动对已登录用户进行身份验证。 Microsoft Edge 不再检查联机服务来查找是否有更新清单包含执行此操作的配置。
+如果启用此策略，Microsoft Edge 会尝试使用登录到浏览器的帐户对网站和服务进行无缝身份验证。
+
+如果禁用此策略，Microsoft Edge 不会尝试使用单一登录 (SSO) 对网站或服务进行身份验证。 与企业新选项卡页类似的身份验证体验无法使用 (例如，最近和推荐的 Office 文档将无法使用)。
 
 如果未配置此策略，则将启用主动身份验证。
 
@@ -16794,7 +17103,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   ##### 组策略 (ADMX) 信息
 
   - GP 唯一名称：ProactiveAuthEnabled
-  - GP 名称：启用主动身份验证
+  - GP 名称：启用主动身份验证 (已弃用) 
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -18602,6 +18911,77 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   <string>https://www.contoso.com</string>
   <string>[*.]contoso.edu</string>
 </array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### ShowMicrosoftRewards
+
+  #### 展示 Microsoft Rewards体验
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  显示Microsoft Rewards体验和通知。
+如果启用此策略：
+   - 搜索和赢得市场中的Windows账户用户（不包括Azure AD账户）将在其Microsoft Edge用户资料中看到Microsoft Rewards体验。
+   - 在Microsoft Edge设置中启用Microsoft Rewards 的设置将被启用，并处于开启状态。
+   - 启用提供模式的设置将被启用，并尊重用户的设置。
+
+如果禁用此策略：
+   - 搜索和赢得市场中的Windows账户用户（不包括Azure AD账户）将在其Microsoft Edge用户资料中不会看到Microsoft Rewards体验。
+   - 在Microsoft Edge设置中启用Microsoft Rewards 的设置将被禁用，并处于关闭状态。
+
+如果未配置此策略：
+   - 搜索和赢得市场中的Windows账户用户（不包括Azure AD账户）将在其Microsoft Edge用户资料中看到 Microsoft Rewards 体验。
+   - 在Microsoft Edge设置中启用 Microsoft Rewards 的设置将被启用，并处于开启状态。
+   - 启用提供模式的设置将被启用，并尊重用户的设置。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称： ShowMicrosoftRewards
+  - GP 名称：展示 Microsoft Rewards 体验
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称： ShowMicrosoftRewards
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000000
+```
+
+  #### Mac 信息和设置
+  
+  - 首选键名称： ShowMicrosoftRewards
+  - 示例值：
+``` xml
+<false/>
 ```
   
 
