@@ -3,19 +3,19 @@ title: Microsoft Edge 企业版回退
 ms.author: v-danwes
 author: dan-wesley
 manager: srugh
-ms.date: 09/02/2020
+ms.date: 11/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何将 Microsoft Edge 回退到以前的版本
-ms.openlocfilehash: 9f659b0bcdd82f54a814c8ad4157521061cdfa7c
-ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
+ms.openlocfilehash: 69fdfd29572dd6eda9f7eb7cbd4c2500851dcafc
+ms.sourcegitcommit: 63a094a5268bb3b4819269438357095acd79abac
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "10993702"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "11192422"
 ---
 # 如何将 Microsoft Edge 回退到以前的版本
 
@@ -30,7 +30,7 @@ ms.locfileid: "10993702"
 
 ## 开始之前
 
-请务必了解如何在 Microsoft Edge 环境中安装“回退”功能。 可使用两种不同方法部署回退：使用 MSI 手动部署或使用 Microsoft Edge 更新和组策略。 我们还鼓励使用多种组策略更顺利地部署回退。
+请务必了解如何在 Microsoft Edge 环境中安装“回退”功能。 可使用两种不同方法部署回退：使用 MSI 手动部署或使用 Microsoft Edge 更新和组策略。 我们还鼓励使用组策略选择更流畅的部署。
 
 ### 建议
 
@@ -81,7 +81,7 @@ ms.locfileid: "10993702"
    - 仅自动静默更新
 
      > [!NOTE]
-     > 若要强制执行组策略更新，请在 Windows 管理员命令提示处`dsregcmd /status`键入（以管理员身份运行）。
+     > 若要强制执行组策略更新，请在 Windows 管理员命令提示处`gpupdate /force`键入（以管理员身份运行）。
 
 5. 单击**确定**保存策略设置。 将在下次 Microsoft Edge 更新检查更新时执行回退。 如果希望更快地进行更新，可以更改 Microsoft Edge 更新轮询间隔或使用 MSI 启用回退。
 
@@ -113,7 +113,7 @@ ms.locfileid: "10993702"
 
 快照是用户数据文件夹的版本标记副本。 在版本升级过程中，将生成以前版本的快照并将其存储在快照文件夹中。 在回退后，版本匹配的快照将被复制到新用户数据文件夹中，并从快照文件夹中删除。 如果降级后没有版本匹配的快照可用，回退会依赖同步将用户数据写入到新 Microsoft Edge 版本中。
 
-可借助 [UserDataSnapshotRetentionLimit] 组策略设置在任何给定时间内皆可以保留的快照数的限制。 默认情况下，保留三个快照。 您可以将此策略配置为保留 0-5 个快照。
+[UserDataSnapshotRetentionLimit](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userdatasnapshotretentionlimit)组策略允许你为任意给定时间内保留的快照数设置限制。 默认情况下，保留三个快照。 您可以将此策略配置为保留 0-5 个快照。
 
 ## 常见问题
 
@@ -159,7 +159,6 @@ Microsoft Edge 更新尚未运行更新检查。 默认情况下，自动更新�
 ### 作为 IT 管理员，我按照正确回退的所有步骤进行了操作。 “我的用户组”的一部分已回退。 为什么尚未回退其他用户？
 
 组策略设置尚未同步到所有客户端。 当管理员设置组策略时，客户端不会立即收到这些设置。 你可以[强制一个远程组策略刷新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134201(v=ws.11))。
-
 
 ## 另请参阅
 
