@@ -3,19 +3,19 @@ title: 使用 Jamf 自动部署适用于 macOS 的 Microsoft Edge
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 09/30/2019
+ms.date: 11/30/2019
 audience: ITPro
 ms.topic: technical
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何使用 Jamf 自动部署适用于 macOS 的 Microsoft Edge。
-ms.openlocfilehash: 3065e4f02dbfed70b887a60b1cf076335dbff19a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 8639c0b7bf78bb8e22370dba29b592af73d8cb40
+ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979189"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "11194720"
 ---
 # 使用 Jamf 部署到 macOS
 
