@@ -3,19 +3,19 @@ title: 使用 Jamf 在 macOS 上配置 Microsoft Edge
 ms.author: brianalt
 author: dan-wesley
 manager: laurawi
-ms.date: 02/20/2020
+ms.date: 11/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用 Jamf 在 Mac 设备上配置 Microsoft Edge 策略设置
-ms.openlocfilehash: 336bdfed2c53811615b0183dc5ca7db916cd7428
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 1859d9fb1fd3ea8ff6908c41f75df21a8b338769
+ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979208"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "11194710"
 ---
 # 使用 Jamf 在 macOS 上配置 Microsoft Edge 策略设置
 
@@ -45,8 +45,8 @@ ms.locfileid: "10979208"
 若要获取策略清单，请执行以下操作：
 
 - 转到 [Microsoft Edge Enterprise 登陆页面](https://aka.ms/EdgeEnterprise)。
-- 在“渠道/版本”下拉列表中，选择**任何版本为 81 或更高版本的渠道。***。
-- 在“内部版本”下拉列表上，选择任何**版本 81或更高版本。***。
+- 在 "通道/版本" 下拉列表中，选择 **版本81或更高版本的任何通道。**_.
+- 在 "生成" 下拉列表中，选择 "任何_ *81 生成" 或 "更高* * _版本"。
 - 单击“获取策略文件”下载我们的策略模板捆绑包。
 
   > [!NOTE]
@@ -61,7 +61,7 @@ ms.locfileid: "10979208"
 请按照以下步骤将策略清单上传到 Jamf Pro，然后为 macOS 创建策略配置文件。
 
 1. 登录 Jamf。
-2. 选择“**计算机**”选项卡。
+2. 选择 "_*计算机**" 选项卡。
 3. 在“**内容管理**”下，选择“**配置文件**”。
 4. 在“**配置文件**”页面上，单击“**+ 新建**”。
 
@@ -114,21 +114,6 @@ ms.locfileid: "10979208"
    - 单击 **“保存”**。
 2. 对于“**限制**”，保留默认设置：“无”。 单击“取消”****。
 3. 对于“**排除**”，保留默认设置：“无”。 单击“取消”****。
-
-## 常见问题
-
-### Microsoft Edge 可以配置为使用主首选项吗？
-
-可以，你可以将 Microsoft Edge 配置为使用主首选项文件。
-
-主首选项文件允许你在部署 Microsoft Edge 时配置浏览器用户配置文件的默认设置。 你还可以使用主首选项文件在未由设备管理系统管理的计算机上应用设置。 当用户首次运行浏览器时，这些设置将应用于用户的配置文件。 在用户运行浏览器后，不会应用对主首选项文件所做的更改。 用户可以在浏览器中更改主首选项的设置。 如果你想要在首次运行浏览器后将设置设为强制性设置或更改设置，则必须使用策略。
-
-主首选项文件允许你为浏览器自定义许多不同的设置和首选项，包括与其他基于 Chromium 的浏览器共享以及特定于 Microsoft Edge 的那些设置和首选项。  与策略相关的首选项可使用主首选项文件进行配置。 如果设置了策略，并且有相应的主首选项集，则该策略设置优先。
-
-> [!IMPORTANT]
-> 所有可用的首选项可能与 Microsoft Edge 术语和命名约定不一致。  不能保证这些首选项将继续在将来的版本中按预期方式运行。 在更高版本中，首选项可能会发生更改或被忽略。
-
-主首选项文件是使用 JSON 标记进行格式设置的文本文件。 此文件需要添加到 msedge.exe 可执行文件所在的目录中。 对于 macOS 上的系统范围内的企业部署，这通常是：“*~/Library/Application Support/Microsoft/Microsoft Edge Master Preferences*”或“*/Library/Microsoft/Microsoft Edge Master Preferences*”。
 
 ## 另请参阅
 

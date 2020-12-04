@@ -3,19 +3,19 @@ title: 使用 .plist 配置用于 macOS 的 Microsoft Edge
 ms.author: brianalt
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 02/14/2020
+ms.date: 11/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用 .plist 在 macOS 上配置 Microsoft Edge 策略设置
-ms.openlocfilehash: 84469a4f84deeee0e47b6d8899426fa36cf345aa
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: abe110ab3589cc9276f28590273ece2d372be3b8
+ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979202"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "11194681"
 ---
 # 使用 .plist 配置适用于 macOS 的 Microsoft Edge 策略设置
 
@@ -35,7 +35,7 @@ ms.locfileid: "10979202"
 
 有关受支持的策略及其首选项键名称的列表，请参阅 [Microsoft Edge 浏览器策略参考](microsoft-edge-policies.md)。 在可从 [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)下载的策略模板文件中，**示例**文件夹中有一个示例 plist (*itadminexample.plist*)。 示例文件包含所有受支持的数据类型，你可以自定义这些数据类型以定义你的策略设置。 
 
-创建 plist 内容后，下一步是使用 Microsoft Edge 首选项域 *.com*。 名称区分大小写，不应包含你的目标频道，因为它适用于所有 Microsoft Edge 频道。 plist 文件名必须是 **_com.microsoft.Edge.plist_**。 
+创建 plist 内容后，下一步是使用 Microsoft Edge 首选项域 *.com*。 名称区分大小写，不应包含你的目标频道，因为它适用于所有 Microsoft Edge 频道。 plist 文件名必须是 **_com.microsoft.Edge.plist_**。
 
 > [!IMPORTANT]
 > 从版本 78.0.249.2 开始，macOS 上的所有 Microsoft Edge 频道都从 **com.microsoft.Edge** 首选项域中读取。 以前的所有版本都从特定于频道的域（如开发人员频道的 **com.microsoft.Edge.Dev**）中读取。
@@ -55,6 +55,7 @@ ms.locfileid: "10979202"
    ```cmd
    /usr/bin/plutil -convert xml1 ~/Desktop/com.microsoft.Edge.plist
    ```
+
 在转换文件后，验证策略数据是否正确，以及是否包含你希望用于配置文件的设置。
 
 > [!NOTE]
@@ -65,21 +66,6 @@ ms.locfileid: "10979202"
 对于 Microsoft Intune，请创建面向 macOS 平台的新设备配置文件，然后选择*首选项文件*配置文件类型。 将 **com.microsoft.Edge** 作为目标首选项域名，然后上传你的 plist。 有关详细信息，请参阅[使用 Microsoft Intune 将属性列表文件添加到 macOS 设备中](https://docs.microsoft.com/intune/configuration/preference-file-settings-macos)。
 
 对于 Jamf，将 plist 文件作为*自定义设置*负载上传。
-
-## 常见问题
-
-### Microsoft Edge 可以配置为使用主首选项吗？
-
-可以，你可以将 Microsoft Edge 配置为使用主首选项文件。
-
-主首选项文件允许你在部署 Microsoft Edge 时配置浏览器用户配置文件的默认设置。 你还可以使用主首选项文件在未由设备管理系统管理的计算机上应用设置。 当用户首次运行浏览器时，这些设置将应用于用户的配置文件。 在用户运行浏览器后，不会应用对主首选项文件所做的更改。 用户可以在浏览器中更改主首选项的设置。 如果你想要在首次运行浏览器后将设置设为强制性设置或更改设置，则必须使用策略。
-
-主首选项文件允许你为浏览器自定义许多不同的设置和首选项，包括与其他基于 Chromium 的浏览器共享以及特定于 Microsoft Edge 的那些设置和首选项。  与策略相关的首选项可使用主首选项文件进行配置。 如果设置了策略，并且有相应的主首选项集，则该策略设置优先。
-
-> [!IMPORTANT]
-> 所有可用的首选项可能与 Microsoft Edge 术语和命名约定不一致。  不能保证这些首选项将继续在将来的版本中按预期方式运行。 在更高版本中，首选项可能会发生更改或被忽略。
-
-主首选项文件是使用 JSON 标记进行格式设置的文本文件。 此文件需要添加到 msedge.exe 可执行文件所在的目录中。 对于 macOS 上的系统范围内的企业部署，这通常是：“*~/Library/Application Support/Microsoft/Microsoft Edge Master Preferences*”或“*/Library/Microsoft/Microsoft Edge Master Preferences*”。
 
 ## 另请参阅
 
