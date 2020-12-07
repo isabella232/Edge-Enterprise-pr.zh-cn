@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 11/30/2020
+ms.date: 12/03/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: f674c39506736dfc5b5706e902970e0e4ce84fd8
-ms.sourcegitcommit: 2a53bdd2510770c0b7580f912864337c6ef617fd
+ms.openlocfilehash: cb4a7de72582ff16a528cbaca04bb39364f6d93f
+ms.sourcegitcommit: 91821fa6a962ea9e88ffeff94dff94fcd1245df5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "11192532"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "11195258"
 ---
 # Microsoft Edge Beta 渠道的发行说明
 
@@ -24,7 +24,13 @@ ms.locfileid: "11192532"
 > [!IMPORTANT]
 > 请参阅此 [Microsoft Edge 渠道发行更新](https://blogs.windows.com/msedgedev/2020/03/20/update-stable-channel-releases/)。
 
-## 版本87.0.664.52：11月30日
+## 版本 87.0.664.55：12 月 3 日
+
+修复了各种 bug 和性能问题。 此版本支持以下新功能。
+
+- **如果在联机泄露中发现用户的密码，则将生成警报**。 将根据已知违反的凭据存储库检查用户密码，并在找到匹配项时向用户发送警报。 （此功能将在 Microsoft Edge 稳定版 88 中提供。）
+
+## 版本 87.0.664.52：11 月 30 日
 
 修复了各种 bug 和性能问题。
 
