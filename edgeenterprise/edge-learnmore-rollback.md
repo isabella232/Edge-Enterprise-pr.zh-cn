@@ -30,7 +30,7 @@ ms.locfileid: "11192422"
 
 ## 开始之前
 
-请务必了解如何在 Microsoft Edge 环境中安装“回退”功能。 可使用两种不同方法部署回退：使用 MSI 手动部署或使用 Microsoft Edge 更新和组策略。 我们还鼓励使用组策略选择更流畅的部署。
+请务必了解如何在 Microsoft Edge 环境中安装“回退”功能。 可使用两种不同方法部署回退：使用 MSI 手动部署或使用 Microsoft Edge 更新和组策略。 我们还鼓励通过使用组策略选择实现更流畅的部署。
 
 ### 建议
 
@@ -113,7 +113,7 @@ ms.locfileid: "11192422"
 
 快照是用户数据文件夹的版本标记副本。 在版本升级过程中，将生成以前版本的快照并将其存储在快照文件夹中。 在回退后，版本匹配的快照将被复制到新用户数据文件夹中，并从快照文件夹中删除。 如果降级后没有版本匹配的快照可用，回退会依赖同步将用户数据写入到新 Microsoft Edge 版本中。
 
-[UserDataSnapshotRetentionLimit](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userdatasnapshotretentionlimit)组策略允许你为任意给定时间内保留的快照数设置限制。 默认情况下，保留三个快照。 您可以将此策略配置为保留 0-5 个快照。
+[UserDataSnapshotRetentionLimit](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userdatasnapshotretentionlimit) 组策略允许你针对任意给定时间内保留的快照数设置限制。 默认情况下，保留三个快照。 您可以将此策略配置为保留 0-5 个快照。
 
 ## 常见问题
 
