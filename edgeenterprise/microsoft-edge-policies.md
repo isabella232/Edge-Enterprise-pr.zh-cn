@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/19/2020
+ms.date: 12/02/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 77d79f36ba91c5966ffb8dde66ba7ec14934f39e
-ms.sourcegitcommit: fc6f86f92f2fecac89028d77524d123bfaf2111d
+ms.openlocfilehash: 94e16c202ce45332975c89ef354402a5b3edcc6e
+ms.sourcegitcommit: 0ab6e25fd045dec2ec23f9dd7b2d2adb6fde3ef2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "11181983"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "11195133"
 ---
 # Microsoft Edge - 策略
 
@@ -33,12 +33,18 @@ ms.locfileid: "11181983"
 
 下表列出了此更新的新和已弃用的策略。
 
-| 名称 | 状态 |
+| 名称 | 标题 |
 |-|-|
-|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)| 新增 |
-|[BlockExternalExtensions](#blockexternalextensions) | 新增 |
-|[ShowMicrosoftRewards](#showmicrosoftrewards) | 新增 |
-|[ProactiveAuthEnabled](#proactiveauthenabled) | 已弃用 |
+|[PrinterTypeDenyList](#printertypedenylist)|在拒绝列表上禁用打印机类型|
+|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允许在 Internet Explorer 模式下启动本地文件|
+|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|在 Internet Explorer 模式文件扩展名允许列表中打开本地文件|
+|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|显示上下文菜单以在 Internet Explorer 模式下打开链接|
+|[IntranetRedirectBehavior](#intranetredirectbehavior)|Intranet 重定向行为|
+|[UpdatePolicyOverride](#updatepolicyoverride)|指定 Microsoft Edge 更新如何处理 Microsoft Edge 中的可用更新。|
+|[VerticalTabsAllowed](#verticaltabsallowed)|为浏览器侧面的选项卡配置垂直布局的可用性|
+| 已弃用 [WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|在 WebRTC 中允许旧版 TLS/DTLS 降级|
+
+
 
 ## 可用策略
 
@@ -83,7 +89,7 @@ ms.locfileid: "11181983"
 |[DefaultInsecureContentSetting](#defaultinsecurecontentsetting)|控制不安全内容异常的使用|
 |[DefaultJavaScriptSetting](#defaultjavascriptsetting)|默认 JavaScript 设置|
 |[DefaultNotificationsSetting](#defaultnotificationssetting)|默认通知设置|
-|[DefaultPluginsSetting](#defaultpluginssetting)|默认 Adobe Flash 设置|
+|[DefaultPluginsSetting](#defaultpluginssetting)|默认 Adobe Flash 设置（已过时）|
 |[DefaultPopupsSetting](#defaultpopupssetting)|默认弹出窗口设置|
 |[DefaultWebBluetoothGuardSetting](#defaultwebbluetoothguardsetting)|控制 Web 蓝牙 API 的使用|
 |[DefaultWebUsbGuardSetting](#defaultwebusbguardsetting)|控制 WebUSB API 的使用|
@@ -101,8 +107,8 @@ ms.locfileid: "11181983"
 |[LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist)|在指定网站上还原为 Cookie 的旧 SameSite 行为|
 |[NotificationsAllowedForUrls](#notificationsallowedforurls)|在特定网站上允许通知|
 |[NotificationsBlockedForUrls](#notificationsblockedforurls)|在特定网站上阻止通知|
-|[PluginsAllowedForUrls](#pluginsallowedforurls)|在特定网站上允许 Adobe Flash 插件|
-|[PluginsBlockedForUrls](#pluginsblockedforurls)|在特定网站上阻止 Adobe Flash 插件|
+|[PluginsAllowedForUrls](#pluginsallowedforurls)|在特定网站上允许 Adobe Flash 插件（已过时）|
+|[PluginsBlockedForUrls](#pluginsblockedforurls)|在特定网站上阻止 Adobe Flash 插件（已过时）|
 |[PopupsAllowedForUrls](#popupsallowedforurls)|在特定网站上允许弹出窗口|
 |[PopupsBlockedForUrls](#popupsblockedforurls)|在特定网站上阻止弹出窗口|
 |[RegisteredProtocolHandlers](#registeredprotocolhandlers)|注册协议处理程序|
@@ -139,7 +145,7 @@ ms.locfileid: "11181983"
 
 |策略名称|标题|
 |-|-|
-|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|Allow cross-origin HTTP Authentication prompts|
+|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|允许跨域 HTTP 身份验证提示|
 |[AuthNegotiateDelegateAllowlist](#authnegotiatedelegateallowlist)|指定 Microsoft Edge 可将用户凭据委派到的服务器列表|
 |[AuthSchemes](#authschemes)|支持的身份验证方案|
 |[AuthServerAllowlist](#authserverallowlist)|配置允许的身份验证服务器列表|
@@ -181,6 +187,7 @@ ms.locfileid: "11181983"
 |[DefaultPrinterSelection](#defaultprinterselection)|默认打印机选择规则|
 |[PrintHeaderFooter](#printheaderfooter)|打印页眉和页脚|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|将系统默认打印机设置为默认打印机|
+|[PrinterTypeDenyList](#printertypedenylist)|在拒绝列表上禁用打印机类型|
 |[PrintingEnabled](#printingenabled)|启用打印|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|默认打印页面大小|
 |[UseSystemPrintDialog](#usesystemprintdialog)|使用系统打印对话框打印|
@@ -344,9 +351,13 @@ ms.locfileid: "11181983"
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|控制 IntensiveWakeUpThrottling 的功能|
 |[InternetExplorerIntegrationEnhancedHangDetection](#internetexplorerintegrationenhancedhangdetection)|为 Internet Explorer 模式配置增强的挂起检测|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|配置 Internet Explorer 集成|
+|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允许在 Internet Explorer 模式下启动本地文件|
+|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|在 Internet Explorer 模式文件扩展名允许列表中打开本地文件|
+|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|显示上下文菜单以在 Internet Explorer 模式下打开链接|
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|配置企业模式站点列表|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|指定从 Internet Explorer 模式页面启动时未配置网站的“页内”导航行为|
 |[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允许 Internet Explorer 模式测试|
+|[IntranetRedirectBehavior](#intranetredirectbehavior)|Intranet 重定向行为|
 |[IsolateOrigins](#isolateorigins)|针对特定源启用网站隔离|
 |[LocalProvidersEnabled](#localprovidersenabled)|允许来自本地提供程序的建议|
 |[ManagedFavorites](#managedfavorites)|配置收藏夹|
@@ -376,7 +387,7 @@ ms.locfileid: "11181983"
 |[RestrictSigninToPattern](#restrictsignintopattern)|限制哪些帐户可用作 Microsoft Edge 主要帐户|
 |[RoamingProfileLocation](#roamingprofilelocation)|设置漫游配置文件目录|
 |[RoamingProfileSupportEnabled](#roamingprofilesupportenabled)|启用 Microsoft Edge 配置文件数据的漫游副本|
-|[RunAllFlashInAllowMode](#runallflashinallowmode)|将 Adobe Flash 内容设置扩展到所有内容|
+|[RunAllFlashInAllowMode](#runallflashinallowmode)|将 Adobe Flash 内容设置扩展到所有内容（已过时）|
 |[SSLErrorOverrideAllowed](#sslerroroverrideallowed)|允许用户从 HTTPS 警告页面继续操作|
 |[SSLVersionMin](#sslversionmin)|已启用最低 TLS 版本|
 |[SaveCookiesOnExit](#savecookiesonexit)|Microsoft Edge 关闭时保存 cookie|
@@ -412,10 +423,12 @@ ms.locfileid: "11181983"
 |[TranslateEnabled](#translateenabled)|启用翻译|
 |[URLAllowlist](#urlallowlist)|定义允许的 URL 列表|
 |[URLBlocklist](#urlblocklist)|阻止对 URL 列表的访问|
+|[UpdatePolicyOverride](#updatepolicyoverride)|指定 Microsoft Edge 更新如何处理 Microsoft Edge 中的可用更新。|
 |[UserAgentClientHintsEnabled](#useragentclienthintsenabled)|启用“User-Agent 客户端提示”功能（已弃用）|
 |[UserDataDir](#userdatadir)|设置用户数据目录|
 |[UserDataSnapshotRetentionLimit](#userdatasnapshotretentionlimit)|限制保留用于紧急回退的用户数据快照数量|
 |[UserFeedbackAllowed](#userfeedbackallowed)|允许用户反馈|
+|[VerticalTabsAllowed](#verticaltabsallowed)|为浏览器侧面的选项卡配置垂直布局的可用性|
 |[VideoCaptureAllowed](#videocaptureallowed)|允许或阻止视频捕获|
 |[VideoCaptureAllowedUrls](#videocaptureallowedurls)|无需请求许可即可访问视频捕获设备的网站|
 |[WPADQuickCheckEnabled](#wpadquickcheckenabled)|设置 WPAD 优化|
@@ -423,6 +436,7 @@ ms.locfileid: "11181983"
 |[WebCaptureEnabled](#webcaptureenabled)|在 Microsoft Edge 中启用网络捕获功能|
 |[WebComponentsV0Enabled](#webcomponentsv0enabled)|重新启用 Web Components v0 API 直至 M84（已过时）|
 |[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|允许 WebDriver 替代不兼容的策略（已弃用）|
+|[WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|在 WebRTC 中允许旧版 TLS/DTLS 降级（已弃用）|
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|管理通过 WebRTC 暴露本地 IP 地址|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制通过 WebRTC 暴露本地 IP 地址|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 使用的本地 UDP 端口的范围|
@@ -1514,17 +1528,19 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
   ### DefaultPluginsSetting
 
-  #### 默认 Adobe Flash 设置
+  #### 默认 Adobe Flash 设置（已过时）
 
   
-  
+  >已过时：此策略已过时，在 Microsoft Edge 87 后不起作用。
   #### 支持的版本：
 
-  - 在 Windows 和 macOS 上自 77 或更高版本起
+  - 在 Windows 和 macOS 上自 77 起至 87
 
   #### 描述
 
-  先检查 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然后再检查此策略。 选项为 "ClickToPlay" 和 "BlockPlugins"。 如果将此策略设置为 "BlockPlugins"，则所有网站均将拒绝该插件。 点击 "ClickToPlay" 可运行 Flash 插件，但用户需单击占位以启动。
+  此策略不起作用，因为 Microsoft Edge 不再支持 Flash。
+
+先检查 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然后再检查此策略。 选项为 "ClickToPlay" 和 "BlockPlugins"。 如果将此策略设置为 "BlockPlugins"，则所有网站均将拒绝该插件。 点击 "ClickToPlay" 可运行 Flash 插件，但用户需单击占位以启动。
 
 如果未配置此策略，用户可以手动更改此设置。
 
@@ -1553,7 +1569,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   ##### 组策略 (ADMX) 信息
 
   - GP 唯一名称：DefaultPluginsSetting
-  - GP 名称：默认 Adobe Flash 设置
+  - GP 名称：默认 Adobe Flash 设置（已过时）
   - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -2468,7 +2484,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
   允许你将所有 Cookie 恢复为旧的 SameSite 行为。 还原为旧行为会导致未指定 SameSite 属性的 Cookie 被视为 “SameSite=None”，删除了 “SameSite=None” Cookie 携带 “Secure” 属性的要求，并在评估两个站点是否为同一站点时跳过方案比较。
 
-如果不设置此策略，Cookie 的 SameSite 行为将取决于 SameSite-by-default 功能、Cookies-without-SameSite-must-be-secure 功能、和 Schemeful Same-Site 功能的其他资源。 These features can also be configured by a field trial or the same-site-by-default-cookies flag, the cookies-without-same-site-must-be-secure flag, or the schemeful-same-site flag in edge://flags.
+如果不设置此策略，Cookie 的 SameSite 行为将取决于 SameSite-by-default 功能、Cookies-without-SameSite-must-be-secure 功能、和 Schemeful Same-Site 功能的其他资源。 这些功能也可通过字段试用或相同的站点-默认-cookie 标志、cookie （无相同站点-必须是安全的标志）或 edge://flags 中的 schemeful-site 标志配置。
 
 策略选项映射：
 
@@ -2725,21 +2741,23 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
 
   ### PluginsAllowedForUrls
 
-  #### 在特定网站上允许 Adobe Flash 插件
+  #### 在特定网站上允许 Adobe Flash 插件（已过时）
 
   
-  
+  >已过时：此策略已过时，在 Microsoft Edge 87 后不起作用。
   #### 支持的版本：
 
-  - 在 Windows 和 macOS 上自 77 或更高版本起
+  - 在 Windows 和 macOS 上自 77 起至 87
 
   #### 描述
 
-  根据 URL 模式定义可运行 Adobe Flash 插件的网站列表。
+  此策略不起作用，因为 Microsoft Edge 不再支持 Flash。
+
+根据 URL 模式定义可运行 Adobe Flash 插件的网站列表。
 
 如果未配置此策略，则所有网站都将使用 [DefaultPluginsSetting](#defaultpluginssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，该策略不再支持主机中带有 '*' 和 '[*.]' 通配符的模式。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，此策略不再支持主机中具有“\*”和“[\*.]”通配符的模式。
 
   #### 支持的功能：
 
@@ -2756,7 +2774,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
   ##### 组策略 (ADMX) 信息
 
   - GP 唯一名称：PluginsAllowedForUrls
-  - GP 名称：在特定网站上允许 Adobe Flash 插件
+  - GP 名称：在特定网站上允许 Adobe Flash 插件（已过时）
   - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -2792,21 +2810,23 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
   ### PluginsBlockedForUrls
 
-  #### 在特定网站上阻止 Adobe Flash 插件
+  #### 在特定网站上阻止 Adobe Flash 插件（已过时）
 
   
-  
+  >已过时：此策略已过时，在 Microsoft Edge 87 后不起作用。
   #### 支持的版本：
 
-  - 在 Windows 和 macOS 上自 77 或更高版本起
+  - 在 Windows 和 macOS 上自 77 起至 87
 
   #### 描述
 
-  根据 URL 模式定义阻止运行 Adobe Flash 的网站列表。
+  此策略不起作用，因为 Microsoft Edge 不再支持 Flash。
+
+根据 URL 模式定义阻止运行 Adobe Flash 的网站列表。
 
 如果未配置此策略，则所有网站都将使用 [DefaultPluginsSetting](#defaultpluginssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，该策略不再支持主机中带有 '*' 和 '[*.]' 通配符的模式。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，此策略不再支持主机中具有“\*”和“[\*.]”通配符的模式。
 
   #### 支持的功能：
 
@@ -2823,7 +2843,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
   ##### 组策略 (ADMX) 信息
 
   - GP 唯一名称：PluginsBlockedForUrls
-  - GP 名称：在特定网站上阻止 Adobe Flash 插件
+  - GP 名称：在特定网站上阻止 Adobe Flash 插件（已过时）
   - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -4648,7 +4668,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   ### AllowCrossOriginAuthPrompt
 
-  #### Allow cross-origin HTTP Authentication prompts
+  #### 允许跨域 HTTP 身份验证提示
 
   
   
@@ -4658,9 +4678,9 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   #### 描述
 
-  Controls whether third-party images on a page can show an authentication prompt.
+  控制页面上的第三方图像是否可以显示身份验证提示。
 
-通常，这将被禁用，以抵御网络钓鱼威胁。 If you don't configure this policy, it's disabled and third-party images can't show an authentication prompt.
+通常，这将被禁用，以抵御网络钓鱼威胁。 如果未配置此策略，它将被禁用，第三方映像无法显示身份验证提示。
 
   #### 支持的功能：
 
@@ -5069,7 +5089,7 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
   
   #### 支持的版本：
 
-  - On Windows and macOS since 87 or later
+  - 在 Windows 和 macOS 上自87或更高版本起
 
   #### 描述
 
@@ -5739,7 +5759,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   
   #### 支持的版本：
 
-  - On Windows and macOS since 87 or later
+  - 在 Windows 和 macOS 上自87或更高版本起
 
   #### 描述
 
@@ -6053,6 +6073,88 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 示例值：
 ``` xml
 <false/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### PrinterTypeDenyList
+
+  #### 在拒绝列表上禁用打印机类型
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  拒绝列表中的打印机类型不会被发现或获取其功能。
+
+将所有打印机类型放在拒绝列表上会有效地禁用打印，因为文档没有打印目标。
+
+如果未配置此策略，或者打印机列表为空，则所有打印机类型都是可发现的。
+
+打印机目标包括扩展打印机和本地打印机。 扩展打印机也称为打印提供商目标，包括属于 Microsoft Edge 扩展的任何目标。
+本地打印机也称为本机打印目标，包括本地计算机可用的目标位置和共享网络打印机。
+
+策略选项映射：
+
+* privet (privet) = 基于 Zeroconf (mDNS + DNS-SD) 的协议目标
+
+* extension (extension) = 基于扩展的目标
+
+* pdf (pdf) =“另存为 PDF”目标
+
+* local (local) = 本地打印机目标
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 字符串列表
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：PrinterTypeDenyList
+  - GP 名称：在拒绝列表上禁用打印机类型
+  - GP 路径（强制）：管理模板/Microsoft Edge/打印
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### 示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\1 = "local"
+SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
+
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项键名称：PrinterTypeDenyList
+  - 示例值：
+``` xml
+<array>
+  <string>local</string>
+  <string>privet</string>
+</array>
 ```
   
 
@@ -12776,7 +12878,7 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   
   #### 支持的版本：
 
-  - On Windows and macOS since 87 or later
+  - 在 Windows 和 macOS 上自87或更高版本起
 
   #### 描述
 
@@ -12895,14 +12997,14 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   #### Re-enable deprecated web platform features for a limited time (obsolete)
 
   
-  >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
+  >已过时：此策略已过时，在 Microsoft Edge 86 后不起作用。
   #### 支持的版本：
 
-  - On Windows and macOS since 77, until 86
+  - 在 Windows 和 macOS 上自 77 起至 86
 
   #### 描述
 
-  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
+  此策略已过时，因为现有的专用 web 平台策略用于管理单个 web 平台功能 deprecations。
 
 指定要临时重新启用的已弃用 Web 平台功能的列表。
 
@@ -15755,6 +15857,186 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### InternetExplorerIntegrationLocalFileAllowed
+
+  #### 允许在 Internet Explorer 模式下启动本地文件
+
+  
+  
+  #### 支持的版本：
+
+  - 在 88 版或更高版本的 Windows 上
+
+  #### 描述
+
+  此策略控制 --ie-mode-file-url 命令行参数的可用性，该参数用于使用在命令行行指定的本地文件启动 Microsoft Edge 进入 Internet Explorer 模式。
+
+此设置与以下设置配合使用: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 设置为“IEMode”。
+
+如果将此策略设置为 true 或未配置该策略，则允许用户使用 --ie-mode-file-url 命令行参数在 Internet Explorer 模式下启动本地文件。
+
+如果将此策略设置为 false，则不允许用户使用 --ie-mode-file-url 命令行参数在 Internet Explorer 模式下启动本地文件。
+
+若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerIntegrationLocalFileAllowed
+  - GP 名称：允许在 Internet Explorer 模式下启动本地文件
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InternetExplorerIntegrationLocalFileAllowed
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### InternetExplorerIntegrationLocalFileExtensionAllowList
+
+  #### 在 Internet Explorer 模式文件扩展名允许列表中打开本地文件
+
+  
+  
+  #### 支持的版本：
+
+  - 在 88 版或更高版本的 Windows 上
+
+  #### 描述
+
+  此策略基于文件扩展名限制允许将哪些 file:// URL 启动到 Internet Explorer 模式。
+
+此设置与以下设置配合使用: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 设置为“IEMode”。
+
+当请求在 Internet Explorer 模式下启动 file:// URL 时，此列表中必须存在 URL 的文件扩展名，以便允许 URL 在 Internet Explorer 模式下启动。 阻止在 Internet Explorer 模式下打开的 URL 将改为在 Edge 模式下打开。
+
+如果将此策略设置为特殊值“*”或未配置该策略，则允许所有文件扩展名。
+
+若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 字符串列表
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerIntegrationLocalFileExtensionAllowList
+  - GP 名称：在 Internet Explorer 模式文件扩展名允许列表中打开本地文件
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### 示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\1 = ".mht"
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\2 = ".pdf"
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\3 = ".vsdx"
+
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### InternetExplorerIntegrationLocalFileShowContextMenu
+
+  #### 显示上下文菜单以在 Internet Explorer 模式下打开链接
+
+  
+  
+  #### 支持的版本：
+
+  - 在 88 版或更高版本的 Windows 上
+
+  #### 描述
+
+  此策略控制 file:// 链接上下文菜单上“在新的 Internet Explorer 模式选项卡中打开链接”选项的可见性。
+
+此设置与以下设置配合使用: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 设置为“IEMode”。
+
+如果将此策略设置为 true，则“在新的 Internet Explorer 模式选项卡中打开链接”上下文菜单项将可用于 file:// 链接。
+
+如果将此策略设置为 false 或未配置该策略，则不会添加上下文菜单项。
+
+若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerIntegrationLocalFileShowContextMenu
+  - GP 名称：显示上下文菜单以在 Internet Explorer 模式下打开链接
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InternetExplorerIntegrationLocalFileShowContextMenu
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### InternetExplorerIntegrationSiteList
 
   #### 配置企业模式站点列表
@@ -15938,6 +16220,82 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000000
 ```
 
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### IntranetRedirectBehavior
+
+  #### Intranet 重定向行为
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  此策略配置通过 DNS 拦截检查进行 Intranet 重定向的行为。 这些检查将尝试发现浏览器是否位于重定向未知主机名的代理后面。
+
+如果未配置此策略，则浏览器将使用 DNS 拦截检查和 Intranet 重定向建议的默认行为。 在 M88 中，默认情况下启用它们，但在将来的版本中将默认禁用它们。
+
+[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 是一个相关策略，它也可能会禁用 DNS 拦截检查。 但是，此策略是更灵活的版本，它可能会单独控制 Intranet 重定向信息栏，并且可能会在将来进行扩展。
+如果 [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 或此策略请求禁用拦截检查，则检查将被禁用。
+如果此策略禁用了 DNS 拦截检查，但启用了 [GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar)，则单字查询仍将导致 Intranet 导航。
+
+策略选项映射：
+
+* Default (0) = 使用默认浏览器行为。
+
+* DisableInterceptionChecksDisableInfobar (1) = 禁用 DNS 拦截检查和“是否就是”“http://intranetsite/”信息栏。
+
+* DisableInterceptionChecksEnableInfobar (2) = 禁用 DNS 拦截检查；允许“是否就是”“http://intranetsite/”信息栏。
+
+* EnableInterceptionChecksEnableInfobar (3) = 允许 DNS 拦截检查和“是否就是”“http://intranetsite/”信息栏。
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 整型
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：IntranetRedirectBehavior
+  - GP 名称：Intranet 重定向行为
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：IntranetRedirectBehavior
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项键名称：IntranetRedirectBehavior
+  - 示例值：
+``` xml
+<integer>1</integer>
+```
   
 
   [返回页首](#microsoft-edge---policies)
@@ -17937,17 +18295,19 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
   ### RunAllFlashInAllowMode
 
-  #### 将 Adobe Flash 内容设置扩展到所有内容
+  #### 将 Adobe Flash 内容设置扩展到所有内容（已过时）
 
   
-  
+  >已过时：此策略已过时，在 Microsoft Edge 87 后不起作用。
   #### 支持的版本：
 
-  - 在 Windows 和 macOS 上自 77 或更高版本起
+  - 在 Windows 和 macOS 上自 77 起至 87
 
   #### 描述
 
-  如果启用此策略，则内容设置中设为允许 Adobe Flash（由用户或通过企业策略）的网站中嵌入的所有 Adobe Flash 内容都将运行。 这包括来自其他源的内容和/或小型内容。
+  此策略不起作用，因为 Microsoft Edge 不再支持 Flash。
+
+如果启用此策略，则内容设置中设为允许 Adobe Flash（由用户或通过企业策略）的网站中嵌入的所有 Adobe Flash 内容都将运行。 这包括来自其他源的内容和/或小型内容。
 
 要控制允许哪些网站运行 Adobe Flash，请参阅 [DefaultPluginsSetting](#defaultpluginssetting)、[PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrl](#pluginsblockedforurls) 策略中的规范。
 
@@ -17968,7 +18328,7 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
   ##### 组策略 (ADMX) 信息
 
   - GP 唯一名称：RunAllFlashInAllowMode
-  - GP 名称：将 Adobe Flash 内容设置扩展到所有内容
+  - GP 名称：将 Adobe Flash 内容设置扩展到所有内容（已过时）
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -18071,7 +18431,7 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
   #### 描述
 
-  Sets the minimum supported version of TLS. 如果未配置此策略，则 Microsoft Edge 将显示适用于 TLS 1.0 和 TLS 1.1 的错误，但用户将可以忽略它。
+  设置 TLS 的最低支持版本。 如果未配置此策略，则 Microsoft Edge 将显示适用于 TLS 1.0 和 TLS 1.1 的错误，但用户将可以忽略它。
 
 如果启用此策略，Microsoft Edge 将不会使用低于指定版本的任何 SSL/TLS 版本。 任何无法识别的值都将被忽略。
 
@@ -18931,7 +19291,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   显示Microsoft Rewards体验和通知。
 如果启用此策略：
    - 搜索和赢得市场中的Windows账户用户（不包括Azure AD账户）将在其Microsoft Edge用户资料中看到Microsoft Rewards体验。
-   - 在Microsoft Edge设置中启用Microsoft Rewards 的设置将被启用，并处于开启状态。
+   - 在Microsoft Edge设置中启用 Microsoft Rewards 的设置将被启用，并处于开启状态。
    - 启用提供模式的设置将被启用，并尊重用户的设置。
 
 如果禁用此策略：
@@ -18999,10 +19359,10 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   #### 描述
 
-  由于操作要求的更改，此策略未按预期工作。 Therefore it's deprecated and should not be used.
+  由于操作要求的更改，此策略未按预期工作。 因此，它已弃用，不应使用。
 
-指定是否在收藏夹栏中包含 Office.com 的快捷方式。 For users signed into Microsoft Edge the shortcut takes users to their Microsoft Office apps and docs. If you enable or don't configure this policy, users can choose whether to see the shortcut by changing the toggle in the favorites bar context menu.
-If you disable this policy, the shortcut isn't shown.
+指定是否在收藏夹栏中包含 Office.com 的快捷方式。 对于已登录到 Microsoft Edge 的用户，快捷方式会将用户带到其 Microsoft Office 应用和文档。如果启用或未配置此策略，用户可以通过在收藏夹栏上下文菜单中更改切换来选择是否要查看快捷方式。
+如果禁用此策略，则不会显示快捷方式。
 
   #### 支持的功能：
 
@@ -19181,17 +19541,17 @@ If you disable this policy, the shortcut isn't shown.
   
   #### 支持的版本：
 
-  - On Windows and macOS since 87 or later
+  - 在 Windows 和 macOS 上自87或更高版本起
 
   #### 描述
 
-  Set whether websites can use the W3C Web Speech API to recognize speech from the user. The Microsoft Edge implementation of the Web Speech API uses Azure Cognitive Services, so voice data will leave the machine.
+  设置网站是否可以使用 W3C Web Speech API 识别来自用户的语音。 Microsoft Edge 的 Web 语音 API 实现使用 Azure 认知服务，因此语音数据将离开该计算机。
 
-If you enable or don't configure this policy, web-based applications that use the Web Speech API can use Speech Recognition.
+如果启用或未配置此策略，则使用 Web 语音 API 的基于 web 的应用程序可以使用语音识别。
 
-If you disable this policy, Speech Recognition is not available through the Web Speech API.
+如果禁用此策略，则无法通过 Web Speech API 获取语音识别。
 
-Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
+在此处阅读有关此功能的更多信息：SpeechRecognition API：[https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) 认知服务：[https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
 
   #### 支持的功能：
 
@@ -20301,6 +20661,60 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### UpdatePolicyOverride
+
+  #### 指定 Microsoft Edge 更新如何处理 Microsoft Edge 中的可用更新。
+
+  
+  
+  #### 支持的版本：
+
+  - 在 macOS 上自 89 或更高版本起
+
+  #### 描述
+
+  如果启用此策略，Microsoft Edge 更新将根据你配置以下选项的方式处理 Microsoft Edge 更新：
+
+- 仅限自动无提示更新：仅在定期更新检查找到更新后才应用更新。
+
+- 仅限手动更新：仅当用户运行手动更新检查时才应用更新。 （并非所有应用都为此选项提供接口。）
+
+如果选择手动更新，请确保使用 Microsoft AutoUpdate 定期检查更新。
+
+如果未启用和配置此策略，Microsoft Edge 更新将自动检查更新。
+
+
+策略选项映射：
+
+* automatic-silent-only (automatic-silent-only) = 仅当定期更新检查发现更新时才应用更新。
+
+* manual-only (manual-only) = 仅当用户运行手动更新检查时才应用更新。 （并非所有应用都为此选项提供接口。）
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+
+  - 字符串
+
+  
+
+  #### Mac 信息和设置
+  
+  - 首选项键名称：UpdatePolicyOverride
+  - 示例值：
+``` xml
+<string>automatic-silent-only</string>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### UserAgentClientHintsEnabled
 
   #### 启用“User-Agent 客户端提示”功能（已弃用）
@@ -20540,6 +20954,70 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   #### Mac 信息和设置
   
   - 首选项项名称：UserFeedbackAllowed
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### VerticalTabsAllowed
+
+  #### 为浏览器侧面的选项卡配置垂直布局的可用性
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  配置用户是否可以访问选项卡在浏览器侧面垂直对齐而不是在顶部对齐的替代布局。
+当打开多个选项卡时，此布局可提供更好的选项卡查看和管理。 网站标题的可见性更佳，扫描对齐的图标更容易，还有更多空间可用于管理和关闭选项卡。
+
+如果禁用此策略，则垂直选项卡布局将不可用作选项提供给用户。
+
+如果启用或未配置此策略，则选项卡布局仍将位于顶部，但用户可以选择打开侧面的垂直选项卡。
+
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：VerticalTabsAllowed
+  - GP 名称：为浏览器侧面的选项卡配置垂直布局的可用性
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：VerticalTabsAllowed
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项键名称：VerticalTabsAllowed
   - 示例值：
 ``` xml
 <true/>
@@ -20840,7 +21318,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   
   #### 支持的版本：
 
-  - On Windows and macOS since 87 or later
+  - 在 Windows 和 macOS 上自87或更高版本起
 
   #### 描述
 
@@ -21014,6 +21492,67 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 示例值：
 ``` xml
 <true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### WebRtcAllowLegacyTLSProtocols
+
+  #### 在 WebRTC 中允许旧版 TLS/DTLS 降级（已弃用）
+
+  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
+  
+  #### 支持的版本：
+
+  - 在 Windows 和 macOS 上自88或更高版本起
+
+  #### 描述
+
+  如果启用此策略，WebRTC 对等连接可以降级到 TLS/DTLS（DTLS 1.0、TLS 1.0 和 TLS 1.1）协议的过时版本。
+如果禁用或未设置此策略，则这些 TLS/DTLS 版本将被禁用。
+
+此策略是临时的，在 Microsoft Edge 的将来版本中将被删除。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：WebRtcAllowLegacyTLSProtocols
+  - GP 名称：在 WebRTC 中允许旧版 TLS/DTLS 降级（已弃用）
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：WebRtcAllowLegacyTLSProtocols
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000000
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项键名称：WebRtcAllowLegacyTLSProtocols
+  - 示例值：
+``` xml
+<false/>
 ```
   
 
