@@ -3,19 +3,19 @@ title: Microsoft Edge 标识支持和配置
 ms.author: avvaid
 author: dan-wesley
 manager: srugh
-ms.date: 07/15/2020
+ms.date: 12/08/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 标识支持和配置
-ms.openlocfilehash: 357f3928d870f83aa087f86cbe30db3ec4f360a2
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: e553174fa40cb60046e5a46af4d81a0787957a93
+ms.sourcegitcommit: b3f8ef9e4944efa3be15c7bfc0cd13360a350c1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979392"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "11201289"
 ---
 # Microsoft Edge 标识支持和配置
 
@@ -79,13 +79,13 @@ Microsoft Edge 对基于 PRT 的 SSO 提供本机支持，不需要扩展。 在
 
 ### Windows 集成身份验证 (WIA)
 
-Microsoft Edge 还支持 Windows 集成身份验证，以便在组织内部网络中对使用浏览器进行身份验证的任何应用程序提出身份验证请求。 Windows 10 的所有版本和早期版本的 Windows 均支持此功能。 默认情况下，Microsoft Edge 使用 Intranet 区域作为 WIA 的允许列表。 若要配置启用集成身份验证的服务器，参阅 [AuthServerAllowlist 策略](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authserverallowlist)。
+Microsoft Edge 还支持 Windows 集成身份验证，以便在组织内部网络中对使用浏览器进行身份验证的任何应用程序提出身份验证请求。 Windows 10 的所有版本和早期版本的 Windows 均支持此功能。 默认情况下，Microsoft Edge 使用 Intranet 区域作为 WIA 的允许列表。 或者，你可以使用 [AuthServerAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authserverallowlist) 策略自定义已启用集成身份验证的服务器列表。 在 macOS 上，启用集成身份验证需要此策略。
 
-为了在 Microsoft Edge（版本 77 和更高版本）上支持基于 WIA 的SSO，可能还必须进行一些服务器端配置。 可能必须配置 Active Directory 联合身份验证服务 (AD FS) 属性 **WiaSupportedUserAgents**，以添加对新 Microsoft Edge 用户代理字符串的支持。 有关如何执行此操作的说明，请参阅[查看 WIASupportedUserAgent 设置](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-browser-wia#view-wiasupporteduseragent-settings)和[更改 WIASupportedUserAgent 设置](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-browser-wia#change-wiasupporteduseragent-settings)。 Windows 10 上 Microsoft Edge 用户代理字符串的示例如下显示，可在这里更多了解 [Microsoft Edge UA 字符串](https://docs.microsoft.com/microsoft-edge/web-platform/user-agent-string)。 
+为了在 Microsoft Edge（版本 77 和更高版本）上支持基于 WIA 的 SSO，可能还必须进行一些服务器端配置。 可能必须配置 Active Directory 联合身份验证服务 (AD FS) 属性 **WiaSupportedUserAgents**，以添加对新 Microsoft Edge 用户代理字符串的支持。 有关如何执行此操作的说明，请参阅[查看 WIASupportedUserAgent 设置](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-browser-wia#view-wiasupporteduseragent-settings)和[更改 WIASupportedUserAgent 设置](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-browser-wia#change-wiasupporteduseragent-settings)。 Windows 10 上 Microsoft Edge 用户代理字符串的示例如下显示，可在这里更多了解 [Microsoft Edge UA 字符串](https://docs.microsoft.com/microsoft-edge/web-platform/user-agent-string)。 
 
 下面的 UA 字符串示例适用于发布此文章时的最新 Dev 渠道版本：<br> `"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3951.0 Safari/537.36 Edg/80.0.334.2"`
 
-在MacOS上，还可以使用[ AuthServerAllowlist ](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authserverallowlist)和[ AuthNegotiateDelegateAllowlist ](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authnegotiatedelegateallowlist)策略来通过 Microsoft Edge 启用 Kerberos SSO。
+对于需要委派协商凭据的服务，Microsoft Edge 支持使用 [AuthNegotiateDelegateAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authnegotiatedelegateallowlist) 策略的约束委派。
 
 ## 附加身份验证方案
 
