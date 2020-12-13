@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 将文件扩展名与 Internet Explorer 模式关联
-ms.openlocfilehash: c80732239b911f7cd3d615e9ce1e480db2749f17
-ms.sourcegitcommit: fc0ac6bb6655d1f6e2de7c838f275779cd7a5de6
+ms.openlocfilehash: 63ab0bb8eafda093dedbed0c38a6763e0c054cdf
+ms.sourcegitcommit: c7c326c97926764d2d614520c1c8dc2546254c98
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "11175175"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "11218918"
 ---
 # 将文件扩展名与 Internet Explorer 模式关联
 
@@ -91,6 +91,11 @@ Windows Registry Editor Version 5.00
 @="\"C:\\<edge_installation_dir>\\msedge.exe\" -ie-mode-file-url -- \"%1\""
 
 ```
+## 配置文件类型以在 Internet Explorer 模式下打开
+
+从 Microsoft Edge 88 开始，你可以使用策略[“显示上下文菜单以 在 Internet Explorer 模式下打开链接”](https://docs.microsoft.com/deployedge/microsoft-edge-policies#show-context-menu-to-open-a-link-in-internet-explorer-mode)将特定文件类型链接配置为在 Internet Explorer 模式下打开，。 
+
+通过在此策略[“在 Internet Explorer 模式下打开本地文件文件扩展名允许列表”](https://docs.microsoft.com/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalfileextensionallowlist)中指定文件扩展名，可以定义此选项应应用的文件类型。 
 
 ## 另请参阅
 

@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 12/02/2020
+ms.date: 12/11/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 94e16c202ce45332975c89ef354402a5b3edcc6e
-ms.sourcegitcommit: 0ab6e25fd045dec2ec23f9dd7b2d2adb6fde3ef2
+ms.openlocfilehash: d2261f327022ea2d4d57e91748de46173d72dfa4
+ms.sourcegitcommit: 12c803b07a1dbced5f2360f5745186e33adcc41a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "11195133"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "11218731"
 ---
 # Microsoft Edge - 策略
 
@@ -29,22 +29,14 @@ ms.locfileid: "11195133"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-## 新的和已弃用的策略
+## 新策略
 
-下表列出了此更新的新和已弃用的策略。
+下表列出了此次更新的新策略。
 
 | 名称 | 标题 |
-|-|-|
-|[PrinterTypeDenyList](#printertypedenylist)|在拒绝列表上禁用打印机类型|
-|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允许在 Internet Explorer 模式下启动本地文件|
-|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|在 Internet Explorer 模式文件扩展名允许列表中打开本地文件|
-|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|显示上下文菜单以在 Internet Explorer 模式下打开链接|
-|[IntranetRedirectBehavior](#intranetredirectbehavior)|Intranet 重定向行为|
-|[UpdatePolicyOverride](#updatepolicyoverride)|指定 Microsoft Edge 更新如何处理 Microsoft Edge 中的可用更新。|
-|[VerticalTabsAllowed](#verticaltabsallowed)|为浏览器侧面的选项卡配置垂直布局的可用性|
-| 已弃用 [WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|在 WebRTC 中允许旧版 TLS/DTLS 降级|
-
-
+|--|--|
+|[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)| 限制背景图形打印模式|
+|[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)| 默认背景图形打印模式|
 
 ## 可用策略
 
@@ -188,6 +180,8 @@ ms.locfileid: "11195133"
 |[PrintHeaderFooter](#printheaderfooter)|打印页眉和页脚|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|将系统默认打印机设置为默认打印机|
 |[PrinterTypeDenyList](#printertypedenylist)|在拒绝列表上禁用打印机类型|
+|[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)|限制背景图形打印模式|
+|[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)|默认背景图形打印模式|
 |[PrintingEnabled](#printingenabled)|启用打印|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|默认打印页面大小|
 |[UseSystemPrintDialog](#usesystemprintdialog)|使用系统打印对话框打印|
@@ -440,8 +434,6 @@ ms.locfileid: "11195133"
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|管理通过 WebRTC 暴露本地 IP 地址|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制通过 WebRTC 暴露本地 IP 地址|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 使用的本地 UDP 端口的范围|
-|[WebWidgetAllowed](#webwidgetallowed)|启用 Web 构件|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 启动时允许Web构件|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|使用 Windows 代理解析程序（已弃用）|
 
 
@@ -2757,7 +2749,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
 
 如果未配置此策略，则所有网站都将使用 [DefaultPluginsSetting](#defaultpluginssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，此策略不再支持主机中具有“\*”和“[\*.]”通配符的模式。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，该策略不再支持主机中带有 '*' 和 '[*.]' 通配符的模式。
 
   #### 支持的功能：
 
@@ -2826,7 +2818,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
 如果未配置此策略，则所有网站都将使用 [DefaultPluginsSetting](#defaultpluginssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，此策略不再支持主机中具有“\*”和“[\*.]”通配符的模式。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，该策略不再支持主机中带有 '*' 和 '[*.]' 通配符的模式。
 
   #### 支持的功能：
 
@@ -4175,7 +4167,11 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
 
   #### 描述
 
-  默认情况下，允许所有扩展。 但是，如果通过将“ExtensionInstallBlockList”策略设置为“*”来阻止所有扩展，则用户只能安装此策略中定义的扩展。
+  设置此策略指定哪些扩展不受阻止列表的限制。
+
+Blocklist 值为 * 表示将阻止所有扩展，且用户仅可安装允许列表中所列出的扩展。
+
+默认情况下，允许所有扩展。 但是，如果策略禁止扩展，则可使用允许的扩展列表更改该策略。
 
   #### 支持的功能：
 
@@ -4238,11 +4234,11 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
 
   #### 描述
 
-  列出用户无法在 Microsoft Edge 中安装的特定扩展。 部署此策略时，此列表上以前安装的任何扩展都将被禁用，用户不能启用它们。 如果从阻止的扩展列表中删除某个项目，则该扩展将在以前安装的任何位置自动重新启用。
+  让你指定用户无法安装的扩展。 如果阻止已安装的扩展程序，则将将其禁用，而用户无法启用它们。 当一个已禁用的扩展程序从阻止列表中删除后，它将自动重新启用。
 
-使用“*”可阻止允许列表中未明确列出的所有扩展。
+Blocklist 值为 “*” 表示阻止了所有扩展，除非已明确地将它们列在 allowlist 中。
 
-如果未配置此策略，用户可以在 Microsoft Edge 中安装任何扩展。
+如果未设置此策略，用户可以在 Microsoft Edge 中安装任何扩展。
 
   #### 支持的功能：
 
@@ -4449,11 +4445,12 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   #### 描述
 
-  配置 Microsoft Edge 的扩展管理设置。
+  设置此策略可控制 Microsoft Edge 的扩展管理设置，包括任何受现有扩展相关策略控制的设置。 此策略将取代可能设置的任何旧策略。
 
-此策略控制多个设置，包括由任何现有扩展相关策略控制的设置。 如果同时设置了此策略和任何旧策略，则此策略将替代旧策略。
+此策略仅将扩展 ID 或更新 URL 映射到其特定设置。 可以针对特殊 ID"*"设置默认配置，此 ID 适用于在此策略中无自定义配置的所有扩展。 通过更新 URL，配置适用于扩展清单（[https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043)）中所述的具有确切更新 URL 的扩展。
 
-此策略会将扩展 ID 或更新 URL 映射到其配置。 使用扩展 ID 时，配置仅应用于指定的扩展。 设置特殊 ID“*”的默认配置，以应用于此策略中未明确列出的所有扩展。 使用更新 URL 时，配置将应用于具有此扩展清单中所述的确切更新 URL 的所有扩展，如 [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) 所述。
+注意：对于未加入 Microsoft Active Directory 域的 Windows 实例，强制安装仅限于 Microsoft Edge 加载项网站中列出的应用程序和扩展。
+
 
   #### 支持的功能：
 
@@ -5218,9 +5215,9 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 
   #### 描述
 
-  列出用户可以在 Microsoft Edge 中使用的特定本机消息传递主机。
+  设置策略指定哪些本机邮件主机不受拒绝列表的限制。 拒绝列表值为 *，意味着除非明确允许，否则将拒绝所有本地消息主机。
 
-默认情况下，允许所有本机消息传递主机。 如果将 [NativeMessagingBlocklist](#nativemessagingblocklist) 策略设置为 *，则会阻止所有本机消息传递主机，并且仅加载此处列出的本机消息传递主机。
+默认情况下，允许所有本机消息主机。 但是，如果策略拒绝本机消息主机，管理员可使用允许列表更改该策略。
 
   #### 支持的功能：
 
@@ -5283,11 +5280,9 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messag
 
   #### 描述
 
-  指定不应使用的本机消息传递主机。
+  设置此策略可指定哪些不应加载的本机消息主机。 拒绝列表值为 *，意味着除非明确允许，否则将拒绝所有本地消息主机。
 
-使用“*”会阻止所有本机消息传递主机，除非它们明确列在允许列表中。
-
-如果未配置此策略，Microsoft Edge 将加载所有已安装的本机消息传递主机。
+如果未设置此策略，Microsoft Edge 将加载所有已安装的本机消息主机。
 
   #### 支持的功能：
 
@@ -5350,11 +5345,9 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
   #### 描述
 
-  启用本机消息传递主机的用户级安装。
+  如果此策略设置为已启用或保持未设置状态，Microsoft Edge 可以使用安装在用户级别的本机消息主机。
 
-如果禁用此策略，Microsoft Edge 将仅使用在系统级安装的本机消息传递主机。
-
-默认情况下，如果未配置此策略，Microsoft Edge 将允许使用用户级本机消息传递主机。
+如果将此策略设置为“已禁用”，如果它们安装在系统级别，则 Microsoft Edge 仅能使用这些主机。
 
   #### 支持的功能：
 
@@ -6155,6 +6148,140 @@ SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
   <string>local</string>
   <string>privet</string>
 </array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### PrintingAllowedBackgroundGraphicsModes
+
+  #### 限制背景图形打印模式
+
+  
+  
+  #### 支持的版本：
+
+  - 自 89 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  限制背景图形打印模式。 如果未设置此策略，则对打印背景图形没有限制。
+
+策略选项映射：
+
+* 任何（任何）= 允许打印带有背景图形和无背景图形
+
+* 已启用（已启用）= 仅允许打印带有背景图形
+
+* 禁用 (禁用) = 仅允许打印无背景图形
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 字符串
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：PrintingAllowedBackgroundGraphicsModes
+  - GP 名称：限制后台图形打印模式
+  - GP 路径（强制）：管理模板/Microsoft Edge/打印
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：PrintingAllowedBackgroundGraphicsModes
+  - 值类型：REG_SZ
+
+  ##### 示例值：
+
+```
+"enabled"
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项名称：PrintingAllowedBackgroundGraphicsModes
+  - 示例值：
+``` xml
+<string>enabled</string>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### PrintingBackgroundGraphicsDefault
+
+  #### 默认背景图形打印模式
+
+  
+  
+  #### 支持的版本：
+
+  - 自 89 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  覆盖默认背景图形打印模式。
+
+策略选项映射：
+
+* 已启用（已启用） = 默认情况下启用背景图形打印模式
+
+* 禁用 (禁用) = 默认情况下禁用背景图形打印模式
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 字符串
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：PrintingBackgroundGraphicsDefault
+  - GP 名称：默认后台图形打印模式
+  - GP 路径（强制）：管理模板/Microsoft Edge/打印
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：PrintingBackgroundGraphicsDefault
+  - 值类型：REG_SZ
+
+  ##### 示例值：
+
+```
+"enabled"
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项名称：PrintingBackgroundGraphicsDefault
+  - 示例值：
+``` xml
+<string>enabled</string>
 ```
   
 
@@ -8294,7 +8421,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
   当用户在地址栏中键入搜索字符串时，可在地址栏的建议列表中显示相关的 Microsoft 必应搜索建议。 如果启用或未配置此策略，则用户可以在 Microsoft Edge 地址栏建议列表中看到由 Microsoft 必应搜索提供支持的内部结果。 若要查看 Microsoft 必应搜索结果，用户必须使用其组织的 Azure AD 帐户登录到 Microsoft Edge。
 如果禁用此策略，用户将无法在 Microsoft Edge 地址栏建议列表中看到内部结果。
-如果启用了强制使用默认搜索提供程序的策略集（[DefaultSearchProviderEnabled](#defaultsearchproviderenabled)、[DefaultSearchProviderName](#defaultsearchprovidername) 和 [DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl)），并且指定的搜索提供程序不是必应，则此策略不适用，并且地址栏的建议列表中将没有 Microsoft 必应搜索建议。
+从 Microsoft Edge 89 版本开始，即使必应不是用户的默认搜索提供程序，必应中的 Microsoft 搜索建议也可用。
 
   #### 支持的功能：
 
@@ -17954,9 +18081,8 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
   #### 描述
 
-  如果启用或未设置此策略，则将启用呈现器代码完整性。 只有当必须在 Microsoft Edge 的呈现器进程中运行的第三方软件遇到兼容性问题时，才应禁用此策略。
-
-禁用此策略会对 Microsoft Edge 的安全性和稳定性产生不利影响，因为允许在 Microsoft Edge 的呈现器进程中加载未知和潜在的恶意代码。
+  将策略设置为启用或保持未设置状态，可开启呈现器代码完整性。
+将策略设置为禁用会对 Microsoft Edge 的安全性和稳定性产生不利影响，因为未知和潜在的恶意代码可能在 Microsoft Edge 的呈现器进程中加载。 仅在与必须在 Microsoft Edge 的呈现器进程内运行的第三方软件存在兼容性问题时，才关闭该策略。
 
   #### 支持的功能：
 
@@ -21763,131 +21889,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 ``` xml
 <string>10000-11999</string>
 ```
-  
-
-  [返回页首](#microsoft-edge---policies)
-
-  ### WebWidgetAllowed
-
-  #### 启用 Web 构件
-
-  
-  
-  #### 支持的版本：
-
-  - 在 88 版或更高版本的 Windows 上
-
-  #### 描述
-
-  启用 Web 构件。 启用此功能后，用户可以使用构件从桌面或应用程序中搜索网页。 构件提供一个搜索框，显示 web 建议并打开 Microsoft Edge 中的所有 web 搜索。 "搜索" 框提供搜索（由必应提供支持）和 URL 建议。 该构件还包含源磁贴，用户可单击该磁贴以查看有关新 Microsoft Edge 浏览器选项卡或窗口中 msn.com 的详细信息。 源磁贴可能包含广告。 可从 Microsoft Edge 设置或 Microsoft Edge 中的 "更多工具" 菜单启动构件。
-
-如果启用或未配置此策略：将自动为所有配置文件启用网页构件。
-在 "Microsoft Edge 设置" 中，用户将看到用于启动构件的选项。
-在 "Microsoft Edge 设置" 中，用户将看到菜单项用于在 Windows 启动时运行构件（自动启动）。
-如果启用了 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) 策略，则启动时启用该构件的选项将切换。
-如果已禁用或未配置 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) ，则启动时启用该构件的选项将关闭。
-用户将看到从 "Microsoft Edge" 的 "更多工具" 菜单启动构件的菜单项。 用户可从 "更多工具" 启动构件。
-可通过系统托盘中的 "退出" 选项或通过从任务栏关闭构件来关闭构件。 如果启用了自动启动，将在系统重新启动时重新启动该构件。
-
-如果禁用此策略：将禁用所有配置文件的 Web 构件。
-从 Microsoft Edge 设置启动构件的选项将被禁用。
-在 Windows 启动时启动 "开始" 的选项（自动启动）将被禁用。
-从 Microsoft Edge "更多工具" 菜单启动构件的选项将被禁用。
-
-  #### 支持的功能：
-
-  - 可以强制：是
-  - 可以推荐：否
-  - 动态策略刷新：否 - 需要重新启动浏览器
-
-  #### 数据类型：
-
-  - 布尔
-
-  #### Windows 信息和设置
-
-  ##### 组策略 (ADMX) 信息
-
-  - GP 唯一名称： WebWidgetAllowed
-  - GP名称：启用 Web 构件
-  - GP 路径（强制）：管理模板/Microsoft Edge/
-  - GP 路径（推荐）：不适用
-  - GP ADMX 文件名：MSEdge.admx
-
-  ##### Windows 注册表设置
-
-  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
-  - 路径（推荐）：不适用
-  - 值名称： WebWidgetAllowed
-  - 值类型：REG_DWORD
-
-  ##### 示例值：
-
-```
-0x00000001
-```
-
-  
-
-  [返回页首](#microsoft-edge---policies)
-
-  ### WebWidgetIsEnabledOnStartup
-
-  #### 在 Windows 启动时允许Web构件
-
-  
-  
-  #### 支持的版本：
-
-  - 在 88 版或更高版本的 Windows 上
-
-  #### 描述
-
-  允许 Web 构件在 Windows 启动时开始运行。
-
-如果启用：默认情况下，Web 构件将在 Windows 启动时开始运行。
-如果通过 [WebWidgetAllowed "](#webwidgetallowed) " 策略禁用了构件，则在 Windows 启动时，此策略将不会启动该构件。
-
-如果禁用此策略： 所有配置文件的Web构件不会在 Windows 启动时启动。
-在 Windows 启动时启动构件的选项将在 "Microsoft Edge 设置" 中被禁用，并处于关闭状态。
-
-如果未配置策略：所有配置文件的 Web 构件不会在 Windows 启动时启动。
-在 Windows 启动时，启动构件的选项将在 "Microsoft Edge 设置" 中处于关闭状态。
-
-  #### 支持的功能：
-
-  - 可以强制：是
-  - 可以推荐：否
-  - 动态策略刷新：否 - 需要重新启动浏览器
-
-  #### 数据类型：
-
-  - 布尔
-
-  #### Windows 信息和设置
-
-  ##### 组策略 (ADMX) 信息
-
-  - GP 唯一名称： WebWidgetIsEnabledOnStartup
-  - GP名称：在 Windows 启动时允许Web构件
-  - GP 路径（强制）：管理模板/Microsoft Edge/
-  - GP 路径（推荐）：不适用
-  - GP ADMX 文件名：MSEdge.admx
-
-  ##### Windows 注册表设置
-
-  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
-  - 路径（推荐）：不适用
-  - 值名称：WebWidgetIsEnabledOnStartup
-  - 值类型：REG_DWORD
-
-  ##### 示例值：
-
-```
-0x00000001
-```
-
-  
+ 
 
   [返回页首](#microsoft-edge---policies)
 
