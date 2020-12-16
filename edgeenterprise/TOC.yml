@@ -1,4 +1,4 @@
-# last revised 11/16/2020
+# last revised 12/14/2020
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -74,7 +74,7 @@
     - name: 为 Windows 配置
       href: configure-microsoft-edge.md
     - name: 使用 Intune 为 Windows 配置
-      href: configure-edge-with-intune.md
+      href: 'https://docs.microsoft.com/mem/intune/configuration/administrative-templates-configure-edge/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
     - name: 使用移动设备管理为 Windows 配置
       href: configure-edge-with-mdm.md
     - name: 使用 .plist 为 macOS 配置
@@ -123,11 +123,11 @@
       href: ms-edge-security-for-business.md
     - name: Microsoft Edge 终结点的允许列表
       href: microsoft-edge-security-endpoints.md
-    - name: ' (DLP) 的数据丢失防护'
+    - name: 'DLP (数据丢失防护) '
       href: microsoft-edge-security-dlp.md
     - name: 阻止潜在的有害应用程序
       href: microsoft-edge-potentially-unwanted-apps.md
-    - name: Azure AD 条件访问支持
+    - name: 对 Azure AD 条件访问的支持
       href: ms-edge-security-conditional-access.md
     - name: 应用程序防护支持
       href: microsoft-edge-security-windows-defender-application-guard.md
@@ -147,11 +147,11 @@
       href: microsoft-edge-policies.md
     - name: 更新策略参考
       href: microsoft-edge-update-policies.md
-    - name: WebView2 策略引用
+    - name: WebView2 策略参考
       href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
-        - name: 企业新建选项卡页的向后兼容性
+        - name: 企业新选项卡页的向后兼容性
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
@@ -175,17 +175,17 @@
           href: edge-learnmore-regex.md
         - name: 用户数据目录变量
           href: edge-learnmore-create-user-directory-vars.md
-        - name: 使用 Microsoft Edge 回退 for 企业版
+        - name: 使用适用于企业的 Microsoft Edge 回滚
           href: edge-learnmore-rollback.md
 - name: Microsoft Edge 视频
   items:
     - name: Microsoft Edge 视频集合
       href: microsoft-edge-videos.md
-    - name: 视频-使用应用程序防护的浏览器隔离
+    - name: 视频 - 使用应用程序防护进行浏览器隔离
       href: microsoft-edge-video-security-application-guard.md
     - name: 视频 - 部署 Microsoft Edge
       href: microsoft-edge-video-deploy.md
-    - name: '视频-数据丢失防护 (DLP) '
+    - name: '视频 - DLP (数据丢失) '
       href: microsoft-edge-video-security-dlp.md
     - name: 视频 - Microsoft Edge 和 Microsoft 搜索
       href: microsoft-edge-video-search.md
