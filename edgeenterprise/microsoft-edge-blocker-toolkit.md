@@ -3,23 +3,30 @@ title: 可禁止自动传递 Microsoft Edge 的阻止程序工具包
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 06/30/2020
+ms.date: 12/16/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 可禁止自动传递 Microsoft Edge 的阻止程序工具包
-ms.openlocfilehash: 7563d2c94cf91a8434328699e46c75dbcfb77561
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 9fb97d2dfec4822f8ce76dc3e37b85118c6572ad
+ms.sourcegitcommit: 606282995b466a968bab40c16005a6653323c763
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979365"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "11229613"
 ---
 # 可禁止自动传递 Microsoft Edge（基于 Chromium）的阻止程序工具包
 
-本文介绍了可用于禁止自动传递和安装 Microsoft Edge 的阻止程序工具包， 本文在 **2020 年 1 月 9 日**更新可能需要使用组织程序工具包的设备详细信息，并在 **2020 年 2 月 28 日**从设备条件中删除了“MDM 托管”，以从此自动更新中排除，**2020 年 6 月 30 日** 将反映所有 Windows 更新连接设备都在接收此更新的范围内（最早于 2020 年 7 月 30 日生效）。
+本文介绍了可用于禁止自动传递和安装 Microsoft Edge 的阻止程序工具包，
+
+本文进行了以下更新：
+
+- **01/09/2020，** 详细了解可能要求你使用阻止程序Toolkit
+- **2020 年 2 月 28** 日 从要从此自动更新中排除的设备条件中删除"MDM 托管"
+- **2020 年 6 月 30 日** 以反映所有已连接 Windows 更新的设备均在接收此更新 (2020 年 7 月 30 日)  
+- **2020 年 12 月 10** 日 解释 20H2 之前将忽略阻止程序Toolkit的情况
 
 > [!NOTE]
 > 适用于 Microsoft Edge 稳定渠道。
@@ -28,16 +35,15 @@ ms.locfileid: "10979365"
 
 为了帮助客户更安全和保持最新，Microsoft 将 Microsoft Edge（基于 Chromium）分发到运行 Windows 10 版本 1803 和更新版本的 Windows 更新连接设备。 此过程将于 2020 年 1 月 15 日后启动，届时将提供更多信息。
 
-阻止程序工具包适用于以下组织：计划在运行 Windows 10 版本 1803 和更高版本的 Winodws 更新连接设备上阻止自动传递 Microsoft Edge（基于 Chromium）。
-受 Windows Server Update Services (WSUS) 或适用于企业的 Windows 更新 (WUfB) 管理的设备将从该自动更新中排除。
+阻止程序工具包适用于以下组织：计划在运行 Windows 10 版本 1803 和更高版本的 Winodws 更新连接设备上阻止自动传递 Microsoft Edge（基于 Chromium）。 属于 Windows Server Update Services (WSUS) 或适用于企业的 Windows 更新 (WUfB) 的设备将从此自动 Windows 更新中排除，但可能会通过其组织接收新的 (基于 Chromium 的) Microsoft Edge。
 
 **请务必注意：**
 
 - 阻止程序工具包不会阻止用户从 Internet 下载或外部介质手动安装 Microsoft Edge（基于 Chromium）。
 - 通过适用于企业的 Windows 更新 (WUfB) 管理更新的组织将不会自动收到此更新，也不需要部署阻止程序工具包。
-- 通过更新管理解决方案（如 Windows Server Update Services (WSUS) 或 System Center Configuration Manager (SCCM)）管理环境的组织无需部署阻止程序工具包。 组织可以使用这些产品全面管理环境中通过 Windows 更新和 Microsoft 更新发布的更新的部署，包括 Microsoft Edge（基于 Chromium）。
+- 通过更新管理解决方案（如 Windows Server Update Services (WSUS) 或 System Center Configuration Manager (SCCM)）管理环境的组织无需部署阻止程序工具包。 他们可以使用这些产品在其环境中完全管理通过 Windows 更新网站和 Microsoft 更新网站发布的更新的部署，包括 [WSUS](https://support.microsoft.com/help/4584642/update-in-wsus-for-the-new-microsoft-edge)中新 Microsoft Edge 的更新。
 - 此更新是独立更新（不是每月累积更新的一部分），可向企业客户提供灵活性，并使其能够最大程度地控制如何部署此更新。
-- 新的 Microsoft Edge（基于Chromium）将在 2020 年下半年作为 Windows 10，版本 20H2 功能更新的一部分。 阻止程序工具包不会影响 20H2 的行为或部署。 了解更多信息，请参阅[此处](https://blogs.windows.com/windowsexperience/2020/06/16/whats-next-for-windows-10-updates/) Windows 10，版本 20H2。 
+- 新的 Microsoft Edge (Chromium) 包含在 2020 年下半年的 Windows 10 版本 20H2 功能更新中。 阻止程序工具包不会影响 20H2 的行为或部署。 了解更多信息，请参阅[此处](https://blogs.windows.com/windowsexperience/2020/06/16/whats-next-for-windows-10-updates/) Windows 10，版本 20H2。 
 
 你可以从 [https://msedgeblockertoolkit.blob.core.windows.net/blockertoolkit/MicrosoftEdgeChromiumBlockerToolkit.exe](https://msedgeblockertoolkit.blob.core.windows.net/blockertoolkit/MicrosoftEdgeChromiumBlockerToolkit.exe) 下载阻止程序工具包的可执行文件。
 

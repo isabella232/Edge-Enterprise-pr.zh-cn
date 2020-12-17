@@ -1,12 +1,28 @@
 ---
-ms.openlocfilehash: c4f155b54e8f98e599868583ceb93f3b5abbeac2
-ms.sourcegitcommit: 8840ea3c0d7b68a81ed09c9dae5456d1a3a0b27a
+ms.openlocfilehash: 0466d312837cbd423c00bfbd7acd613124bd8948
+ms.sourcegitcommit: 6b02e0fedcf4c00737a8342f38f039b4e1bbbfda
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "11201253"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "11229231"
 ---
 <!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
+
+## 2020 年 12 月 7 日这一周
+
+
+| 发布时间 | 主题标题 | “更改” |
+|-|-|-|
+|12/08/2020| [Microsoft Edge 标识支持和配置](https://docs.microsoft.com/deployedge/microsoft-edge-security-identity)<br>更新 [WIA](https://docs.microsoft.com/deployedge/microsoft-edge-security-identity#windows-integrated-authentication-wia) 部分。| 修改时间|
+|12/08/2020| [Microsoft Edge 安全更新的发行说明](https://docs.microsoft.com/deployedge/microsoft-edge-relnotes-security#december-7-2020)<br>Stable 次要版本 87.0.664.57 的安全更新。|  修改时间 |
+|12/08/2020| [Microsoft Edge Stable 渠道发行说明](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-87066457-december-7)<br>更新以反映次要版本 87.0.664.57 的安全更新。| 修改时间 |
+|12/10/2020|[Microsoft Edge - 策略](https://docs.microsoft.com/deployedge/microsoft-edge-policies)<br>使用新策略列表注释。| 修改时间|
+|12/10/2020|[Microsoft Edge WebView2 - 策略](https://docs.microsoft.com/deployedge/microsoft-edge-webview-policies)<br>刷新元数据。| 修改时间|
+|12/10/2020| [Microsoft Edge 支持的操作系统](https://docs.microsoft.com/deployedge/microsoft-edge-supported-operating-systems)<br>将操作系统代码名替换为版本号。| 修改时间|
+|12/10/2020| [Microsoft Edge Stable 渠道发行说明](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-87066460-december-10)<br>修复次要版本 87.0.664.60 中的 Bug 和性能问题。| 修改时间 |
+|12/10/2020| [Microsoft Edge 发布计划](https://docs.microsoft.com/deployedge/microsoft-edge-release-schedule)<br>使用 Beta 主要版本 88.0.705.18 更新计划。| 修改时间 |
+|12/11/2020| [适用于 Beta 渠道的 Microsoft Edge 发行说明](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-88070518-december-9)<br>Beta 主要版本 88.0.705.18 的功能更新、新的和弃用的策略。| 修改时间 |
+|12/11/2020| [Microsoft Edge - 策略](https://docs.microsoft.com/deployedge/microsoft-edge-policies)<br>删除错误发布的策略 - 未发布。| 修改时间|
 
 ## 2020 年 11 月 30 日所在的周
 
@@ -54,7 +70,7 @@ ms.locfileid: "11201253"
 | 2020 年 11 月 19 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
 | 2020 年 11 月 19 日 | [Microsoft Edge 安全更新的发行说明](/DeployEdge/microsoft-edge-relnotes-security) | 修改时间 |
 | 2020 年 11 月 19 日 | [Microsoft Edge 发布计划](/DeployEdge/microsoft-edge-release-schedule) | 修改时间 |
-| 2020 年 11 月 20 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
+| 2020 年 11 月 20 日 | [Microsoft Edge Stable 渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
 
 
 ## 2020 年 11 月 9 日所在周
