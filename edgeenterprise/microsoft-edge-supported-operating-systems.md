@@ -3,19 +3,19 @@ title: Microsoft Edge 支持的操作系统
 ms.author: srugh
 author: srugh
 manager: seanlynd
-ms.date: 12/10/2020
+ms.date: 12/17/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 支持的操作系统
-ms.openlocfilehash: 3d3b9c341230aff4ab8fb7dbc1beb40bd2025beb
-ms.sourcegitcommit: 12c803b07a1dbced5f2360f5745186e33adcc41a
+ms.openlocfilehash: 866708bc1d24523f47237a5242575a16544b8009
+ms.sourcegitcommit: 7db4c9854175898844ce3daf75d8007cfc6632a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "11218721"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "11237244"
 ---
 # Microsoft Edge 支持的操作系统
 
@@ -43,8 +43,6 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 - Windows 10 IoT 企业版 SAC _ ***
 - Windows 10 IoT 企业版 2019 LTSC ****
 
-
-
 ### Windows Server
 
 - Windows Server 2008 R2 **
@@ -55,7 +53,7 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 - Windows Server (SAC)
 
 > [!IMPORTANT]
-> ** 我们将继续支持 Windows 7 和 Windows Server 2008 R2 上的 Microsoft Edge 直至 2021 年 7 月 15 日。 这些操作系统已不再受支持，Microsoft 建议你移至受支持的操作系统（如 Windows 10）。 Microsoft Edge 可帮助你提高上网安全性，但你的电脑仍可能容易受到安全风险的影响。 要在这些操作系统中支持 IE 模式，设备需要具有[适用于 Windows 7 的扩展安全更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 如果未安装 Windows 7 扩展安全更新，Internet Explorer 功能很容易受到安全风险的影响。 此外，如果未通过扩展安全更新继续提供服务，IE 模式功能可能停止运行。  
+> ** 我们将继续支持在 Windows 7 和 Windows Server 2008 R2 上运行 Microsoft Edge，直到 2022 年 1 月 15 日。 这些操作系统已不再受支持，Microsoft 建议你移至受支持的操作系统（如 Windows 10）。 Microsoft Edge 可帮助你提高上网安全性，但你的电脑仍可能容易受到安全风险的影响。 要在这些操作系统中支持 IE 模式，设备需要具有[适用于 Windows 7 的扩展安全更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 如果未安装 Windows 7 扩展安全更新，Internet Explorer 功能很容易受到安全风险的影响。 此外，如果未通过扩展安全更新继续提供服务，IE 模式功能可能停止运行。  
 >
 > **_与上面类似，对于不再享受支持服务但 Microsoft Edge 支持的 Windows 10 SAC 版本，建议尽快升级到支持的 Win10 SAC 版本以保持安全。 在此状态下支持 Microsoft Edge 应视为用于进入支持的操作系统状态的一种临时途径。
 >
@@ -76,6 +74,10 @@ Microsoft Edge for iPad&reg; 和 Microsoft Edge for iPhone&reg; 需要 iOS 11.0 
 ### Chromebook
 
 Microsoft Edge 不支持 Chromebook。
+
+## 最近更改
+
+- **2020 年 12 月 17** 日 - Microsoft Edge 对 Windows 7 和 Windows Server 2008 R2 的支持将延续到 2022 年 1 月 15 日。
 
 ## 另请参阅
 
