@@ -3,19 +3,19 @@ title: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 11/05/2020
+ms.date: 12/21/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: '如何从 Microsoft Edge 共享 cookie 到 Internet Explorer '
-ms.openlocfilehash: 5740a4ce31a240573b9106e7a20a5c44688aca0a
-ms.sourcegitcommit: 2024629929044e2dcf146674058c1d6312c32e9a
+ms.openlocfilehash: ddd9d34b5e2b0ee49093734da82e4a4fa7aa6a69
+ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "11157535"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "11238179"
 ---
 # 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
 
@@ -28,9 +28,9 @@ ms.locfileid: "11157535"
 
 - Windows 更新
 
-  - Windows 10 版本 2004，Windows Server 版本 2004 – KB4571744 或更高版本
-  - Windows 10 版本 1909，Windows Server 版本 1909 – KB4566116 或更高版本
-  - Windows 10 版本 1903，Windows Server 版本 1903 – KB4566116 或更高版本
+  - Windows 10 版本 2004、Windows Server 版本 2004 - KB4571744 或更高版本
+  - Windows 10 版本 1909、Windows Server 版本 1909 – KB4566116 或更高版本
+  - Windows 10 版本 1903、Windows Server 版本 1903 – KB4566116 或更高版本
   - Windows10 版本 1809、Windows Server 版本 1809 和 Windows Server 2019 - KB4571748 或更高版本
   - Windows 10 版本 1803 – KB4577032 或更高版本
 

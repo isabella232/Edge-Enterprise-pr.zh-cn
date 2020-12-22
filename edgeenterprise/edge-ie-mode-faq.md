@@ -1,21 +1,21 @@
 ---
 title: IE 模式 FAQ
-ms.author: cjacks
-author: cjacks
-manager: saudm
-ms.date: 05/27/2020
+ms.author: shisub
+author: dan-wesley
+manager: srugh
+ms.date: 12/21/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 关于结合使用 Microsoft Edge 和 IE 模式的 FAQ 和故障排除
-ms.openlocfilehash: fcceb9eab19d667f772c593fe4f362606c1623ff
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 62bf8afc5ac908e18d2f503fa9248a19f78fd6f6
+ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979257"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "11238169"
 ---
 # IE 模式 FAQ
 
@@ -81,6 +81,20 @@ ms.locfileid: "10979257"
 2. 使用`--user-data-dir=<path>`命令行，但每个会话的路径不同。 如果需要，可以创建一个既可以启动 Microsoft Edge，也可以更改会话的路径的实用程序供用户运行。
 
 如果以上两个选项都不适用于你的情况，请通过其中一个反馈渠道联系我们：Microsoft 支持、[TechCommunity 论坛](https://techcommunity.microsoft.com/t5/enterprise/bd-p/EdgeInsiderEnterprise)或 [Microsoft Edge UserVoice](https://microsoftedge.uservoice.com/forums/928825-enterprise)。
+
+### 我能否将链接另存为 Internet Explorer 模式的网页？
+ 
+可以，可以在 Microsoft Edge 中的 Internet Explorer 模式下在在上下文菜单中启用“目标另存为”选项。 为此，请配置组策略 *"允许在 Internet Explorer 模式下将目标另存为"*，该策略位于 *“计算机配置>“管理模板”>“Windows 组件”>”Internet Explorer”*。
+保存机制的工作方式与在 Internet Explorer 中相同，并且如果目标另存为 html 文件，重新打开文件将在 Microsoft Edge 中呈现页面。
+ 
+请注意，此功能需要以下最低要求的操作系统更新：
+- Windows 10 版本 2004、Windows Server 版本 2004、Windows 10 版本 20H2：[KB4580364](https://support.microsoft.com/help/4580364/windows-10-update-kb4580364)
+- Windows 10 版本 1903、Windows 10 版本 1909、Windows Server 版本 1903：[KB4580386](https://support.microsoft.com/help/4580386/windows-10-update-kb4580386)
+- Windows 10 版本 1809、Windows Server 版本 1809、Windows Server 2019：[KB4580390](https://support.microsoft.com/help/4580390/windows-10-update-kb4580390)
+- Windows 10 版本 1803：[KB4586785](https://support.microsoft.com/help/4586785/windows-10-update-kb4586785)
+- Windows 10 版本 1607：[KB4586830](https://support.microsoft.com/help/4586830/windows-10-update-kb4586830)
+- Windows 10 版本 1507：[KB4586787](https://support.microsoft.com/help/4586787/windows-10-update-kb4586787)
+
 
 ## 另请参阅
 
