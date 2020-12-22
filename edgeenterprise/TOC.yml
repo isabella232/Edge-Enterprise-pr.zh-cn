@@ -1,4 +1,4 @@
-# last revised 12/14/2020
+# last revised 12/21/2020
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -173,6 +173,8 @@
           href: edge-learnmore-neededge.md
         - name: 正则表达式 2 (re2.h) 语法
           href: edge-learnmore-regex.md
+        - name: 重置 Microsoft Edge 数据
+          href: edge-learnmore-reset-data-in-cloud.md
         - name: 用户数据目录变量
           href: edge-learnmore-create-user-directory-vars.md
         - name: 使用适用于企业的 Microsoft Edge 回滚
