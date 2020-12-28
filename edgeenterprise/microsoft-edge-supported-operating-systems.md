@@ -77,7 +77,7 @@ Microsoft Edge 不支持 Chromebook。
 
 ## 最近更改
 
-- **2020 年 12 月 17** 日 - Microsoft Edge 对 Windows 7 和 Windows Server 2008 R2 的支持将延续到 2022 年 1 月 15 日。
+- **2020 年 12 月 17 日** - Windows 7 和 Windows Server 2008 R2 上对 Microsoft Edge 支持将延续到 2022 年 1 月 15 日。
 
 ## 另请参阅
 
