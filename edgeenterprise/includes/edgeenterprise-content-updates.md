@@ -1,24 +1,35 @@
 ---
-ms.openlocfilehash: 201af174d8f6ea748664a603294b7bb2af506ff3
-ms.sourcegitcommit: 51f43d220503547f24b56ff3dda5373c5aca6b57
+ms.openlocfilehash: d326cb3c1bb4d7ce792577c025da9a73e985649f
+ms.sourcegitcommit: ae6e603c7b528822d8992909939435b3130604bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "11247154"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "11250400"
 ---
 <!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
 
-## 2020 年 12 月 14 日这一周
+## 2020 年 12 月 21 日当周
 
 | 发布时间 |主题标题 | “更改” |
 |------|------------|--------|
-| 2020 年 12 月 15 日 | 有关企业中 Microsoft Edge 的常见问题<br>已删除过期项目。 | 已删除 |
-| 2020 年 12 月 16 日 | [可禁止自动传递 Microsoft Edge 的阻止程序工具包](/DeployEdge/microsoft-edge-blocker-toolkit)<br>更新工具包受忽略的 20H2 之前的情况。  | 修改时间 |
-| 2020 年 12 月 16 日 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>更新到主要版本 88.0.705.18 的功能（每日一览）。 | 修改时间 |
-| 2020 年 12 月 16 日 | Microsoft Edge 展台模式<br>已删除项目。 | 已删除 |
-| 2020 年 12 月 17 日 | [有关企业中 Microsoft Edge 的常见问题 (FAQ)](/DeployEdge/faqs-edge-in-the-enterprise)<br>已刷新并重新发布。 | 修改时间 |
-| 2020 年 12 月 17 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>适用于次要版本 87.0.664.66 的修补程序。 | 修改时间 |
-| 2020 年 12 月 17 日 | [Microsoft Edge 支持的操作系统](/DeployEdge/microsoft-edge-supported-operating-systems)<br>添加对于 Windows 7 和 Windows Server 2008 R2 扩展支持的注释。 | 修改时间 |
+| 12/21/2020 | [从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享](/DeployEdge/edge-ie-mode-add-guidance-cookieshare)<br>刷新，次要编辑。 | 修改时间 |
+| 12/21/2020 | [将文件扩展名与 Internet Explorer 模式关联](/DeployEdge/edge-ie-mode-add-guidance-filetype-associations)<br>刷新，次要编辑。 | 修改时间 |
+| 12/21/2020 | [IE 模式 FAQ](/DeployEdge/edge-ie-mode-faq)<br>添加有关将链接另存为网页的问题。 | 修改时间 |
+| 12/21/2020 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>更新对次要版本 88.0.705.29 进行了修复。 | 修改时间 |
+
+
+## 2020 年 12 月 14 日当周
+
+
+| 发布时间 |主题标题 | “更改” |
+|------|------------|--------|
+| 2020 年 12 月 15 日 | 有关企业中 Microsoft Edge 的常见问题 | 已删除 |
+| 2020 年 12 月 16 日 | [可禁止自动传递 Microsoft Edge 的阻止程序工具包](/DeployEdge/microsoft-edge-blocker-toolkit) | 修改时间 |
+| 2020 年 12 月 16 日 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
+| 2020 年 12 月 16 日 | Microsoft Edge 展台模式 | 已删除 |
+| 2020 年 12 月 17 日 | [有关企业中 Microsoft Edge 的常见问题 (FAQ)](/DeployEdge/faqs-edge-in-the-enterprise) | 修改时间 |
+| 2020 年 12 月 17 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
+| 2020 年 12 月 17 日 | [Microsoft Edge 支持的操作系统](/DeployEdge/microsoft-edge-supported-operating-systems) | 修改时间 |
 
 
 ## 2020 年 11 月 30 日所在的周
@@ -47,24 +58,3 @@ ms.locfileid: "11247154"
 | 发布时间 |主题标题 | “更改” |
 |------|------------|--------|
 | 2020 年 11 月 24 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
-
-
-## 2020 年 11 月 16 日所在周
-
-
-| 发布时间 |主题标题 | “更改” |
-|------|------------|--------|
-| 2020 年 11 月 16 日 | [将 Internet Explorer 模式添加到“打开方式”右键菜单](/DeployEdge/edge-ie-mode-add-guidance-filetype-associations) | 修改时间 |
-| 2020 年 11 月 16 日 | [从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容](/DeployEdge/edge-learnmore-neededge) | 修改时间 |
-| 2020 年 11 月 16 日 | [Microsoft Edge 支持的操作系统](/DeployEdge/microsoft-edge-supported-operating-systems) | 修改时间 |
-| 2020 年 11 月 16 日 | [将文件扩展名与 Internet Explorer 模式关联](/DeployEdge/edge-ie-mode-add-guidance-filetype-associations) | 修改时间 |
-| 2020 年 11 月 17 日 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
-| 2020 年 11 月 18 日 | [Microsoft Edge 中的数据丢失防护](/DeployEdge/microsoft-edge-security-dlp) | 修改时间 |
-| 2020 年 11 月 18 日 | [适用于企业的 Microsoft Edge 安全](/DeployEdge/ms-edge-security-for-business) | 修改时间 |
-| 2020 年 11 月 18 日 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
-| 2020 年 11 月 19 日 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies) | 修改时间 |
-| 2020 年 11 月 19 日 | [Microsoft Edge WebView2 政策文档](/DeployEdge/microsoft-edge-webview-policies) | 修改时间 |
-| 2020 年 11 月 19 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
-| 2020 年 11 月 19 日 | [Microsoft Edge 安全更新的发行说明](/DeployEdge/microsoft-edge-relnotes-security) | 修改时间 |
-| 2020 年 11 月 19 日 | [Microsoft Edge 发布计划](/DeployEdge/microsoft-edge-release-schedule) | 修改时间 |
-| 2020 年 11 月 20 日 | [Microsoft Edge Stable 渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
