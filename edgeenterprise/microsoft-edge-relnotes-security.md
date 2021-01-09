@@ -3,23 +3,27 @@ title: Microsoft Edge 安全更新的发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 12/08/2020
+ms.date: 01/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: 4bcd47521f0f57e9d7733e717688685a6abf5a24
-ms.sourcegitcommit: 1be5f3584b2a9400ca18c3d5483c3c8929ac9dce
+ms.openlocfilehash: 9644f981f8a94d0c6bd7a4c9070fb53668e7d4ab
+ms.sourcegitcommit: f3b422cba2810c973682437ff46a652fc5429f7c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "11203604"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "11255238"
 ---
 # Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge Stable 渠道更新中包含的安全补丁的信息。
+
+## 2021 年 1 月 7 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定频道（版本87.0.664.75）**，其中包含 Chromium 项目的最新安全更新。 有关详细信息，请参阅[安全更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
 ## 2020 年 12 月 7 日
 
