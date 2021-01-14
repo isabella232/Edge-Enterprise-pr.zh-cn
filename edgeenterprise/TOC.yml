@@ -1,4 +1,4 @@
-# last revised 12/21/2020
+# last revised 01/13/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -27,16 +27,18 @@
       href: deploy-edge-plan-deployment.md
     - name: Microsoft Edge 就绪
       href: deploy-edge-ready-for-edge.md
-    - name: 发布信息
-      items:
-        - name: 发布计划
-          href: microsoft-edge-release-schedule.md
-        - name: Beta 渠道发行说明
-          href: microsoft-edge-relnote-beta-channel.md
-        - name: Stable 渠道发行说明
-          href: microsoft-edge-relnote-stable-channel.md
-        - name: 安全更新
-          href: microsoft-edge-relnotes-security.md
+    - name: Stable 渠道发行说明
+      href: microsoft-edge-relnote-stable-channel.md
+    - name: 稳定渠道存档发行说明
+      href: microsoft-edge-relnote-archive-stable-channel.md
+    - name: Beta 渠道发行说明
+      href: microsoft-edge-relnote-beta-channel.md
+    - name: Beta 渠道存档发行说明
+      href: microsoft-edge-relnote-archive-beta-channel.md
+    - name: 发布计划
+      href: microsoft-edge-release-schedule.md
+    - name: 安全更新
+      href: microsoft-edge-relnotes-security.md
     - name: Microsoft Edge 策略映射
       items:
         - name: 策略映射概述
