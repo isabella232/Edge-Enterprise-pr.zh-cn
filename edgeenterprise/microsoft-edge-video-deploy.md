@@ -3,33 +3,29 @@ title: 将 Microsoft Edge 部署到数百或数千个设备
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 04/23/2020
+ms.date: 01/13/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 将 Microsoft Edge 部署到数百或数千个设备
-ms.openlocfilehash: b97620d98d3fe523237f34040c8ec18ac4cca99c
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 16fb39c6429073a83c30ddfc69aa764643d57f7c
+ms.sourcegitcommit: 42af8123dc86c2a1d07de0080a6c878c151f354f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979319"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "11269344"
 ---
 # 视频：将 Microsoft Edge 部署到数百或数千个设备
 
-本文介绍的视频显示了将 Microsoft Edge 部署到所有托管设备的步骤。
+此视频显示了将 Microsoft Edge 部署到所有托管设备的步骤。 单击接下来的屏幕截图，观看 Microsoft 365 总监 Jeremy Chapman 的视频。
+
+[![将 Microsoft Edge 部署到数百或数千个设备](media/microsoft-edge-video-deploy/0.png)](http://www.youtube.com/watch?v=o90UsN6g6NE "Deploy Microsoft Edge to hundreds or thousands of devices")
 
 ## 关于视频
 
 了解如何将 Microsoft Edge 部署到设备上的实践教程。 了解有关自动化安装的 Microsoft Edge 程序包选项，如何使用 Microsoft Endpoint Configuration Manager 将 Microsoft Edge 部署到 Windows 计算机，以及确保使用 Microsoft Edge 预配所有托管设备的步骤，包括手机和 Macs。
-
-单击接下来的屏幕截图，观看 Microsoft 365 总监 Jeremy Chapman 的视频。
-
-<!-- [![Deploy Microsoft Edge video](http://img.youtube.com/vi/o90UsN6g6NE/0.jpg)](http://www.youtube.com/watch?v=o90UsN6g6NE "Deploy Microsoft Edge to hundreds or thousands of devices")-->
-
-[![部署 Microsoft Edge 的步骤](https://res.cloudinary.com/marcomontalbano/image/upload/v1587672892/video_to_markdown/images/youtube--o90UsN6g6NE-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=o90UsN6g6NE "Deploy Microsoft Edge to hundreds or thousands of devices.")
 
 ## 另请参阅
 
