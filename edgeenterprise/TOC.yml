@@ -1,4 +1,4 @@
-# last revised 01/13/2021
+# last revised 01/14/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -153,7 +153,7 @@
       href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
-        - name: 企业新选项卡页的向后兼容性
+        - name: '"企业新"选项卡页的向后兼容性'
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
@@ -185,14 +185,22 @@
   items:
     - name: Microsoft Edge 视频集合
       href: microsoft-edge-videos.md
+    - name: 视频 - Microsoft Edge - 浏览器 2020 的状态
+      href: microsoft-edge-video-state-of-browser.md
     - name: 视频 - 使用应用程序防护进行浏览器隔离
       href: microsoft-edge-video-security-application-guard.md
     - name: 视频 - 部署 Microsoft Edge
       href: microsoft-edge-video-deploy.md
     - name: '视频 - DLP (数据丢失) '
       href: microsoft-edge-video-security-dlp.md
-    - name: 视频 - Microsoft Edge 和 Microsoft 搜索
-      href: microsoft-edge-video-search.md
+    - name: 视频 - Microsoft Edge 中的标识
+      href: microsoft-edge-video-identity.md
+    - name: 视频 - Microsoft Edge 版本回滚
+      href: microsoft-edge-video-version-rollback.md
+    - name: 视频 - Microsoft Edge 中的 PDF 阅读器
+      href: microsoft-edge-video-pdf-reader.md
+    - name: 视频 - Microsoft Edge 上的安全浏览
+      href: microsoft-edge-video-security-smartscreen.md
     - name: 视频-安全性、兼容性和可管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
 - name: 常见问题
