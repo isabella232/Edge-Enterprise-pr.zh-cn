@@ -11,28 +11,30 @@ metadata:
   ms.collection: collection
   author: dan-wesley
   ms.author: kvice
-  ms.date: 10/15/2020
-  ms.openlocfilehash: 09eb7c214e048ddd281817f8050ef4f1ff4cb985
-  ms.sourcegitcommit: 49a37e9c584eeb44683c83f098a15464054a26f9
+  ms.date: 12/01/2020
+  ms.openlocfilehash: 2a0466121bb773be20a01ec0b9f72e16bb8ac644
+  ms.sourcegitcommit: 42af8123dc86c2a1d07de0080a6c878c151f354f
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 10/15/2020
-  ms.locfileid: "11119407"
+  ms.lasthandoff: 01/14/2021
+  ms.locfileid: "11269273"
 landingContent:
 - title: 了解有关企业中的 Microsoft Edge 的信息
   linkLists:
   - linkListType: overview
     links:
-    - text: Microsoft Edge 视频
-      url: microsoft-edge-videos.md
     - text: Microsoft Edge 渠道概述
       url: microsoft-edge-channels.md
     - text: 下载 Microsoft Edge 渠道
       url: https://aka.ms/EdgeEnterprise
     - text: 使用企业功能
       url: edge-ie-mode.md
-    - text: 视频 - Microsoft Edge 和 Microsoft 搜索
-      url: microsoft-edge-video-search.md
+  - linkListType: video
+    links:
+    - text: Microsoft Edge 视频
+      url: microsoft-edge-videos.md
+    - text: Microsoft Edge YouTube 频道
+      url: https://www.youtube.com/channel/UCIGx7oT8p6-jUpOfg98yelA
 - title: 部署和更新 Microsoft Edge
   linkLists:
   - linkListType: deploy
@@ -73,7 +75,7 @@ landingContent:
       url: microsoft-edge-policies.md
     - text: 更新策略参考
       url: microsoft-edge-update-policies.md
-    - text: WebView2 策略引用
+    - text: WebView2 策略参考
       url: microsoft-edge-webview-policies.md
     - text: 策略映射概述
       url: microsoft-edge-policy-map-overview.md
