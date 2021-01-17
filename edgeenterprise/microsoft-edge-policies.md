@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/07/2021
+ms.date: 01/15/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: b422361809b0a2acaa392729025a95aef7ac8f83
-ms.sourcegitcommit: 4dc45cde7cfd29cd24a03f6e830502e95c43d82e
+ms.openlocfilehash: 92b89087cd7082844e36660ffdc7ff217cd92ff2
+ms.sourcegitcommit: 63c53d1eaa3ad70acd405379bd3af57275a0b24f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "11254970"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "11270838"
 ---
 # Microsoft Edge - 策略
 
@@ -29,17 +29,14 @@ ms.locfileid: "11254970"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-
 ## 新策略
 
 下表列出了此次更新的新策略。
 
 | 名称 | 标题 |
-|-|-|
-|[BasicAuthOverHttpEnabled](#basicauthoverhttpenabled)|允许 HTTP 的基本身份验证|
-|[TargetBlankImpliesNoOpener](#targetblankimpliesnoopener)|不要为面向 \_blank 的链接设置 window.opener|
-|[WebWidgetAllowed](#webwidgetallowed)|允许 Web 小部件|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 启动时启用 Web 小部件|
+|--|--|
+|[BrowsingDataLifetime](#browsingdatalifetime)|浏览数据生存期设置|
+|[DefinePreferredLanguages](#definepreferredlanguages)|定义网站应在网站支持该语言时显示的首选语言的有序列表|
 
 
 ## 可用策略
@@ -268,6 +265,7 @@ ms.locfileid: "11254970"
 |[BrowserGuestModeEnabled](#browserguestmodeenabled)|启用来宾模式|
 |[BrowserNetworkTimeQueriesEnabled](#browsernetworktimequeriesenabled)|允许向浏览器网络时间服务发送查询|
 |[BrowserSignin](#browsersignin)|浏览器登录设置|
+|[BrowsingDataLifetime](#browsingdatalifetime)|浏览数据生存期设置|
 |[BuiltInDnsClientEnabled](#builtindnsclientenabled)|使用内置 DNS 客户端|
 |[BuiltinCertificateVerifierEnabled](#builtincertificateverifierenabled)|确定是否将使用内置证书验证程序来验证服务器证书（已弃用）|
 |[CertificateTransparencyEnforcementDisabledForCas](#certificatetransparencyenforcementdisabledforcas)|针对 SubjectPublicKeyInfo 哈希列表禁用证书透明度强制|
@@ -290,6 +288,7 @@ ms.locfileid: "11254970"
 |[DefaultSearchProviderContextMenuAccessAllowed](#defaultsearchprovidercontextmenuaccessallowed)|允许默认搜索提供程序快捷菜单搜索访问|
 |[DefaultSensorsSetting](#defaultsensorssetting)|默认传感器设置|
 |[DefaultSerialGuardSetting](#defaultserialguardsetting)|控制串行 API 的使用|
+|[DefinePreferredLanguages](#definepreferredlanguages)|定义网站应在网站支持该语言时显示的首选语言的有序列表|
 |[DelayNavigationsForInitialSiteListDownload](#delaynavigationsforinitialsitelistdownload)|要求企业模式站点列表在选项卡导航前可用
 |
 |[DeleteDataOnMigration](#deletedataonmigration)|迁移时删除旧的浏览器数据|
@@ -440,8 +439,8 @@ ms.locfileid: "11254970"
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|管理通过 WebRTC 暴露本地 IP 地址|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制通过 WebRTC 暴露本地 IP 地址|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 使用的本地 UDP 端口的范围|
-|[WebWidgetAllowed](#webwidgetallowed)|允许 Web 小部件|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 启动时启用 Web 小部件|
+|[WebWidgetAllowed](#webwidgetallowed)|启用 Web 构件|
+|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 启动时允许Web构件|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|使用 Windows 代理解析程序（已弃用）|
 
 
@@ -6313,7 +6312,9 @@ SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
 
   #### 描述
 
-  覆盖默认背景图形打印模式。
+  覆盖上次用于打印背景图形的设置。
+如果启用此设置，则启用背景图形打印。
+如果禁用此设置，则禁用背景图形打印。
 
 策略选项映射：
 
@@ -10676,6 +10677,108 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### BrowsingDataLifetime
+
+  #### 浏览数据生存期设置
+
+  
+  
+  #### 支持的版本：
+
+  - 自 89 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  配置 Microsoft Edge 的浏览数据生存期设置。
+此策略控制所选浏览数据的生存期。 如果启用了同步，则此策略无效。
+可用的数据类型是 "browsing_history"、"download_history"、"cookies_and_other_site_data"、"cached_images_and_files"、"password_signin"、"autofill"、"site_settings" 和 "hosted_app_data"。
+Microsoft Edge 将定期删除超过 "time_to_live_in_hours" 的选定类型的数据。 由于数据删除仅以特定间隔发生，因此某些数据的保留时间可能稍长一些，但不会超过预期 "time_to_live_in_hours" 的两倍。
+
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - Dictionary
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：BrowsingDataLifetime
+  - GP 名称：浏览数据生存期设置
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：BrowsingDataLifetime
+  - 值类型：REG_SZ
+
+  ##### 示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
+  {
+    "data_types": [
+      "browsing_history"
+    ], 
+    "time_to_live_in_hours": 24
+  }, 
+  {
+    "data_types": [
+      "password_signin", 
+      "autofill"
+    ], 
+    "time_to_live_in_hours": 12
+  }
+]
+```
+
+  ##### 精简示例值：
+
+  ```
+  SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [{"data_types": ["browsing_history"], "time_to_live_in_hours": 24}, {"data_types": ["password_signin", "autofill"], "time_to_live_in_hours": 12}]
+  ```
+  
+
+  #### Mac 信息和设置
+  
+  - 首选项项名称：BrowsingDataLifetime
+  - 示例值：
+``` xml
+<key>BrowsingDataLifetime</key>
+<array>
+  <dict>
+    <key>data_types</key>
+    <array>
+      <string>browsing_history</string>
+    </array>
+    <key>time_to_live_in_hours</key>
+    <integer>24</integer>
+  </dict>
+  <dict>
+    <key>data_types</key>
+    <array>
+      <string>password_signin</string>
+      <string>autofill</string>
+    </array>
+    <key>time_to_live_in_hours</key>
+    <integer>12</integer>
+  </dict>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### BuiltInDnsClientEnabled
 
   #### 使用内置 DNS 客户端
@@ -10690,13 +10793,13 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
   控制是否使用内置 DNS 客户端。
 
-这不会影响所使用的 DNS 服务器；只影响用于与它们通信的软件堆栈。 例如，如果操作系统配置为使用企业 DNS 服务器，则内置 DNS 客户端将使用同一服务器。 但是，内置 DNS 客户端可能会使用更现代的 DNS 相关协议（如 DNS-over-TLS）以不同方式对服务器进行寻址。
+此策略控制用于与 DNS 服务器通信的软件堆栈：操作系统 DNS 客户端或 Microsoft Edge 的内置 DNS 客户端。 此策略不会影响使用哪些 DNS 服务器：例如，如果操作系统配置为使用企业 DNS 服务器，则内置 DNS 客户端将使用同一服务器。 它还无法控制是否使用 DNS-over-HTTPS；Microsoft Edge 始终将内置解析程序用于 DNS-over-HTTPS 请求。 有关控制 DNS-over-HTTPS 的信息，请参阅 [DnsOverHttpsMode](#dnsoverhttpsmode) 策略。
 
 如果启用此策略，则使用内置 DNS 客户端（如果可用）。
 
-如果禁用此策略，则从不使用该客户端。
+如果禁用此策略，则仅在使用 DNS-over-HTTPS 时使用内置 DNS 客户端。
 
-如果未配置此策略，则默认情况下在 MacOS 上启用内置 DNS 客户端，并且用户可以通过编辑 edge://flags 或指定命令行标志来更改是否使用内置 DNS 客户端。
+如果未配置此策略，则默认情况下将启用内置 DNS 客户端。
 
   #### 支持的功能：
 
@@ -12131,6 +12234,70 @@ Windows 管理员注意事项：此策略仅适用于运行 Windows 7 的电脑�
 
   [返回页首](#microsoft-edge---policies)
 
+  ### DefinePreferredLanguages
+
+  #### 定义网站应在网站支持该语言时显示的首选语言的有序列表
+
+  
+  
+  #### 支持的版本：
+
+  - 自 89 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  配置 Microsoft Edge 作为 Accept-Language 请求 HTTP 标头的一部分发送到网站的语言变体，并阻止用户在 Microsoft Edge 设置中添加、删除或更改首选语言的顺序。 希望更改 Microsoft Edge 所显示或主动以其翻译页面的语言的用户将被限制为此策略中配置的语言。
+
+如果启用此策略，网站将采用他们支持的列表的第一种语言显示，除非其他特定于网站的逻辑用于确定显示语言。 此策略中定义的语言变体会覆盖配置为 [SpellcheckLanguage](#spellchecklanguage) 策略一部分的语言。
+
+如果未配置或禁用此策略，Microsoft Edge 会向网站发送用户指定的首选语言，作为 Accept-Language 请求 HTTP 标头的一部分。
+
+有关有效语言变体的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2148854](https://go.microsoft.com/fwlink/?linkid=2148854)。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 字符串
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：DefinePreferredLanguages
+  - GP 名称：定义网站应在网站支持该语言时显示的首选语言的有序列表
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：DefinePreferredLanguages
+  - 值类型：REG_SZ
+
+  ##### 示例值：
+
+```
+"en-US,fr,es"
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项项名称：DefinePreferredLanguages
+  - 示例值：
+``` xml
+<string>en-US,fr,es</string>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### DelayNavigationsForInitialSiteListDownload
 
   #### 要求企业模式站点列表在选项卡导航前可用
@@ -13093,11 +13260,11 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
 
   #### 描述
 
-  通过此策略，用户可以比较正在查看的产品的价格、从其所在网站获取优惠券，或在结帐过程中自动应用优惠券。
+  通过此策略，用户可以比较正在查看的产品的价格、从其所在网站获取优惠券或折扣，或在结帐过程中自动应用优惠券。
 
-如果启用或未配置此策略，将自动针对零售域应用价格比较和优惠券等购物功能。 系统将从服务器提取当前零售商的优惠券和其他零售商提供的价格。
+如果启用或未配置此策略，将自动针对零售域应用价格比较、优惠券和折扣等购物功能。 系统将从服务器提取当前零售商的优惠券和其他零售商提供的价格。
 
-如果禁用此策略，则不会自动针对零售域应用价格比较和优惠券等购物功能。
+如果禁用此策略，则不会自动针对零售域应用价格比较、优惠券和折扣等购物功能。
 
   #### 支持的功能：
 
@@ -18464,9 +18631,9 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
 如果禁用该策略或不对其进行配置，则仅使用常规本地配置文件。
 
-[SyncDisabled](#syncdisabled)禁用所有数据同步，覆盖策略。
+[SyncDisabled](#syncdisabled) 仅禁用云同步，并且对此策略没有影响。
 
-有关使用漫游用户配置文件的详细信息，请参阅https://docs.microsoft.com/windows-server/storage/folder-redirection/deploy-roaming-user-profiles。
+有关使用漫游用户配置文件的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058)。
 
   #### 支持的功能：
 
@@ -20131,7 +20298,9 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
   #### 描述
 
-  禁用 Microsoft Edge 中的数据同步。 此策略还可防止出现同步同意提示。
+  禁用 Microsoft Edge 中的数据同步。 此策略还可防止出现同步许可提示。
+
+此策略仅禁用云同步，并且对 [RoamingProfileSupportEnabled](#roamingprofilesupportenabled) 策略没有影响。
 
 如果未设置此策略或未按建议应用此策略，用户将能够打开或关闭同步。 如果将此策略应用为强制，用户将无法打开同步。
 
@@ -22061,7 +22230,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   ### WebWidgetAllowed
 
-  #### 允许 Web 小部件
+  #### 启用 Web 构件
 
   
   
@@ -22125,7 +22294,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   ### WebWidgetIsEnabledOnStartup
 
-  #### 在 Windows 启动时启用 Web 小部件
+  #### 在 Windows 启动时允许Web构件
 
   
   
