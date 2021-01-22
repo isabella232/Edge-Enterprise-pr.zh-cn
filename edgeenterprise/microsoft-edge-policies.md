@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/15/2021
+ms.date: 01/20/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 92b89087cd7082844e36660ffdc7ff217cd92ff2
-ms.sourcegitcommit: 63c53d1eaa3ad70acd405379bd3af57275a0b24f
+ms.openlocfilehash: 6df9ad9a1b3912387180aa249e220fbfe70e99b7
+ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "11270838"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "11281021"
 ---
 # Microsoft Edge - 策略
 
@@ -35,8 +35,10 @@ ms.locfileid: "11270838"
 
 | 名称 | 标题 |
 |--|--|
-|[BrowsingDataLifetime](#browsingdatalifetime)|浏览数据生存期设置|
-|[DefinePreferredLanguages](#definepreferredlanguages)|定义网站应在网站支持该语言时显示的首选语言的有序列表|
+|[MAMEnabled](#mamenabled)|移动应用管理已启用|
+|[ShowRecommendationsEnabled](#showrecommendationsenabled)|允许来自 Microsoft Edge 的建议和促销通知|
+
+
 
 
 ## 可用策略
@@ -48,12 +50,12 @@ ms.locfileid: "11270838"
 |[应用程序防护设置](#application-guard-settings)|[Cast](#cast)|
 |[内容设置](#content-settings)|[默认搜索提供程序](#default-search-provider)|
 |[Extensions](#extensions)|[HTTP 身份验证](#http-authentication)|
-|[展台模式设置](#kiosk-mode-settings)|[本机消息传递](#native-messaging)|
-|[密码管理器和保护](#password-manager-and-protection)|[性能](#performance)|
-|[打印](#printing)|[代理服务器](#proxy-server)|
-|[睡眠选项卡设置](#sleeping-tabs-settings)|[SmartScreen 设置](#smartscreen-settings)|
-|[启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)|[附加](#additional)|
-
+|[展台模式设置](#kiosk-mode-settings)|[可管理性](#manageability)|
+|[本机消息传递](#native-messaging)|[密码管理器和保护](#password-manager-and-protection)|
+|[性能](#performance)|[打印](#printing)|
+|[代理服务器](#proxy-server)|[睡眠选项卡设置](#sleeping-tabs-settings)|
+|[SmartScreen 设置](#smartscreen-settings)|[启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)|
+|[附加](#additional)|
 
 ### [*应用程序防护设置*](#application-guard-settings-policies)
 
@@ -152,6 +154,11 @@ ms.locfileid: "11270838"
 |-|-|
 |[KioskAddressBarEditingEnabled](#kioskaddressbareditingenabled)|配置地址栏编辑，实现展台模式的公共浏览体验。|
 |[KioskDeleteDownloadsOnExit](#kioskdeletedownloadsonexit)|Microsoft Edge 关闭时删除作为展台会话的一部分下载的文件|
+### [*可管理性*](#manageability-policies)
+
+|策略名称|标题|
+|-|-|
+|[MAMEnabled](#mamenabled)|移动应用管理已启用|
 ### [*本机消息传递*](#native-messaging-policies)
 
 |策略名称|标题|
@@ -402,6 +409,7 @@ ms.locfileid: "11270838"
 |[SerialBlockedForUrls](#serialblockedforurls)|在特定网站上阻止串行 API|
 |[ShowMicrosoftRewards](#showmicrosoftrewards)|展示 Microsoft Rewards体验|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在收藏夹栏中显示 Microsoft Office 快捷方式（已弃用）|
+|[ShowRecommendationsEnabled](#showrecommendationsenabled)|允许来自 Microsoft Edge 的建议和促销通知|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|启用签名的 HTTP Exchange (SXG) 支持|
 |[SitePerProcess](#siteperprocess)|对每个网站启用网站隔离|
 |[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
@@ -5278,6 +5286,72 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 
   [返回页首](#microsoft-edge---policies)
 
+  ## 可管理性策略
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### MAMEnabled
+
+  #### 移动应用管理已启用
+
+  
+  
+  #### 支持的版本：
+
+  - 自 89 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  允许 Microsoft Edge 浏览器从 Intune 应用程序管理服务检索策略，并应用于用户配置文件。
+
+如果启用或不配置此策略，可以应用移动应用管理 (MAM) 策略。
+
+如果禁用此策略，Microsoft Edge 将不会与 Intune 通信以请求 MAM 策略。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：MAMEnabled
+  - GP 名称：移动应用管理已启用
+  - GP 路径（强制）：管理模板/Microsoft Edge/可管理性
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：MAMEnabled
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000000
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项项名称：MAMEnabled
+  - 示例值：
+``` xml
+<false/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ## 本机消息传递策略
 
   [返回页首](#microsoft-edge---policies)
@@ -9139,6 +9213,8 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   在 Microsoft Edge 中禁用内部 PDF 查看器。
 
 如果启用此策略，则 Microsoft Edge 会将 PDF 文件视为下载，并允许用户使用默认应用程序打开它们。
+
+如果 Microsoft Edge 是默认的 PDF 阅读器，则不下载 PDF 文件，并且将继续在 Microsoft Edge 中打开。
 
 如果未配置此策略或将其禁用，则 Microsoft Edge 将打开 PDF 文件（除非用户将其禁用）。
 
@@ -19780,6 +19856,68 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - 示例值：
 ``` xml
 <false/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### ShowRecommendationsEnabled
+
+  #### 允许来自 Microsoft Edge 的建议和促销通知
+
+  
+  
+  #### 支持的版本：
+
+  - 自 89 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  通过此策略设置，你可以决定员工是否应该从 Microsoft Edge 接收建议和产品内帮助通知。
+
+如果启用或不配置此设置，则员工将收到来自 Microsoft Edge 的建议/通知。
+
+如果禁用此设置，则员工不会从 Microsoft Edge 收到任何建议/通知。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：ShowRecommendationsEnabled
+  - GP 名称：允许来自 Microsoft Edge 的建议和促销通知
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ShowRecommendationsEnabled
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项项名称：ShowRecommendationsEnabled
+  - 示例值：
+``` xml
+<true/>
 ```
   
 
