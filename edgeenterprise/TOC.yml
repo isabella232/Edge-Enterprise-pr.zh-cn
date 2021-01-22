@@ -1,4 +1,4 @@
-# last revised 01/14/2021
+# last revised 01/20/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -119,6 +119,8 @@
               href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
               href: edge-ie-mode-add-guidance-cookieshare.md
+            - name: Microsoft Edge 中的企业站点列表管理器
+              href: edge-ie-mode-site-list-manager.md
 - name: Microsoft Edge 安全
   items:
     - name: 企业的安全性
@@ -153,7 +155,7 @@
       href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
-        - name: '"企业新"选项卡页的向后兼容性'
+        - name: 企业新选项卡页的向后兼容性
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
