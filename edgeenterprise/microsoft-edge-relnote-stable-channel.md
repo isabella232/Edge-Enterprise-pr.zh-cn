@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/21/2021
+ms.date: 01/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: cb30da25581653b33c9529178b40a8de7161a7d1
-ms.sourcegitcommit: e5980a7a36c252e8a04315b3d4c64a161027324e
+ms.openlocfilehash: b7a875c7a3688d1839be9c3fdc835f77e14f3bae
+ms.sourcegitcommit: f0f250190fc09964175778338a177f1240946b98
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "11297045"
+ms.locfileid: "11297186"
 ---
 # Microsoft Edge Stable 渠道发行说明
 
@@ -72,7 +72,7 @@ ms.locfileid: "11297045"
   - 对历史记录中最近关闭的改进。 最近关闭现在使过去的任何浏览会话（而不只是上一个会话）中保留最后 25 个选项卡和窗口。 用户可以在新的历史记录体验中选择"最近关闭"以查看所有打开的选项卡。
   - 默认情况下启用"一天一览"功能。 从 Microsoft Edge 版本 88 开始，信息工作者可以从其新建选项卡页 (NTP) 的智能生产力功能中受益。 Microsoft Edge 87 用户还将在 Microsoft Edge 88 发布后的 2 周内体验这些功能。 我们为用户提供使用工作或学校帐户登录的个性化设置以及由 M365 Graph 支持的相关内容。 用户可以快速扫描其"一天一眼"模块，轻松跟踪其会议和最近工作，并快速启动他们想要使用的应用程序。
 
-- **历史记录和打开的选项卡同步**。现有的同步和浏览器历史记录策略已更新，用户可以配置这些策略以启用浏览器历史记录和打开的选项卡的同步。
+- **历史记录和打开的选项卡同步**。历史记录和打开的选项卡同步现在可供用户享受。 启用这些功能将有助于用户通过制作浏览历史记录并打开所有同步设备上可用的选项卡，从他们离开的地方继续操作。 我们更新了同步和浏览器历史记录策略，因此现在用户可以使用 Microsoft Edge 跨任何设备进行连接并提高工作效率。 [了解详细信息](https://blogs.windows.com/windowsexperience/2021/01/21/this-year-lets-resolve-to-make-the-most-of-our-time-online-and-better-protect-ourselves-from-online-threats/)。
 
 - **PDF：**
 
@@ -98,7 +98,7 @@ ms.locfileid: "11297045"
 - [IntranetRedirectBehavior](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#intranetredirectbehavior) - Intranet 重定向行为。
 - [PrinterTypeDenyList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printertypedenylist) - 禁用拒绝列表上的打印机类型。
 - [ShowMicrosoftRewards](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showmicrosoftrewards) - 显示 Microsoft 奖励体验。
-- [SleepingTabsEnabled](https://docs.microsoft.com/DeployEdge/.microsoft-edge-policies#sleepingtabsenabled) - 配置睡眠选项卡。
+- [SleepingTabsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsenabled) - 配置睡眠选项卡。
 - [TimeoutTabsTimeout](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabstimeout) - 为休眠选项卡设置后台选项卡不活动超时。
 - [SleepingTabsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsblockedforurls) - 阻止特定网站上休眠的选项卡。
 - [StartupBoostEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#startupboostenabled) - 启用启动增强。
@@ -326,7 +326,6 @@ ms.locfileid: "11297045"
 
 [TLS13HardeningForLocalAnchorsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled) - 为本地信任密钥启用 TLS 1.3 安全功能。
 
-<!-- end 86 -->
 ## 版本 85.0.564.70：10 月 6 日
 
 修复了各种 bug 和性能问题。
@@ -346,92 +345,8 @@ ms.locfileid: "11297045"
 ## 版本 85.0.564.44：8 月 31 日
 
 修复了各种 bug 和性能问题。
-<!-- begin 85 -->
-## 版本 85.0.564.41：8 月 27 日
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-27-2020)列出安全更新
-
-### 功能更新
-
-- **收藏夹和设置的本地同步**。 你现在可以在自己的环境中实现 Active Directory 配置文件之间的浏览器收藏夹和设置同步，而无需云同步。
-
-- **使用 Microsoft Edge 组策略支持，无需确认提示即可启动信任网站 + 应用组合。** 已添加的组策略支持允许管理员添加受信任的网站 + 应用组合，无需确认提示即可启动。 这添加了一项功能，让管理员为其最终用户配置信任协议/原点组合（例如 Microsoft 365 应用），从而在导航到包含应用协议的 URL 时禁止确认提示。
-
-- **PDF 荧光笔工具**。 此工具可添加到 PDF 工具栏中，方便突出显示重要文本。
-
-- **存储访问 API 现可使用**。 当用户直接指示允许本来会被浏览器的当前配置阻止的存储时，可使用此存储访问 API 来访问第三方上下文中的第一方存储。 有关详细信息，请参阅[存储访问 API](https://www.chromestatus.com/feature/5612590694662144)。
-
-- **Microsoft Edge 集合现可使用“发送至 OneNote”**。 所有人都期待能将集合中已收集的信息发送至 OneNote，从而追加信息到更大的项目中，与他人进行协作！ 更重要的是，在 Microsoft Edge 85 中，使用 Microsoft 帐户和 Azure Active Directory 均可发送内容到 *Office for Mac* 产品（Word、Excel 和 OneNote）。
-
-- **开发工具更新**。 有关以下更新的详细信息，请参阅[开发工具新增功能 (Microsoft Edge 85)](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/whats-new/2020/06/devtools)。
-
-   - Microsoft Edge 开发工具支持 Surface Duo 仿真。 Microsoft Edge 开发工具能够仿真 Surface Duo，因此可测试 Web 内容在双屏设备上的显示效果。 若要在开发工具中打开此试验，请在 Windows 上按 Ctrl+Shift+M 或在 macOS 上按 Command+Shift+M 来输入设备模式，然后在设备下拉列表中选择 Surface Duo。
-   - Microsoft Edge 开发工具允许键盘快捷方式和 VS Code 相匹配。 Microsoft Edge 开发工具支持自定义开发工具中的键盘快捷方式，使其匹配你的编辑器/IDE。 在 Microsoft Edge 85 中，我们添加了匹配开发工具键盘快捷方式和 VS Code 的功能。 此更改将有助于增加 VS Code 和开发工具之间的工作效率。
-
-### 策略更新
-
-#### 新策略
-
-添加了 13 个新策略。 从 [Microsoft Edge 企业登录页面](https://aka.ms/EdgeEnterprise)下载更新的管理模板。 已添加以下新策略。
-
-- [AutoLaunchProtocolsFromOrigins](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#autolaunchprotocolsfromorigins) - 定义可从列出的源启动外部应用程序的协议的列表，而无需提示用户。
-- [AutoOpenAllowedForURLs](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#autoopenallowedforurls) - AutoOpenFileTypes 可应用的 URL。
-- [AutoOpenFileTypes](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#autoopenfiletypes) - 下载时自动打开的文件类型列表。
-- [DefaultSearchProviderContextMenuAccessAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultsearchprovidercontextmenuaccessallowed) - 允许默认搜索提供程序中的上下文菜单搜索访问。
-- [EnableSha1ForLocalAnchors](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) - 允许由本地信任定位点颁发的 SHA - 1 签名证书。
-- [ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#exemptdomainfiletypepairsfromfiletypedownloadwarnings) - 对域上指定的文件类型，禁用基于文件类型扩展名下载的警告。
-- [IntensiveWakeUpThrottlingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#intensivewakeupthrottlingenabled) - 控制 IntensiveWakeUpThrottling 功能。
-- [NewTabPagePrerenderEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpageprerenderenabled) - 启用新选项卡页面的预加载，以便快速呈现。
-- [NewTabPageSearchBox](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagesearchbox) - 配置新的选项卡页面搜索框体验。
-- [PasswordMonitorAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#passwordmonitorallowed) - 当用户的密码被发现不安全时，允许收到警告。
-- [RoamingProfileSupportEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilesupportenabled) - 支持使用 Microsoft Edge 配置文件数据的漫游副本。
-- [RoamingProfileLocation](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilelocation) - 设置漫游配置文件目录。
-- [TLSCsipherSuiteDenyList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tlsciphersuitedenylist) - 指定要禁用的 TLS 密码套件。
-
-#### 已过时的策略
-
-- [EnableDomainActionsDownload](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enabledomainactionsdownload) - 启用来自 Microsoft 的域操作下载。
-- [WebComponentsV0Enabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcomponentsv0enabled) - 重新启用 Web 组件 v0 API 至 M84。
-- [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies)- 允许 WebDriver 覆盖不兼容策略。
-
-<!--- END 85 ---->
-
-## 版本 84.0.522.63：8 月 20 日
-
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-20-2020)列出安全更新。
-
-## 版本84.0.522.61：8 月 17 日
-
-修复了各种 bug 和性能问题。
-
-## 版本 84.0.522.59：8 月 11日
-
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-11-2020)列出安全更新
-
-## 版本 84.0.522.58：8 月 10 日
-
-修复了各种 bug 和性能问题。
-
-## 版本 84.0.522.52：8 月 1 日
-
-修复了各种 bug 和性能问题。
-
-## 版本 84.0.522.50：7 月 31 日
-
-修复了各种 bug 和性能问题。
-
-## 版本 84.0.522.49：7 月 29 日
-
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#july-29-2020)列出安全更新
-
-## 版本 84.0.522.48：7 月 28 日
-
-修复了各种 bug 和性能问题。
-
-## 版本 84.0.522.44：7 月 23 日
-
-修复了各种 bug 和性能问题。
-
+<!-- 85.0.564.41: August 27 -->
 <!-- Archived to version 84.0.522.40: July 16 -->
 
 ## 另请参阅
