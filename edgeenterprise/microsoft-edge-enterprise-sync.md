@@ -3,19 +3,19 @@ title: 配置 Microsoft Edge 同步并排除故障
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 01/14/2021
+ms.date: 01/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 配置 Microsoft Edge 同步并排除故障
-ms.openlocfilehash: fa9b9ead6319bceeb95066003a77be7ecf84db46
-ms.sourcegitcommit: 68b50c45b2b78acec5a0776ce4ddd11410a4e382
+ms.openlocfilehash: 36912d2fd1c33a227ce1d4b7c912f6ef1dfdcc00
+ms.sourcegitcommit: 8a88fd38bdb5e132e89bf17dd2b5fb72f5d1b4b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "11270750"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "11297449"
 ---
 # 配置 Microsoft Edge 同步并排除故障
 
@@ -74,7 +74,7 @@ Azure 信息保护 (AIP) 服务提供了 Microsoft Edge 同步的配置选项。
 
 ## Microsoft Edge 和企业状态漫游 (ESR) 
 
-Microsoft Edge 是一个跨平台应用程序，扩展了跨用户的所有设备同步用户数据的范围，并且不再是 Azure AD 企业状态漫游的一部分。 但是，Microsoft Edge 将履行 ESR 的数据保护承诺，例如能够引入你自己的密钥。 有关详细信息，请参阅 [Microsoft Edge 和企业状态漫游](microsoft-edge-enterprise-state-roaming.md)。
+Microsoft Edge 是一个跨平台应用程序，扩展了跨所有设备同步用户数据的范围，并且不再是 Azure AD 企业状态漫游的一部分。 但是，Microsoft Edge 将履行 ESR 的数据保护承诺，例如能够引入你自己的密钥。 有关详细信息，请参阅 [Microsoft Edge 和企业状态漫游](microsoft-edge-enterprise-state-roaming.md)。
 
 ## 同步问题故障排除
 
@@ -86,9 +86,9 @@ Microsoft Edge 是一个跨平台应用程序，扩展了跨用户的所有设�
 
 在将某个问题视为同步问题之前，请检查用户是否已使用有效帐户登录浏览器。
 
-接下来的屏幕截图显示了在 *edge://sync-internals* 中出现在“**Credentials**”下的标识错误示例：
+下一个屏幕截图显示了标识错误的示例。 错误为“**最后令牌错误，EDGE_AUTH_ERROR: 3, 54, 3ea**”，它位于**凭据**下的 *edge://sync-internals* 中： 
 
-:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-identity-issue.png" alt-text="标识错误":::
+:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-identity-issue.png" alt-text="最后令牌错误 EDGE_AUTH_ERROR: 3, 54, 3ea":::
 
 ### 常见同步问题
 
@@ -160,11 +160,10 @@ Microsoft Edge 是一个跨平台应用程序，扩展了跨用户的所有设�
 
 ### 问题：遇到密码器错误
 
-此错误显示在 *edge://sync-internals* 中的“**Type info**”下，并且可能意味着需要重置用户的服务器端数据。 接下来的屏幕截图显示了密码器错误的详细信息示例。
+此错误显示在 *edge://sync-internals* 中的“**类型信息**”下，它可能意味着需要重置用户的服务器端数据。 以下示例显示加密错误消息：
+<br>"Error:GenerateCryptoErrorsForTypes@../../components/sync/driver/data_type_manager_impl.cc:42, cryptographer error was encountered".
 
-:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-crypto-error-new.png" alt-text="密码器错误。":::
-
-1. 重新启动 Microsoft Edge 并导航到 *edge://sync-internals*，检查“**AAD Account Key Status**”部分
+1. 重新启动 Microsoft Edge 并导航到 *edge://sync-internals*，检查“**AAD 账户密钥状态**”部分
    - “Last MIP Result”中为“Success”：该密码器错误意味着服务器数据在加密时使用的可能是丢失的密钥。 需要重置数据才能恢复同步。
    - “Last MIP Result”中为“No permissions”：这可能是由 Azure AD 更改或租户订阅更改引起的。 需要重置数据才能恢复同步。
    - 其他错误可能意味着服务器配置问题。
@@ -210,7 +209,7 @@ Microsoft Edge 同步服务条款已列入 Microsoft 软件许可证，可使用
 
 #### 为什么并非所有 M365 订阅都支持 Microsoft Edge 同步？
 
-企业同步取决于 [Azure 信息保护](https://azure.microsoft.com/services/information-protection/)，后者并非在所有 M365 订阅中都可用。
+企业同步取决于 [Azure 信息保护](https://azure.microsoft.com/services/information-protection/)，它并非在所有 M365 订阅中都可用。
 
 #### Microsoft Edge 同步是否基于企业状态漫游？
 
