@@ -1,4 +1,4 @@
-# last revised 01/20/2021
+# last revised 01/21/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -119,7 +119,7 @@
               href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
               href: edge-ie-mode-add-guidance-cookieshare.md
-            - name: Microsoft Edge 中的企业站点列表管理器
+            - name: Microsoft Edge 中的 Enterprise Site List Manager
               href: edge-ie-mode-site-list-manager.md
 - name: Microsoft Edge 安全
   items:
@@ -129,6 +129,8 @@
       href: microsoft-edge-security-endpoints.md
     - name: 'DLP (数据丢失防护) '
       href: microsoft-edge-security-dlp.md
+    - name: 为用户自动启用密码监视器
+      href: microsoft-edge-security-password-monitor.md
     - name: 阻止潜在的有害应用程序
       href: microsoft-edge-potentially-unwanted-apps.md
     - name: 对 Azure AD 条件访问的支持
@@ -155,7 +157,7 @@
       href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
-        - name: 企业新选项卡页的向后兼容性
+        - name: '"企业新"选项卡页的向后兼容性'
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
