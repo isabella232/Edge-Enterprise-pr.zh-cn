@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 政策文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/20/2021
+ms.date: 01/27/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,19 +11,18 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 63a34f35994b459eb26258c38d870ed5db126794
-ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
+ms.openlocfilehash: 52c426e3c08764fbbfdce207127ca083d38a93c4
+ms.sourcegitcommit: e9433045503c2614386ee4948cda0a9c9701bac5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "11281031"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "11304715"
 ---
 # <span data-ttu-id="e3bb1-103">Microsoft Edge WebView2 - 策略</span><span class="sxs-lookup"><span data-stu-id="e3bb1-103">Microsoft Edge WebView2 - Policies</span></span>
 
 <span data-ttu-id="e3bb1-104">最新版本的 Microsoft Edge WebView2 包含以下策略。</span><span class="sxs-lookup"><span data-stu-id="e3bb1-104">The latest version of Microsoft Edge WebView2 includes the following policies.</span></span> <span data-ttu-id="e3bb1-105">可以使用这些策略来配置在你的组织中运行 Microsoft Edge WebView2 的方式。</span><span class="sxs-lookup"><span data-stu-id="e3bb1-105">You can use these policies to configure how Microsoft Edge WebView2 runs in your organization.</span></span>
 
 <span data-ttu-id="e3bb1-106">有关用于控制 Microsoft Edge WebView2 的更新方式和时间的其他策略集的信息，请查看 [Microsoft Edge 更新策略参考](microsoft-edge-update-policies.md)。</span><span class="sxs-lookup"><span data-stu-id="e3bb1-106">For information about an additional set of policies used to control how and when Microsoft Edge WebView2 is updated, check out [Microsoft Edge update policy reference](microsoft-edge-update-policies.md).</span></span>
-
 
 > [!NOTE]
 > <span data-ttu-id="e3bb1-107">本文适用于 Microsoft Edge 版本 87 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="e3bb1-107">This article applies to Microsoft Edge version 87 or later.</span></span>
