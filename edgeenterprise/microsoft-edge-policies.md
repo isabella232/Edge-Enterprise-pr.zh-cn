@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/20/2021
+ms.date: 01/27/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 6df9ad9a1b3912387180aa249e220fbfe70e99b7
-ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
+ms.openlocfilehash: 59c3c3426e3e7db2c5a115b15ae5e9b9e7628f9e
+ms.sourcegitcommit: e9433045503c2614386ee4948cda0a9c9701bac5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "11281021"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "11304725"
 ---
 # Microsoft Edge - 策略
 
@@ -35,11 +35,7 @@ ms.locfileid: "11281021"
 
 | 名称 | 标题 |
 |--|--|
-|[MAMEnabled](#mamenabled)|移动应用管理已启用|
-|[ShowRecommendationsEnabled](#showrecommendationsenabled)|允许来自 Microsoft Edge 的建议和促销通知|
-
-
-
+|[SmartActionsBlockList](#smartactionsblocklist)|阻止对服务列表执行智能操作|
 
 ## 可用策略
 
@@ -412,6 +408,7 @@ ms.locfileid: "11281021"
 |[ShowRecommendationsEnabled](#showrecommendationsenabled)|允许来自 Microsoft Edge 的建议和促销通知|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|启用签名的 HTTP Exchange (SXG) 支持|
 |[SitePerProcess](#siteperprocess)|对每个网站启用网站隔离|
+|[SmartActionsBlockList](#smartactionsblocklist)|阻止对服务列表执行智能操作|
 |[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|启用拼写检查|
 |[SpellcheckLanguage](#spellchecklanguage)|启用特定拼写检查语言|
@@ -2902,7 +2899,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8
 
   #### 描述
 
-  根据 URL 模式定义可打开弹出窗口的网站列表。
+  根据 URL 模式定义可打开弹出窗口的网站列表。 * 不是此策略的接受值。
 
 如果未配置此策略，则所有网站都将使用 [DefaultPopupsSetting](#defaultpopupssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
@@ -2967,7 +2964,7 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
 
   #### 描述
 
-  根据 URL 模式定义阻止打开弹出窗口的网站列表。
+  根据 URL 模式定义阻止打开弹出窗口的网站列表。 * 不是此策略的接受值。
 
 如果未配置此策略，则所有网站都将使用 [DefaultPopupsSetting](#defaultpopupssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
@@ -6982,7 +6979,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   * direct, 永远不会使用代理，并且忽略所有其他字段。
   * system, 将使用系统的代理，并且忽略所有其他字段。
   * auto_detect，将忽略所有其他字段。
-  * fixed_server，将使用 "ProxyServer" 和 "ProxyBypassList" 字段。
+  * fixed_servers，将使用 "ProxyServer" 和 "ProxyBypassList" 字段。
   * pac_script，将使用 "ProxyServer" 和 "ProxyBypassList" 字段。
 
 有关更多详细示例，请转到 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
@@ -7019,7 +7016,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 ```
 SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   "ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", 
-  "ProxyMode": "direct", 
+  "ProxyMode": "pac_script", 
   "ProxyPacUrl": "https://internal.site/example.pac", 
   "ProxyServer": "123.123.123.123:8080"
 }
@@ -7028,7 +7025,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   ##### 精简示例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {"ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", "ProxyMode": "direct", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
+  SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {"ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", "ProxyMode": "pac_script", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
   ```
   
 
@@ -7042,7 +7039,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   <key>ProxyBypassList</key>
   <string>https://www.example1.com,https://www.example2.com,https://internalsite/</string>
   <key>ProxyMode</key>
-  <string>direct</string>
+  <string>pac_script</string>
   <key>ProxyPacUrl</key>
   <string>https://internal.site/example.pac</string>
   <key>ProxyServer</key>
@@ -20048,6 +20045,83 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### SmartActionsBlockList
+
+  #### 阻止对服务列表执行智能操作
+
+  
+  
+  #### 支持的版本：
+
+  - 自 89 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  列出不显示智能操作的特定服务，如 PDF。 (智能操作时诸如“定义”之类的操作，它们在 Microsoft Edge 中的完整和迷你上下文菜单中可用。)
+
+如果启用策略：
+   - 对于与给定列表匹配的服务的所有配置文件，将禁用迷你和完整上下文菜单中的智能操作。
+   - 对于与给定列表匹配的服务，用户将在文本选择时在迷你和完整上下文菜单中看到智能操作。
+   - 在 Microsoft Edge 设置中，对于与给定列表匹配的服务，将迷你和完整上下文菜单中的智能操作。
+
+如果禁用或未配置此策略：
+   - 对于所有配置文件，将启用迷你和完整上下文菜单中的智能操作。
+   - 用户将在文本选择时在迷你和完整上下文菜单中看到智能操作。
+   - 在 Microsoft Edge 设置中，将启用迷你和完整上下文菜单中的智能操作。
+
+策略选项映射：
+
+* smart_actions_pdf (smart_actions_pdf) = PDF 中的智能操作
+
+配置此策略时，请使用上述信息。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 字符串列表
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：SmartActionsBlockList
+  - GP 名称：阻止对服务列表执行智能操作
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\SmartActionsBlockList
+  - 路径（建议）：SOFTWARE\Policies\Microsoft\Edge\Recommended\SmartActionsBlockList
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### 示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\SmartActionsBlockList\1 = "smart_actions_pdf"
+
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项键名称：SmartActionsBlockList
+  - 示例值：
+``` xml
+<array>
+  <string>smart_actions_pdf</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### SpeechRecognitionEnabled
 
   #### Configure Speech Recognition
@@ -21810,14 +21884,7 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
   配置此策略以指定一个无需用户交互即可自行安装的网页应用列表，并且用户无法卸载或关闭这些应用程序。
 
-策略的每个列表项都是具有强制成员的对象：url (要安装的 web 应用的 URL) 
-
-和 3 个可选成员：
-- default_launch_container (指定 web 应用打开时使用的窗口模式—默认为新选项卡) 
-
-- create_desktop_shortcut (如果要创建 Linux 和 Windows 桌面快捷方式，则为True。) 
-
-- override_app_name (从 Microsoft Edge 89 开始，如果应用名称不是渐进式 Web App (PWA) ，则允许覆盖应用程序名称，如果是 PWA，则允许覆盖临时安装的应用程序名称，但在安装完成之前需要进行身份验证。) 
+策略的每个列表项都是包含一个强制成员的对象：URL（要安装的 web 应用的 URL）和 2 个可选成员：default_launch_container（指定 web 应用打开的窗口模式 - 新选项卡为默认）和 create_desktop_shortcut（如果要创建 Linux 和 Windows 桌面快捷方式，则为 True）。
 
   #### 支持的功能：
 
@@ -21858,11 +21925,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
     "default_launch_container": "tab", 
     "url": "https://app.contoso.edu"
-  }, 
-  {
-    "default_launch_container": "window", 
-    "override_app_name": "Editor", 
-    "url": "https://app.contoso.com/editor"
   }
 ]
 ```
@@ -21870,7 +21932,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### 精简示例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "override_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}]
   ```
   
 
@@ -21894,14 +21956,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
     <string>tab</string>
     <key>url</key>
     <string>https://app.contoso.edu</string>
-  </dict>
-  <dict>
-    <key>default_launch_container</key>
-    <string>window</string>
-    <key>override_app_name</key>
-    <string>Editor</string>
-    <key>url</key>
-    <string>https://app.contoso.com/editor</string>
   </dict>
 </array>
 ```

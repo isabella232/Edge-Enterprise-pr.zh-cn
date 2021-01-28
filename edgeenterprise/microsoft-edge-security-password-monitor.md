@@ -3,19 +3,19 @@ title: 为用户自动启用密码监视器
 ms.author: supalsul
 author: dan-wesley
 manager: tulasim
-ms.date: 01/21/2021
+ms.date: 01/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 为用户自动启用密码监视器
-ms.openlocfilehash: 8ea96522fe99082579e88b2eab330fb265d02b12
-ms.sourcegitcommit: 8a88fd38bdb5e132e89bf17dd2b5fb72f5d1b4b9
+ms.openlocfilehash: 2f796f0cd1bbb437f83d04a8bd59586ef7b6a982
+ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "11297484"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "11304532"
 ---
 # 为用户自动启用密码监视器
 
@@ -26,7 +26,7 @@ ms.locfileid: "11297484"
 
 ## 简介、优势和可用性
 
-密码监视器通过通知 Microsoft Edge 用户在联机泄露中是否找到其任何密码来帮助其保护其联机帐户。 当错误参与者从第三方应用或网站窃取数据时，将发生联机泄露或数据泄露。
+密码监视器通过通知 Microsoft Edge 用户在联机泄露中是否找到其任何密码来帮助其保护其联机帐户。 当错误参与者从第三方应用或网站窃取数据时，将发生联机泄露或数据泄露。 若要了解更多信息，请参阅 Microsoft 研究博客上的[密码监视器：保护 Microsoft Edge 中的密码](https://www.microsoft.com/research/blog/password-monitor-safeguarding-passwords-in-microsoft-edge/)一文。
 
 ### 优势
 
@@ -34,7 +34,7 @@ ms.locfileid: "11297484"
 
 ### 可用性
 
-密码监视器已在早期预览频道 (Canary/Dev) 中可用，并且从 1 月 21 日起将升级为稳定频道版本 88。 新版本的推出将逐步进行，可能需要几周时间。更新后用户可以在“**设置**” > “**个人资料**” > “**密码**”页面中看到以下消息和控件。
+从 1 月 21 日起，稳定渠道版本 88 中提供了密码监视器。 新版本的推出将逐步进行，可能需要几周时间。更新后用户可以在“**设置**” > “**个人资料**” > “**密码**”页面中看到以下消息和控件。
 
 :::image type="content" source="media/microsoft-edge-security-password-monitor/monitor-enable-option.png" alt-text="启用密码监视器的选项":::
 
