@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/26/2021
+ms.date: 01/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: fd5336a57ad3f6706a2a61a2781c772f12e8b795
-ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
+ms.openlocfilehash: 6adba3b373f5989362594d0ff84a2932a661550a
+ms.sourcegitcommit: 6109055bfd0e2deba7f0cc75b27f6a805b16a0b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "11304542"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "11306062"
 ---
 # Microsoft Edge Stable 渠道发行说明
 
@@ -28,6 +28,10 @@ ms.locfileid: "11304542"
 
 > [!NOTE]
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 若要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 88.0.705.56：1 月 28 日
+
+修复了各种 bug 和性能问题。
 
 ## 版本 88.0.705.53：1 月 26 日
 
@@ -48,6 +52,11 @@ ms.locfileid: "11304542"
 - **身份验证：**
 
   - 单一登录 (SSO) 现在适用于低级别 Windows 上的 Azure Active Directory (Azure AD) 帐户和 Microsoft 帐户 (MSA)。 在低级别 Microsoft Windows (7、8.1) 上登录 Microsoft Edge 的用户现在将自动登录到配置为允许使用工作帐户和 Microsoft 帐户单一登录的网站（例如 bing.com、office.com、msn.com、outlook.com）。<br>注意：如果用户在 Microsoft Edge 88 之前的版本中登录 Microsoft Edge，可能需要注销然后重新登录，以利用此功能。
+  
+  - 在非 Azure AD Microsoft Edge 配置文件中，在系统上使用任意 Windows Azure Active Directory （Azure AD）帐户登录（SSO）来让网站工作。 对于未使用工作/学校帐户登录的任何配置文件，且不是来宾或专用的配置文件，可以启用此功能，并允许通过该配置文件在操作系统上使用任何登录的工作/学校帐户。 此功能可以在“**设置**” > “**配置文件**” > “**配置文件首选项**” > “**允许使用此配置文件单一登录到工作或学校网站**”中配置。
+  
+    > [!NOTE]
+    > “使用 Microsoft Edge 配置文件单一登录 (SSO) 所有 Windows 账户”是对 1 月 21 日发行说明的一项更新。
 
 - **结束会话的展台模式选项**。 “结束会话”按钮现在在展台模式公共浏览体验中可用。 此功能可确保在关闭 Microsoft Edge 时删除浏览器数据和设置。 详细了解展台模式功能和路线图，配置 [Microsoft Edge 展台模式](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)。
 
