@@ -3,23 +3,27 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/20/2021
+ms.date: 01/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: c1d0b7091655d5ca0893ea11cc0c2fc44bb516dd
-ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
+ms.openlocfilehash: 83a33a5bdd5bee59a4a3dd0d3914ee9d3de3eb86
+ms.sourcegitcommit: 4b76ef2f210a00fd3bd86d5ac70670711fb09b72
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "11281001"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "11306181"
 ---
 # Microsoft Edge Beta 渠道的发行说明
 
 本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 此处提供了这些发行说明的存档 [版本](microsoft-edge-relnote-archive-beta-channel.md)。
+
+## 版本 88.0.705.56：1 月 29 日
+
+修复了各种 bug 和性能问题。
 
 ## 版本 88.0.705.49：1 月 20 日
 
@@ -132,7 +136,7 @@ ms.locfileid: "11281001"
 
 修复了各种 bug 和性能问题。 此版本支持以下新功能。
 
-- **如果在联机泄露中发现用户的密码，则将生成警报**。 用户密码会与已知的已破解的凭证库进行核对，如果发现匹配，就会向用户发出警报。 为了确保安全和隐私，当用户密码在与泄露的凭证数据库进行核对时，会进行哈希处理和加密。
+- **如果在联机泄露中发现用户的密码，则将生成警报**。 用户密码会与已知的已破解的凭证库进行核对，如果发现匹配，就会向用户发出警报。 为了确保安全和隐私，当用户密码在与已泄露的凭证数据库进行核对时，会进行哈希处理和加密。
 
 ## 版本 87.0.664.52：11月30日
 
