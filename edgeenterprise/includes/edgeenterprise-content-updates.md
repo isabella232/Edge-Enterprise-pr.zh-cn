@@ -1,30 +1,45 @@
 ---
-ms.openlocfilehash: fee3153f7884bd3c36328d88e433d3ca1b13d0e4
-ms.sourcegitcommit: 23277e25061c75da033ed042e25c33acff3ac0bd
+ms.openlocfilehash: 841bb970fba4da5c861343d3032155e99b2e7a4d
+ms.sourcegitcommit: 21509bb4ca9b2f62c657fbdb43267dec0de1c458
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "11297846"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "11306581"
 ---
 <!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
+
+## 2021 年 1 月 25 日所在一周
+
+
+| 发布时间 |主题标题 | “更改” |
+|------|------------|--------|
+| 2021/1/25 | [Microsoft Edge 内容更新](/DeployEdge/microsoft-edge-content-updates)<br>发布于 1 月 25 日所在一周的注释内容。 | 已修改 |
+| 2021/1/26 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>主要版本 88.0.705.50 附录更新。 请调用 SSO 的可用性。| 修改时间 |
+| 2021/1/26 | [为用户自动启用密码监视器](/DeployEdge/microsoft-edge-security-password-monitor)<br>正确的可用性和 Microsoft Research 关于保护密码的链接。 | 修改时间 |
+| 2021/1/27 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies)<br>更新，已添加新策略。| 修改时间 |
+| 2021/1/27 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies)<br>刷新，无更改。 | 修改时间 |
+| 2021/1/27 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>次要版本 88.0.705.53 修补程序更新。 | 修改时间 |
+| 2021/1/28 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>次要版本 88.0.705.56 修补程序更新。 | 修改时间 |
+| 2021/1/29 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>次要版本 88.0.705.56 修补程序更新。 | 修改时间 |
+
 
 ## 2021 年 1 月 18 日所在一周
 
 
 | 发布时间 |主题标题 | “更改” |
 |------|------------|--------|
-| 1/22/2021 | [Microsoft Edge 中的 PDF 阅读器](/DeployEdge/microsoft-edge-pdf)<br>通过添加受支持功能进行更新。 | 已修改 |
-| 1/22/2021 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>主要版本 88.0.705.50 的已更新功能列表。 | 修改时间 |
-| 1/21/2021 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>适用于次要版本 88.0.705.49 的修补程序。| 修改时间 |
-| 1/21/2021 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>主要版本 88.0.705.50 的更新，调用新功能以及新的或已弃用组策略。| 修改时间 |
-| 1/21/2021 | [Microsoft Edge 安全更新的发行说明](/DeployEdge/microsoft-edge-relnotes-security)<br>稳定版本 88.0.705.50 安全更新。  | 修改时间 |
-| 1/21/2021 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies)<br>更新和调用新策略。| 修改时间 |
-| 1/21/2021 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies)<br>自动刷新，无更改。 | 修改时间 |
-| 1/22/2021 | [为用户自动启用密码监视器](/DeployEdge/microsoft-edge-security-password-monitor)<br>介绍密码监视器以及如何自动为用户启用密码监视器的新文章。 | 已添加 |
-| 1/21/2021 | [Microsoft Edge 中的 Enterprise 网站列表管理器 ](/DeployEdge/edge-ie-mode-site-list-manager)<br>介绍 Microsoft Edge 中内置的网站列表管理器的新文章。 | 已添加 |
-| 1/19/2021 | [Microsoft Edge 内容更新](/DeployEdge/microsoft-edge-content-updates)<br>注释上一周发布的内容。 | 修改时间 |
-| 1/22/2021 | [配置 Microsoft Edge 展台模式](/DeployEdge/microsoft-edge-configure-kiosk-mode)<br>更新功能支持和路线图。 | 修改时间 |
-| 1/22/2021 | [配置 Microsoft Edge 同步并排除故障](/DeployEdge/microsoft-edge-enterprise-sync)<br>更新文章以阐明疑难解答。 | 修改时间 |
+| 1/22/2021 | [Microsoft Edge 中的 PDF 阅读器](/DeployEdge/microsoft-edge-pdf) | 修改时间 |
+| 1/22/2021 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
+| 2021/1/21 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
+| 1/21/2021 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
+| 1/21/2021 | [Microsoft Edge 安全更新的发行说明](/DeployEdge/microsoft-edge-relnotes-security) | 修改时间 |
+| 1/21/2021 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies) | 修改时间 |
+| 1/21/2021 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies) | 修改时间 |
+| 1/22/2021 | [为用户自动启用密码监视器](/DeployEdge/microsoft-edge-security-password-monitor) | 添加时间 |
+| 1/21/2021 | [Microsoft Edge 中的企业 网站列表管理器 ](/DeployEdge/edge-ie-mode-site-list-manager) | 添加时间 |
+| 1/19/2021 | [Microsoft Edge 内容更新](/DeployEdge/microsoft-edge-content-updates) | 修改时间 |
+| 1/22/2021 | [配置 Microsoft Edge 展台模式](/DeployEdge/microsoft-edge-configure-kiosk-mode) | 修改时间 |
+| 1/22/2021 | [配置 Microsoft Edge 同步并排除故障](/DeployEdge/microsoft-edge-enterprise-sync) | 修改时间 |
 
 
 ## 2020 年 12 月 21 日所在一周
