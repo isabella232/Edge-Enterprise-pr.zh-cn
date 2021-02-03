@@ -3,19 +3,19 @@ title: Microsoft Edge 支持的操作系统
 ms.author: srugh
 author: srugh
 manager: seanlynd
-ms.date: 12/17/2020
+ms.date: 02/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 支持的操作系统
-ms.openlocfilehash: 866708bc1d24523f47237a5242575a16544b8009
-ms.sourcegitcommit: 7db4c9854175898844ce3daf75d8007cfc6632a2
+ms.openlocfilehash: 81b9999a98a913e72f3a064f32bd88b301e52b5f
+ms.sourcegitcommit: 90f33698262b255a63d6ba6ec854a12c1091a630
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "11237244"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "11311509"
 ---
 # Microsoft Edge 支持的操作系统
 
@@ -35,12 +35,12 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 
 - Windows 7 * *
 - Windows 8.1
-- Windows 10 SAC 1709 及更高版本 **_
+- Windows 10 SAC 1709 及更高版本***
 - Windows 10 企业版 2015 LTSC
 - Windows 10 企业版 2016 LTSC
 - Windows 10 企业版 2019 LTSC
 - Windows 10 企业版多会话
-- Windows 10 IoT 企业版 SAC _ ***
+- Windows 10 IoT 企业版 SAC ****
 - Windows 10 IoT 企业版 2019 LTSC ****
 
 ### Windows Server
@@ -55,9 +55,9 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 > [!IMPORTANT]
 > ** 我们将继续支持在 Windows 7 和 Windows Server 2008 R2 上运行 Microsoft Edge，直到 2022 年 1 月 15 日。 这些操作系统已不再受支持，Microsoft 建议你移至受支持的操作系统（如 Windows 10）。 Microsoft Edge 可帮助你提高上网安全性，但你的电脑仍可能容易受到安全风险的影响。 要在这些操作系统中支持 IE 模式，设备需要具有[适用于 Windows 7 的扩展安全更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 如果未安装 Windows 7 扩展安全更新，Internet Explorer 功能很容易受到安全风险的影响。 此外，如果未通过扩展安全更新继续提供服务，IE 模式功能可能停止运行。  
 >
-> **_与上面类似，对于不再享受支持服务但 Microsoft Edge 支持的 Windows 10 SAC 版本，建议尽快升级到支持的 Win10 SAC 版本以保持安全。 在此状态下支持 Microsoft Edge 应视为用于进入支持的操作系统状态的一种临时途径。
+> *** 与上面类似，对于不再享受支持服务但 Microsoft Edge 支持的 Windows 10 SAC 版本，建议尽快升级到支持的 Win10 SAC 版本以保持安全。 在此状态下支持 Microsoft Edge 应视为用于进入支持的操作系统状态的一种临时途径。
 >
-> _*** Microsoft Edge OPK 可以在 MOO 上为 IoT OEM 预装和分发，作为 Windows 10 IoT 企业版的解决方案的一部分。
+> Microsoft Edge OPK 可在 MOO for IoT OE 上预安装并分发，并将其作为基于 Windows 10 IoT Enterprise 的解决方案的一部分进行分发。
 
 ### macOS
 
@@ -71,6 +71,10 @@ Microsoft Edge for iPad&reg; 和 Microsoft Edge for iPhone&reg; 需要 iOS 11.0 
 
 可在符合以下条件的平板电脑和手机上安装 Microsoft Edge for Android：运行 Android KitKat 4.4 或更高版本且具有基于 ARM 处理器的设备。
 
+### Apple 在 Mac
+
+自 Apple Native Mac 的稳定版本 88 起，Microsoft Edge 的本机支持。
+
 ### Chromebook
 
 Microsoft Edge 不支持 Chromebook。
@@ -78,6 +82,7 @@ Microsoft Edge 不支持 Chromebook。
 ## 最近更改
 
 - **2020 年 12 月 17 日** - Windows 7 和 Windows Server 2008 R2 上对 Microsoft Edge 支持将延续到 2022 年 1 月 15 日。
+- **2021/01/28** - Microsoft Edge 支持 Apple Silicon Macs。
 
 ## 另请参阅
 

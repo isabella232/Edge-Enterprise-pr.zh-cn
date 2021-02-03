@@ -3,19 +3,19 @@ title: Microsoft Edge 发布计划
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/22/2021
+ms.date: 02/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 发布计划
-ms.openlocfilehash: 3b9c257123f2d1eeda1484e761963b6d0106c7c0
-ms.sourcegitcommit: d8d0b0fcb787fe90fa20426ef5e6dc194e935808
+ms.openlocfilehash: ad02c2775b836fe1a829945c205f2f52208065f1
+ms.sourcegitcommit: 90f33698262b255a63d6ba6ec854a12c1091a630
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "11297697"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "11311519"
 ---
 # Microsoft Edge 发布计划
 
@@ -33,6 +33,8 @@ Microsoft 提供了四个称为“频道”的选项，用于管理为 Microsoft
 > 发布日期是大概日期，并且可能会根据版本状态而有所不同。
 
 ### Microsoft Edge 版本
+
+下表仅跟踪和提供有关这两个频道中主要版本的信息。
 
 | 版本 | 发布状态 | Beta 渠道<br>发布周 | 稳定渠道<br>发布周 |
 |---------|-----|------|--------|
