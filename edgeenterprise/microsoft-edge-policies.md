@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/27/2021
+ms.date: 02/03/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 59c3c3426e3e7db2c5a115b15ae5e9b9e7628f9e
-ms.sourcegitcommit: e9433045503c2614386ee4948cda0a9c9701bac5
+ms.openlocfilehash: e57c840931e2c0e73eb720179fc780182d433831
+ms.sourcegitcommit: 5cdcf44324e35c3ac71d7ca78e512f64d4dcbfea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "11304725"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "11313420"
 ---
 # Microsoft Edge - 策略
 
@@ -33,9 +33,11 @@ ms.locfileid: "11304725"
 
 下表列出了此次更新的新策略。
 
-| 名称 | 标题 |
+| 名称| 标题 |
 |--|--|
-|[SmartActionsBlockList](#smartactionsblocklist)|阻止对服务列表执行智能操作|
+|[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|适用于 HTTP Auth 的 Windows Hello 已启用|
+|[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|将网站的托管配置值设置到特定来源|
+
 
 ## 可用策略
 
@@ -144,6 +146,7 @@ ms.locfileid: "11304725"
 |[DisableAuthNegotiateCnameLookup](#disableauthnegotiatecnamelookup)|在协商 Kerberos 身份验证时禁用 CNAME 查找|
 |[EnableAuthNegotiatePort](#enableauthnegotiateport)|在 Kerberos SPN 中包括非标准端口|
 |[NtlmV2Enabled](#ntlmv2enabled)|控制是否启用 NTLMv2 身份验证|
+|[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|适用于 HTTP Auth 的 Windows Hello 已启用|
 ### [*展台模式设置*](#kiosk-mode-settings-policies)
 
 |策略名称|标题|
@@ -361,6 +364,7 @@ ms.locfileid: "11304725"
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|Intranet 重定向行为|
 |[IsolateOrigins](#isolateorigins)|针对特定源启用网站隔离|
 |[LocalProvidersEnabled](#localprovidersenabled)|允许来自本地提供程序的建议|
+|[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|将网站的托管配置值设置到特定来源|
 |[ManagedFavorites](#managedfavorites)|配置收藏夹|
 |[ManagedSearchEngines](#managedsearchengines)|管理搜索引擎|
 |[MaxConnectionsPerProxy](#maxconnectionsperproxy)|代理服务器的最大并发连接数|
@@ -413,7 +417,7 @@ ms.locfileid: "11304725"
 |[SpellcheckEnabled](#spellcheckenabled)|启用拼写检查|
 |[SpellcheckLanguage](#spellchecklanguage)|启用特定拼写检查语言|
 |[SpellcheckLanguageBlocklist](#spellchecklanguageblocklist)|强制禁用拼写检查语言|
-|[StricterMixedContentTreatmentEnabled](#strictermixedcontenttreatmentenabled)|对混合内容启用更严格的处理（已弃用）|
+|[StricterMixedContentTreatmentEnabled](#strictermixedcontenttreatmentenabled)|对混合内容启用更严格的处理（已过时）|
 |[SuppressUnsupportedOSWarning](#suppressunsupportedoswarning)|禁止对不支持的操作系统显示警告|
 |[SyncDisabled](#syncdisabled)|禁止使用 Microsoft 同步服务进行数据同步|
 |[SyncTypesListDisabled](#synctypeslistdisabled)|配置从同步中排除的类型列表|
@@ -771,7 +775,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = "{\"pattern\":
 
 - [CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
 若要排除退出时删除 Cookie 的功能，请配置 [SaveCookiesOnExit](#savecookiesonexit) 策略。
 
@@ -5154,6 +5158,59 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 ``` xml
 <true/>
 ```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### WindowsHelloForHTTPAuthEnabled
+
+  #### 适用于 HTTP Auth 的 Windows Hello 已启用
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 上自 90 或更高版本起
+
+  #### 描述
+
+  指示是否应当使用 Windows 凭据 UI 来响应 NTLM 和应对身份验证挑战。
+
+如果禁用此策略，将使用基本用户名和密码提示来回答 NTLM 和应对挑战。 如果启用或不配置此策略，将使用 Windows 凭据 UI。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：WindowsHelloForHTTPAuthEnabled
+  - GP 名称：已启用适用于 HTTP Auth 的 Windows Hello
+  - GP 路径（强制）：管理模板/Microsoft Edge/HTTP 身份验证
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/HTTP 身份验证
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称：WindowsHelloForHTTPAuthEnabled
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
   
 
   [返回页首](#microsoft-edge---policies)
@@ -16885,6 +16942,103 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   [返回页首](#microsoft-edge---policies)
 
+  ### ManagedConfigurationPerOrigin
+
+  #### 将网站的托管配置值设置到特定来源
+
+  
+  
+  #### 支持的版本：
+
+  - 自 90 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  设置此策略定义给定源的托管配置 API 的返回值。
+
+ 托管配置 API 是一个密钥值配置，可以通过 navigator.device.getManagedConfiguration() javascript 调用来访问。 此 API 仅可用于通过 [WebAppInstallForceList](#webappinstallforcelist) 与强制安装的 web 应用程序相对应的源。
+
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - Dictionary
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：ManagedConfigurationPerOrigin
+  - GP 名称：将网站的托管配置值设置到特定来源
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ManagedConfigurationPerOrigin
+  - 值类型：REG_SZ
+
+  ##### 示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [
+  {
+    "managed_configuration_hash": "asd891jedasd12ue9h", 
+    "managed_configuration_url": "https://static.contoso.com/configuration.json", 
+    "origin": "https://www.contoso.com"
+  }, 
+  {
+    "managed_configuration_hash": "djio12easd89u12aws", 
+    "managed_configuration_url": "https://static.contoso.com/configuration2.json", 
+    "origin": "https://www.example.com"
+  }
+]
+```
+
+  ##### 精简示例值：
+
+  ```
+  SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [{"managed_configuration_hash": "asd891jedasd12ue9h", "managed_configuration_url": "https://static.contoso.com/configuration.json", "origin": "https://www.contoso.com"}, {"managed_configuration_hash": "djio12easd89u12aws", "managed_configuration_url": "https://static.contoso.com/configuration2.json", "origin": "https://www.example.com"}]
+  ```
+  
+
+  #### Mac 信息和设置
+  
+  - 首选项密钥名称：ManagedConfigurationPerOrigin
+  - 示例值：
+``` xml
+<key>ManagedConfigurationPerOrigin</key>
+<array>
+  <dict>
+    <key>managed_configuration_hash</key>
+    <string>asd891jedasd12ue9h</string>
+    <key>managed_configuration_url</key>
+    <string>https://static.contoso.com/configuration.json</string>
+    <key>origin</key>
+    <string>https://www.contoso.com</string>
+  </dict>
+  <dict>
+    <key>managed_configuration_hash</key>
+    <string>djio12easd89u12aws</string>
+    <key>managed_configuration_url</key>
+    <string>https://static.contoso.com/configuration2.json</string>
+    <key>origin</key>
+    <string>https://www.example.com</string>
+  </dict>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### ManagedFavorites
 
   #### 配置收藏夹
@@ -20374,19 +20528,19 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
   ### StricterMixedContentTreatmentEnabled
 
-  #### 对混合内容启用更严格的处理（已弃用）
+  #### 对混合内容启用更严格的处理（已过时）
 
-  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
   
+  >已过时：此策略已过时，在 Microsoft Edge 84 后将无法正常工作。
   #### 支持的版本：
 
-  - 在 Windows 和 macOS 上自 81 或更高版本起
+  - 在 Windows 和 macOS 上自 81 开始，直到 84
 
   #### 描述
 
-  此策略已弃用，因为它仅作为一种短期机制提供，目的是让企业能够在发现与更严格的混合内容处理不兼容有更多的时间来更新其 Web 内容。 在 Microsoft Edge version 85 将不起作用。
+  此策略不起作用，因为它只是一种短期机制，如果发现企业的 web 内容与更严格的混合内容处理不兼容，它将为企业提供更多时间来更新其 we b内容。
 
-此策略控制浏览器中混合内容（HTTPS 站点中的 HTTP 内容）的处理。
+此策略控制浏览器中混合内容（HTTPS 网站中的 HTTP 内容）的处理。
 
 如果将此策略设置为 true 或未设置此策略，则音频和视频混合内容将自动升级到 HTTPS（即，URL 将重写为 HTTPS，如果资源不能通过 HTTPS 提供，则不会回退），并且 URL 栏中将对图像混合内容显示“不安全”警告。
 
@@ -20409,7 +20563,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   ##### 组策略 (ADMX) 信息
 
   - GP 唯一名称：StricterMixedContentTreatmentEnabled
-  - GP 名称：对混合内容启用更严格的处理（已弃用）
+  - GP 名称：对混合内容启用更严格的处理（过时）
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -21884,7 +22038,14 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
   配置此策略以指定一个无需用户交互即可自行安装的网页应用列表，并且用户无法卸载或关闭这些应用程序。
 
-策略的每个列表项都是包含一个强制成员的对象：URL（要安装的 web 应用的 URL）和 2 个可选成员：default_launch_container（指定 web 应用打开的窗口模式 - 新选项卡为默认）和 create_desktop_shortcut（如果要创建 Linux 和 Windows 桌面快捷方式，则为 True）。
+策略的每个列表项都是具有强制成员的对象：url (要安装的 web 应用的 URL) 
+
+和 3 个可选成员：
+- default_launch_container (指定 web 应用打开时使用的窗口模式—默认为新选项卡) 
+
+- create_desktop_shortcut (如果要创建 Linux 和 Windows 桌面快捷方式，则为True。) 
+
+- override_app_name (从 Microsoft Edge 89 开始，如果应用名称不是渐进式 Web App (PWA) ，则允许覆盖应用程序名称，如果是 PWA，则允许覆盖临时安装的应用程序名称，但在安装完成之前需要进行身份验证。) 
 
   #### 支持的功能：
 
@@ -21925,6 +22086,11 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
     "default_launch_container": "tab", 
     "url": "https://app.contoso.edu"
+  }, 
+  {
+    "default_launch_container": "window", 
+    "override_app_name": "Editor", 
+    "url": "https://app.contoso.com/editor"
   }
 ]
 ```
@@ -21932,7 +22098,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### 精简示例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "override_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
   ```
   
 
@@ -21956,6 +22122,14 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
     <string>tab</string>
     <key>url</key>
     <string>https://app.contoso.edu</string>
+  </dict>
+  <dict>
+    <key>default_launch_container</key>
+    <string>window</string>
+    <key>override_app_name</key>
+    <string>Editor</string>
+    <key>url</key>
+    <string>https://app.contoso.com/editor</string>
   </dict>
 </array>
 ```

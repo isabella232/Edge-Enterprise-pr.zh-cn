@@ -3,23 +3,23 @@ title: IE 模式 FAQ
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/21/2020
+ms.date: 02/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 关于结合使用 Microsoft Edge 和 IE 模式的 FAQ 和故障排除
-ms.openlocfilehash: 62bf8afc5ac908e18d2f503fa9248a19f78fd6f6
-ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
+ms.openlocfilehash: aeae79dfd1745c754fb5ab690338f87fd25c080b
+ms.sourcegitcommit: ff67ccc93d07588a9128e9b1fe007d5393a9d6af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "11238169"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "11312588"
 ---
 # IE 模式 FAQ
 
-本文介绍了 Microsoft Edge（版本 77 或更高版本）的故障排除提示和 FAQ。
+本文介绍了 Microsoft Edge 版本 77 或更高版本的故障排除提示和 FAQ。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge **Stable**、**Beta** 和 **Dev** 渠道版本 77 或更高版本。
@@ -62,6 +62,10 @@ ms.locfileid: "11238169"
 ### 错误消息：“关闭远程调试以在 IE 模式下打开此站点，否则可能无法正常工作。”
 
 如果你正在进行远程调试，并导航到配置为在 IE 模式下运行的网页，可能就会看到此错误。 你可以继续操作，但网页会使用 Microsoft Edge 呈现。
+
+### 错误消息：“错误：无法检索 EMIE 站点列表。”
+
+您可能会在 *edge://compat/enterprise* 页面上看到此错误，表示站点列表下载失败。 从 Microsoft Edge 版本 87 开始，当使用 [BlockThirdPartyCookies](https://docs.microsoft.com/deployedge/microsoft-edge-policies#blockthirdpartycookies) 策略阻止第三方请求的Cookie 时，也不允许使用 HTTP 身份验证。 可以使用 [CookiesAllowedForURLs](https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiesallowedforurls) 策略为托管 Enterprise Mode Site List 的特定域允许 Cookie，以确保站点列表下载成功。
 
 ## 常见问题
 

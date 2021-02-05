@@ -3,26 +3,26 @@ title: 'Microsoft Edge 中的 Enterprise Site List Manager '
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 01/20/2021
+ms.date: 02/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: '启用并使用 Microsoft Edge 中的 Enterprise Site List Manager '
-ms.openlocfilehash: 2d10886624918c97933a841c428ea66ccf5b34c9
-ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
+ms.openlocfilehash: 9700c2b78bba514525c4d80d211ef744dd175d2f
+ms.sourcegitcommit: ff67ccc93d07588a9128e9b1fe007d5393a9d6af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "11281042"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "11312578"
 ---
 # Microsoft Edge 中的 Enterprise Site List Manager
 
 本文介绍如何启用和访问 Microsoft Edge 中的 Enterprise Site List Manager 以创建、编辑和导出 Internet Explorer 模式的 Enterprise Mode Site List。
 
 > [!NOTE]
-> 本文适用于 Microsoft Edge 版本 89 或更高版本。
+> 本文适用于 Microsoft Edge 版本 89 或更高版本。 
 
 ## 概述
 
@@ -38,7 +38,7 @@ Enterprise Site List Manager 是[独立 Enterprise Mode Site List Manager 工具
 
 ## 使用 Enterprise Site List Manager
 
-Enterprise Site List Manager 工具使用 v.2 版本的架构。 如果将 v.1 版本架构导入到 Enterprise Site List Manager（架构 v.2）中，XML 将被保存到 v.2 版本的架构。
+Enterprise Site List Manager 工具使用 v.2 版本的架构。 如果将 v.1 版本架构导入到 Enterprise Site List Manager（架构 v.2）中，XML 将被保存到 v.2 版本的架构。 参阅 [企业模式架构 v.2 指南](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。
 
 ### 将单个站点添加到站点列表  
 
@@ -127,5 +127,5 @@ Enterprise Site List Manager 工具使用 v.2 版本的架构。 如果将 v.1 �
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
+- [企业模式架构 v.2 指南](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)
 - [其他企业模式信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
-- [其他“企业站点发现”信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery)
