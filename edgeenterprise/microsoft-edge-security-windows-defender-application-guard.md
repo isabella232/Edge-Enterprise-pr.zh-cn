@@ -3,19 +3,19 @@ title: Microsoft Edge 和 Microsoft Defender 应用程序防护
 ms.author: srugh
 author: dan-wesley
 manager: seanlyn
-ms.date: 10/12/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
-ms.openlocfilehash: fcf9bb6e36ddd5e014bd8176643554bfe3ff8fd4
-ms.sourcegitcommit: b813f91803b8f0f27489634f49e7e0585b746d48
+ms.openlocfilehash: 751201192c3b4e69cc866f35e51a6db23b9972f9
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "11114360"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314585"
 ---
 # Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
 
@@ -38,7 +38,10 @@ ms.locfileid: "11114360"
 
 企业管理员定义什么是受信任的站点、云资源和内部网络。 不在受信任站点列表中的所有内容都被视为不可信内容。 这些站点与企业网络和用户设备上的数据相隔离。
 
-有关详细信息，请参阅[什么是应用程序防护，以及它是如何工作的？](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-application-guard/md-app-guard-overview#what-is-application-guard-and-how-does-it-work)。
+有关详细信息：
+
+- 观看我们的视频[使用应用程序防护实现 Microsoft Edge 浏览器隔离](microsoft-edge-video-security-application-guard.md)
+- 阅读[什么是应用程序防护，以及它是如何工作的？](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-application-guard/md-app-guard-overview#what-is-application-guard-and-how-does-it-work)
 
 下一个屏幕截图显示应用程序防护的消息示例，它显示用户正在安全空间中浏览。
 

@@ -3,19 +3,19 @@ title: 适用于 Microsoft Defender SmartScreen 的 Microsoft Edge 支持
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 04/23/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 适用于 Microsoft Defender SmartScreen 的 Microsoft Edge 支持
-ms.openlocfilehash: d27366409d7792784c360cfee10f96ab174aa375
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 2de93b4ebe26b4a90592f7ee9143f6f775b682ce
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979394"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314685"
 ---
 # 适用于 Microsoft Defender SmartScreen 的 Microsoft Edge 支持
 
@@ -24,7 +24,7 @@ ms.locfileid: "10979394"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-Microsoft Defender SmartScreen 是一项服务，在你浏览 web 时，Microsoft Edge 将使用该服务确保安全。 Microsoft Defender SmartScreen 针对可能从事钓鱼攻击，或尝试通过集中式攻击分发恶意软件的网站提供早期警告系统。
+Microsoft Defender SmartScreen 是一项服务，在你浏览 web 时，Microsoft Edge 将使用该服务确保安全。 Microsoft Defender SmartScreen 针对可能从事钓鱼攻击，或尝试通过集中式攻击分发恶意软件的网站提供早期警告系统。 有关详细信息，请观看[视频：Microsoft Edge 上的安全浏览](microsoft-edge-video-security-smartscreen.md)。
 
 > [!NOTE]
 > 在 Windows 10 版本 1703 之前，此功能在浏览器中使用时称为 SmartScreen 筛选器，在浏览器之外使用时则称为 Microsoft SmartScreen。
@@ -64,11 +64,11 @@ Microsoft Defender SmartScreen 基于许多标准（例如下载流量、下载�
 - 自动下载信誉已知安全的文件，不发出任何通知。  
 - 信誉已知恶意的文件会显示警告，以使用户知道文件不安全，已报告为恶意。 下一个屏幕截图是针对恶意文件的警告示例。
 
-  ![Microsoft Defender SmartScreen 阻止信誉可以的页面文件](media/microsoft-edge-security-smartscreen/ms-edge-smartscreen-known-malicious.png)
+  ![Microsoft Defender SmartScreen 将对具有恶意信誉的文件阻止通知](media/microsoft-edge-security-smartscreen/ms-edge-smartscreen-known-malicious.png)
 
 - 未知文件会显示警告，以使用户知道下载的文件大小未知，并请注意。 下一个屏幕截图是针对未知文件的警告示例。
 
-  ![Microsoft Defender SmartScreen 阻止信誉可以的页面文件](media/microsoft-edge-security-smartscreen/ms-edge-smartscreen-unknown-malicious.png)
+  ![Microsoft Defender SmartScreen 将会对信誉未知的文件阻止通知](media/microsoft-edge-security-smartscreen/ms-edge-smartscreen-unknown-malicious.png)
 
 并非所有未知程序都是恶意的，未知警告旨在为需要它的用户提供上下文和指导，特别是如果警告是意外的。
 
@@ -119,7 +119,8 @@ Microsoft Defender SmartScreen 服务存储有关信誉检查的数据。 识别
 
 ## 另请参阅
 
-- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
+- [视频：Microsoft Edge 上的安全浏览](microsoft-edge-video-security-smartscreen.md)
 - [Microsoft Defender SmartScreen 概述](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview)
 - [威胁防护](https://docs.microsoft.com/windows/security/threat-protection/index)
 - [阻止潜在的有害应用程序](https://docs.microsoft.com/DeployEdge/microsoft-edge-potentially-unwanted-apps)

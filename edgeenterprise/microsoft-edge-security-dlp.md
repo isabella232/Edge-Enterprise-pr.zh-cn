@@ -3,19 +3,19 @@ title: Microsoft Edge 中的数据丢失防护
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 11/18/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 中的数据丢失防护 (DLP)
-ms.openlocfilehash: 72f670caf34a09cdfc7f47575f688c2a39d3c221
-ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
+ms.openlocfilehash: 8c7906f69f8d1161b47aa381bc04bcdaa70fe6cd
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "11176939"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314555"
 ---
 # Microsoft Edge 中的数据丢失防护 (DLP)
 
@@ -34,21 +34,22 @@ Microsoft 终结点 DLP 是运用现代概念（例如以数据为中心的保�
 > [!NOTE]
 > 这适用于 Microsoft Edge 85 或更高版本。
 
-若要详细了解终结点 DLP：
+若要了解有关终结点 DLP 的更多信息，请使用以下资源：
 
-- [了解 Microsoft 365 终结点数据丢失防护](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide)
-- [终结点数据丢失防护入门](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide)
+- [视频：Microsoft Edge 和数据丢失防护 (DLP)](microsoft-edge-video-security-dlp.md)
+- [了解 Microsoft 365 终结点数据丢失防护](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide&preserve-view=true)
+- [终结点数据丢失防护入门](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide&preserve-view=true)
 
 Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合规活动的审核事件。
 
 可在运行 Windows 10 的设备上审核和管理的用户活动包括以下活动：
 
-- 文件上传：保护敏感文件上传到未经授权的云端位置。 接下来的3张屏幕截图显示了用户试图将敏感数据文件放到其本地存储上的序列。
+- 文件上传：保护敏感文件上传到未经授权的云端位置。 <!-- The next 3 screenshots show a sequence where a user tries to drop a sensitive data file on to their local storage.-->
 - 剪贴板保护：防止从文件中复制敏感数据。
 - 打印保护：防止打印敏感文件。
 - 保存到 USB/网络：防止可移动 USB 存储或未经授权的网络位置保存敏感文件。
 
-有关可供审核和管理的用户活动的更多详细信息，请参阅[可监视并执行操作的端点活动](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on)。
+有关可供审核和管理的用户活动的更多详细信息，请参阅[可监视并执行操作的端点活动](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on&preserve-view=true)。
 
 ## Windows 信息保护
 
@@ -62,5 +63,5 @@ Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合�
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [视频：数据丢失防护 - Microsoft Edge](https://www.youtube.com/watch?v=dLD04U9eTqg)
-- [防止数据丢失概述](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide)
+- [防止数据丢失概述](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide&preserve-view=true)
 - [使用 Windows 信息保护系统来保护企业数据](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)

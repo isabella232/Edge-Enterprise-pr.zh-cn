@@ -3,23 +3,23 @@ title: Microsoft Edge 企业版回退
 ms.author: v-danwes
 author: dan-wesley
 manager: srugh
-ms.date: 11/30/2020
+ms.date: 02/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何将 Microsoft Edge 回退到以前的版本
-ms.openlocfilehash: 69fdfd29572dd6eda9f7eb7cbd4c2500851dcafc
-ms.sourcegitcommit: 63a094a5268bb3b4819269438357095acd79abac
+ms.openlocfilehash: 2059ea04bf8ec3a03266fe95599ea3b515b78c12
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "11192422"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314565"
 ---
 # 如何将 Microsoft Edge 回退到以前的版本
 
-本文介绍如何使用“回退”功能回退到以前版本的 Microsoft Edge。
+本文介绍如何使用“回退”功能回退到以前版本的 Microsoft Edge。 若要详细了解此功能，请观看[视频：Microsoft Edge 版本回退](microsoft-edge-video-version-rollback.md)。
 
 >[!NOTE]
 >本文适用于 Microsoft Edge 版本 86 或更高版本。
@@ -162,4 +162,5 @@ Microsoft Edge 更新尚未运行更新检查。 默认情况下，自动更新�
 
 ## 另请参阅
 
-- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
+- [视频：Microsoft Edge 版本回滚](microsoft-edge-video-version-rollback.md)

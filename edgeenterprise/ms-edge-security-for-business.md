@@ -3,23 +3,23 @@ title: 适用于企业的 Microsoft Edge 安全
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 11/18/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 适用于企业的 Microsoft Edge 安全
-ms.openlocfilehash: 52e55c64aad193072c44f6bc76e5c66808a5439d
-ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
+ms.openlocfilehash: eb981f3ed47b40219e50818531132ed5d385b642
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "11176949"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314675"
 ---
 # 适用于企业的 Microsoft Edge 安全
 
-Microsoft Edge 建立在 Chromium 开放源代码项目（与 Google Chrome 核心相同的项目）之上，这意味着它在其基础上共享同样经过精心设计和测试的安全体系结构和设计。 Microsoft Edge 安全案例并不就此止步。 事实上，**对于使用 Windows 10 的企业来说， Microsoft Edge 比 Google Chrome 更安全**。 它具有强大的内置防御功能，可抵御网络钓鱼和恶意软件，并且本机支持 Windows 10 上的硬件隔离 — 实现这一安全基准不需要其他软件。 此外，当与 Microsoft 365 安全和合规性服务的本机支持配合使用时，Microsoft Edge 提供了额外的强大安全功能和特性，有助于防止数据丢失，从而获得更多好处。
+Microsoft Edge 建立在 Chromium 开放源代码项目（与 Google Chrome 核心相同的项目）之上，这意味着它在其基础上共享同样经过精心设计和测试的安全体系结构和设计。 Microsoft Edge 安全案例并不就此止步。 事实上，**对于使用 Windows 10 的企业来说， Microsoft Edge 比 Google Chrome 更安全**。 它具有强大的内置防御功能，可抵御网络钓鱼和恶意软件，并且本机支持 Windows 10 上的硬件隔离 — 实现这一安全基准不需要其他软件。 此外，当与 Microsoft 365 安全和合规性服务的本机支持配合使用时，Microsoft Edge 提供了额外的强大安全功能和特性，有助于防止数据丢失，从而获得更多好处。 有关详细信息，请观看[视频：Microsoft Edge 安全性、兼容性和可管理性](microsoft-edge-video-security-compatibility-manageability.md)。
 
 让我们详细了解一下，从**外部威胁**开始，然后再看看**内部风险和信息保护**。
 
@@ -58,11 +58,12 @@ Microsoft Edge 是 Windows 10 上唯一本机支持硬件隔离功能的浏览�
 
 **Microsoft 终结点数据丢失防护（终结点 DLP）仅在 Microsoft Edge 中以本机方式受到支持**。 终结点 DLP 与 Microsoft 安全中心集成并将信息保护扩展到 Microsoft Edge，从而帮助就不合规的活动提醒用户，并在用户联机工作时防止数据丢失。 它可以发现并标记企业内部符合管理员定义的标准的敏感数据，例如包含信用卡号或政府 ID（例如身份证号）、财务信息等的文件。Microsoft 信息保护策略可以部署到 Microsoft Endpoint DLP，而无需进行额外的重新配置，包括敏感内容标识符和 IT 管理员已自定义的策略。 这是面向 IT 管理员的信息保护无缝部署。
 
-若要详细了解终结点 DLP 的先决条件及其设置方式，请转到[终结点数据丢失防护入门](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide)。
+若要详细了解终结点 DLP 的先决条件及其设置方式，请转到[终结点数据丢失防护入门](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide&preserve-view=true)。
 
 > [!NOTE]
 > 要使用 Microsoft 终结点数据丢失防护功能，需具备 Microsoft 365 E5 或 Microsoft 365 E5 合规性订阅。
 
 ## 另请参阅
 
-- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
+- [视频：Microsoft Edge 安全性、兼容性和可管理性](microsoft-edge-video-security-compatibility-manageability.md)

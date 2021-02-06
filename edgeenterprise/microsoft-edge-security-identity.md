@@ -3,23 +3,23 @@ title: Microsoft Edge 标识支持和配置
 ms.author: avvaid
 author: dan-wesley
 manager: srugh
-ms.date: 12/08/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 标识支持和配置
-ms.openlocfilehash: e553174fa40cb60046e5a46af4d81a0787957a93
-ms.sourcegitcommit: b3f8ef9e4944efa3be15c7bfc0cd13360a350c1c
+ms.openlocfilehash: 05dc0fabe212f31fe9207c72d097913d5765915f
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "11201289"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314605"
 ---
 # Microsoft Edge 标识支持和配置
 
-本文介绍了 Microsoft Edge 如何使用标识支持同步和单一登录（SSO）等功能。 Microsoft Edge 支持使用 Active Directory 域服务 (AD DS)、Azure Active Directory (Azure AD) 和 Microsoft 帐户 (MSA) 登录。 目前，Microsoft Edge 仅支持属于全局云或 GCC 主权云的 Azure Active Directory (Azure AD) 帐户。 我们正在努力添加对其他主权云的支持。 
+本文介绍了 Microsoft Edge 如何使用标识支持同步和单一登录（SSO）等功能。 Microsoft Edge 支持使用 Active Directory 域服务 (AD DS)、Azure Active Directory (Azure AD) 和 Microsoft 帐户 (MSA) 登录。 目前，Microsoft Edge 仅支持属于全局云或 GCC 主权云的 Azure Active Directory (Azure AD) 帐户。 我们正在努力添加对其他主权云的支持。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
@@ -28,10 +28,10 @@ ms.locfileid: "11201289"
 
 Microsoft Edge 支持使用 Azure AD、MSA 或域帐户登录浏览器配置文件。 用于登录的帐户类型确定 Microsoft Edge 中的用户可以使用哪些经过身份验证的功能。 下表总结了每种帐户类型的功能支持。
 
-|    | Azure AD Premium | Azure AD Free | 本地 AD DS | MSA     |
+| 功能   | Azure AD Premium | Azure AD Free | 本地 AD DS | MSA     |
 |----|------------------|---------------|----------------|---------|
 | 同步 | 是 | 否 | 否 | 是 |
-| 采用主刷新令牌的 SSO | 是 | 是 | 不可用 | 是 |
+| 采用主刷新令牌的 SSO | 是 | 是 | 否 | 是 |
 | 无缝 SSO | 是 | 是 | 是 | 不适用 |
 | 集成的 Windows 身份验证 | 是 | 是 | 是 | 不适用 |
 | 企业新选项卡页 | 需要 O365 |   需要 O365 | 否 | 不适用 |
@@ -51,7 +51,7 @@ Microsoft Edge 使用操作系统默认帐户自动登录浏览器。 根据设�
 
 ### 手动登录
 
-如果用户未自动登录到 Microsoft Edge，则可在首次运行体验、浏览器设置或打开“身份”浮出控件过程中手动登录 Microsoft Edge。 
+如果用户未自动登录到 Microsoft Edge，则可在首次运行体验、浏览器设置或打开“身份”浮出控件过程中手动登录 Microsoft Edge。
 
 ### 管理浏览器登录
 
@@ -103,8 +103,8 @@ Microsoft Edge 还支持 Windows 集成身份验证，以便在组织内部网�
 
 ## 另请参阅
 
-- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [Microsoft Edge 文档登录页面](https://docs.microsoft.com/DeployEdge/)
+- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
+- [视频：Microsoft Edge 和标识](microsoft-edge-video-identity.md)
 - [标识和访问管理](https://www.microsoft.com/security/technology/identity-access-management)
 - [标识平台](https://developer.microsoft.com/identity)
 - [使用 Azure Active Directory 建立坚实的身份标识基础的四个步骤](https://docs.microsoft.com/azure/active-directory/hybrid/four-steps)
