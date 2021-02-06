@@ -3,26 +3,26 @@ title: 访问旧版 Microsoft Edge
 ms.author: jtkim
 author: dan-wesley
 manager: srugh
-ms.date: 08/17/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何访问旧版 Microsoft Edge。
-ms.openlocfilehash: e4733d020f3a681ded50e5a087fe086d39362201
-ms.sourcegitcommit: f7f7eb69d2298b0f9779a9fd28e3c4e297ef2e05
+ms.openlocfilehash: 00f4a29c9a2bed137b339c8b5ef43eb213d33ee4
+ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "11125514"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11313892"
 ---
 # 在安装 Microsoft Edge 的新版本后访问旧版 Microsoft Edge
 
-了解如何在安装 Microsoft Edge 的新版本后访问旧版 Microsoft Edge。
+Microsoft Edge 旧版将自 2021 年 3 月 9 日起停止接收安全更新。 在 4 月 13 日之前，你仍可访问 Microsoft Edge 旧版。 有关详细信息，请参阅 Microsoft Edge 产品团队的[博客文章](https://aka.ms/EdgeLegacyEOS)。
 
 > [!NOTE]
-> 本文适用于 Microsoft Edge [Stable 渠道](microsoft-edge-channels.md)。
+> 本文适用于 Microsoft Edge [稳定渠道](microsoft-edge-channels.md)。
 
 大多数组织希望将 Microsoft Edge 旧版本替换为新版本，但在某些情况下，用户需要访问这两个版本。 例如：
 
@@ -44,11 +44,7 @@ ms.locfileid: "11125514"
 
 在使用本文中的详细说明之前，请考虑执行以下 2 个步骤，让你的用户可并行运行 Microsoft Edge 旧版和 Microsoft Edge [Beta 渠道](microsoft-edge-channels.md)。
 
-1. 阻止 [Windows 更新](https://support.microsoft.com/help/12373/windows-update-faq)自动安装 Microsoft Edge 的 Stable 渠道。
-
-   > [!TIP]
-   > 使用[阻止程序工具包](microsoft-edge-blocker-toolkit.md)禁止自动传递 Microsoft Edge。
-
+1. 通过 [Windows 更新](https://support.microsoft.com/help/12373/windows-update-faq)阻止自动安装 Microsoft Edge 稳定渠道。
 2. 安装 Microsoft Edge 新版本的 [Beta 渠道](https://www.microsoft.com/edge/business/download)。
 
    > [!NOTE]

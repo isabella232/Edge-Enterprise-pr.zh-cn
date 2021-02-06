@@ -1,4 +1,4 @@
-# last revised 01/21/2021
+# last revised 02/05/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -25,6 +25,8 @@
       href: microsoft-edge-roadmap.md
     - name: 计划 Microsoft Edge 部署
       href: deploy-edge-plan-deployment.md
+    - name: 你的环境中 Microsoft Edge
+      href: deploy-edge-prepare-to-deploy.md
     - name: Microsoft Edge 就绪
       href: deploy-edge-ready-for-edge.md
     - name: Stable 渠道发行说明
@@ -55,14 +57,14 @@
       href: microsoft-edge-supported-languages.md
     - name: Microsoft Edge 的系统更新
       items:
-        - name: 用于 Microsoft Edge 更新的阻止程序工具包
-          href: microsoft-edge-blocker-toolkit.md
         - name: 如何访问旧版本的 Microsoft Edge
           href: microsoft-edge-sysupdate-access-old-edge.md
         - name: 用于支持 Microsoft Edge 的 Windows 更新
           href: microsoft-edge-sysupdate-windows-updates.md
 - name: 部署 Microsoft Edge
   items:
+    - name: 使用 Windows 10 更新部署 Microsoft Edge
+      href: deploy-edge-with-windows-10-updates.md
     - name: 使用配置服务器部署到 Windows
       href: 'https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
     - name: 使用 Intune 部署到 Windows
@@ -91,6 +93,8 @@
       href: microsoft-edge-security-identity.md
     - name: Microsoft Edge 和企业状态漫游
       href: microsoft-edge-enterprise-state-roaming.md
+    - name: 规划展台模式转换
+      href: microsoft-edge-kiosk-mode-transition-plan.md
     - name: 配置 Microsoft Edge 展台模式
       href: microsoft-edge-configure-kiosk-mode.md
     - name: Microsoft Edge 同步
@@ -157,7 +161,7 @@
       href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
-        - name: '"企业新"选项卡页的向后兼容性'
+        - name: 企业新选项卡页的向后兼容性
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md

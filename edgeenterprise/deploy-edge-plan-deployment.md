@@ -1,21 +1,21 @@
 ---
 title: 计划 Microsoft Edge 部署
-ms.author: cjacks
+ms.author: collw
 author: appcompatguy
-manager: saudm
-ms.date: 11/04/2020
+manager: srugh
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: procedural
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 计划 Microsoft Edge 部署
-ms.openlocfilehash: a6c24dcc8c2f53bd6813a0dea9584cd6b5df8285
-ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
+ms.openlocfilehash: 1b56d9874550c2002cec0577a53a3bf5766e2805
+ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "11155249"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11313872"
 ---
 # 计划 Microsoft Edge 部署
 
@@ -55,7 +55,6 @@ ms.locfileid: "11155249"
 了解当前状态后，你可以确定所需的浏览器部署目标，并考虑以下各项：
 
 - 是否要[将 Microsoft Edge 设置为默认浏览器](https://docs.microsoft.com/DeployEdge/edge-default-browser)？
-- 是要隐藏旧版 Microsoft Edge，还是要[使其对用户可用](https://docs.microsoft.com/DeployEdge/microsoft-edge-sysupdate-access-old-edge)？
 - 如何[配置 Microsoft Edge](https://docs.microsoft.com/DeployEdge/configure-microsoft-edge)？
 - 初始部署过程中配置哪些功能至关重要？
 - 解决任何已确定的兼容性或配置问题的过程是什么？
@@ -211,4 +210,3 @@ Microsoft Edge 的应用程序兼容性相当高 - 因此，Microsoft 提供以�
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [视频 - 部署 Microsoft Edge](microsoft-edge-video-deploy.md)
-

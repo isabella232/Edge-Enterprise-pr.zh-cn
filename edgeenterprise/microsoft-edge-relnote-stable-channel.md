@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/28/2021
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 6adba3b373f5989362594d0ff84a2932a661550a
-ms.sourcegitcommit: 6109055bfd0e2deba7f0cc75b27f6a805b16a0b9
+ms.openlocfilehash: 6175f1a4156af697e121ebe7230b5b86d347e825
+ms.sourcegitcommit: b1d49b229c47dc1d99e1b677d75aad38b3334ed6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "11306062"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11314222"
 ---
 # Microsoft Edge Stable 渠道发行说明
 
@@ -28,6 +28,16 @@ ms.locfileid: "11306062"
 
 > [!NOTE]
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 若要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 88.0.705.63：2 月 5 日
+
+[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-5-2021)列出安全更新。
+
+## 版本 88.0.705.62：2 月 4 日
+
+[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-4-2021)列出安全更新。
+
+修复了各种 bug 和性能问题。
 
 ## 版本 88.0.705.56：1 月 28 日
 
@@ -73,10 +83,7 @@ ms.locfileid: "11306062"
   - 密码监视器。 如果保存到浏览器的任何密码与泄露凭据列表中显示的密码匹配，Microsoft Edge 将通知你并提示你更新密码。 密码监视器将代表你扫描匹配项，并且默认处于启用状态。
   - 编辑密码。 现在可以直接在 Microsoft Edge 设置中编辑保存的密码。 每次在 Microsoft Edge 外部更新密码时，都可以通过编辑“设置”中的已保存条目轻松地将保存的旧密码替换为新密码。 
 
-- **性能：**
-
-  - 使用休眠选项卡提高浏览器性能。 休眠选项卡通过将非活动选项卡置于睡眠状态以释放系统资源（如内存和 CPU）来提升浏览器性能，以便活动选项卡或其他应用程序可以使用它们。 用户可以阻止网站进入睡眠状态，并配置非活动选项卡进入睡眠状态之前的时间长度。 若要使用户保持其流，还有一些启发性方法可阻止某些网站进入睡眠状态，例如 Intranet 网站。 此功能仅限于一组启用了实验的随机选择的用户。 我们计划默认使用 Microsoft Edge 版本 89 启用休眠选项卡功能。 可以使用组策略管理此功能。
-  - 通过启动提升提高 Microsoft Edge 启动速度。 为了提高 Microsoft Edge 启动速度，我们开发了一个名为启动提升的功能。 启动提升使 Microsoft Edge 能够在后台运行，从而加快 Microsoft Edge 启动速度。 注意：此功能仅限于随机选择的一组已启用实验的用户。 这些用户向功能团队提供反馈。
+- 通过启动提升提高 Microsoft Edge 启动速度。 为了提高 Microsoft Edge 启动速度，我们开发了一个名为启动提升的功能。 启动提升使 Microsoft Edge 能够在后台运行，从而加快 Microsoft Edge 启动速度。 注意：此功能仅限于随机选择的一组已启用实验的用户。 这些用户向功能团队提供反馈。
 
 - **工作效率：**
 
