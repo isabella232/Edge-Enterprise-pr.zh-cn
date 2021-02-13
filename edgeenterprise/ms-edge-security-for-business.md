@@ -3,19 +3,19 @@ title: 适用于企业的 Microsoft Edge 安全
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 02/05/2021
+ms.date: 02/10/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 适用于企业的 Microsoft Edge 安全
-ms.openlocfilehash: eb981f3ed47b40219e50818531132ed5d385b642
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
+ms.openlocfilehash: 497ca83c64bdc3d1f1b1be8989cf798d65a7eda3
+ms.sourcegitcommit: 543259647f221de88e67d47984617091f9c75cfc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314675"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "11327015"
 ---
 # 适用于企业的 Microsoft Edge 安全
 
@@ -29,7 +29,7 @@ Microsoft Edge 建立在 Chromium 开放源代码项目（与 Google Chrome 核�
 
 根据 NSS Labs 的一项独立研究，相比 Google Chrome 的安全浏览，内置在 Microsoft Edge 中的 SmartScreen 可阻止更多的[网络钓鱼](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Phishing_Report_Q2_2020.pdf)和[恶意软件](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Malware_Report_Q2_2020.pdf)企图。 SmartScreen 可在用户联机工作时提供网站和下载的实时信誉检查，它是 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一部分，它汲取从 Microsoft 庞大的全球资产、研究人员和合作伙伴网络产生的信号和见解。 通过对基于云的动态危险网站和下载列表进行检查，Microsoft Edge 有助于检测和阻止快速消失的短暂威胁。  
 
-[在 NSS Labs 测试期间](https://www.nsslabs.com/tested-technologies/web-browser-security-wbs/)，[带有 SmartScreen 的 Microsoft Edge](https://docs.microsoft.com//DeployEdge/microsoft-edge-security-smartscreen) 阻止了 95.5% 的网络钓鱼尝试和 98.5% 的恶意软件尝试，而 Chrome 安全浏览的比率分别为 86.9% 和86.0%。
+在[NSS Labs的网络钓鱼防护](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Phishing_Report_Q2_2020.pdf)测试期间，具有[SmartScreen](https://docs.microsoft.com//DeployEdge/microsoft-edge-security-smartscreen)的 Microsoft Edge 阻止了 95.5% 的网络钓鱼尝试，在[NSS Labs的恶意软件保护](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Malware_Report_Q2_2020.pdf)测试期间阻止了 98.5% 的恶意软件尝试，而 Chrome 的安全浏览率分别为 86.9% 和 86.0%。
 
 ### Windows 10 上唯一本机支持硬件隔离的浏览器
 

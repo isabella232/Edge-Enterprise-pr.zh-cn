@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 02/03/2021
+ms.date: 02/09/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: e57c840931e2c0e73eb720179fc780182d433831
-ms.sourcegitcommit: 5cdcf44324e35c3ac71d7ca78e512f64d4dcbfea
+ms.openlocfilehash: fb1ae6bb0933767a2c5cbcc59212602aed068b9e
+ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "11313420"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "11325892"
 ---
 # Microsoft Edge - 策略
 
@@ -33,10 +33,11 @@ ms.locfileid: "11313420"
 
 下表列出了此次更新的新策略。
 
-| 名称| 标题 |
+| 名称 | 标题 |
 |--|--|
-|[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|适用于 HTTP Auth 的 Windows Hello 已启用|
-|[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|将网站的托管配置值设置到特定来源|
+|[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|已启用应用程序防护收藏夹同步|
+|[QuickViewOfficeFilesEnabled](#quickviewofficefilesenabled)|在 Microsoft Edge 中管理 QuickView Office 文件功能|
+
 
 
 ## 可用策略
@@ -60,7 +61,8 @@ ms.locfileid: "11313420"
 |策略名称|标题|
 |-|-|
 |[ApplicationGuardContainerProxy](#applicationguardcontainerproxy)|应用程序防护容器代理|
-### [*Cast*](#cast-policies)
+|[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|已启用应用程序防护收藏夹同步|
+### [*投放*](#cast-policies)
 
 |策略名称|标题|
 |-|-|
@@ -382,6 +384,7 @@ ms.locfileid: "11313420"
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|启用完整选项卡促销内容|
 |[PromptForDownloadLocation](#promptfordownloadlocation)|询问在何处保存下载的文件|
 |[QuicAllowed](#quicallowed)|允许 QUIC 协议|
+|[QuickViewOfficeFilesEnabled](#quickviewofficefilesenabled)|在 Microsoft Edge 中管理 QuickView Office 文件功能|
 |[RedirectSitesFromInternetExplorerPreventBHOInstall](#redirectsitesfrominternetexplorerpreventbhoinstall)|阻止安装可将不兼容的网站从 Internet Explorer 重定向到 Microsoft Edge 的 BHO|
 |[RedirectSitesFromInternetExplorerRedirectMode](#redirectsitesfrominternetexplorerredirectmode)|将不兼容的网站从 Internet Explorer 重新定向到 Microsoft Edge|
 |[RelaunchNotification](#relaunchnotification)|通知用户对于挂起的更新，推荐或需要重新启动浏览器|
@@ -537,6 +540,63 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {"ProxyMode": "direct", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
   ```
   
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### ApplicationGuardFavoritesSyncEnabled
+
+  #### 已启用应用程序防护收藏夹同步
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 上自 90 或更高版本起
+
+  #### 描述
+
+  此策略允许启用应用程序防护的 Microsoft Edge 计算机/设备将收藏夹从主机同步到容器，以便收藏夹匹配。
+
+如果配置了 [ManagedFavorites](#managedfavorites)，这些收藏夹也将同步到容器。
+
+如果启用此策略，将禁用在容器中编辑收藏夹。 因此，“添加收藏夹”和“添加收藏夹文件夹”按钮将在容器浏览器的 UI 中模糊显示。
+
+如果禁用或未配置此策略，主机上的收藏夹将不会共享到容器。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：ApplicationGuardFavoritesSyncEnabled
+  - GP 名称：已启用应用程序防护收藏夹同步
+  - GP 路径（强制）：管理模板/Microsoft Edge/应用程序防护设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ApplicationGuardFavoritesSyncEnabled
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
 
   
 
@@ -5233,9 +5293,9 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 
   此策略仅适用于使用公共浏览体验时的 Microsoft Edge 展台模式。
 
-如果启用此策略，将阻止用户更改地址栏中的 URL。
+如果启用或未配置此策略，则用户可以更改地址栏中的 URL。
 
-如果禁用此策略或不对其进行配置，用户则可以更改地址栏中的 URL。
+如果禁用此策略，将阻止用户更改地址栏中的 URL。
 
 有关配置展台模式的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578)。
 
@@ -8116,7 +8176,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
 
 如果配置此策略*和* [NewTabPageSetFeedType](#newtabpagesetfeedtype) 策略，则此策略优先。
 
-如果提供了无效的 URL，则新选项卡将打开 about://blank。
+如果首选空白选项卡，则“about:blank”是要使用的正确 URL，而不是“about://blank”。
 
 此策略仅在加入 Microsoft Active Directory 域的 Windows 实例、已注册设备管理的 Windows 10 专业版或企业版实例，或者通过 MDM 托管或通过 MCX 加入域的 macOS 实例上可用。
 
@@ -10434,7 +10494,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
 * 你有 EDU 租户，但该策略不起作用。
 
-* 你的 IP 因具有无广告搜索体验而被列入白名单。
+* 你的 IP 因具有无广告搜索体验而被列入允许列表。
 
 * 你曾在 Microsoft Edge 旧版上体验了无广告搜索体验，并希望升级到新版本的 Microsoft Edge。
 
@@ -18277,6 +18337,68 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
   #### Mac 信息和设置
   
   - 首选项项名称：QuicAllowed
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### QuickViewOfficeFilesEnabled
+
+  #### 在 Microsoft Edge 中管理 QuickView Office 文件功能
+
+  
+  
+  #### 支持的版本：
+
+  - 自 90 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  允许设置用户是否可以查看 web 上不在 OneDrive 或 SharePoint 上的 Office 文件。 （例如：Word 文档、PowerPoint 演示文稿和 Excel 电子表格）
+
+如果启用或未配置此策略，则可以使用 Office Viewer 在 Microsoft Edge 中查看这些文件，而不是下载这些文件。
+
+如果禁用此策略，将下载这些文件以供查看。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：QuickViewOfficeFilesEnabled
+  - GP 名称：在 Microsoft Edge 中管理 QuickView Office 文件功能
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：QuickViewOfficeFilesEnabled
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  #### Mac 信息和设置
+  
+  - 首选项项名称：QuickViewOfficeFilesEnabled
   - 示例值：
 ``` xml
 <true/>
