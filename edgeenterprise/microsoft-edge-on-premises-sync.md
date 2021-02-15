@@ -3,19 +3,19 @@ title: Active Directory (AD) 用户的本地同步
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 10/05/2020
+ms.date: 02/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Active Directory (AD) 用户的本地同步
-ms.openlocfilehash: ce7fd912bc8cbd71e12444d58073e43df6b138db
-ms.sourcegitcommit: bd68077356a944b99a424d03b444b04aa60272dd
+ms.openlocfilehash: adf0adc8370aa1e18d07d0d2e91727d1ac607bf1
+ms.sourcegitcommit: 90b8eab62edbed0e0a84780abd7d3854bf95c130
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "11099741"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "11328044"
 ---
 # Active Directory (AD) 用户的本地同步
 
@@ -30,7 +30,7 @@ ms.locfileid: "11099741"
 
 ## 工作原理
 
-Microsoft Edge 允许配置文件与 Active Directory (AD) 帐户关联，而 Active Directory (AD) 帐户不能与云同步一起使用。启用本地同步后，AD 配置文件中的数据将保存到名为 profile.pb 的文件中。 默认情况下，此文件存储在 *%APPDATA%/Microsoft/Edge* 中。 写入此文件后，它可以在不同的计算机之间移动，并且用户数据将在每台计算机上读取和写入。
+Microsoft Edge 允许配置文件与 Active Directory (AD) 帐户关联，而 Active Directory (AD) 帐户不能与云同步一起使用。启用本地同步后，AD 配置文件中的数据将保存到名为 profile.pb 的文件中。 默认情况下，此文件存储在 *%APPDATA%/Microsoft/Edge* 中。 写入此文件后，它可以在不同的计算机之间移动，并且用户数据将在每台计算机上读取和写入。 Microsoft Edge 仅读取和写入此文件；管理员负责确保按需要移动文件。
 
 ## 使用本地同步
 
@@ -42,7 +42,7 @@ Microsoft Edge 允许配置文件与 Active Directory (AD) 帐户关联，而 Ac
 
 ### 确保配置文件与 Active Directory 帐户相关联
 
-本地同步仅适用于与 Active Directory (AD) 帐户相关联的配置文件。 如果不存在此类配置文件，则本地同步将无法正常运行。 若要确保用户使用 AD 帐户登录，请配置 [ConfigureOnPremisesAccountAutoSignIn](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configureonpremisesaccountautosignin) 策略。
+本地同步仅适用于与 Active Directory (AD) 帐户相关联的配置文件。 如果不存在此类配置文件，则本地同步将无法正常运行。 若要确保用户使用 AD 帐户登录，请配置 [ConfigureOnPremisesAccountAutoSignIn](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configureonpremisesaccountautosignin) 策略。 对于本地同步，Microsoft Edge 仅依靠 AD 为用户数据建立标识，而 Microsoft Edge 如何读取和写入本地数据和管理员如何为 AD 用户配置漫游之间不存在直接关系。
 
 ### 更改用户数据的位置（可选）
 
@@ -67,7 +67,7 @@ Microsoft Edge 允许配置文件与 Active Directory (AD) 帐户关联，而 Ac
 
 ### 将其他同步策略与本地同步配合使用
 
-如果需要，可以使用 [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) 策略选择性地禁用收藏夹或设置同步。 如果 [SyncDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#syncdisabled) 策略处于活动状态，则也将禁用本地同步。  
+如果需要，可以使用 [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) 策略选择性地禁用收藏夹或设置同步。 [SyncDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#syncdisabled) 策略不会影响本地同步。
 
 ## 另请参阅
 

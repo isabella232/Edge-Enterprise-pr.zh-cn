@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 和企业状态漫游
-ms.openlocfilehash: a759b1d9d4be8dced7bfcc2ef8d0f23b514f4be0
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 6090ecfda2f792d49e452771943bc6348066a3d8
+ms.sourcegitcommit: 90b8eab62edbed0e0a84780abd7d3854bf95c130
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979368"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "11328054"
 ---
 # Microsoft Edge 和企业状态漫游
 
@@ -63,7 +63,7 @@ ESR 设计为 Windows 产品，其中包含对 Windows 设备中数据的处理�
 
 ### 管理
 
-管理员将可控制贵组织中的哪些成员能够启用同步。请参阅 [Microsoft Edge 同步的配置选项](microsoft-edge-enterprise-sync.md#configuration-options-for-microsoft-edge-sync)和[同步组策略](microsoft-edge-enterprise-sync.md#sync-group-policies)。 此外，用户可以针对每台设备打开/关闭同步，并分别切换每个数据属性以进行同步。
+管理员将可控制你的组织中哪些成员能够启用同步。请参阅 [配置 Microsoft Edge 同步](microsoft-edge-enterprise-sync.md#configure-microsoft-edge-sync) 和 [同步组策略](microsoft-edge-enterprise-sync.md#sync-group-policies)。 此外，用户可以针对每台设备打开/关闭同步，并分别切换每个数据属性以进行同步。
 
 ### 密钥管理
 
