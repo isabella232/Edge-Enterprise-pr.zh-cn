@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 政策文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 02/09/2021
+ms.date: 02/17/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,18 +11,19 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 508ff905e0b14a30d14c82558b6328b2619dd8a3
-ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
+ms.openlocfilehash: 2e3258a0427a7fb280023ddc1518f12869f9c791
+ms.sourcegitcommit: b85a216c616e055448028754971cd6dc4c308e81
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "11325902"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "11340582"
 ---
 # Microsoft Edge WebView2 - 策略
 
 最新版本的 Microsoft Edge WebView2 包含以下策略。 可以使用这些策略来配置在你的组织中运行 Microsoft Edge WebView2 的方式。
 
 有关用于控制 Microsoft Edge WebView2 的更新方式和时间的其他策略集的信息，请查看 [Microsoft Edge 更新策略参考](microsoft-edge-update-policies.md)。
+
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 87 或更高版本。
