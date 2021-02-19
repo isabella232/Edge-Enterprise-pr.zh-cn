@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 02/09/2021
+ms.date: 02/17/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: fb1ae6bb0933767a2c5cbcc59212602aed068b9e
-ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
+ms.openlocfilehash: e293fc948625f2a36a94184f1e0502bb5e73f65a
+ms.sourcegitcommit: b85a216c616e055448028754971cd6dc4c308e81
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "11325892"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "11340602"
 ---
 # Microsoft Edge - 策略
 
@@ -29,16 +29,15 @@ ms.locfileid: "11325892"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-## 新策略
+## 新的和已弃用的策略
 
-下表列出了此次更新的新策略。
+下表列出了此更新的新和已弃用的策略。
 
-| 名称 | 标题 |
+| 名称 | 描述文字 |
 |--|--|
-|[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|已启用应用程序防护收藏夹同步|
-|[QuickViewOfficeFilesEnabled](#quickviewofficefilesenabled)|在 Microsoft Edge 中管理 QuickView Office 文件功能|
-
-
+|[SSLErrorOverrideAllowedForOwedgins](#sslerroroverrideallowedfororigins)|允许用户从特定来源的 HTTPS 警告页继续操作|
+|[WindowOcclusionEnabled](#windowocclusionenabled)|启用窗口封闭|
+|[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|启用本机窗口封闭（已弃用）|
 
 ## 可用策略
 
@@ -372,7 +371,7 @@ ms.locfileid: "11325892"
 |[MaxConnectionsPerProxy](#maxconnectionsperproxy)|代理服务器的最大并发连接数|
 |[MediaRouterCastAllowAllIPs](#mediaroutercastallowallips)|允许 Google Cast 连接到所有 IP 地址上的 Cast 设备|
 |[MetricsReportingEnabled](#metricsreportingenabled)|启用使用情况和故障相关数据报告（过时）|
-|[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|启用本机窗口封闭|
+|[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|启用本机窗口封闭（已弃用）|
 |[NavigationDelayForInitialSiteListDownloadTimeout](#navigationdelayforinitialsitelistdownloadtimeout)|为企业模式站点列表设置延迟选项卡导航延迟的超时|
 |[NetworkPredictionOptions](#networkpredictionoptions)|启用网络预测|
 |[NonRemovableProfileEnabled](#nonremovableprofileenabled)|配置用户是否始终具有使用其工作或学校帐户自动登录的默认配置文件|
@@ -397,6 +396,7 @@ ms.locfileid: "11325892"
 |[RoamingProfileSupportEnabled](#roamingprofilesupportenabled)|启用 Microsoft Edge 配置文件数据的漫游副本|
 |[RunAllFlashInAllowMode](#runallflashinallowmode)|将 Adobe Flash 内容设置扩展到所有内容（已过时）|
 |[SSLErrorOverrideAllowed](#sslerroroverrideallowed)|允许用户从 HTTPS 警告页面继续操作|
+|[SSLErrorOverrideAllowedForOwedgins](#sslerroroverrideallowedfororigins)|允许用户从特定来源的 HTTPS 警告页继续操作|
 |[SSLVersionMin](#sslversionmin)|已启用最低 TLS 版本|
 |[SaveCookiesOnExit](#savecookiesonexit)|Microsoft Edge 关闭时保存 cookie|
 |[SavingBrowserHistoryDisabled](#savingbrowserhistorydisabled)|禁止保存浏览器历史记录|
@@ -454,6 +454,7 @@ ms.locfileid: "11325892"
 |[WebWidgetAllowed](#webwidgetallowed)|启用 Web 构件|
 |[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 启动时允许Web构件|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|使用 Windows 代理解析程序（已弃用）|
+|[WindowOcclusionEnabled](#windowocclusionenabled)|启用窗口封闭|
 
 
 
@@ -15093,7 +15094,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   #### 描述
 
-  指定使用硬件加速（如果可用）。 如果启用或未配置此策略，则会启用硬件加速，除非 GPU 功能被明确阻止。
+  指定如果可用时是否使用硬件加速。 如果启用此策略或未配置此策略，则会启用硬件加速，除非 GPU 功能被明确阻止。
 
 如果禁用此策略，则会禁用硬件加速。
 
@@ -17594,9 +17595,9 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
   ### NativeWindowOcclusionEnabled
 
-  #### 启用本机窗口封闭
+  #### 启用本机窗口封闭（已弃用）
 
-  
+  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
   
   #### 支持的版本：
 
@@ -17604,13 +17605,15 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
   #### 描述
 
-  在 Microsoft Edge 中启用本机窗口封闭。
+  已弃用此策略，请改为使用 “["WindowOcclusionEnabled](#windowocclusionenabled)” 策略。 它在 Microsoft Edge 版本 92 中不起作用。
+
+在 Microsoft Edge 中启用本机窗口封闭。
 
 如果启用此设置，为了降低 CPU 使用率和功耗，Microsoft Edge 将检测窗口何时被其他窗口覆盖，并将暂停工作绘制像素。
 
 如果禁用此设置，Microsoft Edge 将不会检测窗口何时被其他窗口覆盖。
 
-如果未设置此策略，则将启用窗口隐藏检测。
+如果未设置此策略，将启用封闭检测。
 
   #### 支持的功能：
 
@@ -17627,7 +17630,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   ##### 组策略 (ADMX) 信息
 
   - GP 唯一名称：NativeWindowOcclusionEnabled
-  - GP 名称：启用本机窗口封闭
+  - GP 名称：启用本机窗口封闭（已弃用）
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -19142,6 +19145,77 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
   - 示例值：
 ``` xml
 <true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### SSLErrorOverrideAllowedForOwedgins
+
+  #### 允许用户从特定来源的 HTTPS 警告页继续操作
+
+  
+  
+  #### 支持的版本：
+
+  - 自 90 或更高版本起，在 Windows 和 macOS 上
+
+  #### 描述
+
+  当用户访问存在 SSL 错误的网站时，Microsoft Edge 会显示警告页面。
+
+如果启用或不配置 [SSLErrorOverrideAllowed](#sslerroroverrideallowed) 策略，则此策略不会执行任何操作。
+
+如果禁用 [SSLErrorOverrideAllowed](#sslerroroverrideallowed) 策略，则通过配置此策略可以为用户能够继续单击 SSL 错误页面的网站配置源模式列表。 用户无法单击不在此列表中的源上的 SSL 错误页面。
+
+如果未配置此策略，则 [SSLErrorOverrideAllowed](#sslerroroverrideallowed) 策略适用于所有网站。
+
+有关有效源模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。 此策略仅基于源匹配，因此会忽略 URL 模式的任何路径或查询。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 字符串列表
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：SSLErrorOverrideAllowedForOrigins
+  - GP 名称：允许用户从特定源的 HTTPS 警告页面继续操作
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### 示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]example.edu"
+
+```
+
+  #### Mac 信息和设置
+  
+  - 首选键名称：SSLErrorOverrideAllowedForOrigins
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
 ```
   
 
@@ -22163,11 +22237,11 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 策略的每个列表项都是具有强制成员的对象：url (要安装的 web 应用的 URL) 
 
 和 3 个可选成员：
-- default_launch_container (指定 web 应用打开时使用的窗口模式—默认为新选项卡) 
+- default_launch_container（指定 web 应用打开时使用的窗口模式 - 默认为新选项卡。）
 
-- create_desktop_shortcut (如果要创建 Linux 和 Windows 桌面快捷方式，则为True。) 
+- create_desktop_shortcut（如果要创建 Linux 和 Microsoft Windows 桌面快捷方式，则为 true。）
 
-- override_app_name (从 Microsoft Edge 89 开始，如果应用名称不是渐进式 Web App (PWA) ，则允许覆盖应用程序名称，如果是 PWA，则允许覆盖临时安装的应用程序名称，但在安装完成之前需要进行身份验证。) 
+- fallback_app_name（从 Microsoft Edge 90 开始，如果应用名称不是渐进式 Web App (PWA) ，则允许覆盖应用名称，或者，如果应用名称是 PWA，则允许覆盖临时安装的应用名称，但在安装完成之前需要进行身份验证。）
 
   #### 支持的功能：
 
@@ -22211,7 +22285,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   }, 
   {
     "default_launch_container": "window", 
-    "override_app_name": "Editor", 
+    "fallback_app_name": "Editor", 
     "url": "https://app.contoso.com/editor"
   }
 ]
@@ -22220,7 +22294,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### 精简示例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "override_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "fallback_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
   ```
   
 
@@ -22248,7 +22322,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   <dict>
     <key>default_launch_container</key>
     <string>window</string>
-    <key>override_app_name</key>
+    <key>fallback_app_name</key>
     <string>Editor</string>
     <key>url</key>
     <string>https://app.contoso.com/editor</string>
@@ -22887,6 +22961,63 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
   - 路径（推荐）：不适用
   - 值名称： WinHttpProxyResolverEnabled
+  - 值类型：REG_DWORD
+
+  ##### 示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### WindowOcclusionEnabled
+
+  #### 启用窗口封闭
+
+  
+  
+  #### 支持的版本：
+
+  - 在 Windows 上自 89 或更高版本起
+
+  #### 描述
+
+  在 Microsoft Edge 中启用窗口封闭。
+
+如果启用此设置，为了降低 CPU 使用率和功耗，Microsoft Edge 将检测窗口何时被其他窗口覆盖，并将暂停工作绘制像素。
+
+如果禁用此设置，Microsoft Edge 将不会检测窗口何时被其他窗口覆盖。
+
+如果未设置此策略，则将启用窗口隐藏检测。
+
+  #### 支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### 数据类型：
+
+  - 布尔
+
+  #### Windows 信息和设置
+
+  ##### 组策略 (ADMX) 信息
+
+  - GP 唯一名称：WindowOcclusionEnabled
+  - GP 名称：启用窗口封闭
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：WindowOcclusionEnabled
   - 值类型：REG_DWORD
 
   ##### 示例值：
