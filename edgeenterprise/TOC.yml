@@ -1,4 +1,4 @@
-# last revised 02/05/2021
+# last revised 03/02/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -25,7 +25,7 @@
       href: microsoft-edge-roadmap.md
     - name: 计划 Microsoft Edge 部署
       href: deploy-edge-plan-deployment.md
-    - name: 你的环境中 Microsoft Edge
+    - name: 你的环境中的 Microsoft Edge
       href: deploy-edge-prepare-to-deploy.md
     - name: Microsoft Edge 就绪
       href: deploy-edge-ready-for-edge.md
@@ -113,6 +113,8 @@
           href: edge-ie-mode-sitelist.md
         - name: 配置 IE 模式策略
           href: edge-ie-mode-policies.md
+        - name: 禁用 Internet Explorer 11
+          href: edge-ie-disable-ie11.md
         - name: “企业站点发现”分步指南
           href: edge-ie-mode-site-discovery.md
         - name: IE 模式 FAQ
@@ -123,7 +125,7 @@
               href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
               href: edge-ie-mode-add-guidance-cookieshare.md
-            - name: Microsoft Edge 中的 Enterprise Site List Manager
+            - name: Microsoft Edge 中的企业 网站列表管理器
               href: edge-ie-mode-site-list-manager.md
 - name: Microsoft Edge 安全
   items:
@@ -131,7 +133,7 @@
       href: ms-edge-security-for-business.md
     - name: Microsoft Edge 终结点的允许列表
       href: microsoft-edge-security-endpoints.md
-    - name: 'DLP (数据丢失防护) '
+    - name: '数据丢失防护 (DLP) '
       href: microsoft-edge-security-dlp.md
     - name: 为用户自动启用密码监视器
       href: microsoft-edge-security-password-monitor.md
@@ -161,7 +163,7 @@
       href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
-        - name: 企业新选项卡页的向后兼容性
+        - name: '"企业新"选项卡页的向后兼容性'
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
@@ -179,7 +181,7 @@
           href: microsoft-edge-update-progressive-rollout.md
         - name: 预配 Microsoft Edge 收藏夹
           href: edge-learnmore-provision-favorites.md
-        - name: 从 Internet Explorer 重定向到 Microsoft Edge
+        - name: 从 Internet Explorer重定向到 Microsoft Edge
           href: edge-learnmore-neededge.md
         - name: 正则表达式 2 (re2.h) 语法
           href: edge-learnmore-regex.md
@@ -207,7 +209,7 @@
       href: microsoft-edge-video-version-rollback.md
     - name: 视频 - Microsoft Edge 中的 PDF 阅读器
       href: microsoft-edge-video-pdf-reader.md
-    - name: 视频 - Microsoft Edge 上的安全浏览
+    - name: 视频 - 在 Microsoft Edge 上安全浏览
       href: microsoft-edge-video-security-smartscreen.md
     - name: 视频-安全性、兼容性和可管理性
       href: microsoft-edge-video-security-compatibility-manageability.md

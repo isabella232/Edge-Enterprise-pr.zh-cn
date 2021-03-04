@@ -3,21 +3,21 @@ title: Microsoft Edge 中的数据丢失防护
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 02/05/2021
+ms.date: 03/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 中的数据丢失防护 (DLP)
-ms.openlocfilehash: 8c7906f69f8d1161b47aa381bc04bcdaa70fe6cd
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
+ms.openlocfilehash: f25e1fa7a610645f6ca0ca10cbcfc69ae8689b7a
+ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314555"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11384980"
 ---
-# Microsoft Edge 中的数据丢失防护 (DLP)
+# <a name="data-loss-prevention-dlp-in-microsoft-edge"></a>Microsoft Edge 中的数据丢失防护 (DLP)
 
 数据丢失防护（DLP）是一套识别和保护企业敏感数据免受未经授权即泄露的技术系统。 为遵守商业标准和行业法规，组织必须保护敏感信息，防止其未经授权的泄露。 敏感信息包括财务数据或个人身份信息（PII），例如信用卡号码、社会保险号码或健康记录等。
 
@@ -27,7 +27,7 @@ ms.locfileid: "11314555"
 
 Microsoft Edge 原身支持两种不同的DLP解决方案，即Microsoft Endpoint DLP和Windows信息保护（WIP）。
 
-## 使用 Microsoft 终结点数据丢失防护（终结点 DLP）
+## <a name="microsoft-endpoint-data-loss-prevention-endpoint-dlp"></a>使用 Microsoft 终结点数据丢失防护（终结点 DLP）
 
 Microsoft 终结点 DLP 是运用现代概念（例如以数据为中心的保护）的下一代数据丢失防护。 它内置在 Windows 10 和 Microsoft Edge 中，因此无需在设备上具备其他代理或插件。
 
@@ -51,15 +51,15 @@ Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合�
 
 有关可供审核和管理的用户活动的更多详细信息，请参阅[可监视并执行操作的端点活动](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on&preserve-view=true)。
 
-## Windows 信息保护
+## <a name="windows-information-protection"></a>Windows 信息保护
 
 查看 [对 Windows 信息保护](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection)的支持，其描述了 Microsoft Edge 支持 Windows 信息保护（WIP）的方式。 可在以下部分中了解系统要求、优点及支持的功能：
 
-- [系统要求](https://docs.microsoft.com/deployedge/:microsoft-edge-security-windows-information-protection#system-requirements)
+- [系统要求](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#system-requirements)
 - [Windows信息保护的优势](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#windows-information-protection-benefits)
 - [Microsoft Edge 支持的 WIP 功能](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-information-protection#wip-features-supported-in-microsoft-edge)
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [视频：数据丢失防护 - Microsoft Edge](https://www.youtube.com/watch?v=dLD04U9eTqg)
