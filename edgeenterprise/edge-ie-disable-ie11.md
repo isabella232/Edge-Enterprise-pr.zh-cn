@@ -3,19 +3,19 @@ title: 禁用 Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 03/02/2021
+ms.date: 03/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge Internet Explorer 11 和使用Internet Explorer模式。
-ms.openlocfilehash: 08d1fe48bfc4614710f4a341a285048194a64794
-ms.sourcegitcommit: 928714329d0b11575494f557498f69a8417a3289
+ms.openlocfilehash: be52f33b091977aff0ca29a4e10d4fc6ea4be957
+ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11385324"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "11393610"
 ---
 # <a name="disable-internet-explorer-11"></a>禁用 Internet Explorer 11
 
@@ -67,7 +67,7 @@ ms.locfileid: "11385324"
 
 若要使用Internet Explorer禁用 11，请按照以下步骤操作：
 
-1. 下载并安装最新的 [Microsoft Edge 策略模板](https://www.microsoft.com/en-us/business/download)。
+1. 下载并安装最新的 [Microsoft Edge 策略模板](https://www.microsoft.com/edge/business/download)。
 2. 打开组策略编辑器。
 3. 转到***计算机配置/管理模板/Windows 组件/Internet Explorer。*** 
 4. 双击禁用 **Internet Explorer 11 作为独立浏览器**。
