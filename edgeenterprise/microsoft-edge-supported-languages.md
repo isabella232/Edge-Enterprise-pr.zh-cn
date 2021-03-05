@@ -3,28 +3,28 @@ title: Microsoft Edge 语言支持
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 10/22/2019
+ms.date: 03/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 语言支持
-ms.openlocfilehash: 60fff62335f5683f338c4a4b1b17ea54d40e19c6
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: ec2c61bc5a94f47769685a2764fa9cc2e58a9898
+ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979336"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11384989"
 ---
-# Microsoft Edge 语言支持
+# <a name="microsoft-edge-language-support"></a>Microsoft Edge 语言支持
 
 本文介绍了如何使用 Microsoft Edge 设置向浏览器添加受支持的语言。 Microsoft Edge 在 Windows 上支持 96 种语言，在 macOS 上支持 91 种语言。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 78 或更高版本。
 
-## 将受支持的语言添加到 Microsoft Edge 中
+## <a name="add-a-supported-language-to-microsoft-edge"></a>将受支持的语言添加到 Microsoft Edge 中
 
 使用以下步骤查看受支持语言的列表，然后将语言添加到 Microsoft Edge 中。
 
@@ -34,7 +34,7 @@ ms.locfileid: "10979336"
 4. 在**添加语言**列表中，你可以搜索语言（**搜索语言**）或使用滚动栏查找你想要添加的语言。
 5. 找到该语言后，选中该语言的相应复选框，然后单击**添加**。 你添加的语言将显示在已为 Microsoft Edge 设置的**首选语言**列表的底部。 你访问的网站将以列表中受支持的第一种语言进行显示。
 
-### 更改首选语言
+### <a name="change-preferred-languages"></a>更改首选语言
 
 你可以重新排序语言首选项、让 Microsoft Edge 提供翻译，并以特定语言查看 Microsoft Edge。
 要更改语言设置，请单击该语言旁边的省略号 (**...**) 以打开“更多操作”。
@@ -51,14 +51,14 @@ ms.locfileid: "10979336"
 > [!NOTE]
 > 你还可以根据首选语言设置来设置拼写检查选项（**检查拼写**）。
 
-## 外语翻译扩展
+## <a name="foreign-language-translator-extension"></a>外语翻译扩展
 
 除了在浏览器中使用外语外，还可以使用 [Translator for Microsoft Edge](https://www.microsoft.com/p/translator-for-microsoft-edge/9nblggh4n4n3) 扩展来翻译 60 多种语言的外语网页和所选文本。
 
 > [!NOTE]
 > 如果翻译扩展在安装后不起作用，请重启 Microsoft Edge。 如果扩展仍不起作用，请通过反馈中心提供反馈。
 
-## 支持的语言
+## <a name="supported-languages"></a>支持的语言
 
 下表列出了 Microsoft Edge 支持的语言。
 
@@ -71,23 +71,18 @@ ms.locfileid: "10979336"
 |                 阿尔巴尼亚语                           |                 阿尔巴尼亚                 |     sq         |
 |            阿姆哈拉语                                 |                埃塞俄比亚                 |     am         |
 |               阿拉伯语                               |              沙特阿拉伯               |     ar         |
-|               亚美尼亚语                             |              亚美尼亚                    |      hy        |
 |               阿萨姆语                             |                  印度                  |     as         |
 |          阿塞拜疆语                               |               阿塞拜疆，拉丁语         |    az          |
-|                   孟加拉语                           |              孟加拉国*                |     bn         |
-|                                                    |                  印度*                 |     bn-IN      |
+|                   孟加拉语                           |              印度*                     |     bn-IN      |
 |                  巴斯克语                            |                  巴斯克语                 |     eu         |
-|                   白俄罗斯语                       |                  白俄罗斯                |     be         |
 |              波斯尼亚语                               |       波斯尼亚和黑塞哥维那，拉丁语     |       bs       |
 |                保加利亚语                           |                保加利亚                 |     bg         |
 |                 加泰罗尼亚语                            |                加泰罗尼亚语                  |     ca         |
-|                切罗基语                            |                   切罗基语              |      chr       |
 |            中文                                 |              简体中文          |     zh-CN      |
 |                                                    |             台湾，繁体中文         |     zh-TW      |
 |                 克罗地亚语                           |                 克罗地亚                 |     hr         |
 |                 捷克语                              |             捷克共和国              |     cs         |
 |                  丹麦语                            |                 丹麦                 |     da         |
-|                   达里语                             |                  阿富汗*           |     prs        |
 |                荷兰语                               |               荷兰               |     nl         |
 |              英语                               |             英国              |     en-GB      |
 |                                                    |              美国              |     en         |
@@ -112,10 +107,8 @@ ms.locfileid: "10979336"
 |                      埃纳德语                       |                  印度                  |     kn         |
 |                哈萨克语                              |               哈萨克斯坦                |     kk         |
 |                  高棉语                             |                柬埔寨                 |     km         |
-|                   斯瓦希里语                        |                    肯尼亚                |     sw         |
 |                      孔卡尼语                       |                  印度                  |     kok        |
 |                   韩语                           |                  韩国                  |     ko         |
-|                    吉尔吉斯语                          |              吉尔吉斯斯坦                 |     ky         |
 |                     老挝语                            |               老挝人民共和国               |     lo         |
 |                  拉脱维亚语                           |                 拉脱维亚                  |     lv         |
 |               立陶宛语                           |                立陶宛                |     lt         |
@@ -126,7 +119,6 @@ ms.locfileid: "10979336"
 |               马耳他语                              |                  马耳他                  |     mt         |
 |          毛利语                                     |               新西兰               |     mi         |
 |               马拉地语                              |                  印度                  |     mr         |
-|                蒙古语                           |           蒙古，西里尔文            |     mn         |
 |                尼泊尔语                              |               尼泊尔                     |     ne         |
 |             挪威语                              |                 挪威，博克马尔语          |     nb         |
 |                                                    |                 挪威，尼诺斯克         |     nn         |
@@ -143,8 +135,6 @@ ms.locfileid: "10979336"
 |            塞尔维亚语                                 |    波斯尼亚和黑塞哥维那，西里尔文*    |   sr-Cyrl-BA   |
 |                                                    |                 塞尔维亚，西里尔文        |   sr-Cyrl-RS   |
 |                                                    |                 塞尔维亚，拉丁语           |   sr-Latn-RS   |
-|                   信德语                           |               巴基斯坦                  |      sd        |
-|                 僧伽罗语                            |           斯里兰卡                     |      si        |
 |                 斯洛伐克语                             |                斯洛伐克                 |        sk      |
 |                斯洛文尼亚语                           |                斯洛文尼亚                 |        sl      |
 |              西班牙语                               |                 墨西哥                  |     es-MX      |
@@ -155,18 +145,16 @@ ms.locfileid: "10979336"
 |                泰卢固语                              |                  印度                  |     te         |
 |                  泰语                              |                泰国                 |     th         |
 |                  土耳其语                           |                 土耳其                  |     tr         |
-|                  土库曼语                           |         土库曼斯坦                    |      tk        |
 |                乌克兰语                           |                 乌克兰                 |     uk         |
 |             乌尔都语                                   |       巴基斯坦伊斯兰共和国      |     ur         |
 |              维吾尔语                                |                   中华人民共和国                   |     ug         |
-|              乌兹别克语                                 |         乌兹别克斯坦，拉丁语               |   uz-Latn      |
 |               巴伦西亚语                            |                  西班牙*                 | ca-Es-VALENCIA |
 |            越南语                              |                 越南                 |     vi         |
 |            威尔士语                                   |             英国              |     cy         |
 
 ---
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge 文档](https://docs.microsoft.com/DeployEdge/)
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

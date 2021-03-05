@@ -1,34 +1,51 @@
 ---
-ms.openlocfilehash: 9e1442968848c6213ad629be126b8e3fc8c805d2
-ms.sourcegitcommit: a5432605280b1a634fdaf31b21b55ba1e2818763
+ms.openlocfilehash: 629b50229375a73f7b79f1753cc99a32a043df5f
+ms.sourcegitcommit: 928714329d0b11575494f557498f69a8417a3289
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "11328323"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11385283"
 ---
 <!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
 
-## 2021 年 2 月 8 日所在一周
+## <a name="week-of-february-22-2021"></a>2021 年 2 月 22 日这一周
+
+整个星期内发布系统。 不发布任何数据。
+
+## <a name="week-of-february-15-2021"></a>2021 年 2 月 15 日这一周
+
 
 | 发布时间 |主题标题 | “更改” |
 |------|------------|--------|
-| 2021/2/8 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>更新 89.0.774.18 注意，添加休眠选项卡功能。  | 已修改 |
-| 2021/2/8 | [Microsoft Edge 内容更新](/DeployEdge/microsoft-edge-content-updates)<br>发布于 2 月 1 日所在一周的注释内容。 | 修改时间 |
-| 2021/2/8 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>次要版本 88.0.705.63 修复。 | 修改时间 |
-| 2021/2/9 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>次要版本 89.0.774.23 修复。 | 修改时间 |
-| 2021/2/9 | [Microsoft Edge 发布计划](/DeployEdge/microsoft-edge-release-schedule)<br>发行说明断链修复。 | 修改时间 |
-| 2021/2/9 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>更新次要版本 88.0.705.63 以调用通配符安全攻击。 | 修改时间 |
-| 2021/2/9 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies)<br>更新和调用 2 个新策略。 | 修改时间 |
-| 2021/2/9 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies)<br>刷新，无更改。 | 修改时间 |
-| 2021/2/10 | [适用于企业的 Microsoft Edge 安全](/DeployEdge/ms-edge-security-for-business)<br>新增了指向有关网络钓鱼和恶意软件测试的 NSS 实验室报告的链接。| 修改时间 |
-| 2021/2/10 | [Microsoft Edge 发布计划](/DeployEdge/microsoft-edge-release-schedule)<br>剪裁表格，删除 3 个最早的行，为未来版本添加了 2 个新行。 | 修改时间 |
-| 2021/2/11 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>次要版本 88.0.705.68 修复。 | 修改时间 |
-| 2021/2/12 | [Active Directory (AD) 用户的本地同步](/DeployEdge/microsoft-edge-on-premises-sync)<br>阐明：同步的工作原理、与 AD 关联的配置文件和 SyncDisabled 策略。 | 修改时间 |
-| 2021/2/12 | [Microsoft Edge 和企业状态漫游](/DeployEdge/microsoft-edge-enterprise-state-roaming)<br>更新少量措词以解决错别字。 | 修改时间 |
-| 2021/2/12 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>次要版本 89.0.774.27 修复。 | 修改时间 |
+| 2/15/2021 | [Microsoft Edge 内容更新](/DeployEdge/microsoft-edge-content-updates)<br>注释 2 月 8 日这一周发布的内容。 | 修改时间 |
+| 2/17/2021 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies)<br>更新浏览器策略参考文档，调用新的和已弃用的策略。 | 修改时间 |
+| 2/17/2021 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies)<br>自动刷新，不更改内容。 | 修改时间 |
+| 2/17/2021 | [Microsoft Edge 安全更新的发行说明](/DeployEdge/microsoft-edge-relnotes-security)<br>Stable 次要版本 88.0.705.74 的安全更新。 | 修改时间 |
+| 2/17/2021 | [Microsoft Edge Stable 渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>进行了更新以反映稳定次要版本 88.0.705.74 的安全更新。 | 修改时间 |
 
 
-## 2021 年 2 月 1 日所在一周
+## <a name="week-of-february-08-2021"></a>2021 年 2 月 8 日所在一周
+
+
+| 发布时间 |主题标题 | “更改” |
+|------|------------|--------|
+| 2021/2/8 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
+| 2021/2/8 | [Microsoft Edge 内容更新](/DeployEdge/microsoft-edge-content-updates) | 修改时间 |
+| 2021/2/8 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
+| 2021/2/9 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
+| 2021/2/9 | [Microsoft Edge 发布计划](/DeployEdge/microsoft-edge-release-schedule) | 修改时间 |
+| 2021/2/9 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
+| 2021/2/9 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies) | 修改时间 |
+| 2021/2/9 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies) | 修改时间 |
+| 2021/2/10 | [适用于企业的 Microsoft Edge 安全](/DeployEdge/ms-edge-security-for-business) | 修改时间 |
+| 2021/2/10 | [Microsoft Edge 发布计划](/DeployEdge/microsoft-edge-release-schedule) | 修改时间 |
+| 2021/2/11 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
+| 2021/2/12 | [Active Directory (AD) 用户的本地同步](/DeployEdge/microsoft-edge-on-premises-sync) | 修改时间 |
+| 2021/2/12 | [Microsoft Edge 和企业状态漫游](/DeployEdge/microsoft-edge-enterprise-state-roaming) | 修改时间 |
+| 2021/2/12 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
+
+
+## <a name="week-of-february-01-2021"></a>2021 年 2 月 1 日所在一周
 
 
 | 发布时间 |主题标题 | “更改” |
@@ -71,7 +88,7 @@ ms.locfileid: "11328323"
 | 2021/2/5 | [适用于企业的 Microsoft Edge 安全](/DeployEdge/ms-edge-security-for-business) | 修改时间 |
 
 
-## 2021 年 1 月 25 日所在一周
+## <a name="week-of-january-25-2021"></a>2021 年 1 月 25 日所在一周
 
 
 | 发布时间 |主题标题 | “更改” |
@@ -86,7 +103,7 @@ ms.locfileid: "11328323"
 | 2021/1/29 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
 
 
-## 2021 年 1 月 18 日所在一周
+## <a name="week-of-january-18-2021"></a>2021 年 1 月 18 日所在一周
 
 
 | 发布时间 |主题标题 | “更改” |
@@ -103,61 +120,3 @@ ms.locfileid: "11328323"
 | 1/19/2021 | [Microsoft Edge 内容更新](/DeployEdge/microsoft-edge-content-updates) | 修改时间 |
 | 1/22/2021 | [配置 Microsoft Edge 展台模式](/DeployEdge/microsoft-edge-configure-kiosk-mode) | 修改时间 |
 | 1/22/2021 | [配置 Microsoft Edge 同步并排除故障](/DeployEdge/microsoft-edge-enterprise-sync) | 修改时间 |
-
-
-## 2020 年 12 月 21 日所在一周
-
-
-| 发布时间 |主题标题 | “更改” |
-|------|------------|--------|
-| 12/21/2020 | [从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享](/DeployEdge/edge-ie-mode-add-guidance-cookieshare) | 修改时间 |
-| 12/21/2020 | [将文件扩展名与 Internet Explorer 模式关联](/DeployEdge/edge-ie-mode-add-guidance-filetype-associations) | 修改时间 |
-| 12/21/2020 | [IE 模式常见问题解答](/DeployEdge/edge-ie-mode-faq) | 修改时间 |
-| 12/21/2020 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
-
-
-## 2021 年 1 月 4 日所在一周
-
-
-| 发布时间 |主题标题 | “更改” |
-|------|------------|--------|
-| 2021 年 1 月 7 日 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies) | 修改时间 |
-| 2021 年 1 月 7 日 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies) | 修改时间 |
-| 2021 年 1 月 8 日 | [Microsoft Edge 安全更新的发行说明](/DeployEdge/microsoft-edge-relnotes-security) | 修改时间 |
-| 2021 年 1 月 8 日 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
-
-
-## 2021 年 1 月 11 日所在一周
-
-
-| 发布时间 |主题标题 | “更改” |
-|------|------------|--------|
-| 1/11/2021 | [Microsoft Edge 内容更新](/DeployEdge/microsoft-edge-content-updates) | 修改时间 |
-| 1/11/2021 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
-| 1/13/2021 | [Microsoft Edge 发布计划](/DeployEdge/microsoft-edge-release-schedule) | 修改时间 |
-| 1/13/2021 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
-| 1/13/2021 | [Microsoft Edge 稳定渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
-| 1/13/2021 | [Microsoft Edge 企业版文档](/DeployEdge/index) | 修改时间 |
-| 1/13/2021 | [将 Microsoft Edge 部署到数百或数千个设备](/DeployEdge/microsoft-edge-video-deploy) | 修改时间 |
-| 1/13/2021 | [Microsoft Edge 和 Microsoft 搜索](/DeployEdge/microsoft-edge-video-search) | 修改时间 |
-| 1/13/2021 | [使用应用程序防护实现 Microsoft Edge 浏览器隔离](/DeployEdge/microsoft-edge-video-security-application-guard) | 修改时间 |
-| 1/13/2021 | [Microsoft Edge 安全性、兼容性和可管理性](/DeployEdge/microsoft-edge-video-security-compatibility-manageability) | 修改时间 |
-| 1/13/2021 | [Microsoft Edge 和数据丢失防护](/DeployEdge/microsoft-edge-video-security-dlp) | 修改时间 |
-| 1/14/2021 | [配置 Microsoft Edge 同步并排除故障](/DeployEdge/microsoft-edge-enterprise-sync) | 修改时间 |
-| 1/15/2021 | [Microsoft Edge 浏览器策略文档](/DeployEdge/microsoft-edge-policies) | 修改时间 |
-| 1/15/2021 | [Microsoft Edge WebView2 策略文档](/DeployEdge/microsoft-edge-webview-policies) | 修改时间 |
-| 1/15/2021 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
-
-
-## 2020 年 12 月 14 日一周
-
-
-| 发布时间 |主题标题 | “更改” |
-|------|------------|--------|
-| 2020 年 12 月 15 日 | 企业中有关 Microsoft Edge 的常见问题 | 已删除 |
-| 2020 年 12 月 16 日 | [可禁止自动传递 Microsoft Edge 的阻止程序工具包](/DeployEdge/microsoft-edge-blocker-toolkit) | 修改时间 |
-| 2020 年 12 月 16 日 | [Microsoft Edge Beta 渠道发行说明](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改时间 |
-| 2020 年 12 月 16 日 | Microsoft Edge 展台模式 | 已删除 |
-| 2020 年 12 月 17 日 | [企业中有关 Microsoft Edge 的常见问题 (FAQ)](/DeployEdge/faqs-edge-in-the-enterprise) | 修改时间 |
-| 2020 年 12 月 17 日 | [Microsoft Edge Stable 渠道发行说明](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改时间 |
-| 2020 年 12 月 17 日 | [Microsoft Edge 支持的操作系统](/DeployEdge/microsoft-edge-supported-operating-systems) | 修改时间 |

@@ -3,21 +3,21 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 02/17/2021
+ms.date: 03/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: ff4364d48518b73c04d010a8a2c7e18abd10ba2e
-ms.sourcegitcommit: 8589a07ebd936070edb2eafa43b83cc6ef283a6e
+ms.openlocfilehash: 3eab05fcb88bcde38de8eb02b50796fcdda12866
+ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "11343835"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11385000"
 ---
-# Microsoft Edge Stable 渠道发行说明
+# <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
 这些发行说明提供有关 Microsoft Edge Stable 渠道中包含的新功能和非安全更新的信息。
 
@@ -29,38 +29,43 @@ ms.locfileid: "11343835"
 > [!NOTE]
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 若要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
 
-## 版本 88.0.705.74：2 月 17 日
 
-安全更新在 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-17-2021) 列出。
-
-## 版本 88.0.705.68：2 月 11 日
+## <a name="version-88070581-february-25"></a>版本 88.0.705.81：2 月 25 日
 
 修复了各种错误和性能问题。
 
-## 版本 88.0.705.63：2 月 5 日
+## <a name="version-88070574-february-17"></a>版本 88.0.705.74：2 月 17 日
+
+安全更新在 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-17-2021) 列出。
+
+## <a name="version-88070568-february-11"></a>版本 88.0.705.68：2 月 11 日
+
+修复了各种错误和性能问题。
+
+## <a name="version-88070563-february-5"></a>版本 88.0.705.63：2 月 5 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-5-2021)列出安全更新。 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2021-21148](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21148)。
 
-## 版本 88.0.705.62：2 月 4 日
+## <a name="version-88070562-february-4"></a>版本 88.0.705.62：2 月 4 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-4-2021)列出安全更新。
 
 修复了各种 bug 和性能问题。
 
-## 版本 88.0.705.56：1 月 28 日
+## <a name="version-88070556-january-28"></a>版本 88.0.705.56：1 月 28 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 88.0.705.53：1 月 26 日
+## <a name="version-88070553-january-26"></a>版本 88.0.705.53：1 月 26 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 88.0.705.50：1 月 21 日
+## <a name="version-88070550-january-21"></a>版本 88.0.705.50：1 月 21 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#january-21-2021)列出安全更新。
 
 <!--- begin major 88  --->
-### 功能更新
+### <a name="feature-updates"></a>功能更新
 
 - **弃用：**
 
@@ -112,9 +117,9 @@ ms.locfileid: "11343835"
   - 浏览器图标将更新为 Fluent 设计系统。 作为在浏览器中持续处理 Fluent Design 的一部分，我们进行了更改，使图标与新的 Microsoft 图标系统更加一致。 这些更改将影响我们的许多高接触用户界面，包括选项卡、地址栏，以及各种菜单中的导航和定位图标。
   - 改进了字体呈现。 改进了文本呈现，以提高清晰度并减少模糊性。
 
-### 策略更新
+### <a name="policy-updates"></a>策略更新
 
-#### 新策略
+#### <a name="new-policies"></a>新策略
 
 添加了 18 个新策略。 从 [Microsoft Edge 企业登录页面](https://www.microsoft.com/edge/business/download)下载更新的管理模板。 已添加以下新策略。
 
@@ -137,7 +142,7 @@ ms.locfileid: "11343835"
 - [WebWidgetAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webwidgetallowed) - 启用 Web 小组件。
 - [WebWidgetIsEnabledOnStartup](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webwidgetisenabledonstartup) - 在 Windows 启动时允许 Web 小组件。
 
-#### 已弃用的策略
+#### <a name="deprecated-policies"></a>已弃用的策略
 
 - [ProactiveAuthEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proactiveauthenabled) - 启用主动身份验证。
 - [ProxyBypassList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxybypasslist) - 配置代理绕过规则。
@@ -146,7 +151,7 @@ ms.locfileid: "11343835"
 - [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver) - 配置代理服务器的地址或 URL。
 - [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies) - 允许 WebDriver 覆盖不兼容的策略。
 
-### 已过时的策略
+### <a name="obsoleted-policies"></a>已过时的策略
 
 - [AllowPopupsDuringPageUnload](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowpopupsduringpageunload) - 允许页面在卸载期间显示弹出窗口。
 - [DefaultPluginsSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultpluginssetting) - 默认 Adobe Flash 设置。
@@ -154,42 +159,42 @@ ms.locfileid: "11343835"
 - [PluginsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#pluginsblockedforurls) - 阻止特定网站上 Adobe Flash 插件。
 - [RunAllFlashInAllowMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#runallflashinallowmode) - 将 Adobe Flash 内容设置扩展到所有内容。
 <!--- end major 88  --->
-## 版本 87.0.664.75：1 月 7 日
+## <a name="version-87066475-january-7"></a>版本 87.0.664.75：1 月 7 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#january-7-2021)列出安全更新。
 
-## 版本 87.0.664.66：12 月 17 日
+## <a name="version-87066466-december-17"></a>版本 87.0.664.66：12 月 17 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 87.0.664.60：12 月 10 日
+## <a name="version-87066460-december-10"></a>版本 87.0.664.60：12 月 10 日
 
 修复了各种 bug 和性能问题。
 
-## 版本87.0.664.57：12月7日
+## <a name="version-87066457-december-7"></a>版本87.0.664.57：12月7日
 
 修复了各种 bug 和性能问题。 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#december-7-2020)列出安全更新。
 
-## 版本 87.0.664.55：12月3日
+## <a name="version-87066455-december-3"></a>版本 87.0.664.55：12月3日
 
 修复了各种 bug 和性能问题。 此版本的以下功能已更新。
 
 - **默认情况下，购物处于启用状态**。 从 Microsoft Edge 版本87开始，企业用户可从 Microsoft Edge 中的购物中受益。 通过购物功能，Microsoft Edge 可帮助用户在在线购物时查找优惠券和更好的价格。 （稳定版本 87.0.664.41 的优惠券体验已发布。） 价格比较体验现已通过此更新提供。 此功能可使用 [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgeshoppingassistantenabled) 策略进行配置。 查看我们的[博客](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) ，了解有关 Microsoft 购物的[详细信息](https://docs.microsoft.com/microsoft-edge/privacy-whitepaper#shopping)。
 
-## 版本 87.0.664.52：11月30日
+## <a name="version-87066452-november-30"></a>版本 87.0.664.52：11月30日
 
 修复了各种 bug 和性能问题。
 
-## 版本 87.0.664.47：11 月 23 日
+## <a name="version-87066447-november-23"></a>版本 87.0.664.47：11 月 23 日
 
 修复了各种 bug 和性能问题。
 
 <!-- begin major 87 --->
-## 版本 87.0.664.41：11 月 19 日
+## <a name="version-87066441-november-19"></a>版本 87.0.664.41：11 月 19 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-19-2020)列出安全更新。
 
-### 功能更新
+### <a name="feature-updates"></a>功能更新
 
 - **从 Internet Explorer 到 Microsoft Edge 的不兼容网站的自动重定向**。 从 Microsoft Edge 87 稳定更新开始，在 Internet Explorer 上显示不兼容消息的公共网站将自动重定向到 Microsoft Edge。 若要了解详细信息并配置此体验，请参阅 [重定向不兼容的网站](https://docs.microsoft.com/deployedge/edge-learnmore-neededge)。
 
@@ -212,9 +217,9 @@ ms.locfileid: "11343835"
   - 双面打印时选择翻转的是哪一面。 用户在双面打印时，可以选择在纸张的长边或短边进行翻转。
   - 选择企业的打印光栅化模式。 控制 Microsoft Edge 打印到 Windows 上的非 PostScript 打印机的方式。 有时，在非PostScript打印机上的打印作业需要进行光栅化才能正确打印。 打印选项有 “完整” 和 “快速”。
 
-### 策略更新
+### <a name="policy-updates"></a>策略更新
 
-#### 新策略
+#### <a name="new-policies"></a>新策略
 
 增加了十项新政策。 从 [Microsoft Edge 企业登录页面](https://www.microsoft.com/edge/business/download)下载更新的管理模板。 已添加以下新策略。
 
@@ -229,58 +234,58 @@ ms.locfileid: "11343835"
 - [SpeechRecognitionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#speechrecognitionenabled) - 配置语音识别。
 - [WebCaptureEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcaptureenabled) - 启用 Microsoft Edge 中的网页获取功能。
 
-#### 已弃用政策
+#### <a name="deprecated-policy"></a>已弃用政策
 
 [NewTabPageSetFeedType](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) - 配置 Microsoft Edge 的新选项卡页面体验。
 
-#### 已过时的策略
+#### <a name="obsoleted-policy"></a>已过时的策略
 
 [EnableDeprecatedWebPlatformFeatures](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enabledeprecatedwebplatformfeatures) - 在有限的时间内重新启用已超过限定时间的 web 平台功能。
 
 <!-- end major 87 -->
 
-## 版本 86.0.622.69：11 月 13 日
+## <a name="version-86062269-november-13"></a>版本 86.0.622.69：11 月 13 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-13-2020)列出安全更新。 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2020-16013](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16013) 和 [CVE-2020-16017](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16017)。
 
-## 版本 86.0.622.68：11 月 11 日
+## <a name="version-86062268-november-11"></a>版本 86.0.622.68：11 月 11 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-11-2020)列出安全更新
 
-## 版本 86.0.622.63：11 月 4 日
+## <a name="version-86062263-november-4"></a>版本 86.0.622.63：11 月 4 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-4-2020)列出安全更新。 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2020-16009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16009)。
 
-## 版本 86.0.622.61：11 月 2 日
+## <a name="version-86062261-november-2"></a>版本 86.0.622.61：11 月 2 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 86.0.622.58：10 月 29 日
+## <a name="version-86062258-october-29"></a>版本 86.0.622.58：10 月 29 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 86.0.622.56：10 月 27 日
+## <a name="version-86062256-october-27"></a>版本 86.0.622.56：10 月 27 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 86.0.622.51：10 月 22 日
+## <a name="version-86062251-october-22"></a>版本 86.0.622.51：10 月 22 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#october-22-2020)列出安全更新
 
-## 版本 86.0.622.48：10 月 20 日
+## <a name="version-86062248-october-20"></a>版本 86.0.622.48：10 月 20 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 86.0.622.43：10 月 15 日
+## <a name="version-86062243-october-15"></a>版本 86.0.622.43：10 月 15 日
 
 修复了各种 bug 和性能问题。
 
 <!-- begin major 86 -->
-## 版本 86.0.622.38：10 月 9 日
+## <a name="version-86062238-october-9"></a>版本 86.0.622.38：10 月 9 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#october-9-2020)列出安全更新
 
-### 功能更新
+### <a name="feature-updates"></a>功能更新
 
 * **回退到先前的 Microsoft Edge 版本。** 如果最新版本的 Microsoft Edge 中有问题，则“回退”功能可让管理员还原到已知的正确版本的 Microsoft Edge。 **注意：** 稳定版本 86.0.622.38 是你可以回滚到的第一个版本，这意味着稳定版本 87 是可以从中回滚的第一个版本。 [了解详细信息](edge-learnmore-rollback.md)。
 
@@ -315,9 +320,9 @@ ms.locfileid: "11343835"
 
 * **使用下载管理器从磁盘删除下载。** 用户现在无需离开浏览器即可从磁盘中删除其载的文件。 全新“删除下载”功能位于下载架或下载页面的弹出菜单中。
 
-### 策略更新
+### <a name="policy-updates"></a>策略更新
 
-#### 新策略
+#### <a name="new-policies"></a>新策略
 
 添加了 23 个新策略。 从 [Microsoft Edge 企业登录页面](https://aka.ms/EdgeEnterprise)下载更新的管理模板。 已添加以下新策略。
 
@@ -345,38 +350,38 @@ ms.locfileid: "11343835"
 - [UserAgentClientHintsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#useragentclienthintsenabled) - 启用“User-Agent 客户端提示”功能（已弃用）。
 - [UserDataSnapshotRetentionLimit](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#userdatasnapshotretentionlimit) - 限制保留用于紧急回退情况的用户数据快照数量。
 
-#### 已弃用的策略
+#### <a name="deprecated-policies"></a>已弃用的策略
 
 - [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled)：启用使用情况和故障相关数据报告。
 - [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)：发送站点信息以改进 Microsoft 服务。
 
-#### 已过时的策略
+#### <a name="obsoleted-policy"></a>已过时的策略
 
 [TLS13HardeningForLocalAnchorsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled) - 为本地信任密钥启用 TLS 1.3 安全功能。
 
-## 版本 85.0.564.70：10 月 6 日
+## <a name="version-85056470-october-6"></a>版本 85.0.564.70：10 月 6 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 85.0.564.68：10 月 1 日
+## <a name="version-85056468-october-1"></a>版本 85.0.564.68：10 月 1 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 85.0.564.63: 9 月 23 日
+## <a name="version-85056463-september-23"></a>版本 85.0.564.63: 9 月 23 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#september-23-2020)列出安全更新
 
-## 版本 85.0.564.51：9 月 9 日
+## <a name="version-85056451-september-9"></a>版本 85.0.564.51：9 月 9 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#september-9-2020)列出安全更新
 
-## 版本 85.0.564.44：8 月 31 日
+## <a name="version-85056444-august-31"></a>版本 85.0.564.44：8 月 31 日
 
 修复了各种 bug 和性能问题。
 
 <!-- 85.0.564.41: August 27 -->
 <!-- Archived to version 84.0.522.40: July 16 -->
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
