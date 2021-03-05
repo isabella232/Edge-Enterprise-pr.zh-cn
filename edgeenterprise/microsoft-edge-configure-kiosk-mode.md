@@ -3,28 +3,28 @@ title: 配置 Microsoft Edge 展台模式
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 02/05/2021
+ms.date: 03/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: 配置 Microsoft Edge 展台模式
-ms.openlocfilehash: 3f6e75b73d8c541bae4442263a5b415aeeb15eb1
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
+description: 了解展台模式功能以及如何配置 Microsoft Edge 展台模式的选项。
+ms.openlocfilehash: 9f2ce26f2c505ba3fc9e2e05b057e5d5df8257fe
+ms.sourcegitcommit: 8da3a4de1a14514014b6d7b103ba79f2ace48044
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314615"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "11388544"
 ---
-# 配置 Microsoft Edge 展台模式
+# <a name="configure-microsoft-edge-kiosk-mode"></a>配置 Microsoft Edge 展台模式
 
 本文介绍如何配置可以试用的 Microsoft Edge 展台模式选项。 还有一个在我们目标之中的功能路线图。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 87 或更高版本。
 
-## 概述
+## <a name="overview"></a>概述
 
 Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可以创建、管理并为其客户提供最佳体验。 提供以下锁定体验：  
 
@@ -33,11 +33,11 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
 
 这两种体验都在运行 Microsoft Edge InPrivate 会话，以保护用户数据。
 
-## 设置 Microsoft Edge 展台模式
+## <a name="set-up-microsoft-edge-kiosk-mode"></a>设置 Microsoft Edge 展台模式
 
 可以使用 Microsoft Edge Stable 渠道版本 87 测试一组初始展台模式功能。 你可以从 [Microsoft Edge (Official Stable 渠道)](https://www.microsoft.com/edge)下载。
 
-### 展台模式支持的功能
+### <a name="kiosk-mode-supported-features"></a>展台模式支持的功能
 
 下表列出了 Microsoft Edge 和 Microsoft Edge 旧版中的展台模式支持的功能。 比较这两个版本的 Microsoft Edge 支持的功能有何不同，将此表用作指南以转换为 Microsoft Edge。
 
@@ -56,35 +56,35 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
 |[管理收藏夹](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#managedfavorites)（策略）|N|Y|89|Y|
 |[启用打印机](https://docs.microsoft.com/deployedge/microsoft-edge-policies#printingenabled)（策略）|Y|Y|89|Y|
 |[配置新标签页页面 URL](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagelocation)（策略）|N|Y||Y|
-|“结束会话”按钮 | N| Y| 89|Y|
+|结束会话按钮 * | N| Y| 89|Y|
 |所有内部 Microsoft Edge URL 已将被阻止，除了*edge://downloads*和*edge://print* |N|Y|89|Y|
-| 已阻止 Ctrl+N（打开一个新窗口） | Y | Y | 89 |Y|
-| 已阻止 Ctrl+T（打开新选项卡） |Y | Y | 89 |Y|
+| Ctrl+N 阻止 (打开新窗口) * | Y | Y | 89 |Y|
+| 已阻止 Ctrl+T（打开新选项卡） |Y | N | 89 |Y|
 |设置和更多 (...) 将仅显示所需的选项  |Y |Y |89 |Y|
 |限制从浏览器启动其他应用程序|Y|Y|90/91|Y|
 |UI 打印设置锁定|Y|Y|90/91|Y|
 |[将新标签页页面设置为主页](https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepageisnewtabpage)（策略）|-|-|TBD|Y|
 
 > [!NOTE]
-> 随着展台模式的发展，将提供更多功能。
+> 后跟“*”的功能仅在已分配的访问单一应用场景中启用。
 
-## 使用展台模式功能
+## <a name="use-kiosk-mode-features"></a>使用展台模式功能
 
 对于数字/交互式标牌和公共浏览，可通过以下 Windows 10 命令行选项调用 Microsoft Edge 展台模式功能。
 
-### 展台模式数字/交互式标牌
+### <a name="kiosk-mode-digitalinteractive-signage"></a>展台模式数字/交互式标牌
  
 ```
 msedge.exe --kiosk www.contoso.com --edge-kiosk-type=fullscreen
 ```
 
-### 展台模式公共浏览
+### <a name="kiosk-mode-public-browsing"></a>展台模式公共浏览
 
 ```
 msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
 ```
 
-### 其他命令行选项
+### <a name="additional-command-line-options"></a>其他命令行选项
 
 - **--no-first-run**：禁用首次 Microsoft Edge 运行体验。
 
@@ -119,7 +119,7 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
    msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing --kiosk-idle-timeout-minutes=1
    ```
 
-## 展台模式的支持策略
+## <a name="support-policies-for-kiosk-mode"></a>展台模式的支持策略
 
 使用下表中列出的任何 Microsoft Edge 策略增强所配置的 Microsoft Edge 展台模式类型的展台体验。 若要了解有关这些策略的信息，请参阅 [Microsoft Edge – 浏览器策略参考](https://docs.microsoft.com/deployedge/microsoft-edge-policies)。
 
@@ -141,9 +141,9 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
 |[SmartScreen 设置](https://docs.microsoft.com/deployedge/microsoft-edge-policies#smartscreen-settings-policies) |Y |Y |
 |[EdgeCollectionsEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgecollectionsenabled)|Y|Y|
 
-## Microsoft Edge 与指派访问
+## <a name="microsoft-edge-with-assigned-access"></a>Microsoft Edge 与指派访问
 
-### 单应用展台
+### <a name="single-app-kiosk"></a>单应用展台
 
 Microsoft Edge 当前支持具有以下锁定体验的单应用分配访问权限的相同 Microsoft Edge 旧版展台模式类型的子集：数字/交互式标志和公共浏览。  
 
@@ -153,13 +153,13 @@ Microsoft Edge 当前支持具有以下锁定体验的单应用分配访问权�
 
 若要在电脑上安装 Windows 10 Insider Preview 内部版本，请按照 [开始使用 Windows 10 Insider Preview 版本](https://docs.microsoft.com/windows-insider/get-started)中的说明进行操作。
 
-### 多应用展台。
+### <a name="multi-app-kiosk"></a>多应用展台。
 
 可用 Windows 10 上的[多应用指派访问](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)（相当于旧版 Microsoft Edge 的“普通浏览”展台模式类型）运行 Microsoft Edge。 若要使用多应用分配的访问权限配置 Microsoft Edge，请按照有关[如何设置多应用展台](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)的说明进行操作。 （Microsoft Edge Stable 渠道的 AUMID 为 **MSEdge**）。
 
 将 Microsoft Edge 与多应用分配的访问权限一同使用时，可以将 Microsoft Edge 展台配置为使用 [Microsoft Edge 浏览器策略](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies)配置浏览体验，以满足你的独特要求。
 
-### 使用 Windows 设置进行配置
+### <a name="configure-using-windows-settings"></a>使用 Windows 设置进行配置
 
 Windows 设置是设置一个或两个单应用展台设备的最简单方法。 使用以下步骤设置单应用展台计算机。
 
@@ -207,7 +207,7 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 
 13. 从展台设备注销，然后使用本地展台帐户登录以验证配置。
 
-## 功能限制
+## <a name="functional-limitations"></a>功能限制
 
 随着展台模式此预览版的发布，我们将继续改进产品和添加新功能。
 
@@ -225,9 +225,9 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 - [Extensions](https://docs.microsoft.com/deployedge/microsoft-edge-policies#extensions-policies)
 - [BackgroundModeEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#backgroundmodeenabled)
 
-## 路线图
+## <a name="roadmap"></a>路线图
 
-### 2021 年初
+### <a name="in-early-2021"></a>2021 年初
 
 我们将添加以下支持和功能：
 
@@ -237,7 +237,7 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 - 限制从浏览器启动其他应用程序。
 - UI 打印设置锁定。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [规划 Microsoft Edge 部署](deploy-edge-plan-deployment.md)
