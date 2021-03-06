@@ -3,23 +3,26 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/03/2021
+ms.date: 03/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: e2a2933e7edf3456bcb33e70d6db7a36ab72aa07
-ms.sourcegitcommit: 6603dc23d8e7ff46df76bc6aa48b93a0b435fe7d
+ms.openlocfilehash: e5096d437f8b70ed94add8341db1cdb1d4b69b84
+ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "11385625"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "11393629"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
 本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 此处提供了这些发行说明的存档 [版本](microsoft-edge-relnote-archive-beta-channel.md)。
+
+> [!NOTE]
+> 我们已更新 Microsoft Edge Beta [89.0.774.18 版本：](#version-89077418-february-3) 年 2 月 3 日发行说明，以反映到位的功能。
 
 ## <a name="version-89077445-march-3"></a>版本 89.0.774.45：3 月 3 日
 
@@ -58,18 +61,9 @@ ms.locfileid: "11385625"
 
 - **PDF 文档中文本选择体验的改善**。 从版本 89 开始，用户将开始在 Microsoft Edge 中打开的 PDF 文档中获得更流畅、一致的文本选择体验。
 
-- **可永久取消“禁用开发人员模式扩展”警告**。 从 Microsoft Edge 版本 89 开始，可以通过选择“不再显示此消息”选项来关闭“禁用开发人员模式扩展”警告。
+- **自动填充字段现在支持"出生日期"**。 现在，Microsoft Edge 通过自动填充地址、姓名、电话号码等数据，帮助你在线填写表单和创建帐户时节省时间和精力。从 Microsoft Edge 版本 89 开始，我们将添加对另一可保存及自动填充字段的支持—出生日期。 可以随时在个人资料设置中查看、编辑和删除此信息。
 
-- **从工具栏管理扩展**。 工具栏上的新扩展菜单允许你轻松隐藏/锁定扩展。 管理扩展和查找新扩展的快速链接将使你轻松找到新扩展和管理现有扩展。
-
-- **支持在地址栏、历史记录搜索页面和历史记录中心上进行自然语言搜索**。 从 Microsoft Edge 版本 89 开始，使用地址栏、历史页面和历史中心上的自然语言搜索使查找文章/网站更容易。 除了标题/URL 关键字匹配之外，用户还可以搜索以前查看过的页面内容/描述/时间（例如“上周的蛋糕食谱”）。
-
-- **工作效率：**
-
-  - “自动填充”现在支持“出生日期”字段。 现在，Microsoft Edge 通过自动填充地址、姓名、电话号码等数据，帮助你在线填写表单和创建帐户时节省时间和精力。从 Microsoft Edge 版本 89 开始，我们将添加对另一可保存及自动填充字段的支持—出生日期。 可以随时在个人资料设置中查看、编辑和删除此信息。
-  - 扩展自动填充建议以包含剪贴板中的内容。 选择要显示为自动填充建议的配置文件/地址字段（例如，电话、电子邮件、邮政编码、城市、州等）时，剪贴板内容将被分析。
-
-- **支持阻止自动播放视频**。 从 Microsoft Edge 版本 89 开始，用户可以选择阻止媒体自动播放。
+- **支持在地址栏、历史记录搜索页面和历史记录中心上进行自然语言搜索**。 从 Microsoft Edge 版本 89 开始，使用地址栏、历史页面和历史中心上的自然语言搜索使查找文章/网站更容易。 除了标题/URL 关键字匹配之外，用户还可以搜索以前查看过的页面内容/描述/时间（例如“上周的蛋糕食谱”）。 此功能仅限于一组启用了实验的随机选择的用户。 这些用户向功能团队提供反馈。
 
 ### <a name="policy-updates"></a>策略更新
 
