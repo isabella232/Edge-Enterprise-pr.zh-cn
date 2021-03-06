@@ -3,29 +3,129 @@ title: Microsoft Edge 稳定渠道的存档发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/21/2021
+ms.date: 03/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 稳定渠道的存档发行说明
-ms.openlocfilehash: b75cbb1de6da97bf15174c36ab0e6a872c4948f2
-ms.sourcegitcommit: 929c95f4254710d9582afbfb7a582dfc0280db3a
+ms.openlocfilehash: 231ef456728931ab05db88e5a250eb8c41ebc1b2
+ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "11297147"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "11393684"
 ---
-# Microsoft Edge 稳定渠道的存档发行说明
+# <a name="archived-release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 稳定渠道的存档发行说明
 
 这些发行说明提供有关 Microsoft Edge Stable 渠道中包含的新功能和非安全更新的信息。 [此处](microsoft-edge-relnotes-security.md)列出所有安全更新。
 
-## 版本 85.0.564.41：8 月 27 日
+## <a name="version-86062238-october-9"></a>版本 86.0.622.38：10 月 9 日
+
+[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#october-9-2020)列出安全更新
+
+### <a name="feature-updates"></a>功能更新
+
+* **回退到先前的 Microsoft Edge 版本。** 如果最新版本的 Microsoft Edge 中有问题，则“回退”功能可让管理员还原到已知的正确版本的 Microsoft Edge。 **注意：** 稳定版本 86.0.622.38 是你可以回滚到的第一个版本，这意味着稳定版本 87 是可以从中回滚的第一个版本。 [了解详细信息](edge-learnmore-rollback.md)。
+
+* **默认情况下，在企业范围内强制启用“同步”。**  默认情况下，管理员可使用[ForceSync](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcesync) 策略为 Azure Active Directory (Azure AD) 帐户启用同步。
+
+* **Windows 7 和 8.1 上的自动配置文件切换。** Windows 10 上的 Microsoft Edge 中当前提供的自动配置文件切换扩展到了早期版本的 Windows（Windows 7 和 8.1）。 有关详细信息，请参阅博客文章中的[自动配置文件 切换](https://blogs.windows.com/msedgedev/2020/04/30/automatic-profile-switching/)。
+
+* ** 默认情况下 SameSite=Lax Cookies**。 为了提高 Web 安全性和隐私，默认情况下，Cookie 将默认为 [SameSite=Lax](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite) 处理。 这意味着 Cookie 将仅在第一方上下文中发送，而对于发送给第三方的请求将被忽略。 此更改可能会对需要 Cookie 才能使第三方资源正常运行的网站造成兼容性影响。 为了允许此类 Cookie，Web 开发人员可以通过在设置 Cookie 时添加显式 `SameSite=none` 和 `Secure` 属性来标记应从第三方上下文设置并发送给第三方上下文的 Cookie。 希望将某些网站排除在此更改之外的企业可以使用 [LegacySameSiteCookieBehaviorEnabledForDomainList](https://docs.microsoft.com/deployedge/microsoft-edge-policies#legacysamesitecookiebehaviorenabledfordomainlist) 策略执行此操作，也可以使用 [LegacySameSiteCookieBehaviorEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled) 策略在所有网站上选择退出此更改。
+
+* **删除 HTML5 应用程序缓存 API。**  从 Microsoft Edge 版本 86 开始，从 Microsoft Edge 中删除了启用网页脱机使用的旧版应用程序缓存 API。 有关将应用程序缓存 API 替换为服务工作进程的信息，Web 开发人员可以查看 [WebDev 文档](https://web.dev/appcache-removal/)。  重要提示：你可以请求[ AppCache OriginTrial 令牌](https://developers.chrome.com/origintrials/#/view_trial/1776670052997660673)，该令牌允许网站继续使用已弃用的应用程序缓存 API，直至 Microsoft Edge 版本90。
+
+* **隐私和安全：**
+
+  * 为早期版本的 Windows 和 macOS 替换[MetricsReportingEnabled]( https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) 和 [SendSiteInformationToImproveServices]( https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)策略。 这些策略在 Microsoft Edge 版本 86 中已弃用，在 Microsoft Edge 版本 89 中将不再使用。<br>
+这些策略将被 Windows 10 上的[允许遥测](https://go.microsoft.com/fwlink/?linkid=2099569)和所有其他平台的全新[DiagnosticData](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#diagnosticdata) 策略取代。 这将使用户能够为 Windows 7、8、8.1 和 macOS 管理发送到 Microsoft 的诊断数据。
+  * 安全 DNS (DNS-over-HTTPS) 支持。  从 Microsoft Edge 版本 86 开始，可以使用设置来控制非托管设备上的安全 DNS。 用户无法访问已托管设备上的这些设置，但 IT 管理员可以使用 [dnsoverhttpsmode](https://docs.microsoft.com/deployedge/microsoft-edge-policies#dnsoverhttpsmode) 组策略启用或禁用安全 DNS。
+
+* **Internet Explorer 模式：** 让用户使用 Microsoft Edge 用户界面 (UI) 在 Internet Explorer 模式下测试网站。 从Microsoft Edge 版本 86 开始，管理员可以为用户启用一个 UI 选项，让用户在 Internet Explorer 模式加载一个选项卡，以进行测试，或者在网站被添加到网站列表的 XML 中之前作为替代。
+
+* **PDF 更新：**
+
+  * PDF 文档目录。 从版本 86 开始，Microsoft Edge 添加了对目录的支持，可让用户轻松浏览 PDF 文档。
+  * 在小型外形规格屏幕上访问所有 PDF 功能。 在具有小型屏幕尺寸的设备上访问 Microsoft Edge PDF 阅读器的所有功能。
+  * PDF 文件上对荧光笔的支持。 通过此更新，用户可使用数字荧光笔直接突出显示 PDF 文件上的文本，就像使用物理荧光笔和纸张一样。
+  * 改进了 PDF 滚动。 现在，你可以在浏览较长的 PDF 文档时体验流畅的滚动效果。
+
+* **当用户开始在 Microsoft Edge 加载项网站中键入搜索查询时，将看到自动完成建议。** 自动完成将帮助用户快速完成搜索查询，而无需键入完整字符串。 这将非常有用，因为用户无需记住正确的拼写，可以从显示的可用选项中进行选择。
+
+* **使用组策略向全新选项卡页面 (NTP) 中添加自定义图像。** 从 Microsoft Edge 版本 86 开始，NTP 可以选择使用自定义用户提供的图像来替换默认图像。 组策略也支持管理此图像属性的功能。
+
+* **匹配自定义键盘快捷方式与 VS Code。** Microsoft Edge 开发工具现在支持自定义开发工具中的键盘快捷方式，使其匹配你的编辑器/IDE。 （在 Microsoft Edge 84 中，我们添加了匹配开发工具键盘快捷方式和 VS Code 的功能）。
+
+* **使用下载管理器从磁盘删除下载。** 用户现在无需离开浏览器即可从磁盘中删除其载的文件。 全新“删除下载”功能位于下载架或下载页面的弹出菜单中。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+添加了 23 个新策略。 从 [Microsoft Edge 企业登录页面](https://aka.ms/EdgeEnterprise)下载更新的管理模板。 已添加以下新策略。
+
+- [CollectionsServicesAndExportsBlockList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#collectionsservicesandexportsblocklist) - 阻止访问指定服务列表及在集锦中导出目标。
+- [DefaultFileSystemReadGuardSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultfilesystemreadguardsetting) - 控制文件系统 API 在读取中的使用。
+- [DefaultFileSystemWriteGuardSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultfilesystemwriteguardsetting) -控制文件系统 API 在写入中的使用。
+- [DefaultSensorsSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultsensorssetting) - 默认传感器设置。
+- [DefaultSerialGuardSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultserialguardsetting) - 控制串行 API 的使用。
+- [DiagnosticData](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#diagnosticdata) - 发送有关浏览器使用情况的必需和可选诊断数据。
+- [EnterpriseModeSiteListManagerAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enterprisemodesitelistmanagerallowed) - 允许访问 Enterprise Mode Site List Manager 工具。
+- [FileSystemReadAskForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#filesystemreadaskforurls) - 允许在这些网站上通过文件系统 API 进行读取访问。
+- [FileSystemReadBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#filesystemreadblockedforurls) - 阻止在这些网站上通过文件系统 API 进行读取访问。
+- [FileSystemWriteAskForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#filesystemwriteaskforurls) - 允许在这些网站上对文件和目录进行写入访问。
+- [FileSystemWriteBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#filesystemwriteblockedforurls) - 阻止在这些网站上对文件和目录进行写入访问。
+- [ForceSync](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcesync) - 强制同步浏览器数据，但不显示同步许可提示。
+- [InsecureFormsWarningsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#insecureformswarningsenabled) - 启用不安全窗体的警告。
+- [InternetExplorerIntegrationTestingAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed) - 允许 Internet Explorer 模式测试。
+- [SpotlightExperiencesAndRecommendationsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#spotlightexperiencesandrecommendationsenabled) - 选择用户是否可接收自定义的背景图像和文本、建议、通知及 Microsoft 服务提示。
+- [NewTabPageAllowedBackgroundTypes](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpageallowedbackgroundtypes) - 配置全新选项卡页面布局允许使用的背景类型。
+- [SaveCookiesOnExit](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#savecookiesonexit) - Microsoft Edge 关闭时保存 Cookie。
+- [SensorsAllowedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sensorsallowedforurls) - 允许访问特定网站上的传感器。
+- [SensorsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sensorsblockedforurls) - 阻止访问特定网站上的传感器。
+- [SerialAskForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#serialaskforurls) - 在特定网站上允许串行 API。
+- [SerialBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#serialblockedforurls) - 在特定网站上阻止串行 API。
+- [UserAgentClientHintsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#useragentclienthintsenabled) - 启用“User-Agent 客户端提示”功能（已弃用）。
+- [UserDataSnapshotRetentionLimit](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#userdatasnapshotretentionlimit) - 限制保留用于紧急回退情况的用户数据快照数量。
+
+#### <a name="deprecated-policies"></a>已弃用的策略
+
+- [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled)：启用使用情况和故障相关数据报告。
+- [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)：发送站点信息以改进 Microsoft 服务。
+
+#### <a name="obsoleted-policy"></a>已过时的策略
+
+[TLS13HardeningForLocalAnchorsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled) - 为本地信任密钥启用 TLS 1.3 安全功能。
+
+## <a name="version-85056470-october-6"></a>版本 85.0.564.70：10 月 6 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-85056468-october-1"></a>版本 85.0.564.68：10 月 1 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-85056463-september-23"></a>版本 85.0.564.63: 9 月 23 日
+
+[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#september-23-2020)列出安全更新
+
+## <a name="version-85056451-september-9"></a>版本 85.0.564.51：9 月 9 日
+
+[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#september-9-2020)列出安全更新
+
+## <a name="version-85056444-august-31"></a>版本 85.0.564.44：8 月 31 日
+
+修复了各种 bug 和性能问题。
+
+<!-- 85.0.564.41: August 27 -->
+
+## <a name="version-85056441-august-27"></a>版本 85.0.564.41：8 月 27 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-27-2020)列出安全更新
 
-### 功能更新
+### <a name="feature-updates"></a>功能更新
 
 - **收藏夹和设置的本地同步**。 你现在可以在自己的环境中实现 Active Directory 配置文件之间的浏览器收藏夹和设置同步，而无需云同步。
 
@@ -42,9 +142,9 @@ ms.locfileid: "11297147"
    - Microsoft Edge 开发工具支持 Surface Duo 仿真。 Microsoft Edge 开发工具能够仿真 Surface Duo，因此可测试 Web 内容在双屏设备上的显示效果。 若要在开发工具中打开此试验，请在 Windows 上按 Ctrl+Shift+M 或在 macOS 上按 Command+Shift+M 来输入设备模式，然后在设备下拉列表中选择 Surface Duo。
    - Microsoft Edge 开发工具允许键盘快捷方式和 VS Code 相匹配。 Microsoft Edge 开发工具支持自定义开发工具中的键盘快捷方式，使其匹配你的编辑器/IDE。 在 Microsoft Edge 85 中，我们添加了匹配开发工具键盘快捷方式和 VS Code 的功能。 此更改将有助于增加 VS Code 和开发工具之间的工作效率。
 
-### 策略更新
+### <a name="policy-updates"></a>策略更新
 
-#### 新策略
+#### <a name="new-policies"></a>新策略
 
 添加了 13 个新策略。 从 [Microsoft Edge 企业登录页面](https://aka.ms/EdgeEnterprise)下载更新的管理模板。 已添加以下新策略。
 
@@ -62,53 +162,53 @@ ms.locfileid: "11297147"
 - [RoamingProfileLocation](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilelocation) - 设置漫游配置文件目录。
 - [TLSCsipherSuiteDenyList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tlsciphersuitedenylist) - 指定要禁用的 TLS 密码套件。
 
-#### 已过时的策略
+#### <a name="obsoleted-policies"></a>已过时的策略
 
 - [EnableDomainActionsDownload](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enabledomainactionsdownload) - 启用来自 Microsoft 的域操作下载。
 - [WebComponentsV0Enabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcomponentsv0enabled) - 重新启用 Web 组件 v0 API 至 M84。
 - [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies)- 允许 WebDriver 覆盖不兼容策略。
 
-## 版本 84.0.522.63：8 月 20 日
+## <a name="version-84052263-august-20"></a>版本 84.0.522.63：8 月 20 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-20-2020)列出安全更新。
 
-## 版本84.0.522.61：8 月 17 日
+## <a name="version-84052261-august-17"></a>版本84.0.522.61：8 月 17 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 84.0.522.59：8 月 11日
+## <a name="version-84052259-august-11"></a>版本 84.0.522.59：8 月 11日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-11-2020)列出安全更新
 
-## 版本 84.0.522.58：8 月 10 日
+## <a name="version-84052258-august-10"></a>版本 84.0.522.58：8 月 10 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 84.0.522.52：8 月 1 日
+## <a name="version-84052252-august-1"></a>版本 84.0.522.52：8 月 1 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 84.0.522.50：7 月 31 日
+## <a name="version-84052250-july-31"></a>版本 84.0.522.50：7 月 31 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 84.0.522.49：7 月 29 日
+## <a name="version-84052249-july-29"></a>版本 84.0.522.49：7 月 29 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#july-29-2020)列出安全更新
 
-## 版本 84.0.522.48：7 月 28 日
+## <a name="version-84052248-july-28"></a>版本 84.0.522.48：7 月 28 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 84.0.522.44：7 月 23 日
+## <a name="version-84052244-july-23"></a>版本 84.0.522.44：7 月 23 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 84.0.522.40：7 月 16 日
+## <a name="version-84052240-july-16"></a>版本 84.0.522.40：7 月 16 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#july-16-2020)列出安全更新
 
-### 功能更新
+### <a name="feature-updates"></a>功能更新
 
 - 该版本的 Microsoft Edge 缩短了 Internet Explorer 模式的网站列表下载时间。 没有缓存网站列表时，我们将 Internet Explorer 模式网站列表的下载延迟从 60 秒的等待时间缩短为了 0 秒。 我们还添加了组策略支持，用来应对需要推迟到网站列表下载后再进行 Internet Explorer 模式主页导航的情况。 有关详细信息，请参阅 [DelayNavigationsForInitialSiteListDownload](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#delaynavigationsforinitialsitelistdownload) 策略。
 
@@ -145,9 +245,9 @@ ms.locfileid: "11297147"
 
 - 对开发工具的多项更新，包括支持自定义键盘快捷方式以匹配 VS Code 和支持以高对比度查看开发工具。  有关详细信息，请参阅[开发工具 (Microsoft Edge 84) 中的新增功能](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/whats-new/2020/05/devtools)。
 
-### 策略更新
+### <a name="policy-updates"></a>策略更新
 
-#### 新策略
+#### <a name="new-policies"></a>新策略
 
 添加了 7 个新策略。 从 [Microsoft Edge 企业登录页面](https://aka.ms/EdgeEnterprise)下载更新的管理模板。 已添加以下新策略。
 
@@ -159,56 +259,56 @@ ms.locfileid: "11297147"
 - [NativeWindowOcclusionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#nativewindowocclusionenabled) - 为降低 CPU 使用率和功耗，Microsoft Edge 将检测窗口何时被其他窗口覆盖，并将暂停工作绘制像素。
 - [NavigationDelayForInitialSiteListDownloadTimeout](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#navigationdelayforinitialsitelistdownloadtimeout) -为企业模式网站列表设置标签页导航的延迟超时。
 
-#### 已弃用的策略
+#### <a name="deprecated-policies"></a>已弃用的策略
 
 - [AllowSyncXHRInPageDismissal](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowsyncxhrinpagedismissal) - 允许页面在页面关闭期间发送同步 XHR 请求。
 - [BuiltinCertificateVerifierEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#builtincertificateverifierenabled) - 确定是否将使用内置证书验证程序来验证服务器证书。
 - [StricterMixedContentTreatmentEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#strictermixedcontenttreatmentenabled) - 对混合内容进行更严格的处理。
 
-#### 已过时的策略
+#### <a name="obsoleted-policy"></a>已过时的策略
 
 [ForceNetworkInProcess](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcenetworkinprocess) - 强制网络代码在浏览器进程中运行。
 
 <!-- End 84 -->
-## 版本 83.0.478.64：7 月 13 日
+## <a name="version-83047864-july-13"></a>版本 83.0.478.64：7 月 13 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 83.0.478.61：7 月 7 日
+## <a name="version-83047861-july-7"></a>版本 83.0.478.61：7 月 7 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 83.0.478.58：6 月 30 日
+## <a name="version-83047858-june-30"></a>版本 83.0.478.58：6 月 30 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 83.0.478.56：6 月 24 日
+## <a name="version-83047856-june-24"></a>版本 83.0.478.56：6 月 24 日
 
 修复了各种 bug 和性能问题。
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#june-24-2020)列出安全更新
 
-## 版本 83.0.478.54：6 月 17 日
+## <a name="version-83047854-june-17"></a>版本 83.0.478.54：6 月 17 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#june-17-2020)列出安全更新
 
-## 版本 83.0.478.50：6 月 15 日
+## <a name="version-83047850-june-15"></a>版本 83.0.478.50：6 月 15 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 83.0.478.45：6 月 4 日
+## <a name="version-83047845-june-4"></a>版本 83.0.478.45：6 月 4 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#june-4-2020)列出安全更新
 
-## 版本 83.0.478.44：6 月 1 日
+## <a name="version-83047844-june-1"></a>版本 83.0.478.44：6 月 1 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 83.0.478.37：5 月 21 日
+## <a name="version-83047837-may-21"></a>版本 83.0.478.37：5 月 21 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#may-21-2020)列出安全更新
 
-### 功能更新
+### <a name="feature-updates"></a>功能更新
 
 - Microsoft Edge 更新现将逐步推出。 今后将在几天时间内向我们的用户推出 Microsoft Edge 的更新。 这样，我们能够保护你们当中的更多人免受意外错误更新的困扰，这改进了更新体验。 而作为用户，你将继续获得无缝顺畅的自动更新。 如果你的组织没有注册自动更新，你将不受此更改的影响。 若要了解详细信息，请参阅[“渐进式推出”一文](microsoft-edge-update-progressive-rollout.md)。
 - Microsoft Defender SmartScreen 改进：对 Microsoft Defender SmartScreen 服务进行了多种改进，如改进了对加载时重定向的恶意网站的保护，以及通过 Microsoft Defender SmartScreen 安全页完全替换恶意网站的顶级框架阻止。 顶级框架阻止功能可阻止播放恶意网站中的音频和其他媒体，从而使用户感觉更容易、更轻松。
@@ -244,9 +344,9 @@ ms.locfileid: "11297147"
 
 - 在页面关闭期间禁止同步 XmlHttpRequest。 将取消在网页卸载期间发送同步 XmlHttpRequest 的操作。 此更改将提高浏览器的性能和可靠性，但如果有 Web 应用程序尚未更新以使用更新式的 Web API（包括 sendBeacon 和 fetch），则这些应用可能会受到影响。 在 Microsoft Edge 88 版本之后，才可使用用于禁用此更改并在页面关闭期间允许同步 XHR 的组策略。 有关详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](https://docs.microsoft.com/microsoft-edge/web-platform/site-impacting-changes)。
 
-### 策略更新
+### <a name="policy-updates"></a>策略更新
 
-#### 新策略
+#### <a name="new-policies"></a>新策略
 
 添加了 15 个新策略。 从 [Microsoft Edge 企业登录页面](https://aka.ms/EdgeEnterprise)下载更新的管理模板。 已添加以下新策略。
 
@@ -266,7 +366,7 @@ ms.locfileid: "11297147"
 - [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) - 配置同步中排除的类型列表。
 - [NativeWindowOcclusionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#nativewindowocclusionenabled) - 允许隐藏本机窗口。
 
-#### 已弃用策略
+#### <a name="deprecated-policy"></a>已弃用策略
 
 以下策略将在此版本中继续有效。 在未来的版本中，它将被“弃用”。
 
@@ -274,31 +374,31 @@ ms.locfileid: "11297147"
 
 <!-- end 83 -->
 
-## 版本 81.0.416.77：5 月 18 日
+## <a name="version-81041677-may-18"></a>版本 81.0.416.77：5 月 18 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 81.0.416.72：5 月 7 日
+## <a name="version-81041672-may-7"></a>版本 81.0.416.72：5 月 7 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#may-7-2020)列出安全更新
 
-## 版本 81.0.416.68：4 月 29 日
+## <a name="version-81041668-april-29"></a>版本 81.0.416.68：4 月 29 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#april-29-2020)列出安全更新
 
-## 版本 81.0.416.64：4 月 23 日
+## <a name="version-81041664-april-23"></a>版本 81.0.416.64：4 月 23 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#april-23-2020)列出安全更新
 
-## 版本 81.0.416.58：4 月 17 日
+## <a name="version-81041658-april-17"></a>版本 81.0.416.58：4 月 17 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#april-17-2020)列出安全更新
 
-## 版本 81.0.416.53：4 月 13 日
+## <a name="version-81041653-april-13"></a>版本 81.0.416.53：4 月 13 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#april-13-2020)列出安全更新
 
-### 功能更新
+### <a name="feature-updates"></a>功能更新
 
 - 新增了对 Windows 信息保护（WIP）的支持，帮助企业保护敏感数据免受未经授权的泄露。 [了解详情](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection)。
 
@@ -344,9 +444,9 @@ ms.locfileid: "11297147"
 `MicrosoftEdgeEnterpriseX64.msi DONOTCREATEDESKTOPSHORTCUT=true`<br>
 在即将发布的版本中，将提供一个组策略来支持此功能。
 
-### 策略更新
+### <a name="policy-updates"></a>策略更新
 
-#### 新策略
+#### <a name="new-policies"></a>新策略
 
 添加了 11 个新策略。 从 [Microsoft Edge 企业登录页面](https://aka.ms/EdgeEnterprise)下载更新的管理模板。 已添加以下新策略。
 
@@ -362,65 +462,65 @@ ms.locfileid: "11297147"
 - [TLS13HardeningForLocalAnchorsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled) - 为本地信任密钥启用 TLS 1.3 安全功能。
 - [ConfigureOnPremisesAccountAutoSignIn](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configureonpremisesaccountautosignin) - 当没有 Azure AD 域帐户时配置 Active Directory 域帐户的自动登录。
 
-#### 策略名称和标题更改
+#### <a name="policy-name-and-caption-changes"></a>策略名称和标题更改
 
 策略 `OmniboxMSBProviderEnabled` 更改为 [AddressBarMicrosoftSearchInBingProviderEnabled](https://docs.microsoft.com//DeployEdge/microsoft-edge-policies#addressbarmicrosoftsearchinbingproviderenabled)-策略的标题为“在地址栏中的必应建议中启用 Microsoft 搜索”。
 
-#### 已弃用的策略
+#### <a name="deprecated-policies"></a>已弃用的策略
 
 以下策略在此版本中继续有效。 在未来的版本中，它们将被“弃用”。
 
 - [WebComponentsV0Enabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcomponentsv0enabled) - 重新启用 Web 组件 v0 API 至 M84。
 - [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies) - 允许 WebDriver 覆盖不兼容策略。
 
-#### 已解决的问题
+#### <a name="resolved-issues"></a>已解决的问题
 
 - 修复了以下问题：即使下载了文件，Microsoft Edge 上的IE模式也导致显示正在进行的下载对话框。
 - 修复了以下问题：已处于 IE 模式的页面触发打开新的 IE 模式选项卡时，Microsoft Edge 会丢弃会话 Cookie。
 
-## 版本 80.0.361.111：4 月 7 日
+## <a name="version-800361111-april-7"></a>版本 80.0.361.111：4 月 7 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 80.0.361.109：4 月 1 日
+## <a name="version-800361109-april-1"></a>版本 80.0.361.109：4 月 1 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#april-1-2020)列出安全更新
 
-## 版本 80.0.361.69：3 月 19 日
+## <a name="version-80036169-march-19"></a>版本 80.0.361.69：3 月 19 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#march-19-2020)列出安全更新
 
-## 版本 80.0.361.66：3 月 4 日
+## <a name="version-80036166-march-4"></a>版本 80.0.361.66：3 月 4 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#march-4-2020)列出安全更新
 
-## 版本 80.0.361.62：2 月 25 日
+## <a name="version-80036162-february-25"></a>版本 80.0.361.62：2 月 25 日
 
 [此处](https://docs.microsoft.com/deployedge/microsoft-edge-relnotes-security#february-25-2020)列出安全更新
 
-## 版本 80.0.361.57：2 月 20 日
+## <a name="version-80036157-february-20"></a>版本 80.0.361.57：2 月 20 日
 
 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#february-20-2020)列出安全更新
 
-## 版本 80.0.361.56：2 月 19 日
+## <a name="version-80036156-february-19"></a>版本 80.0.361.56：2 月 19 日
 
 修复了各种 bug 和性能问题。
 
-## 版本 80.0.361.54：2 月 14 日
+## <a name="version-80036154-february-14"></a>版本 80.0.361.54：2 月 14 日
 
-### 已解决的问题
+### <a name="resolved-issues"></a>已解决的问题
 
 - 修复了密码、付款和 Cookie 无法导入至 Microsoft Edge 的问题。
 
-## 版本 80.0.361.50：2 月 11 日
+## <a name="version-80036150-february-11"></a>版本 80.0.361.50：2 月 11 日
 
 修复了各种 bug 和性能修复程序。
 
-## 版本 80.0.361.48：2 月 7 日
+## <a name="version-80036148-february-7"></a>版本 80.0.361.48：2 月 7 日
 
 [此处](https://docs.microsoft.com/deployedge/microsoft-edge-relnotes-security#february-7-2020)列出安全更新
 
-### 功能更新
+### <a name="feature-updates"></a>功能更新
 
 - 添加了 SmartScreen 保护，可防止下载可能有害的应用。 [了解详细信息](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/detect-block-potentially-unwanted-apps-windows-defender-antivirus)
 - 添加了对 Dolby Vision 播放的支持。
@@ -434,9 +534,9 @@ ms.locfileid: "11297147"
 - 通过组策略管理浏览器时，为 PDF UI 添加了深色主题支持。
 - 已将 Adobe Flash 更新到版本 32.0.0.321。 [了解详细信息](https://helpx.adobe.com/flash-player/release-note/fp_32_air_32_release_notes.html)
 
-### 策略更新
+### <a name="policy-updates"></a>策略更新
 
-#### 新策略
+#### <a name="new-policies"></a>新策略
 
 添加了 16 个新策略。 从 [Microsoft Edge 企业登录页面](https://aka.ms/EdgeEnterprise)下载更新的管理模板。 已添加以下新策略。
 
@@ -457,17 +557,17 @@ ms.locfileid: "11297147"
 - [WebComponentsV0Enabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcomponentsv0enabled) - 重新启用 Web 组件 v0 API 至 M84。
 - [WebRtcLocalIpsAllowedUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webrtclocalipsallowedurls) - 通过 WebRTC 管理本地 IP 地址的暴露。
 
-#### 已弃用的策略
+#### <a name="deprecated-policies"></a>已弃用的策略
 
 已弃用以下策略。
 
 - [NewTabPageCompanyLogo](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagecompanylogo) - 设置新标签页公司徽标。
 
-### 已解决的问题
+### <a name="resolved-issues"></a>已解决的问题
 
 - 修复了音频在 Citrix 环境中不工作的问题。
 - 修复了 Microsoft Edge 和旧版 Microsoft Edge 并排体验导致旧链接损坏和崩溃的问题。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
