@@ -1,10 +1,8 @@
-# last revised 03/02/2021
+# last revised 03/08/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
   href: 'https://docs.microsoft.com/microsoft-edge/'
-- name: Microsoft Edge 内容更新
-  href: microsoft-edge-content-updates.md
 - name: Microsoft Edge 入门
   items:
     - name: 了解 Microsoft Edge 渠道
@@ -97,8 +95,14 @@
       href: microsoft-edge-kiosk-mode-transition-plan.md
     - name: 配置 Microsoft Edge 展台模式
       href: microsoft-edge-configure-kiosk-mode.md
-    - name: Microsoft Edge 同步
-      href: microsoft-edge-enterprise-sync.md
+    - name: Microsoft Edge 企业同步
+      items:
+        - name: 配置 Microsoft Edge 同步
+          href: microsoft-edge-enterprise-sync.md
+        - name: 诊断和修复 Microsoft Edge 同步问题
+          href: microsoft-edge-troubleshoot-enterprise-sync.md
+        - name: 同步常见问题解答
+          href: microsoft-edge-enterprise-sync-faq.md
     - name: Active Directory 用户的本地同步
       href: microsoft-edge-on-premises-sync.md
     - name: Microsoft Edge 中的 PDF 阅读器
