@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/03/2021
+ms.date: 03/10/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 130ed008a190edb92649beb658084c157ebade50
-ms.sourcegitcommit: bd83f2fbc4d7943e8f19c24414b65ed9d9009f2d
+ms.openlocfilehash: 94ad135f23dae83391e873ef120e6c88b44d0e27
+ms.sourcegitcommit: e3762b1a204c143b4e2264100affae3d9ddaaffc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "11388724"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "11406373"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -29,29 +29,36 @@ ms.locfileid: "11388724"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-## <a name="new-policies"></a>新策略
+## <a name="new-and-deprecated-policies"></a>新的和已弃用的策略
 
-下表列出了此次更新的新策略。
+下表列出了此更新的新和已弃用的策略。
 
-| 名称 | 描述文字 |
+|名称|描述文字|
 |--|--|
-|[PrintRasterizationMode](#printrasterizationmode)|打印光栅化模式|
+|[SSLVersionMin](#sslversionmin)|启用最低 TLS 版本 (已弃用) |
 
 ## <a name="available-policies"></a>可用策略
 
 这些表列出了本版本 Microsoft Edge 中提供的所有与浏览器相关的组策略。 使用表中的链接获取有关特定策略的更多详细信息。
 
-|||
-|-|-|
-|[应用程序防护设置](#application-guard-settings)|[Cast](#cast)|
-|[内容设置](#content-settings)|[默认搜索提供程序](#default-search-provider)|
-|[Extensions](#extensions)|[HTTP 身份验证](#http-authentication)|
-|[展台模式设置](#kiosk-mode-settings)|[可管理性](#manageability)|
-|[本机消息传递](#native-messaging)|[密码管理器和保护](#password-manager-and-protection)|
-|[性能](#performance)|[打印](#printing)|
-|[代理服务器](#proxy-server)|[睡眠选项卡设置](#sleeping-tabs-settings)|
-|[SmartScreen 设置](#smartscreen-settings)|[启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)|
-|[附加](#additional)|
+- [应用程序防护设置](#application-guard-settings)
+- [Cast](#cast)
+- [内容设置](#content-settings)
+- [默认搜索提供程序](#default-search-provider)
+- [Extensions](#extensions)
+- [HTTP 身份验证](#http-authentication)
+- [展台模式设置](#kiosk-mode-settings)
+- [可管理性](#manageability)
+- [本机消息传递](#native-messaging)
+- [密码管理器和保护](#password-manager-and-protection)
+- [性能](#performance)
+- [打印](#printing)
+- [代理服务器](#proxy-server)
+- [睡眠选项卡设置](#sleeping-tabs-settings)
+- [SmartScreen 设置](#smartscreen-settings)
+- [启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)
+- [附加](#additional)
+
 
 ### [*<a name="application-guard-settings"></a>应用程序防护设置*](#application-guard-settings-policies)
 
@@ -396,7 +403,7 @@ ms.locfileid: "11388724"
 |[RunAllFlashInAllowMode](#runallflashinallowmode)|将 Adobe Flash 内容设置扩展到所有内容（已过时）|
 |[SSLErrorOverrideAllowed](#sslerroroverrideallowed)|允许用户从 HTTPS 警告页面继续操作|
 |[SSLErrorOverrideAllowedForOwedgins](#sslerroroverrideallowedfororigins)|允许用户从特定来源的 HTTPS 警告页继续操作|
-|[SSLVersionMin](#sslversionmin)|已启用最低 TLS 版本|
+|[SSLVersionMin](#sslversionmin)|启用最低 TLS 版本 (已弃用) |
 |[SaveCookiesOnExit](#savecookiesonexit)|Microsoft Edge 关闭时保存 cookie|
 |[SavingBrowserHistoryDisabled](#savingbrowserhistorydisabled)|禁止保存浏览器历史记录|
 |[ScreenCaptureAllowed](#screencaptureallowed)|允许或拒绝屏幕捕获|
@@ -1896,7 +1903,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
 URL 模式不得与 [FileSystemReadBlockedForUrls](#filesystemreadblockedforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
 
-有关有效 URL 模式的详细信息，请参阅 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -1965,7 +1972,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
 
 URL 模式不得与 [FileSystemReadAskForUrls](#filesystemreadaskforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
 
-有关有效 URL 模式的详细信息，请参阅 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2034,7 +2041,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.e
 
 URL 模式不得与 [FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
 
-有关有效 URL 模式的详细信息，请参阅 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2103,7 +2110,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
 
 URL 模式不得与 [FileSystemWriteAskForUrls](#filesystemwriteaskforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
 
-有关有效 URL 模式的详细信息，请参阅 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2170,6 +2177,8 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
 
 如果未配置此策略，则所有网站都将使用 [DefaultImagesSetting](#defaultimagessetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
+
   #### <a name="supported-features"></a>支持的功能：
 
   - 可以强制：是
@@ -2234,6 +2243,8 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
   根据 URL 模式定义不允许显示图像的网站列表。
 
 如果未配置此策略，则所有网站都将使用 [DefaultImagesSetting](#defaultimagessetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
+
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2300,6 +2311,8 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
 如果未配置此策略，则可阻止的混合内容将被阻止，并且可选择阻止的混合内容将被升级。 但是，将允许用户设置例外，以允许特定网站使用不安全的混合内容。
 
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
+
   #### <a name="supported-features"></a>支持的功能：
 
   - 可以强制：是
@@ -2364,6 +2377,8 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.
   创建 URL 模式列表，以指定不允许显示可阻止（即活动）混合内容（即 HTTPS 网站上的 HTTP 内容）的网站，以及将禁用可选择阻止的混合内容升级的网站。
 
 如果未配置此策略，则可阻止的混合内容将被阻止，并且可选择阻止的混合内容将被升级。 但是，将允许用户设置例外，以允许特定网站使用不安全的混合内容。
+
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -9131,7 +9146,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
   #### <a name="description"></a>描述
 
-  此策略已弃用，因为它仅作为一种短期机制提供，目的是让企业能够在发现与不允许在页面关闭期间发送同步 XHR 请求的更改不兼容时有更多的时间来更新其 Web 内容。 在 Microsoft Edge version 88 将不起作用。
+  此策略已弃用，因为它仅作为一种短期机制提供，目的是让企业能够在发现与不允许在页面关闭期间发送同步 XHR 请求的更改不兼容时有更多的时间来更新其 Web 内容。 它在 Microsoft Edge 版本 93 中不起作用。
 
 通过此策略，可指定页面能够在页面关闭期间发送同步 XHR 请求。
 
@@ -11054,7 +11069,7 @@ SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
 
 如果禁用此策略，则仅在使用 DNS-over-HTTPS 时使用内置 DNS 客户端。
 
-如果未配置此策略，则默认情况下将启用内置 DNS 客户端。
+如果未配置此策略，则当未启用专用 DNS 和 VPN 时，默认情况下在 macOS 和 Android 上启用内置 DNS。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -11114,7 +11129,7 @@ SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
 
   此策略已弃用，因为它仅作为一种短期机制提供，目的是让企业能够在发现与内置证书验证程序不兼容时有更多的时间来更新环境和报告问题。
 
-在 Microsoft Edge 版本 87 将不起作用，因此计划在 Mac OS X 中删除此策略。
+如果计划删除对 Mac OS X 上旧版证书验证程序的支持，则它在 Microsoft Edge 版本 92 中不起作用。
 
 
   #### <a name="supported-features"></a>支持的功能：
@@ -19287,9 +19302,9 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
   ### <a name="sslversionmin"></a>SSLVersionMin
 
-  #### <a name="minimum-tls-version-enabled"></a>已启用最低 TLS 版本
+  #### <a name="minimum-tls-version-enabled-deprecated"></a>启用最低 TLS 版本 (已弃用) 
 
-  
+  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
   
   #### <a name="supported-versions"></a>支持的版本：
 
@@ -19297,7 +19312,9 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
   #### <a name="description"></a>描述
 
-  设置 TLS 的最低支持版本。 如果未配置此策略，则 Microsoft Edge 将显示适用于 TLS 1.0 和 TLS 1.1 的错误，但用户将可以忽略它。
+  从版本 91（2021 年 5 月左右）开始，将删除对禁止显示 TLS 1.0/1.1 警告的支持，然后此策略将停止工作。
+
+设置 TLS 的最低支持版本。 如果未配置此策略，则 Microsoft Edge 将显示适用于 TLS 1.0 和 TLS 1.1 的错误，但用户将可以忽略它。
 
 如果启用此策略，Microsoft Edge 将不会使用低于指定版本的任何 SSL/TLS 版本。 任何无法识别的值都将被忽略。
 
@@ -19326,7 +19343,7 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
   ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 
   - GP 唯一名称：SSLVersionMin
-  - GP 名称：已启用最低 TLS 版本
+  - GP 名称：启用最低 TLS 版本 (已弃用) 
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx

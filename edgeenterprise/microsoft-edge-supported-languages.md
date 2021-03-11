@@ -3,23 +3,23 @@ title: Microsoft Edge 语言支持
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 03/01/2021
+ms.date: 03/10/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: Microsoft Edge 语言支持
-ms.openlocfilehash: ec2c61bc5a94f47769685a2764fa9cc2e58a9898
-ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
+description: Windows 和 macOS 的 Microsoft Edge 显示语言支持。
+ms.openlocfilehash: af8d2a57d35411600237d09ad528c7b071228d21
+ms.sourcegitcommit: 2b902ecf31430f3fc75d3731f26255aea0bb937e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11384989"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "11406157"
 ---
 # <a name="microsoft-edge-language-support"></a>Microsoft Edge 语言支持
 
-本文介绍了如何使用 Microsoft Edge 设置向浏览器添加受支持的语言。 Microsoft Edge 在 Windows 上支持 96 种语言，在 macOS 上支持 91 种语言。
+本文介绍了如何使用 Microsoft Edge 设置向浏览器添加受支持的语言。 Microsoft Edge 在 Windows 上支持 84 种显示语言，在 macOS 上支持 81 种显示语言。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 78 或更高版本。
@@ -58,9 +58,9 @@ ms.locfileid: "11384989"
 > [!NOTE]
 > 如果翻译扩展在安装后不起作用，请重启 Microsoft Edge。 如果扩展仍不起作用，请通过反馈中心提供反馈。
 
-## <a name="supported-languages"></a>支持的语言
+## <a name="supported-display-languages"></a>支持的显示语言
 
-下表列出了 Microsoft Edge 支持的语言。
+下表列出了 Microsoft Edge 支持的显示语言。
 
 > [!NOTE]
 > macOS 上 Microsoft Edge 不支持的语言由国家/地区后的星号 (*) 来指示。  

@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/04/2021
+ms.date: 03/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 24fc6e567073f98cdadcfc3fa61c20c1ad5f1ab5
-ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
+ms.openlocfilehash: 96525327c75231974e2e2976c1b811dee3a6b03e
+ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "11393698"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "11400157"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -27,7 +27,11 @@ ms.locfileid: "11393698"
  若要了解 Microsoft Edge 渠道，请参阅 [Microsoft Edge 渠道概述](microsoft-edge-channels.md)。
 
 > [!NOTE]
-> 对于稳定渠道，更新将在一天或多天内逐步推出。 若要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
+> 对于稳定渠道，更新将在一天或多天内逐步推出。 若要了解详细信息，请参阅 [Microsoft Edge 渐进式更新系统](microsoft-edge-update-progressive-rollout.md)。
+
+## <a name="version-89077448-march-8"></a>版本 89.0.774.48：3 月 8 日
+
+修复了各种错误和性能问题。
 
 <!-- begin major 89 -->
 ## <a name="version-89077445-march-4"></a>版本 89.0.774.45：3 月 4 日
@@ -53,6 +57,8 @@ ms.locfileid: "11393698"
 - **使用休眠选项卡提高浏览器性能**。 休眠选项卡通过将非活动选项卡置于睡眠状态以释放系统资源（如内存和 CPU）来提升浏览器性能，以便活动选项卡或其他应用程序可以使用它们。 用户可以阻止网站进入睡眠状态，并配置非活动选项卡进入睡眠状态之前的时间长度。 若要使用户保持其流，还有一些[启发性方法](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434)可阻止某些网站进入睡眠状态，例如 Intranet 网站。 可以使用组策略管理此功能。
 
 - **手动重置云中的 Microsoft Edge 同步数据**。 我们正在引入一种从产品内重置 Microsoft Edge 同步数据的方法。 这确保从 Microsoft 服务中清除数据，同时也解决了以前需要支持票证的某些产品问题。
+
+- **针对具有单个非 Azure AD Microsoft Edge 配置文件的用户的所有 Windows Azure Active Directory (Azure AD) 帐户智能启用单一登录 (SSO)**。  为从此功能受益最大的用户自动启用该设置。 如果用户只有一个 Microsoft Edge 配置文件（不是 Azure AD 或儿童模式），则当 Microsoft Edge 启动时，该设置将自动启用。 如果用户稍后选择使用 Azure AD 帐户登录其他 Microsoft Edge 配置文件，此自动切换功能也将自动关闭。 用户可以依次选择“**设置”>“配置文件”>“配置文件首选项”>“允许使用此配置文件对工作或学校网站进行单一登录**”手动更新此功能的首选项。
 
 - **PDF 文档中文本选择体验的改善**。 从版本 89 开始，用户将开始在 Microsoft Edge 中打开的 PDF 文档中获得更流畅、一致的文本选择体验。
 
