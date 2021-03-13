@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/10/2021
+ms.date: 03/12/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 94ad135f23dae83391e873ef120e6c88b44d0e27
-ms.sourcegitcommit: e3762b1a204c143b4e2264100affae3d9ddaaffc
+ms.openlocfilehash: cecadd38a07c6be0153744657c5bef037bd665c7
+ms.sourcegitcommit: 24e26d393e87acb59300bcca6529a9be57c530cf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "11406373"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "11408644"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -26,16 +26,9 @@ ms.locfileid: "11406373"
 
 可下载 [Microsoft Security Compliance Toolkit](https://www.microsoft.com/download/details.aspx?id=55319)，以获得 Microsoft Edge 的建议安全配置基线设置。 有关详细信息，请参阅 [Microsoft 安全基线博客](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines)。
 
+
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
-
-## <a name="new-and-deprecated-policies"></a>新的和已弃用的策略
-
-下表列出了此更新的新和已弃用的策略。
-
-|名称|描述文字|
-|--|--|
-|[SSLVersionMin](#sslversionmin)|启用最低 TLS 版本 (已弃用) |
 
 ## <a name="available-policies"></a>可用策略
 
