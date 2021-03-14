@@ -3,19 +3,19 @@ title: Microsoft Edge 发布计划
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/04/2021
+ms.date: 03/11/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 发布计划
-ms.openlocfilehash: f6567683b78d097547ebdef9320addc05863404e
-ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
+ms.openlocfilehash: 31e8c3e884abdb12ffbd5fae940e466a2ab188d0
+ms.sourcegitcommit: e05e55b5f7808335c68dcee3acc488c53eede435
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "11393690"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "11407524"
 ---
 # <a name="microsoft-edge-release-schedule"></a>Microsoft Edge 发布计划
 
@@ -23,7 +23,10 @@ ms.locfileid: "11393690"
 
 ## <a name="release-cadence"></a>版本节奏
 
-Microsoft 提供了四个称为“频道”的选项，用于管理为 Microsoft Edge 更新新功能的频率。 Microsoft Edge 团队计划每六周向 Beta 和 Stable 频道推送一次公开更新。 有关我们的频道、其发布周期和支持级别的详细信息，请参阅[频道概述](https://docs.microsoft.com/DeployEdge/microsoft-edge-channels#channel-overview)。
+Microsoft 提供了四个称为“频道”的选项，用于管理为 Microsoft Edge 更新新功能的频率。 Microsoft Edge 团队计划每六周向 Beta 和 Stable 频道推送一次公开更新。 有关我们的频道、其发布周期和支持级别的详细信息，请参阅 [频道概述](https://docs.microsoft.com/DeployEdge/microsoft-edge-channels#channel-overview)。
+
+> [!NOTE]
+> 从稳定频道版本 94 开始，Microsoft Edge 将移动到 4 周的主要发布周期节奏。 但是，我们意识到管理复杂环境的企业客户需要更多的时间来计划和测试 Microsoft Edge 更新。 为帮助需要延长的日程表来管理更新的企业客户，Microsoft Edge 将提供一个 **延长稳定选项（对应相对较长的 8 周主要发布周期）**；此选项将仅用于具有托管环境的客户。
 
 ## <a name="release-schedule"></a>发布计划
 
@@ -38,14 +41,16 @@ Microsoft 提供了四个称为“频道”的选项，用于管理为 Microsoft
 
 | 版本 | 发布状态 | Beta 渠道<br>发布周 | 稳定渠道<br>发布周 |
 |---------|-----|------|--------|
-| 86 | 已发布<br>版本 | 2020 年 9 月 9 日<br>[86.0.622.11](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-archive-beta-channel#version-86062211-september-9) | 2020 年 10 月 9 日<br>[86.0.622.38](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-86062238-october-9) |
-| 87 | 已发布<br>版本 | 2020 年 10 月 20 日<br>[87.0.664.12](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-87066412-october-20) | 2020 年 11 月 19 日<br>[87.0.664.41](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-87066441-november-19) |
-| **88** | 已发布<br>版本 | 2020 年 12 月 9 日<br>[88.0.705.18](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-88070518-december-9) | 2021 年 1 月 21 日<br>[88.0.705.50](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-88070550-january-21)|
+| 88 | 已发布<br>版本 | 2020 年 12 月 9 日<br>[88.0.705.18](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-88070518-december-9) | 2021 年 1 月 21 日<br>[88.0.705.50](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-88070550-january-21)|
 | **89** | 已发布<br>版本 | **2021 年 2 月 3 日**<br>**[89.0.774.18](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-89077418-february-3)** | **2021年3月4日**<br>**[89.0.774.45](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-89077445-march-21)** |
 | 90 | 目标版本 | 2021 年 3 月 16 日这一周 | 2021 年 4 月 15 日这一周 |
 | 91 | 目标版本 | 2021 年 4 月 27 日这一周 | 2021 年 5 月 27 日这一周 |
 | 92 | 目标版本 | 2021 年 6 月 8 日这一周 | 2021 年 7 月 22 日这一周 |
 | 93 | 目标版本 | 2021 年 8 月 3 日这一周 | 2021 年 9 月 2 日这一周 |
+| 94 | 目标版本 | 2021 年 9 月 1 日这一周 | 2021 年 9 月 23 日这一周 |
+| 95 | 目标版本 | 2021 年 9 月 28 日这一周 | 2021 年 10 月 21 日这一周 |
+| 96 | 目标版本 | 2021 年 10 月 26 日这一周 | 2021 年 11 月 18 日这一周 |
+| 97 | 目标版本 | 2021 年 11 月 30 日这一周 | 2022 年 1 月 6 日这一周 |
 
 ## <a name="release-process"></a>发布流程
 
