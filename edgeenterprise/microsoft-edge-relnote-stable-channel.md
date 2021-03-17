@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: bdb38513f15e0ed5d11be4e221ea9d2403d1a956
-ms.sourcegitcommit: 6d37cd6dc8618742f4729fc901fc66829dab462e
+ms.openlocfilehash: 7d08aa1d9cf1f3e04861561169d2f6a01772e5f2
+ms.sourcegitcommit: b1060a5c71174ba1d2eea91efb51232beeb97bf8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "11406233"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "11409246"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -27,7 +27,14 @@ ms.locfileid: "11406233"
  若要了解 Microsoft Edge 渠道，请参阅 [Microsoft Edge 渠道概述](microsoft-edge-channels.md)。
 
 > [!NOTE]
-> 对于稳定渠道，更新将在一天或多天内逐步推出。 若要了解详细信息，请参阅 [Microsoft Edge 渐进式更新系统](microsoft-edge-update-progressive-rollout.md)。
+> 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## <a name="version-89077454-march-13"></a>版本 89.0.774.54：3 月 13 日
+
+> [!IMPORTANT]
+> 此更新包含已由 Chromium 团队报告用于现实中的 [CVE-2021-21193](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21193)。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#march-13-2021)列出了稳定频道的安全更新。
 
 ## <a name="version-89077450-march-10"></a>版本 89.0.774.50：3 月 10 日
 
