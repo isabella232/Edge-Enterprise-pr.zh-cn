@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/15/2021
+ms.date: 03/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: 6682bbc1ea92a8b78a82507424814e2f3db4fcfd
-ms.sourcegitcommit: b1060a5c71174ba1d2eea91efb51232beeb97bf8
+ms.openlocfilehash: 3c1b87b2ecaf68acf0bca447553b25d0b202e7ea
+ms.sourcegitcommit: ceecf4d9baf9dc677652ca07a6d2f2e17ef5b3b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "11409237"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "11440303"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
@@ -23,6 +23,50 @@ ms.locfileid: "11409237"
 
 > [!NOTE]
 > 我们已更新 Microsoft Edge Beta [版本 89.0.774.18：2 月 3 日](#version-89077418-february-3) 发行说明，以反映已落地的功能。
+
+<!-- begin major 90 -->
+## <a name="version-90081808-march-16"></a>版本 90.0.818.08：3 月 16 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **SSO（单一登录）现已适用于 macOS 上的Azure Active Directory (Azure AD) 帐户和 Microsoft 帐户 (MSA)**。 现在，已在 macOS 上登录 Microsoft Edge 的用户将自动登录到配置为允许使用工作帐户和 Microsoft 帐户进行单一登录的网站（例如 bing.com、office.com、msn.com 和 outlook.com）。
+
+- **打印：**
+
+  - **非 PostScript 打印机的全新打印光栅化模式**。 从 Microsoft Edge 版本 90 开始，管理员可以使用新策略为用户定义打印光栅化模式。 此策略控制 Microsoft Edge 如何在 Windows 上打印到非 PostScript 打印机。  有时，在非 PostScript 打印机上的打印作业需要进行光栅化才能正确打印。 打印选项为“完整”和“快速”。
+
+  - **打印的其他页面缩放选项**。 用户现在能够在使用其他选项打印网页和 PDF 文档时自定义缩放。“适合页面”选项可确保网页或文档适合所选“纸张大小”中可用于打印的空间。 “实际大小”选项可确保无论所选“纸张大小”如何，正在打印内容的大小都没有任何变化。
+
+- **工作效率：**
+
+  - **自动填充建议扩展为包含剪贴板中的地址字段内容**。 在单击配置文件/地址字段（例如，电话、电子邮件、邮政编码、城市、省/市/县等）将分析剪贴板内容，以显示为自动填充建议。
+
+  - **即使未检测到表单或字段，用户也可以搜索自动填充建议**。 现在，如果将信息保存在 Microsoft Edge 上，将自动弹出自动填充建议，并帮助你在填写表单时节省时间。 如果自动填充遗漏了表单，或者你希望获取通常不会自动填充的表单（如临时表单）中的数据，可以使用自动填充来搜索信息。
+
+- **从菜单栏中的浮出控件访问下载**。 下载将显示在右上角，且所有活动下载都位于同一位置。 此菜单很容易消除，以便用户可以继续不间断地浏览，并且可以从工具栏直接监视总体下载进度。 [了解详细信息](https://techcommunity.microsoft.com/t5/articles/introducing-the-new-downloads-experience/m-p/2111551)。
+
+- **字体呈现的改进**。 从 Microsoft Edge 版本 90 开始，我们改进了文本呈现，以提高清晰度并减少模糊度。 字体呈现改进的一部分将在 Beta 版本 90 中落地，但默认情况下处于禁用状态。
+
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+添加了 7 个新策略。 从 [Microsoft Edge 企业版登录页面](https://www.microsoft.com/edge/business/download) 下载更新的管理模板。 添加了以下新策略：
+
+- [ApplicationGuardFavoritesSyncEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#applicationguardfavoritessyncenabled) - 已启用应用程序防护收藏夹同步
+- [ManagedConfigurationPerOrigin](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#managedconfigurationperorigin) - 将网站的托管配置值设置到特定源
+- [PrintRasterizationMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printrasterizationmode) - 打印光栅化模式
+- [QuickViewOfficeFilesEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#quickviewofficefilesenabled) - 在 Microsoft Edge 中管理 QuickView Office 文件功能
+- [SSLErrorOverrideAllowedForOrigins](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sslerroroverrideallowedfororigins) - 允许用户从特定源的 HTTPS 警告页面继续操作
+- [WindowOcclusionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#windowocclusionenabled) - 启用窗口封闭
+- [WindowsHelloForHTTPAuthEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#windowshelloforhttpauthenabled) - 已启用 Windows Hello HTTP 身份验证
+
+#### <a name="deprecated-policies"></a>已弃用的策略
+
+- [NativeWindowOcclusionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#nativewindowocclusionenabled) - 启用本机窗口封闭
+- [SSLVersionMin](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sslversionmin)- 已启用最低 TLS 版本
+<!-- end major 90 -->
 
 ## <a name="version-89077454-march-13"></a>版本 89.0.774.54：3 月 13 日
 
