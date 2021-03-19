@@ -63,7 +63,7 @@ ESR 设计为 Windows 产品，其中包含对 Windows 设备中数据的处理�
 
 ### 管理
 
-管理员将可控制你的组织中哪些成员能够启用同步。请参阅 [配置 Microsoft Edge 同步](microsoft-edge-enterprise-sync.md#configure-microsoft-edge-sync) 和 [同步组策略](microsoft-edge-enterprise-sync.md#sync-group-policies)。 此外，用户可以针对每台设备打开/关闭同步，并分别切换每个数据属性以进行同步。
+管理员可控制组织中哪些成员能够启用同步。请参阅 [配置 Microsoft Edge 同步](microsoft-edge-enterprise-sync.md#configure-microsoft-edge-sync)和[同步组策略](microsoft-edge-enterprise-sync.md#sync-group-policies)。 此外，用户可以针对每台设备打开/关闭同步，并分别切换每个数据属性以进行同步。
 
 ### 密钥管理
 
