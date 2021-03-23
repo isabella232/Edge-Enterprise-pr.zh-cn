@@ -3,19 +3,19 @@ title: 配置 Microsoft Edge 展台模式
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 03/03/2021
+ms.date: 03/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解展台模式功能以及如何配置 Microsoft Edge 展台模式的选项。
-ms.openlocfilehash: 9f2ce26f2c505ba3fc9e2e05b057e5d5df8257fe
-ms.sourcegitcommit: 8da3a4de1a14514014b6d7b103ba79f2ace48044
+ms.openlocfilehash: 516bc004a516b243e52d4128ae47f3ab9d7498df
+ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "11388544"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "11442482"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>配置 Microsoft Edge 展台模式
 
@@ -23,6 +23,9 @@ ms.locfileid: "11388544"
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 87 或更高版本。
+
+> [!IMPORTANT]
+> 通过[使用展台模式功能](#use-kiosk-mode-features)中提供的命令行参数调用 Windows 10 Microsoft Edge 展台模式功能。
 
 ## <a name="overview"></a>概述
 
@@ -211,7 +214,7 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 
 随着展台模式此预览版的发布，我们将继续改进产品和添加新功能。
 
-建议你关闭：
+目前不支持以下功能，建议关闭：
 
 - [InPrivateModeAvailability](https://docs.microsoft.com/deployedge/microsoft-edge-policies#inprivatemodeavailability)
 - [IsolateOrigins](https://docs.microsoft.com/deployedge/microsoft-edge-policies#isolateorigins)
@@ -224,6 +227,7 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 - [InternetExplorerIntegrationLevel](https://docs.microsoft.com/deployedge/microsoft-edge-policies#internetexplorerintegrationlevel)
 - [Extensions](https://docs.microsoft.com/deployedge/microsoft-edge-policies#extensions-policies)
 - [BackgroundModeEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#backgroundmodeenabled)
+- [UserFeedbackAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userfeedbackallowed)
 
 ## <a name="roadmap"></a>路线图
 
