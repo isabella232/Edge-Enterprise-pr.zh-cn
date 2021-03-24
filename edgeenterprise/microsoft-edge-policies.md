@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/12/2021
+ms.date: 03/18/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: cecadd38a07c6be0153744657c5bef037bd665c7
-ms.sourcegitcommit: 24e26d393e87acb59300bcca6529a9be57c530cf
+ms.openlocfilehash: 4935b927081ef1823ecf36b922948992926d4005
+ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "11408644"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "11442472"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -29,6 +29,16 @@ ms.locfileid: "11408644"
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
+
+## <a name="new-policies"></a>新策略
+
+下表列出了此次更新的新策略。
+
+|名称|描述文字|
+|--|--|
+|[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|允许新选项卡页上的快速链接|
+|[FetchKeepaliveDurationOnShutdown](#fetchkeepalivedurationonshutdown)|获取关机时的保留持续时间|
+
 
 ## <a name="available-policies"></a>可用策略
 
@@ -230,7 +240,8 @@ ms.locfileid: "11408644"
 |[NewTabPageHideDefaultTopSites](#newtabpagehidedefaulttopsites)|从新选项卡页隐藏默认热门网站|
 |[NewTabPageLocation](#newtabpagelocation)|配置新选项卡页 URL|
 |[NewTabPageManagedQuickLinks](#newtabpagemanagedquicklinks)|设置新选项卡页快速链接|
-|[NewTabPagePrerenderEnabled](#newtabpageprerenderenabled)|启用新选项卡页面的预加载，以便快速呈现|
+|[NewTabPagePrerenderEnabled](#newtabpageprerenderenabled)|启用新选项卡页面的预加载，以便快速渲染|
+|[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|允许新选项卡页上的快速链接|
 |[NewTabPageSetFeedType](#newtabpagesetfeedtype)|配置 Microsoft Edge 新建标签页体验（已弃用）|
 |[RestoreOnStartup](#restoreonstartup)|启动时要执行的操作|
 |[RestoreOnStartupURLs](#restoreonstartupurls)|浏览器启动时要打开的网站|
@@ -323,6 +334,7 @@ ms.locfileid: "11408644"
 |[ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox)|在外部协议对话框中显示“始终打开”复选框|
 |[FamilySafetySettingsEnabled](#familysafetysettingsenabled)|允许用户配置家庭安全和儿童模式|
 |[FavoritesBarEnabled](#favoritesbarenabled)|启用收藏夹栏|
+|[FetchKeepaliveDurationOnShutdown](#fetchkeepalivedurationonshutdown)|获取关机时的保留持续时间|
 |[ForceBingSafeSearch](#forcebingsafesearch)|强制实施必应安全搜索|
 |[ForceCertificatePromptsOnMultipleMatches](#forcecertificatepromptsonmultiplematches)|配置当配置了“AutoSelectCertificateForUrls”的网站有多个证书匹配项时，Microsoft Edge 是否应自动选择证书|
 |[ForceEphemeralProfiles](#forceephemeralprofiles)|启用临时配置文件的使用|
@@ -8456,6 +8468,70 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="newtabpagequicklinksenabled"></a>NewTabPageQuickLinksEnabled
+
+  #### <a name="allow-quick-links-on-the-new-tab-page"></a>允许新选项卡页上的快速链接
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 自 91 或更高版本起，在 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  如果启用或不配置此策略，Microsoft Edge 将在新的选项卡页上显示快速链接，用户可以与控件交互，打开或关闭快速链接。 启用此策略不会强制快速链接可见 - 用户可以继续打开或关闭快速链接。
+
+如果禁用此策略，Microsoft Edge 会在新选项卡页面上隐藏快速链接，并禁用 NTP 设置飞出中的快速链接控件。
+
+此策略仅适用于 Microsoft Edge 本地用户配置文件、使用 Microsoft 帐户登录的配置文件和使用 Active Directory 登录的配置文件。 若要针对使用 Azure Active Directory 登录的配置文件配置"企业"新选项卡页，请使用 M365 管理门户。
+
+相关策略： [NewTabPageAllowedBackgroundTypes](#newtabpageallowedbackgroundtypes)
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：NewTabPageQuickLinksEnabled
+  - GP 名称：允许新选项卡页上的快速链接
+  - GP 路径（强制）：管理模板/Microsoft Edge/启动、主页和新选项卡页
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：NewTabPageQuickLinksEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项密钥名称：NewTabPageQuickLinksEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="newtabpagesetfeedtype"></a>NewTabPageSetFeedType
 
   #### <a name="configure-the-microsoft-edge-new-tab-page-experience-deprecated"></a>配置 Microsoft Edge 新建标签页体验（已弃用）
@@ -14379,6 +14455,68 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="fetchkeepalivedurationonshutdown"></a>FetchKeepaliveDurationOnShutdown
+
+  #### <a name="fetch-keepalive-duration-on-shutdown"></a>获取关机时的保留持续时间
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 自 90 或更高版本起，在 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  控制允许保留持续时间（秒）的请求，以防止浏览器完成其关闭。
+
+如果配置此策略，浏览器将阻止完成关闭，同时处理任何未保留请求（请参阅 https://fetch.spec.whatwg.org/#request-keepalive-flag) 此策略指定的最长时间）。
+
+如果禁用或不配置此策略，则使用默认值 0 秒，浏览器关闭期间将立即取消未保留请求。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：FetchKeepaliveDurationOnShutdown
+  - GP 名称：获取关机时的保留持续时间
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：FetchKeepaliveDurationOnShutdown
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项密钥名称：FetchKeepaliveDurationOnShutdown
+  - 示例值：
+``` xml
+<integer>1</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="forcebingsafesearch"></a>ForceBingSafeSearch
 
   #### <a name="enforce-bing-safesearch"></a>强制实施必应安全搜索
@@ -15105,7 +15243,11 @@ Microsoft Edge 的默认引用者策略已从其当前的 no-referrer-when-downg
 
   #### <a name="description"></a>描述
 
-  此列表中指定的主机名将被排除在 HSTS 策略检查之外，该检查可能会将请求从“http://”升级到“https://”。 此策略中只允许使用单标签主机名。 主机名必须规范化。 任何 IDN 必须转换为其 A 标签格式，所有 ASCII 字母必须为小写。 此策略仅适用于指定的特定主机名；它不适用于列表中名称的子域。
+  设置策略会指定绕过从 http 升级到 https 的已预加载 HSTS 的主机名列表。
+
+此策略仅允许单标签主机名，并且此策略仅适用于静态 HSTS 预加载的条目（例如，"应用"、"新建"、"搜索"、"播放"）。 对于使用Strict-Transport-Security响应头动态请求HSTS升级的服务器，该策略不会阻止HSTS升级。
+
+提供的主机名必须规范：任何 IDN 必须转换为其 A 标签格式，所有 ASCII 字母必须小写。 此策略仅适用于指定的特定单标签主机名，不适用于这些名称的子域。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -16822,7 +16964,9 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 此外，用户可以在新式浏览器中使用“在Edge模式下打开网站”选项来测试其应用程序，而无需删除网站列表中的应用程序。
 
-此设置与以下策略配合使用：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) （设置为 'IEMode'） 和 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 策略 （列表至少有一个条目）。
+此设置与以下设置配合使用: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 设置为“IEMode”。
+   
+                                                                                                                         
 
 如果启用此策略，则 "更多工具" 下将显示 "在 Internet Explorer 模式中打开网站" 选项。 用户可在此选项卡上的 Internet Explorer 模式下查看其网站。"更多工具" 下的 "以Microsoft Edge 模式打开网站" 的另一个选项也会显示出来，以便在现代浏览器中测试网站，而无需将其从网站列表中删除。
 
