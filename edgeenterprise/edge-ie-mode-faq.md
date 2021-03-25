@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 关于结合使用 Microsoft Edge 和 IE 模式的 FAQ 和故障排除
-ms.openlocfilehash: 565af265811e0e4814d82859f638ae9abcd0a014
-ms.sourcegitcommit: ef30fe37d0d115af0d4402c9005f5d0d1ba54b6c
+ms.openlocfilehash: f5279caddb5d3dfabaf04be6bd927f7095be1fc9
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "11431809"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447726"
 ---
 # <a name="ie-mode-faq"></a>IE 模式 FAQ
 
@@ -41,7 +41,7 @@ ms.locfileid: "11431809"
 
 ### <a name="error-message-to-open-this-page-in-internet-explorer-mode-reinstall-microsoft-edge-with-administrator-privileges"></a>错误消息：“要在 Internet Explorer 模式下打开此页面，请使用管理员权限重新安装 Microsoft Edge。”
 
-如果没有安装所有必需 Windows 更新，可能会看到此错误。 有关必需 Windows 和 Microsoft Edge 版本，请参阅[关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)中列出的先决条件。
+如果没有安装所有必需 Windows 更新，可能会看到此错误。 有关必需 Windows 和 Microsoft Edge 版本，请参阅[关于 IE 模式](./edge-ie-mode.md)中列出的先决条件。
 
 如果已安装所有必需 Windows 更新，但仍可能会在以下情况下看到此错误：
 
@@ -66,7 +66,7 @@ ms.locfileid: "11431809"
 
 ### <a name="error-message-error-could-not-retrieve-emie-site-list"></a>错误消息：“错误：无法检索 EMIE 站点列表。”
 
-您可能会在 *edge://compat/enterprise* 页面上看到此错误，表示站点列表下载失败。 从 Microsoft Edge 版本 87 开始，当使用 [BlockThirdPartyCookies](https://docs.microsoft.com/deployedge/microsoft-edge-policies#blockthirdpartycookies) 策略阻止第三方请求的Cookie 时，也不允许使用 HTTP 身份验证。 可以使用 [CookiesAllowedForURLs](https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiesallowedforurls) 策略为托管 Enterprise Mode Site List 的特定域允许 Cookie，以确保站点列表下载成功。
+您可能会在 *edge://compat/enterprise* 页面上看到此错误，表示站点列表下载失败。 从 Microsoft Edge 版本 87 开始，当使用 [BlockThirdPartyCookies](./microsoft-edge-policies.md#blockthirdpartycookies) 策略阻止第三方请求的Cookie 时，也不允许使用 HTTP 身份验证。 可以使用 [CookiesAllowedForURLs](./microsoft-edge-policies.md#cookiesallowedforurls) 策略为托管 Enterprise Mode Site List 的特定域允许 Cookie，以确保站点列表下载成功。
 
 ## <a name="frequently-asked-questions"></a>常见问题
 
@@ -104,5 +104,5 @@ ms.locfileid: "11431809"
 ## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [其他企业模式信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [关于 IE 模式](./edge-ie-mode.md)
+- [其他企业模式信息](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)

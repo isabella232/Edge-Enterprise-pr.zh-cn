@@ -10,16 +10,16 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用移动设备管理配置 Microsoft Edge。
-ms.openlocfilehash: dda35199f653b3dfb8f20b33b068c59621222b36
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: c9a725b5d0e820fb907150a8f83eeb17291b9f6a
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979227"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447546"
 ---
-# 使用移动设备管理配置 Microsoft Edge
+# <a name="configure-microsoft-edge-using-mobile-device-management"></a>使用移动设备管理配置 Microsoft Edge
 
-本文介绍了如何使用[移动设备管理 (MDM)](https://docs.microsoft.com/windows/client-management/mdm/) 通过 [ADMX 引入](https://docs.microsoft.com/windows/client-management/mdm/win32-and-centennial-app-policy-configuration)来配置 Windows 10 上的 Microsoft Edge。 本文还介绍了：
+本文介绍了如何使用[移动设备管理 (MDM)](/windows/client-management/mdm/) 通过 [ADMX 引入](/windows/client-management/mdm/win32-and-centennial-app-policy-configuration)来配置 Windows 10 上的 Microsoft Edge。 本文还介绍了：
 
 - 如何[为 Microsoft Edge 策略创建开放移动联盟统一资源标识符 (OMA-URI)](#create-an-oma-uri-for-microsoft-edge-policies)。
 - 如何[使用 ADMX 引入和自定义 OMA-URI 在 Intune 中配置 Microsoft Edge](#configure-microsoft-edge-in-intune-using-admx-ingestion)。
@@ -27,7 +27,7 @@ ms.locfileid: "10979227"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 使用 Windows 10，最低系统要求如下：
 
@@ -36,9 +36,9 @@ ms.locfileid: "10979227"
 - Windows 10 版本 1803（已安装 [KB4512509](https://support.microsoft.com/help/4512509/) 和 [KB4519978](https://support.microsoft.com/help/4519978)）
 - Windows 10 版本 1709（已安装 [KB4516071](https://support.microsoft.com/help/4516071/) 和 [KB4520006](https://support.microsoft.com/help/4520006)）
 
-## 概述
+## <a name="overview"></a>概述
 
-通过将 MDM 与支持 [ADMX 引入](https://docs.microsoft.com/windows/client-management/mdm/win32-and-centennial-app-policy-configuration)的首选企业移动性管理 (EMM) 或 MDM 提供程序配合使用，你可以配置 Windows 10 上的 Microsoft Edge。
+通过将 MDM 与支持 [ADMX 引入](/windows/client-management/mdm/win32-and-centennial-app-policy-configuration)的首选企业移动性管理 (EMM) 或 MDM 提供程序配合使用，你可以配置 Windows 10 上的 Microsoft Edge。
 
 使用 MDM 配置 Microsoft Edge 的过程分为两个部分：
 
@@ -49,7 +49,7 @@ ms.locfileid: "10979227"
 
 2. [为 Microsoft Edge 策略创建 OMA-URI](#create-an-oma-uri-for-microsoft-edge-policies)。
 
-## 为 Microsoft Edge 策略创建 OMA-URI
+## <a name="create-an-oma-uri-for-microsoft-edge-policies"></a>为 Microsoft Edge 策略创建 OMA-URI
 
 以下各部分介绍了如何创建 OMA-URI 路径，以及如何为强制和推荐的浏览器策略查找和定义 XML 格式的值。
 
@@ -61,7 +61,7 @@ ms.locfileid: "10979227"
 2. [指定 OMA-URI 数据类型](#specify-the-data-type)
 3. [设置 OMA-URI 值](#set-the-value-for-a-browser-policy)
 
-### 创建 OMA-URI 路径
+### <a name="create-the-oma-uri-path"></a>创建 OMA-URI 路径
 
 使用以下公式作为指导来创建 OMA-URI 路径。 <br/><br/>
 *`./Device/Vendor/MSFT/Policy/Config/<ADMXIngestName>~Policy~<ADMXNamespace>~<ADMXCategory>/<PolicyName>`* <br/><br/>
@@ -71,9 +71,9 @@ ms.locfileid: "10979227"
 | \<ADMXIngestName> | 使用“Edge”或引入管理模板时定义的内容。 例如，如果你使用的是“/Device/Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/MicrosoftEdge/Policy/EdgeAdmx”，则使用“MicrosoftEdge”。<br/><br/> `<ADMXIngestionName>` 必须与引入 ADMX 文件时所使用的内容匹配。 |
 | \<ADMXNamespace>  | 具体是“Microsoft_edge”还是“microsoft_edge_recommended”，取决于你是设置强制策略还是推荐的策略。 |
 | \<ADMXCategory>   | 该策略的“parentCategory”在 ADMX 文件中定义。 如果策略未分组（未定义“parentCategory”），则省略 `<ADMXCategory>`。 |
-| \<PolicyName>     | 策略名称可在[浏览器策略参考](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies)文章中找到。 |
+| \<PolicyName>     | 策略名称可在[浏览器策略参考](./microsoft-edge-policies.md)文章中找到。 |
 
-#### URI 路径示例：
+#### <a name="uri-path-example"></a>URI 路径示例：
 
 在此示例中，假定 `<ADMXIngestName>` 节点被命名为“Edge”，并且你正在设置强制策略。 URI 路径将为：<br/><br/>
 *`./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge~<ADMXCategory>/<PolicyName>`*
@@ -89,22 +89,22 @@ ms.locfileid: "10979227"
 4. 将 `<ADMXCategory>` 替换为 *ref* 属性值以构造 URI 路径。 URI 路径将为：<br/><br/>
 *`/Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge~Extensions/ExtensionInstallForcelist`*
 
-### 指定数据类型
+### <a name="specify-the-data-type"></a>指定数据类型
 
 OMA-URI 数据类型始终为“字符串”。
 
-### 设置浏览器策略的值
+### <a name="set-the-value-for-a-browser-policy"></a>设置浏览器策略的值
 
-本部分介绍了如何为每种数据类型设置 XML 格式的值。 转到[浏览器策略参考](https://docs.microsoft.com/deployedge/microsoft-edge-policies)以查找策略的数据类型。
+本部分介绍了如何为每种数据类型设置 XML 格式的值。 转到[浏览器策略参考](./microsoft-edge-policies.md)以查找策略的数据类型。
 
 > [!NOTE]
 > 对于非布尔型数据类型，该值始终以 `<enabled/>` 开头。
 
-#### 布尔型数据类型
+#### <a name="boolean-data-type"></a>布尔型数据类型
 
 对于布尔型类型的策略，请使用 `<enabled/>` 或 `<disabled/>`。
 
-#### 整数数据类型
+#### <a name="integer-data-type"></a>整数数据类型
 
 该值始终需要以 `<enabled/>` 元素开头，后跟 `<data id="[valueName]" value="[decimal value]"/>`。
 
@@ -119,7 +119,7 @@ OMA-URI 数据类型始终为“字符串”。
 若要在启动时打开新选项卡页，请使用：<br>
 `<enabled/> <data id="RestoreOnStartup" value="5"/>`
 
-#### 字符串列表数据类型
+#### <a name="list-of-strings-data-type"></a>字符串列表数据类型
 
 该值始终需要以 `<enabled/>` 元素开头，后跟 `<data id="[listID]" value="[string 1];[string 2];[string 3]"/>`。
 
@@ -136,7 +136,7 @@ OMA-URI 数据类型始终为“字符串”。
 例如，用于阻止访问 `contoso.com` 和 `https://ssl.server.com`：<br>
 `<enabled/> <data id=" URLBlocklistDesc" value="contoso.com;https://ssl.server.com"/>`
 
-#### 字典或字符串数据类型
+#### <a name="dictionary-or-string-data-type"></a>字典或字符串数据类型
 
 该值始终需要以 `<enabled/>` 开头，后跟 `<data id="[textID]" value="[string]"/>`。
 
@@ -150,11 +150,11 @@ OMA-URI 数据类型始终为“字符串”。
 若要使用“ApplicationLocaleValue”策略将区域设置设为“es-US”，请执行以下操作：<br>
 `<enabled/> <data id="ApplicationLocaleValue" value="es-US"/>`
 
-### 为推荐的策略创建 OMA-URI
+### <a name="create-the-oma-uri-for-a-recommended-policies"></a>为推荐的策略创建 OMA-URI
 
 为推荐的策略定义 URI 路径取决于你要配置的策略。
 
-#### 要为推荐的策略定义 URI 路径，请执行以下步骤
+#### <a name="to-define-the-uri-path-for-a-recommended-policy"></a>要为推荐的策略定义 URI 路径，请执行以下步骤
 
 使用 URI 路径公式（*`./Device/Vendor/MSFT/Policy/Config/<ADMXIngestName>~Policy~<ADMXNamespace>~<ADMXCategory>/<PolicyName>`*）和以下步骤定义 URI 路径：
 
@@ -179,27 +179,27 @@ OMA-URI 数据类型始终为“字符串”。
 
 4. `<PolicyName>` 是附加了“_recommended”的策略的名称。
 
-#### 适用于推荐的策略的 OMA-URI 路径示例
+#### <a name="oma-uri-path-examples-for-recommended-policies"></a>适用于推荐的策略的 OMA-URI 路径示例
 
 下表显示了推荐策略的 OMA-URI 路径的示例。
 
 |              策略               |             OMA-URI                      |
 |-----------------------------------|------------------------------------------|
-| [RegisteredProtocolHandlers](https://docs.microsoft.com/deployedge/microsoft-edge-policies#registeredprotocolhandlers)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~ContentSettings_recommended/RegisteredProtocolHandlers_recommended`                        |
-| [PasswordManagerEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#passwordmanagerenabled)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~PasswordManager_recommended/PasswordManagerEnabled_recommended`                        |
-| [PrintHeaderFooter](https://docs.microsoft.com/deployedge/microsoft-edge-policies#printheaderfooter)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~Printing_recommended/PrintHeaderFooter_recommended`                        |
-| [SmartScreenEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#smartscreenenabled)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~SmartScreen_recommended/SmartScreenEnabled_recommended`                        |
-| [HomePageLocation](https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepagelocation)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~Startup_recommended/HomepageLocation_recommended`                        |
-| [ShowHomeButton](https://docs.microsoft.com/deployedge/microsoft-edge-policies#showhomebutton)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~Startup_recommended/ShowHomeButton_recommended`                        |
-| [FavoritesBarEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#favoritesbarenabled)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~/FavoritesBarEnabled_recommended`                        |
+| [RegisteredProtocolHandlers](./microsoft-edge-policies.md#registeredprotocolhandlers)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~ContentSettings_recommended/RegisteredProtocolHandlers_recommended`                        |
+| [PasswordManagerEnabled](./microsoft-edge-policies.md#passwordmanagerenabled)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~PasswordManager_recommended/PasswordManagerEnabled_recommended`                        |
+| [PrintHeaderFooter](./microsoft-edge-policies.md#printheaderfooter)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~Printing_recommended/PrintHeaderFooter_recommended`                        |
+| [SmartScreenEnabled](./microsoft-edge-policies.md#smartscreenenabled)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~SmartScreen_recommended/SmartScreenEnabled_recommended`                        |
+| [HomePageLocation](./microsoft-edge-policies.md#homepagelocation)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~Startup_recommended/HomepageLocation_recommended`                        |
+| [ShowHomeButton](./microsoft-edge-policies.md#showhomebutton)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~Startup_recommended/ShowHomeButton_recommended`                        |
+| [FavoritesBarEnabled](./microsoft-edge-policies.md#favoritesbarenabled)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~/FavoritesBarEnabled_recommended`                        |
 
-### OMA-URI 示例
+### <a name="oma-uri-examples"></a>OMA-URI 示例
 
 OMA-URI 示例及其 URI 路径、类型和示例值。
 
-#### 布尔型数据类型示例
+#### <a name="boolean-data-type-examples"></a>布尔型数据类型示例
 
-*[ShowHomeButton](https://docs.microsoft.com/deployedge/microsoft-edge-policies#ShowHomeButton):*
+*[ShowHomeButton](./microsoft-edge-policies.md#ShowHomeButton):*
 
 | 字段   | 值                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -208,7 +208,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/>`                                                                          |
 
-*[DefaultSearchProviderEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#DefaultSearchProviderEnabled)：*
+*[DefaultSearchProviderEnabled](./microsoft-edge-policies.md#DefaultSearchProviderEnabled)：*
 
 | 字段   | 值                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -217,9 +217,9 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<disable/>`                                                                          |
 
-### 整数数据类型示例
+### <a name="integer-data-type-examples"></a>整数数据类型示例
 
-*[AutoImportAtFirstRun](https://docs.microsoft.com/deployedge/microsoft-edge-policies#AutoImportAtFirstRun)：*
+*[AutoImportAtFirstRun](./microsoft-edge-policies.md#AutoImportAtFirstRun)：*
 
 | 字段   | 值                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -228,7 +228,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/><data id="AutoImportAtFirstRun" value="1"/>`                             |
 
-*[DefaultImagesSetting](https://docs.microsoft.com/deployedge/microsoft-edge-policies#DefaultImagesSetting)：*
+*[DefaultImagesSetting](./microsoft-edge-policies.md#DefaultImagesSetting)：*
 
 | 字段   | 值                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -237,7 +237,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/><data id="DefaultImagesSetting" value="2"/>`                             |
 
-*[DiskCacheSize](https://docs.microsoft.com/deployedge/microsoft-edge-policies#DiskCacheSize)：*
+*[DiskCacheSize](./microsoft-edge-policies.md#DiskCacheSize)：*
 
 | 字段   | 值                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -246,9 +246,9 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/><data id="DiskCacheSize" value="1000000"/>`                               |
 
-#### 字符串列表数据类型示例
+#### <a name="list-of-strings-data-type-examples"></a>字符串列表数据类型示例
 <!--
-*[NotificationsAllowedForUrls](https://docs.microsoft.com/deployedge/microsoft-edge-policies#NotificationsAllowedForUrls):*
+*[NotificationsAllowedForUrls](./microsoft-edge-policies.md#NotificationsAllowedForUrls):*
 
 | Field   | Value                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -257,7 +257,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | Type    | String                                                                               |
 | Value   | `<enabled/><data id="NotificationsAllowedForUrlsDesc" value="https://www.contoso.com"/>`<br>For multiple list items: `<data id="NotificationsAllowedForUrlsDesc" value="https://www.contoso.com;[*.]contoso.edu"/>`                               |
 -->
-*[RestoreOnStartupURLS](https://docs.microsoft.com/deployedge/microsoft-edge-policies#RestoreOnStartupURLS)：*
+*[RestoreOnStartupURLS](./microsoft-edge-policies.md#RestoreOnStartupURLS)：*
 
 | 字段   | 值                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -266,7 +266,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/><data id="RestoreOnStartupURLsDesc" value="1&#xF000;http://www.bing.com"/>`<br>对于多个列表项目： `<enabled/><data id="RestoreOnStartupURLsDesc" value="1&#xF000;http://www.bing.com&#xF000;2&#xF000;http://www.microsoft.com"/>`  |
 
-*[ExtensionInstallForcelist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#ExtensionInstallForcelist)：*
+*[ExtensionInstallForcelist](./microsoft-edge-policies.md#ExtensionInstallForcelist)：*
 
 | 字段   | 值                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -275,9 +275,9 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/><data id="ExtensionInstallForcelistDesc" value="1&#xF000;gbchcmhmhahfdphkhkmpfmihenigjmpp;https://extensionwebstorebase.edgesv.net/v1/crx"/>`                               |
 
-#### 字典和字符串数据类型示例
+#### <a name="dictionary-and-string-data-type-example"></a>字典和字符串数据类型示例
 
-*[ProxyMode](https://docs.microsoft.com/deployedge/microsoft-edge-policies#ProxyMode)：*
+*[ProxyMode](./microsoft-edge-policies.md#ProxyMode)：*
 
 | 字段   | 值                                                                                |
 |---------|--------------------------------------------------------------------------------------|
@@ -286,9 +286,9 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/><data id="ProxyMode" value="auto_detect"/>`                               |
 
-## 使用 ADMX 引入在 Intune 中配置 Microsoft Edge
+## <a name="configure-microsoft-edge-in-intune-using-admx-ingestion"></a>使用 ADMX 引入在 Intune 中配置 Microsoft Edge
 
-使用 Microsoft Intune 配置 Microsoft Edge 的推荐方法是使用管理模板配置文件，如[使用 Microsoft Intune 配置 Microsoft Edge 策略设置](https://docs.microsoft.com/deployedge/configure-edge-with-intune)中所述。 如果想要评估 Intune 内的 Microsoft Edge 管理模板中当前不可用的策略，你可以使用 [Intune 中 Windows 10 设备的自定义设置](https://docs.microsoft.com/intune/configuration/custom-settings-windows-10)来配置 Microsoft Edge。
+使用 Microsoft Intune 配置 Microsoft Edge 的推荐方法是使用管理模板配置文件，如[使用 Microsoft Intune 配置 Microsoft Edge 策略设置](./configure-edge-with-intune.md)中所述。 如果想要评估 Intune 内的 Microsoft Edge 管理模板中当前不可用的策略，你可以使用 [Intune 中 Windows 10 设备的自定义设置](/intune/configuration/custom-settings-windows-10)来配置 Microsoft Edge。
 
 本部分介绍了以下操作方法：
 
@@ -298,7 +298,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 > [!IMPORTANT]
 > 最佳做法是，不要使用自定义 OMA-URI 配置文件和管理模板配置文件来配置 Intune 中的相同 Microsoft Edge 设置。 如果同时使用自定义 OMA-URI 和管理模板配置文件部署同一策略，但使用的值不同，则用户将获得不可预知的结果。 我们强烈建议在使用管理模板配置文件之前删除 OMA-URI 配置文件。
 
-### 将 Microsoft Edge ADMX 文件引入到 Intune 中
+### <a name="ingest-the-microsoft-edge-admx-file-into-intune"></a>将 Microsoft Edge ADMX 文件引入到 Intune 中
 
 本节介绍了如何将 Microsoft Edge 管理模板（**msedge admx**文件）引入到 Intune 中。
 
@@ -347,7 +347,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 > [!NOTE]
 > You can use the preceding steps to ingest the msedgeupate.admx policy template file.
 -->
-### 在 Intune 中使用自定义 OMA-URI 设置策略
+### <a name="set-a-policy-using-custom-oma-uri-in-intune"></a>在 Intune 中使用自定义 OMA-URI 设置策略
 
 > [!NOTE]
 > 在执行此部分中的步骤之前，必须完成[将 Microsoft Edge ADMX 文件引入到 Intune 中](#ingest-the-microsoft-edge-admx-file-into-intune)中描述的步骤。
@@ -379,17 +379,17 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 8. 在**自定义 OMA-URI 设置**上，单击**确定**。
 9. 在 **Microsoft Edge ADMX 引入了配置 - 属性**配置文件（或你使用的名称）上，单击**保存**。
 
-创建配置文件并设置属性后，必须[在 Microsoft Intune 中分配配置文件](https://docs.microsoft.com/intune/configuration/device-profile-assign)。
+创建配置文件并设置属性后，必须[在 Microsoft Intune 中分配配置文件](/intune/configuration/device-profile-assign)。
 
-#### 确认策略已设置
+#### <a name="confirm-that-the-policy-was-set"></a>确认策略已设置
 
 使用以下步骤确认 Microsoft Edge 策略正在使用你创建的配置文件。 （给 Microsoft Intune 一些时间，以将策略传播到你在“Microsoft Edge ADMX 引入了配置”配置文件示例中分配的设备。）
 
 1. 打开 Microsoft Edge，然后转到 *edge://policy*。
 2. 在**策略**页上，查看是否已列出你在配置文件中设置的策略。
-3. 如果未显示你的策略，请参阅[诊断 Windows 10 中的 MDM 故障](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10)或[策略设置疑难解答](#troubleshoot-a-policy-setting)。
+3. 如果未显示你的策略，请参阅[诊断 Windows 10 中的 MDM 故障](/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10)或[策略设置疑难解答](#troubleshoot-a-policy-setting)。
 
-#### 策略设置疑难解答
+#### <a name="troubleshoot-a-policy-setting"></a>策略设置疑难解答
 
 如果 Microsoft Edge 策略未生效，请尝试执行以下步骤：
 
@@ -398,13 +398,13 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 - 检查该策略是否在注册表中并且正确无误。 在目标设备上，打开 Windows 10 注册表编辑器（**Windows 键 + r**，输入“*regedit*”，然后按 **Enter**）。检查是否在 *\Software\Policies\ Microsoft\Edge* 路径中正确定义了此策略。 如果未在预期路径中找到此策略，则不会正确地将策略推送到设备。
 - 请检查 OMA-URI 路径是否正确，并且该值是否为有效的 XML 字符串。 如果其中任何一个不正确，则不会将策略推送到目标设备。
 
-有关更多疑难解答提示，请参阅[设置 Microsoft Intune](https://docs.microsoft.com/intune/fundamentals/setup-steps) 和[同步设备](https://docs.microsoft.com/intune/remote-actions/device-sync)。
+有关更多疑难解答提示，请参阅[设置 Microsoft Intune](/intune/fundamentals/setup-steps) 和[同步设备](/intune/remote-actions/device-sync)。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [使用 Microsoft Intune 配置 Microsoft Edge 策略设置](configure-edge-with-intune.md)
-- [移动设备管理](https://docs.microsoft.com/windows/client-management/mdm/)
-- [在 Intune 中对 Windows 10 设备使用自定义设置](https://docs.microsoft.com/intune/configuration/custom-settings-windows-10)
-- [Win32 和桌面桥应用策略配置](https://docs.microsoft.com/windows/client-management/mdm/win32-and-centennial-app-policy-configuration)
-- [了解 ADMX 支持的策略](https://docs.microsoft.com/windows/client-management/mdm/understanding-admx-backed-policies)
+- [移动设备管理](/windows/client-management/mdm/)
+- [在 Intune 中对 Windows 10 设备使用自定义设置](/intune/configuration/custom-settings-windows-10)
+- [Win32 和桌面桥应用策略配置](/windows/client-management/mdm/win32-and-centennial-app-policy-configuration)
+- [了解 ADMX 支持的策略](/windows/client-management/mdm/understanding-admx-backed-policies)

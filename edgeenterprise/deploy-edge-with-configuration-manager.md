@@ -10,33 +10,33 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何使用 System Center Configuration Manager (SCCM) 部署 Microsoft Edge。
-ms.openlocfilehash: be14f2db3b28b7585bfad1706b9f82209235df0a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 64b26412c4596a9514227d41d1a4e753a66ed057
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979267"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447826"
 ---
-# 使用 System Center Configuration Manager 部署 Microsoft Edge
+# <a name="deploy-microsoft-edge-using-system-center-configuration-manager"></a>使用 System Center Configuration Manager 部署 Microsoft Edge
 
 本文向你介绍了如何使用 System Center Configuration Manager (SCCM) 自动部署 Microsoft Edge。
 
 >[!NOTE]
 >本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-## 开始之前
+## <a name="before-you-begin"></a>开始之前
 
-请查看 [Configuration Manager 中的应用程序管理简介](https://docs.microsoft.com/sccm/apps/understand/introduction-to-application-management)中的信息。 此应用程序管理文章将帮助你了解本文中使用的术语，并且是准备站点以安装应用程序的指南。
+请查看 [Configuration Manager 中的应用程序管理简介](/sccm/apps/understand/introduction-to-application-management)中的信息。 此应用程序管理文章将帮助你了解本文中使用的术语，并且是准备站点以安装应用程序的指南。
 
 从 [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)下载 Microsoft Edge Enterprise 安装文件（**MicrosoftEdgeDevEnterpriseX64.msi** 和/或 **MicrosoftEdgeDevEnterpriseX86.msi**）。
 
 请确保将 Microsoft Edge 安装文件存储在可访问的网络位置。
 
-## 创建应用程序
+## <a name="create-the-application"></a>创建应用程序
 
 你将使用 Configuration Manager 向导创建应用程序。
 
-### 启动创建应用程序向导并创建应用程序  
+### <a name="start-the-create-application-wizard-and-create-the-application"></a>启动创建应用程序向导并创建应用程序  
 
 1. 在 Configuration Manager 控制台中，单击**软件库** > **应用程序管理** > **应用程序**。  
 
@@ -85,7 +85,7 @@ ms.locfileid: "10979267"
 
 ![应用程序](./media/edge-ent-deployment-sccm/edge-ent-create-app-8.png)
 
-## 更改应用程序属性和部署设置
+## <a name="change-application-properties-and-deployment-settings"></a>更改应用程序属性和部署设置
 
 创建应用程序后，你可以根据需要优化应用程序设置。 若要查看应用程序属性，请执行以下操作：
 
@@ -94,7 +94,7 @@ ms.locfileid: "10979267"
 
    ![配置应用程序属性](./media/edge-ent-deployment-sccm/edge-ent-create-app-req-1.png)
 
- 在 **<application name\> 应用程序属性**对话框页面中，你将看到可配置以更改应用程序行为的项目的选项卡式视图。 有关你可以配置的设置的详细信息，请参阅[创建应用程序](https://docs.microsoft.com/sccm/apps/deploy-use/create-applications)。
+ 在 **<application name\> 应用程序属性**对话框页面中，你将看到可配置以更改应用程序行为的项目的选项卡式视图。 有关你可以配置的设置的详细信息，请参阅[创建应用程序](/sccm/apps/deploy-use/create-applications)。
 
 在此示例中，你将更改应用程序部署类型的某些属性。 要更改部署属性，请执行以下操作：
 
@@ -104,7 +104,7 @@ ms.locfileid: "10979267"
 
    ![编辑部署类型](./media/edge-ent-deployment-sccm/edge-ent-create-app-req-2.png)
 
-### 将要求添加到部署类型中
+### <a name="add-a-requirement-to-the-deployment-type"></a>将要求添加到部署类型中
 
  要求指定在设备上安装应用程序之前必须满足的条件。 你可以从内置要求中进行选择，也可以创建自己的要求。 例如，你可以添加一个要求，要求将应用程序仅安装在运行 **Windows 10 x86** 或 **x64** 的电脑上，具体取决于安装文件的目标处理器体系结构。 在此示例中，你将指定 Windows 10 **x86**。
 
@@ -132,12 +132,12 @@ ms.locfileid: "10979267"
 
 4. 单击**确定**以关闭每个打开的属性页，然后返回到 Configuration Manager 控制台中的**应用程序**列表。  
 
-## 将应用程序内容添加到分发点  
+## <a name="add-the-application-content-to-a-distribution-point"></a>将应用程序内容添加到分发点  
 
 若要将更新后的应用程序部署到电脑，请确保将应用程序内容复制到分发点。 电脑访问分发点以安装应用程序。  
 
 >[!TIP]
->若要了解有关 Configuration Manager 中的分发点和内容管理的详细信息，请参阅[部署和管理 System Center Configuration Manager 的内容](https://docs.microsoft.com/sccm/core/servers/deploy/configure/deploy-and-manage-content)。  
+>若要了解有关 Configuration Manager 中的分发点和内容管理的详细信息，请参阅[部署和管理 System Center Configuration Manager 的内容](/sccm/core/servers/deploy/configure/deploy-and-manage-content)。  
 
 1. 在 Configuration Manager 控制台中，单击**软件库**。  
 
@@ -155,7 +155,7 @@ ms.locfileid: "10979267"
 
 你可以在**分发状态** > **内容状态**下检查应用程序内容是否已成功从**监视**工作区复制到分发点。  
 
-## 部署应用程序  
+## <a name="deploy-the-application"></a>部署应用程序  
 
 接下来，将应用程序部署到层次结构中的设备集合。 在此示例中，你将应用程序部署到**所有系统**设备集合。  
 
@@ -199,11 +199,11 @@ ms.locfileid: "10979267"
 
 使用以下**监视应用程序**部分中的信息查看应用程序部署的状态。  
 
-## 监视应用程序
+## <a name="monitor-the-application"></a>监视应用程序
 
  在此部分中，你可以快速查看刚部署的应用程序的部署状态。  
 
-### 要查看部署状态，请执行以下操作  
+### <a name="to-review-the-deployment-status"></a>要查看部署状态，请执行以下操作  
 
 1. 在 Configuration Manager 控制台中，单击**监视** > **部署**。  
 
@@ -226,13 +226,13 @@ ms.locfileid: "10979267"
     - **未知**：Configuration Manager 无法报告部署的状态。 请稍后重新查看。  
 
     >[!TIP]
-    >可以通过多种方法监视应用程序部署。 有关详细信息，请参阅[通过 System Center Configuration Manager 控制台监视应用程序](https://docs.microsoft.com/sccm/apps/deploy-use/monitor-applications-from-the-console)。  
+    >可以通过多种方法监视应用程序部署。 有关详细信息，请参阅[通过 System Center Configuration Manager 控制台监视应用程序](/sccm/apps/deploy-use/monitor-applications-from-the-console)。  
 
-## 最终用户体验  
+## <a name="end-user-experience"></a>最终用户体验  
 
 如果用户拥有 Configuration Manager 管理的电脑，并且正在运行指定处理器体系结构的 Windows 10，那么这些用户将看到一条消息，得知自己必须安装 Microsoft Edge Dev 应用程序。 当他们接受此安装选项时，将安装该应用程序。  
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [使用 System Center Configuration Manager 创建和部署应用程序](https://docs.microsoft.com/sccm/apps/get-started/create-and-deploy-an-application)
+- [使用 System Center Configuration Manager 创建和部署应用程序](/sccm/apps/get-started/create-and-deploy-an-application)

@@ -10,18 +10,18 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: IE 模式下 Microsoft Edge 和可配置网站
-ms.openlocfilehash: a846d71d63a4f837041acc9b601f704999bb826a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 1bffdef8c88b7a83d999b29763fcca258102ed51
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979348"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447326"
 ---
-# 了解 IE 模式下可配置网站
+# <a name="learn-about-configurable-sites-in-ie-mode"></a>了解 IE 模式下可配置网站
 
 本文将介绍 Microsoft Edge 中使用 IE 模式时企业模式网站列表的“可配置网站”功能。
 
-## 必备条件
+## <a name="prerequisites"></a>必备条件
 
 - Windows 更新
 
@@ -34,17 +34,17 @@ ms.locfileid: "10979348"
   - Windows 8.1 – KB4556798 或更高版本
 
 - Microsoft Edge 版本 83 或更高版本
-- 使用企业模式网站列表配置的 [IE 模式](https://aka.ms/iemodeonedge)
+- 使用企业模式网站列表配置的 [IE 模式](./edge-ie-mode.md)
 
-## 概述
+## <a name="overview"></a>概述
 
 在企业模式网站列表中配置需要 IE 模式的网站，可良好适用于具有旧版应用程序的大多数环境。 但是，在某些情况下，此方法不是将网站的子集配置为以 IE 模式打开，而无需在 IE 模式下呈现整个域。 例如，如果你的环境中同时包含运行于单个服务器上的新版和旧版应用程序，你想要灵活地在 IE 模式下呈现旧版应用程序，并在 Microsoft Edge 模式下呈现其余应用程序。
 
 就可以使用企业模式网站列表的“可配置网站”来解决。 启用此功能后，Microsoft Edge 将允许具有“可配置”标记的网站参与 IE 模式引擎确定。
 
-## 可配置网站的工作方式
+## <a name="how-configurable-sites-works"></a>可配置网站的工作方式
 
-### 从 Microsoft Edge 引擎自动切换到 IE 模式引擎
+### <a name="automatic-switching-from-the-microsoft-edge-engine-to-the-ie-mode-engine"></a>从 Microsoft Edge 引擎自动切换到 IE 模式引擎
 
 若要使用“可配置网站”功能，将需要企业模式网站列表中的一个或多个网站具有 `<open-in>Configurable</open-in>` 选项。
 
@@ -67,7 +67,7 @@ ms.locfileid: "10979348"
    > [!NOTE]
    > 重定向响应可能会根据 Microsoft Edge 用于重定向的普通 HTTP 缓存行为进行缓存。
 
-### 从 IE 模式引擎切换回 Microsoft Edge 引擎
+### <a name="switching-back-from-ie-mode-engine-to-microsoft-edge-engine"></a>从 IE 模式引擎切换回 Microsoft Edge 引擎
 
 在 Microsoft Edge 中启用可配置网站会自动启用 IE 模式选项卡中的以下行为：
 
@@ -81,8 +81,8 @@ ms.locfileid: "10979348"
 > [!TIP]
 > 两种浏览器引擎均向可配置网站发送相同的“`X-InternetExplorerModeConfigurable: 1`”请求头。 应使用 User-Agent 请求头区分 Microsoft Edge 模式与 IE 模式的请求，避免在网站已加载到正确的引擎中时进行重定向。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
-- [关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [其他企业模式信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [关于 IE 模式](./edge-ie-mode.md)
+- [其他企业模式信息](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

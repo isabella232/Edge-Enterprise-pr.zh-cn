@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Windows 和 macOS 的 Microsoft Edge 显示语言支持。
-ms.openlocfilehash: af8d2a57d35411600237d09ad528c7b071228d21
-ms.sourcegitcommit: 2b902ecf31430f3fc75d3731f26255aea0bb937e
+ms.openlocfilehash: 37073213fcdacac6b8182dcbef93901c82110756
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "11406157"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447096"
 ---
 # <a name="microsoft-edge-language-support"></a>Microsoft Edge 语言支持
 
@@ -156,5 +156,5 @@ ms.locfileid: "11406157"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Microsoft Edge 文档](https://docs.microsoft.com/DeployEdge/)
+- [Microsoft Edge 文档](./index.yml)
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

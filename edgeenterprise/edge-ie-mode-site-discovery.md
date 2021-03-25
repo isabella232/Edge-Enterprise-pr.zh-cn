@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用“企业站点发现”为 IE 模式做准备
-ms.openlocfilehash: 9ec748686b83466cd1c7d92fcc7fdc0f0d136977
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 2557544a93222b03aaa0961149aa0d3c5d7d8806
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979315"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447716"
 ---
-# “企业站点发现”分步指南
+# <a name="enterprise-site-discovery-step-by-step-guide"></a>“企业站点发现”分步指南
 
 本文提供了将“企业站点发现”与 Microsoft Endpoint Configuration Manager 搭配使用的分步指南。
 
@@ -29,7 +29,7 @@ ms.locfileid: "10979315"
 > [!NOTE]
 > 本文适用于 Microsoft Edge **Stable**、**Beta** 和 **Dev** 渠道版本 77 或更高版本。
 
-## 必备条件
+## <a name="prerequisites"></a>必备条件
 
 本指南假定你正在使用 Microsoft Endpoint Configuration Manager 并且安装了以下服务和角色：
 
@@ -37,20 +37,20 @@ ms.locfileid: "10979315"
 2. Microsoft SQL Server Reporting Services
 3. （可选）已配置 Configuration Manager Reporting Services 点角色
 
-## 下载“企业站点发现”工具
+## <a name="download-enterprise-site-discovery-tools"></a>下载“企业站点发现”工具
 
 下载以下工具：
 
 - [“企业站点发现”设置和配置包](https://go.microsoft.com/fwlink/p/?LinkId=517719)
 - [Microsoft 报表生成器](https://www.microsoft.com/download/details.aspx?id=53613)
 
-## 启用“企业站点发现”
+## <a name="enable-enterprise-site-discovery"></a>启用“企业站点发现”
 
 必须先在设备上部署 WMI 类提供程序，才能连接到 Windows Management Instrumentation (WMI) 以检索站点发现数据。
 
 从“**企业站点发现设置和配置包**”中，将内容提取到最终软件库文件共享中的某个文件夹。 示例：**\\\\DSL\\EnterpriseSiteDiscovery**。
 
-接着，按照[文档](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs)中所述，在 Microsoft Endpoint Configuration Manager 中创建一个程序包，然后选择以下选项：
+接着，按照[文档](/configmgr/apps/deploy-use/packages-and-programs)中所述，在 Microsoft Endpoint Configuration Manager 中创建一个程序包，然后选择以下选项：
 
 - 在“**程序**”包上，选择“**名称**”并指定名称“**启用站点发现**”
 - 在“**程序包**”页面上，选择“**此程序包包含源文件**”
@@ -68,11 +68,11 @@ ms.locfileid: "10979315"
 创建程序包后，双击程序包名称“**启用站点发现**”以查看其属性。 在“**运行后**”属性中，选择“**Configuration Manager 重新启动计算机**”。 WMI 数据收集将在设备重启之后开始。
 
 > [!NOTE]
-> 可按照[客户端设置文档](https://docs.microsoft.com/configmgr/core/clients/deploy/about-client-settings#computer-restart)中所述，配置用户必须重新启动设备的时间量。
+> 可按照[客户端设置文档](/configmgr/core/clients/deploy/about-client-settings#computer-restart)中所述，配置用户必须重新启动设备的时间量。
 
-## 通过组策略配置“企业站点发现”
+## <a name="configure-enterprise-site-discovery-via-group-policy"></a>通过组策略配置“企业站点发现”
 
-启用“企业站点发现”后，可以配置要收集的数据。 请考虑当地法律和法规要求，如[此处](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery#what-data-is-collected)所述。
+启用“企业站点发现”后，可以配置要收集的数据。 请考虑当地法律和法规要求，如[此处](/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery#what-data-is-collected)所述。
 
 1. 打开组策略编辑器
 2. 单击“**计算机配置**” > “**管理模板**” > “**Windows 组件**” > “**Internet Explorer**” 
@@ -103,7 +103,7 @@ ms.locfileid: "10979315"
 3. 输入想要为其收集数据的域（一行输入一个域）
 4. 单击“**确定**”或“**应用**”以保存此策略设置
 
-## 使用 Configuration Manager 收集站点发现数据
+## <a name="collect-site-discovery-data-using-configuration-manager"></a>使用 Configuration Manager 收集站点发现数据
 
 设备现在正在生成数据，是时候在 Configuration Manager 中收集这些数据了。
 
@@ -121,16 +121,16 @@ ms.locfileid: "10979315"
 
 客户端更新管理点中的设置后，将在下次运行硬件清单（默认为每七天一次）时报表数据。
 
-## 导入站点发现报表
+## <a name="import-site-discovery-reports"></a>导入站点发现报表
 
 “企业站点发现”包中包括两个示例报表。 一个报表显示使用 ActiveX 控件的站点，另一个报表显示使用旧文档模式的站点。
 
-### 配置站点发现示例时报
+### <a name="configure-the-site-discovery-sample-report"></a>配置站点发现示例时报
 
 使用以下步骤创建一个使用以下三种数据源的示例报表：用户访问的站点、与用户系统相关的信息以及站点使用的文档模式。 此报表可以帮助你识别可能依赖旧文档模式的站点。
 
 1. 将报表 **SCCM_Report-Site_Discovery.rdl** 复制到 Configuration Manager 服务器。
-2. 安装 [Microsoft 报表生成器](https://docs.microsoft.com/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15)。
+2. 安装 [Microsoft 报表生成器](/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15)。
 3. 双击 **SCCM_Report-Site_Discovery.rdl** 在报表生成器中打开报表。
 4. 首次尝试打开报表时，它将会尝试联系在其中创建该报表的服务器。 提示“**连接到报表服务器**”时，单击“**否**”。
 5. 报表打开之后，展开“**数据源**”并双击“**DataSource1**”。
@@ -147,12 +147,12 @@ ms.locfileid: "10979315"
 16. 关闭 Microsoft 报表生成器。
 17. 将文件重命名为 **Site Discovery.rdl**
 
-### 配置 ActiveX 示例报表
+### <a name="configure-the-activex-sample-report"></a>配置 ActiveX 示例报表
 
 使用以下步骤创建一个使用一个数据源的示例报表：使用 ActiveX 控件的站点。 Internet Explorer 是唯一支持 ActiveX 控件的浏览器，因此，这些站点可能需要 IE 模式。
 
 1. 将报表 **SCCM Report Sample - ActiveX.rdl** 复制到 Configuration Manager 服务器。
-2. 安装 [Microsoft 报表生成器](https://docs.microsoft.com/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15)。
+2. 安装 [Microsoft 报表生成器](/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15)。
 3. 双击 **SCCM Report Sample - ActiveX.rdl** 在报表生成器中打开报表。
 4. 首次尝试打开报表时，它将会尝试联系在其中创建该报表的服务器。 提示“**连接到报表服务器**”时，单击“**否**”。
 5. After the report opens, expand **Data Sources** and double-click **AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_**.
@@ -167,7 +167,7 @@ ms.locfileid: "10979315"
 14. 关闭 Microsoft 报表生成器。
 15. 将文件重命名为 **ActiveX**
 
-### 将配置的报表上载至 Microsoft SQL Server Reporting Services
+### <a name="upload-configured-reports-to-microsoft-sql-server-reporting-services"></a>将配置的报表上载至 Microsoft SQL Server Reporting Services
 
 为环境配置报表之后，将它们上载至报表服务器。
 
@@ -181,16 +181,16 @@ ms.locfileid: "10979315"
 8. 选择“**站点发现**”报表，然后单击“**确定**”。
 9. 对 **ActiveX** 报表重复步骤 7 和步骤 8。
 
-### 在 Configuration Manager 中查看报表
+### <a name="view-reports-in-configuration-manager"></a>在 Configuration Manager 中查看报表
 
 在自定义和上载报表之后，你就可以在 Configuration Manager 中查看它们。
 
 1. 在 Configuration Manager 控制台中，选择“**监视**” > “**报表**” > “**报表**” > “**企业站点发现**”
 2. 双击报表以进行查看。
 
-## 禁用“企业站点发现”
+## <a name="disable-enterprise-site-discovery"></a>禁用“企业站点发现”
 
-完成数据收集之后，应禁用“企业站点发现”。 如[文档](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs)中所述，在 Microsoft Endpoint Configuration Manage 中创建另一个程序包以禁用“企业站点发现”，然后选择以下选项：
+完成数据收集之后，应禁用“企业站点发现”。 如[文档](/configmgr/apps/deploy-use/packages-and-programs)中所述，在 Microsoft Endpoint Configuration Manage 中创建另一个程序包以禁用“企业站点发现”，然后选择以下选项：
 
 - 在“**程序包**”页面上，选择“**名称**”并指定名称“**禁用站点发现**”
 - 在“**程序包**”页面上，选择“**此程序包包含源文件**”
@@ -203,9 +203,9 @@ ms.locfileid: "10979315"
 - 在“**标准程序**”页面上，选择用于运行“**已隐藏**”的选项
 - 在“**标准程序**”页面的“**程序可运行**”下，选择选项“**用户是否已登录**”
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [其他企业模式信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
-- [其他“企业站点发现”信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery)
+- [关于 IE 模式](./edge-ie-mode.md)
+- [其他企业模式信息](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [其他“企业站点发现”信息](/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery)

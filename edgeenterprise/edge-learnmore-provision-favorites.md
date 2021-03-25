@@ -10,28 +10,28 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 预配 Microsoft Edge 收藏夹
-ms.openlocfilehash: 94bd42573bdbc0fd1b971ded1c82e5fe152acc54
-ms.sourcegitcommit: 854dd73eb168960c0eb4b483f81a8efe88806a64
+ms.openlocfilehash: 67627fa10806435d76cecae00f79867bc5af03df
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "11088684"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447596"
 ---
-# 预配 Microsoft Edge 收藏夹
+# <a name="provision-favorites-for-microsoft-edge"></a>预配 Microsoft Edge 收藏夹
 
 根据客户反馈，我们改进了预配收藏夹。 从 Microsoft Edge 版本 85 开始，管理员无需再手动创建文件来设置收藏夹。 管理员可使用 Microsoft Edge 用户界面添加收藏夹和文件夹，以便生成可导出到组策略的文件。
 
-本文介绍如何为你的组织设置一组收藏夹和文件夹。 可使用[“配置收藏夹”](https://docs.microsoft.com//DeployEdge/microsoft-edge-policies#configure-favorites)策略来设置收藏夹和文件夹。
+本文介绍如何为你的组织设置一组收藏夹和文件夹。 可使用[“配置收藏夹”](//DeployEdge/microsoft-edge-policies#configure-favorites)策略来设置收藏夹和文件夹。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 85 或更高版本。
 
-## 先决条件和建议
+## <a name="prerequisites-and-recommendations"></a>先决条件和建议
 
 - Microsoft Edge 版本 85 为组策略安装了适当的管理模板。
 - 建议在 Microsoft Edge 中使用新的配置文件来设置这些收藏夹。 将在导出中包含与该配置文件一起保存的所有收藏夹。  
 
-## 预配收藏夹和文件夹
+## <a name="provision-favorites-and-folders"></a>预配收藏夹和文件夹
 
 使用以下步骤为用户预配收藏夹和文件夹。
 
@@ -66,6 +66,6 @@ ms.locfileid: "11088684"
 
 7. 单击 **“确定”** 或 **“应用”** 保存策略设置。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解展台模式功能以及如何配置 Microsoft Edge 展台模式的选项。
-ms.openlocfilehash: 516bc004a516b243e52d4128ae47f3ab9d7498df
-ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
+ms.openlocfilehash: 9d76bfcaebeaf56e627a401cc4f0375bce9d17a3
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "11442482"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11448126"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>配置 Microsoft Edge 展台模式
 
@@ -48,17 +48,17 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
 |-|-|-|-|-|
 |InPrivate 导航|Y|Y|89|Y|
 |在处于非活动状态时重置|Y|Y|89|Y|
-|[只读地址栏](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskaddressbareditingenabled) (策略) |N|Y |89|N|
-|[退出时删除下载](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskdeletedownloadsonexit)（策略）  | Y|Y |89|N|
+|[只读地址栏](./microsoft-edge-policies.md#kioskaddressbareditingenabled) (策略) |N|Y |89|N|
+|[退出时删除下载](./microsoft-edge-policies.md#kioskdeletedownloadsonexit)（策略）  | Y|Y |89|N|
 |已阻止 F11（进入/退出全屏） | Y | Y | 89 |Y|
 |已阻止F12（启动开发人员工具） | Y | Y | 89 |Y|
 | 多选项卡支持 | N| Y| 89|Y|
-|[允许 URL 支持](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlallowlist)（策略）|Y|Y|89|N|
-|[阻止 URL 支持](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlblocklist)（策略）|Y|Y|89|N|
-|[显示“主页”按钮](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showhomebutton)（策略）|N|Y|89|Y|
-|[管理收藏夹](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#managedfavorites)（策略）|N|Y|89|Y|
-|[启用打印机](https://docs.microsoft.com/deployedge/microsoft-edge-policies#printingenabled)（策略）|Y|Y|89|Y|
-|[配置新标签页页面 URL](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagelocation)（策略）|N|Y||Y|
+|[允许 URL 支持](./microsoft-edge-policies.md#urlallowlist)（策略）|Y|Y|89|N|
+|[阻止 URL 支持](./microsoft-edge-policies.md#urlblocklist)（策略）|Y|Y|89|N|
+|[显示“主页”按钮](./microsoft-edge-policies.md#showhomebutton)（策略）|N|Y|89|Y|
+|[管理收藏夹](./microsoft-edge-policies.md#managedfavorites)（策略）|N|Y|89|Y|
+|[启用打印机](./microsoft-edge-policies.md#printingenabled)（策略）|Y|Y|89|Y|
+|[配置新标签页页面 URL](./microsoft-edge-policies.md#newtabpagelocation)（策略）|N|Y||Y|
 |结束会话按钮 * | N| Y| 89|Y|
 |所有内部 Microsoft Edge URL 已将被阻止，除了*edge://downloads*和*edge://print* |N|Y|89|Y|
 | Ctrl+N 阻止 (打开新窗口) * | Y | Y | 89 |Y|
@@ -66,7 +66,7 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
 |设置和更多 (...) 将仅显示所需的选项  |Y |Y |89 |Y|
 |限制从浏览器启动其他应用程序|Y|Y|90/91|Y|
 |UI 打印设置锁定|Y|Y|90/91|Y|
-|[将新标签页页面设置为主页](https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepageisnewtabpage)（策略）|-|-|TBD|Y|
+|[将新标签页页面设置为主页](./microsoft-edge-policies.md#homepageisnewtabpage)（策略）|-|-|TBD|Y|
 
 > [!NOTE]
 > 后跟“*”的功能仅在已分配的访问单一应用场景中启用。
@@ -124,25 +124,25 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
 
 ## <a name="support-policies-for-kiosk-mode"></a>展台模式的支持策略
 
-使用下表中列出的任何 Microsoft Edge 策略增强所配置的 Microsoft Edge 展台模式类型的展台体验。 若要了解有关这些策略的信息，请参阅 [Microsoft Edge – 浏览器策略参考](https://docs.microsoft.com/deployedge/microsoft-edge-policies)。
+使用下表中列出的任何 Microsoft Edge 策略增强所配置的 Microsoft Edge 展台模式类型的展台体验。 若要了解有关这些策略的信息，请参阅 [Microsoft Edge – 浏览器策略参考](./microsoft-edge-policies.md)。
 
 > [!NOTE]
 > 策略配置不限于下表中列出的策略，但应测试其他策略以确保展台模式功能不会受到负面影响。
 
 |组策略|数字\交互式标志|公共浏览单应用|
 |--|--|--|
-|[打印](https://docs.microsoft.com/deployedge/microsoft-edge-policies#printing-policies) | Y|Y |
-|[HomePageLocation](https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepagelocation) |N | Y|
-|[ShowHomeButton](https://docs.microsoft.com/deployedge/microsoft-edge-policies#showhomebutton) |N | Y|
-|[NewTabPageLocation](https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagelocation) |N |Y |
-|[FavoritesBarEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#favoritesbarenabled) |N |Y |
-|[URLAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlallowlist) |Y |Y |
-|[URLBlocklist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlblocklist) |Y | Y|
-|[ManagedSearchEngines](https://docs.microsoft.com/deployedge/microsoft-edge-policies#managedsearchengines) |N | Y|
-|[UserFeedbackAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userfeedbackallowed) |N | Y|
-|[VerticalTabsAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#verticaltabsallowed) | N|Y |
-|[SmartScreen 设置](https://docs.microsoft.com/deployedge/microsoft-edge-policies#smartscreen-settings-policies) |Y |Y |
-|[EdgeCollectionsEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgecollectionsenabled)|Y|Y|
+|[打印](./microsoft-edge-policies.md#printing-policies) | Y|Y |
+|[HomePageLocation](./microsoft-edge-policies.md#homepagelocation) |N | Y|
+|[ShowHomeButton](./microsoft-edge-policies.md#showhomebutton) |N | Y|
+|[NewTabPageLocation](./microsoft-edge-policies.md#newtabpagelocation) |N |Y |
+|[FavoritesBarEnabled](./microsoft-edge-policies.md#favoritesbarenabled) |N |Y |
+|[URLAllowlist](./microsoft-edge-policies.md#urlallowlist) |Y |Y |
+|[URLBlocklist](./microsoft-edge-policies.md#urlblocklist) |Y | Y|
+|[ManagedSearchEngines](./microsoft-edge-policies.md#managedsearchengines) |N | Y|
+|[UserFeedbackAllowed](./microsoft-edge-policies.md#userfeedbackallowed) |N | Y|
+|[VerticalTabsAllowed](./microsoft-edge-policies.md#verticaltabsallowed) | N|Y |
+|[SmartScreen 设置](./microsoft-edge-policies.md#smartscreen-settings-policies) |Y |Y |
+|[EdgeCollectionsEnabled](./microsoft-edge-policies.md#edgecollectionsenabled)|Y|Y|
 
 ## <a name="microsoft-edge-with-assigned-access"></a>Microsoft Edge 与指派访问
 
@@ -154,11 +154,11 @@ Microsoft Edge 当前支持具有以下锁定体验的单应用分配访问权�
 
 **如何获得 Windows 预览体验成员预览版？**
 
-若要在电脑上安装 Windows 10 Insider Preview 内部版本，请按照 [开始使用 Windows 10 Insider Preview 版本](https://docs.microsoft.com/windows-insider/get-started)中的说明进行操作。
+若要在电脑上安装 Windows 10 Insider Preview 内部版本，请按照 [开始使用 Windows 10 Insider Preview 版本](/windows-insider/get-started)中的说明进行操作。
 
 ### <a name="multi-app-kiosk"></a>多应用展台。
 
-可用 Windows 10 上的[多应用指派访问](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)（相当于旧版 Microsoft Edge 的“普通浏览”展台模式类型）运行 Microsoft Edge。 若要使用多应用分配的访问权限配置 Microsoft Edge，请按照有关[如何设置多应用展台](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)的说明进行操作。 （Microsoft Edge Stable 渠道的 AUMID 为 **MSEdge**）。
+可用 Windows 10 上的[多应用指派访问](/windows/configuration/lock-down-windows-10-to-specific-apps)（相当于旧版 Microsoft Edge 的“普通浏览”展台模式类型）运行 Microsoft Edge。 若要使用多应用分配的访问权限配置 Microsoft Edge，请按照有关[如何设置多应用展台](/windows/configuration/lock-down-windows-10-to-specific-apps)的说明进行操作。 （Microsoft Edge Stable 渠道的 AUMID 为 **MSEdge**）。
 
 将 Microsoft Edge 与多应用分配的访问权限一同使用时，可以将 Microsoft Edge 展台配置为使用 [Microsoft Edge 浏览器策略](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies)配置浏览体验，以满足你的独特要求。
 
@@ -166,7 +166,7 @@ Microsoft Edge 当前支持具有以下锁定体验的单应用分配访问权�
 
 Windows 设置是设置一个或两个单应用展台设备的最简单方法。 使用以下步骤设置单应用展台计算机。
 
-1. 安装最新的 Windows 10 Insider Preview 版本 20215 或更高版本。 按照[开始使用 Windows 10 Insider Preview 版本](https://docs.microsoft.com/windows-insider/get-started)中的说明进行操作。
+1. 安装最新的 Windows 10 Insider Preview 版本 20215 或更高版本。 按照[开始使用 Windows 10 Insider Preview 版本](/windows-insider/get-started)中的说明进行操作。
 2. 若要测试最新功能，可以下载最新的 [Microsoft Edge Beta 渠道](https://www.microsoftedgeinsider.com/download)的 89 或更高版本。
 3. 在展台计算机上，打开“Windows 设置”，然后在搜索字段中键入“展台”。 选择“ **设置展台（分配的访问权限）**”（如下一个屏幕截图所示），以打开用于创建展台的对话框。
 
@@ -216,18 +216,18 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 
 目前不支持以下功能，建议关闭：
 
-- [InPrivateModeAvailability](https://docs.microsoft.com/deployedge/microsoft-edge-policies#inprivatemodeavailability)
-- [IsolateOrigins](https://docs.microsoft.com/deployedge/microsoft-edge-policies#isolateorigins)
-- [ManagedFavorites](https://docs.microsoft.com/deployedge/microsoft-edge-policies#managedfavorites)
-- [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgeshoppingassistantenabled)
-- [EdgeCollectionsEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgecollectionsenabled)
-- [UserFeedbackAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userfeedbackallowed)
-- [DefaultPopupsSetting](https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultpopupssetting)
-- [StartupBoostEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#startupboostenabled)
-- [InternetExplorerIntegrationLevel](https://docs.microsoft.com/deployedge/microsoft-edge-policies#internetexplorerintegrationlevel)
-- [Extensions](https://docs.microsoft.com/deployedge/microsoft-edge-policies#extensions-policies)
-- [BackgroundModeEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#backgroundmodeenabled)
-- [UserFeedbackAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userfeedbackallowed)
+- [InPrivateModeAvailability](./microsoft-edge-policies.md#inprivatemodeavailability)
+- [IsolateOrigins](./microsoft-edge-policies.md#isolateorigins)
+- [ManagedFavorites](./microsoft-edge-policies.md#managedfavorites)
+- [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled)
+- [EdgeCollectionsEnabled](./microsoft-edge-policies.md#edgecollectionsenabled)
+- [UserFeedbackAllowed](./microsoft-edge-policies.md#userfeedbackallowed)
+- [DefaultPopupsSetting](./microsoft-edge-policies.md#defaultpopupssetting)
+- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled)
+- [InternetExplorerIntegrationLevel](./microsoft-edge-policies.md#internetexplorerintegrationlevel)
+- [Extensions](./microsoft-edge-policies.md#extensions-policies)
+- [BackgroundModeEnabled](./microsoft-edge-policies.md#backgroundmodeenabled)
+- [UserFeedbackAllowed](./microsoft-edge-policies.md#userfeedbackallowed)
 
 ## <a name="roadmap"></a>路线图
 
@@ -245,5 +245,5 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [规划 Microsoft Edge 部署](deploy-edge-plan-deployment.md)
-- [在 Windows 桌面版中配置展台和数字签名](https://docs.microsoft.com/windows/configuration/kiosk-methods)
+- [在 Windows 桌面版中配置展台和数字签名](/windows/configuration/kiosk-methods)
 - [规划展台模式转换](microsoft-edge-kiosk-mode-transition-plan.md)

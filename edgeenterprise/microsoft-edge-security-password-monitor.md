@@ -10,41 +10,41 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 为用户自动启用密码监视器
-ms.openlocfilehash: 2f796f0cd1bbb437f83d04a8bd59586ef7b6a982
-ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
+ms.openlocfilehash: d1995735ac7558c1608d427aac70081d4afed3a0
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "11304532"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447276"
 ---
-# 为用户自动启用密码监视器
+# <a name="password-monitor-auto-enabled-for-users"></a>为用户自动启用密码监视器
 
 本文介绍了如何为选定用户打开 Microsoft Edge 中的密码监视器，并给予管理员控制如何启用监视的步骤。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 88 或更高版本。
 
-## 简介、优势和可用性
+## <a name="introduction-benefits-and-availability"></a>简介、优势和可用性
 
 密码监视器通过通知 Microsoft Edge 用户在联机泄露中是否找到其任何密码来帮助其保护其联机帐户。 当错误参与者从第三方应用或网站窃取数据时，将发生联机泄露或数据泄露。 若要了解更多信息，请参阅 Microsoft 研究博客上的[密码监视器：保护 Microsoft Edge 中的密码](https://www.microsoft.com/research/blog/password-monitor-safeguarding-passwords-in-microsoft-edge/)一文。
 
-### 优势
+### <a name="benefits"></a>优势
 
 鉴于这些联机攻击的频率和范围，每个人必须拥有此类保护。 Microsoft Edge 具有针对已知泄露的密码安全检查用户保存的密码的内置功能，如果找到匹配项，则发出警报。  
 
-### 可用性
+### <a name="availability"></a>可用性
 
 从 1 月 21 日起，稳定渠道版本 88 中提供了密码监视器。 新版本的推出将逐步进行，可能需要几周时间。更新后用户可以在“**设置**” > “**个人资料**” > “**密码**”页面中看到以下消息和控件。
 
 :::image type="content" source="media/microsoft-edge-security-password-monitor/monitor-enable-option.png" alt-text="启用密码监视器的选项":::
 
-## 为密码监视器配置组策略
+## <a name="configure-group-policy-for-password-monitor"></a>为密码监视器配置组策略
 
-此功能通过 [PasswordMonitorAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#passwordmonitorallowed) 组策略控制。
+此功能通过 [PasswordMonitorAllowed](./microsoft-edge-policies.md#passwordmonitorallowed) 组策略控制。
 
 启用策略后，用户仍然需要同意才能启用该功能。 需要获得同意，因为该功能包含用户的敏感数据和个人数据（密码）。 如果使用组策略禁用此功能，则用户不能覆盖此设置。  
 
-## 为用户启用密码监视器
+## <a name="enabling-password-monitor-for-users"></a>为用户启用密码监视器
 
 启用密码监视器策略后，用户可以通过多种方式使用此功能。
 
@@ -63,7 +63,7 @@ ms.locfileid: "11304532"
    
 - 直接激活。 用户可以随时转到“**设置**” > “**密码**”来打开或关闭此功能。
 
-## 自动启用密码监视器的用户方案
+## <a name="user-scenarios-with-password-monitor-auto-enabled"></a>自动启用密码监视器的用户方案
 
 下表显示了自动启用密码监视器的方案及其在用户设备上执行的方式。
 
@@ -80,9 +80,9 @@ ms.locfileid: "11304532"
 - 密码同步已禁用
 - 与 Microsoft 服务器共享数据已禁用
 
-## 常见问题
+## <a name="frequently-asked-questions"></a>常见问题
 
-### 如何为组织禁用密码监视器？
+### <a name="how-can-password-monitor-be-disabled-for-my-organization"></a>如何为组织禁用密码监视器？
 
 您可以按以下方法为组织禁用密码监视器：
 - 使用 PasswordMonitorAllowed 组策略。
@@ -91,10 +91,10 @@ ms.locfileid: "11304532"
   > [!NOTE]
   > 密码监视器即使已禁用密码同步，也可以正常工作，只要用户明确同意打开该功能或通过“设置”自行打开该功能。
 
-### 如果已自动启用该功能的用户通过“设置”关闭密码监视器，会发生什么情况？
+### <a name="what-happens-if-a-user-for-whom-the-feature-has-been-auto-enabled-turns-password-monitor-off-via-settings"></a>如果已自动启用该功能的用户通过“设置”关闭密码监视器，会发生什么情况？
 
 尊重用户设置，为用户禁用该功能。 但是，如果以前从未响应过同意提示，可能会再次显示同意对话框。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

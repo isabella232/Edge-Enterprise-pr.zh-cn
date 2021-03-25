@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge Internet Explorer 11 和使用Internet Explorer模式。
-ms.openlocfilehash: a0486c2965b1868db67b6de1423f279905074410
-ms.sourcegitcommit: f34ff11499a2b96941e704103bdd959d19e3d7e7
+ms.openlocfilehash: 89fa6f81879be851f0036990a41e36e1eaee7fca
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400602"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447386"
 ---
 # <a name="disable-internet-explorer-11"></a>禁用 Internet Explorer 11
 
@@ -45,7 +45,7 @@ ms.locfileid: "11400602"
 配置 IE 模式后，可以使用组策略禁用 **IE11** 作为独立浏览器，而不会影响整个组织的 IE 模式功能。
 
 > [!NOTE]
-> 如果需要用于特定站点的独立 IE11 应用，并且希望将所有其他浏览器流量重定向到 Microsoft Edge，可以将站点列表中未包含的所有站点都配置为 [Microsoft Edge](https://docs.microsoft.com/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge) 策略，以将站点从 IE 重定向到 Microsoft Edge。
+> 如果需要用于特定站点的独立 IE11 应用，并且希望将所有其他浏览器流量重定向到 Microsoft Edge，可以将站点列表中未包含的所有站点都配置为 [Microsoft Edge](./edge-ie-mode-policies.md#redirect-sites-from-ie-to-microsoft-edge) 策略，以将站点从 IE 重定向到 Microsoft Edge。
 
 ## <a name="user-experience-after-redirecting-traffic-to-microsoft-edge"></a>将流量重定向到 Microsoft Edge 后的用户体验
 
@@ -67,7 +67,7 @@ ms.locfileid: "11400602"
 
 若要使用组策略禁用 Internet Explorer 11，请按照以下步骤操作：
 
-1. 确保你有必备的操作系统更新。 此步骤将直接更新计算机上的 ADMX 文件（特别是 inetres.adml 和 inetres.admx）。 请注意，如果要更新中央存储，则需要从有必备更新的计算机上复制 .adml 和 .admx 文件。 有关详细信息，请参阅[创建和管理中央存储](https://docs.microsoft.com/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
+1. 确保你有必备的操作系统更新。 此步骤将直接更新计算机上的 ADMX 文件（特别是 inetres.adml 和 inetres.admx）。 请注意，如果要更新中央存储，则需要从有必备更新的计算机上复制 .adml 和 .admx 文件。 有关详细信息，请参阅[创建和管理中央存储](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. 打开组策略编辑器。
 3. 转到***计算机配置/管理模板/Windows 组件/Internet Explorer。*** 
 4. 双击禁用 **Internet Explorer 11 作为独立浏览器**。
@@ -83,5 +83,5 @@ ms.locfileid: "11400602"
 ## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [其他企业模式信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [关于 IE 模式](./edge-ie-mode.md)
+- [其他企业模式信息](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)

@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 中的数据丢失防护 (DLP)
-ms.openlocfilehash: f25e1fa7a610645f6ca0ca10cbcfc69ae8689b7a
-ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
+ms.openlocfilehash: ac34386ed1b691d7b45f30c2b2ec295955d11104
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11384980"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447926"
 ---
 # <a name="data-loss-prevention-dlp-in-microsoft-edge"></a>Microsoft Edge 中的数据丢失防护 (DLP)
 
@@ -37,8 +37,8 @@ Microsoft 终结点 DLP 是运用现代概念（例如以数据为中心的保�
 若要了解有关终结点 DLP 的更多信息，请使用以下资源：
 
 - [视频：Microsoft Edge 和数据丢失防护 (DLP)](microsoft-edge-video-security-dlp.md)
-- [了解 Microsoft 365 终结点数据丢失防护](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide&preserve-view=true)
-- [终结点数据丢失防护入门](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide&preserve-view=true)
+- [了解 Microsoft 365 终结点数据丢失防护](/microsoft-365/compliance/endpoint-dlp-learn-about?preserve-view=true&view=o365-worldwide)
+- [终结点数据丢失防护入门](/microsoft-365/compliance/endpoint-dlp-getting-started?preserve-view=true&view=o365-worldwide)
 
 Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合规活动的审核事件。
 
@@ -49,19 +49,19 @@ Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合�
 - 打印保护：防止打印敏感文件。
 - 保存到 USB/网络：防止可移动 USB 存储或未经授权的网络位置保存敏感文件。
 
-有关可供审核和管理的用户活动的更多详细信息，请参阅[可监视并执行操作的端点活动](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on&preserve-view=true)。
+有关可供审核和管理的用户活动的更多详细信息，请参阅[可监视并执行操作的端点活动](/microsoft-365/compliance/endpoint-dlp-learn-about?preserve-view=true&view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on)。
 
 ## <a name="windows-information-protection"></a>Windows 信息保护
 
-查看 [对 Windows 信息保护](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection)的支持，其描述了 Microsoft Edge 支持 Windows 信息保护（WIP）的方式。 可在以下部分中了解系统要求、优点及支持的功能：
+查看 [对 Windows 信息保护](./microsoft-edge-security-windows-information-protection.md)的支持，其描述了 Microsoft Edge 支持 Windows 信息保护（WIP）的方式。 可在以下部分中了解系统要求、优点及支持的功能：
 
-- [系统要求](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#system-requirements)
-- [Windows信息保护的优势](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#windows-information-protection-benefits)
-- [Microsoft Edge 支持的 WIP 功能](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-information-protection#wip-features-supported-in-microsoft-edge)
+- [系统要求](./microsoft-edge-security-windows-information-protection.md#system-requirements)
+- [Windows信息保护的优势](./microsoft-edge-security-windows-information-protection.md#windows-information-protection-benefits)
+- [Microsoft Edge 支持的 WIP 功能](./microsoft-edge-security-windows-information-protection.md#wip-features-supported-in-microsoft-edge)
 
 ## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [视频：数据丢失防护 - Microsoft Edge](https://www.youtube.com/watch?v=dLD04U9eTqg)
-- [防止数据丢失概述](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide&preserve-view=true)
-- [使用 Windows 信息保护系统来保护企业数据](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
+- [防止数据丢失概述](/microsoft-365/compliance/data-loss-prevention-policies?preserve-view=true&view=o365-worldwide)
+- [使用 Windows 信息保护系统来保护企业数据](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)

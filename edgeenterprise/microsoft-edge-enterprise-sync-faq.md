@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 有关 Microsoft Edge 企业同步的常见问题解答。
-ms.openlocfilehash: 51f6dfc4cd8f308815ee111c30d5501ec0e44f59
-ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
+ms.openlocfilehash: e25ee985f65ee61dda5cacece73d43be7f1e6d7d
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400180"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447866"
 ---
 # <a name="microsoft-edge-enterprise-sync-faq"></a>Microsoft Edge 企业同步常见问题解答
 
@@ -25,11 +25,11 @@ ms.locfileid: "11400180"
 
 ### <a name="is-the-synced-data-encrypted"></a>已同步的数据是否已加密？
 
-数据使用 TLS 1.2 或更高版本在传输中加密。 在 Microsoft 的服务中，所有数据类型都会使用 AES128 进行额外的静态加密。 除用于同步已打开标签页和历史记录的数据类型外，所有数据类型都会在离开用户设备之前使用 [Azure 信息保护](https://docs.microsoft.com/deployedge/microsoft-edge-policies#restrictsignintopattern)策略所管理的密钥进行额外加密。
+数据使用 TLS 1.2 或更高版本在传输中加密。 在 Microsoft 的服务中，所有数据类型都会使用 AES128 进行额外的静态加密。 除用于同步已打开标签页和历史记录的数据类型外，所有数据类型都会在离开用户设备之前使用 [Azure 信息保护](./microsoft-edge-policies.md#restrictsignintopattern)策略所管理的密钥进行额外加密。
 
 ### <a name="why-dont-open-tab-and-history-data-have-more-client-side-encryption"></a>为什么已打开标签页和历史记录数据没有更多的客户端加密？
 
-为了降低最终用户设备上的资源利用率，系统将基于已打开标签页的漫游数据在服务器端生成历史记录数据。 此过程无法支持此类数据的客户端加密。 若要禁用打开选项卡和历史记录同步，请应用 [SavingBrowserHistoryDisabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#savingbrowserhistorydisabled) 或 [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) 策略。
+为了降低最终用户设备上的资源利用率，系统将基于已打开标签页的漫游数据在服务器端生成历史记录数据。 此过程无法支持此类数据的客户端加密。 若要禁用打开选项卡和历史记录同步，请应用 [SavingBrowserHistoryDisabled](./microsoft-edge-policies.md#savingbrowserhistorydisabled) 或 [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled) 策略。
 
 ### <a name="can-tenant-admins-bring-their-own-key"></a>租户管理员能否使用自己的密钥？
 
@@ -63,7 +63,7 @@ Microsoft Edge 同步服务条款已列入 Microsoft 软件许可证，可使用
 
 ### <a name="will-microsoft-edge-ever-support-syncing-between-microsoft-edge-and-ie"></a>Microsoft Edge 是否支持 Microsoft Edge 和 IE 之间的同步？
 
-尚无支持此同步的计划。 如果你的环境仍需要 IE 来支持旧版应用，请考虑使用我们的[新 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)。
+尚无支持此同步的计划。 如果你的环境仍需要 IE 来支持旧版应用，请考虑使用我们的[新 IE 模式](./edge-ie-mode.md)。
 
 ### <a name="will-microsoft-edge-sync-with-microsoft-edge-legacy"></a>Microsoft Edge 是否将与 Microsoft Edge 旧版同步？
 
@@ -73,7 +73,7 @@ Microsoft Edge 同步服务条款已列入 Microsoft 软件许可证，可使用
 
 ### <a name="is-it-possible-to-stop-my-users-from-syncing-with-a-personal-tenant"></a>是否可以阻止我的用户与个人租户同步？
 
-无法直接阻止，但你可以使用 [RestrictSigninToPattern](https://docs.microsoft.com/deployedge/microsoft-edge-policies#restrictsignintopattern) 策略确定哪些配置文件可以登录到 Microsoft Edge。
+无法直接阻止，但你可以使用 [RestrictSigninToPattern](./microsoft-edge-policies.md#restrictsignintopattern) 策略确定哪些配置文件可以登录到 Microsoft Edge。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: '使用命令行选项配置代理设置 '
-ms.openlocfilehash: b5e2326e075ad89481560a6642944a8e88f4daa3
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: d0924f723aab6832e5b4eb70c60e1d329d3c7a9d
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979350"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447636"
 ---
-# 如何使用 Microsoft Edge 命令行选项配置代理设置
+# <a name="how-to-use-microsoft-edge-command-line-options-to-configure-proxy-settings"></a>如何使用 Microsoft Edge 命令行选项配置代理设置
 
 本文介绍了如何使用命令行选项替代默认系统网络设置。
 
 >[!NOTE]
 >本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-## 系统网络设置
+## <a name="system-network-settings"></a>系统网络设置
 
 默认情况下，Microsoft Edge 网络堆栈使用系统网络设置。 这些设置包括*代理设置*以及*证书和私钥存储*。
 
@@ -32,13 +32,13 @@ ms.locfileid: "10979350"
 
 这些命令行选项对应于**代理服务器**组中的以下策略：
 
-- [ProxyBypassList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxybypasslist)
-- [ProxyMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxymode)
-- [ProxyPacUrl](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxypacurl)
-- [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver)
-- [ProxySettings](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxysettings)
+- [ProxyBypassList](./microsoft-edge-policies.md#proxybypasslist)
+- [ProxyMode](./microsoft-edge-policies.md#proxymode)
+- [ProxyPacUrl](./microsoft-edge-policies.md#proxypacurl)
+- [ProxyServer](./microsoft-edge-policies.md#proxyserver)
+- [ProxySettings](./microsoft-edge-policies.md#proxysettings)
 
-## 代理设置的命令行选项
+## <a name="command-line-options-for-proxy-settings"></a>代理设置的命令行选项
 
 Microsoft Edge 支持以下与代理相关的命令行选项。
 
@@ -72,14 +72,14 @@ Microsoft Edge 支持以下与代理相关的命令行选项。
 
 指示 Microsoft Edge 使用位于指定 URL 的 PAC 文件。 例如，`--proxy-pac-url="https://wpad/proxy.pac"` 会指示 Microsoft Edge 使用 **proxy.pac** 文件解析 URL 请求的代理信息。
 
-## 内容许可证
+## <a name="content-license"></a>内容许可证
 
 > [!NOTE]
 > 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 可在[此处](https://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)找到原始页面。
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - 若要查看高级配置设置和其他选项，请参阅 Chromium 开源项目中的[代理文档](https://chromium.googlesource.com/chromium/src/+/HEAD/net/docs/proxy.md)。
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

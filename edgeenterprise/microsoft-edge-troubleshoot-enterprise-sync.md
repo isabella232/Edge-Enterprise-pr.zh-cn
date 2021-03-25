@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 管理员可用于排查和修复常见企业同步问题的指南和工具
-ms.openlocfilehash: 767b26c74e91213b407e8264a8ed185f38dfc2e9
-ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
+ms.openlocfilehash: 49fb0c5fc555e4f7ad4c728477387e931a5fbb5f
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400179"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447156"
 ---
 # <a name="diagnose-and-fix-microsoft-edge-sync-issues"></a>诊断和修复 Microsoft Edge 同步问题
 
@@ -49,10 +49,10 @@ ms.locfileid: "11400179"
 > [!NOTE]
 > 由于此错误的来源通常需要在 Azure Active Directory 租户中更改配置，因此这些故障排除步骤只能由租户管理员执行，而不能由最终用户执行。
 
-1. 验证企业租户是否具有受支持的 M365 订阅。 [此处](https://docs.microsoft.com/azure/information-protection/activate-office365)提供了可用订阅类型的当前列表。 如果租户没有受支持的订阅，他们可以单独购买 Azure 信息保护，也可以升级到受支持的某个订阅。
-2. 如果具有受支持的订阅，请验证租户是否具有可用的 Azure 信息保护 (AIP)。 有关检查 AIP 状态以及在必要时激活 AIP 的说明，请参阅[此处](https://docs.microsoft.com/azure/information-protection/activate-office365)。
-3. 如果步骤 2 显示 AIP 处于活动状态，但仍无法使用同步功能，请启用企业状态漫游 (ESR)。 有关启用 ESR 的说明，请参阅[此处](https://docs.microsoft.com/azure/active-directory/devices/enterprise-state-roaming-enable)。 请注意，无需将 ESR 保持启用状态。 如果此步骤修复了问题，可以禁用 ESR。
-4. 确认 Azure 信息保护未通过载入策略确定作用域。 可以使用 [Get-AadrmOnboardingControlPolicy](https://docs.microsoft.com/powershell/module/aadrm/get-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程序查看是否启用了作用域功能。 接下来的两个示例将展示无作用域配置和作用域为特定安全组的配置。
+1. 验证企业租户是否具有受支持的 M365 订阅。 [此处](/azure/information-protection/activate-office365)提供了可用订阅类型的当前列表。 如果租户没有受支持的订阅，他们可以单独购买 Azure 信息保护，也可以升级到受支持的某个订阅。
+2. 如果具有受支持的订阅，请验证租户是否具有可用的 Azure 信息保护 (AIP)。 有关检查 AIP 状态以及在必要时激活 AIP 的说明，请参阅[此处](/azure/information-protection/activate-office365)。
+3. 如果步骤 2 显示 AIP 处于活动状态，但仍无法使用同步功能，请启用企业状态漫游 (ESR)。 有关启用 ESR 的说明，请参阅[此处](/azure/active-directory/devices/enterprise-state-roaming-enable)。 请注意，无需将 ESR 保持启用状态。 如果此步骤修复了问题，可以禁用 ESR。
+4. 确认 Azure 信息保护未通过载入策略确定作用域。 可以使用 [Get-AadrmOnboardingControlPolicy](/powershell/module/aadrm/get-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程序查看是否启用了作用域功能。 接下来的两个示例将展示无作用域配置和作用域为特定安全组的配置。
 
    ```powershell
     PS C:\Work\scripts\PowerShell> Get-AadrmOnboardingControlPolicy
@@ -71,9 +71,9 @@ ms.locfileid: "11400179"
                 False f1488a05-8196-40a6-9483-524948b90282   All
    ```
 
-   如果启用了作用域功能，则应该将受影响的用户添加到相应作用域的安全组，或者删除该作用域。 在下面的示例中，载入将 AIP 的作用域设定成了指示的安全组，应该使用 [Set-AadrmOnboardingControlPolicy](https://docs.microsoft.com/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程序删除作用域功能。
+   如果启用了作用域功能，则应该将受影响的用户添加到相应作用域的安全组，或者删除该作用域。 在下面的示例中，载入将 AIP 的作用域设定成了指示的安全组，应该使用 [Set-AadrmOnboardingControlPolicy](/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程序删除作用域功能。
 
-5. 确认已在租户中启用 IPCv3Service。 [Get-AadrmConfiguration](https://docs.microsoft.com/powershell/module/aadrm/get-aadrmconfiguration?view=azureipps) PowerShell 小程序可显示该服务的状态。
+5. 确认已在租户中启用 IPCv3Service。 [Get-AadrmConfiguration](/powershell/module/aadrm/get-aadrmconfiguration?view=azureipps) PowerShell 小程序可显示该服务的状态。
 
    :::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-scoped-cfg-example.png" alt-text="检查是否已启用 IPCv3Service。":::
 
@@ -99,7 +99,7 @@ ms.locfileid: "11400179"
       - [https://api.aadrm.com](https://api.aadrm.com)（适用于大多数租户）
       - [https://api.aadrm.de](https://api.aadrm.de)（适用于德国的租户）
       - [https://api.aadrm.cn](https://api.aadrm.cn)（适用于中国的租户）
-   - [Windows 通知服务终结点](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)。
+   - [Windows 通知服务终结点](/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)。
 
 5. 如果仍未能解决问题，请与 [Microsoft Edge 支持人员](https://www.microsoftedgeinsider.com/support)联系。
 
@@ -116,7 +116,7 @@ ms.locfileid: "11400179"
 
 ### <a name="issue-sync-has-been-turned-off-by-your-administrator"></a>问题：“管理员已禁用同步。”
 
-确保未设置 [SyncDisabled 策略](https://docs.microsoft.com/deployedge/microsoft-edge-policies#syncdisabled)。
+确保未设置 [SyncDisabled 策略](./microsoft-edge-policies.md#syncdisabled)。
 
 ## <a name="see-also"></a>另请参阅
 

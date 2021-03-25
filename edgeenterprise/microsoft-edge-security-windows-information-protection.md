@@ -10,35 +10,35 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 对 Windows 信息保护的支持
-ms.openlocfilehash: 4ec48d258deb1cf6d4436716f14aa2561cee2a50
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: a9981947462627ae4884f18f4df6accf2ee60f12
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979387"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447186"
 ---
-# Microsoft Edge 对 Windows 信息保护 (WIP) 的支持
+# <a name="microsoft-edge-support-for-windows-information-protection-wip"></a>Microsoft Edge 对 Windows 信息保护 (WIP) 的支持
 
 本文介绍 Microsoft Edge 对 Windows 信息保护 (WIP) 的支持情况。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 81 或更高版本。
 
-## 概述
+## <a name="overview"></a>概述
 
 Windows 信息保护 (WIP) 是一种 Windows 10 功能，可帮助保护企业数据免遭未经授权的或意外的泄露。 随着远程工作的增长，在工作场所之外共享公司数据会增加风险。 在公司设备上进行个人活动和工作活动时，这种风险就会增加。
 
 Microsoft Edge 支持 WIP 以在用户经常共享和分发内容的 Web 环境中帮助保护内容安全。
 
-### 系统要求
+### <a name="system-requirements"></a>系统要求
 
 以下要求适用于企业中使用 WIP 的设备：
 
 - Windows 10 版本 1607 或更高版本
 - 仅 Windows 客户端 SKU
-- [WIP 先决条件](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip#prerequisites)中描述的管理解决方案之一
+- [WIP 先决条件](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip#prerequisites)中描述的管理解决方案之一
 
-### Windows 信息保护的优势
+### <a name="windows-information-protection-benefits"></a>Windows 信息保护的优势
 
 WIP 具有以下优势：
 
@@ -48,9 +48,9 @@ WIP 具有以下优势：
 - 有关跟踪问题以及补救措施（例如针对用户的合规性培训）的审核报告。
 - 与现有管理系统进行集成以配置、部署和管理 WIP。 一些示例包括 Microsoft Intune、Microsoft Endpoint Configuration Manager 或当前的移动设备管理 (MDM) 系统。
 
-## WIP 策略和保护模式
+## <a name="wip-policy-and-protection-modes"></a>WIP 策略和保护模式
 
-使用策略可以配置下表中所述的四种保护模式。 有关详细信息，请参阅 [WIP 保护模式](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip#wip-protection-modes)。
+使用策略可以配置下表中所述的四种保护模式。 有关详细信息，请参阅 [WIP 保护模式](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip#wip-protection-modes)。
 
 | 模式 | 描述 |
 |------|-------------|
@@ -60,7 +60,7 @@ WIP 具有以下优势：
 | 关闭 | WIP 将处于关闭状态，并且不会帮助保护或审核你的数据。 关闭 WIP 后，系统将尝试解密本地连接的驱动器上的任何 WIP 标记文件。 如果重新打开 WIP 保护，以前的解密和策略信息不会自动重新应用。
  |
 
-## Microsoft Edge 支持的 WIP 功能
+## <a name="wip-features-supported-in-microsoft-edge"></a>Microsoft Edge 支持的 WIP 功能
 
 Microsoft Edge 从版本 81 开始支持以下功能：
 
@@ -72,7 +72,7 @@ Microsoft Edge 从版本 81 开始支持以下功能：
 - 从非工作配置文件浏览到工作位置会自动重定向到工作配置文件（与 Azure AD 标识相关联）。
 - IE 模式支持完整的 WIP 功能。
 
-## 在 Microsoft Edge 中使用 WIP
+## <a name="working-with-wip-in-microsoft-edge"></a>在 Microsoft Edge 中使用 WIP
 
 为 Microsoft Edge 启用 WIP 支持后，用户将在访问工作相关信息时看到这一点。 下一个屏幕截图显示了地址栏中的公文包图标，表明可通过浏览器访问工作相关信息。
 
@@ -82,34 +82,34 @@ Microsoft Edge 让用户能够在未批准的网站中共享受保护的内容�
 
  ![受保护内容覆盖提示](./media/microsoft-edge-security-windows-information-protection/microsoft-edge-wip-override.png)
 
-## 配置策略以支持 WIP
+## <a name="configure-policies-to-support-wip"></a>配置策略以支持 WIP
 
 将 WIP 与 Microsoft Edge 配合使用时，需要存在工作配置文件。
 
-### 确保存在工作配置文件
+### <a name="ensure-the-presence-of-a-work-profile"></a>确保存在工作配置文件
 
 在已加入混合的计算机上，Microsoft Edge 将自动使用 Azure Active Directory (Azure AD) 帐户登录。 若要确保用户不删除此配置文件（WIP 需要此配置文件），请配置以下策略：
 
-- [NonRemovableProfileEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#nonremovableprofileenabled)
+- [NonRemovableProfileEnabled](./microsoft-edge-policies.md#nonremovableprofileenabled)
 
 > [!NOTE]
-> 如果你的环境未加入混合，则可以按照以下说明加入混合：[规划加入混合 Azure Active Directory 的实现方式](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)。
+> 如果你的环境未加入混合，则可以按照以下说明加入混合：[规划加入混合 Azure Active Directory 的实现方式](/azure/active-directory/devices/hybrid-azuread-join-plan)。
 
 如果不能选择加入混合，则可以使用本地的 Active Directory 帐户，允许 Edge 使用用户的域帐户自动创建特殊工作配置文件。 请注意，本地帐户可能不会获得 Azure AD 的所有功能，如云同步、Office NTP 等。
 
-#### Active Directory (AD) 帐户
+#### <a name="active-directory-ad-accounts"></a>Active Directory (AD) 帐户
 
 对于 AD 帐户，必须配置以下策略，使 Microsoft Edge 自动创建一个特殊工作配置文件。
 
-- [ConfigureOnPremisesAccountAutoSignIn](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configureonpremisesaccountautosignin)
+- [ConfigureOnPremisesAccountAutoSignIn](./microsoft-edge-policies.md#configureonpremisesaccountautosignin)
 
-### 适用于 WIP 的 Windows 策略
+### <a name="windows-policies-for-wip"></a>适用于 WIP 的 Windows 策略
 
-可使用 Windows 策略配置 WIP。 有关详细信息，请参阅[使用 Microsoft Intune 创建和部署 WIP 策略](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/overview-create-wip-policy)
+可使用 Windows 策略配置 WIP。 有关详细信息，请参阅[使用 Microsoft Intune 创建和部署 WIP 策略](/windows/security/information-protection/windows-information-protection/overview-create-wip-policy)
 
-## 常见问题
+## <a name="frequently-asked-questions"></a>常见问题
 
-### 如何解决错误代码 - 2147024540？
+### <a name="how-do-i-resolve-error-code--2147024540"></a>如何解决错误代码 - 2147024540？
 
 此错误代码对应于以下 Windows 信息保护错误：*ERROR_EDP_POLICY_DENIES_OPERATION: 请求的操作已被 Windows 信息保护策略阻止。有关详细信息，请联系系统管理员。*
 
@@ -121,7 +121,7 @@ Microsoft Edge 让用户能够在未批准的网站中共享受保护的内容�
 
 如果没有使用 Microsoft Intune，请下载并应用 [WIP 企业 AppLocker 策略](https://download.microsoft.com/download/8/9/9/8995d820-065c-4ab1-aa2a-9d6dc0cd7ffa/MsEdge%20-%20WIP%20Enterprise%20AppLocker%20Policy%20Files.zip)文件中的策略更新。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise) 
-- [使用 Windows 信息保护来保护企业数据](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
+- [使用 Windows 信息保护来保护企业数据](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)

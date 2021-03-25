@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: a0f33300d39f5ecaf48de114697c593a391dc052
-ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
+ms.openlocfilehash: 94d8d621ecac3764ecf13194efb55cfbbf80b70b
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "11442382"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447986"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -38,7 +38,7 @@ ms.locfileid: "11442382"
 > [!IMPORTANT]
 > 此更新包含已由 Chromium 团队报告用于现实中的 [CVE-2021-21193](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21193)。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#march-13-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#march-13-2021)列出了稳定频道的安全更新。
 
 ## <a name="version-89077450-march-10"></a>版本 89.0.774.50：3 月 10 日
 
@@ -54,20 +54,20 @@ ms.locfileid: "11442382"
 > [!IMPORTANT]
 > 此更新包含 [CVE-2021-21166](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21166)Chromium团队报告该更新现实中已被利用。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#march-4-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#march-4-2021)列出了稳定频道的安全更新。
 
 ### <a name="resolved-issues"></a>已解决的问题
 
 - **任务栏和"开始"菜单的快捷方式更新和修复：**
   - 右键单击"开始"菜单中的 Microsoft Edge 快捷方式现可正确显示固定时从任务栏中取消固定 Microsoft Edge 的选项。
-  - 为了将 Microsoft Edge 固定到任务栏启动包括 [任务栏配置](https://docs.microsoft.com/windows/configuration/configure-windows-10-taskbar) 时，这不再导致第二个 Microsoft Edge 快捷方式固定到任务栏。
+  - 为了将 Microsoft Edge 固定到任务栏启动包括 [任务栏配置](/windows/configuration/configure-windows-10-taskbar) 时，这不再导致第二个 Microsoft Edge 快捷方式固定到任务栏。
   - 如果用户登录到 Windows，则使用 Windows 漫游配置文件的组织将不再看到任务栏上的空白白色图标代替Microsoft Edge图标。
 
 ### <a name="feature-updates"></a>功能更新
 
 - **展台模式支持其他锁定功能**。 从 Microsoft Edge 版本 89 开始，我们在展台模式下添加了其他锁定功能，使客户能够在高效和更安全的体验中完成工作。 [了解详细信息](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features)。
 
-- **Enterprise Mode Site List Manager 工具将在浏览器中通过 *edge://compat* 页提供**。 可以使用此工具在 Microsoft Edge 上为 Internet Explorer 模式创建、编辑和导出站点列表 XML。 可以根据需要通过组策略启用对此工具的访问。 [了解详情](https://docs.microsoft.com/deployedge/edge-ie-mode-site-list-manager)。
+- **Enterprise Mode Site List Manager 工具将在浏览器中通过 *edge://compat* 页提供**。 可以使用此工具在 Microsoft Edge 上为 Internet Explorer 模式创建、编辑和导出站点列表 XML。 可以根据需要通过组策略启用对此工具的访问。 [了解详情](./edge-ie-mode-site-list-manager.md)。
 
 - **使用休眠选项卡提高浏览器性能**。 休眠选项卡通过将非活动选项卡置于睡眠状态以释放系统资源（如内存和 CPU）来提升浏览器性能，以便活动选项卡或其他应用程序可以使用它们。 用户可以阻止网站进入睡眠状态，并配置非活动选项卡进入睡眠状态之前的时间长度。 若要使用户保持其流，还有一些[启发性方法](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434)可阻止某些网站进入睡眠状态，例如 Intranet 网站。 可以使用组策略管理此功能。
 
@@ -85,21 +85,21 @@ ms.locfileid: "11442382"
 
 添加了 7 个新策略。 从 [Microsoft Edge 企业登录页面](https://www.microsoft.com/edge/business/download)下载更新的管理模板。 已添加以下新策略。
 
-- [BrowsingDataLifetime](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#browsingdatalifetime) - 浏览数据生存期设置
-- [MAMEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#mamenabled) - 移动应用管理已启用
-- [DefinePreferredLanguages](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#definepreferredlanguages) - 定义网站应在网站支持该语言时显示的首选语言的有序列表
-- [ShowRecommendationsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showrecommendationsenabled) - 允许来自 Edge 的建议和促销通知
-- [PrintingAllowedBackgroundGraphicsModes](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printingallowedbackgroundgraphicsmodes) - 限制背景图形打印模式
-- [PrintingBackgroundGraphicsDefault](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printingbackgroundgraphicsdefault)- 默认背景图形打印模式
-- [SmartActionsBlockList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#smartactionsblocklist)- 阻止对服务列表执行智能操作
+- [BrowsingDataLifetime](./microsoft-edge-policies.md#browsingdatalifetime) - 浏览数据生存期设置
+- [MAMEnabled](./microsoft-edge-policies.md#mamenabled) - 移动应用管理已启用
+- [DefinePreferredLanguages](./microsoft-edge-policies.md#definepreferredlanguages) - 定义网站应在网站支持该语言时显示的首选语言的有序列表
+- [ShowRecommendationsEnabled](./microsoft-edge-policies.md#showrecommendationsenabled) - 允许来自 Edge 的建议和促销通知
+- [PrintingAllowedBackgroundGraphicsModes](./microsoft-edge-policies.md#printingallowedbackgroundgraphicsmodes) - 限制背景图形打印模式
+- [PrintingBackgroundGraphicsDefault](./microsoft-edge-policies.md#printingbackgroundgraphicsdefault)- 默认背景图形打印模式
+- [SmartActionsBlockList](./microsoft-edge-policies.md#smartactionsblocklist)- 阻止对服务列表执行智能操作
 
 #### <a name="obsoleted-policies"></a>已过时的策略
 
 以下策略已过时。
 
-- [ForceLegacyDefaultReferrerPolicy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcelegacydefaultreferrerpolicy) - 使用 no-referrer-when-downgrade 的默认引荐策略
-- [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled)：启用使用情况和故障相关数据报告
-- [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices)：发送站点信息以改进 Microsoft 服务
+- [ForceLegacyDefaultReferrerPolicy](./microsoft-edge-policies.md#forcelegacydefaultreferrerpolicy) - 使用 no-referrer-when-downgrade 的默认引荐策略
+- [MetricsReportingEnabled](./microsoft-edge-policies.md#metricsreportingenabled)：启用使用情况和故障相关数据报告
+- [SendSiteInfoToImproveServices](./microsoft-edge-policies.md#sendsiteinfotoimproveservices)：发送站点信息以改进 Microsoft 服务
 <!-- end major 89 -->
 ## <a name="version-88070581-february-25"></a>版本 88.0.705.81：2 月 25 日
 
@@ -107,7 +107,7 @@ ms.locfileid: "11442382"
 
 ## <a name="version-88070574-february-17"></a>版本 88.0.705.74：2 月 17 日
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-17-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#February-17-2021)列出了稳定频道的安全更新。
 
 ## <a name="version-88070568-february-11"></a>版本 88.0.705.68：2 月 11 日
 
@@ -118,11 +118,11 @@ ms.locfileid: "11442382"
 > [!IMPORTANT]
 > 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2021-21148](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21148)。
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-5-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#February-5-2021)列出了稳定频道的安全更新。
 
 ## <a name="version-88070562-february-4"></a>版本 88.0.705.62：2 月 4 日
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-4-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#February-4-2021)列出了稳定频道的安全更新。
 
 修复了各种错误和性能问题。
 
@@ -136,7 +136,7 @@ ms.locfileid: "11442382"
 
 ## <a name="version-88070550-january-21"></a>版本 88.0.705.50：1 月 21 日
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#january-21-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#january-21-2021)列出了稳定频道的安全更新。
 
 <!--- begin major 88  --->
 ### <a name="feature-updates"></a>功能更新
@@ -155,7 +155,7 @@ ms.locfileid: "11442382"
     > [!NOTE]
     > “使用 Microsoft Edge 配置文件单一登录 (SSO) 所有 Windows 账户”是对 1 月 21 日发行说明的一项更新。
 
-- **结束会话的展台模式选项**。 “结束会话”按钮现在在展台模式公共浏览体验中可用。 此功能可确保在关闭 Microsoft Edge 时删除浏览器数据和设置。 详细了解展台模式功能和路线图，配置 [Microsoft Edge 展台模式](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)。
+- **结束会话的展台模式选项**。 “结束会话”按钮现在在展台模式公共浏览体验中可用。 此功能可确保在关闭 Microsoft Edge 时删除浏览器数据和设置。 详细了解展台模式功能和路线图，配置 [Microsoft Edge 展台模式](./microsoft-edge-configure-kiosk-mode.md)。
 
 - **安全和隐私：**
 
@@ -197,45 +197,45 @@ ms.locfileid: "11442382"
 
 添加了 18 个新策略。 从 [Microsoft Edge 企业登录页面](https://www.microsoft.com/edge/business/download)下载更新的管理模板。 已添加以下新策略。
 
-- [BasicAuthOverHttpEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#basicauthoverhttpenabled) - 允许 HTTP 的基本身份验证。
-- [BlockExternalExtensions](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#blockexternalextensions) - 阻止安装外部扩展。
-- [InternetExplorerIntegrationLocalFileAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileallowed) - 允许在 Internet Explorer 模式下启动本地文件。
-- [InternetExplorerIntegrationLocalFileExtensionAllowList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileextensionallowlist) - 在 Internet Explorer 文件扩展名允许列表中打开本地文件。
-- [InternetExplorerIntegrationLocalFileShowContextMenu](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileshowcontextmenu) - 显示上下文菜单以在 Internet Explorer 链接。
-- [IntranetRedirectBehavior](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#intranetredirectbehavior) - Intranet 重定向行为。
-- [PrinterTypeDenyList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printertypedenylist) - 禁用拒绝列表上的打印机类型。
-- [ShowMicrosoftRewards](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showmicrosoftrewards) - 显示 Microsoft 奖励体验。
-- [SleepingTabsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsenabled) - 配置睡眠选项卡。
-- [TimeoutTabsTimeout](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabstimeout) - 为休眠选项卡设置后台选项卡不活动超时。
-- [SleepingTabsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsblockedforurls) - 阻止特定网站上休眠的选项卡。
-- [StartupBoostEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#startupboostenabled) - 启用启动增强。
-- [TargetBlankImpliesNoOpener](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#targetblankimpliesnoopener) - 不要为面向 _blank 的链接设置 window.opener。
-- [UpdatePolicyOverride](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#updatepolicyoverride) - 指定 Microsoft Edge 更新如何处理来自 Microsoft Edge 的可用更新。
-- [VerticalTabsAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#verticaltabsallowed) - 为浏览器侧面的选项卡配置垂直布局的可用性。
-- [WebRtcAllowLegacyTLSProtocols](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webrtcallowlegacytlsprotocols) - 允许在 WebRTC 中降级旧版 TLS/DTLS。
-- [WebWidgetAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webwidgetallowed) - 启用 Web 小组件。
-- [WebWidgetIsEnabledOnStartup](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webwidgetisenabledonstartup) - 在 Windows 启动时允许 Web 小组件。
+- [BasicAuthOverHttpEnabled](./microsoft-edge-policies.md#basicauthoverhttpenabled) - 允许 HTTP 的基本身份验证。
+- [BlockExternalExtensions](./microsoft-edge-policies.md#blockexternalextensions) - 阻止安装外部扩展。
+- [InternetExplorerIntegrationLocalFileAllowed](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileallowed) - 允许在 Internet Explorer 模式下启动本地文件。
+- [InternetExplorerIntegrationLocalFileExtensionAllowList](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist) - 在 Internet Explorer 文件扩展名允许列表中打开本地文件。
+- [InternetExplorerIntegrationLocalFileShowContextMenu](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileshowcontextmenu) - 显示上下文菜单以在 Internet Explorer 链接。
+- [IntranetRedirectBehavior](./microsoft-edge-policies.md#intranetredirectbehavior) - Intranet 重定向行为。
+- [PrinterTypeDenyList](./microsoft-edge-policies.md#printertypedenylist) - 禁用拒绝列表上的打印机类型。
+- [ShowMicrosoftRewards](./microsoft-edge-policies.md#showmicrosoftrewards) - 显示 Microsoft 奖励体验。
+- [SleepingTabsEnabled](./microsoft-edge-policies.md#sleepingtabsenabled) - 配置睡眠选项卡。
+- [TimeoutTabsTimeout](./microsoft-edge-policies.md#sleepingtabstimeout) - 为休眠选项卡设置后台选项卡不活动超时。
+- [SleepingTabsBlockedForUrls](./microsoft-edge-policies.md#sleepingtabsblockedforurls) - 阻止特定网站上休眠的选项卡。
+- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled) - 启用启动增强。
+- [TargetBlankImpliesNoOpener](./microsoft-edge-policies.md#targetblankimpliesnoopener) - 不要为面向 _blank 的链接设置 window.opener。
+- [UpdatePolicyOverride](./microsoft-edge-policies.md#updatepolicyoverride) - 指定 Microsoft Edge 更新如何处理来自 Microsoft Edge 的可用更新。
+- [VerticalTabsAllowed](./microsoft-edge-policies.md#verticaltabsallowed) - 为浏览器侧面的选项卡配置垂直布局的可用性。
+- [WebRtcAllowLegacyTLSProtocols](./microsoft-edge-policies.md#webrtcallowlegacytlsprotocols) - 允许在 WebRTC 中降级旧版 TLS/DTLS。
+- [WebWidgetAllowed](./microsoft-edge-policies.md#webwidgetallowed) - 启用 Web 小组件。
+- [WebWidgetIsEnabledOnStartup](./microsoft-edge-policies.md#webwidgetisenabledonstartup) - 在 Windows 启动时允许 Web 小组件。
 
 #### <a name="deprecated-policies"></a>已弃用的策略
 
-- [ProactiveAuthEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proactiveauthenabled) - 启用主动身份验证。
-- [ProxyBypassList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxybypasslist) - 配置代理绕过规则。
-- [ProxyMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxymode) - 配置代理服务器设置。
-- [ProxyPacUrl](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxypacurl) - 设置代理 .pac 文件 URL。
-- [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver) - 配置代理服务器的地址或 URL。
-- [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies) - 允许 WebDriver 覆盖不兼容的策略。
+- [ProactiveAuthEnabled](./microsoft-edge-policies.md#proactiveauthenabled) - 启用主动身份验证。
+- [ProxyBypassList](./microsoft-edge-policies.md#proxybypasslist) - 配置代理绕过规则。
+- [ProxyMode](./microsoft-edge-policies.md#proxymode) - 配置代理服务器设置。
+- [ProxyPacUrl](./microsoft-edge-policies.md#proxypacurl) - 设置代理 .pac 文件 URL。
+- [ProxyServer](./microsoft-edge-policies.md#proxyserver) - 配置代理服务器的地址或 URL。
+- [WebDriverOverridesIncompatiblePolicies](./microsoft-edge-policies.md#webdriveroverridesincompatiblepolicies) - 允许 WebDriver 覆盖不兼容的策略。
 
 ### <a name="obsoleted-policies"></a>已过时的策略
 
-- [AllowPopupsDuringPageUnload](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowpopupsduringpageunload) - 允许页面在卸载期间显示弹出窗口。
-- [DefaultPluginsSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultpluginssetting) - 默认 Adobe Flash 设置。
-- [PluginsAllowedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#pluginsallowedforurls) - 允许特定网站上使用 Adobe Flash 插件。
-- [PluginsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#pluginsblockedforurls) - 阻止特定网站上 Adobe Flash 插件。
-- [RunAllFlashInAllowMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#runallflashinallowmode) - 将 Adobe Flash 内容设置扩展到所有内容。
+- [AllowPopupsDuringPageUnload](./microsoft-edge-policies.md#allowpopupsduringpageunload) - 允许页面在卸载期间显示弹出窗口。
+- [DefaultPluginsSetting](./microsoft-edge-policies.md#defaultpluginssetting) - 默认 Adobe Flash 设置。
+- [PluginsAllowedForUrls](./microsoft-edge-policies.md#pluginsallowedforurls) - 允许特定网站上使用 Adobe Flash 插件。
+- [PluginsBlockedForUrls](./microsoft-edge-policies.md#pluginsblockedforurls) - 阻止特定网站上 Adobe Flash 插件。
+- [RunAllFlashInAllowMode](./microsoft-edge-policies.md#runallflashinallowmode) - 将 Adobe Flash 内容设置扩展到所有内容。
 <!--- end major 88  --->
 ## <a name="version-87066475-january-7"></a>版本 87.0.664.75：1 月 7 日
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#january-7-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#january-7-2021)列出了稳定频道的安全更新。
 
 ## <a name="version-87066466-december-17"></a>版本 87.0.664.66：12 月 17 日
 
@@ -247,13 +247,13 @@ ms.locfileid: "11442382"
 
 ## <a name="version-87066457-december-7"></a>版本87.0.664.57：12月7日
 
-修复了各种错误和性能问题。 [此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#december-7-2020)列出了稳定频道的安全更新。
+修复了各种错误和性能问题。 [此处](./microsoft-edge-relnotes-security.md#december-7-2020)列出了稳定频道的安全更新。
 
 ## <a name="version-87066455-december-3"></a>版本 87.0.664.55：12月3日
 
 修复了各种 bug 和性能问题。 此版本的以下功能已更新。
 
-- **默认情况下，购物处于启用状态**。 从 Microsoft Edge 版本87开始，企业用户可从 Microsoft Edge 中的购物中受益。 通过购物功能，Microsoft Edge 可帮助用户在在线购物时查找优惠券和更好的价格。 （稳定版本 87.0.664.41 的优惠券体验已发布。） 价格比较体验现已通过此更新提供。 此功能可使用 [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgeshoppingassistantenabled) 策略进行配置。 查看我们的[博客](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) ，了解有关 Microsoft 购物的[详细信息](https://docs.microsoft.com/microsoft-edge/privacy-whitepaper#shopping)。
+- **默认情况下，购物处于启用状态**。 从 Microsoft Edge 版本87开始，企业用户可从 Microsoft Edge 中的购物中受益。 通过购物功能，Microsoft Edge 可帮助用户在在线购物时查找优惠券和更好的价格。 （稳定版本 87.0.664.41 的优惠券体验已发布。） 价格比较体验现已通过此更新提供。 此功能可使用 [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled) 策略进行配置。 查看我们的[博客](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) ，了解有关 Microsoft 购物的[详细信息](/microsoft-edge/privacy-whitepaper#shopping)。
 
 ## <a name="version-87066452-november-30"></a>版本 87.0.664.52：11月30日
 
@@ -266,15 +266,15 @@ ms.locfileid: "11442382"
 <!-- begin major 87 --->
 ## <a name="version-87066441-november-19"></a>版本 87.0.664.41：11 月 19 日
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-19-2020)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#november-19-2020)列出了稳定频道的安全更新。
 
 ### <a name="feature-updates"></a>功能更新
 
-- **从 Internet Explorer 到 Microsoft Edge 的不兼容网站的自动重定向**。 从 Microsoft Edge 87 稳定更新开始，在 Internet Explorer 上显示不兼容消息的公共网站将自动重定向到 Microsoft Edge。 若要了解详细信息并配置此体验，请参阅 [重定向不兼容的网站](https://docs.microsoft.com/deployedge/edge-learnmore-neededge)。
+- **从 Internet Explorer 到 Microsoft Edge 的不兼容网站的自动重定向**。 从 Microsoft Edge 87 稳定更新开始，在 Internet Explorer 上显示不兼容消息的公共网站将自动重定向到 Microsoft Edge。 若要了解详细信息并配置此体验，请参阅 [重定向不兼容的网站](./edge-learnmore-neededge.md)。
 
-- **已启用展台模式隐私功能**。 从 Microsoft Edge 87 版本开始，将启用帮助企业实现用户数据隐私的展台模式功能。 这些功能将启用以下体验，例如，在退出时清除用户数据、删除已下载的文件，以及在指定的空闲时间后重置配置的启动体验。 深入了解如何[配置 Microsoft Edge 的展台模式](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)
+- **已启用展台模式隐私功能**。 从 Microsoft Edge 87 版本开始，将启用帮助企业实现用户数据隐私的展台模式功能。 这些功能将启用以下体验，例如，在退出时清除用户数据、删除已下载的文件，以及在指定的空闲时间后重置配置的启动体验。 深入了解如何[配置 Microsoft Edge 的展台模式](./microsoft-edge-configure-kiosk-mode.md)
 
-- **默认情况下启用的购物功能**。 从 Microsoft Edge 版本 87 开始，企业用户也可以从 Edge 购物中受益。 通过购物功能，Microsoft Edge 可帮助用户在在线购物时查找优惠券和更好的价格。 通过此更新提供优惠券体验，价格比较将在 Microsoft Edge 87 的即将推出的更新中发布。 此功能可通过 [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) 策略进行配置。 查看我们的[博客](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) ，了解有关 Microsoft 购物的[详细信息](https://docs.microsoft.com/microsoft-edge/privacy-whitepaper#shopping)。
+- **默认情况下启用的购物功能**。 从 Microsoft Edge 版本 87 开始，企业用户也可以从 Edge 购物中受益。 通过购物功能，Microsoft Edge 可帮助用户在在线购物时查找优惠券和更好的价格。 通过此更新提供优惠券体验，价格比较将在 Microsoft Edge 87 的即将推出的更新中发布。 此功能可通过 [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled) 策略进行配置。 查看我们的[博客](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) ，了解有关 Microsoft 购物的[详细信息](/microsoft-edge/privacy-whitepaper#shopping)。
 
 - **在默认情况下启用 ClickOnce 部署**。 Microsoft Edge 87 中默认启用 ClickOnce，这可减少企业部署软件的障碍，并更好地与 Microsoft Edge 旧版浏览器行为保持一致。 从 Microsoft Edge 87 开始，ClickOnceEnabled 策略的“未配置”状态将反映新的默认已启用 ClickOnce 状态（与先前默认“已禁用”状态相比）。
 
@@ -282,7 +282,7 @@ ms.locfileid: "11442382"
 
 - **隐私和安全：**
 
-  - 支持策略配置网站的TLS令牌绑定。 TLS令牌绑定有助于防止令牌窃取攻击，以确保无法从初始设置的设备以外的设备上重新使用cookie。 使用 TLS 令牌绑定需要设置 [AllowTokenBindingForUrls](https://docs.microsoft.com/deployedge/microsoft-edge-policies#allowtokenbindingforurls) 策略，并要求列出的网站支持该功能。
+  - 支持策略配置网站的TLS令牌绑定。 TLS令牌绑定有助于防止令牌窃取攻击，以确保无法从初始设置的设备以外的设备上重新使用cookie。 使用 TLS 令牌绑定需要设置 [AllowTokenBindingForUrls](./microsoft-edge-policies.md#allowtokenbindingforurls) 策略，并要求列出的网站支持该功能。
 
 - ** 键盘支持对PDF文件的高亮显示**。 用户可使用其键盘键来突出显示 PDF 中的任何文本。
 
@@ -297,24 +297,24 @@ ms.locfileid: "11442382"
 
 增加了十项新政策。 从 [Microsoft Edge 企业登录页面](https://www.microsoft.com/edge/business/download)下载更新的管理模板。 已添加以下新策略。
 
-- [ConfigureFriendlyURLFormat](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configurefriendlyurlformat) - 配置从 Microsoft Edge 复制的 Url 的默认粘贴格式，并确定用户是否可以使用其他格式。
-- [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) - 已启用 Microsoft Edge 中的购物。
-- [HideInternetExplorerRedirectUXForIncompatibleSitesEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#hideinternetexplorerredirectuxforincompatiblesitesenabled) - 隐藏 Microsoft Edge 上的一次性重定向对话框和横幅。
-- [KioskAddressBarEditingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskaddressbareditingenabled) - 配置地址栏编辑，实现展台模式的公共浏览体验。
-- [KioskDeleteDownloadsOnExit](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskdeletedownloadsonexit) - 删除 Microsoft Edge 关闭时作为展台会话的一部分下载的文件。
-- [PasswordRevealEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#passwordrevealenabled) -“启用密码显示”按钮。
-- [RedirectSitesFromInternetExplorerPreventBHOInstall](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#redirectsitesfrominternetexplorerpreventbhoinstall) - 阻止安装浏览器帮助程序对象 (BHO) 将不兼容的网站从 Internet Explorer 重定向到 Microsoft Edge。
-- [RedirectSitesFromInternetExplorerRedirectMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#redirectsitesfrominternetexplorerredirectmode) - 将不兼容的网站从 Internet Explorer 重定向到 Microsoft Edge。
-- [SpeechRecognitionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#speechrecognitionenabled) - 配置语音识别。
-- [WebCaptureEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcaptureenabled) - 启用 Microsoft Edge 中的网页获取功能。
+- [ConfigureFriendlyURLFormat](./microsoft-edge-policies.md#configurefriendlyurlformat) - 配置从 Microsoft Edge 复制的 Url 的默认粘贴格式，并确定用户是否可以使用其他格式。
+- [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled) - 已启用 Microsoft Edge 中的购物。
+- [HideInternetExplorerRedirectUXForIncompatibleSitesEnabled](./microsoft-edge-policies.md#hideinternetexplorerredirectuxforincompatiblesitesenabled) - 隐藏 Microsoft Edge 上的一次性重定向对话框和横幅。
+- [KioskAddressBarEditingEnabled](./microsoft-edge-policies.md#kioskaddressbareditingenabled) - 配置地址栏编辑，实现展台模式的公共浏览体验。
+- [KioskDeleteDownloadsOnExit](./microsoft-edge-policies.md#kioskdeletedownloadsonexit) - 删除 Microsoft Edge 关闭时作为展台会话的一部分下载的文件。
+- [PasswordRevealEnabled](./microsoft-edge-policies.md#passwordrevealenabled) -“启用密码显示”按钮。
+- [RedirectSitesFromInternetExplorerPreventBHOInstall](./microsoft-edge-policies.md#redirectsitesfrominternetexplorerpreventbhoinstall) - 阻止安装浏览器帮助程序对象 (BHO) 将不兼容的网站从 Internet Explorer 重定向到 Microsoft Edge。
+- [RedirectSitesFromInternetExplorerRedirectMode](./microsoft-edge-policies.md#redirectsitesfrominternetexplorerredirectmode) - 将不兼容的网站从 Internet Explorer 重定向到 Microsoft Edge。
+- [SpeechRecognitionEnabled](./microsoft-edge-policies.md#speechrecognitionenabled) - 配置语音识别。
+- [WebCaptureEnabled](./microsoft-edge-policies.md#webcaptureenabled) - 启用 Microsoft Edge 中的网页获取功能。
 
 #### <a name="deprecated-policy"></a>已弃用政策
 
-[NewTabPageSetFeedType](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) - 配置 Microsoft Edge 的新选项卡页面体验。
+[NewTabPageSetFeedType](./microsoft-edge-policies.md#newtabpagesetfeedtype) - 配置 Microsoft Edge 的新选项卡页面体验。
 
 #### <a name="obsoleted-policy"></a>已过时的策略
 
-[EnableDeprecatedWebPlatformFeatures](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enabledeprecatedwebplatformfeatures) - 在有限的时间内重新启用已超过限定时间的 web 平台功能。
+[EnableDeprecatedWebPlatformFeatures](./microsoft-edge-policies.md#enabledeprecatedwebplatformfeatures) - 在有限的时间内重新启用已超过限定时间的 web 平台功能。
 
 <!-- end major 87 -->
 
@@ -323,18 +323,18 @@ ms.locfileid: "11442382"
 > [!IMPORTANT]
 > 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2020-16013](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16013) 和 [CVE-2020-16017](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16017)。
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-13-2020)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#november-13-2020)列出了稳定频道的安全更新。
 
 ## <a name="version-86062268-november-11"></a>版本 86.0.622.68：11 月 11 日
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-11-2020)列出了稳定频道安全更新
+[此处](./microsoft-edge-relnotes-security.md#november-11-2020)列出了稳定频道安全更新
 
 ## <a name="version-86062263-november-4"></a>版本 86.0.622.63：11 月 4 日
 
 > [!IMPORTANT]
 > 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2020-16009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16009)。
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-4-2020)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#november-4-2020)列出了稳定频道的安全更新。
 
 ## <a name="version-86062261-november-2"></a>版本 86.0.622.61：11 月 2 日
 
@@ -350,7 +350,7 @@ ms.locfileid: "11442382"
 
 ## <a name="version-86062251-october-22"></a>版本 86.0.622.51：10 月 22 日
 
-[此处](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#october-22-2020)列出了稳定频道安全更新
+[此处](./microsoft-edge-relnotes-security.md#october-22-2020)列出了稳定频道安全更新
 
 ## <a name="version-86062248-october-20"></a>版本 86.0.622.48：10 月 20 日
 

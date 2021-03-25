@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 和混合内容下载
-ms.openlocfilehash: 57da17a8684b97aad88e7837ff9d070f6862357b
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 13cc9d935dfe415039078b2ca794945b4fa2d1a3
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979291"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447266"
 ---
-# 了解 Microsoft Edge 和混合内容下载
+# <a name="learn-about-microsoft-edge-and-mixed-content-downloads"></a>了解 Microsoft Edge 和混合内容下载
 
 本文介绍混合内容下载以及 Microsoft Edge 对此操作的处理方式。
 
 >[!NOTE]
 >本文适用于 Microsoft Edge 版本 85 或更高版本。
 
-## 混合内容下载是什么？
+## <a name="what-are-mixed-content-downloads"></a>混合内容下载是什么？
 
 从通过安全 HTTPS 连接加载的 HTML 页面启动下载时会发生混合内容下载，但存在以下情况之一：
 
@@ -33,7 +33,7 @@ ms.locfileid: "10979291"
 
 这两种场景都是混合内容，因为请求是通过安全 HTTPS 发出的，并且最终下载目标同时涉及到 HTTP 和 HTTPS 内容。 新式浏览器将显示有关此类型内容的警告，向用户表明，即使访问的原始页面是安全的，下载内容也可能是不安全的。
 
-## 下载警告和用户选项
+## <a name="download-warnings-and-user-options"></a>下载警告和用户选项
 
 下载警告确保用户知道正在下载的文件可能会被网络上的恶意攻击者读取。 此警告让用户能够在知情的情况下决定是否下载文件。
 
@@ -56,17 +56,17 @@ ms.locfileid: "10979291"
 
  ![选择 Internet Explorer 模式](./media/edge-learnmore-mixed-content-downloads/edge-mixed-content-download-override.png)
 
-## 支持策略
+## <a name="supporting-policies"></a>支持策略
 
-希望从特定网站排除混合内容阻止的企业可使用 [InsecureContentAllowedForUrls](https://docs.microsoft.com/deployedge/microsoft-edge-policies#insecurecontentallowedforurls) 策略执行此操作。
+希望从特定网站排除混合内容阻止的企业可使用 [InsecureContentAllowedForUrls](./microsoft-edge-policies.md#insecurecontentallowedforurls) 策略执行此操作。
 
-## 内容许可证
+## <a name="content-license"></a>内容许可证
 
 > [!NOTE]
 > 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 可在[此处](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)找到原始页面。
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

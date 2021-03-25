@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用 Microsoft Intune 配置适用于 Windows 的 Microsoft Edge 策略设置。
-ms.openlocfilehash: 6200b52e9061f37f85fe0bfe7cf59a2172db97df
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 0189a3fc2f9dc115563e7cf6dca1df960680bf22
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979238"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447556"
 ---
-# 使用 Microsoft Intune 配置 Microsoft Edge 策略设置
+# <a name="configure-microsoft-edge-policy-settings-with-microsoft-intune"></a>使用 Microsoft Intune 配置 Microsoft Edge 策略设置
 
 本文说明了如何使用 Microsoft Intune 配置适用于 Windows 10 的 Microsoft Edge 策略设置。
 
@@ -26,16 +26,16 @@ ms.locfileid: "10979238"
 
 你可以通过将设备配置文件添加到 Microsoft Intune 来配置 Microsoft Edge 策略和设置。 使用 Intune 管理和实施策略等同于在用户设备上使用 Active Directory 组策略或配置本地组策略对象 (GPO) 设置。
 
-有关使用 Microsoft Intune 管理 Microsoft Edge 策略的详细信息，可以阅读[通过将 Microsoft Edge 和 Microsoft Intune 配合使用来管理 Web 访问](https://docs.microsoft.com/intune/manage-microsoft-edge)，但是请记住，链接的文章特定于 Microsoft Edge 45 及更早版本，因此可能包含不适用于 Microsoft Edge Enterprise 77 及更高版本的信息和参考。
+有关使用 Microsoft Intune 管理 Microsoft Edge 策略的详细信息，可以阅读[通过将 Microsoft Edge 和 Microsoft Intune 配合使用来管理 Web 访问](/intune/manage-microsoft-edge)，但是请记住，链接的文章特定于 Microsoft Edge 45 及更早版本，因此可能包含不适用于 Microsoft Edge Enterprise 77 及更高版本的信息和参考。
 
 > [!TIP]
 > 有关如何使用 Microsoft Intune 配置 macOS 上的 Microsoft Edge 的信息，请参阅[为 macOS 配置](configure-microsoft-edge-on-mac.md)。
 
-## 创建配置文件以管理适用于 Windows 10 的 Microsoft Edge 中的设置
+## <a name="create-a-profile-to-manage-settings-in-microsoft-edge-for-windows-10"></a>创建配置文件以管理适用于 Windows 10 的 Microsoft Edge 中的设置
 
 使用 Microsoft Intune 中的管理模板，你可以使用云管理 Windows 10 设备上的 Microsoft Edge 组策略。 此部分将帮助你创建模板来配置 Microsoft Edge 特定的应用程序设置。 当你创建模板时，它将创建一个设备配置文件。 然后，你可以将此配置文件分配或部署到你的组织中的 Windows 10 设备。
 
-### 先决条件
+### <a name="prerequisites"></a>先决条件
 
 - Windows 10 以及以下最低系统要求：
   - Windows 10 版本 1909
@@ -44,7 +44,7 @@ ms.locfileid: "10979238"
   - Windows 10 版本 1803（已安装 [KB4512509](https://support.microsoft.com/kb/4512509)）
   - Windows 10 版本 1709（已安装 [KB4516071](https://support.microsoft.com/kb/4516071)）
 
-### 使用管理模板创建适用于 Microsoft Edge 的策略
+### <a name="use-administrative-templates-to-create-a-policy-for-microsoft-edge"></a>使用管理模板创建适用于 Microsoft Edge 的策略
 
 此过程利用 Intune 中内置的管理模板（你可能在组策略中见到过）。 可通过在预配置列表中选择“设置”，使用这些模板为 Microsoft Edge 创建策略。
 
@@ -73,7 +73,7 @@ ms.locfileid: "10979238"
    ![配置设置选项卡](./media/configure-edge-with-intune/create-profile-configuration-settings-tab.png)
 
    > [!NOTE]
-   > 有关 Microsoft Edge 的所有可用设置的最完整和最新的列表，请参阅 [Microsoft Edge – 策略](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies)和 [Microsoft Edge – 更新策略](https://docs.microsoft.com/DeployEdge/microsoft-edge-update-policies)。
+   > 有关 Microsoft Edge 的所有可用设置的最完整和最新的列表，请参阅 [Microsoft Edge – 策略](./microsoft-edge-policies.md)和 [Microsoft Edge – 更新策略](./microsoft-edge-update-policies.md)。
 
 10. 使用搜索字段（“搜索以筛选项目 ...”）查找想要配置的特定设置。 在此示例中，搜索字符串是“主页”。 下一个屏幕截图将显示搜索结果。
 
@@ -93,7 +93,7 @@ ms.locfileid: "10979238"
 
 15. 在**范围标记**选项卡上，根据需要添加范围标记，否则单击**下一步**按钮。
 
-16. 在**分配**选项卡上，单击 **+ 选择要包括的组**将此策略分配给包含要接收此策略设置的设备或用户的 Azure Active Directory (Azure AD) 组。 请参阅[在 Microsoft Intune 中分配用户和设备配置文件](https://docs.microsoft.com/intune/device-profile-assign)，以获取有关如何将配置文件分配给 Azure AD 用户或设备组的信息。
+16. 在**分配**选项卡上，单击 **+ 选择要包括的组**将此策略分配给包含要接收此策略设置的设备或用户的 Azure Active Directory (Azure AD) 组。 请参阅[在 Microsoft Intune 中分配用户和设备配置文件](/intune/device-profile-assign)，以获取有关如何将配置文件分配给 Azure AD 用户或设备组的信息。
 
     ![选择要包含的组](./media/configure-edge-with-intune/create-profile-assignments-tab.png)
 
@@ -105,11 +105,11 @@ ms.locfileid: "10979238"
 
     ![选择要包含的组](./media/configure-edge-with-intune/create-profile-new-policy-finished.png)
 
-有关 Windows 10 配置文件的详细信息，请参阅[使用 Windows 10 模板在 Microsoft Intune 中配置组策略设置](https://docs.microsoft.com/intune/administrative-templates-windows)。
+有关 Windows 10 配置文件的详细信息，请参阅[使用 Windows 10 模板在 Microsoft Intune 中配置组策略设置](/intune/administrative-templates-windows)。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [通过将 Microsoft Edge 和 Microsoft Intune 配合使用来管理 Web 访问](https://docs.microsoft.com/intune/manage-microsoft-edge)
-- [使用 Windows 10 模板在 Microsoft Intune 中配置组策略设置](https://docs.microsoft.com/intune/administrative-templates-windows)
-- [使用 Microsoft Intune 部署 Microsoft Edge](https://docs.microsoft.com/intune/apps/apps-windows-edge/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json)
+- [通过将 Microsoft Edge 和 Microsoft Intune 配合使用来管理 Web 访问](/intune/manage-microsoft-edge)
+- [使用 Windows 10 模板在 Microsoft Intune 中配置组策略设置](/intune/administrative-templates-windows)
+- [使用 Microsoft Intune 部署 Microsoft Edge](/intune/apps/apps-windows-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json)

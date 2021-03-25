@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解 Microsoft Edge 中的 PDF 阅读器。
-ms.openlocfilehash: d84b838556ed10951d7a7a3c6e5085b7e32c286c
-ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
+ms.openlocfilehash: 342f6702ff0da3305c037112555549b0d5503d3c
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11385030"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447836"
 ---
 # <a name="pdf-reader-in-microsoft-edge"></a>Microsoft Edge 中的 PDF 阅读器
 
@@ -109,16 +109,16 @@ Microsoft Edge 中的 PDF 阅读器支持添加和编辑突出显示。 若要�
 
 ### <a name="protected-pdfs"></a>受保护的 PDF 文件
 
-[Microsoft 信息保护 (MIP)](https://docs.microsoft.com/microsoft-365/compliance/protect-information?view=o365-worldwide&preserve-view=true) 使用户能够安全地与他人协作，同时遵守组织的合规政策。 文件受到保护后，用户可以对其执行的操作取决于被分配的权限。
+[Microsoft 信息保护 (MIP)](/microsoft-365/compliance/protect-information?preserve-view=true&view=o365-worldwide) 使用户能够安全地与他人协作，同时遵守组织的合规政策。 文件受到保护后，用户可以对其执行的操作取决于被分配的权限。
 
 > [!IMPORTANT]
-> MIP 需要许可证。 有关详细信息，请参阅此 [Microsoft 365 许可指南](https://docs.microsoft.com/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#information-protection)。
+> MIP 需要许可证。 有关详细信息，请参阅此 [Microsoft 365 许可指南](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#information-protection)。
 
 无需下载任何其他软件或安装任何加载项，便可直接在浏览器中打开这些文件。 此功能将 MIP 提供的安全性直接集成到浏览器中，为用户提供无缝的工作流。
 
 ![受保护的 PDF 文档。](media/microsoft-edge-pdf/pdf-reader-protected-pdf2.png)
 
-除 MIP 受保护文件之外，还可在本地浏览器中打开[信息权限管理 (IRM)](https://docs.microsoft.com/microsoft-365/compliance/set-up-irm-in-sp-admin-center?view=o365-worldwide&preserve-view=true) 受保护的 SharePoint 库中的 PDF 文件。
+除 MIP 受保护文件之外，还可在本地浏览器中打开[信息权限管理 (IRM)](/microsoft-365/compliance/set-up-irm-in-sp-admin-center?preserve-view=true&view=o365-worldwide) 受保护的 SharePoint 库中的 PDF 文件。
 
 用户可在 Microsoft Edge 中查看保存在本地或云中的 MIP 受保护文件。 如果保存在本地，则可直接在浏览器中打开文件。 如果文件是从 SharePoint 等云服务中打开的，则用户可能需要使用“在浏览器中打开”选项。
 
@@ -155,7 +155,7 @@ PDF 阅读器将使用在操作系统级别定义的设置，在高对比度模�
 - 进程隔离。 从不同网站打开的 PDF，其进程完成彼此隔离。 浏览器无需同任何网站或从其他来源打开的 PDF 文件进行通信。 因此，浏览 PDF 不会遭受任何计划使用遭入侵的 PDF 作为攻击面的攻击。
 
 - 应用程序防护。 借助应用程序防护，管理员可以设置组织信任的网站列表。 如果用户打开任何其他网站，将在单独的应用程序防护窗口中打开，该窗口在自己的容器中运行。 该容器可帮助保护公司网络和用户计算机上的任何数据免遭入侵。<br><br>
-此保护同样适用于已查看的任何联机 PDF 文件。 此外，将存储任何从应用程序防护下载的 PDF 文件，并在需要时在容器中重新打开。 这将帮助你的环境不只在下载文件时，而是在 PDF 文件的整个生命周期中保持安全。 有关详细信息，请参阅[应用程序防护](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-defender-application-guard)。
+此保护同样适用于已查看的任何联机 PDF 文件。 此外，将存储任何从应用程序防护下载的 PDF 文件，并在需要时在容器中重新打开。 这将帮助你的环境不只在下载文件时，而是在 PDF 文件的整个生命周期中保持安全。 有关详细信息，请参阅[应用程序防护](./microsoft-edge-security-windows-defender-application-guard.md)。
 
 ### <a name="reliability"></a>可靠性
 
@@ -163,10 +163,10 @@ PDF 阅读器将使用在操作系统级别定义的设置，在高对比度模�
 
 ## <a name="deploy-and-update-pdf-reader"></a>部署和更新 PDF 阅读器
 
-PDF 阅读器会随 Microsoft Edge 浏览器的其余部分进行部署和更新。 若要了解有关部署 Microsoft Edge 的详细信息，请观看[将 Microsoft Edge 部署到成百上千的设备](microsoft-edge-video-deploy.md)视频。 此外，还可访问 [Microsoft Edge 文档](https://docs.microsoft.com/DeployEdge/)登陆页面，获得更多部署信息。
+PDF 阅读器会随 Microsoft Edge 浏览器的其余部分进行部署和更新。 若要了解有关部署 Microsoft Edge 的详细信息，请观看[将 Microsoft Edge 部署到成百上千的设备](microsoft-edge-video-deploy.md)视频。 此外，还可访问 [Microsoft Edge 文档](./index.yml)登陆页面，获得更多部署信息。
 
 > [!TIP]
-> 你可以将 Microsoft Edge 设置为组织的默认 PDF 阅读器。 为此，[请执行下列步骤](https://docs.microsoft.com/deployedge/edge-default-browser)。
+> 你可以将 Microsoft Edge 设置为组织的默认 PDF 阅读器。 为此，[请执行下列步骤](./edge-default-browser.md)。
 
 ## <a name="roadmap-and-feedback"></a>路线图和反馈
 

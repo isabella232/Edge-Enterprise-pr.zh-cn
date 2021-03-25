@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 和条件访问
-ms.openlocfilehash: a81d39c15f418dab6565ee7acc45de17f66e3828
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 898a86c8c268a8c46e80dbd5ef3a435c300fb04e
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094767"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447136"
 ---
-# Microsoft Edge 和条件访问
+# <a name="microsoft-edge-and-conditional-access"></a>Microsoft Edge 和条件访问
   
 本文介绍 Microsoft Edge 如何支持条件访问，以及如何访问受条件访问保护的资源。
 
@@ -26,7 +26,7 @@ ms.locfileid: "11094767"
 
 就管理云资源而言，身份和访问权限是云安全的一个重要方面。 在移动优先、云优先的世界中，用户可以从任何地方使用各种设备和应用来访问组织的资源。 因此，仅关注谁可以访问资源是不够的。 你还需要考虑访问资源的方式。 Azure Active Directory (Azure AD) 条件访问可帮助你掌握安全性和工作效率之间的平衡。
 
-## 在 Microsoft Edge 中访问受条件访问保护的资源
+## <a name="accessing-conditional-access-protected-resources-in-microsoft-edge"></a>在 Microsoft Edge 中访问受条件访问保护的资源
 
 Microsoft Edge 本身支持 Azure AD 条件访问。 无需安装单独的扩展。 如果你使用企业 Azure AD凭据登录 Microsoft Edge 配置文件，Microsoft Edge 允许无缝访问受条件访问保护的企业云资源。
 
@@ -44,11 +44,11 @@ Microsoft Edge 本身支持 Azure AD 条件访问。 无需安装单独的扩展
 
 所有平台（包括所有受支持的 Windows 和 macOS 版本）上均提供此支持。
 
-### 如何在 Azure Active Directory 中部署条件访问
+### <a name="how-to-deploy-conditional-access-in-azure-active-directory"></a>如何在 Azure Active Directory 中部署条件访问
 
-[部署条件访问](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access)提供了有助于在 Azure Active Directory 中部署条件访问的详细指南。
+[部署条件访问](/azure/active-directory/conditional-access/plan-conditional-access)提供了有助于在 Azure Active Directory 中部署条件访问的详细指南。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [视频: 安全性、兼容性和可管理性](/microsoft-edge-video-security-compatibility-manageability.md)

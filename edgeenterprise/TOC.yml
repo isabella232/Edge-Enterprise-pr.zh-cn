@@ -2,7 +2,7 @@
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
-  href: 'https://docs.microsoft.com/microsoft-edge/'
+  href: /microsoft-edge/
 - name: Microsoft Edge 内容更新
   href: microsoft-edge-content-updates.md
 - name: Microsoft Edge 入门
@@ -14,7 +14,7 @@
     - name: 客户采用资料
       href: microsoft-edge-customer-adoption-kit.md
     - name: 浏览文档资源
-      href: 'https://docs.microsoft.com/microsoft-edge/'
+      href: /microsoft-edge/
     - name: Microsoft Edge 练习部署实验室
       href: deploy-edge-hands-on-lab.md
     - name: Windows 博客 - Microsoft Edge 开发人员
@@ -27,6 +27,8 @@
       href: deploy-edge-plan-deployment.md
     - name: 你的环境中的 Microsoft Edge
       href: deploy-edge-prepare-to-deploy.md
+    - name: Microsoft 浏览器使用情况报告
+      href: microsoft-edge-browser-usage-report.md
     - name: Microsoft Edge 就绪
       href: deploy-edge-ready-for-edge.md
     - name: Stable 渠道发行说明
@@ -66,19 +68,19 @@
     - name: 使用 Windows 10 更新部署 Microsoft Edge
       href: deploy-edge-with-windows-10-updates.md
     - name: 使用配置服务器部署到 Windows
-      href: 'https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
+      href: /configmgr/apps/deploy-use/deploy-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
     - name: 使用 Intune 部署到 Windows
-      href: 'https://docs.microsoft.com/intune/apps/apps-windows-edge/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
+      href: /intune/apps/apps-windows-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
     - name: 使用 Jamf 部署到 macOS
       href: deploy-edge-mac-jamf.md
     - name: 使用 Intune 部署到 macOS
-      href: 'https://docs.microsoft.com/intune/apps/apps-edge-macos/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
+      href: /intune/apps/apps-edge-macos/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
 - name: 配置 Microsoft Edge
   items:
     - name: 为 Windows 配置
       href: configure-microsoft-edge.md
     - name: 使用 Intune 为 Windows 配置
-      href: 'https://docs.microsoft.com/mem/intune/configuration/administrative-templates-configure-edge/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
+      href: /mem/intune/configuration/administrative-templates-configure-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
     - name: 使用移动设备管理为 Windows 配置
       href: configure-edge-with-mdm.md
     - name: 使用 .plist 为 macOS 配置
@@ -158,7 +160,7 @@
     - name: 配置隐私设置
       href: microsoft-edge-enterprise-privacy-settings.md
     - name: Microsoft Edge 隐私白皮书
-      href: 'https://docs.microsoft.com/microsoft-edge/privacy-whitepaper'
+      href: /microsoft-edge/privacy-whitepaper
 - name: Microsoft Edge 参考
   items:
     - name: 浏览器策略参考
