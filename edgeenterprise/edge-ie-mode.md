@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何将 Microsoft Edge 与 IE 模式配合使用。
-ms.openlocfilehash: bcb25e0f104d4a9b64ee8fd7bf29b12bb24b4724
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: ecb4bffc5afdde3a8891d1eaa6e28508205ab097
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979314"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447336"
 ---
-# 关于 IE 模式
+# <a name="about-ie-mode"></a>关于 IE 模式
 
 本文概述了如何结合使用 Microsoft Edge 和 IE 模式，以及这样做的先决条件。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge **Stable**、**Beta** 和 **Dev** 渠道版本 77 或更高版本。
 
-## 什么是 IE 模式？
+## <a name="what-is-ie-mode"></a>什么是 IE 模式？
 
 在 Microsoft Edge 中使用 IE 模式，可以在一个浏览器中轻松使用组织需要的所有网站。 此模式对新式网站使用集成 Chromium 引擎，并对旧网站使用 Internet Explorer 11 (IE11) 中的 Trident MSHTML 引擎。
 
@@ -41,22 +41,22 @@ ms.locfileid: "10979314"
   > 我们只处理一个 Enterprise Mode Site List。 Microsoft Edge 网站列表策略优先于 Internet Explorer 网站列表策略。
 - 所有 Intranet 网站都已启用“将所有 Intranet 网站发送到 Internet Explorer”**** 组策略（Microsoft Edge 77 或更高版本）。
 
-### IE 模式支持以下 Internet Explorer 功能
+### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>IE 模式支持以下 Internet Explorer 功能
 
 - 所有文档模式和企业模式。
 - ActiveX 控件（例如 Java 或 Silverlight）
 - 浏览器帮助程序对象 
 - 影响安全区域设置和内核模式的 Internet Explorer 设置和组策略
-- 适用于 IE 的 F12 开发人员工具，随 [IEChooser](https://docs.microsoft.com/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows-10) 一起启动
+- 适用于 IE 的 F12 开发人员工具，随 [IEChooser](/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows-10) 一起启动
 - Microsoft Edge 扩展（不支持直接与 IE 页面内容交互的扩展。）
 
-### IE 模式不支持以下 Internet Explorer 功能
+### <a name="ie-mode-doesnt-support-the-following-internet-explorer-functionality"></a>IE 模式不支持以下 Internet Explorer 功能
 
 - Internet Explorer 工具栏
 - 影响导航菜单的 Internet Explorer 设置和组策略（例如 - 搜索引擎和主页。）
 - IE11 或 Microsoft Edge F12 开发人员工具
 
-## 必备条件
+## <a name="prerequisites"></a>必备条件
 
 若要将 Microsoft Edge 与 IE 模式配合使用，应满足以下先决条件。
 
@@ -87,10 +87,10 @@ ms.locfileid: "10979314"
   > [!IMPORTANT]
   > ** 即使不再为 Windows 7 和 Windows Server 2008 R2 提供支持服务，Microsoft Edge 也将支持这些操作系统。 要在这些操作系统中支持 IE 模式，设备需要具有[适用于 Windows 7 的扩展安全更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 建议尽快升级到支持的操作系统以保证安全。 对于具有扩展安全更新的 Microsoft Edge 的支持应当视为达到受支持的操作系统状态的一种临时过渡。
 
-2. Microsoft Edge 管理模板。 有关详细信息，请参阅[配置 Microsoft Edge](https://docs.microsoft.com/DeployEdge/configure-microsoft-edge)。
+2. Microsoft Edge 管理模板。 有关详细信息，请参阅[配置 Microsoft Edge](./configure-microsoft-edge.md)。
 3. 在 Windows 功能中启用了 Internet Explorer 11。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [其他企业模式信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [其他企业模式信息](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
