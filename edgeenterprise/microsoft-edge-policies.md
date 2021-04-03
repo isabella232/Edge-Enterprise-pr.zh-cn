@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/24/2021
+ms.date: 04/01/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 2204f1062699095e66707858646014daefc9322a
-ms.sourcegitcommit: e17de92b1fe9637cc7476e5c953bb8131ca2fbe1
+ms.openlocfilehash: 79996cdbee3099fbb3a3d17b982b84a05f5a5066
+ms.sourcegitcommit: 21390f52f8605fe6cb0b73ca6dffacff562ada82
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "11448429"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "11470890"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -35,7 +35,7 @@ ms.locfileid: "11448429"
 
 |名称|描述文字|
 |--|--|
-|[NewTabPageContentEnabled](#newtabpagecontentenabled)|允许新选项卡页上的 Microsoft 资讯内容|
+|[ApplicationGuardTrafficIdentificationEnabled](#applicationguardtrafficidentificationenabled)|Application Guard 通信标识|
 
 ## <a name="available-policies"></a>可用策略
 
@@ -66,6 +66,7 @@ ms.locfileid: "11448429"
 |-|-|
 |[ApplicationGuardContainerProxy](#applicationguardcontainerproxy)|应用程序防护容器代理|
 |[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|已启用应用程序防护收藏夹同步|
+|[ApplicationGuardTrafficIdentificationEnabled](#applicationguardtrafficidentificationenabled)|Application Guard 通信标识|
 ### [*<a name="cast"></a>投放*](#cast-policies)
 
 |策略名称|标题|
@@ -505,7 +506,7 @@ ProxyServer 字段是代理服务器的 URL。
 
 如果将“pac_script”值选择为“ProxyMode”，则使用“ProxyPacUrl”字段。
 
-有关通过双代理识别应用程序防护流量的详细信息，请访问 [https://go.microsoft.com/fwlink/?linkid=2134653](./microsoft-edge-security-windows-defender-application-guard.md)。
+有关通过双代理识别应用程序防护流量的详细信息，请访问 [https://go.microsoft.com/fwlink/?linkid=2134653](https://go.microsoft.com/fwlink/?linkid=2134653)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -600,6 +601,59 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
   - 路径（推荐）：不适用
   - 值名称：ApplicationGuardFavoritesSyncEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="applicationguardtrafficidentificationenabled"></a>ApplicationGuardTrafficIdentificationEnabled
+
+  #### <a name="application-guard-traffic-identification"></a>Application Guard 通信标识
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本:
+
+  - 在 91 或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  如果启用或不配置此策略，Application Guard 将为来自 Application Guard 容器的所有出站 HTTP 请求添加额外的 HTTP 标头（X-MS-ApplicationGuard-启动）。
+
+如果禁用此策略，额外标题将不会添加到流量。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：ApplicationGuardTrafficIdentificationEnabled
+  - GP 名称：Application Guard 流量标识
+  - GP 路径（强制）：管理模板/Microsoft Edge/应用程序防护设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ApplicationGuardTrafficIdentificationEnabled
   - 值类型：REG_DWORD
 
   ##### <a name="example-value"></a>示例值：
@@ -845,7 +899,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = "{\"pattern\":
 
 - [CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
 若要排除退出时删除 Cookie 的功能，请配置 [SaveCookiesOnExit](#savecookiesonexit) 策略。
 
@@ -924,7 +978,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = "[*.]contoso.edu"
 
 - [CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -1003,7 +1057,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
 
 - CookiesSessionOnlyForUrls
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
 如果将 [RestoreOnStartup](#restoreonstartup) 策略设置为从以前的会话还原 URL，则此策略会被忽略，并且将永久存储这些网站的 Cookie。
 
@@ -1906,7 +1960,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
 URL 模式不得与 [FileSystemReadBlockedForUrls](#filesystemreadblockedforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -1975,7 +2029,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
 
 URL 模式不得与 [FileSystemReadAskForUrls](#filesystemreadaskforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2044,7 +2098,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.e
 
 URL 模式不得与 [FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2113,7 +2167,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
 
 URL 模式不得与 [FileSystemWriteAskForUrls](#filesystemwriteaskforurls) 冲突。 如果 URL 与两个策略都匹配，则这两个策略均不具有优先权。
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2180,7 +2234,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
 
 如果未配置此策略，则所有网站都将使用 [DefaultImagesSetting](#defaultimagessetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2247,7 +2301,7 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
 
 如果未配置此策略，则所有网站都将使用 [DefaultImagesSetting](#defaultimagessetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2314,7 +2368,7 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
 如果未配置此策略，则可阻止的混合内容将被阻止，并且可选择阻止的混合内容将被升级。 但是，将允许用户设置例外，以允许特定网站使用不安全的混合内容。
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2381,7 +2435,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.
 
 如果未配置此策略，则可阻止的混合内容将被阻止，并且可选择阻止的混合内容将被升级。 但是，将允许用户设置例外，以允许特定网站使用不安全的混合内容。
 
-关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2715,7 +2769,7 @@ SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainLis
 
   可用于创建 url 模式列表，以指定允许显示通知的网站。
 
-如果未设置此策略，则将对所有网站使用全局默认值。 此默认值将来自 [DefaultNotificationsSetting](#defaultnotificationssetting) 策略（如果已设置）或用户的个人配置。 有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+如果未设置此策略，则将对所有网站使用全局默认值。 此默认值将来自 [DefaultNotificationsSetting](#defaultnotificationssetting) 策略（如果已设置）或用户的个人配置。 有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2780,7 +2834,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = "[*.]contoso.ed
 
   可用于创建 url 模式列表，以指定不允许显示通知的网站。
 
-如果未设置此策略，则将对所有网站使用全局默认值。 此默认值将来自 [DefaultNotificationsSetting](#defaultnotificationssetting) 策略（如果已设置）或用户的个人配置。 有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+如果未设置此策略，则将对所有网站使用全局默认值。 此默认值将来自 [DefaultNotificationsSetting](#defaultnotificationssetting) 策略（如果已设置）或用户的个人配置。 有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2849,7 +2903,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
 
 如果未配置此策略，则所有网站都将使用 [DefaultPluginsSetting](#defaultpluginssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 但是，从 M85 开始，此策略不再支持主机中具有“\*”和“[\*.]”通配符的模式。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，此策略不再支持主机中具有“\*”和“[\*.]”通配符的模式。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2918,7 +2972,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
 如果未配置此策略，则所有网站都将使用 [DefaultPluginsSetting](#defaultpluginssetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 但是，从 M85 开始，此策略不再支持主机中具有“\*”和“[\*.]”通配符的模式。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 但是，从 M85 开始，此策略不再支持主机中具有“\*”和“[\*.]”通配符的模式。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -3361,7 +3415,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
 
 如果未配置此策略，则所有网站都将使用 [DefaultWebUsbGuardSetting](#defaultwebusbguardsetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-此策略中定义的 URL 模式不能与 [WebUsbBlockedForUrls](#webusbblockedforurls) 策略中配置的 URL 模式冲突 - 不能同时允许和阻止一个 URL。 有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+此策略中定义的 URL 模式不能与 [WebUsbBlockedForUrls](#webusbblockedforurls) 策略中配置的 URL 模式冲突 - 不能同时允许和阻止一个 URL。 有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -3428,7 +3482,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = "[*.]contoso.edu"
 
 如果未配置此策略，则所有网站都将使用 [DefaultWebUsbGuardSetting](#defaultwebusbguardsetting) 策略中的全局默认值（如果已设置）或用户的个人配置。
 
-此策略中的 URL 模式不能与 [WebUsbAskForUrls](#webusbaskforurls) 策略中配置的 URL 模式冲突。 不能同时允许和阻止一个 URL。  有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+此策略中的 URL 模式不能与 [WebUsbAskForUrls](#webusbaskforurls) 策略中配置的 URL 模式冲突。 不能同时允许和阻止一个 URL。  有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -4413,7 +4467,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 任何扩展的源代码都可以由使用开发人员工具的用户更改，这可能导致扩展无法正常工作。 如果这是个问题，请配置 DeveloperToolsDisabled 策略。
 
-策略的每个列表项都是一个字符串，其包含扩展 ID 和“更新”URL（可选），用分号 (;) 分隔。 扩展 ID 是在开发人员模式下找到的 32 个字母字符串，例如在 edge://extensions 上。 如果指定，“更新”URL 应指向更新清单 XML 文档 ([https://go.microsoft.com/fwlink/?linkid=2095043](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating))。 默认情况下，使用 Microsoft Edge Add-ons 网站的更新 URL。 此策略中设置的“更新”URL 仅用于初始安装；后续扩展更新使用扩展清单中的更新 URL。
+策略的每个列表项都是一个字符串，其包含扩展 ID 和“更新”URL（可选），用分号 (;) 分隔。 扩展 ID 是在开发人员模式下找到的 32 个字母字符串，例如在 edge://extensions 上。 如果指定，“更新”URL 应指向更新清单 XML 文档 ([https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043))。 默认情况下，使用 Microsoft Edge Add-ons 网站的更新 URL。 此策略中设置的“更新”URL 仅用于初始安装；后续扩展更新使用扩展清单中的更新 URL。
 
 注意：此策略不适用于 InPrivate 模式。 阅读有关托管扩展 (https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 的信息。
 
@@ -4482,7 +4536,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
 定义可直接安装扩展和主题的 Url，无需将包拖放到 edge://extensions 页面。
 
-此列表中的每个项目都是扩展样式匹配模式（请参阅 [https://go.microsoft.com/fwlink/?linkid=2095039](/microsoft-edge/extensions-chromium/enterprise/match-patterns)）。 用户可以轻松地从与此列表中的项目匹配的任何 URL 安装项目。 这些模式必须允许 *.crx 文件的位置和从其启动下载的页面（换句话说，即引用者）。 不要在需要身份验证的位置承载文件。
+此列表中的每个项目都是扩展样式匹配模式（请参阅 [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039)）。 用户可以轻松地从与此列表中的项目匹配的任何 URL 安装项目。 这些模式必须允许 *.crx 文件的位置和从其启动下载的页面（换句话说，即引用者）。 不要在需要身份验证的位置承载文件。
 
 [ExtensionInstallBlocklist](#extensioninstallblocklist) 策略优先于此策略。 不会安装阻止列表上的任何扩展，即使它来自此列表上的网站也是如此。
 
@@ -4547,7 +4601,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   设置此策略可控制 Microsoft Edge 的扩展管理设置，包括任何受现有扩展相关策略控制的设置。 此策略将取代可能设置的任何旧策略。
 
-此策略仅将扩展 ID 或更新 URL 映射到其特定设置。 可以针对特殊 ID"*"设置默认配置，此 ID 适用于在此策略中无自定义配置的所有扩展。 通过更新 URL，配置适用于扩展清单（[https://go.microsoft.com/fwlink/?linkid=2095043](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating)）中所述的具有确切更新 URL 的扩展。
+此策略仅将扩展 ID 或更新 URL 映射到其特定设置。 可以针对特殊 ID"*"设置默认配置，此 ID 适用于在此策略中无自定义配置的所有扩展。 通过更新 URL，配置适用于扩展清单（[https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043)）中所述的具有确切更新 URL 的扩展。
 
 要阻止来自特定第三方应用商店的扩展，只需阻止该商店的 update_url。 例如，如果要阻止 Chrome Web Store 的扩展，可以使用以下 JSON。
 
@@ -5315,7 +5369,7 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 
 如果禁用此策略，将阻止用户更改地址栏中的 URL。
 
-有关配置展台模式的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2137578](./microsoft-edge-configure-kiosk-mode.md)。
+有关配置展台模式的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -5379,7 +5433,7 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 
 如果禁用或未配置此策略，则当 Microsoft Edge 关闭时，作为展台会话一部分下载的文件不会被删除。
 
-有关配置展台模式的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2137578](./microsoft-edge-configure-kiosk-mode.md)。
+有关配置展台模式的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -6875,7 +6929,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
 如果未配置此策略，则不会创建 Microsoft Edge 对其跳过代理的主机列表。 如果已指定任何其他设置代理策略的方法，请将此策略保留为未配置。
 
-有关更多详细示例，请转到 [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md)。
+有关更多详细示例，请转到 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -6946,7 +7000,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   * fixed_servers= 固定代理服务器。 可使用 [ProxyServer](#proxyserver) 和 [ProxyBypassList](#proxybypasslist)指定更多选项。
   * pac_script= .pac 代理脚本。 使用 [ProxyPacUrl](#proxypacurl) 将 URL 设置为代理 .pac 文件。
 
-有关详细示例，请转到 [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md)。
+有关详细示例，请转到 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
 
 如果未配置此策略，用户可选择自己的代理设置。
 
@@ -7030,7 +7084,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
 如果禁用或未配置此策略，则不指定 PAC 文件。 如果已指定任何其他设置代理策略的方法，请将此策略保留为未配置。
 
-有关详细示例，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md)。
+有关详细示例，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -7098,7 +7152,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
 如果禁用或未配置此策略，用户可以在此代理模式下选择自己的代理设置。 如果已指定任何其他设置代理策略的方法，请将此策略保留为未配置。
 
-有关更多选项和详细示例，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md)。
+有关更多选项和详细示例，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -7182,7 +7236,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   * fixed_servers，将使用 "ProxyServer" 和 "ProxyBypassList" 字段。
   * pac_script，将使用 "ProxyServer" 和 "ProxyBypassList" 字段。
 
-有关更多详细示例，请转到 [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md)。
+有关更多详细示例，请转到 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -10117,7 +10171,7 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
 如果未配置此策略，则无需提示即可启动任何协议。 除非[ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox)策略被设置为禁用，否则用户可以根据每个协议/每个站点选择退出提示。 此策略对用户设置的每个协议/每个站点的提示豁免没有影响。
 
-来源匹配模式使用与[URLBlocklist](#urlblocklist)策略类似的格式，这些格式被记录在[https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+来源匹配模式使用与[URLBlocklist](#urlblocklist)策略类似的格式，这些格式被记录在[https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
 但是，此策略的原始匹配模式不能包含"/path" 或 "@query"元素。 包含"/path" 或 "@query"元素的任何模式都将被忽略。
 
@@ -10239,7 +10293,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
 
 如果未设置此策略，则所有文件类型均位于[AutoOpenFileTypes](#autoopenfiletypes)中的下载将自动打开。
 
-URL 模式必须按[https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)进行格式设置。
+URL 模式必须按[https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)进行格式设置。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -10701,7 +10755,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
 此策略仅适用于 Microsoft 识别为 EDU 租户的 K-12 SKU。
 
-请参阅 [https://go.microsoft.com/fwlink/?linkid=2119711](/microsoft-365/education/deploy/install-microsoft-edge)，了解有关此策略的更多信息或者以下情形是否适用于你：
+请参阅 [https://go.microsoft.com/fwlink/?linkid=2119711](https://go.microsoft.com/fwlink/?linkid=2119711)，了解有关此策略的更多信息或者以下情形是否适用于你：
 
 * 你有 EDU 租户，但该策略不起作用。
 
@@ -11447,7 +11501,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
 
 通过此策略，可不通过证书透明度来披露指定 URL 中主机名的证书。 这样，你就可以使用由于未正确公开披露而不受信任的证书，但这会使得检测这些主机的错误颁发证书变得更加困难。
 
-根据 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format) 构建你的 URL 模式。 由于证书对给定主机名有效，与方案、端口或路径无关，因此仅考虑 URL 的主机名部分。 不支持通配符主机。
+根据 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 构建你的 URL 模式。 由于证书对给定主机名有效，与方案、端口或路径无关，因此仅考虑 URL 的主机名部分。 不支持通配符主机。
 
 如果未配置此策略，则应通过证书透明度披露的任何证书如果未披露，则将被视为不受信任。
 
@@ -11654,7 +11708,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 
 禁用 ClickOnce 可能会导致 ClickOnce 应用程序（.application 文件）无法正常启动。
 
-有关 ClickOnce 的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2103872](./edge-learn-more-co-di.md) 和 [https://go.microsoft.com/fwlink/?linkid=2099880](/visualstudio/deployment/clickonce-security-and-deployment)。
+有关 ClickOnce 的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2103872](https://go.microsoft.com/fwlink/?linkid=2103872) 和 [https://go.microsoft.com/fwlink/?linkid=2099880](https://go.microsoft.com/fwlink/?linkid=2099880)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -12053,7 +12107,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
 
   #### <a name="description"></a>描述
 
-  如果用户的计算机已加入域，并且你的环境不是混合加入的，则可以使用 Active Directory 帐户进行自动登录。 如果希望用户使用其 Azure Active Directory 帐户自动登录，请对你的环境使用 Azure AD 加入（有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2118197](/azure/active-directory/devices/azureadjoin-plan)）或混合加入（有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2118365](/azure/active-directory/devices/hybrid-azuread-join-plan)）。
+  如果用户的计算机已加入域，并且你的环境不是混合加入的，则可以使用 Active Directory 帐户进行自动登录。 如果希望用户使用其 Azure Active Directory 帐户自动登录，请对你的环境使用 Azure AD 加入（有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2118197](https://go.microsoft.com/fwlink/?linkid=2118197)）或混合加入（有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2118365](https://go.microsoft.com/fwlink/?linkid=2118365)）。
 
 每次启动时，只要启动的第一个配置文件没有登录或以前没有自动登录，Microsoft Edge 都会尝试使用此策略登录。
 
@@ -12381,7 +12435,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
 
 如果未设置此策略，则 Microsoft Edge 可让用户控制是否为默认设置，如果不是，是否应显示用户通知。
 
-Windows 管理员注意事项：此策略仅适用于运行 Windows 7 的电脑。 对于较高版本的 Windows，必须部署一个“默认应用程序关联”文件，该文件使 Microsoft Edge 成为 https 和 http 协议的处理程序（也可以涵盖 FTP 协议和文件格式，如 .html、.htm、.pdf、.svg、.webp） 有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094932](./edge-default-browser.md)。
+Windows 管理员注意事项：此策略仅适用于运行 Windows 7 的电脑。 对于较高版本的 Windows，必须部署一个“默认应用程序关联”文件，该文件使 Microsoft Edge 成为 https 和 http 协议的处理程序（也可以涵盖 FTP 协议和文件格式，如 .html、.htm、.pdf、.svg、.webp） 有关详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094932](https://go.microsoft.com/fwlink/?linkid=2094932)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -12914,7 +12968,7 @@ Windows 管理员注意事项：此策略仅适用于运行 Windows 7 的电脑�
 
 可选诊断数据包括向 Microsoft 发送的用于改进产品和服务的有关浏览器使用情况、访问的网站以及故障报告的数据。
 
-Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据收集，IT 管理员必须使用 Windows 诊断数据组策略。 根据 Windows 版本的不同，此策略将是“允许遥测”或“允许诊断数据”。 详细了解 Windows 10 诊断数据收集：[https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)
+Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据收集，IT 管理员必须使用 Windows 诊断数据组策略。 根据 Windows 版本的不同，此策略将是“允许遥测”或“允许诊断数据”。 详细了解 Windows 10 诊断数据收集：[https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
 
 使用以下设置之一配置此策略：
 
@@ -13002,7 +13056,7 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
 
 注意：禁用 DirectInvoke 可能会导致某些 Microsoft SharePoint Online 功能无法按预期工作。
 
-有关 DirectInvoke 的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2103872](./edge-learn-more-co-di.md) 和 [https://go.microsoft.com/fwlink/?linkid=2099871](/previous-versions/windows/internet-explorer/ie-developer/dev-guides/jj215788(v=vs.85))。
+有关 DirectInvoke 的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2103872](https://go.microsoft.com/fwlink/?linkid=2103872) 和 [https://go.microsoft.com/fwlink/?linkid=2099871](https://go.microsoft.com/fwlink/?linkid=2099871)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -14179,7 +14233,7 @@ Microsoft 会保留一个列表，列出出于兼容性原因要对某些域执�
 
 如果启用此策略：
 
-* URL 模式应按 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)进行格式设置。
+* URL 模式应按 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)进行格式设置。
 * 输入的文件类型扩展名必须采用低的 ASCII。 在列出文件类型扩展名时，不应该包括前导分隔符，因此应该使用列表“jnlp”而不是“.jnlp”。
 
 示例：
@@ -16594,7 +16648,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 如果将此策略设置为 'Disabled'，则禁用增强挂起检测，用户将获得基本的 Internet Explorer 挂起检测状态。
 
-要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
+要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
 策略选项映射：
 
@@ -16653,7 +16707,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   #### <a name="description"></a>描述
 
-  有关配置 Internet Explorer 模式的最佳体验的指南，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
+  有关配置 Internet Explorer 模式的最佳体验的指南，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
 策略选项映射：
 
@@ -16722,7 +16776,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 如果将此策略设置为 false，则不允许用户使用 --ie-mode-file-url 命令行参数在 Internet Explorer 模式下启动本地文件。
 
-若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
+若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -16781,7 +16835,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 如果将此策略设置为特殊值“*”或未配置该策略，则允许所有文件扩展名。
 
-若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
+若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -16843,7 +16897,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 如果将此策略设置为 false 或未配置该策略，则不会添加上下文菜单项。
 
-若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
+若要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -16894,7 +16948,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   #### <a name="description"></a>描述
 
-  有关配置 Internet Explorer 模式的最佳体验的指南，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
+  有关配置 Internet Explorer 模式的最佳体验的指南，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -16959,7 +17013,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 如果将此策略设置为 AllInPageNavigations，则从以 IE 模式加载的页面到未配置的网站的所有导航都将保持 Internet Explorer 模式（最不推荐）。
 
-要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2105106](./edge-learnmore-inpage-nav.md)
+要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2105106](https://go.microsoft.com/fwlink/?linkid=2105106)
 
 策略选项映射：
 
@@ -17811,13 +17865,13 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
   #### <a name="description"></a>描述
 
-  不再支持此策略。 它被 [DiagnosticData](#diagnosticdata)（用于 Windows 7、Windows 8 和 macOS）取代，并允许在 Win 10（[https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)）上进行遥测。
+  不再支持此策略。 它被 [DiagnosticData](#diagnosticdata)（用于 Windows 7、Windows 8 和 macOS）取代，并允许在 Win 10（[https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)）上进行遥测。
 
 此策略允许向 Microsoft 发送关于 Microsoft Edge 的使用情况和故障相关数据的报告。
 
 启用此策略可向 Microsoft 发送使用情况和故障相关数据的报告。 禁用此策略可以不将数据发送给 Microsoft。 在这两种情况下，用户不能更改或覆盖设置。
 
-在 Windows 10 上，如果未配置此策略，Microsoft Edge 将默认使用 Windows 诊断数据设置。 如果启用此策略，只有当 Windows 诊断数据设置设为“增强”或“完全”时，Microsoft Edge 才会发送使用情况数据。 如果禁用此策略，Microsoft Edge 将不会发送使用情况数据。 基于 Windows 诊断数据设置发送故障相关数据。 有关 Windows 诊断数据设置的详细信息，请访问 [https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)
+在 Windows 10 上，如果未配置此策略，Microsoft Edge 将默认使用 Windows 诊断数据设置。 如果启用此策略，只有当 Windows 诊断数据设置设为“增强”或“完全”时，Microsoft Edge 才会发送使用情况数据。 如果禁用此策略，Microsoft Edge 将不会发送使用情况数据。 基于 Windows 诊断数据设置发送故障相关数据。 有关 Windows 诊断数据设置的详细信息，请访问 [https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
 
 在 Windows 7、Windows 8 和 macOS 上，此策略控制使用情况和故障相关数据的发送。 如果未配置此策略，Microsoft Edge 将默认使用用户首选项。
 
@@ -18706,7 +18760,7 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
 只有在安装 BHO 后，才会发生不兼容网站重定向，但重定向是否发生还受 [RedirectSitesFromInternetExplorerRedirectMode](#redirectsitesfrominternetexplorerredirectmode) 的控制。
 
-有关此策略的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2141715](./edge-learnmore-neededge.md)
+有关此策略的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2141715](https://go.microsoft.com/fwlink/?linkid=2141715)
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18767,7 +18821,7 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
 如果将此策略设置为“禁用”，则 Internet Explorer 不会将任何流量重定向到 Microsoft Edge。
 
-有关此策略的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2141715](./edge-learnmore-neededge.md)
+有关此策略的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2141715](https://go.microsoft.com/fwlink/?linkid=2141715)
 
 策略选项映射：
 
@@ -19261,7 +19315,7 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
 [SyncDisabled](#syncdisabled) 仅禁用云同步，并且对此策略没有影响。
 
-有关使用漫游用户配置文件的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2150058](./microsoft-edge-on-premises-sync.md)。
+有关使用漫游用户配置文件的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -19446,7 +19500,7 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
 如果未配置此策略，则 [SSLErrorOverrideAllowed](#sslerroroverrideallowed) 策略适用于所有网站。
 
-有关有效源模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。 * 不是此策略的接受值。 此策略仅基于源匹配，因此会忽略 URL 模式的任何路径或查询。
+有关有效源模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。 此策略仅基于源匹配，因此会忽略 URL 模式的任何路径或查询。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -19965,7 +20019,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
   #### <a name="description"></a>描述
 
-  有关配置 Internet Explorer 模式的最佳体验的指南，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
+  有关配置 Internet Explorer 模式的最佳体验的指南，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -20016,13 +20070,13 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
   #### <a name="description"></a>描述
 
-  不再支持此策略。 它被 [DiagnosticData](#diagnosticdata)（用于 Windows 7、Windows 8 和 macOS）取代，并允许在 Win 10（[https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)）上进行遥测。
+  不再支持此策略。 它被 [DiagnosticData](#diagnosticdata)（用于 Windows 7、Windows 8 和 macOS）取代，并允许在 Win 10（[https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)）上进行遥测。
 
 此策略允许向 Microsoft 发送有关在 Microsoft Edge 中访问过的网站的信息，以改进搜索等服务。
 
 启用此策略后，可将有关在 Microsoft Edge 中访问过的网站的信息发送给 Microsoft。 禁用此策略后，不会向 Microsoft 发送有关在 Microsoft Edge 中访问过的网站的信息。 在这两种情况下，用户不能更改或覆盖设置。
 
-在 Windows 10 上，如果未配置此策略，Microsoft Edge 将默认使用 Windows 诊断数据设置。 启用此策略后，如果 Windows 诊断数据设置设为“完整”，Microsoft Edge 将仅发送有关在 Microsoft Edge 中访问过的网站的信息。 如果禁用此策略，Microsoft Edge 将不会发送有关所访问网站的信息。 详细了解 Windows 诊断数据设置：[https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)
+在 Windows 10 上，如果未配置此策略，Microsoft Edge 将默认使用 Windows 诊断数据设置。 启用此策略后，如果 Windows 诊断数据设置设为“完整”，Microsoft Edge 将仅发送有关在 Microsoft Edge 中访问过的网站的信息。 如果禁用此策略，Microsoft Edge 将不会发送有关所访问网站的信息。 详细了解 Windows 诊断数据设置：[https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
 
 在 Windows 7、Windows 8 和 macOS 上，此策略控制发送有关已访问网站的信息。 如果未配置此策略，Microsoft Edge 将默认使用用户首选项。
 
@@ -20092,7 +20146,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
 此策略中定义的 URL 模式与 [SensorsBlockedForUrls](#sensorsblockedforurls) 策略中配置的不冲突。 不能同时允许和阻止一个 URL。
 
-有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -20163,7 +20217,7 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\2 = "[*.]contoso.edu"
 
 此策略中定义的 URL 模式与 [SensorsAllowedForUrls](#sensorsallowedforurls) 策略中配置的不冲突。 不能同时允许和阻止一个 URL。
 
-有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -20234,7 +20288,7 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\2 = "[*.]contoso.edu"
 
 此策略中定义的 URL 模式与 [SerialBlockedForUrls](#serialblockedforurls) 策略中配置的不冲突。 不能同时允许和阻止一个 URL。
 
-有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -20305,7 +20359,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
 
 此策略中的 URL 模式不能与 [SerialAskForUrls](#serialaskforurls) 策略中配置的 URL 模式冲突。 不能同时允许和阻止一个 URL。
 
-有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -21792,7 +21846,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
   通过设置该策略，可提供对所列 URL 的访问权限，将其作为 [URLBlocklist](#urlblocklist) 的例外情况。
 
-根据 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format) 设置 URL 模式的格式。
+根据 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 设置 URL 模式的格式。
 
 可使用此策略打开限制性阻止列表的例外。 例如，可以在阻止列表中包含 '\*' 以阻止所有请求，然后使用此策略允许访问有限的 URL 列表。 可以使用此策略打开某些方案、其他域的子域、端口或特定路径的例外。
 
@@ -21873,7 +21927,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
   根据 URL 模式定义被阻止的网站列表（用户无法加载它们）。
 
-根据 [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format) 设置 URL 模式的格式。
+根据 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 设置 URL 模式的格式。
 
 可在 [URLAllowlist](#urlallowlist) 策略中定义例外。 这些策略限制为 1000 个条目；后续条目将被忽略。
 
