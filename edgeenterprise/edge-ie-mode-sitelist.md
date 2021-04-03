@@ -1,40 +1,40 @@
 ---
-title: 在 Enterprise Mode Site List 中配置网站
-ms.author: cjacks
-author: cjacks
-manager: saudm
-ms.date: 05/28/2020
+title: 企业网站配置策略
+ms.author: shisub
+author: shisub
+manager: srugh
+ms.date: 03/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: 配置 Enterprise Mode Site List
-ms.openlocfilehash: 9b1943e4d50dcc770b4a634b99ecbd001d1ffbcc
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+description: 为 Internet Explorer 模式配置企业模式网站列表的分步指南。
+ms.openlocfilehash: 1d0b80950439fce77513413c3f5d1143538487d1
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447646"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470150"
 ---
-# <a name="configure-sites-on-the-enterprise-mode-site-list"></a><span data-ttu-id="d5246-103">在 Enterprise Mode Site List 中配置网站</span><span class="sxs-lookup"><span data-stu-id="d5246-103">Configure Sites on the Enterprise Mode Site List</span></span>
+# <a name="enterprise-site-configuration-strategy"></a><span data-ttu-id="e9571-103">企业网站配置策略</span><span class="sxs-lookup"><span data-stu-id="e9571-103">Enterprise site configuration strategy</span></span>
 
-<span data-ttu-id="d5246-104">本文介绍了对 Enterprise Mode Site List 的更改，此列表支持配置用于 Microsoft Edge 版本 77 及更高版本的 IE 模式。</span><span class="sxs-lookup"><span data-stu-id="d5246-104">This article describes changes to the Enterprise Mode Site List that support configuring IE mode for Microsoft Edge version 77 and later.</span></span>
+<span data-ttu-id="e9571-104">本文介绍对"企业模式网站列表"的更改，以支持针对 Microsoft Edge 版本 77 和更高版本的 Internet Explorer 模式。</span><span class="sxs-lookup"><span data-stu-id="e9571-104">This article describes changes to the Enterprise Mode Site List to support Internet Explorer mode for Microsoft Edge version 77 and later.</span></span>
 
-<span data-ttu-id="d5246-105">若要详细了解 Enterprise Mode Site List XML 文件的架构，请参阅[企业模式架构 v.2 指南](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。</span><span class="sxs-lookup"><span data-stu-id="d5246-105">For more information on the schema for the Enterprise Mode Site List XML file, see [Enterprise Mode schema v.2 guidance](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance).</span></span>
+<span data-ttu-id="e9571-105">若要详细了解 Enterprise Mode Site List XML 文件的架构，请参阅[企业模式架构 v.2 指南](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。</span><span class="sxs-lookup"><span data-stu-id="e9571-105">For more information on the schema for the Enterprise Mode Site List XML file, see [Enterprise Mode schema v.2 guidance](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d5246-106">本文适用于 Microsoft Edge **Stable**、**Beta** 和 **Dev** 渠道版本 77 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="d5246-106">This article applies to Microsoft Edge **Stable**, **Beta** and **Dev** Channels, version 77 or later.</span></span>
+> <span data-ttu-id="e9571-106">本文适用于 Microsoft Edge 版本 77 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="e9571-106">This article applies to Microsoft Edge version 77 or later.</span></span>
+<!--
+## Updated schema elements
 
-## <a name="updated-schema-elements"></a><span data-ttu-id="d5246-107">已更新的架构元素</span><span class="sxs-lookup"><span data-stu-id="d5246-107">Updated schema elements</span></span>
+The following table describes the \<open-in app\> element added to the v.2 of the Enterprise Mode schema:
 
-<span data-ttu-id="d5246-108">下表描述了添加到企业模式架构 v.2 中的 \<open-in app\> 元素：</span><span class="sxs-lookup"><span data-stu-id="d5246-108">The following table describes the \<open-in app\> element added to the v.2 of the Enterprise Mode schema:</span></span>
-
-| **<span data-ttu-id="d5246-109">元素</span><span class="sxs-lookup"><span data-stu-id="d5246-109">Element</span></span>** | **<span data-ttu-id="d5246-110">描述</span><span class="sxs-lookup"><span data-stu-id="d5246-110">Description</span></span>** |
+| **Element** | **Description** |
 | --- | --- |
-| \<open-in app="**true**"\> | <span data-ttu-id="d5246-111">控制哪个浏览器用于站点的子元素。</span><span class="sxs-lookup"><span data-stu-id="d5246-111">A child element that controls what browser is used for sites.</span></span> <span data-ttu-id="d5246-112">对于需要**在 IE11 中打开**的站点，此元素是必需的。</span><span class="sxs-lookup"><span data-stu-id="d5246-112">This element is required for sites that need to **open in IE11**.</span></span>|
+| \<open-in app="**true**"\> | A child element that controls what browser is used for sites. This element is required for sites that need to **open in IE11**.|
 
-**<span data-ttu-id="d5246-113">示例：</span><span class="sxs-lookup"><span data-stu-id="d5246-113">Example:</span></span>**
+**Example:**
 
 ``` xml
 <site url="contoso.com">
@@ -44,26 +44,45 @@ ms.locfileid: "11447646"
 </site>
 ```
 
-<span data-ttu-id="d5246-114">下表显示了 \<open-in\> 元素的可能值：</span><span class="sxs-lookup"><span data-stu-id="d5246-114">The following table shows the possible values of the \<open-in\> element:</span></span>
+The following table shows the possible values of the \<open-in\> element:
 
-| **<span data-ttu-id="d5246-115">值</span><span class="sxs-lookup"><span data-stu-id="d5246-115">Value</span></span>** | **<span data-ttu-id="d5246-116">描述</span><span class="sxs-lookup"><span data-stu-id="d5246-116">Description</span></span>** |
+| **Value** | **Description** |
 | --- | --- |
-| **\<open-in\><span data-ttu-id="d5246-117">IE11</span><span class="sxs-lookup"><span data-stu-id="d5246-117">IE11</span></span>\</open-in\>** | <span data-ttu-id="d5246-118">在 IE 模式下或在完整的 IE11 窗口中打开网站。</span><span class="sxs-lookup"><span data-stu-id="d5246-118">Opens the site in IE mode or a full IE11 window.</span></span> <span data-ttu-id="d5246-119">若要启用 IE 模式，请参阅[配置 IE 模式策略](./edge-ie-mode-policies.md)</span><span class="sxs-lookup"><span data-stu-id="d5246-119">To enable IE mode, see [Configure IE mode policies](./edge-ie-mode-policies.md)</span></span>|
-| **\<open-in app="**true**"\><span data-ttu-id="d5246-120">IE11</span><span class="sxs-lookup"><span data-stu-id="d5246-120">IE11</span></span>\</open-in\>** | <span data-ttu-id="d5246-121">在完整的 IE11 窗口中打开网站</span><span class="sxs-lookup"><span data-stu-id="d5246-121">Opens the site in a full IE11 window</span></span> |
-| **\<open-in\><span data-ttu-id="d5246-122">MSEdge</span><span class="sxs-lookup"><span data-stu-id="d5246-122">MSEdge</span></span>\</open-in\>** | <span data-ttu-id="d5246-123">在 Microsoft Edge 中打开网站</span><span class="sxs-lookup"><span data-stu-id="d5246-123">Opens the site in Microsoft Edge</span></span> |
-| **\<open-in\><span data-ttu-id="d5246-124">无或未指定</span><span class="sxs-lookup"><span data-stu-id="d5246-124">None or not specified</span></span>\</open-in\>** | <span data-ttu-id="d5246-125">在默认浏览器中或在用户导航到网站所用的浏览器中打开网站。</span><span class="sxs-lookup"><span data-stu-id="d5246-125">Opens the site in the default browser or in the browser where the user navigated to the site.</span></span> |
-|**\<open-in\><span data-ttu-id="d5246-126">可配置</span><span class="sxs-lookup"><span data-stu-id="d5246-126">Configurable</span></span>\</open-in\>** | <span data-ttu-id="d5246-127">允许网站参与 IE 模式引擎确定。</span><span class="sxs-lookup"><span data-stu-id="d5246-127">Allows the site to participate in IE mode engine determination.</span></span> <span data-ttu-id="d5246-128">若要了解详细信息，请参阅[了解 IE 模式下的可配置网站](edge-learnmore-configurable-sites-ie-mode.md)。</span><span class="sxs-lookup"><span data-stu-id="d5246-128">To learn more, see [Learn about Configurable sites in IE mode](edge-learnmore-configurable-sites-ie-mode.md).</span></span>  |
+| **\<open-in\>IE11\</open-in\>** | Opens the site in IE mode or a full IE11 window. To enable IE mode, see [Configure IE mode policies](./edge-ie-mode-policies.md)|
+| **\<open-in app="**true**"\>IE11\</open-in\>** | Opens the site in a full IE11 window |
+| **\<open-in\>MSEdge\</open-in\>** | Opens the site in Microsoft Edge |
+| **\<open-in\>None or not specified\</open-in\>** | Opens the site in the default browser or in the browser where the user navigated to the site. |
+|**\<open-in\>Configurable\</open-in\>** | Allows the site to participate in IE mode engine determination. To learn more, see [Learn about Configurable sites in IE mode](edge-learnmore-configurable-sites-ie-mode.md).  |
 
 >[!NOTE]
-> <span data-ttu-id="d5246-129">仅当与 _"open-in" IE11_ 关联时，才可识别属性 app=**"true"**。</span><span class="sxs-lookup"><span data-stu-id="d5246-129">The attribute app=**"true"** is only recognized when associated to _'open-in' IE11_.</span></span> <span data-ttu-id="d5246-130">将其添加到其他“open-in”元素不会更改浏览器行为。</span><span class="sxs-lookup"><span data-stu-id="d5246-130">Adding it to the other 'open-in' elements won't change browser behavior.</span></span>   
+> The attribute app=**"true"** is only recognized when associated to _'open-in' IE11_. Adding it to the other 'open-in' elements won't change browser behavior.   -->
 
-## <a name="configure-neutral-sites"></a><span data-ttu-id="d5246-131">配置非特定网站</span><span class="sxs-lookup"><span data-stu-id="d5246-131">Configure neutral sites</span></span>
+## <a name="configuration-strategy"></a><span data-ttu-id="e9571-107">配置策略</span><span class="sxs-lookup"><span data-stu-id="e9571-107">Configuration strategy</span></span>
 
-<span data-ttu-id="d5246-132">必须将身份验证/单一登录服务器显式配置为中性网站，IE 模式才能正常运行。</span><span class="sxs-lookup"><span data-stu-id="d5246-132">In order for IE mode to work properly, authentication / Single Sign-On servers will need to be explicitly configured as neutral sites.</span></span> <span data-ttu-id="d5246-133">否则，IE 模式网页会尝试重定向到 Microsoft Edge，且身份验证失败。</span><span class="sxs-lookup"><span data-stu-id="d5246-133">Otherwise, IE mode pages will try to redirect to Microsoft Edge, and authentication will fail.</span></span>
+<span data-ttu-id="e9571-108">以下步骤是适用于 IE 模式的网站配置策略的一部分：</span><span class="sxs-lookup"><span data-stu-id="e9571-108">The following steps are part of a site configuration strategy for IE mode:</span></span>
+1. <span data-ttu-id="e9571-109">准备网站列表</span><span class="sxs-lookup"><span data-stu-id="e9571-109">Prepare your site list</span></span>
+2. <span data-ttu-id="e9571-110">配置非特定网站</span><span class="sxs-lookup"><span data-stu-id="e9571-110">Configure neutral sites</span></span>
+3. <span data-ttu-id="e9571-111">（可选）如有必要，请使用 Cookie 共享</span><span class="sxs-lookup"><span data-stu-id="e9571-111">(Optional) Use cookie sharing if necessary</span></span>
 
-<span data-ttu-id="d5246-134">中性网站使用导航起始浏览器，要么是 Microsoft Edge，要么是 IE 模式。</span><span class="sxs-lookup"><span data-stu-id="d5246-134">A neutral site will use the browser where the navigation started - either Microsoft Edge or IE mode.</span></span> <span data-ttu-id="d5246-135">配置中性网站可确保所有使用这些身份验证服务器的应用程序（无论是新式应用程序还是旧应用程序）都能继续正常运行。</span><span class="sxs-lookup"><span data-stu-id="d5246-135">Configuring neutral sites ensures that all applications using these authentication servers, both modern and legacy, continue to work.</span></span>
+<!--
+Step 1.  – if you don’t have one use Site Discovery Step-by-Step
+Step 2 – Neutral sites + sticky mode
+        Use more examples and explain sticky mode better
+Step 3 – If that doesn’t cover your needs, then use Cookie sharing -->
 
-<span data-ttu-id="d5246-136">可以通过在 Enterprise Mode Site List Manager 工具中将*打开方式*下拉列表设置为“无”或直接更新站点列表 XML 来配置中性站点：</span><span class="sxs-lookup"><span data-stu-id="d5246-136">You can configure neutral sites by setting the *Open In* dropdown to 'None' in the Enterprise Mode Site List Manager tool or by directly updating the site list XML:</span></span>
+## <a name="prepare-your-site-list"></a><span data-ttu-id="e9571-112">准备网站列表</span><span class="sxs-lookup"><span data-stu-id="e9571-112">Prepare your site list</span></span>
+
+<span data-ttu-id="e9571-113">如果已有 IE11 或 Microsoft Edge 旧版企业模式网站列表，可重复使用该列表来配置 IE 模式。</span><span class="sxs-lookup"><span data-stu-id="e9571-113">If you already have an Enterprise Mode site list for IE11 or Microsoft Edge Legacy, you can reuse it to configure IE mode.</span></span>
+
+<span data-ttu-id="e9571-114">但是，如果你没有网站列表，可以使用"企业网站 [工具](https://docs.microsoft.com/deployedge/edge-ie-mode-site-discovery) 你的网站列表。</span><span class="sxs-lookup"><span data-stu-id="e9571-114">However, if you don't have a site list, you can use the [Enterprise Site Discovery tool](https://docs.microsoft.com/deployedge/edge-ie-mode-site-discovery) to populate your site list.</span></span>
+
+## <a name="configure-neutral-sites"></a><span data-ttu-id="e9571-115">配置非特定网站</span><span class="sxs-lookup"><span data-stu-id="e9571-115">Configure neutral sites</span></span>
+
+<span data-ttu-id="e9571-116">为了使 IE 模式正常工作，需要显式将身份验证/单一登录 （SSO） 服务器配置为非特定站点。</span><span class="sxs-lookup"><span data-stu-id="e9571-116">In order for IE mode to work properly, authentication / Single Sign-On (SSO) servers will need to be explicitly configured as neutral sites.</span></span> <span data-ttu-id="e9571-117">否则，IE 模式网页会尝试重定向到 Microsoft Edge，且身份验证失败。</span><span class="sxs-lookup"><span data-stu-id="e9571-117">Otherwise, IE mode pages will try to redirect to Microsoft Edge, and authentication will fail.</span></span>
+
+<span data-ttu-id="e9571-118">中性网站使用导航起始浏览器，要么是 Microsoft Edge，要么是 IE 模式。</span><span class="sxs-lookup"><span data-stu-id="e9571-118">A neutral site will use the browser where the navigation started - either Microsoft Edge or IE mode.</span></span> <span data-ttu-id="e9571-119">配置中性网站可确保所有使用这些身份验证服务器的应用程序（无论是新式应用程序还是旧应用程序）都能继续正常运行。</span><span class="sxs-lookup"><span data-stu-id="e9571-119">Configuring neutral sites ensures that all applications using these authentication servers, both modern and legacy, continue to work.</span></span>
+
+<span data-ttu-id="e9571-120">可以通过在 Enterprise Mode Site List Manager 工具中将*打开方式*下拉列表设置为“无”或直接更新站点列表 XML 来配置中性站点：</span><span class="sxs-lookup"><span data-stu-id="e9571-120">You can configure neutral sites by setting the *Open In* dropdown to 'None' in the Enterprise Mode Site List Manager tool or by directly updating the site list XML:</span></span>
 
 ``` xml
 <site url="login.contoso.com">
@@ -73,13 +92,17 @@ ms.locfileid: "11447646"
 </site>
 ```
 
-<span data-ttu-id="d5246-137">若要识别身份验证服务器，请使用 IE11 开发人员工具检查来自应用程序的网络流量。</span><span class="sxs-lookup"><span data-stu-id="d5246-137">To identify authentication servers, inspect the network traffic from an application using the IE11 Developer Tools.</span></span> <span data-ttu-id="d5246-138">如果需要更多时间来识别身份验证服务器，可以将策略配置为让所有页内导航都一直使用 IE 模式。</span><span class="sxs-lookup"><span data-stu-id="d5246-138">If you need more time to identify your authentication servers, you can configure a policy to keep all in-page navigation in IE mode.</span></span> <span data-ttu-id="d5246-139">为了最大限度地减少 IE 模式的使用，在识别身份验证服务器并将它们添加到网站列表后，请禁用此设置。</span><span class="sxs-lookup"><span data-stu-id="d5246-139">To minimize the use of IE mode, disable this setting once you've identified and added your authentication servers to the site list.</span></span> <span data-ttu-id="d5246-140">有关详细信息，请参阅[将页内导航配置为一直使用 IE 模式](./microsoft-edge-policies.md#internetexplorerintegrationsiteredirect)。</span><span class="sxs-lookup"><span data-stu-id="d5246-140">For more information, see [Configure in-page navigation to remain in IE mode](./microsoft-edge-policies.md#internetexplorerintegrationsiteredirect).</span></span>
+<span data-ttu-id="e9571-121">若要识别身份验证服务器，请使用 IE11 开发人员工具检查来自应用程序的网络流量。</span><span class="sxs-lookup"><span data-stu-id="e9571-121">To identify authentication servers, inspect the network traffic from an application using the IE11 Developer Tools.</span></span> <span data-ttu-id="e9571-122">如果需要更多时间来识别身份验证服务器，可以配置策略以在 IE 模式下保留所有页面内导航，以允许用户继续其工作流中断。</span><span class="sxs-lookup"><span data-stu-id="e9571-122">If you need more time to identify your authentication servers, you can configure a policy to keep all in-page navigations in IE mode to allow your users to continue their workflows uninterrupted.</span></span> <span data-ttu-id="e9571-123">若要尽可能减少不必要的 IE 模式使用，在识别并将身份验证服务器添加到网站列表后，请禁用此设置。</span><span class="sxs-lookup"><span data-stu-id="e9571-123">To minimize the use of IE mode when unnecessary, disable this setting once you've identified and added your authentication servers to the site list.</span></span> <span data-ttu-id="e9571-124">有关详细信息，请参阅 [在 IE 模式下保留页面内](https://docs.microsoft.com/deployedge/edge-learnmore-inpage-nav)。</span><span class="sxs-lookup"><span data-stu-id="e9571-124">For more information, see [Keep in-page navigation in IE mode](https://docs.microsoft.com/deployedge/edge-learnmore-inpage-nav).</span></span>
 
 >[!NOTE]
-   ><span data-ttu-id="d5246-141">IE 模式集成不支持企业模式架构 v.1。</span><span class="sxs-lookup"><span data-stu-id="d5246-141">Enterprise Mode schema v.1 isn't supported for IE mode integration.</span></span> <span data-ttu-id="d5246-142">如果当前正在将架构 v.1 与 Internet Explorer 11 一起使用，则必须升级到架构 v.2。</span><span class="sxs-lookup"><span data-stu-id="d5246-142">If you are currently using schema v.1 with Internet Explorer 11, you must upgrade to schema v.2.</span></span> <span data-ttu-id="d5246-143">有关详细信息，请参阅[企业模式架构 v.2 指南](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。</span><span class="sxs-lookup"><span data-stu-id="d5246-143">For more information, see [Enterprise Mode schema v.2 guidance](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance).</span></span>
+   ><span data-ttu-id="e9571-125">IE 模式集成不支持企业模式架构 v.1。</span><span class="sxs-lookup"><span data-stu-id="e9571-125">Enterprise Mode schema v.1 isn't supported for IE mode integration.</span></span> <span data-ttu-id="e9571-126">如果当前正在将架构 v.1 与 Internet Explorer 11 一起使用，则必须升级到架构 v.2。</span><span class="sxs-lookup"><span data-stu-id="e9571-126">If you are currently using schema v.1 with Internet Explorer 11, you must upgrade to schema v.2.</span></span> <span data-ttu-id="e9571-127">有关详细信息，请参阅[企业模式架构 v.2 指南](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。</span><span class="sxs-lookup"><span data-stu-id="e9571-127">For more information, see [Enterprise Mode schema v.2 guidance](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d5246-144">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d5246-144">See also</span></span>
+## <a name="optional-use-cookie-sharing-if-necessary"></a><span data-ttu-id="e9571-128">（可选）如有必要，请使用 Cookie 共享</span><span class="sxs-lookup"><span data-stu-id="e9571-128">(Optional) Use cookie sharing if necessary</span></span>
 
-- [<span data-ttu-id="d5246-145">Microsoft Edge Enterprise 登录页面</span><span class="sxs-lookup"><span data-stu-id="d5246-145">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
-- [<span data-ttu-id="d5246-146">关于 IE 模式</span><span class="sxs-lookup"><span data-stu-id="d5246-146">About IE mode</span></span>](./edge-ie-mode.md)
-- [<span data-ttu-id="d5246-147">其他企业模式信息</span><span class="sxs-lookup"><span data-stu-id="d5246-147">Additional Enterprise Mode information</span></span>](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+<span data-ttu-id="e9571-129">默认情况下，Microsoft Edge 和 Internet Explorer 进程不共享会话 Cookie，因此在某些情况下，使用 IE 模式时可能不太方便进行共享。</span><span class="sxs-lookup"><span data-stu-id="e9571-129">By default, the Microsoft Edge and Internet Explorer processes don't share session cookies, and this lack of sharing can be inconvenient in some cases while using IE mode.</span></span> <span data-ttu-id="e9571-130">例如，当用户习惯在以前习惯在 IE 模式下重新身份验证，或者当注销 Microsoft Edge 会话时，不会退出关键事务的 Internet Explorer 模式会话。</span><span class="sxs-lookup"><span data-stu-id="e9571-130">For example, when a user has to reauthenticate in IE mode when previously they are accustomed to doing so or when signing out of a Microsoft Edge session doesn’t sign out of the Internet Explorer mode session for critical transactions.</span></span> <span data-ttu-id="e9571-131">在这些方案中，可以配置 SSO 设置的特定 Cookie，以便从 Microsoft Edge 发送到 Internet Explorer，以便身份验证体验更加无缝，无需重新身份验证。</span><span class="sxs-lookup"><span data-stu-id="e9571-131">In these scenarios, you can configure specific cookies set by SSO to be sent from Microsoft Edge to Internet Explorer so the authentication experience becomes more seamless by eliminating the need to reauthenticate.</span></span> <span data-ttu-id="e9571-132">有关详细信息，请参阅 从 Microsoft Edge [Internet Explorer 的 Cookie 共享](https://docs.microsoft.com/deployedge/edge-ie-mode-add-guidance-cookieshare)。</span><span class="sxs-lookup"><span data-stu-id="e9571-132">For more information, see [Cookie sharing from Microsoft Edge to Internet Explorer](https://docs.microsoft.com/deployedge/edge-ie-mode-add-guidance-cookieshare).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="e9571-133">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e9571-133">See also</span></span>
+
+- [<span data-ttu-id="e9571-134">Microsoft Edge Enterprise 登录页面</span><span class="sxs-lookup"><span data-stu-id="e9571-134">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
+- [<span data-ttu-id="e9571-135">关于 IE 模式</span><span class="sxs-lookup"><span data-stu-id="e9571-135">About IE mode</span></span>](./edge-ie-mode.md)
+- [<span data-ttu-id="e9571-136">其他企业模式信息</span><span class="sxs-lookup"><span data-stu-id="e9571-136">Additional Enterprise Mode information</span></span>](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
