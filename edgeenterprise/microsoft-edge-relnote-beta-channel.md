@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/22/2021
+ms.date: 03/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: 9d9bec56a3629f18f7a9f64553858558a2864100
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 60294cc247e7c5af85d6fa28b9d3f201755109c6
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447566"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470260"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
@@ -23,6 +23,10 @@ ms.locfileid: "11447566"
 
 > [!NOTE]
 > 我们已更新 Microsoft Edge Beta [版本 89.0.774.18：2 月 3 日](#version-89077418-february-3) 发行说明，以反映已落地的功能。
+
+## <a name="version-90081822-march-29"></a>版本 90.0.818.22：3 月 29 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-90081814-march-22"></a>版本 90.0.818.14：3 月 22 日
 

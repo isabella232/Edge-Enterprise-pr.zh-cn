@@ -1,28 +1,28 @@
 ---
-title: 关于 IE 模式
+title: 什么是 Internet Explorer 模式？
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 03/25/2020
+ms.date: 02/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: 了解如何将 Microsoft Edge 与 IE 模式配合使用。
-ms.openlocfilehash: ecb4bffc5afdde3a8891d1eaa6e28508205ab097
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+description: 了解 Microsoft Edge 中的 Internet Explorer 模式如何提供对需要 Internet Explorer 11 的网站的访问和新式网站的访问权限。
+ms.openlocfilehash: 5ca14c4d448b573dc7de6781ce86ee62281a48a4
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447336"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470220"
 ---
-# <a name="about-ie-mode"></a>关于 IE 模式
+# <a name="what-is-internet-explorer-ie-mode"></a>什么是 Internet Explorer （IE） 模式？
 
-本文概述了如何结合使用 Microsoft Edge 和 IE 模式，以及这样做的先决条件。
+我们在 Microsoft Edge 中创建了 Internet Explorer （IE） 模式，适用于仍需要 Internet Explorer 11 后向兼容现有网站但也需要现代浏览器的组织。 通过此功能，组织可以更加轻松地使用一个浏览器，用于旧版 Web/应用或新式 Web/应用。 本文简要介绍了将 Microsoft Edge 与 IE 模式一同使用。
 
 > [!NOTE]
-> 本文适用于 Microsoft Edge **Stable**、**Beta** 和 **Dev** 渠道版本 77 或更高版本。
+> 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
 ## <a name="what-is-ie-mode"></a>什么是 IE 模式？
 

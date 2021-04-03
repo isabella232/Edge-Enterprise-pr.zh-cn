@@ -1,40 +1,40 @@
 ---
-title: 在 Enterprise Mode Site List 中配置网站
-ms.author: cjacks
-author: cjacks
-manager: saudm
-ms.date: 05/28/2020
+title: 企业网站配置策略
+ms.author: shisub
+author: shisub
+manager: srugh
+ms.date: 03/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: 配置 Enterprise Mode Site List
-ms.openlocfilehash: 9b1943e4d50dcc770b4a634b99ecbd001d1ffbcc
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+description: 为 Internet Explorer 模式配置企业模式网站列表的分步指南。
+ms.openlocfilehash: 1d0b80950439fce77513413c3f5d1143538487d1
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447646"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470150"
 ---
-# <a name="configure-sites-on-the-enterprise-mode-site-list"></a>在 Enterprise Mode Site List 中配置网站
+# <a name="enterprise-site-configuration-strategy"></a>企业网站配置策略
 
-本文介绍了对 Enterprise Mode Site List 的更改，此列表支持配置用于 Microsoft Edge 版本 77 及更高版本的 IE 模式。
+本文介绍对"企业模式网站列表"的更改，以支持针对 Microsoft Edge 版本 77 和更高版本的 Internet Explorer 模式。
 
 若要详细了解 Enterprise Mode Site List XML 文件的架构，请参阅[企业模式架构 v.2 指南](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。
 
 > [!NOTE]
-> 本文适用于 Microsoft Edge **Stable**、**Beta** 和 **Dev** 渠道版本 77 或更高版本。
+> 本文适用于 Microsoft Edge 版本 77 或更高版本。
+<!--
+## Updated schema elements
 
-## <a name="updated-schema-elements"></a>已更新的架构元素
+The following table describes the \<open-in app\> element added to the v.2 of the Enterprise Mode schema:
 
-下表描述了添加到企业模式架构 v.2 中的 \<open-in app\> 元素：
-
-| **元素** | **描述** |
+| **Element** | **Description** |
 | --- | --- |
-| \<open-in app="**true**"\> | 控制哪个浏览器用于站点的子元素。 对于需要**在 IE11 中打开**的站点，此元素是必需的。|
+| \<open-in app="**true**"\> | A child element that controls what browser is used for sites. This element is required for sites that need to **open in IE11**.|
 
-**示例：**
+**Example:**
 
 ``` xml
 <site url="contoso.com">
@@ -44,22 +44,41 @@ ms.locfileid: "11447646"
 </site>
 ```
 
-下表显示了 \<open-in\> 元素的可能值：
+The following table shows the possible values of the \<open-in\> element:
 
-| **值** | **描述** |
+| **Value** | **Description** |
 | --- | --- |
-| **\<open-in\>IE11\</open-in\>** | 在 IE 模式下或在完整的 IE11 窗口中打开网站。 若要启用 IE 模式，请参阅[配置 IE 模式策略](./edge-ie-mode-policies.md)|
-| **\<open-in app="**true**"\>IE11\</open-in\>** | 在完整的 IE11 窗口中打开网站 |
-| **\<open-in\>MSEdge\</open-in\>** | 在 Microsoft Edge 中打开网站 |
-| **\<open-in\>无或未指定\</open-in\>** | 在默认浏览器中或在用户导航到网站所用的浏览器中打开网站。 |
-|**\<open-in\>可配置\</open-in\>** | 允许网站参与 IE 模式引擎确定。 若要了解详细信息，请参阅[了解 IE 模式下的可配置网站](edge-learnmore-configurable-sites-ie-mode.md)。  |
+| **\<open-in\>IE11\</open-in\>** | Opens the site in IE mode or a full IE11 window. To enable IE mode, see [Configure IE mode policies](./edge-ie-mode-policies.md)|
+| **\<open-in app="**true**"\>IE11\</open-in\>** | Opens the site in a full IE11 window |
+| **\<open-in\>MSEdge\</open-in\>** | Opens the site in Microsoft Edge |
+| **\<open-in\>None or not specified\</open-in\>** | Opens the site in the default browser or in the browser where the user navigated to the site. |
+|**\<open-in\>Configurable\</open-in\>** | Allows the site to participate in IE mode engine determination. To learn more, see [Learn about Configurable sites in IE mode](edge-learnmore-configurable-sites-ie-mode.md).  |
 
 >[!NOTE]
-> 仅当与 _"open-in" IE11_ 关联时，才可识别属性 app=**"true"**。 将其添加到其他“open-in”元素不会更改浏览器行为。   
+> The attribute app=**"true"** is only recognized when associated to _'open-in' IE11_. Adding it to the other 'open-in' elements won't change browser behavior.   -->
+
+## <a name="configuration-strategy"></a>配置策略
+
+以下步骤是适用于 IE 模式的网站配置策略的一部分：
+1. 准备网站列表
+2. 配置非特定网站
+3. （可选）如有必要，请使用 Cookie 共享
+
+<!--
+Step 1.  – if you don’t have one use Site Discovery Step-by-Step
+Step 2 – Neutral sites + sticky mode
+        Use more examples and explain sticky mode better
+Step 3 – If that doesn’t cover your needs, then use Cookie sharing -->
+
+## <a name="prepare-your-site-list"></a>准备网站列表
+
+如果已有 IE11 或 Microsoft Edge 旧版企业模式网站列表，可重复使用该列表来配置 IE 模式。
+
+但是，如果你没有网站列表，可以使用"企业网站 [工具](https://docs.microsoft.com/deployedge/edge-ie-mode-site-discovery) 你的网站列表。
 
 ## <a name="configure-neutral-sites"></a>配置非特定网站
 
-必须将身份验证/单一登录服务器显式配置为中性网站，IE 模式才能正常运行。 否则，IE 模式网页会尝试重定向到 Microsoft Edge，且身份验证失败。
+为了使 IE 模式正常工作，需要显式将身份验证/单一登录 （SSO） 服务器配置为非特定站点。 否则，IE 模式网页会尝试重定向到 Microsoft Edge，且身份验证失败。
 
 中性网站使用导航起始浏览器，要么是 Microsoft Edge，要么是 IE 模式。 配置中性网站可确保所有使用这些身份验证服务器的应用程序（无论是新式应用程序还是旧应用程序）都能继续正常运行。
 
@@ -73,10 +92,14 @@ ms.locfileid: "11447646"
 </site>
 ```
 
-若要识别身份验证服务器，请使用 IE11 开发人员工具检查来自应用程序的网络流量。 如果需要更多时间来识别身份验证服务器，可以将策略配置为让所有页内导航都一直使用 IE 模式。 为了最大限度地减少 IE 模式的使用，在识别身份验证服务器并将它们添加到网站列表后，请禁用此设置。 有关详细信息，请参阅[将页内导航配置为一直使用 IE 模式](./microsoft-edge-policies.md#internetexplorerintegrationsiteredirect)。
+若要识别身份验证服务器，请使用 IE11 开发人员工具检查来自应用程序的网络流量。 如果需要更多时间来识别身份验证服务器，可以配置策略以在 IE 模式下保留所有页面内导航，以允许用户继续其工作流中断。 若要尽可能减少不必要的 IE 模式使用，在识别并将身份验证服务器添加到网站列表后，请禁用此设置。 有关详细信息，请参阅 [在 IE 模式下保留页面内](https://docs.microsoft.com/deployedge/edge-learnmore-inpage-nav)。
 
 >[!NOTE]
    >IE 模式集成不支持企业模式架构 v.1。 如果当前正在将架构 v.1 与 Internet Explorer 11 一起使用，则必须升级到架构 v.2。 有关详细信息，请参阅[企业模式架构 v.2 指南](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。
+
+## <a name="optional-use-cookie-sharing-if-necessary"></a>（可选）如有必要，请使用 Cookie 共享
+
+默认情况下，Microsoft Edge 和 Internet Explorer 进程不共享会话 Cookie，因此在某些情况下，使用 IE 模式时可能不太方便进行共享。 例如，当用户习惯在以前习惯在 IE 模式下重新身份验证，或者当注销 Microsoft Edge 会话时，不会退出关键事务的 Internet Explorer 模式会话。 在这些方案中，可以配置 SSO 设置的特定 Cookie，以便从 Microsoft Edge 发送到 Internet Explorer，以便身份验证体验更加无缝，无需重新身份验证。 有关详细信息，请参阅 从 Microsoft Edge [Internet Explorer 的 Cookie 共享](https://docs.microsoft.com/deployedge/edge-ie-mode-add-guidance-cookieshare)。
 
 ## <a name="see-also"></a>另请参阅
 

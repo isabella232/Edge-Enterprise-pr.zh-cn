@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/18/2021
+ms.date: 03/25/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 94d8d621ecac3764ecf13194efb55cfbbf80b70b
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 36f6e5fe462fcb4c43862754603bef7902fcf670
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447986"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470270"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -28,6 +28,10 @@ ms.locfileid: "11447986"
 
 > [!NOTE]
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## <a name="version-89077463-march-25"></a>版本 89.0.774.63：3 月 25 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-89077457-march-18"></a>版本 89.0.774.57：3 月 18 日
 
@@ -107,7 +111,7 @@ ms.locfileid: "11447986"
 
 ## <a name="version-88070574-february-17"></a>版本 88.0.705.74：2 月 17 日
 
-[此处](./microsoft-edge-relnotes-security.md#February-17-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#february-17-2021)列出了稳定频道的安全更新。
 
 ## <a name="version-88070568-february-11"></a>版本 88.0.705.68：2 月 11 日
 
@@ -118,11 +122,11 @@ ms.locfileid: "11447986"
 > [!IMPORTANT]
 > 此更新包含已由 Chromium 团队报告的在现实中被利用的 [CVE-2021-21148](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21148)。
 
-[此处](./microsoft-edge-relnotes-security.md#February-5-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#february-5-2021)列出了稳定频道的安全更新。
 
 ## <a name="version-88070562-february-4"></a>版本 88.0.705.62：2 月 4 日
 
-[此处](./microsoft-edge-relnotes-security.md#February-4-2021)列出了稳定频道的安全更新。
+[此处](./microsoft-edge-relnotes-security.md#february-4-2021)列出了稳定频道的安全更新。
 
 修复了各种错误和性能问题。
 

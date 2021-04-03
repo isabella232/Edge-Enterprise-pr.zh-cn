@@ -1,21 +1,21 @@
 ---
 title: 配置 IE 模式策略
-ms.author: cjacks
-author: cjacks
-manager: saudm
-ms.date: 03/25/2020
+ms.author: collw
+author: dan-wesley
+manager: srugh
+ms.date: 03/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 配置 IE 模式策略
-ms.openlocfilehash: e33aa57b7877d50fe6a5d9e9a888d05c366b0ef0
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: a2abf6f6ef71c1f30786031ef19b9633bfafc43f
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447356"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470160"
 ---
 # <a name="configure-ie-mode-policies"></a>配置 IE 模式策略
 
@@ -29,6 +29,9 @@ ms.locfileid: "11447356"
 1. [配置 Internet Explorer 集成](#configure-internet-explorer-integration)
 2. [将网站从 Microsoft Edge 重定向到 IE 模式](#redirect-sites-from-microsoft-edge-to-ie-mode)
 3. （可选）[将网站从 IE 重定向到 Microsoft Edge](#redirect-sites-from-ie-to-microsoft-edge)
+
+    1. 如果已准备好禁用 IE11 应用，请按照 [禁用 Internet Explorer 11 应用"中的步骤](https://docs.microsoft.com/deployedge/edge-ie-disable-ie11)
+    2. 否则，请按照"将网站从 IE 重定向到 Microsoft Edge [中的其余步骤](https://docs.microsoft.com/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge)
 
 > [!NOTE]
 > 可通过 Intune 来配置启用 IE 模式的策略。 有关详细信息，请参阅[将 Microsoft Edge 添加到 Microsoft Intune](/intune/apps/apps-windows-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json)和[使用 Microsoft Intune 配置 Microsoft Edge 策略](./configure-edge-with-intune.md)。

@@ -1,4 +1,4 @@
-# last revised 03/22/2021
+# last revised 03/31/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -23,7 +23,9 @@
   items:
     - name: Microsoft Edge 企业版路线图
       href: microsoft-edge-roadmap.md
-    - name: 计划 Microsoft Edge 部署
+    - name: Microsoft Edge 功能的平台支持
+      href: microsoft-edge-platform-feature-matrix.md
+    - name: 规划 Microsoft Edge 部署
       href: deploy-edge-plan-deployment.md
     - name: 你的环境中的 Microsoft Edge
       href: deploy-edge-prepare-to-deploy.md
@@ -113,28 +115,32 @@
       href: microsoft-edge-pdf.md
     - name: 将 Microsoft Edge 设为默认浏览器
       href: edge-default-browser.md
-    - name: 在 IE 模式下使用 Microsoft Edge
+    - name: 在安全模式下Internet Explorer Microsoft Edge
       items:
-        - name: 关于 IE 模式
+        - name: IE Internet Explorer (模式) 是什么？
           href: edge-ie-mode.md
-        - name: 在 Enterprise Mode Site List 中配置网站
+        - name: 企业站点配置策略
           href: edge-ie-mode-sitelist.md
         - name: 配置 IE 模式策略
           href: edge-ie-mode-policies.md
         - name: 禁用 Internet Explorer 11
           href: edge-ie-disable-ie11.md
-        - name: “企业站点发现”分步指南
-          href: edge-ie-mode-site-discovery.md
-        - name: IE 模式 FAQ
-          href: edge-ie-mode-faq.md
-        - name: 其他指南
+        - name: 站点发现和列表管理
           items:
-            - name: 将文件扩展名与 Internet Explorer 模式关联
-              href: edge-ie-mode-add-guidance-filetype-associations.md
-            - name: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
-              href: edge-ie-mode-add-guidance-cookieshare.md
+            - name: “企业站点发现”分步指南
+              href: edge-ie-mode-site-discovery.md
             - name: Microsoft Edge 中的企业 网站列表管理器
               href: edge-ie-mode-site-list-manager.md
+        - name: 让页内导航继续保持 IE 模式
+          href: edge-learnmore-inpage-nav.md
+        - name: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
+          href: edge-ie-mode-add-guidance-cookieshare.md
+        - name: IE 模式下可配置的网站
+          href: edge-learnmore-configurable-sites-ie-mode.md
+        - name: 将文件扩展名与 Internet Explorer 模式关联
+          href: edge-ie-mode-add-guidance-filetype-associations.md
+        - name: IE 模式疑难解答和常见问题解答
+          href: edge-ie-mode-faq.md
 - name: Microsoft Edge 安全
   items:
     - name: 企业的安全性
@@ -177,12 +183,8 @@
           href: edge-learn-more-co-di.md
         - name: 用于配置代理设置的命令行选项
           href: edge-learnmore-cmdline-options-proxy-settings.md
-        - name: IE 模式下可配置的网站
-          href: edge-learnmore-configurable-sites-ie-mode.md
         - name: 基于 URL 列表的策略的筛选器格式
           href: edge-learnmmore-url-list-filter format.md
-        - name: 让页内导航继续保持 IE 模式
-          href: edge-learnmore-inpage-nav.md
         - name: 混合内容下载
           href: edge-learnmore-mixed-content-downloads.md
         - name: Stable 渠道更新的渐进式部署
