@@ -119,5 +119,5 @@ ms.locfileid: "11194710"
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [使用 Intune 针对 macOS 进行配置](configure-microsoft-edge-on-mac.md)
-- [针对 Windows进行配置](configure-microsoft-edge.md)
-- [使用 Intune 针对 Windows进行配置](configure-edge-with-intune.md)
+- [针对 Windows 进行配置](configure-microsoft-edge.md)
+- [使用 Intune 针对 Windows 进行配置](configure-edge-with-intune.md)
