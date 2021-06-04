@@ -24,7 +24,7 @@ ms.locfileid: "11238179"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 87 或更高版本。
 
-## 必备条件
+##  <a name="prerequisites"></a>必备条件
 
 - Windows 更新
 
@@ -37,7 +37,7 @@ ms.locfileid: "11238179"
 - Microsoft Edge 版本 87 或更高版本
 - [IE 模式](https://aka.ms/iemodeonedge) 配置了企业模式网站列表
 
-## 概述
+##  <a name="overview"></a>概述
 
 大型组织中的常见配置是，将一个在新式浏览器工作的应用程序链接到另一个应用程序上，可能将该应用程序配置为在启用单一登录（SSO）的 Internet Explorer 模式下打开作为工作流的一部分。
 
@@ -46,13 +46,13 @@ ms.locfileid: "11238179"
 > [!NOTE]
 > 只能将会话 cookie 从 Microsoft Edge 共享到 Internet Explorer。 无法反向共享会话 cookie（从 Internet Explorer 到 Microsoft Edge）。
 
-## Cookie 共享的工作原理
+##  <a name="how-cookie-sharing-works"></a>Cookie 共享的工作原理
 
 已对企业模式网站列表 XML 进行了扩展，允许其他元素指定需要从 Microsoft Edge 会话共享到 Internet Explorer 的 cookie。  
 
 第一次在 Microsoft Edge 会话中创建 Internet Explorer 模式选项卡时，所有匹配的 cookie 都会共享到 Internet Explorer 会话。 随后，任何时候添加、删除或修改与规则相匹配的 cookie，都将作为 Internet Explorer 会话的更新发送。 更新网站列表时，也会重新评估共享 cookie 的集合。
 
-### 已更新的架构元素
+###  <a name="updated-schema-elements"></a>已更新的架构元素
 
 下表介绍了为支持 cookie 共享功能而添加的 \<shared-cookie\> 元素。
 
@@ -71,7 +71,7 @@ ms.locfileid: "11238179"
 </site-list>
 ```
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
 - [可配置的网站信息](https://docs.microsoft.com/deployedge/edge-learnmore-configurable-sites-ie-mode)

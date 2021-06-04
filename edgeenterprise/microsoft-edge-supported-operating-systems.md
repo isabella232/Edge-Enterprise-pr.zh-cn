@@ -24,14 +24,14 @@ ms.locfileid: "11311509"
 > [!NOTE]
 > 本文适用于桌面版 Microsoft Edge 版本 77 和更高版本。
 
-## Microsoft Edge 支持的操作系统
+##  <a name="supported-operating-systems-for-microsoft-edge"></a>Microsoft Edge 支持的操作系统
 
 > [!NOTE]
 > 产品功能和功能可用性在旧的操作系统上可能会有所不同。 为确保 Microsoft Edge 正确安装，请使用下面最新版本的指定操作系统。 本指南包括适用的最新累积更新。
 
 Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上受支持。
 
-### Windows 客户端
+###  <a name="windows-client"></a>Windows 客户端
 
 - Windows 7 * *
 - Windows 8.1
@@ -43,7 +43,7 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 - Windows 10 IoT 企业版 SAC ****
 - Windows 10 IoT 企业版 2019 LTSC ****
 
-### Windows Server
+###  <a name="windows-server"></a>Windows Server
 
 - Windows Server 2008 R2 **
 - Windows Server 2012
@@ -59,32 +59,32 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 >
 > Microsoft Edge OPK 可在 MOO for IoT OE 上预安装并分发，并将其作为基于 Windows 10 IoT Enterprise 的解决方案的一部分进行分发。
 
-### macOS
+###  <a name="macos"></a>macOS
 
 - Sierra (10.12) 和更高版本
 
-### iOS
+###  <a name="ios"></a>iOS
 
 Microsoft Edge for iPad&reg; 和 Microsoft Edge for iPhone&reg; 需要 iOS 11.0 或更高版本。 Microsoft Edge for iPad Pro&trade; 需要 iOS 11.0 或更高版本。 两个最新的 iOS 版本支持 Microsoft Edge。 当发布新版 iOS 时，Microsoft Edge 操作系统要求将成为当前最新的两个版本：iOS 的新版本和前一版本。
 
-### Android
+###  <a name="android"></a>Android
 
 可在符合以下条件的平板电脑和手机上安装 Microsoft Edge for Android：运行 Android KitKat 4.4 或更高版本且具有基于 ARM 处理器的设备。
 
-### Apple 在 Mac
+###  <a name="apple-silicon-macs"></a>Apple 在 Mac
 
 自 Apple Native Mac 的稳定版本 88 起，Microsoft Edge 的本机支持。
 
-### Chromebook
+###  <a name="chromebooks"></a>Chromebook
 
 Microsoft Edge 不支持 Chromebook。
 
-## 最近更改
+##  <a name="recent-changes"></a>最近更改
 
 - **2020 年 12 月 17 日** - Windows 7 和 Windows Server 2008 R2 上对 Microsoft Edge 支持将延续到 2022 年 1 月 15 日。
 - **2021/01/28** - Microsoft Edge 支持 Apple Silicon Macs。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [Microsoft 新式生命周期策略](https://support.microsoft.com/help/30881/modern-lifecycle-policy)

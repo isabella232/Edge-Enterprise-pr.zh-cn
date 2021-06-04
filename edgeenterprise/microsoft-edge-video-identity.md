@@ -23,11 +23,11 @@ ms.locfileid: "11314575"
 
 [![Microsoft Edge 中的标识](media/microsoft-edge-video-identity/0.png)](http://www.youtube.com/watch?v=8lRUKhR7ipA "Identity in Microsoft Edge")
 
-## 关于视频
+##  <a name="about-the-video"></a>关于视频
 
 此视频介绍如何为用户配置经过身份验证的个性化体验。 主题包括配置登录、单一登录和多个配置文件。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 标识支持和配置](microsoft-edge-security-identity.md)

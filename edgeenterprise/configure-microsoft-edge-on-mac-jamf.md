@@ -24,7 +24,7 @@ ms.locfileid: "11194710"
 还可以使用属性列表 (.plist) 文件在 macOS 上配置 Microsoft Edge 策略设置。 有关详细信息，请参阅[使用 .plist 针对 macOS 进行配置](configure-microsoft-edge-on-mac.md)
 
 
-## 必备条件
+##  <a name="prerequisites"></a>必备条件
 
 需要以下软件：
 
@@ -32,7 +32,7 @@ ms.locfileid: "11194710"
 - 策略模板文件（版本 81.0.416.3）
 - Jamf Pro（版本 10.19）
 
-## 关于 Jamf Pro 的“应用程序和自定义设置”菜单
+##  <a name="about-the-jamf-pro-application-&-custom-settings-menu"></a>关于 Jamf Pro 的“应用程序和自定义设置”菜单
 
 在 Jamf Pro 10.18 之前，管理 Office 365 涉及手动生成 .plist 文件。 这是一个耗时的工作流程，需要强大的技术背景。 Jamf Pro 10.18 通过简化配置过程消除了这些障碍。 但是，IT 管理员只能将此新用户界面用于由 Jamf 指定的特定应用程序和首选项域。
 
@@ -40,7 +40,7 @@ ms.locfileid: "11194710"
 
 有关详细信息，请参阅《Jamf Pro 管理员指南》中的[计算机配置文件](https://jamf.it/computer-configuration-profiles)。
 
-## 获取特定 Microsoft Edge 版本的策略清单
+##  <a name="get-the-policy-manifest-for-a-specific-version-of-microsoft-edge"></a>获取特定 Microsoft Edge 版本的策略清单
 
 若要获取策略清单，请执行以下操作：
 
@@ -56,7 +56,7 @@ ms.locfileid: "11194710"
 
 从内部版本 81.0.416.3 开始，在每个策略捆绑包中都会发布此清单。 如果你想要在开发渠道中测试策略，可以获取与每个开发版本相关联的清单，并在 Jamf Pro 中对其进行测试。  
 
-## 在 Jamf Pro 中使用策略清单
+##  <a name="use-the-policy-manifest-in-jamf-pro"></a>在 Jamf Pro 中使用策略清单
 
 请按照以下步骤将策略清单上传到 Jamf Pro，然后为 macOS 创建策略配置文件。
 
@@ -105,7 +105,7 @@ ms.locfileid: "11194710"
 
 创建新的配置文件后，仍需为配置文件配置“**范围**”。
 
-### 配置范围
+###  <a name="to-configure-the-scope"></a>配置范围
 
 1. 对于“**目标**”，提供以下最低设置：
 
@@ -115,7 +115,7 @@ ms.locfileid: "11194710"
 2. 对于“**限制**”，保留默认设置：“无”。 单击“取消”****。
 3. 对于“**排除**”，保留默认设置：“无”。 单击“取消”****。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [使用 Intune 针对 macOS 进行配置](configure-microsoft-edge-on-mac.md)

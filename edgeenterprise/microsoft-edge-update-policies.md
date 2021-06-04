@@ -25,7 +25,7 @@ ms.locfileid: "11167304"
 有关 Microsoft Edge 中可用的其他策略的信息，请查看 [Microsoft Edge 浏览器策略引用](microsoft-edge-policies.md)
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
-## 可用策略
+##  <a name="available-policies"></a>可用策略
 这些表列出了本版本 Microsoft Edge 中提供的所有与更新相关的组策略。 使用表中的链接获取有关特定策略的更多详细信息。
 
 |||
@@ -65,10 +65,10 @@ ms.locfileid: "11167304"
 |[安装](#install-webview)|允许安装|
 |[更新](#update-webview)|更新策略替代|
 
-## 应用程序策略
+##  <a name="applications-policies"></a>应用程序策略
 
 [返回页首](#microsoft-edge---update-policies)
-### InstallDefault
+###  <a name="installdefault"></a>InstallDefault
 #### 允许安装默认项
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
@@ -99,8 +99,8 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### UpdateDefault
-#### 更新策略替代默认值
+###  <a name="updatedefault"></a>UpdateDefault
+####  <a name="update"></a>更新策略替代默认值
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
 #### 描述
@@ -134,7 +134,7 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### 安装
+###  <a name="install"></a>安装
 #### 允许安装
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
@@ -173,8 +173,8 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### 更新
-#### 更新策略替代
+###  <a name="update"></a>更新
+####  <a name="update"></a>更新策略替代
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
 #### 描述
@@ -218,7 +218,7 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### Allowsxs
+###  <a name="allowsxs"></a>Allowsxs
 #### 允许 Microsoft Edge 并行浏览器体验
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
@@ -249,8 +249,8 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### CreateDesktopShortcutDefault
-#### 安装默认项时阻止创建快捷方式
+###  <a name="createdesktopshortcutdefault"></a>CreateDesktopShortcutDefault
+####  <a name="install"></a>安装默认项时阻止创建快捷方式
 >Microsoft Edge 更新 1.3.128.0 和更高版本
 
 #### 描述
@@ -277,8 +277,8 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### CreateDesktopShortcut
-#### 安装时阻止创建快捷方式
+###  <a name="createdesktopshortcut"></a>CreateDesktopShortcut
+####  <a name="install"></a>安装时阻止创建快捷方式
 >Microsoft Edge 更新 1.3.128.0 和更高版本
 
 #### 描述
@@ -313,7 +313,7 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### RollbackToTargetVersion
+###  <a name="rollbacktotargetversion"></a>RollbackToTargetVersion
 #### 回退到目标版本
 >Microsoft Edge 更新 1.3.133.3 和更高版本
 
@@ -362,7 +362,7 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### TargetVersionPrefix
+###  <a name="targetversionprefix"></a>TargetVersionPrefix
 #### 目标版本覆盖
 >Microsoft Edge 更新 1.3.119.43 和更高版本
 
@@ -403,10 +403,10 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-## 首选项策略
+##  <a name="preferences-policies"></a>首选项策略
 
 [返回页首](#microsoft-edge---update-policies)
-### AutoUpdateCheckPeriodMinutes
+###  <a name="autoupdatecheckperiodminutes"></a>AutoUpdateCheckPeriodMinutes
 #### 自动更新检查期间替代
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
@@ -431,7 +431,7 @@ ms.locfileid: "11167304"
 [返回页首](#microsoft-edge---update-policies)
 
 
-### UpdatesSuppressed
+###  <a name="updatessuppressed"></a>UpdatesSuppressed
 #### 每天中取消自动更新检查的时间段
 >Microsoft Edge 更新 1.3.33.5 和更高版本
 
@@ -462,10 +462,10 @@ start min  : 0x00000002
 [返回页首](#microsoft-edge---update-policies)
 
 
-## 代理服务器策略
+##  <a name="proxy-server-policies"></a>代理服务器策略
 
 [返回页首](#microsoft-edge---update-policies)
-### ProxyMode
+###  <a name="proxymode"></a>ProxyMode
 #### 选择指定代理服务器设置的方式
 >Microsoft Edge 更新 1.3.21.81 和更高版本
 
@@ -498,7 +498,7 @@ fixed_servers
 [返回页首](#microsoft-edge---update-policies)
 
 
-### ProxyPacUrl
+###  <a name="proxypacurl"></a>ProxyPacUrl
 #### 代理 .pac 文件的 URL
 >Microsoft Edge 更新 1.3.21.81 和更高版本
 
@@ -527,7 +527,7 @@ https://www.microsoft.com
 [返回页首](#microsoft-edge---update-policies)
 
 
-### ProxyServer
+###  <a name="proxyserver"></a>ProxyServer
 #### 代理服务器的地址或 URL
 >Microsoft Edge 更新 1.3.21.81 和更高版本
 
@@ -556,10 +556,10 @@ https://www.microsoft.com
 [返回页首](#microsoft-edge---update-policies)
 
 
-## - Microsoft Edge Web 视图策略
+##  <a name="microsoft-edge-webview-policies"></a>- Microsoft Edge Web 视图策略
 
 [返回页首](#microsoft-edge---update-policies)
-### 安装（WebView）
+###  <a name="install-(webview)"></a>安装（WebView）
 #### 允许安装
 >Microsoft Edge 更新 1.3.127.1 和更高版本
 
@@ -587,8 +587,8 @@ https://www.microsoft.com
 [返回页首](#microsoft-edge---update-policies)
 
 
-### 更新（WebView）
-#### 更新策略替代
+###  <a name="update-(webview)"></a>更新（WebView）
+####  <a name="update"></a>更新策略替代
 >Microsoft Edge 更新 1.3.127.1 和更高版本
 
 #### 描述
@@ -618,6 +618,6 @@ https://www.microsoft.com
 [返回页首](#microsoft-edge---update-policies)
 
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
   - [配置 Microsoft Edge](configure-microsoft-edge.md)
   - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

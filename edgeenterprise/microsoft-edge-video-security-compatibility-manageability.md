@@ -23,7 +23,7 @@ ms.locfileid: "11314725"
 
 [![Microsoft Edge 安全性、兼容性和可管理性](media/microsoft-edge-video-security-compatibility-manageability/0.png)](http://www.youtube.com/watch?v=uMmh_gNaM4I "Microsoft Edge security, compatibility, and manageability")
 
-## 关于视频
+##  <a name="about-the-video"></a>关于视频
 
 亲身体验一下全新 Microsoft Edge 的安全性、兼容性和可管理性。 Microsoft Edge 基于 Chromium，旨在成为最佳的商务浏览器。 我们的主持人 Jeremy Chapman 向你展示它与其他浏览器的区别。 此深入了解包括：
 
@@ -31,7 +31,7 @@ ms.locfileid: "11314725"
 - 兼容性。 Microsoft Edge 与新式和传统 Web 都兼容。
 - 可管理性。 请考虑 Microsoft Edge 的更新管理或服务选项。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [适用于企业的 Microsoft Edge 安全](ms-edge-security-for-business.md)

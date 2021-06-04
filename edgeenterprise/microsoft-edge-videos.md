@@ -21,7 +21,7 @@ ms.locfileid: "11030545"
 
 本文中所述的视频介绍了在企业中部署、使用和维护 Microsoft Edge 的许多不同方面。
 
-## Microsoft Mechanics 视频系列
+##  <a name="the-microsoft-mechanics-video-series"></a>Microsoft Mechanics 视频系列
 
 在以下 “*MSFT Edge 企业部署指南 - 2020*”中显示的 Microsoft Mechanics 视频系列，是 Microsoft Edge 相关事件和公告、解决方案和会议的视频集合中的一部分。
 
@@ -29,6 +29,6 @@ ms.locfileid: "11030545"
 
 你可以把它们当成 [Mechanics 的 Microsoft Edge 播放列表](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy) 的一部分来查看，或者在 [Microsoft Edge YouTube 频道](https://www.youtube.com/channel/UCIGx7oT8p6-jUpOfg98yelA)上和其他视频一起查看。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

@@ -26,7 +26,7 @@ ms.locfileid: "10979302"
 >[!NOTE]
 >本文适用于 Microsoft Edge 版本 81 或更高版本。
 
-## 必备条件
+##  <a name="prerequisites"></a>必备条件
 
 此策略需要以下 Windows 更新：
 
@@ -36,13 +36,13 @@ ms.locfileid: "10979302"
 - Windows 10 版本 1709 ([KB4534318](https://support.microsoft.com/help/4534318))
 
 
-## 关于此策略
+##  <a name="about-this-policy"></a>关于此策略
 
 此策略让你有时间识别和配置 IE 模式网站使用的所有身份验证服务器。 但是，此策略可能会产生不一致的浏览体验，在这种情况下，某些网站将以 IE 模式呈现，而在其他时间以 Microsoft Edge 模式呈现。 此体验取决于是否是从 IE 模式页面导航到网站的。 任何未显式配置为在特定呈现引擎中打开的网站都将出现此不一致性的情况。
 
 如果启用此策略，建议你在识别所有身份验证服务器并将它们作为中性服务器添加到网站列表中以后将此策略禁用。 此操作可确保新式网站绝不会在 IE 模式下意外呈现。
 
-## 让页内导航继续保持 IE 模式
+##  <a name="keep-in-page-navigation-in-ie-mode"></a>让页内导航继续保持 IE 模式
 
 若要让自动导航或所有页内导航都继续保持 Internet Explorer 模式，请按照以下步骤操作：
 
@@ -64,6 +64,6 @@ ms.locfileid: "10979302"
 
 6. 单击**确定**或**应用**以保存策略设置。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

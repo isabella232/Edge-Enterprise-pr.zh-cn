@@ -23,11 +23,11 @@ ms.locfileid: "11269344"
 
 [![将 Microsoft Edge 部署到数百或数千个设备](media/microsoft-edge-video-deploy/0.png)](http://www.youtube.com/watch?v=o90UsN6g6NE "Deploy Microsoft Edge to hundreds or thousands of devices")
 
-## 关于视频
+##  <a name="about-the-video"></a>关于视频
 
 了解如何将 Microsoft Edge 部署到设备上的实践教程。 了解有关自动化安装的 Microsoft Edge 程序包选项，如何使用 Microsoft Endpoint Configuration Manager 将 Microsoft Edge 部署到 Windows 计算机，以及确保使用 Microsoft Edge 预配所有托管设备的步骤，包括手机和 Macs。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge YouTube 播放列表](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy)

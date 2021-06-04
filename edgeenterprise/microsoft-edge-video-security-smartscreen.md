@@ -23,14 +23,14 @@ ms.locfileid: "11314695"
 
 [![Microsoft Edge 上的安全浏览](media/microsoft-edge-video-security-smartscreen/0.png)](http://www.youtube.com/watch?v=s9kk88SkjLw "Secure browsing on Microsoft Edge")
 
-## 关于视频
+##  <a name="about-the-video"></a>关于视频
 
 Microsoft Edge 使用 Microsoft Defender SmartScreen 帮助你实现安全浏览。 请了解 NSS 实验室的最新网络钓鱼和恶意软件保护结果，并详细了解 Microsoft Defender SmartScreen 如何为 Microsoft Edge 带来高级企业安全集成。
 
 > [!TIP]
 > 打开 *edge://settings* 中可能不需要的应用的保护设置。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [适用于 Microsoft Defender SmartScreen 的 Microsoft Edge 支持](microsoft-edge-security-smartscreen.md)

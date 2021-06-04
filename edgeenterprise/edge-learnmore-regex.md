@@ -35,7 +35,7 @@ ms.locfileid: "10979288"
 
 还列出了 PCRE、PERL 和 VIM 接受的一些语法。
 
-## 语法表
+##  <a name="syntax-tables"></a>语法表
 
 | 单字符表达式的类型 | 示例 |
 | --- | --- |
@@ -500,13 +500,13 @@ ms.locfileid: "10979288"
 | (\*BSR\_ANYCRLF) | 设置 \R 约定（不支持） PCRE |
 | (\*BSR\_UNICODE) | （不支持）PCRE |
 
-## 内容许可证
+##  <a name="content-license"></a>内容许可证
 
 > [!NOTE]
 > 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 可在[此处](https://github.com/google/re2/wiki/Syntax)找到原始页面。
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

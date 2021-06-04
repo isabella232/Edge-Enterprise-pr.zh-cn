@@ -23,11 +23,11 @@ ms.locfileid: "11314705"
 
 [![Microsoft Edge 版本回滚](media/microsoft-edge-video-version-rollback/0.png)](http://www.youtube.com/watch?v=pXhXHvKUa_c "Microsoft Edge version rollback")
 
-## 关于视频
+##  <a name="about-the-video"></a>关于视频
 
 版本回滚可让你将 Microsoft Edge 浏览器版本替换为早期版本。 请了解 Microsoft Edge 中的回滚如何为企业提供一个安全网络，以帮助在解决 Microsoft Edge 中任何问题时减少潜在影响。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [如何将 Microsoft Edge 回退到以前的版本](edge-learnmore-rollback.md)

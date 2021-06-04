@@ -26,11 +26,11 @@ ms.locfileid: "11269293"
 > [!NOTE]
 > 这拍摄于 2019 年 Microsoft Ignite THR2279 会议：Microsoft Edge 和 Microsoft 搜索：IT 管理员和用户的完整之旅。
 
-## 关于视频
+##  <a name="about-the-video"></a>关于视频
 
 Microsoft 搜索为电脑、Mac 和移动设备上的站点、人员、文件等添加了定制和集成的 Intranet 搜索结果。 最后，我们将演示如何将 Microsoft 搜索配置为 Microsoft 365 的一部分。 以及如何从 System Center Configuration Manager 和 Microsoft Intune 跨平台部署 Microsoft Edge。
 
-## 另请参阅
+##  <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge YouTube 播放列表](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy)
