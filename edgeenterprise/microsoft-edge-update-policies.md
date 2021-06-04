@@ -18,7 +18,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/12/2020
 ms.locfileid: "11167304"
 ---
-# Microsoft Edge - 更新策略
+# <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新策略
 
 最新版本的 Microsoft Edge 包含以下策略，你可以使用这些策略控制更新 Microsoft Edge 的方式和时间。
 
