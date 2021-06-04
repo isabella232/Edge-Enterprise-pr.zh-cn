@@ -227,7 +227,7 @@ ms.locfileid: "11470890"
 |[SmartScreenEnabled](#smartscreenenabled)|配置 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|强制 Microsoft Defender SmartScreen 检查从受信任来源下载的内容|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|配置 Microsoft Defender SmartScreen 以阻止可能不需要的应用|
-### [*<a name="startupcomma-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startup-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
 
 |策略名称|标题|
 |-|-|
@@ -7915,7 +7915,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [返回页首](#microsoft-edge---policies)
 
-  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
+  ## <a name="startup-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
 
   [返回页首](#microsoft-edge---policies)
 

@@ -33,7 +33,7 @@ ms.locfileid: "11167304"
 |[应用程序](#applications)|[首选项](#preferences)|
 |[代理服务器](#proxy-server)|[Microsoft Edge Web 视图](#microsoft-edge-webview)|
 
-### [应用程序](#applications-policies)
+### ### <a name="applications"></a>[应用程序](#applications-policies)
 |策略名称|标题|
 |-|-|
 |[InstallDefault](#installdefault)|允许安装默认项|
@@ -46,20 +46,20 @@ ms.locfileid: "11167304"
 |[RollbackToTargetVersion](#rollbacktotargetversion)|回退到目标版本（按渠道）|
 |[TargetVersionPrefix](#targetversionprefix)|目标版本覆盖（各渠道）|
 
-### [首选项](#preferences-policies)
+### ### <a name="preferences"></a>[首选项](#preferences-policies)
 |策略名称|标题|
 |-|-|
 |[AutoUpdateCheckPeriodMinutes](#autoupdatecheckperiodminutes)|自动更新检查期间替代|
 |[UpdatesSuppressed](#updatessuppressed)|每天中取消自动更新检查的时间段|
 
-### [代理服务器](#proxy-server-policies)
+### ### <a name="proxy-server"></a>[代理服务器](#proxy-server-policies)
 |策略名称|描述文字|
 |-|-|
 |[ProxyMode](#proxymode)|选择指定代理服务器设置的方式|
 |[ProxyPacUrl](#proxypacurl)|代理 .pac 文件的 URL|
 |[ProxyServer](#proxyserver)|代理服务器的地址或 URL|
 
-### [Microsoft Edge Web 视图](#microsoft-edge-webview-policies)
+### ### <a name="install-webview"></a>[Microsoft Edge Web 视图](#microsoft-edge-webview-policies)
 |策略名称|标题|
 |-|-|
 |[安装](#install-webview)|允许安装|
