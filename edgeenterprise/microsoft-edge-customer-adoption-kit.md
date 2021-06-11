@@ -65,7 +65,7 @@ ms.locfileid: "11385387"
 - Microsoft 必应搜索
 - 安全性
 
-:::image type="content" source="media/customer-adoption-not-md/ms-edge-new-tab-page.png" alt-text="“新建选项卡”页面":::
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-new-tab-page.png" alt-text="新建选项卡页面":::
 
 ### <a name="banners"></a>广告
 
