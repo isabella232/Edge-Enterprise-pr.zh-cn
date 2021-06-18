@@ -23,23 +23,23 @@
   items:
     - name: Microsoft Edge 企业版路线图
       href: microsoft-edge-roadmap.md
-    - name: Microsoft Edge 功能的平台支持
+    - name: 对 Microsoft Edge 功能的平台支持
       href: microsoft-edge-platform-feature-matrix.md
     - name: 规划 Microsoft Edge 部署
       href: deploy-edge-plan-deployment.md
-    - name: 你的环境中的 Microsoft Edge
+    - name: 环境中的 Microsoft Edge
       href: deploy-edge-prepare-to-deploy.md
-    - name: Microsoft 浏览器使用情况报告
+    - name: Microsoft 浏览器使用状况报告
       href: microsoft-edge-browser-usage-report.md
-    - name: Microsoft Edge 就绪
+    - name: 为 Microsoft Edge 做好准备
       href: deploy-edge-ready-for-edge.md
-    - name: Stable 渠道发行说明
+    - name: 稳定频道发行说明
       href: microsoft-edge-relnote-stable-channel.md
-    - name: 稳定渠道存档发行说明
+    - name: 稳定频道存档发行说明
       href: microsoft-edge-relnote-archive-stable-channel.md
     - name: Beta 渠道发行说明
       href: microsoft-edge-relnote-beta-channel.md
-    - name: Beta 渠道存档发行说明
+    - name: Beta 版频道存档的发行说明
       href: microsoft-edge-relnote-archive-beta-channel.md
     - name: 发布计划
       href: microsoft-edge-release-schedule.md
@@ -67,7 +67,7 @@
           href: microsoft-edge-sysupdate-windows-updates.md
 - name: 部署 Microsoft Edge
   items:
-    - name: 使用 Windows 10 更新部署 Microsoft Edge
+    - name: 在 Windows 10 更新中部署 Microsoft Edge
       href: deploy-edge-with-windows-10-updates.md
     - name: 使用配置服务器部署到 Windows
       href: /configmgr/apps/deploy-use/deploy-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
@@ -105,7 +105,7 @@
       items:
         - name: 配置 Microsoft Edge 同步
           href: microsoft-edge-enterprise-sync.md
-        - name: 诊断和修复 Microsoft Edge 同步问题
+        - name: 诊断并修复 Microsoft Edge 同步问题
           href: microsoft-edge-troubleshoot-enterprise-sync.md
         - name: 同步常见问题解答
           href: microsoft-edge-enterprise-sync-faq.md
@@ -115,9 +115,9 @@
       href: microsoft-edge-pdf.md
     - name: 将 Microsoft Edge 设为默认浏览器
       href: edge-default-browser.md
-    - name: 在安全模式下Internet Explorer Microsoft Edge
+    - name: 在 Internet Explorer 模式下使用 Microsoft Edge
       items:
-        - name: IE Internet Explorer (模式) 是什么？
+        - name: 什么是 Internet Explorer (IE) 模式?
           href: edge-ie-mode.md
         - name: 企业站点配置策略
           href: edge-ie-mode-sitelist.md
@@ -129,7 +129,7 @@
           items:
             - name: “企业站点发现”分步指南
               href: edge-ie-mode-site-discovery.md
-            - name: Microsoft Edge 中的企业 网站列表管理器
+            - name: Microsoft Edge 中的企业站点列表管理器
               href: edge-ie-mode-site-list-manager.md
         - name: 让页内导航继续保持 IE 模式
           href: edge-learnmore-inpage-nav.md
@@ -139,21 +139,21 @@
           href: edge-learnmore-configurable-sites-ie-mode.md
         - name: 将文件扩展名与 Internet Explorer 模式关联
           href: edge-ie-mode-add-guidance-filetype-associations.md
-        - name: IE 模式疑难解答和常见问题解答
+        - name: IE 模式故障排除和常见问题解答
           href: edge-ie-mode-faq.md
 - name: Microsoft Edge 安全
   items:
-    - name: 企业的安全性
+    - name: 业务安全性
       href: ms-edge-security-for-business.md
     - name: Microsoft Edge 终结点的允许列表
       href: microsoft-edge-security-endpoints.md
-    - name: 'DLP (数据丢失防护) '
+    - name: 数据丢失防护 (DLP)
       href: microsoft-edge-security-dlp.md
-    - name: 为用户自动启用密码监视器
+    - name: 密码监视器自动为用户启用
       href: microsoft-edge-security-password-monitor.md
     - name: 阻止潜在的有害应用程序
       href: microsoft-edge-potentially-unwanted-apps.md
-    - name: 对 Azure AD 条件访问的支持
+    - name: 支持 Azure AD 条件访问
       href: ms-edge-security-conditional-access.md
     - name: 应用程序防护支持
       href: microsoft-edge-security-windows-defender-application-guard.md
@@ -177,7 +177,7 @@
       href: microsoft-edge-webview-policies.md
     - name: 了解更多参考
       items:
-        - name: 企业新选项卡页的向后兼容性
+        - name: “企业新建”选项卡页的向后兼容性
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
@@ -189,7 +189,7 @@
           href: edge-learnmore-mixed-content-downloads.md
         - name: Stable 渠道更新的渐进式部署
           href: microsoft-edge-update-progressive-rollout.md
-        - name: 预配 Microsoft Edge 收藏夹
+        - name: 为 Microsoft Edge 预配收藏夹
           href: edge-learnmore-provision-favorites.md
         - name: 从 Internet Explorer 重定向到 Microsoft Edge
           href: edge-learnmore-neededge.md
@@ -197,7 +197,7 @@
           href: edge-learnmore-regex.md
         - name: 重置 Microsoft Edge 数据
           href: edge-learnmore-reset-data-in-cloud.md
-        - name: 使用适用于企业的 Microsoft Edge 回滚
+        - name: 使用 Microsoft Edge 企业版回退
           href: edge-learnmore-rollback.md
 - name: Microsoft Edge 视频
   items:
@@ -205,11 +205,11 @@
       href: microsoft-edge-videos.md
     - name: 视频 - Microsoft Edge - 浏览器 2020 的状态
       href: microsoft-edge-video-state-of-browser.md
-    - name: 视频 - 使用应用程序防护的浏览器隔离
+    - name: 视频 - 使用应用程序防护进行浏览器隔离
       href: microsoft-edge-video-security-application-guard.md
     - name: 视频 - 部署 Microsoft Edge
       href: microsoft-edge-video-deploy.md
-    - name: '视频 - DLP (数据丢失) '
+    - name: 视频 - 数据丢失预防 (DLP)
       href: microsoft-edge-video-security-dlp.md
     - name: 视频 - Microsoft Edge 中的标识
       href: microsoft-edge-video-identity.md
@@ -221,5 +221,5 @@
       href: microsoft-edge-video-security-smartscreen.md
     - name: 视频-安全性、兼容性和可管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
-- name: 常见问题
+- name: 常见问题解答
   href: faqs-edge-in-the-enterprise.yml
