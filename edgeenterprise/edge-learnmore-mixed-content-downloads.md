@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 和混合内容下载
-ms.author: kele
+ms.author: collw
 author: dan-wesley
 manager: srugh
 ms.date: 04/30/2020
 audience: ITPro
-ms.topic: procedural
+ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 和混合内容下载
-ms.openlocfilehash: 13cc9d935dfe415039078b2ca794945b4fa2d1a3
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: a81c44754865b2303320bfe87346c7f7533e6133
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447266"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617302"
 ---
 # <a name="learn-about-microsoft-edge-and-mixed-content-downloads"></a><span data-ttu-id="3c6d1-103">了解 Microsoft Edge 和混合内容下载</span><span class="sxs-lookup"><span data-stu-id="3c6d1-103">Learn about Microsoft Edge and mixed content downloads</span></span>
 
