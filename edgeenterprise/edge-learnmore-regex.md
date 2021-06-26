@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 正则表达式 2 语法
-ms.openlocfilehash: 9654a25d2c0474601fb719b145ebb1f59241a6d9
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 5d7026a034300e098497c63911f7516f72877c5d
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979288"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617312"
 ---
-# 正则表达式 2 (re2.h) 语法
+# <a name="regular-expression-2-re2h-syntax"></a>正则表达式 2 (re2.h) 语法
 
 正则表达式是描述字符串集的表示法。 如果字符串位于正则表达式所描述的集合中，通常表示正则表达式匹配该字符串。
 
@@ -35,7 +35,7 @@ ms.locfileid: "10979288"
 
 还列出了 PCRE、PERL 和 VIM 接受的一些语法。
 
-##  <a name="syntax-tables"></a>语法表
+## <a name="syntax-tables"></a>语法表
 
 | 单字符表达式的类型 | 示例 |
 | --- | --- |
@@ -51,12 +51,12 @@ ms.locfileid: "10979288"
 | 排除型 Unicode 字符组（单字母名称） | \PN |
 | 排除型 Unicode 字符组 | \P{Greek} |
 
-| | 复合匹配 |
+|&nbsp;| 复合匹配 |
 | --- | --- |
 | xy | 匹配 x 后接 y |
 | x\|y | 匹配 x 或 y （首选 x） |
 
-| | 重复匹配 |
+|&nbsp;| 重复匹配 |
 | --- | --- |
 | x\* | 匹配零个或任意个 x，首选多匹配 |
 | x+ | 匹配至少一个 x，首选多匹配 |
@@ -77,7 +77,7 @@ ms.locfileid: "10979288"
 
 启动限制：计数形式 x{n,m}、x{n,} 和 x{n} 最小或最大重复个数不能超过 1000。 无限制的重复不受此限制约束。
 
-| | 所有格重复 |
+|&nbsp;| 所有格重复 |
 | --- | --- |
 | x\*+ | 匹配零个或任意个 x，所有格（不支持） |
 | x++ | 匹配至少一个 x，所有格（不支持） |
@@ -86,7 +86,7 @@ ms.locfileid: "10979288"
 | x{n,}+ | 匹配至少 n 个 x，所有格（不支持） |
 | x{n}+ | 匹配确定的 n 个 x，所有格（不支持） |
 
-| | 分组 |
+|&nbsp;| 分组 |
 | --- | --- |
 | (re) | 编号捕获组（子匹配） |
 | (?P&lt;name&gt;re) | 命名 &amp; 编号捕获组（子匹配） |
@@ -101,7 +101,7 @@ ms.locfileid: "10979288"
 | re@&gt; | 表达式所有格匹配（不支持）VIM |
 | %(re) | 非捕获组（不支持） VIM |
 
-| | Flags |
+|&nbsp;| Flags |
 | --- | --- |
 | i | 不区分大小写（默认为 false） |
 | m | 多行模式： ^ 和 $ 匹配行首/尾，以及文本开头/结尾（默认为 false） |
@@ -110,7 +110,7 @@ ms.locfileid: "10979288"
 
 标记语法为 xyz （已设置）或 -xyz （清除）或 xy-z （设置为 xy，清除 z）。
 
-|  | 空字符串 |
+|&nbsp;| 空字符串 |
 | --- | --- |
 | ^ | 文本开始或行首（m = true） |
 | $ | 文本结尾（如 \z 而非 \Z）或行尾（m = true） |
@@ -141,7 +141,7 @@ ms.locfileid: "10979288"
 | \%23c | 在第 23 列匹配（不支持）VIM |
 | \%23v | 在虚拟第 23 列匹配（不支持）VIM |
 
-|  | 转义序列 |
+|&nbsp;| 转义序列 |
 | --- | --- |
 | \a | 匹配报警符（等价于 \007） |
 | \f | 匹配换页符（等价于 \014） |
@@ -182,7 +182,7 @@ ms.locfileid: "10979288"
 | \%u1234 | 匹配 Unicode 字符 0x1234（不支持）VIM |
 | \%U12345678 | 匹配 Unicode 字符 0x12345678（不支持）VIM |
 
-|  | 字符组元素 |
+|&nbsp;| 字符组元素 |
 | --- | --- |
 | x | 单个字符 |
 | A-Z | 字符范围（含） |
@@ -191,7 +191,7 @@ ms.locfileid: "10979288"
 | \p{Foo} | 匹配 Unicode 字符组 Foo |
 | \pF | 匹配 Unicode 字符组 F（单字母名称） |
 
-|  | 作为字符组元素命名的字符组 |
+|&nbsp;| 作为字符组元素命名的字符组 |
 | --- | --- |
 | [\d] | 匹配数字字符（等价于 \d） |
 | [^\d] | 匹配非数字字符（等价于 \D） |
@@ -232,7 +232,7 @@ ms.locfileid: "10979288"
 | [[:word:]] | 匹配包括下划线的任何单词字符（等价于 [0-9A-Za-z\_]） |
 | [[:xdigit:]] | 匹配十六进制数字字符（等价于 [0-9A-Fa-f]） |
 
-| | Unicode 字符组名称 - 常规类别 |
+|&nbsp;| Unicode 字符组名称 - 常规类别 |
 | --- | --- |
 | C | 其他 |
 | 抄送 | control |
@@ -433,7 +433,7 @@ ms.locfileid: "10979288"
 | 彝语 |
 | Zanabazar\_Square |
 
-|  | Vim 字符组 |
+|&nbsp;| Vim 字符组 |
 | --- | --- |
 | \i | 匹配标识符字符（不支持）VIM |
 | \I | \i 不包括数字字符（不支持）VIM |
@@ -470,7 +470,7 @@ ms.locfileid: "10979288"
 | \V | verynomagic（不支持）VIM |
 | \Z | 忽略 Unicode 组合字符的不同（不支持）VIM |
 
-|  | Magic |
+| &nbsp; | Magic |
 | --- | --- |
 | (?{code}) | PERL 中的任意 Perl 代码（不支持） |
 | (??{code}) | PERL 中延迟的任意 Perl 代码（不支持） |
@@ -500,13 +500,13 @@ ms.locfileid: "10979288"
 | (\*BSR\_ANYCRLF) | 设置 \R 约定（不支持） PCRE |
 | (\*BSR\_UNICODE) | （不支持）PCRE |
 
-##  <a name="content-license"></a>内容许可证
+## <a name="content-license"></a>内容许可证
 
 > [!NOTE]
 > 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 可在[此处](https://github.com/google/re2/wiki/Syntax)找到原始页面。
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
-##  <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

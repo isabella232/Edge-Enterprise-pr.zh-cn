@@ -1,6 +1,6 @@
 ---
 title: Microsoft Edge 企业同步常见问题解答
-ms.author: scottbo
+ms.author: collw
 author: dan-wesley
 manager: silvanam
 ms.date: 03/08/2021
@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 有关 Microsoft Edge 企业同步的常见问题解答。
-ms.openlocfilehash: e25ee985f65ee61dda5cacece73d43be7f1e6d7d
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 4bb41c8d7ded64fcc0b4fd4843ef2b7ec0adec23
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447866"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617762"
 ---
 # <a name="microsoft-edge-enterprise-sync-faq"></a>Microsoft Edge 企业同步常见问题解答
 
@@ -59,7 +59,7 @@ Microsoft Edge 同步服务条款已列入 Microsoft 软件许可证，可使用
 
 ### <a name="is-microsoft-edge-sync-based-on-enterprise-state-roaming"></a>Microsoft Edge 同步是否基于企业状态漫游？
 
-否。 ESR 可用于启用同步，但 Microsoft Edge 同步不是 ESR 的一部分。 有关详细信息，请参阅 [Microsoft Edge 同步](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-enterprise-sync)和 [Microsoft Edge 和企业状态漫游](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-enterprise-state-roaming)。
+否。 ESR 可用于启用同步，但 Microsoft Edge 同步不是 ESR 的一部分。 有关详细信息，请参阅 [Microsoft Edge 同步](/DeployEdge/microsoft-edge-enterprise-sync)和 [Microsoft Edge 和企业状态漫游](/DeployEdge/microsoft-edge-enterprise-state-roaming)。
 
 ### <a name="will-microsoft-edge-ever-support-syncing-between-microsoft-edge-and-ie"></a>Microsoft Edge 是否支持 Microsoft Edge 和 IE 之间的同步？
 

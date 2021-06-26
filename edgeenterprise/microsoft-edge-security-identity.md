@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 标识支持和配置
-ms.openlocfilehash: 8b4fe3c46e0c8dd76d0e22051fb63465e34202f2
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 34a5a4aa958873a012d0a2da4184cb508af27a8a
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447536"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617912"
 ---
 # <a name="microsoft-edge-identity-support-and-configuration"></a>Microsoft Edge 标识支持和配置
 
@@ -91,7 +91,7 @@ Microsoft Edge 还支持 Windows 集成身份验证，以便在组织内部网�
 
 ### <a name="proactive-authentication"></a>主动身份验证
 
-主动身份验证是对浏览器到网站SSO的优化，可将身份验证预先加载到部分第一方网站。 如果用户使用必应作为搜索引擎，则可以提高地址栏的性能。 这为用户提供了个性化的 Microsoft Search for Business（MSB）搜索结果。 它还支持允许对关键服务（如 Office “新建选项卡”页面）进行身份验证。 你可使用 [ProactiveAuthEnabled]( https://docs.microsoft.com/deployedge/microsoft-edge-policies#proactiveauthenabled) 策略进行控制。
+主动身份验证是对浏览器到网站SSO的优化，可将身份验证预先加载到部分第一方网站。 如果用户使用必应作为搜索引擎，则可以提高地址栏的性能。 这为用户提供了个性化的 Microsoft Search for Business（MSB）搜索结果。 它还支持允许对关键服务（如 Office “新建选项卡”页面）进行身份验证。 你可使用 [ProactiveAuthEnabled]( /deployedge/microsoft-edge-policies#proactiveauthenabled) 策略进行控制。
 
 ### <a name="windows-hello-credui-for-ntlm-authentication"></a>NTLM 身份验证 Windows Hello CredUI
 

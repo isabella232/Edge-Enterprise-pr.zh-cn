@@ -1,6 +1,6 @@
 ---
 title: Microsoft Edge 企业隐私设置
-ms.author: likravit
+ms.author: collw
 author: dan-wesley
 manager: srugh
 ms.date: 09/09/2020
@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 配置 Microsoft Edge 企业隐私设置
-ms.openlocfilehash: 8ae1737cb066fd473c76f7812c875aceb3cfefb7
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 9af3ce14b9ee717d4c64fa3b920e8c63224613e6
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447936"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617772"
 ---
 # <a name="configure-microsoft-edge-policies-to-support-enterprise-privacy"></a>配置 Microsoft Edge 策略以支持企业隐私
 
