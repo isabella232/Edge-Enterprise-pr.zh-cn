@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容
-ms.openlocfilehash: ffb295b5c844d15fee2b0fa23e78be9cd34ef03f
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 7cd74eda6d8ada7647862ea69f77a982713f0c14
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447586"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617292"
 ---
 # <a name="redirection-from-internet-explorer-to-microsoft-edge-for-compatibility-with-modern-web-sites"></a>从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容
 
@@ -24,7 +24,10 @@ ms.locfileid: "11447586"
 
 ## <a name="overview"></a>概述
 
-许多现代网站的设计与 Internet Explorer 不兼容。 只要 Internet Explorer 用户访问不兼容的公共网站，就会收到一条消息，告知他们该网站与其浏览器不兼容，需要手动切换到其他浏览器。
+>[!Note]
+> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表， [请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+
+许多新式网站的设计与 Internet Explorer 不兼容。 只要 Internet Explorer 用户访问不兼容的公共网站，就会收到一条消息，告知他们该网站与其浏览器不兼容，需要手动切换到其他浏览器。
 
 需要手动切换到另一种浏览器的操作，从 Microsoft Edge 稳定版本 87 开始更改。
 
@@ -32,6 +35,15 @@ ms.locfileid: "11447586"
 
 > [!NOTE]
 > Microsoft 将保留已知与 Internet Explorer 不兼容的所有网站的列表。 有关详细信息，请参阅 [请求更新不兼容站点列表](/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
+
+## <a name="prerequisites"></a>必备条件
+- Microsoft Edge Stable 版本 87 或更高版本
+- Windows 版本
+    - Windows 10 版本 1709 或更高版本
+    - Windows 8.1
+    - Windows 7
+
+
 
 ## <a name="redirection-experience"></a>重定向体验
 
@@ -88,7 +100,7 @@ ms.locfileid: "11447586"
 >
 >如果你使用加入域或移动设备管理 (MDM) 注册设备，则不会看到此选项。
 >
-> 如果想让用户在 Internet Explorer 模式下加载网站，可通过将策略配置[允许 Internet Explorer 模式测试](./microsoft-edge-policies.md#allow-internet-explorer-mode-testing)来实现此操作。
+> 如果想让用户在 Internet Explorer 模式下加载网站，可通过将策略配置[允许 Internet Explorer 模式测试](./microsoft-edge-policies.md#intranetredirectbehavior)来实现此操作。
 
 ### <a name="policy-hideinternetexplorerredirectuxforincompatiblesitesenabled"></a>策略：HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
 

@@ -1,23 +1,26 @@
 ---
 title: “企业站点发现”分步指南
-ms.author: cjacks
+ms.author: collw
 author: appcompatguy
 manager: saudm
-ms.date: 04/07/2020
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用“企业站点发现”为 IE 模式做准备
-ms.openlocfilehash: 2557544a93222b03aaa0961149aa0d3c5d7d8806
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: f6298b801cceeb96d9285f3597de2a6abe8ee36e
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447716"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617472"
 ---
 # <a name="enterprise-site-discovery-step-by-step-guide"></a>“企业站点发现”分步指南
+
+>[!Note]
+> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表， [请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文提供了将“企业站点发现”与 Microsoft Endpoint Configuration Manager 搭配使用的分步指南。
 

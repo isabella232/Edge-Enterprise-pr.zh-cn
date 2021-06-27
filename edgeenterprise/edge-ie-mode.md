@@ -3,21 +3,24 @@ title: 什么是 Internet Explorer 模式？
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 02/26/2021
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解 Microsoft Edge 中的 Internet Explorer 模式如何提供对需要 Internet Explorer 11 的网站的访问和新式网站的访问权限。
-ms.openlocfilehash: 5ca14c4d448b573dc7de6781ce86ee62281a48a4
-ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
+ms.openlocfilehash: 39f8797049ac1051d49c63c880b8436dd611d9c2
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "11470220"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617412"
 ---
-# <a name="what-is-internet-explorer-ie-mode"></a>什么是 Internet Explorer （IE） 模式？
+# <a name="what-is-internet-explorer-ie-mode"></a>什么是 Internet Explorer (IE) 模式？
+
+>[!Note]
+> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表， [请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 我们在 Microsoft Edge 中创建了 Internet Explorer （IE） 模式，适用于仍需要 Internet Explorer 11 后向兼容现有网站但也需要现代浏览器的组织。 通过此功能，组织可以更加轻松地使用一个浏览器，用于旧版 Web/应用或新式 Web/应用。 本文简要介绍了将 Microsoft Edge 与 IE 模式一同使用。
 

@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解用于 Microsoft Edge URLBlocklist 和 URLAllowlist 策略的筛选器格式。
-ms.openlocfilehash: 5a0eff1ca7be17fccd1087716d426b13ea302847
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 94378a9193269c73a7439dd019d6cb2d6ac547df
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979295"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617262"
 ---
-# 基于 URL 列表的策略的筛选器格式
+# <a name="filter-format-for-url-list-based-policies"></a>基于 URL 列表的策略的筛选器格式
 
 本文介绍了用于 Microsoft Edge 基于 URL 列表的策略（[例如 URLBlocklist](microsoft-edge-policies.md#urlblocklist)、[URLAllowList](microsoft-edge-policies.md#urlallowlist) 和 [CertificateTransparencyEnforcementDisabledForUrls](microsoft-edge-policies.md#certificatetransparencyenforcementdisabledforurls) 策略）的筛选器格式。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-##  <a name="the-filter-format"></a>筛选器格式
+## <a name="the-filter-format"></a>筛选器格式
 
 筛选器格式为：
 
@@ -37,12 +37,12 @@ ms.locfileid: "10979295"
 | 字段 | 说明 |
 | --- | --- |
 | **方案**（*可选*） | 它可以是 http://、https://、ftp://、edge:// 等。 |
-| **主机**（*必需*） | 它必须是有效的主机名或 IP 地址，并且你可以使用通配符（“\*”）。 若要禁用子域匹配，请在**主机**前添加可选的点（“.”）。 |
+| **主机**（*必需*） | 它必须是有效的主机名，可以使用通配符 ("\*")。 若要禁用子域匹配，请在**主机**前添加可选的点 (".")。 可以指定单个 IP 地址文本主机名，但 IP 地址文本主机名不支持通配符。 |
 | **端口**（*可选*） | 有效值范围为 1 到 65535。 |
 | **路径**（*可选*） | 你可以在路径中使用任何字符串。 |
 | **查询**（*可选*） | **查询**是用 & 号分隔的键值或纯键令牌。 使用等号（“=”）分隔键值令牌。 若要指明前缀匹配，可以在**查询**结尾处使用星号（“\*”）。 |
 
-##  <a name="comparing-the-filter-format-to-the-url-format"></a>将筛选器格式与 URL 格式进行比较
+## <a name="comparing-the-filter-format-to-the-url-format"></a>将筛选器格式与 URL 格式进行比较
 
 筛选器格式类似于 URL 格式，但有以下几点不同：
 
@@ -51,7 +51,7 @@ ms.locfileid: "10979295"
 - 你可以将通配符（“*”）用作**主机**，并能在它前面添加点（“.”）。
 - 你可以使用左斜线（“/”）或点（“.”）作为**主机**的后缀。 在这种情况下，后缀会被忽略。
 
-##  <a name="filter-selection-criteria"></a>筛选器选择条件
+## <a name="filter-selection-criteria"></a>筛选器选择条件
 
 为 URL 选择的筛选器是处理以下筛选器选择规则后找到的最具体的匹配项：
 
@@ -65,7 +65,7 @@ ms.locfileid: "10979295"
    >[!NOTE]
    >如果没有匹配的筛选器，则默认行为是允许 URL 请求。
 
-##  <a name="example-filter-selection-criteria"></a>筛选器选择条件示例
+## <a name="example-filter-selection-criteria"></a>筛选器选择条件示例
 
 在此示例中，搜索“https://sub.contoso.com/docs”的匹配项时，筛选器选择会：
 
@@ -75,7 +75,7 @@ ms.locfileid: "10979295"
 4. 从其余筛选器中，删除**路径**前缀不是“/docs”的任何项。
 5. 从其余筛选器中，选择并应用路径前缀最长的筛选器。 如果未找到筛选器，则从第 1 步重新开始执行选择过程。 使用下一个子域重复此过程。
 
-###  <a name="additional-filter-information"></a>其他筛选器信息
+### <a name="additional-filter-information"></a>其他筛选器信息
 
 如果筛选器包含点（“.”）**主机**前缀，则只筛选完全匹配的**主机**。 例如：
 
@@ -88,7 +88,7 @@ ms.locfileid: "10979295"
 
 任何其他**架构**都被视为自定义**架构**，但只允许使用 _schema:_ 和 _schema://*_ 模式。 例如：
 
-- “custom:*”或“custom://*”将与“custom:app”匹配
+- “custom:\”或“custom://\*”将与“custom:app”匹配
 - “custom:app”或“custom://app”无效
 
 **架构**和**主机**不区分大小写。 例如：
@@ -99,13 +99,13 @@ ms.locfileid: "10979295"
 
 - “http://contoso.com/path?query=A”筛选器与“http://contoso.com/Path?query=A”或“http://contoso.com/path?Query=A”不匹配。 它与“http://contoso.COM/path?query=A”匹配。
 
-##  <a name="content-license"></a>内容许可证
+## <a name="content-license"></a>内容许可证
 
 > [!NOTE]
 > 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 [可在此处找到原始 Chromium 页面](https://www.chromium.org/administrators/url-blacklist-filter-format)。
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
-##  <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

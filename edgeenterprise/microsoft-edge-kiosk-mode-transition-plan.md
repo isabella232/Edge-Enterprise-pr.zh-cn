@@ -3,19 +3,19 @@ title: 规划展台模式转换
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 02/05/2021
+ms.date: 02/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 规划展台模式转换
-ms.openlocfilehash: 2a82852f10f2a842f28029738e72f72de4c53c41
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: b563f7ac773fb295d42e2b27b1259af321ce5f70
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447846"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617733"
 ---
 # <a name="plan-your-kiosk-mode-transition"></a>规划展台模式转换
 
@@ -47,26 +47,32 @@ ms.locfileid: "11447846"
 |[显示“主页”按钮](./microsoft-edge-policies.md#showhomebutton)（策略）|N|Y|89|Y|
 |[管理收藏夹](./microsoft-edge-policies.md#managedfavorites)（策略）|N|Y|89|Y|
 |[启用打印机](./microsoft-edge-policies.md#printingenabled)（策略）|Y|Y|89|Y|
-|[配置新标签页页面 URL](./microsoft-edge-policies.md#newtabpagelocation)（策略）|N|Y||Y|
+|[配置新标签页页面 URL](./microsoft-edge-policies.md#newtabpagelocation)（策略）|N|Y|89|Y|
 |“结束会话”按钮 | N| Y| 89|Y|
 |所有内部 Microsoft Edge URL 已将被阻止，除了*edge://downloads*和*edge://print* |N|Y|89|Y|
 | 已阻止 Ctrl+N（打开一个新窗口） | Y | Y | 89 |Y|
 | 已阻止 Ctrl+T（打开新选项卡） |Y | Y | 89 |Y|
 |设置和更多 (...) 将仅显示所需的选项  |Y |Y |89 |Y|
-|限制从浏览器启动其他应用程序|Y|Y|90/91|Y|
-|UI 打印设置锁定|Y|Y|90/91|Y|
-|[将新标签页页面设置为主页](./microsoft-edge-policies.md#homepageisnewtabpage)（策略）|-|-|TBD|Y|
+|限制从浏览器启动其他应用程序|Y|Y|90|Y|
+|UI 打印设置锁定|Y|Y|90|Y|
+|[将新标签页设置为主页](./microsoft-edge-policies.md#homepageisnewtabpage)（策略）|N|Y|90|Y|
 
 > [!NOTE]
 > 有关 Microsoft Edge 发布计划的信息，请参阅 [Microsoft Edge 发布计划](microsoft-edge-release-schedule.md)。
 
-**第 2 步：在 Microsoft Edge 中测试新展台。** 我们建议你在 Microsoft Edge 中测试展台模式的设置。 测试展台模式的一种快速、简单方式是按照下面所述使用 Windows 设置配置已分配访问权限的单应用。
+**第 2 步：在 Microsoft Edge 中测试新展台。** 我们建议你在 Microsoft Edge 中测试展台模式的设置。 测试展台模式的一种快速、简单方式是按照下面所述，使用 Windows 设置配置分配的访问权限单应用。
 
-1. 安装最新的 Windows 10 Insider Preview 版本 20215 或更高版本。 按照[开始使用 Windows 10 Insider Preview 版本](/windows-insider/get-started)中的说明进行操作。
-2. 安装最新版本的 [Microsoft Edge 稳定渠道版本](https://www.microsoft.com/edge)的 87 或更高版本。  若要测试最新功能，可以下载最新的 [Microsoft Edge Beta 渠道](https://www.microsoftedgeinsider.com/download)的 89 或更高版本。
+1. 下表中列出了操作系统的最低系统更新。
+
+|操作系统|版本|更新|
+|--|--|--|
+|Windows 10 | 2004 或更高版本|[KB4601382 或更高版本](https://support.microsoft.com/topic/february-24-2021-kb4601382-os-builds-19041-844-and-19042-844-preview-1a7ed2b4-017d-2644-a1e8-dd6bf14cba76) |
+|Windows 10| 1909| [KB4601380 或更高版本](https://support.microsoft.com/topic/february-16-2021-kb4601380-os-build-18363-1411-preview-2e3c38e1-a947-1033-8006-a30f3806da18)|
+
+2. 若要测试最新功能，可以下载最新的 [Microsoft Edge Stable 渠道](https://www.microsoftedgeinsider.com/download)的 89 或更高版本。
 
    > [!IMPORTANT]
-   > 由于需要设备级别安装，因此 Canary 起到不受支持。
+   > 由于需要设备级别安装，Canary 通道不受支持。
 
 3. 在展台计算机上，打开“Windows 设置”，然后在搜索字段中键入“展台”。 选择“ **设置展台（分配的访问权限）**”（如下一个屏幕截图所示），以打开用于创建展台的对话框。
 
@@ -82,13 +88,13 @@ ms.locfileid: "11447846"
 
 6. 在“**选择展台应用** ”页面上，选择“**Microsoft Edge**”，然后单击“ **下一步**”。
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-4-pick-app.png" alt-text="展台模式 - 选择应用":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5c-choose-a-kiosk-app.png" alt-text="选择展台 - 全屏数字签名":::
 
 7. 选择以下选项之一，了解 Microsoft Edge 在展台模式下运行时的显示方式：
 
    - 数字/交互式标牌 - 运行 Microsoft Edge 时以全屏模式显示特定网站。
    - 公共浏览器 - 运行 Microsoft Edge 的受限多选项卡版本。
-
+ 
     :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="展台模式显示 - 全屏数字签名":::
 
 8. 选择“ **下一步**”。
