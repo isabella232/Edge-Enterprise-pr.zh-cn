@@ -1,28 +1,169 @@
 ---
 title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 04/02/2021
+ms.date: 06/25/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: da33ab8a97ede1691a5b3ba3172169613504626b
-ms.sourcegitcommit: c09ad05d137103604bf7bd7c8d06901e9d15f76c
+ms.openlocfilehash: a4ef80420bfa87bf5fcfa154937ebe52b7cb375f
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "11474935"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617932"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
-本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 此处提供了这些发行说明的存档 [版本](microsoft-edge-relnote-archive-beta-channel.md)。
+本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 [此处](microsoft-edge-relnote-archive-beta-channel.md)提供了这些发行说明的存档版本。
 
 > [!NOTE]
-> 我们已更新 Microsoft Edge Beta [版本 89.0.774.18：2 月 3 日](#version-89077418-february-3) 发行说明，以反映已落地的功能。
+> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 即将带来的影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-92090222-june-21"></a>版本 92.0.902.22：6 月 21 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 策略调整将网站保留在本地站点列表中的天数。
+请注意，对于端到端体验，Windows 10 版本 1909 需要 KB5003698 或更高版本; Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更高版本。
+
+- **MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用 [本指南](/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
+
+- **付款工具现在跨设备同步**。 从 Microsoft Edge 版本 92 开始，可以选择跨已登录设备同步付款信息。
+请注意：这是受控功能推出，目前推出率为 50%。 如果看不到此功能，请在我们继续推出时再检查。
+
+- **"禁用开发人员模式扩展"警告可以永久消除**。 从 Microsoft Edge 版本 92 开始，可以通过单击"不要再次显示此扩展"选项来关闭"禁用开发人员模式扩展"警告。
+请注意：这是受控功能推出，目前推出率为 25%。 如果看不到此功能，请在我们继续推出时再检查。
+
+- **从工具栏管理扩展**。 工具栏上新增的扩展菜单将允许你轻松隐藏/固定扩展。 管理扩展和查找新扩展的快速链接将使你轻松找到新扩展和管理现有扩展。
+请注意：这是受控功能推出，目前推出率为 25%。 如果看不到此功能，请在我们继续推出时再检查。
+
+- **自动 HTTPS**。 用户可以选择在可能支持此更安全协议的域上将导航从 HTTP 升级到 HTTPS。 此支持还可以配置为在所有域上尝试 HTTPS 传输。
+请注意：我们正在试验此功能，如果你已选择退出实验，则将不会看到此行为。
+
+- **字体呈现的改进**。 改进了文本呈现，以提高清晰度并降低模糊度。
+请注意：这是受控功能推出，目前推出率为 25%。 如果看不到此功能，请在我们继续推出时再检查。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+添加了 8 个新策略。 从 [Microsoft Edge 企业版登录页面](https://www.microsoft.com/edge/business/download) 下载更新的管理模板。 添加了以下新策略：
+
+- [AADWebSiteSSOUsingThisProfileEnabled](/DeployEdge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled) 启用通过此配置文件对工作或学校网站进行单一登录。
+- [AutomaticHttpsDefault](/DeployEdge/microsoft-edge-policies#automatichttpsdefault) 配置自动 HTTPS
+- [HeadlessModeEnabled](/DeployEdge/microsoft-edge-policies#headlessmodeenabled) 控制无头模式的使用
+- [InsecurePrivateNetworkRequestsAllowed](/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed)指定是否允许不安全网站向更专用的网络终结点提出请求
+- [InsecurePrivateNetworkRequestsAllowedForUrls](/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls) 允许列出的站点从不安全环境向更专用的网络终结点提出请求
+- [InternetExplorerIntegrationLocalSiteListExpirationDays](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 指定站点在本地 IE 模式站点列表中保留的天数
+- [InternetExplorerIntegrationReloadInIEModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 允许以 Internet Explorer 模式重新加载未配置的网站
+- [SharedArrayBufferUnrestrictedAccessAllowed](/DeployEdge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed) 指定是否可以在非跨源隔离环境中使用 SharedArrayBuffers
+
+#### <a name="obsoleted-policy"></a>已过时的策略
+
+- [EnableSha1ForLocalAnchors](/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) 允许使用本地信任锚点颁发的 SHA-1 签名的证书。
+- [AADWebSiteSSOUsingThisProfileEnabled](/DeployEdge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled) 启用通过此配置文件对工作或学校网站进行单一登录。
+- [AutomaticHttpsDefault](/DeployEdge/microsoft-edge-policies#automatichttpsdefault) 配置自动 HTTPS。
+- [HeadlessModeEnabled](/DeployEdge/microsoft-edge-policies#headlessmodeenabled) 控制无头模式的使用。
+- [InsecurePrivateNetworkRequestsAllowed](/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed) 指定是否允许不安全网站向更专用的网络终结点提出请求。
+- [InsecurePrivateNetworkRequestsAllowedForUrls](/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls) 允许列出的站点从不安全环境向更专用的网络终结点提出请求。
+- [InternetExplorerIntegrationLocalSiteListExpirationDays](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 指定站点在本地 IE 模式站点列表中保留的天数。
+- [InternetExplorerIntegrationReloadInIEModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 允许以 Internet Explorer 模式重新加载未配置的网站。
+- [SharedArrayBufferUnrestrictedAccessAllowed](/DeployEdge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed) 指定是否可以在非跨源隔离环境中使用 SharedArrayBuffers。
+
+#### <a name="obsoleted-policy"></a>已过时的策略
+
+- [EnableSha1ForLocalAnchors](/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) 允许使用本地信任锚点颁发的 SHA-1 签名的证书。
+
+## <a name="version-9209029-june-8"></a>版本 92.0.902.9：6 月 8 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-91086441-june-3"></a>版本 91.0.864.41：6 月 3 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-91086437-may-27"></a>版本 91.0.864.37：5 月 27 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-91086436-may-26"></a>版本 91.0.864.36：5 月 26 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-91086433-may-21"></a>版本 91.0.864.33：5 月 21 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-91086427-may-14"></a>版本 91.0.864.27：5 月 14 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-91086419-may-7"></a>版本 91.0.864.19：5 月 7 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-91086415-may-3"></a>版本 91.0.864.15：5 月 3 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-91086411-april-30"></a>版本 91.0.864.11：4 月 30 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **标识源自代理级别的 Microsoft Defender 应用程序防护容器的网络流量**。 从 Microsoft Edge 版本 91 开始，内置了对源自应用程序防护容器的网络流量进行标记的支持，允许企业识别这些流量并应用特定策略。
+
+- **支持允许将收藏夹从主机同步到边缘应用程序防护容器的选项**。 从 Microsoft Edge 版本 91 开始，用户可以选择配置应用程序防护以将其收藏夹从主机同步到容器。 这确保了容器上也可显示新的收藏夹。
+
+- **支持语音识别 API。** 从 Microsoft Edge 版本 91 开始，将添加对 Google.com 和类似网站上语音识别命令的 API 支持。 此功能仅限于一组启用了实验的随机选择的用户。 这些用户向功能团队提供反馈。
+
+- **使用新的主题颜色个性化设置浏览器**。 使用“设置”->“外观”页上的十四种新主题颜色之一打造你自己的 Microsoft Edge。 也可以从 Microsoft Edge 加载项网站安装自定义主题。 [了解详细信息](https://techcommunity.microsoft.com/t5/articles/make-microsoft-edge-your-own-with-themes/m-p/2083165)
+
+- **中断下载** 从 Microsoft Edge 版本 91 开始，如果在未经用户交互的情况下启动对计算机有害的下载，并且 SmartScreen 应用程序信誉检查不支持此下载，则浏览器将自动中断该类型的下载。 用户可能会覆盖并继续下载，方法是右键单击并在下载项上选择“保留”。
+企业管理员可以通过以下两个策略之一选择退出此行为：
+    - [ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](/deployedge/microsoft-edge-policies#exemptdomainfiletypepairsfromfiletypedownloadwarnings) - 对域上的指定文件类型禁用基于文件类型扩展名的下载警告。有关详细信息，请参阅 [Microsoft Edge 安全下载中断](/deployedge/microsoft-edge-security-downloads-interruptions)
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+添加了六条新的策略。 从 [Microsoft Edge 企业版登录页面](https://www.microsoft.com/edge/business/download) 下载更新的管理模板。 添加了以下新策略：
+
+- [ApplicationGuardTrafficIdentificationEnabled](/DeployEdge/microsoft-edge-policies#applicationguardtrafficidentificationenabled) - 应用程序防护流量标识
+- [ExplicitlyAllowedNetworkPorts](/DeployEdge/microsoft-edge-policies#explicitlyallowednetworkports) - 显式允许的网络端口
+- [ImportStartupPageSettings](/DeployEdge/microsoft-edge-policies#importstartuppagesettings) - 允许导入启动页设置
+- [MathSolverEnabled](/DeployEdge/microsoft-edge-policies#mathsolverenabled) - 允许用户截取数学问题，并通过 Microsoft Edge 中的分步说明获取解决方案
+- [NewTabPageContentEnabled](/DeployEdge/microsoft-edge-policies#newtabpagecontentenabled) - 允许新选项卡页上的 Microsoft 新闻内容
+- [NewTabPageQuickLinksEnabled](/DeployEdge/microsoft-edge-policies#newtabpagequicklinksenabled) - 允许新选项卡页上的快速链接
+
+#### <a name="obsoleted-policy"></a>已过时的策略
+
+- [ProactiveAuthEnabled](./microsoft-edge-policies.md#proactiveauthenabled) - 启用主动身份验证。
+<!-- end major 91 -->
+
+## <a name="version-90081846-april-22"></a>版本 90.0.818.46：4 月 22 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-90081842-april-20"></a>版本 90.0.818.42：4 月 20 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-90081841-april-16"></a>版本 90.0.818.41：4 月 16 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-90081838-april-14"></a>版本 90.0.818.38：4 月 14 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-90081836-april-12"></a>版本 90.0.818.36：4 月 12 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-90081827-april-2"></a>版本 90.0.818.27：4 月 2 日
 
@@ -42,6 +183,8 @@ ms.locfileid: "11474935"
 
 - **SSO（单一登录）现已适用于 macOS 上的Azure Active Directory (Azure AD) 帐户和 Microsoft 帐户 (MSA)**。 现在，已在 macOS 上登录 Microsoft Edge 的用户将自动登录到配置为允许使用工作帐户和 Microsoft 帐户进行单一登录的网站（如 bing.com、office.com、msn.com 和 outlook.com）。
 
+- **展台模式。** 从 Microsoft Edge 版本 90 开始，我们已锁定 UI 打印设置，以仅允许配置的打印机和“打印到 PDF”选项。 我们还在分配的访问权限单应用展台模式中进行了改进，以限制从浏览器启动其他应用程序。 有关展台模式功能的详细信息，请转到 [此处](/deployedge/microsoft-edge-configure-kiosk-mode#kiosk-mode-supported-features)。
+
 - **打印：**
 
   - **非 PostScript 打印机的全新打印光栅化模式**。 从 Microsoft Edge 版本 90 开始，管理员可以使用新策略为用户定义打印光栅化模式。 此策略控制 Microsoft Edge 如何在 Windows 上打印到非 PostScript 打印机。  有时，在非 PostScript 打印机上的打印作业需要进行光栅化才能正确打印。 打印选项为“完整”和“快速”。
@@ -52,11 +195,9 @@ ms.locfileid: "11474935"
 
   - **自动填充建议扩展为包含剪贴板中的地址字段内容**。 在单击配置文件/地址字段（例如，电话、电子邮件、邮政编码、城市、省/市/县等）将分析剪贴板内容，以显示为自动填充建议。
 
-  - **即使未检测到表单或字段，用户也可以搜索自动填充建议**。 现在，如果将信息保存在 Microsoft Edge 上，将自动弹出自动填充建议，并帮助你在填写表单时节省时间。 如果自动填充遗漏了表单，或者你希望获取通常不会自动填充的表单（如临时表单）中的数据，可以使用自动填充来搜索信息。
+  - **即使未检测到表单或字段，用户也可以搜索自动填充建议**。 现在，如果将信息保存在 Microsoft Edge 上，将自动弹出自动填充建议，并帮助你在填写表单时节省时间。 如果自动填充遗漏了表单，或者希望获取通常没有自动填充的表单（如 临时表单）的数据，可以使用自动填充来搜索信息。
 
 - **从菜单栏中的浮出控件访问下载**。 下载将显示在右上角，且所有活动下载都位于同一位置。 此菜单很容易消除，以便用户可以继续不间断地浏览，并且可以从工具栏直接监视总体下载进度。 [了解详细信息](https://techcommunity.microsoft.com/t5/articles/introducing-the-new-downloads-experience/m-p/2111551)。
-
-- **字体呈现的改进**。 从 Microsoft Edge 版本 90 开始，我们改进了文本呈现，以提高清晰度并减少模糊度。 字体呈现改进的一部分将在 Beta 版本 90 中落地，但默认情况下处于禁用状态。
 
 
 ### <a name="policy-updates"></a>策略更新
@@ -109,190 +250,11 @@ ms.locfileid: "11474935"
 
 ## <a name="version-89077423-february-8"></a>版本 89.0.774.23：2 月 8 日
 
-修复了各种错误和性能问题。
+修复了各种 bug 和性能问题。
 
 <!-- begin major 89 -->
-## <a name="version-89077418-february-3"></a>版本 89.0.774.18：2 月 3 日
 
-### <a name="feature-updates"></a>功能更新
-
-- **展台模式支持其他锁定功能**。 从 Microsoft Edge 版本 89 开始，我们在展台模式下添加了其他锁定功能，使客户能够在高效和更安全的体验中完成工作。 [了解详细信息](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features)。
-
-- **Enterprise Mode Site List Manager 工具将在浏览器中通过 *edge://compat* 页提供**。 可以使用此工具在 Microsoft Edge 上为 Internet Explorer 模式创建、编辑和导出站点列表 XML。 可以根据需要通过组策略启用对此工具的访问。 [了解详情](./edge-ie-mode-site-list-manager.md)。
-
-- **使用休眠选项卡提高浏览器性能**。 休眠选项卡通过将非活动选项卡置于睡眠状态以释放系统资源（如内存和 CPU）来提升浏览器性能，以便活动选项卡或其他应用程序可以使用它们。 用户可以阻止网站进入睡眠状态，并配置非活动选项卡进入睡眠状态之前的时间长度。 若要使用户保持其流，还有一些[启发性方法](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434)可阻止某些网站进入睡眠状态，例如 Intranet 网站。 可以使用组策略管理此功能。
-
-  > [!NOTE]
-  > “使用休眠选项卡提高浏览器性能”是 2 月 3 日主要版本 89.0.774.18 发行说明的更新。
-
-- **手动重置云中的 Microsoft Edge 同步数据**。 我们正在引入一种从产品内重置 Microsoft Edge 同步数据的方法。 这确保从 Microsoft 服务中清除数据，同时也解决了以前需要支持票证的某些产品问题。
-
-- **PDF 文档中文本选择体验的改善**。 从版本 89 开始，用户将开始在 Microsoft Edge 中打开的 PDF 文档中获得更流畅、一致的文本选择体验。
-
-- **自动填充字段现在支持"出生日期"**。 现在，Microsoft Edge 通过自动填充地址、姓名、电话号码等数据，帮助你在线填写表单和创建帐户时节省时间和精力。从 Microsoft Edge 版本 89 开始，我们将添加对另一可保存及自动填充字段的支持—出生日期。 可以随时在个人资料设置中查看、编辑和删除此信息。
-
-- **支持在地址栏、历史记录搜索页面和历史记录中心上进行自然语言搜索**。 从 Microsoft Edge 版本 89 开始，使用地址栏、历史页面和历史中心上的自然语言搜索使查找文章/网站更容易。 除了标题/URL 关键字匹配之外，用户还可以搜索以前查看过的页面内容/描述/时间（例如“上周的蛋糕食谱”）。 此功能仅限于一组启用了实验的随机选择的用户。 这些用户向功能团队提供反馈。
-
-### <a name="policy-updates"></a>策略更新
-
-#### <a name="new-policies"></a>新策略
-
-- [BrowsingDataLifetime](./microsoft-edge-policies.md#browsingdatalifetime) - 浏览数据生存期设置
-- [MAMEnabled](./microsoft-edge-policies.md#mamenabled) - 移动应用管理已启用
-- [DefinePreferredLanguages](./microsoft-edge-policies.md#definepreferredlanguages) - 定义网站应在网站支持该语言时显示的首选语言的有序列表
-- [ShowRecommendationsEnabled](./microsoft-edge-policies.md#showrecommendationsenabled) - 允许来自 Microsoft Edge 的建议和促销通知
-- [PrintingAllowedBackgroundGraphicsModes](./microsoft-edge-policies.md#printingallowedbackgroundgraphicsmodes) - 限制背景图形打印模式
-- [PrintingBackgroundGraphicsDefault](./microsoft-edge-policies.md#printingbackgroundgraphicsdefault)- 默认背景图形打印模式
-- [SmartActionsBlockList](./microsoft-edge-policies.md#smartactionsblocklist)- 阻止对服务列表执行智能操作
-
-#### <a name="obsoleted-policies"></a>已过时的策略
-
-- [ForceLegacyDefaultReferrerPolicy](./microsoft-edge-policies.md#forcelegacydefaultreferrerpolicy) - 使用 no-referrer-when-downgrade 的默认引荐策略
-- [MetricsReportingEnabled](./microsoft-edge-policies.md#metricsreportingenabled)：启用使用情况和故障相关数据报告
-- [SendSiteInfoToImproveServices](./microsoft-edge-policies.md#sendsiteinfotoimproveservices)：发送站点信息以改进 Microsoft 服务
-<!-- end major 89 -->
-
-## <a name="version-88070556-january-29"></a>版本 88.0.705.56：1 月 29 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-88070549-january-20"></a>版本 88.0.705.49：1 月 20 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-88070545-january-15"></a>版本 88.0.705.45：1 月 15 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-88070541-january-11"></a>版本 88.0.705.41：1 月 11 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-88070529-december-21"></a>版本 88.0.705.29：12 月 21 日
-
-修复了各种 bug 和性能问题。
-
-<!-- begin major 88 -->
-## <a name="version-88070518-december-9"></a>版本 88.0.705.18：12 月 9 日
-
-### <a name="feature-updates"></a>功能更新
-
-- **弃用：**
-
-  - 弃用对 FTP 协议的支持。 已从 Microsoft Edge 中删除对旧版 FTP 协议的支持。 尝试导航到 FTP 链接将导致浏览器指示操作系统打开外部应用程序以处理 FTP 链接。 或者，IT 管理员可以将 Microsoft Edge 配置为对依赖于 FTP 协议的站点使用 IE 模式。
-  - Adobe Flash 支持将被删除。 从 Microsoft Edge Beta 版本 88 开始，Adobe Flash 功能和支持将被删除。 了解更多信息 [：Adobe Flash Player 停止支持更新 - Microsoft Edge 博客 (windows.com) ](https://blogs.windows.com/msedgedev/2020/09/04/update-adobe-flash-end-support/)
-
-- **身份验证：**
-
-  - 单一登录 (SSO) 现在适用于 macOS 和低级别 Windows 上的 Azure Active Directory (Azure AD) 帐户和 Microsoft 帐户 (MSA)。 在 macOS 或低级别 Microsoft Windows (7、8.1) 上登录 Microsoft Edge 的用户现在将自动登录到配置为允许使用工作帐户和 Microsoft 帐户单一登录的网站 (例如 bing.com、office.com、msn.com、outlook.com)。<br>注意：如果用户在 Microsoft Edge 88 之前的版本中登录 Microsoft Edge，可能需要注销然后重新登录，以利用此功能。
-  - 自动将 macOS 上的用户切换到使用工作帐户进行身份验证的网站的工作配置文件。 从 Microsoft Edge 版本 88 开始，我们提供了在 macOS 上切换使用用户工作配置文件进行身份验证的网站的能力。<br>注意：如果用户在 Microsoft Edge 88 之前的版本中登录 Microsoft Edge，可能需要注销然后重新登录，以利用此功能。
-
-- **结束会话的展台模式选项**。 “结束会话”按钮现在在展台模式公共浏览体验中可用。 此功能可确保在关闭 Microsoft Edge 时删除浏览器数据和设置。 详细了解展台模式功能和路线图，配置 [Microsoft Edge 展台模式](./microsoft-edge-configure-kiosk-mode.md)。
-
-- **安全和隐私：**
-
-  - 如果在联机泄露中发现用户的密码，则将生成警报。 将用户密码与已知的已破解的存储库进行核对，如果发现匹配，就会向用户发出警报。 为了确保安全和隐私，当用户密码在与已泄露的凭证数据库进行核对时，会进行哈希处理和加密。
-  - 自动升级混合内容。 通过 HTTPS 传递的安全页面可能包含通过非安全 HTTP 提供的引用图像。 为了改进 Microsoft Edge 88 中的隐私和安全性，将改为通过 HTTPS 检索这些图像。 如果图像无法通过 HTTPS 使用，将不会加载它。
-  - 按网站和最近活动查看网站权限。 从 Microsoft Edge 88 开始，用户将能够更轻松地管理网站权限。 他们将能够按网站查看权限，而不只是按权限类型查看权限。 此外，我们添加了一个最近的活动部分，它向用户显示其网站权限的所有最近更改。
-  - 增加了浏览器 Cookie 的控件。 从 Microsoft Edge 88 开始，用户可以删除第三方 Cookie，而不会影响第一方 Cookie。 用户还可以按第一方或第三方筛选其 Cookie，并按名称、Cookie 数量以及存储和上次修改的数据量进行排序。
-
-- **性能：**
-
-  - 使用休眠选项卡提高浏览器性能。 休眠选项卡通过将非活动选项卡置于睡眠状态以释放系统资源（如内存和 CPU）来提升浏览器性能，以便活动选项卡或其他应用程序可以使用它们。 用户可以阻止网站进入睡眠状态，并配置非活动选项卡进入睡眠状态之前的时间长度。 若要使用户保持其流，还有一些启发性方法可阻止某些网站进入睡眠状态，例如 Intranet 网站。 此功能仅限于一组启用了实验的随机选择的用户。 我们计划默认使用 Microsoft Edge 版本 89 启用休眠选项卡功能。 可以使用组策略管理此功能。
-  - 通过启动提升提高 Microsoft Edge 启动速度。 为了提高 Microsoft Edge 启动速度，我们开发了一个名为启动提升的功能。 启动提升使 Microsoft Edge 能够在后台运行，从而加快 Microsoft Edge 启动速度。 注意：此功能仅限于随机选择的一组已启用实验的用户。 这些用户向功能团队提供反馈。
-
-- **工作效率：**
-
-  - 使用垂直选项卡提高工作效率和多任务。 随着水平选项卡数量的增加，网站标题开始关闭，选项卡控件会随着每个选项卡的缩小而丢失。 这会中断用户工作流，因为他们将花费更多时间查找、切换和管理选项卡，并花费更少的时间处理当前任务。 通过垂直选项卡，用户可以将其选项卡移到一侧，其中垂直对齐的图标和较长的网站标题使快速扫描、标识并切换到要打开的选项卡变得更加简单。
-  - 自动填写出生日期字段。 Microsoft Edge 已经通过自动填充用户数据（如地址、姓名、电话号码等）来帮助节省填写表单和联机创建帐户的时间和精力。Microsoft Edge 现在支持用户可保存并自动填充的出生日期字段。 用户可以随时在个人资料设置中查看、编辑和删除此信息。
-  - 对历史记录中最近关闭的改进。 最近关闭现在使过去的任何浏览会话（而不只是上一个会话）中保留最后 25 个选项卡和窗口。 用户可以在新的历史记录体验中选择"最近关闭"以查看所有打开的选项卡。
-  - 默认情况下启用"一天一览"功能。 从 Microsoft Edge 版本 88 开始，信息工作者可以从其"新建"选项卡页中的智能生产力功能 (NTP)。 我们为用户提供使用工作或学校帐户登录的个性化内容以及由 M365 Graph 支持的相关内容。 用户可以快速扫描其"一天一眼"模块，轻松跟踪其会议和最近工作，并快速启动他们想要使用的应用程序。
-
-- **PDF：**
-
-  - 在书籍视图中显示 PDF 文档（两页）。 从 Microsoft Edge 版本 88 开始，用户可以在单页或两页书籍视图中查看 PDF 文档。 若要更改视图，请单击工具栏 中的“**页面视图**”按钮。
-  - 定位的文本注释支持 PDF 文件。 从 Microsoft Edge 版本 87 开始，用户可以在 PDF 文件的任何文本条上添加键入的文本注释。
-  - PDF 文档中的文本选择体验更流畅。 用户将在 Microsoft Edge 中打开的 PDF 文档中获得更流畅、一致的文本选择体验。
-  - 查看在下载栏中另存为 PDF 文件的网页。 用户现在可以通过将“另存为 PDF”设置为下载栏中网页的打印机目标来查看生成的 PDF 文件。
-
-- **字体：**
-
-  - 浏览器图标将更新为 Fluent 设计系统。 作为在浏览器中持续处理 Fluent Design 的一部分，我们进行了更改，使图标与新的 Microsoft 图标系统更加一致。 这些更改将影响我们的许多高接触用户界面，包括选项卡、地址栏，以及各种菜单中的导航和定位图标。
-  - 改进了字体呈现。 改进了文本呈现，以提高清晰度并减少模糊性。
-
-### <a name="policy-updates"></a>策略更新
-
-#### <a name="new-policies"></a>新策略
-
-添加了 16 个新策略。 从 [Microsoft Edge 企业登录页面](https://www.microsoft.com/edge/business/download)下载更新的管理模板。 已添加以下新策略。
-
-- [BlockExternalExtensions](./microsoft-edge-policies.md#blockexternalextensions) - 阻止安装外部扩展。
-- [InternetExplorerIntegrationLocalFileAllowed](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileallowed) - 允许在 Internet Explorer 模式下启动本地文件。
-- [InternetExplorerIntegrationLocalFileExtensionAllowList](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist) - 在 Internet Explorer 文件扩展名允许列表中打开本地文件。
-- [InternetExplorerIntegrationLocalFileShowContextMenu](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileshowcontextmenu) - 显示上下文菜单以在 Internet Explorer 链接。
-- [IntranetRedirectBehavior](./microsoft-edge-policies.md#intranetredirectbehavior) - Intranet 重定向行为。
-- [PrinterTypeDenyList](./microsoft-edge-policies.md#printertypedenylist) - 禁用拒绝列表上的打印机类型。
-- [ShowMicrosoftRewards](./microsoft-edge-policies.md#showmicrosoftrewards) - 显示 Microsoft 奖励体验。
-- [SleepingTabsEnabled](./microsoft-edge-policies.md#sleepingtabsenabled) - 配置睡眠选项卡。
-- [TimeoutTabsTimeout](./microsoft-edge-policies.md#sleepingtabstimeout) - 为休眠选项卡设置后台选项卡不活动超时。
-- [SleepingTabsBlockedForUrls](./microsoft-edge-policies.md#sleepingtabsblockedforurls) - 阻止特定网站上休眠的选项卡。
-- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled) - 启用启动增强。
-- [UpdatePolicyOverride](./microsoft-edge-policies.md#updatepolicyoverride) - 指定 Microsoft Edge 更新如何处理来自 Microsoft Edge 的可用更新。
-- [VerticalTabsAllowed](./microsoft-edge-policies.md#verticaltabsallowed) - 为浏览器侧面的选项卡配置垂直布局的可用性。
-- [WebRtcAllowLegacyTLSProtocols](./microsoft-edge-policies.md#webrtcallowlegacytlsprotocols) - 允许在 WebRTC 中降级旧版 TLS/DTLS。
-
-#### <a name="deprecated-policies"></a>已弃用的策略
-
-以下策略已弃用。
-
-- [ProactiveAuthEnabled](./microsoft-edge-policies.md#proactiveauthenabled) - 启用主动身份验证。
-- [ProxyBypassList](./microsoft-edge-policies.md#proxybypasslist) - 配置代理绕过规则。
-- [ProxyMode](./microsoft-edge-policies.md#proxymode) - 配置代理服务器设置。
-- [ProxyPacUrl](./microsoft-edge-policies.md#proxypacurl) - 设置代理 .pac 文件 URL。
-- [ProxyServer](./microsoft-edge-policies.md#proxyserver) - 配置代理服务器的地址或 URL。
-- [WebDriverOverridesIncompatiblePolicies](./microsoft-edge-policies.md#webdriveroverridesincompatiblepolicies) - 允许 WebDriver 覆盖不兼容的策略。
-
-#### <a name="obsoleted-policies"></a>已过时的策略
-
-以下策略已过时。
-
-- [DefaultPluginsSetting](./microsoft-edge-policies.md#defaultpluginssetting) - 默认 Adobe Flash 设置。
-- [PluginsAllowedForUrls](./microsoft-edge-policies.md#pluginsallowedforurls) - 允许特定网站上使用 Adobe Flash 插件。
-- [PluginsBlockedForUrls](./microsoft-edge-policies.md#pluginsblockedforurls) - 阻止特定网站上 Adobe Flash 插件。
-- [RunAllFlashInAllowMode](./microsoft-edge-policies.md#runallflashinallowmode) - 将 Adobe Flash 内容设置扩展到所有内容。
-
-<!-- end major 88 -->
-
-## <a name="version-87066455-december-3"></a>版本 87.0.664.55：12月3日
-
-修复了各种 bug 和性能问题。 此版本支持以下新功能。
-
-- **如果在联机泄露中发现用户的密码，则将生成警报**。 用户密码会与已知的已破解的凭证库进行核对，如果发现匹配，就会向用户发出警报。 为了确保安全和隐私，当用户密码在与已泄露的凭证数据库进行核对时，会进行哈希处理和加密。
-
-## <a name="version-87066452-november-30"></a>版本 87.0.664.52：11月30日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-87066440-november-18"></a>版本 87.0.664.40：11 月 18 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-87066436-november-16"></a>版本 87.0.664.36：11 月 16 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-87066430-november-9"></a>版本 87.0.664.30：11 月 9 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-87066424-november-2"></a>版本 87.0.664.24：11 月 2 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-87066418-october-26"></a>版本 87.0.664.18：10 月 26 日
-
-修复了各种 bug 和性能问题。
-
+<!--- Archived from Version 87.0.664.18: October 26 to to version 89.0.774.18: February 3 ---->
 <!--- Archived from Version 87.0.664.12: October 20 to to version 86.0.622.15: September 14 ---->
 <!--- Archived to version 86.0.622.11: September 9 ---->
 <!--- Archived to version 85.0.564.18: July 28 ---->

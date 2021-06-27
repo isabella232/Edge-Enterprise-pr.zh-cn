@@ -1,4 +1,4 @@
-# last revised 03/31/2021
+# last revised 05/03/2021
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -49,8 +49,6 @@
       items:
         - name: 策略映射概述
           href: microsoft-edge-policy-map-overview.md
-        - name: Microsoft Edge 旧版到 Microsoft Edge 策略映射
-          href: microsoft-edge-policy-map-legacy-to-newedge.md
         - name: Google Chrome 到 Microsoft Edge 策略映射
           href: microsoft-edge-policy-map-chrome-to-newedge.md
     - name: 支持的操作系统
@@ -61,8 +59,6 @@
       href: microsoft-edge-supported-languages.md
     - name: Microsoft Edge 的系统更新
       items:
-        - name: 如何访问旧版本的 Microsoft Edge
-          href: microsoft-edge-sysupdate-access-old-edge.md
         - name: 用于支持 Microsoft Edge 的 Windows 更新
           href: microsoft-edge-sysupdate-windows-updates.md
 - name: 部署 Microsoft Edge
@@ -83,6 +79,8 @@
       href: configure-microsoft-edge.md
     - name: 使用 Intune 为 Windows 配置
       href: /mem/intune/configuration/administrative-templates-configure-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
+    - name: 每个站点配置（按策略）
+      href: Per-Site-Configuration-by-Policy.md
     - name: 使用移动设备管理为 Windows 配置
       href: configure-edge-with-mdm.md
     - name: 使用 .plist 为 macOS 配置
@@ -91,6 +89,8 @@
       href: configure-microsoft-edge-on-mac-jamf.md
 - name: 使用 Microsoft Edge 企业版功能
   items:
+    - name: 用于虚拟化桌面基础结构的 Edge
+      href: edge-for-virtualized-desktop-infrastructure.md
     - name: 配置和试验
       href: edge-configuration-and-experiments.md
     - name: 身份支持和配置
@@ -101,6 +101,18 @@
       href: microsoft-edge-kiosk-mode-transition-plan.md
     - name: 配置 Microsoft Edge 展台模式
       href: microsoft-edge-configure-kiosk-mode.md
+    - name: 管理 Microsoft Edge 扩展程序
+      items:
+        - name: 管理企业中的扩展
+          href: microsoft-edge-manage-extensions.md
+        - name: 使用组策略管理扩展
+          href: microsoft-edge-manage-extensions-policies.md
+        - name: 自托管 Microsoft Edge 扩展
+          href: microsoft-edge-manage-extensions-webstore.md
+        - name: ExtensionSettings 策略的详细指南
+          href: microsoft-edge-manage-extensions-ref-guide.md
+        - name: 扩展常见问题解答
+          href: microsoft-edge-manage-extensions-faq.md
     - name: Microsoft Edge 企业同步
       items:
         - name: 配置 Microsoft Edge 同步
@@ -140,17 +152,21 @@
         - name: 将文件扩展名与 Internet Explorer 模式关联
           href: edge-ie-mode-add-guidance-filetype-associations.md
         - name: IE 模式故障排除和常见问题解答
-          href: edge-ie-mode-faq.md
+          href: edge-ie-mode-faq.yml
 - name: Microsoft Edge 安全
   items:
     - name: 业务安全性
       href: ms-edge-security-for-business.md
+    - name: 中断潜在危险文件的下载
+      href: microsoft-edge-security-downloads-interruptions.md
     - name: Microsoft Edge 终结点的允许列表
       href: microsoft-edge-security-endpoints.md
     - name: 数据丢失防护 (DLP)
       href: microsoft-edge-security-dlp.md
     - name: 密码监视器自动为用户启用
       href: microsoft-edge-security-password-monitor.md
+    - name: Microsoft Edge 密码管理器安全性
+      href: microsoft-edge-security-password-manager-security.md
     - name: 阻止潜在的有害应用程序
       href: microsoft-edge-potentially-unwanted-apps.md
     - name: 支持 Azure AD 条件访问
@@ -197,6 +213,8 @@
           href: edge-learnmore-regex.md
         - name: 重置 Microsoft Edge 数据
           href: edge-learnmore-reset-data-in-cloud.md
+        - name: 用户数据目录变量
+          href: edge-learnmore-create-user-directory-vars.md
         - name: 使用 Microsoft Edge 企业版回退
           href: edge-learnmore-rollback.md
 - name: Microsoft Edge 视频

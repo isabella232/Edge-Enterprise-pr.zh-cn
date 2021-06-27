@@ -1,6 +1,6 @@
 ---
 title: 配置 Microsoft Edge 企业同步
-ms.author: scottbo
+ms.author: collw
 author: dan-wesley
 manager: silvanam
 ms.date: 03/08/2021
@@ -10,16 +10,16 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 用于配置 Microsoft Edge 以同步收藏夹、密码和其他浏览器数据的管理员和用户选项。
-ms.openlocfilehash: 93af96bd864f08bb17bb1d6f0669f602a56fd8ca
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 99edc97bd5f4bab7bf421e0d15e512c5f6f76cc0
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11448116"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617752"
 ---
 # <a name="configure-microsoft-edge-enterprise-sync"></a>配置 Microsoft Edge 企业同步
 
-本文介绍了管理员如何配置 Microsoft Edge，以便在所有登录设备上同步用户收藏夹、密码和其他浏览器数据。
+本文介绍管理员如何将 Microsoft Edge 配置为跨所有已登录设备同步用户收藏夹、密码、其他浏览器数据。如果你不是管理员，请通过本文了解如何跨设备登录和同步 Microsoft Edge。 [登录以在设备之间同步 Microsoft Edge](https://support.microsoft.com/microsoft-edge/sign-in-to-sync-microsoft-edge-across-devices-e6ffa79b-ed52-aa32-47e2-5d5597fe4674)。
 
 > [!NOTE]
 > 除非另有说明，否则本文适用于 Microsoft Edge 版本 77 或更高版本。
@@ -61,7 +61,7 @@ ms.locfileid: "11448116"
 - [AllowDeletingBrowserHistory](./microsoft-edge-policies.md#allowdeletingbrowserhistory)：当此策略设置为禁用时，还将禁用历史记录同步。
 - [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled)：配置从同步中排除的类型列表。
 - [RoamingProfileSupportEnabled](./microsoft-edge-policies.md#roamingprofilesupportenabled)：允许 Active Directory (AD) 配置文件使用本地存储。 有关更多信息，请参阅 [Active Directory (AD) 用户的本地同步](./microsoft-edge-on-premises-sync.md)。
-- [ForceSync：]( https://docs.microsoft.com/deployedge/microsoft-edge-policies#forcesync)默认启用同步，无需用户同意。  
+- [ForceSync：](/deployedge/microsoft-edge-policies#forcesync)默认启用同步，无需用户同意。  
 
 ## <a name="configure-microsoft-edge-sync"></a>配置 Microsoft Edge 同步
 

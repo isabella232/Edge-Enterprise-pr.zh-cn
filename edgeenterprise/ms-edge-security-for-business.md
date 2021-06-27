@@ -1,21 +1,21 @@
 ---
 title: 适用于企业的 Microsoft Edge 安全
-ms.author: seanlynd
+ms.author: collw
 author: seanongit
 manager: chuckf
-ms.date: 02/10/2021
+ms.date: 04/20/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 适用于企业的 Microsoft Edge 安全
-ms.openlocfilehash: 674fad396bed62058c3187e00f4938d99cc57868
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 59de0c5ddfa6b34b3d091e4832e2a8fe42dffd42
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447066"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617062"
 ---
 # <a name="microsoft-edge-security-for-your-business"></a>适用于企业的 Microsoft Edge 安全
 
@@ -27,9 +27,9 @@ Microsoft Edge 建立在 Chromium 开放源代码项目（与 Google Chrome 核�
 
 ### <a name="highest-rated-protection-against-phishing-and-malware"></a>抵御网站钓鱼和恶意软件的最高级别防护
 
-根据 NSS Labs 的一项独立研究，相比 Google Chrome 的安全浏览，内置在 Microsoft Edge 中的 SmartScreen 可阻止更多的[网络钓鱼](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Phishing_Report_Q2_2020.pdf)和[恶意软件](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Malware_Report_Q2_2020.pdf)企图。 SmartScreen 可在用户联机工作时提供网站和下载的实时信誉检查，它是 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一部分，它汲取从 Microsoft 庞大的全球资产、研究人员和合作伙伴网络产生的信号和见解。 通过对基于云的动态危险网站和下载列表进行检查，Microsoft Edge 有助于检测和阻止快速消失的短暂威胁。  
+根据 NSS Labs 的一项独立研究，相比 Google Chrome 的安全浏览，内置在 Microsoft Edge 中的 SmartScreen 可阻止更多的[网络钓鱼](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWASN1)和[恶意软件](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWANMW)企图。 SmartScreen 可在用户联机工作时提供网站和下载的实时信誉检查，它是 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一部分，它汲取从 Microsoft 庞大的全球资产、研究人员和合作伙伴网络产生的信号和见解。 通过对基于云的动态危险网站和下载列表进行检查，Microsoft Edge 有助于检测和阻止快速消失的短暂威胁。  
 
-在[NSS Labs的网络钓鱼防护](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Phishing_Report_Q2_2020.pdf)测试期间，具有[SmartScreen](//DeployEdge/microsoft-edge-security-smartscreen)的 Microsoft Edge 阻止了 95.5% 的网络钓鱼尝试，在[NSS Labs的恶意软件保护](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Malware_Report_Q2_2020.pdf)测试期间阻止了 98.5% 的恶意软件尝试，而 Chrome 的安全浏览率分别为 86.9% 和 86.0%。
+在[NSS Labs的网络钓鱼防护](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWASN1)测试期间，[Microsoft Edge SmartScreen](//DeployEdge/microsoft-edge-security-smartscreen) 阻止了 95.5% 的网络钓鱼尝试，在[NSS Labs的恶意软件保护](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWANMW)测试期间阻止了 98.5% 的恶意软件尝试，而 Chrome 的安全浏览率分别为 86.9% 和 86.0%。
 
 ### <a name="the-only-browser-on-windows-10-that-natively-supports-hardware-isolation"></a>Windows 10 上唯一本机支持硬件隔离的浏览器
 
