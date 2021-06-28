@@ -10,22 +10,22 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 就绪
-ms.openlocfilehash: eb4f03fd831eda4b4773b87469ceeb896e3fe08a
-ms.sourcegitcommit: 2e8906d1090263efe83d628be06dbe910cb82bf7
+ms.openlocfilehash: d41408c443c9976c8cb4b3b0f537143a5f185e3c
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "11157685"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617502"
 ---
-# Microsoft Edge 就绪
+# <a name="ready-for-microsoft-edge"></a>Microsoft Edge 就绪
 
 本文介绍了规划 Microsoft Edge 部署的 IT 管理员的信息，并需要有关应用程序兼容性和支持的信息。
 
-##  <a name="web-application-compatibility-and-support"></a>Web 应用程序兼容性和支持
+## <a name="web-application-compatibility-and-support"></a>Web 应用程序兼容性和支持
 
 为了帮助你规划 Microsoft Edge 的部署，我们已编译了可能正在组织中使用的 web 应用程序的列表。 此列表可用于确定 web 应用程序是否已准备好使用 Microsoft Edge，这是由 web 应用程序提供商的公共支持语句记录的。
 
-###  <a name="add-to-the-application-list"></a>添加到应用程序列表
+### <a name="add-to-the-application-list"></a>添加到应用程序列表
 
 该列表会在客户参与反馈中标识为支持语句，定期更新。
 
@@ -36,7 +36,7 @@ ms.locfileid: "11157685"
 - 提供程序名称
 - 公共支持语句 URL
 
-###  <a name="application-list"></a>应用程序列表
+### <a name="application-list"></a>应用程序列表
 
 Microsoft 不会在 Microsoft Edge 中测试或验证这些应用程序。 该列表是基于公开提供的资源编译的。 始终参考提供商的当前支持声明。 某些应用程序可能需要使用支持语句所指定的 IE 模式。
 
@@ -44,6 +44,7 @@ Microsoft 不会在 Microsoft Edge 中测试或验证这些应用程序。 该�
 
 | 提供程序 |  产品 | 支持声明 |
 |-|-|-|
+| 并发  | TMS 5.23  | https://www.accruent.com/resources/blog-posts/accruent-enhances-tms-microsoft-edge-compatibility-new-automations?utm_source=linkedin&utm_medium=organic-social&utm_campaign=healthcare-general  |
 | Acumatica  | Acumatica ERP  | https://help-2020r1.acumatica.com/Wiki/(W(1))/ShowWiki.aspx?pageid=a8d5d39d-513a-4f93-b484-a95eb33103a1  |
 | 自适应（工作日）    | Workday 自适应计划   | https://www.adaptiveplanning.com/uk/products/adaptive-technology-foundation  |
 | Adobe  | Creative Cloud产品（Acrobat、Photoshop、Illustrator）  | https://helpx.adobe.com/creative-cloud/system-requirements.html?promoid=P79NQR4R&mv=other  |
@@ -143,7 +144,7 @@ Microsoft 不会在 Microsoft Edge 中测试或验证这些应用程序。 该�
 | Zoom  | Zoom  | https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux#h_92957a85-2506-43a2-bd4a-5bb274778518  |
 | Zscaler  | Zscaler   | https://help.zscaler.com/zia/supported-browsers |
 
-##  <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [规划 Microsoft Edge 部署](deploy-edge-plan-deployment.md)

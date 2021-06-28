@@ -3,21 +3,24 @@ title: 将文件扩展名与 Internet Explorer 模式关联
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/21/2020
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 将文件扩展名与 Internet Explorer 模式关联
-ms.openlocfilehash: 6c651499401757d9a58e697d1d019a7294bb5fa7
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: c027b11e426cd665cb9e6cc25b4c9f66a0c6762a
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447366"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617452"
 ---
 # <a name="associate-file-extensions-with-internet-explorer-mode"></a>将文件扩展名与 Internet Explorer 模式关联
+
+>[!Note]
+> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表，[请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文介绍如何将 Microsoft Edge 和 Internet Explorer 模式与桌面应用程序的文件扩展名相关联。
 
@@ -91,9 +94,10 @@ Windows Registry Editor Version 5.00
 @="\"C:\\<edge_installation_dir>\\msedge.exe\" -ie-mode-file-url -- \"%1\""
 
 ```
+
 ## <a name="configuring-file-types-to-open-in-internet-explorer-mode"></a>配置文件类型以在 Internet Explorer 模式下打开
 
-从 Microsoft Edge 88 开始，你可以使用策略[“显示上下文菜单以 在 Internet Explorer 模式下打开链接”](./microsoft-edge-policies.md#show-context-menu-to-open-a-link-in-internet-explorer-mode)将特定文件类型链接配置为在 Internet Explorer 模式下打开，。 
+从 Microsoft Edge 88 开始，你可以使用策略[“显示上下文菜单以 在 Internet Explorer 模式下打开链接”](./microsoft-edge-policies.md#internetexplorerintegrationreloadiniemodeallowed)将特定文件类型链接配置为在 Internet Explorer 模式下打开，。
 
 通过在此策略[“在 Internet Explorer 模式下打开本地文件文件扩展名允许列表”](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist)中指定文件扩展名，可以定义此选项应应用的文件类型。 
 

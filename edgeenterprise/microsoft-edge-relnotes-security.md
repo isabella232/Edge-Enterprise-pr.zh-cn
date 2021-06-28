@@ -1,25 +1,82 @@
 ---
 title: Microsoft Edge 安全更新的发行说明
 ms.author: aguta
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 04/01/2021
+ms.date: 06/24/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: 4598f71f940e996bc8dca6cb51ee0ef43cad3cc1
-ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
+ms.openlocfilehash: 128cda35223681adf582c7caa4d1ca6e21279fa1
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "11470210"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617922"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge 稳定渠道更新中包含的安全补丁的信息。
+
+## <a name="june-24-2021"></a>2021 年 6 月 24 日
+
+Microsoft 已发布最新的  **Microsoft Edge 稳定通道（版本 91.0.864.59）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+此更新包含下列 Microsoft Edge 专属更新：
+
+- [CVE-2021-34506](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34506)
+- [CVE-2021-34475](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34475)
+
+## <a name="june-18-2021"></a>2021 年 6 月 18 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 91.0.864.54）**，其中融入了 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告为具有在野利用的 [CVE-2021-30554](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30554)。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+## <a name="june-11-2021"></a>2021 年 6 月 11 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 91.0.864.48）**，其中融入了 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告为具有在野利用的 [CVE-2021-30551](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30551)。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide/)。
+
+## <a name="june-03-2021"></a>2021 年 6 月 3 日
+
+Microsoft 已发布最新的  **Microsoft Edge 稳定通道（版本 91.0.864.41）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+此更新包含下列 Microsoft Edge 专属更新：
+- [CVE-2021-33741](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33741)
+
+## <a name="may-27-2021"></a>2021 年 5 月 27 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 91.0.864.37）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+此更新包含下列 Microsoft Edge 专属更新：
+- [CVE-2021-31982](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2021-31982)
+- [CVE-2021-31937](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2021-31937)
+
+## <a name="may-13-2021"></a>2021 年 5 月 13 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 90.0.818.62）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+## <a name="april-29-2021"></a>2021 年 4 月 29 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 90.0.818.51）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+## <a name="april-22-2021"></a>2021 年 4 月 22 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 90.0.818.46）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+## <a name="april-16-2021"></a>2021 年 4 月 16 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 90.0.818.41）**，其中融入了 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告为具有在野利用的 [CVE-2021-21224](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21224)。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+
+## <a name="april-15-2021"></a>2021 年 4 月 15 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 90.0.818.39）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+## <a name="april-14-2021"></a>2021 年 4 月 14 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 89.0.774.77）**，其中融入了 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告为具有在野利用的 [CVE-2021-21206](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21206) 和 [CVE-2021-21220](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21220)。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
 ## <a name="april-1-2021"></a>2021 年 4 月 1 日
 

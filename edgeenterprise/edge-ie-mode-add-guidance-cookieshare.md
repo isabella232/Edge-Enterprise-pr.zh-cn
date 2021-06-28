@@ -3,28 +3,31 @@ title: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/21/2020
+ms.date: 05/19/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: '如何从 Microsoft Edge 共享 cookie 到 Internet Explorer '
-ms.openlocfilehash: ddd9d34b5e2b0ee49093734da82e4a4fa7aa6a69
-ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
+ms.openlocfilehash: 563179852ff23142b540345222ba7e943547535d
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "11238179"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617462"
 ---
-# 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
+# <a name="cookie-sharing-from-microsoft-edge-to-internet-explorer"></a>从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
+
+>[!Note]
+> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表，[请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文介绍了如何在使用 Internet Explorer 模式时，配置从 Microsoft Edge 进程到 Internet Explorer 进程的会话 cookie 共享。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 87 或更高版本。
 
-##  <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>必备条件
 
 - Windows 更新
 
@@ -35,9 +38,9 @@ ms.locfileid: "11238179"
   - Windows 10 版本 1803 – KB4577032 或更高版本
 
 - Microsoft Edge 版本 87 或更高版本
-- [IE 模式](https://aka.ms/iemodeonedge) 配置了企业模式网站列表
+- [IE 模式](./edge-ie-mode.md) 配置了企业模式网站列表
 
-##  <a name="overview"></a>概述
+## <a name="overview"></a>概述
 
 大型组织中的常见配置是，将一个在新式浏览器工作的应用程序链接到另一个应用程序上，可能将该应用程序配置为在启用单一登录（SSO）的 Internet Explorer 模式下打开作为工作流的一部分。
 
@@ -46,13 +49,13 @@ ms.locfileid: "11238179"
 > [!NOTE]
 > 只能将会话 cookie 从 Microsoft Edge 共享到 Internet Explorer。 无法反向共享会话 cookie（从 Internet Explorer 到 Microsoft Edge）。
 
-##  <a name="how-cookie-sharing-works"></a>Cookie 共享的工作原理
+## <a name="how-cookie-sharing-works"></a>Cookie 共享的工作原理
 
 已对企业模式网站列表 XML 进行了扩展，允许其他元素指定需要从 Microsoft Edge 会话共享到 Internet Explorer 的 cookie。  
 
 第一次在 Microsoft Edge 会话中创建 Internet Explorer 模式选项卡时，所有匹配的 cookie 都会共享到 Internet Explorer 会话。 随后，任何时候添加、删除或修改与规则相匹配的 cookie，都将作为 Internet Explorer 会话的更新发送。 更新网站列表时，也会重新评估共享 cookie 的集合。
 
-###  <a name="updated-schema-elements"></a>已更新的架构元素
+### <a name="updated-schema-elements"></a>已更新的架构元素
 
 下表介绍了为支持 cookie 共享功能而添加的 \<shared-cookie\> 元素。
 
@@ -61,7 +64,7 @@ ms.locfileid: "11238179"
 | \<shared-cookie **domain**=".contoso.com" **name**="cookie1"\>\</shared-cookie\><br><br>或者<br><br>\<shared-cookie **host**="subdomain.contoso.com" **name**="cookie2"\>\</shared-cookie\>   |**（必需）**\<shared-cookie\> 元素至少需要 *域*（对于域 cookie）或 *主机*（对于仅限主机 cookie）属性和 *名称* 属性。<br>这些必须分别与 cookie 的域和名称完全匹配。 **请注意，** 子域不匹配。<br><br>*域*属性用于域 cookie（允许使用前导圆点，但可选择）。<br>*主机*属性用于仅限主机的 cookie（前导圆点错误）。 指定“两者”或者“两者都不”均会导致错误。<br>* 如果在 cookie 字符串中指定域（通过 HTTP Set-Cookie 响应头或 document.cookie JS API），则 cookie 是域 cookie。 域 cookie 适用于指定域和所有子域。 如果未在 cookie 字符串中指定域，则 cookie 是仅限主机的 cookie，并且仅适用于其设置的特定主机。 请注意，诸如单字主机名（例如 http://intranetsite)）和 IP 地址（例如 http://10.0.0.1)）的一些 URL 类只能设置仅限主机的 cookie。    |
 | \<shared-cookie **host**="subdomain.contoso.com" **name**="cookie2" **path**="/a/b/c"\>\</shared-cookie\>  | **（可选）** 可指定*路径*属性。 如果未指定路径属性（或者路径属性为空），则无论路径（通配符规则）如何，任何与域/主机和名称匹配的 Cookie 都会与策略匹配。<br><br>如果指定了路径，则它必须完全匹配。<br>如果 cookie 与带有路径的规则匹配，则优先级高于不带路径的规则。 |
 
-#### 共享示例
+#### <a name="sharing-example"></a>共享示例
 
 ```xml
 <site-list version="1">
@@ -71,9 +74,9 @@ ms.locfileid: "11238179"
 </site-list>
 ```
 
-##  <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>另请参阅
 
-- [关于 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [可配置的网站信息](https://docs.microsoft.com/deployedge/edge-learnmore-configurable-sites-ie-mode)
-- [其他企业模式信息](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [关于 IE 模式](./edge-ie-mode.md)
+- [可配置的网站信息](./edge-learnmore-configurable-sites-ie-mode.md)
+- [其他企业模式信息](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

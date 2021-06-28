@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 发布计划
 ms.author: aguta
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 03/18/2021
+ms.date: 06/18/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 发布计划
-ms.openlocfilehash: a78c56d4c20da711eb73679dbe1c974bfac3c869
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 578a7a3c1a87aee1acc01715c735d5eea9ab67c0
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11448176"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617965"
 ---
 # <a name="microsoft-edge-release-schedule"></a>Microsoft Edge 发布计划
 
@@ -41,10 +41,10 @@ Microsoft 提供了四个称为“频道”的选项，用于管理为 Microsoft
 
 | 版本 | 发布状态 | Beta 渠道<br>发布周 | 稳定渠道<br>发布周 |
 |---------|-----|------|--------|
-| 88 | 已发布<br>版本 | 2020 年 12 月 9 日<br>[88.0.705.18](./microsoft-edge-relnote-beta-channel.md#version-88070518-december-9) | 2021 年 1 月 21 日<br>[88.0.705.50](./microsoft-edge-relnote-stable-channel.md#version-88070550-january-21)|
-| **89** | 已发布<br>版本 | 2021 年 2 月 3 日<br>[89.0.774.18](./microsoft-edge-relnote-beta-channel.md#version-89077418-february-3) | **2021年3月4日**<br>**[89.0.774.45](./microsoft-edge-relnote-stable-channel.md#version-89077445-march-21)** |
-| **90** | 已发布<br>版本 | **2021 年 3 月 16 日**<br>**[90.0.818.8](./microsoft-edge-relnote-beta-channel.md#version-9008188-march-16)** | 2021 年 4 月 15 日这一周 |
-| 91 | 目标版本 | 2021 年 4 月 27 日这一周 | 2021 年 5 月 27 日这一周 |
+| 88 | 已发布<br>版本 | 2020 年 12 月 9 日<br>[88.0.705.18](/microsoft-edge-relnote-archive-beta-channel.md#version-88070518-december-9) | 2021 年 1 月 21 日<br>[88.0.705.50](/microsoft-edge-relnote-archive-stable-channel.md#version-88070550-january-21)|
+| 89 | 已发布<br>版本 | 2021 年 2 月 3 日<br>[89.0.774.18](/microsoft-edge-relnote-beta-channel.md#version-89077423-february-8) | 2021年3月4日<br>[89.0.774.45](/microsoft-edge-relnote-stable-channel.md#version-89077445-march-4) |
+| **90** | 已发布<br>版本 | 2021 年 3 月 16 日<br>[90.0.818.8](/microsoft-edge-relnote-beta-channel.md#version-9008188-march-16) | **2021 年 4 月 15 日**<BR>**[90.0.818.39](/microsoft-edge-relnote-stable-channel#version-90081839-april-15)** |
+| **91** | 已发布<br>版本 | **2021 年 4 月 30 日**<br>[91.0.864.11](/microsoft-edge-relnote-beta-channel.md#version-91086411-april-30) | **2021 年 5 月 27 日**<BR>**[91.0.864.37](/microsoft-edge-relnote-stable-channel#version-91086437-may-27)** |
 | 92 | 目标版本 | 2021 年 6 月 8 日这一周 | 2021 年 7 月 22 日这一周 |
 | 93 | 目标版本 | 2021 年 8 月 3 日这一周 | 2021 年 9 月 2 日这一周 |
 | 94 | 目标版本 | 2021 年 9 月 1 日这一周 | 2021 年 9 月 23 日这一周 |
@@ -60,10 +60,10 @@ Beta 和 Stable 主要版本的触发因素是等效的 Chromium 版本。
 
 Stable 频道的日期参考（已发布/发布周）参考渐进式部署的开始日期。
 
-我们使用渐进式部署模型，这意味着任何给定设备的新版本都可能会在未来几天内错开提供。 有关详细信息，请参阅 [Microsoft Edge Stable 频道的渐进式部署](microsoft-edge-update-progressive-rollout.md)。
+我们使用渐进式部署模型，这意味着任何给定设备的新版本都可能会在未来几天内错开提供。 有关详细信息，请参阅 [Microsoft Edge Stable 频道的渐进式部署](/deployedge/microsoft-edge-update-progressive-rollout)。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [Microsoft Edge 频道](microsoft-edge-channels.md)
+- [Microsoft Edge 频道](/deployedge/microsoft-edge-channels)
 - [渠道下载](https://www.microsoft.com/edge/business/download)

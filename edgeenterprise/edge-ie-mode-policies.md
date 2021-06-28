@@ -1,23 +1,26 @@
 ---
 title: 配置 IE 模式策略
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 03/29/2021
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 配置 IE 模式策略
-ms.openlocfilehash: a2abf6f6ef71c1f30786031ef19b9633bfafc43f
-ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
+ms.openlocfilehash: d73a9649619a746fd1ef382f0911ad7e45255f06
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "11470160"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617432"
 ---
 # <a name="configure-ie-mode-policies"></a>配置 IE 模式策略
+
+>[!Note]
+> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表，[请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文介绍了如何配置 IE 模式策略。
 
@@ -30,8 +33,8 @@ ms.locfileid: "11470160"
 2. [将网站从 Microsoft Edge 重定向到 IE 模式](#redirect-sites-from-microsoft-edge-to-ie-mode)
 3. （可选）[将网站从 IE 重定向到 Microsoft Edge](#redirect-sites-from-ie-to-microsoft-edge)
 
-    1. 如果已准备好禁用 IE11 应用，请按照 [禁用 Internet Explorer 11 应用"中的步骤](https://docs.microsoft.com/deployedge/edge-ie-disable-ie11)
-    2. 否则，请按照"将网站从 IE 重定向到 Microsoft Edge [中的其余步骤](https://docs.microsoft.com/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge)
+    1. 如果已准备好禁用 IE11 应用，请按照 [禁用 Internet Explorer 11 应用"中的步骤](/deployedge/edge-ie-disable-ie11)
+    2. 否则，请按照"将网站从 IE 重定向到 Microsoft Edge [中的其余步骤](/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge)
 
 > [!NOTE]
 > 可通过 Intune 来配置启用 IE 模式的策略。 有关详细信息，请参阅[将 Microsoft Edge 添加到 Microsoft Intune](/intune/apps/apps-windows-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json)和[使用 Microsoft Intune 配置 Microsoft Edge 策略](./configure-edge-with-intune.md)。
@@ -43,8 +46,8 @@ ms.locfileid: "11470160"
 ### <a name="enable-internet-explorer-integration-using-group-policy"></a>使用组策略启用 Internet Explorer 集成
 
 1. 下载并使用最新的 [Microsoft Edge 策略模板](https://www.microsoft.com/en-us/edge/business/download)。
-2. 组策略编辑器。
-3. 单击**计算机配置** > **管理模板** > **Microsoft Edge**。
+2. 打开组策略编辑器。
+3. 单击**用户配置/计算机配置** > **管理模板** > **Microsoft Edge**。
 4. 双击**配置 Internet Explorer 集成**。
 5. 选中**已启用**。
 6. 在**选项**下，将下拉列表值设置为 
@@ -83,8 +86,8 @@ IE 模式可使用为 Internet Explorer 配置 Enterprise Site List 的现有策
 
 1. 创建或重用 Site List XML
     1. 所有具有 _\<open-in\>IE11\</open-in\>_ 元素的站点现在都将在 IE 模式下打开。
-2. 组策略编辑器。
-3. 单击**计算机配置** > **管理模板** > **Windows 组件** > **Internet Explorer**。
+2. 打开组策略编辑器。
+3. 单击**用户配置/计算机配置** > **管理模板** > **Windows 组件** > **Internet Explorer**。
 4. 双击**使用企业模式 IE 网站列表**。
 5. 选中**已启用**。
 6. 在**选项**下，键入网站列表的位置。 可以使用以下位置之一：
@@ -99,8 +102,8 @@ IE 模式可使用为 Internet Explorer 配置 Enterprise Site List 的现有策
 
 1. 创建或重用 Site List XML
     1. 所有具有 _\<open-in\>IE11\</open-in\>_ 元素的站点现在都将在 IE 模式下打开。
-2. 组策略编辑器。
-3. 单击**计算机配置** > **管理模板** > **Microsoft Edge**。
+2. 打开组策略编辑器。
+3. 单击**用户配置/计算机配置** > **管理模板** > **Microsoft Edge**。
 4. 双击**配置企业模式站点列表**。
 5. 选中**已启用**。
 6. 在**选项**下，键入网站列表的位置。 可以使用以下位置之一：
@@ -118,17 +121,17 @@ IE 模式可使用为 Internet Explorer 配置 Enterprise Site List 的现有策
 > 本地 Intranet 区域不但包含显式添加的网站，还分配有通过启发分配到此区域的网站。 这可以包括无点主机名（例如，https****://payroll****），以及代理配置脚本配置为不使用代理的网站。 如果外部参与方控制 DNS 或代理，它们可能会强制让网站在 IE 模式下运行。
 
 1. 打开本地组策略编辑器。
-2. 单击**计算机配置** > **管理模板** > **Microsoft Edge**。
-3. 双击**将所有 Intranet 站点都发送到 Internet Explorer**。
+2. 单击**用户配置/计算机配置** > **管理模板** > **Microsoft Edge**。
+3. 双击**将所有 Intranet 站点发送到 Internet Explorer**。
 4. 选择**已启用**，然后单击**确定**或**应用**以保存策略设置。
 
 ## <a name="redirect-sites-from-ie-to-microsoft-edge"></a>将网站从 IE 重定向到 Microsoft Edge
 
 可以阻止用户使用 Internet Explorer 浏览不需要 IE 模式的网站。 Internet Explorer 可自动将网站列表中没有的网站重定向到 Microsoft Edge。
 
-1. 组策略编辑器。
-2. 依次单击“计算机配置”**** > “管理工具”**** > “Windows 组件”**** > “Internet Explorer”****。
-3. 双击“将 Enterprise Mode Site List 中不包含的所有网站发送到 Microsoft Edge”****。
+1. 打开组策略编辑器。
+2. 依次单击 **“计算机配置”** > **“管理工具”** > **“Windows 组件”** > **“Internet Explorer”**。
+3. 双击 **“将 Enterprise Mode Site List 中不包含的所有网站发送到 Microsoft Edge”**。
 4. 选中“已启用”****
 5. 单击**确定**或**应用**以保存这些设置。
 6. 双击“配置要用于打开重定向网站的 Microsoft Edge 渠道”****。
