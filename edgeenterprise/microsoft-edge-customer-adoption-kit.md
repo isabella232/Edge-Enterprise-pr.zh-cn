@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 客户采用材料
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlynd
-ms.date: 03/01/2021
+ms.date: 06/23/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 客户采用材料
-ms.openlocfilehash: 4752b0b5221d0134c68a50153679979449d893ca
-ms.sourcegitcommit: 81383d92dba379d5e6073066c4cdcc2761390f8f
+ms.openlocfilehash: f8a37bceeee9b55587a14a97a5b64b73ec27d23f
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11385387"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617833"
 ---
 # <a name="customer-adoption-materials-for-microsoft-edge"></a>Microsoft Edge 的客户采用材料
 
@@ -26,17 +26,28 @@ ms.locfileid: "11385387"
 ## <a name="customer-adoption-kit"></a>客户采用工具包
 
 客户采用工具包中包含以下材料：
+- Internet Explorer 停用工具包 **(提供英语、德语、西班牙语、法语、日语、韩语、简体中文)**
+    - 采用电子邮件
+    - 传单
+    - 信息图
+    - 网站集表单
+- 常规采用工具包
+    - IT 部署指南
+    - 用户入门指南
+    - 采用电子邮件模板
+    - 广告
+    - 数字标牌
+    - 单呼机
+    - 演示视频和 GIF
+    - Web 资源链接
 
-- IT 部署指南
-- 用户入门指南
-- 采用电子邮件模板
-- 广告
-- 数字标牌
-- 单呼机
-- 演示视频和 GIF
-- Web 资源链接
+采用工具包提供英语和其他几种语言版本，包括法语、德语和日语。 在 [Microsoft Edge 客户采用工具包下载中心](https://www.microsoft.com/download/details.aspx?id=102119) 选择你的首选语言。
 
-采用工具包提供英语和其他几种语言版本，包括法语、德语和日语。 在 Microsoft Edge 客户采用工具包下载中心 [选择你的首选语言](https://www.microsoft.com/download/details.aspx?id=102119)。
+### <a name="internet-explorer-ie-retirement-resources"></a>Internet Explorer (IE)停用资源
+
+查找有价值的资源和专家指南，以帮助组织安全快速地从 IE 移动到Microsoft Edge。
+
+:::image type="content" source="media/customer-adoption-not-md/Internet Explorer Retirement Screenshot.png" alt-text="Internet Explorer 停用":::
 
 ### <a name="it-deployment-guide"></a>IT 部署指南
 
@@ -65,7 +76,7 @@ ms.locfileid: "11385387"
 - Microsoft 必应搜索
 - 安全性
 
-:::image type="content" source="media/customer-adoption-not-md/ms-edge-new-tab-page.png" alt-text="新建选项卡页面":::
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-new-tab-page.png" alt-text="“新建选项卡”页面":::
 
 ### <a name="banners"></a>广告
 
