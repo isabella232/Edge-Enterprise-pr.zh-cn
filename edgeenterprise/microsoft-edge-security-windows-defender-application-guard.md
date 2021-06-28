@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 和 Microsoft Defender 应用程序防护
 ms.author: srugh
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlyn
-ms.date: 02/05/2021
+ms.date: 05/06/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
-ms.openlocfilehash: 2dc1c5b35003c7de4fa474764c46a792bf1e3439
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 7374810eb19ada298963817844e52184c0271a8c
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447166"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617992"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
 
@@ -50,6 +50,24 @@ ms.locfileid: "11447166"
 ## <a name="whats-new"></a>新增功能
 
 新版 Microsoft Edge 浏览器中的应用程序防护支持与 Microsoft Edge 旧版具有同等的功能，并包括多项改进。
+
+### <a name="favorites-synchronizing-from-the-host-to-the-container"></a>从主机同步到容器的收藏夹
+
+我们的一些客户一直要求在“应用程序防护”中实现主机浏览器和容器之间的收藏夹同步。 从 Microsoft Edge 版本 91 开始，用户现在可以选择配置“应用程序防护”以将其收藏夹从主机同步到容器。 这确保了容器上也可显示新的收藏夹。
+
+可通过策略控制此支持。 可以更新 Edge 策略 [ApplicationGuardFavoritesSyncEnabled](/deployedge/microsoft-edge-policies#applicationguardfavoritessyncenabled) 以启用或禁用收藏夹同步。
+
+> [!Note]
+> 出于安全原因，收藏夹同步仅可从主机同步到容器，而不无法反过来同步。 为了确保在主机和容器之间有一个统一的收藏夹列表，我们已在容器内禁用了收藏夹管理。
+
+### <a name="identify-network-traffic-originating-from-the-container"></a>标识源自容器的网络流量
+
+多个客户在特定配置中使用 WDAG，他们想要识别来自容器的网络流量。 其中的一些方案包括:
+
+- 若要限制仅访问少数几个不受信任的网站
+- 仅允许从容器中访问 Internet
+
+从 Microsoft Edge 版本 91 开始，内置支持对来自“应用程序防护”容器的网络流量进行标记，允许企业使用代理筛选掉流量并应用特定的策略。 可以使用标头来标识哪些流量通过容器或主机使用 [ApplicationGuardTrafficIdentificationEnabled](/deployedge/microsoft-edge-policies#applicationguardtrafficidentificationenabled)。
 
 ### <a name="extension-support-inside-the-container"></a>容器内的扩展支持
 
