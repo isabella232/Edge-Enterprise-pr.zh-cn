@@ -35,7 +35,7 @@ ms.locfileid: "11618042"
 2. 在 "**已安装的扩展**"下，单击 "**打包扩展**" 以创建 CRX 文件。
 3. 使用 "**包扩展**" 对话框查找具有扩展源的目录。 选择目录，然后单击"**打包扩展**"。  这将创建 CRX 文件以及 PEM 文件。 保存 PEM 文件，因为对扩展进行版本更新需要该文件。 下一个屏幕截图显示了用于定位扩展根目录的"**包扩展**"对话框。
 
-   :::image type="content" source="media/microsoft-edge-manage-extensions-webstore/manage-extensions-pack-dialog.png" alt-text="用于查找扩展的源代码的"包扩展"对话框。":::
+   :::image type="content" source="media/microsoft-edge-manage-extensions-webstore/manage-extensions-pack-dialog.png" alt-text="用于查找扩展的源代码的包扩展对话框。":::
 
    > [!IMPORTANT]
    > 将 PEM 文件存储在安全的位置，因为它是扩展的密钥，并且在将来更新时需要用到。
