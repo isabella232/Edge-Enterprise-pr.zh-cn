@@ -3,31 +3,31 @@ title: Microsoft Edge 版本回滚
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 02/05/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 版本回滚
-ms.openlocfilehash: 1c12251802b2ca1d5012bd7c445c7a34f7e8539c
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
-ms.translationtype: HT
+ms.openlocfilehash: 997bf68795ab7cd30935b36ecdf0a7d1854ad194
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314705"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642958"
 ---
-# 视频：Microsoft Edge 版本回滚
+# <a name="video-microsoft-edge-version-rollback"></a>视频：Microsoft Edge 版本回滚
 
 此视频演示 Microsoft Edge 如何支持版本回滚。 单击下一张屏幕截图，观看主要项目经理 Andy Zeigler 的视频。
 
 [![Microsoft Edge 版本回滚](media/microsoft-edge-video-version-rollback/0.png)](http://www.youtube.com/watch?v=pXhXHvKUa_c "Microsoft Edge version rollback")
 
-##  <a name="about-the-video"></a>关于视频
+## <a name="about-the-video"></a>关于视频
 
 版本回滚可让你将 Microsoft Edge 浏览器版本替换为早期版本。 请了解 Microsoft Edge 中的回滚如何为企业提供一个安全网络，以帮助在解决 Microsoft Edge 中任何问题时减少潜在影响。
 
-##  <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [如何将 Microsoft Edge 回退到以前的版本](edge-learnmore-rollback.md)

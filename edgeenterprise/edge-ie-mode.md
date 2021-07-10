@@ -3,19 +3,19 @@ title: 什么是 Internet Explorer 模式？
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 05/19/2021
+ms.date: 06/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解 Microsoft Edge 中的 Internet Explorer 模式如何提供对需要 Internet Explorer 11 的网站的访问和新式网站的访问权限。
-ms.openlocfilehash: 39f8797049ac1051d49c63c880b8436dd611d9c2
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
+ms.openlocfilehash: 5903e8a50f0afa50daa5921f3c97f3dbcbf0c3c5
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617412"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641388"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>什么是 Internet Explorer (IE) 模式？
 

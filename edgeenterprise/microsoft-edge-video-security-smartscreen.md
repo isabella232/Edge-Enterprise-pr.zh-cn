@@ -3,34 +3,34 @@ title: Microsoft Edge 上的安全浏览
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 02/05/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 Microsoft Defender SmartScreen 在 Microsoft Edge 上安全浏览
-ms.openlocfilehash: c70cc1d82ab5d0c5cf7847c277e16151fc3128d8
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
-ms.translationtype: HT
+ms.openlocfilehash: 41f32daf407dafd3babafc1ce88ba5ee621921cf
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314695"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642968"
 ---
-# 视频：Microsoft Edge 上的安全浏览
+# <a name="video-secure-browsing-on-microsoft-edge"></a>视频：Microsoft Edge 上的安全浏览
 
 此视频演示 Microsoft Edge 如何支持使用 Microsoft Defender SmartScreen 进行安全浏览。 单击下一张屏幕截图，观看项目经理 Eva Chen 的视频。
 
 [![Microsoft Edge 上的安全浏览](media/microsoft-edge-video-security-smartscreen/0.png)](http://www.youtube.com/watch?v=s9kk88SkjLw "Secure browsing on Microsoft Edge")
 
-##  <a name="about-the-video"></a>关于视频
+## <a name="about-the-video"></a>关于视频
 
 Microsoft Edge 使用 Microsoft Defender SmartScreen 帮助你实现安全浏览。 请了解 NSS 实验室的最新网络钓鱼和恶意软件保护结果，并详细了解 Microsoft Defender SmartScreen 如何为 Microsoft Edge 带来高级企业安全集成。
 
 > [!TIP]
 > 打开 *edge://settings* 中可能不需要的应用的保护设置。
 
-##  <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [适用于 Microsoft Defender SmartScreen 的 Microsoft Edge 支持](microsoft-edge-security-smartscreen.md)

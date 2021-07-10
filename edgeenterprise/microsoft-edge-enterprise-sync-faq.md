@@ -3,19 +3,19 @@ title: Microsoft Edge 企业同步常见问题解答
 ms.author: collw
 author: dan-wesley
 manager: silvanam
-ms.date: 03/08/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 有关 Microsoft Edge 企业同步的常见问题解答。
-ms.openlocfilehash: 4bb41c8d7ded64fcc0b4fd4843ef2b7ec0adec23
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: a13e1f02f6e871004d45f81159d5cf0a3397b6ad
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617762"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11643138"
 ---
 # <a name="microsoft-edge-enterprise-sync-faq"></a>Microsoft Edge 企业同步常见问题解答
 

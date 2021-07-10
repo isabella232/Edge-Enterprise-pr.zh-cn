@@ -3,19 +3,19 @@ title: 禁用 Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 05/19/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge Internet Explorer 11 和使用Internet Explorer模式。
-ms.openlocfilehash: ae4d936df7e432eee250e1c7327acfd206d86410
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 9ea99c794dc06a0eb5167e56e72b6e7b6ee70212
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617482"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641508"
 ---
 # <a name="disable-internet-explorer-11"></a>禁用 Internet Explorer 11
 
@@ -72,8 +72,8 @@ ms.locfileid: "11617482"
 
 1. 确保你有必备的操作系统更新。 此步骤将直接更新计算机上的 ADMX 文件（特别是 inetres.adml 和 inetres.admx）。 请注意，如果要更新中央存储，则需要从有必备更新的计算机上复制 .adml 和 .admx 文件。 有关详细信息，请参阅[创建和管理中央存储](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. 打开组策略编辑器。
-3. 转到***计算机配置/管理模板/Windows 组件/Internet Explorer。*** 
-4. 双击禁用 **Internet Explorer 11 作为独立浏览器**。
+3. 转到**_计算机配置/管理模板/Windows组件/Internet Explorer_*_。 
+4. 双击 _*禁用Internet Explorer 11 作为独立浏览器**。
 5. 选择 **"已启用"。**
 6. 在 **"** 选项"下，选取下列值之一：
 

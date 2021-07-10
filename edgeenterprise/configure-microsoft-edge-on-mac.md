@@ -3,21 +3,21 @@ title: 使用 .plist 配置用于 macOS 的 Microsoft Edge
 ms.author: brianalt
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 11/30/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 .plist 在 macOS 上配置 Microsoft Edge 策略设置
-ms.openlocfilehash: abe110ab3589cc9276f28590273ece2d372be3b8
-ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
-ms.translationtype: HT
+ms.openlocfilehash: d2e604e13f0fb7f81b2fb492073eba0751407771
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "11194681"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641618"
 ---
-# 使用 .plist 配置适用于 macOS 的 Microsoft Edge 策略设置
+# <a name="configure-microsoft-edge-policy-settings-for-macos-using-a-plist"></a>使用 .plist 配置适用于 macOS 的 Microsoft Edge 策略设置
 
 本文介绍了如何使用属性列表 (.plist) 文件在 macOS 上配置 Microsoft Edge。 你将了解如何创建此文件，然后将其部署到 Microsoft Intune。
 
@@ -26,7 +26,7 @@ ms.locfileid: "11194681"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-##  <a name="configure-microsoft-edge-policies-on-macos"></a>在 macOS 上配置 Microsoft Edge 策略
+## <a name="configure-microsoft-edge-policies-on-macos"></a>在 macOS 上配置 Microsoft Edge 策略
 
 第一步是创建 plist。 你可以使用任何文本编辑器创建 plist 文件，也可以[使用终端创建配置文件](#create-a-configuration-profile-using-terminal)。 但是，通过使用为你设置 XML 代码格式的工具，可以更加轻松地创建和编辑 plist 文件。 *Xcode* 是可从以下其中一个位置获取的免费集成开发环境：
 
@@ -42,7 +42,7 @@ ms.locfileid: "11194681"
 
 最后一步是使用首选的 MDM 提供程序（如 Microsoft Intune ）将 plist 部署到用户的 Mac 设备。 有关说明，请参阅[部署 plist](#deploy-your-plist)。
 
-###  <a name="create-a-configuration-profile-using-terminal"></a>使用终端创建配置文件
+### <a name="create-a-configuration-profile-using-terminal"></a>使用终端创建配置文件
 
 1. 在终端中，使用以下命令和你的首选设置在桌面上创建 Microsoft Edge plist：
 
@@ -61,13 +61,13 @@ ms.locfileid: "11194681"
 > [!NOTE]
 > plist 或 xml 文件的内容中应仅有键值对。 将文件上传到 Intune 之前，请从你的文件中删除所有 \<plist> 和 \<dict> 值以及 xml 标头。 该文件应仅包含键值对。
 
-##  <a name="deploy-your-plist"></a>部署你的 plist
+## <a name="deploy-your-plist"></a>部署你的 plist
 
-对于 Microsoft Intune，请创建面向 macOS 平台的新设备配置文件，然后选择*首选项文件*配置文件类型。 将 **com.microsoft.Edge** 作为目标首选项域名，然后上传你的 plist。 有关详细信息，请参阅[使用 Microsoft Intune 将属性列表文件添加到 macOS 设备中](https://docs.microsoft.com/intune/configuration/preference-file-settings-macos)。
+对于 Microsoft Intune，请创建面向 macOS 平台的新设备配置文件，然后选择*首选项文件*配置文件类型。 将 **com.microsoft.Edge** 作为目标首选项域名，然后上传你的 plist。 有关详细信息，请参阅[使用 Microsoft Intune 将属性列表文件添加到 macOS 设备中](/intune/configuration/preference-file-settings-macos)。
 
 对于 Jamf，将 plist 文件作为*自定义设置*负载上传。
 
-##  <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
 - [使用 Jamf 为 macOS 配置](configure-microsoft-edge-on-mac-jamf.md)

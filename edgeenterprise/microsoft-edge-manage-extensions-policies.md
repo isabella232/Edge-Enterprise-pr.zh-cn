@@ -3,19 +3,19 @@ title: 使用组策略管理 Microsoft Edge 扩展
 ms.author: aspoddar
 author: AndreaLBarr
 manager: balajek
-ms.date: 06/09/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用组策略在企业中管理 Microsoft Edge 扩展
-ms.openlocfilehash: a633b036c1733716dfb257b4711bca57bd6721f0
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: dad239a448ec1f0ebef60c7072bfaad5c3baed57
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618044"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641368"
 ---
 # <a name="use-group-policies-to-manage-microsoft-edge-extensions"></a>使用组策略管理 Microsoft Edge 扩展
 
@@ -140,7 +140,7 @@ ms.locfileid: "11618044"
 2. 选择“**已启用**”。
 3. 单击“**显示**”。
 4. 输入要阻止的扩展的应用 ID。 添加多个应用 ID 时，请对每个 ID 使用单独的行。
-5. 要阻止所有扩展，请在策略中键入 ** \***，以防止安装任何扩展。 可以将此项与“允许安装特定扩展”策略结合使用，以仅允许安装某些扩展。 下一个屏幕截图显示将基于提供的应用 ID 而阻止的扩展。
+5. 若要阻止所有扩展，在策略中键入 * *\** _ 以防止安装任何扩展。 可以将此项与“允许安装特定扩展”策略结合使用，以仅允许安装某些扩展。 下一个屏幕截图显示将基于提供的应用 ID 而阻止的扩展。
 
    :::image type="content" source="media/microsoft-edge-manage-extensions-policies/manage-extensions-gp-block-2.png" alt-text="使用应用 ID 阻止扩展。":::
 
@@ -154,7 +154,7 @@ ms.locfileid: "11618044"
 
 使用 [ExtensionInstallForcelist](/DeployEdge/microsoft-edge-policies#extensioninstallforcelist) 策略来控制阻止或允许哪些扩展。 使用以下步骤作为指南以强制安装扩展。
 
-1. 在组策略编辑器中，转到“**管理模板”>“Microsoft Edge”>“扩展**”，然后选择“**控制哪些扩展以静默方式安装**”。
+1. 在组策略编辑器中，转到 *_Administrative Templates> Microsoft Edge > Extensions >** ，然后选择控制以静默方式安装的**扩展**。
 2. 选择“**已启用**”。  
 3. 单击“**显示**”。
 4. 输入要强制安装的扩展的应用 ID。  

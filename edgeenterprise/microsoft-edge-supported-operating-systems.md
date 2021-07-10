@@ -3,19 +3,19 @@ title: Microsoft Edge 支持的操作系统
 ms.author: srugh
 author: srugh
 manager: seanlynd
-ms.date: 05/17/2021
+ms.date: 06/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 支持的操作系统
-ms.openlocfilehash: 2e0002e38c090676e5443718b36fb2fb7956ba15
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
+ms.openlocfilehash: 3c5af933e6a9e6bf66f0f486f77c8ddd9364a53e
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617892"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642618"
 ---
 # <a name="microsoft-edge-supported-operating-systems"></a>Microsoft Edge 支持的操作系统
 
@@ -36,12 +36,12 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 
 - Windows 7 * *
 - Windows 8.1
-- Windows 10 SAC 1709 及更高版本***
+- Windows 10 SAC 1709 及更高版本 **_
 - Windows 10 企业版 2015 LTSC
 - Windows 10 企业版 2016 LTSC
 - Windows 10 企业版 2019 LTSC
 - Windows 10 企业版多会话
-- Windows 10 IoT 企业版 SAC ****
+- Windows 10 IoT 企业版 SAC _ ***
 - Windows 10 IoT 企业版 2019 LTSC ****
 
 ### <a name="windows-server"></a>Windows Server
@@ -56,9 +56,9 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 > [!IMPORTANT]
 > ** 我们将继续支持在 Windows 7 和 Windows Server 2008 R2 上运行 Microsoft Edge，直到 2022 年 1 月 15 日。 这些操作系统已不再受支持，Microsoft 建议你移至受支持的操作系统（如 Windows 10）。 Microsoft Edge 可帮助你提高上网安全性，但你的电脑仍可能容易受到安全风险的影响。 要在这些操作系统中支持 IE 模式，设备需要具有[适用于 Windows 7 的扩展安全更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 如果未安装 Windows 7 扩展安全更新，Internet Explorer 功能很容易受到安全风险的影响。 此外，如果未通过扩展安全更新继续提供服务，IE 模式功能可能停止运行。  
 >
-> *** 与上面类似，对于不再享受支持服务但 Microsoft Edge 支持的 Windows 10 SAC 版本，建议尽快升级到支持的 Win10 SAC 版本以保持安全。 在此状态下支持 Microsoft Edge 应视为用于进入支持的操作系统状态的一种临时途径。
+> **_与上面类似，对于不再享受支持服务但 Microsoft Edge 支持的 Windows 10 SAC 版本，建议尽快升级到支持的 Win10 SAC 版本以保持安全。 在此状态下支持 Microsoft Edge 应视为用于进入支持的操作系统状态的一种临时途径。
 >
-> Microsoft Edge OPK 可在 MOO for IoT OE 上预安装并分发，并将其作为基于 Windows 10 IoT Enterprise 的解决方案的一部分进行分发。
+> _*** Microsoft Edge OPK 可以在 MOO 上为 IoT OEM 预装和分发，作为 Windows 10 IoT 企业版的解决方案的一部分。
 
 ### <a name="macos"></a>macOS
 

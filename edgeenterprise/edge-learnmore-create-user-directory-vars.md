@@ -3,19 +3,19 @@ title: 创建 Microsoft Edge 用户数据目录变量
 ms.author: brianalt
 author: AndreaLBarr
 manager: srugh
-ms.date: 04/21/2021
+ms.date: 07/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何创建 Microsoft Edge 用户数据目录变量
-ms.openlocfilehash: 5ec78f16c7e5cd43f01845f35b8473494cd0c4bf
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 2e85e8eebac4a636d90fd0b5da7520c9a86a2de0
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618030"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641448"
 ---
 # <a name="create-microsoft-edge-user-data-directory-variables"></a>创建 Microsoft Edge 用户数据目录变量
 
@@ -62,7 +62,7 @@ Microsoft Edge 支持以下路径变量。
 | **${global_app_data}** | 系统范围的“应用程序数据”文件夹。 示例：*C:\AppData* |
 | **${program_files}** | 当前进程的“程序文件”文件夹。 此文件夹取决于它是 32 位还是 64 位进程。 示例解决方法：*C:\Program Files (x86)* |
 | **${windows}** | “Windows”文件夹。 示例：*C:\Windows* |
-| **${client_name)** | 连接到 RDP 或 Citrix 会话的客户端电脑的名称。 如果在本地会话中使用此变量，则此变量为空。 如果在路径中使用它，请在它前面加上一定不为空的部分。 示例：*对于远程会话，C:\edge_profiles\session_${client_name}* 将解析为 *C:\edge_profiles\session_&lt;ForlocalSessions&gt;* 和 *C:\edge_profiles\session_&lt;SomePCname&gt;*。 |
+| **${client_name}** | 连接到 RDP 或 Citrix 会话的客户端电脑的名称。 如果在本地会话中使用此变量，则此变量为空。 如果在路径中使用它，请在它前面加上一定不为空的部分。 示例：*对于远程会话，C:\edge_profiles\session_${client_name}* 将解析为 *C:\edge_profiles\session_&lt;ForlocalSessions&gt;* 和 *C:\edge_profiles\session_&lt;SomePCname&gt;*。 |
 | **${session_name}** | 活动会话的名称。 使用此名称可区分使用单个用户配置文件的多个同时连接的远程会话。 示例：*用于本地桌面会话的 WinSta0* |
 
 #### <a name="macos-only"></a>仅 macOS

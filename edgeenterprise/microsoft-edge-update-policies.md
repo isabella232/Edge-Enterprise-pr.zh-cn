@@ -3,20 +3,20 @@ title: Microsoft Edge 更新策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/12/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 更新程序支持的所有策略的文档
-ms.openlocfilehash: 921a95c0a5e80ba08fa745748ffa8b0da714ea7d
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: a9808981acad544042c6e0ccb59ff755a670c848
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617882"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642318"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新策略
 
@@ -30,7 +30,7 @@ ms.locfileid: "11617882"
 
 |&nbsp;|&nbsp;| |**-**|-| |**[应用程序](#applications)**|[首选项](#preferences)| |**[代理服务器](#proxy-server)**|[Microsoft Edge WebView](#microsoft-edge-webview)|
 ### [<a name="applications"></a>应用程序](#applications-policies)
-|策略名称|标题|
+|策略名称|描述文字|
 |-|-|
 |[InstallDefault](#installdefault)|允许安装默认项|
 |[UpdateDefault](#updatedefault)|更新策略替代默认值|
@@ -43,7 +43,7 @@ ms.locfileid: "11617882"
 |[TargetVersionPrefix](#targetversionprefix)|目标版本覆盖（各渠道）|
 
 ### [<a name="preferences"></a>首选项](#preferences-policies)
-|策略名称|标题|
+|策略名称|描述文字|
 |-|-|
 |[AutoUpdateCheckPeriodMinutes](#autoupdatecheckperiodminutes)|自动更新检查期间替代|
 |[UpdatesSuppressed](#updatessuppressed)|每天中取消自动更新检查的时间段|
