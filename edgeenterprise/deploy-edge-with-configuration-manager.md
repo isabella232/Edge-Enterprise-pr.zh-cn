@@ -3,19 +3,19 @@ title: 使用 System Center Configuration Manager 部署 Microsoft Edge
 ms.author: kvice
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 06/08/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何使用 System Center Configuration Manager (SCCM) 部署 Microsoft Edge。
-ms.openlocfilehash: b403c8924a0f970aaadff2e1b20ebd05c0641a96
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: b0efa986c7f230f455d052f8e003616e081e324a
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617542"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641578"
 ---
 # <a name="deploy-microsoft-edge-using-system-center-configuration-manager"></a><span data-ttu-id="a2103-103">使用 System Center Configuration Manager 部署 Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="a2103-103">Deploy Microsoft Edge using System Center Configuration Manager</span></span>
 

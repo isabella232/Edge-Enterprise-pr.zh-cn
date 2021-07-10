@@ -4,24 +4,24 @@ metadata:
   ms.author: shisub
   author: dan-wesley
   manager: srugh
-  ms.date: 05/19/2021
+  ms.date: 06/29/2021
   audience: ITPro
   ms.topic: conceptual
   ms.prod: microsoft-edge
-  ms.localizationpriority: high
+  ms.localizationpriority: medium
   ms.collection: M365-modern-desktop
   description: Microsoft Edge Internet Explorer 模式的疑难解答和常见问题解答
-  ms.openlocfilehash: d21fdf47fb1774bc69ae3b2478ff3397c3106f04
-  ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
+  ms.openlocfilehash: 6248632a430f9c342624794b595f1cccc3d7d6a8
+  ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/25/2021
-  ms.locfileid: "11618032"
+  ms.lasthandoff: 07/09/2021
+  ms.locfileid: "11641858"
 title: IE 模式疑难解答和常见问题解答
 summary: >
   >[!Note]
 
-  > 有关 Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用 (请参阅 FAQ [) 。](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549) 现在使用的相同 IE11 应用和网站可以在Microsoft Edge模式下Internet Explorer打开。 [在此处了解更多信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+  > Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表，[请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 
   本文介绍了 Microsoft Edge 版本 77 或更高版本的故障排除提示和 FAQ。
@@ -96,7 +96,7 @@ sections:
   - question: >
       IE 模式是否将替换 Internet Explorer 11？
     answer: >
-      是的，Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用，并将于 2022 年 6 月 15 日 (生命周期[常见问题 - Internet Explorer"范围内内容的列表](https://support.microsoft.com/help/17454/)。现在使用的相同 IE11 应用和网站可以在Microsoft Edge模式下Internet Explorer打开。 [在此处了解更多信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+      是的，Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用，并将于 2022 年 6 月 15 日 (生命周期[常见问题 - Internet Explorer"范围内内容的列表](https://support.microsoft.com/help/17454/)。现在使用的相同 IE11 应用和网站可以在Microsoft Edge模式下Internet Explorer打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
   - question: >
       是否可在 IE 模式下的 SharePoint 中使用“使用资源管理器打开”或“在文件资源管理器中查看”？
     answer: >

@@ -3,27 +3,27 @@ title: 你的环境中的 Microsoft Edge
 ms.author: ryhecht
 author: RyanHechtMSFT
 manager: tinad
-ms.date: 02/05/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 你的环境中的 Microsoft Edge
-ms.openlocfilehash: e1418d21ff9e541d83d5b86baf5ff25c50d2299d
-ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
-ms.translationtype: HT
+ms.openlocfilehash: 2381380cb399f6a1fbb5efa9378ffeba20fa774f
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "11313918"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641598"
 ---
-# <span data-ttu-id="a3bf5-103">你的环境中的 Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="a3bf5-103">Microsoft Edge in your environment</span></span>
+# <a name="microsoft-edge-in-your-environment"></a><span data-ttu-id="a3bf5-103">你的环境中的 Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="a3bf5-103">Microsoft Edge in your environment</span></span>
 
 <span data-ttu-id="a3bf5-104">本文介绍了当 Microsoft Edge 旧版达到其服务寿命时如何为部署 Microsoft Edge 做好准备。</span><span class="sxs-lookup"><span data-stu-id="a3bf5-104">This article describes how to prepare to deploy Microsoft Edge when Microsoft Edge Legacy reaches its end of service.</span></span>
 
 <span data-ttu-id="a3bf5-105">根据 Microsoft Edge 产品团队的[博客文章](https://aka.ms/EdgeLegacyEOS)，对 Microsoft Edge 旧版桌面应用程序的支持将在 2021 年 3 月 9 日结束。</span><span class="sxs-lookup"><span data-stu-id="a3bf5-105">As per the Microsoft Edge Product Team’s [blog post](https://aka.ms/EdgeLegacyEOS), support for the Microsoft Edge Legacy desktop application will end on March 9, 2021.</span></span> <span data-ttu-id="a3bf5-106">当你在 4 月应用星期二更新（或“B”）时，它会将 Microsoft Edge 旧版从运行 Windows 10 RS4 至 20H1 的设备上删除，并将其替换为 Microsoft Edge。</span><span class="sxs-lookup"><span data-stu-id="a3bf5-106">When you apply the Update Tuesday (or "B") release in April, it will remove Microsoft Edge Legacy from devices running Windows 10 RS4 through 20H1 and replace it with Microsoft Edge.</span></span>
 
-## <span data-ttu-id="a3bf5-107">如何准备</span><span class="sxs-lookup"><span data-stu-id="a3bf5-107">How to Prepare</span></span>
+## <a name="how-to-prepare"></a><span data-ttu-id="a3bf5-107">如何准备</span><span class="sxs-lookup"><span data-stu-id="a3bf5-107">How to Prepare</span></span>
 
 <span data-ttu-id="a3bf5-108">若要准备通过 4 月的星期二更新将 Microsoft Edge 安装到 Windows 10 RS4 至 20H1 的设备上，建议阅读[规划部署 Microsoft Edge](deploy-edge-plan-deployment.md)。</span><span class="sxs-lookup"><span data-stu-id="a3bf5-108">To prepare for Microsoft Edge being installed on Windows 10 RS4 through 20H1 devices with the Update Tuesday release in April, we recommend reading [Plan your deployment of Microsoft Edge](deploy-edge-plan-deployment.md).</span></span>
 
@@ -33,7 +33,7 @@ ms.locfileid: "11313918"
 
 - <span data-ttu-id="a3bf5-114">**在 2021 年 3 月 9 日的服务结束日期之前删除 Microsoft Edge 旧版桌面应用程序，并部署 Microsoft Edge**。</span><span class="sxs-lookup"><span data-stu-id="a3bf5-114">**Remove the Microsoft Edge Legacy desktop application before its end of service date of March 9, 2021 and deploy Microsoft Edge**.</span></span> <span data-ttu-id="a3bf5-115">对于 Windows 10 RS4 至 20H1，你可以通过使用 Windows 更新实现此操作。</span><span class="sxs-lookup"><span data-stu-id="a3bf5-115">For Windows 10 RS4 through 20H1, you can do this by using Windows Updates.</span></span> <span data-ttu-id="a3bf5-116">有关详细信息，请参阅[使用 Windows 10 更新部署 Microsoft Edge](deploy-edge-with-windows-10-updates.md)。</span><span class="sxs-lookup"><span data-stu-id="a3bf5-116">For more information, see [Deploy Microsoft Edge with Windows 10 updates](deploy-edge-with-windows-10-updates.md).</span></span>
 
-## <span data-ttu-id="a3bf5-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a3bf5-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a3bf5-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a3bf5-117">See also</span></span>
 
 - [<span data-ttu-id="a3bf5-118">Microsoft Edge Enterprise 登录页面</span><span class="sxs-lookup"><span data-stu-id="a3bf5-118">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
 - [<span data-ttu-id="a3bf5-119">规划 Microsoft Edge 部署</span><span class="sxs-lookup"><span data-stu-id="a3bf5-119">Plan your deployment of Microsoft Edge</span></span>](deploy-edge-plan-deployment.md)

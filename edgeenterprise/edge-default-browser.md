@@ -3,19 +3,19 @@ title: 将 Microsoft Edge 设置为 Windows 和 macOS 上的默认浏览器
 ms.author: brianalt
 author: dan-wesley
 manager: srugh
-ms.date: 1/15/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何将 Microsoft Edge 设为默认浏览器
-ms.openlocfilehash: 9151294c34cb2252a7fb32e660c1e3d9e64b5f76
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
-ms.translationtype: HT
+ms.openlocfilehash: 191d7835a0c4aacfc2fde409c57622ff5a351926
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447756"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641538"
 ---
 # <a name="set-microsoft-edge-as-the-default-browser"></a><span data-ttu-id="91edd-103">将 Microsoft Edge 设为默认浏览器</span><span class="sxs-lookup"><span data-stu-id="91edd-103">Set Microsoft Edge as the default browser</span></span>
 

@@ -3,19 +3,19 @@ title: Microsoft Edge 企业版回退
 ms.author: collw
 author: dan-wesley
 manager: srugh
-ms.date: 02/04/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 如何将 Microsoft Edge 回退到以前的版本
-ms.openlocfilehash: 38954f4b293470758b5484591779a3af52c6992c
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 1d20cfe920f8c0b5a8c1c253276555acb11e7916
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617372"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641698"
 ---
 # <a name="how-to-roll-back-microsoft-edge-to-a-previous-version"></a><span data-ttu-id="dfe64-103">如何将 Microsoft Edge 回退到以前的版本</span><span class="sxs-lookup"><span data-stu-id="dfe64-103">How to roll back Microsoft Edge to a previous version</span></span>
 

@@ -3,19 +3,19 @@ title: 配置 Microsoft Edge 企业同步
 ms.author: collw
 author: dan-wesley
 manager: silvanam
-ms.date: 03/08/2021
+ms.date: 06/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 用于配置 Microsoft Edge 以同步收藏夹、密码和其他浏览器数据的管理员和用户选项。
-ms.openlocfilehash: 99edc97bd5f4bab7bf421e0d15e512c5f6f76cc0
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
+ms.openlocfilehash: 5e3813664d3942e84d38e4ae1b4fd17e41049cda
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617752"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642818"
 ---
 # <a name="configure-microsoft-edge-enterprise-sync"></a><span data-ttu-id="a9305-103">配置 Microsoft Edge 企业同步</span><span class="sxs-lookup"><span data-stu-id="a9305-103">Configure Microsoft Edge enterprise sync</span></span>
 
