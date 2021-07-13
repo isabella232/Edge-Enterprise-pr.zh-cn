@@ -3,30 +3,41 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: 1115c8d7822fef7e3784a465d5d4ddfd7b6bd6b1
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: d5e4a4807a12cfd50cd0efaeab672361c68a1508
+ms.sourcegitcommit: e3a30351b02226aa042153f17636d64a12c4518b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11643158"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "11643938"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
 本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 [此处](microsoft-edge-relnote-archive-beta-channel.md)提供了这些发行说明的存档版本。
 
 > [!NOTE]
-> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 即将带来的影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-92090245-july-12"></a>版本 92.0.902.45：7 月 12 日
+
+修复了各种错误和性能问题。
+
+## <a name="version-92090240-july-6"></a>版本 92.0.902.40：7 月 6 日
+
+修复了各种错误和性能问题。
 
 ## <a name="version-92090222-june-21"></a>版本 92.0.902.22：6 月 21 日
 
 ### <a name="feature-updates"></a>功能更新
+
+- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如) 上周的食谱"。
+请注意：这是受控功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 策略调整将网站保留在本地站点列表中的天数。
 请注意，对于端到端体验，Windows 10 版本 1909 需要 KB5003698 或更高版本; Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更高版本。
@@ -34,19 +45,19 @@ ms.locfileid: "11643158"
 - **MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用 [本指南](/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
 
 - **付款工具现在跨设备同步**。 从 Microsoft Edge 版本 92 开始，可以选择跨已登录设备同步付款信息。
-请注意：这是受控功能推出，目前推出率为 50%。 如果看不到此功能，请在我们继续推出时再检查。
+请注意：这是受控功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **"禁用开发人员模式扩展"警告可以永久消除**。 从 Microsoft Edge 版本 92 开始，可以通过单击"不要再次显示此扩展"选项来关闭"禁用开发人员模式扩展"警告。
-请注意：这是受控功能推出，目前推出率为 25%。 如果看不到此功能，请在我们继续推出时再检查。
+请注意：这是受控功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **从工具栏管理扩展**。 工具栏上新增的扩展菜单将允许你轻松隐藏/固定扩展。 管理扩展和查找新扩展的快速链接将使你轻松找到新扩展和管理现有扩展。
-请注意：这是受控功能推出，目前推出率为 25%。 如果看不到此功能，请在我们继续推出时再检查。
+请注意：这是受控功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **自动 HTTPS**。 用户可以选择在可能支持此更安全协议的域上将导航从 HTTP 升级到 HTTPS。 此支持还可以配置为在所有域上尝试 HTTPS 传输。
 请注意：我们正在试验此功能，如果你已选择退出实验，则将不会看到此行为。
 
 - **字体呈现的改进**。 改进了文本呈现，以提高清晰度并降低模糊度。
-请注意：这是受控功能推出，目前推出率为 25%。 如果看不到此功能，请在我们继续推出时再检查。
+请注意：这是受控功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 ### <a name="policy-updates"></a>策略更新
 
@@ -66,7 +77,6 @@ ms.locfileid: "11643158"
 #### <a name="obsoleted-policy"></a>已过时的策略
 
 - [EnableSha1ForLocalAnchors](/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) 允许使用本地信任锚点颁发的 SHA-1 签名的证书。
-
 
 ## <a name="version-9209029-june-8"></a>版本 92.0.902.9：6 月 8 日
 

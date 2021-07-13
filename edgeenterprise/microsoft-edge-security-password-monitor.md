@@ -1,21 +1,21 @@
 ---
 title: 为用户自动启用密码监视器
 ms.author: supalsul
-author: dan-wesley
+author: AndreLBarr
 manager: tulasim
-ms.date: 06/29/2021
+ms.date: 07/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 为用户自动启用密码监视器
-ms.openlocfilehash: 76fc4f0c0ce4bb59ba6b2d4d8a82b61592585918
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: bd1fe390b972c66cd9b4c20ab3a9fabde76c7e03
+ms.sourcegitcommit: 65530c0bad3097a510f507503eae9c5c67db47a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11643088"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "11643879"
 ---
 # <a name="password-monitor-auto-enabled-for-users"></a>为用户自动启用密码监视器
 
@@ -31,12 +31,6 @@ ms.locfileid: "11643088"
 ### <a name="benefits"></a>优势
 
 鉴于这些联机攻击的频率和范围，每个人必须拥有此类保护。 Microsoft Edge 具有针对已知泄露的密码安全检查用户保存的密码的内置功能，如果找到匹配项，则发出警报。  
-
-### <a name="availability"></a>可用性
-
-从 1 月 21 日起，稳定渠道版本 88 中提供了密码监视器。 新版本的推出将逐步进行，可能需要几周时间。更新后用户可以在“**设置**” > “**个人资料**” > “**密码**”页面中看到以下消息和控件。
-
-:::image type="content" source="media/microsoft-edge-security-password-monitor/monitor-enable-option.png" alt-text="启用密码监视器的选项":::
 
 ## <a name="configure-group-policy-for-password-monitor"></a>为密码监视器配置组策略
 
