@@ -3,19 +3,19 @@ title: 重置 Microsoft Edge 数据
 ms.author: collw
 author: dan-wesley
 manager: silvanam
-ms.date: 06/28/2021
+ms.date: 07/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何在云中重置 Microsoft Edge 数据
-ms.openlocfilehash: 19ee60926e36371bd710937fcafc43de7ea035f4
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: dc6c0ae1b1bc31228e9b9b1de315a19e99149134
+ms.sourcegitcommit: 2a00571483e1d169b2b3b59f4fce43262f460a9a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642038"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "11643737"
 ---
 # <a name="reset-microsoft-edge-data-in-the-cloud"></a>重置云中的 Microsoft Edge 数据
 
@@ -35,7 +35,7 @@ ms.locfileid: "11642038"
 
 在执行重置之前，我们建议你备份收藏夹。 使用以下步骤备份收藏夹。
 
-1. 在 Microsoft Edge 中，选择 **“设置和更多”>“收藏夹”>“更多选项”>“导出收藏夹”**。
+1. 在 Microsoft Edge 右上角，选择“**设置和更多 > 收藏夹 > 更多选项 > 导出收藏夹**”。
 2. 选择用来保存收藏夹的文件。 可以键入自己的文件名，或使用 Microsoft Edge 默认提供的名称 “favorites_month_day_year.html” 作为文件名。 例如，”favorites_12_17_20.html”。 如果稍后需要还原收藏夹，可以从该文件中还原。
 3. 单击 **“保存”**。
 
@@ -45,15 +45,15 @@ ms.locfileid: "11642038"
 
 使用以下步骤执行重置。
 
-1. 首先，确保已在所有设备（包括移动设备）上退出 Microsoft Edge，但执行重置的设备除外。 若要注销 Microsoft Edge，请选择 **“设置和更多”>“设置”>“注销”**。退出时，不要选择从本地设备清除收藏夹和设置等选项。
-2. 注销所有其他设备后，在桌面上打开 Microsoft Edge。 **选择“设置和更多”>“同步”>“重置同步”**。在生成的对话框中，选择在重置数据后恢复同步，然后选择 **“重置”**。
+1. 首先，确保已在所有设备（包括移动设备）上退出 Microsoft Edge，但执行重置的设备除外。 若要注销Microsoft Edge，请在 Microsoft Edge 右上角选择“**设置> 设置 >注销**”。在退出时，不要选择从本地设备清除收藏夹、设置等的选项。
+2. 注销所有其他设备后，在桌面上打开 Microsoft Edge。在 Microsoft Edge 右上角，选择“**设置和更多 > 同步 > 重置同步**”。在生成的对话框中，选择重置数据后恢复同步，然后选择“**重置**”。
 
 ## <a name="perform-a-reset-to-remove-your-data-from-microsofts-cloud"></a>执行重置以从 Microsoft 云中删除数据
 
 如果要从 Microsoft 云中删除数据，请使用以下步骤执行重置。
 
-1. 在设备上停止同步（除要执行重置的设备以外）。  在 Microsoft Edge 中，选择 **“设置和更多”>“设置”>“同步”>“关闭同步”**。  
-2. 停止同步后，选择 **“设置和更多“>“同步”>“重置同步”**。在生成的对话框中，**不要** 选择在重置数据后恢复同步。 选择 **“重置”**。
+1. 在设备上停止同步（除要执行重置的设备以外）。  在 Microsoft Edge 右上角，选择“**设置和更多 > 设置 > 同步 > 关闭同步**”。  
+2. 停止同步后，在 Microsoft Edge 右上角选择“**设置和更多 > 重置同步**”。在生成的对话框中，**不要**选择在重置数据后恢复同步。 选择“**重置**”。
 
 ## <a name="what-to-expect-during-and-after-a-data-reset"></a>数据重置期间和之后预期结果
 
