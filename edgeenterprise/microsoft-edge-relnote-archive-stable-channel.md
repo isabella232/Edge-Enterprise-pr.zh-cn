@@ -12,7 +12,7 @@ ms.collection: M365-modern-desktop
 description: Microsoft Edge 稳定渠道的存档发行说明
 ms.openlocfilehash: d50da924c3c78e38eb55b30cf219145d19fe9816
 ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/09/2021
 ms.locfileid: "11642388"

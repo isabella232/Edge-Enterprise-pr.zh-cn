@@ -12,7 +12,7 @@ ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道的存档发行说明
 ms.openlocfilehash: 065c665892edc264e2ab94375bedf3af9dbc936c
 ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/09/2021
 ms.locfileid: "11642418"
