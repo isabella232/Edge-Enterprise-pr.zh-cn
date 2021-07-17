@@ -13,7 +13,7 @@ ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
 ms.openlocfilehash: eba448024e86cd0c0ceb733b6363317d7c6ca5fb
 ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/09/2021
 ms.locfileid: "11642828"
@@ -260,7 +260,7 @@ ms.locfileid: "11642828"
 |[SmartScreenEnabled](#smartscreenenabled)|配置 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|强制 Microsoft Defender SmartScreen 检查从受信任来源下载的内容|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|配置 Microsoft Defender SmartScreen 以阻止可能不需要的应用|
-### [*<a name="startup-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
 
 |策略名称|标题|
 |-|-|
@@ -4235,7 +4235,7 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
 如果禁用此设置或将其保留为未设置，则允许安装外部扩展。
 
-外部扩展及其安装记录 [在此处](/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options)。
+外部扩展及其安装记录[在此处](/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options)。
 
 
   #### <a name="supported-features"></a>支持的功能：
@@ -4519,7 +4519,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 策略的每个列表项都是一个字符串，其包含扩展 ID 和“更新”URL（可选），用分号 (;) 分隔。 扩展 ID 是在开发人员模式下找到的 32 个字母字符串，例如在 edge://extensions 上。 如果指定，“更新”URL 应指向更新清单 XML 文档 ([https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043))。 默认情况下，使用 Microsoft Edge Add-ons 网站的更新 URL。 此策略中设置的“更新”URL 仅用于初始安装；后续扩展更新使用扩展清单中的更新 URL。
 
-注意：此策略不适用于 InPrivate 模式。 在此处阅读有关托管[扩展。](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating)
+注意：此策略不适用于 InPrivate 模式。 [此处](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating)阅读有关托管扩展的信息。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -8113,7 +8113,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [返回页首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
 
   [返回页首](#microsoft-edge---policies)
 
@@ -8347,7 +8347,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果禁用或未配置此策略，Microsoft Edge 不会在新选项卡页上显示公司徽标或 Microsoft 徽标。
 
-有关确定 SHA-256 哈希的帮助，请转到 [此处](/powershell/module/microsoft.powershell.utility/get-filehash)。
+有关确定 SHA-256 哈希的帮助，请转到[此处](/powershell/module/microsoft.powershell.utility/get-filehash)。
 
   #### <a name="supported-features"></a>支持的功能：
 
