@@ -1,25 +1,25 @@
 ---
 title: Microsoft Edge 中的 ClickOnce 和 DirectInvoke
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解有关 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 的信息。
-ms.openlocfilehash: 3d124f141e9212ba5ab25d4b725d32add62077a3
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 2da2892a958946ad73d362e6ea929bcfbc2af6a8
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642048"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675969"
 ---
 # <a name="understand-the-clickonce-and-directinvoke-features-in-microsoft-edge"></a>了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 功能
 
-ClickOnce 和 DirectInvoke 是 IE 和 Microsoft Edge（版本 45 和更早版本）中提供的功能，支持使用文件处理程序从网站下载文件。 尽管它们适用于不同的用途，但这两个功能都允许网站指定在用户的设备上将请求下载的文件传递到文件处理程序。 ClickOnce 请求由 Windows 中的本机文件处理程序进行处理。 DirectInvoke 请求由承载文件的网站指定的注册文件处理程序进行处理。
+ClickOnce和 DirectInvoke 是 IE 和 Microsoft Edge 中提供的功能，支持使用文件处理程序从网站下载文件。 尽管它们适用于不同的用途，但这两个功能都允许网站指定在用户的设备上将请求下载的文件传递到文件处理程序。 ClickOnce 请求由 Windows 中的本机文件处理程序进行处理。 DirectInvoke 请求由承载文件的网站指定的注册文件处理程序进行处理。
 
 有关这些功能的详细信息，请参阅：
 

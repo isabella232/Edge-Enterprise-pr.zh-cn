@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 中的 PDF 阅读器
 ms.author: adigan
-author: dan-wesley
+author: AndreaLBarr
 manager: balajek
-ms.date: 06/28/2021
+ms.date: 07/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解 Microsoft Edge 中的 PDF 阅读器。
-ms.openlocfilehash: 0b1cffceb63c1829c39bdd3fa658df2e5f776584
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: e8cf690f818e0fa103aa4f17154d9f95431287b5
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11643178"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675979"
 ---
 # <a name="pdf-reader-in-microsoft-edge"></a>Microsoft Edge 中的 PDF 阅读器
 
@@ -35,16 +35,17 @@ Microsoft Edge 内置的 PDF 阅读器可用于打开本地 PDF 文件、联机 
 | 查看和打印本地、联机和嵌入的 PDF 文件 | 79.0.309.71                |
 | 基本的表单填写<br>（不支持 JavaScript 表单） | 79.0.309.71           |
 |目录| 86.0.622.38 |
-| 页面视图 |目前正在 [Microsoft Edge 预览体验计划](https://www.microsoftedgeinsider.com/)频道内升级 |
+| 页面视图 | 88.0.705.50 |
 | 插入光标模式浏览 |87.0.664.41 |
 | 墨迹书写  | 80.0.361.48            |
 | 墨迹自定义 | 83.0.478.54  |
 | Highlight  | 81.0.416.53         |
-| 文本注释 | 目前正在 [Microsoft Edge 预览体验计划](https://www.microsoftedgeinsider.com/)频道内升级 |
+| 文本注释 | 88.0.705.50 |
 | 大声朗读 | 84.0.522.63  |
-| 查看受 Microsoft 信息保护 (MIP) 保护的文件 | 80.0.361.48 中的 Windows 支持<br>81.0.416.53 中的 Mac 支持 |
+| 在同一业务租户中查看受 Microsoft 信息保护 (MIP) 保护的文件 | 80.0.361.48 中的 Windows 支持<br>81.0.416.53 中的 Mac 支持 |
+| 跨业务租户查看受 Microsoft 信息保护 (MIP) 保护的文件 | 91.0.864.37  |
 |  查看受 Information Rights Management (IRM) 保护的文件  | 83.0.478.37            |
-| 查看和验证数字签名 | 在 Canary 和 Dev 渠道中可用。 正在积极处理。 |
+
 
 ### <a name="constraints"></a>约束
 
@@ -115,6 +116,7 @@ Microsoft Edge 中的 PDF 阅读器支持添加和编辑突出显示。 若要�
 > MIP 需要许可证。 有关详细信息，请参阅此 [Microsoft 365 许可指南](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#information-protection)。
 
 无需下载任何其他软件或安装任何加载项，便可直接在浏览器中打开这些文件。 此功能将 MIP 提供的安全性直接集成到浏览器中，为用户提供无缝的工作流。
+可以跨业务租户查看受 MIP 保护的文件。 当前不支持通过使用者标识查看文件。
 
 ![受保护的 PDF 文档。](media/microsoft-edge-pdf/pdf-reader-protected-pdf2.png)
 

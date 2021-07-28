@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 有关使用 ExtensionSettings 策略配置 Microsoft Edge 扩展的详细参考指南。
-ms.openlocfilehash: 3acd798be6b2b56761991d8adaf014ae614a3fd4
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 67e3cffaa842f591a3d4c3035104addd19e34fd8
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641318"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676099"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>ExtensionSettings 策略的详细指南
 
@@ -51,6 +51,7 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 | **update_url** | 仅适用于 force_installed和normal_installed。 指定 Microsoft Edge 应从何处下载扩展。 如果扩展托管在 Microsoft Edge 加载项网站中，请使用以下位置：`https://edge.microsoft.com/extensionwebstorebase/v1/crx`。<br>Microsoft Edge 使用为初始扩展安装指定的 URL。 对于后续扩展更新，Microsoft Edge 使用扩展清单中的 URL。   |
 | **runtime_allowed_hosts**| 允许扩展与指定网站交互，即使它们也在 runtime_blocked_hosts 中定义了。 最多可以指定 100 个条目。 将放弃额外的条目。<br>主机模式格式类似于 [匹配模式](/microsoft-edge/extensions-chromium/enterprise/match-patterns) ，但不能定义路径。 例如：<br>- *://*.example.com<br>- *://example.*—支持 eTLD 通配符     |
 | **runtime_blocked_hosts**| 阻止扩展与指定的网站交互或修改网站。 修改包括阻止 JavaScript 注入、Cookie 访问、Web 请求修改。<br>最多可以指定 100 个条目。 将放弃额外的条目。<br>主机模式格式类似于匹配模式，但不能定义路径。 例如：<br>- *://*.example.com<br>- *://example.*—支持 eTLD 通配符   |
+| **override_update_url**| 在 Edge 93 中可用<br>如果设置为 `true` ，则 Edge 将使用 ExtensionSettings 策略或 ExtensionInstallForcelist 策略中指定的更新 URL 进行后续扩展更新。<br>如果未设置或设置为 ，Edge 将使用扩展清单中指定的 `false` URL 进行更新。|
 
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>在 Windows 组策略编辑器中使用 JSON 字符串进行配置

@@ -3,23 +3,23 @@ title: Microsoft Edge Beta 渠道的存档发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 06/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道的存档发行说明
-ms.openlocfilehash: 065c665892edc264e2ab94375bedf3af9dbc936c
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: c74a2a9f670a781d94738b6db00f84716a429a58
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642418"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617964"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的存档发行说明
 
-本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 若要了解 Microsoft Edge 渠道，请参阅 [Microsoft Edge 渠道概述](microsoft-edge-channels.md)。 [此处](microsoft-edge-relnotes-security.md)列出所有安全更新。
+本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 若要了解 Microsoft Edge 渠道，请参阅 [Microsoft Edge 渠道概述](microsoft-edge-channels.md)。 [此处](microsoft-edge-relnotes-security.md)列出了所有安全更新。
 ## <a name="version-89077418-february-3"></a>版本 89.0.774.18：2 月 3 日
 
 ### <a name="feature-updates"></a>功能更新
@@ -107,7 +107,7 @@ ms.locfileid: "11642418"
 - **性能：**
 
   - 使用休眠选项卡提高浏览器性能。 休眠选项卡通过将非活动选项卡置于睡眠状态以释放系统资源（如内存和 CPU）来提升浏览器性能，以便活动选项卡或其他应用程序可以使用它们。 用户可以阻止网站进入睡眠状态，并配置非活动选项卡进入睡眠状态之前的时间长度。 若要使用户保持其流，还有一些启发性方法可阻止某些网站进入睡眠状态，例如 Intranet 网站。 此功能仅限于一组启用了实验的随机选择的用户。 我们计划默认使用 Microsoft Edge 版本 89 启用休眠选项卡功能。 可以使用组策略管理此功能。
-  - 通过启动提升提高 Microsoft Edge 启动速度。 为了提高 Microsoft Edge 启动速度，我们开发了一个名为启动提升的功能。 启动提升使 Microsoft Edge 能够在后台运行，从而加快 Microsoft Edge 启动速度。 注意：此功能仅限于随机选择的一组已启用实验的用户。 这些用户向功能团队提供反馈。
+  - 通过启动增强提高 Microsoft Edge 启动速度。 为了提高 Microsoft Edge 启动速度，我们开发了一个名为启动增强的功能。 启动增强使 Microsoft Edge 能够在后台运行，从而加快 Microsoft Edge 启动速度。 注意：此功能仅限于随机选择的一组已启用实验的用户。 这些用户向功能团队提供反馈。
 
 - **工作效率：**
 

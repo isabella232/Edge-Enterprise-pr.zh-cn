@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/09/2021
+ms.date: 07/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: f82fdbdddb45951fd9e1eca44f90270bc06c32d1
-ms.sourcegitcommit: 2a00571483e1d169b2b3b59f4fce43262f460a9a
+ms.openlocfilehash: 02d4f2fc96215902000d30f37b589ea126496e47
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "11643767"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676059"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -31,7 +31,66 @@ ms.locfileid: "11643767"
 >
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
 
-## <a name="version-91086467-july-8"></a>版本 91.0.864.67: 7 月 8 日
+## <a name="version-92090255-july-22"></a>版本 92.0.902.55：7 月 22 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#july-22-2021)列出了稳定频道的安全更新。
+
+### <a name="feature-updates"></a>功能更新
+
+**用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 [InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 [InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationday) 策略调整将站点保留在本地站点列表中的天数。 请注意，对于端到端体验，Windows 10 版本 1909 需要 KB5003698 或更高版本; Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更高版本。
+
+**MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用[此指南](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
+
+**“禁用开发人员模式扩展”警告可以永久消除**。 从 Microsoft Edge 版本 92 开始，可以通过单击"不要再次显示此扩展"选项来关闭"禁用开发人员模式扩展"警告。
+
+**直接从工具栏管理扩展**。 工具栏上新增的扩展菜单将允许你轻松隐藏/固定扩展。 管理扩展和查找新扩展的快速链接将使你轻松找到新扩展和管理现有扩展。
+
+**自动播放的默认设置将设置为“限制”**。  为了帮助你在上网时保持专注，从 Microsoft Edge 版本 92 开始，我们将自动播放媒体的默认设置从“允许”更改成了“限制”。
+
+**付款工具现在可跨设备同步**。 从 Microsoft Edge 版本 92 开始，可以选择跨已登录设备同步付款信息。 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时再检查。
+目前，此功能仅在美国可用，并且仅适用于 MSA 用户（而非 AAD）
+
+**字体呈现的改进**。 改进了文本呈现，以提高清晰度并降低模糊度。 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时再检查。
+
+**“收藏夹”和“集锦”等工具栏按钮功能将记住用户将其固定到窗口一侧的选择**。 现在默认启用，如果用户选择固定某个工具栏按钮，该按钮将始终以固定状态打开，直到他们决定取消固定。
+
+**用户现在可以通过组策略管理“允许使用此配置文件对工作或学校网站进行单一登录”选项**。  “允许使用此配置文件对工作或学校网站进行单一登录”允许非 AAD 配置文件使用计算机上存在的工作或学校凭据对工作或学校网站使用单一登录。 此选项仅在“设置”->“个人资料”->“用户配置偏好设置”中作为切换项向非 AAD 配置文件的最终用户显示。  可以使用 [AADWebSiteSSOUsingThisProfileEnabled](/deployedge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled) 策略配置该行为。  
+
+**密码运行状况**。必须在不同帐户中使用较强且唯一的密码，以保持上网安全。 但是，这一点说起来容易，做起来难，并且大多数用户都表现出较差的密码习惯，如使用易于猜到的弱密码，或者在不同的帐户中重复使用相同的强密码。
+
+在这一最新版本的 Microsoft Edge 中，使用较强且唯一的密码的任务将会变得稍微简单一些！ Microsoft Edge 现在将告知你保存的密码是否足够强，并指示是否已在多个站点中使用相应密码，从而有助于保持上网安全。 在 edge://settings/passwords 页面的已保存密码列表中，可以找到你的密码运行状况信息。
+  
+**提高了已保存密码的隐私程度**。如果你使用的是与他人共享的设备或出于任何原因而未在离开时锁定计算机，你现在可以选择使用设备密码进行第二次验证，以避免其他人获得你的网站密码。 就是这么简单！
+
+**Outlook 扩展**。  随时了解 Microsoft Outlook 收件箱、日历、任务等，而无需打开新的浏览器窗口。  你可以在此处获取新的 Outlook 扩展：[Microsoft Outlook - Microsoft Edge 加载项](https://microsoftedge.microsoft.com/addons/detail/microsoft-outlook/kkpalkknhlklpbflpcpkepmmbnmfailf?hl=en-US)
+
+### <a name="new-policies"></a>新策略
+
+- [AADWebSiteSSOUsingThisProfileEnabled](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled)：已启用使用此配置文件对工作或学校网站进行单一登录的功能
+- [AutomaticHttpsDefault](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#automatichttpsdefault)：配置自动 HTTPS
+- [HeadlessModeEnabled](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#headlessmodeenabled)：控制无头模式的使用
+- [InsecurePrivateNetworkRequestsAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed)：指定是否允许不安全网站向专用性较强的网络端点提出请求
+- [InsecurePrivateNetworkRequestsAllowedForUrls](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls)：允许列出的站点从不安全环境向专用性较强的网络端点提出请求
+- [InternetExplorerIntegrationLocalSiteListExpirationDays](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 指定站点在本地 IE 模式站点列表中保留的天数
+- [InternetExplorerIntegrationReloadInIEModeAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 允许以 Internet Explorer 模式重新加载未配置的网站
+- [SharedArrayBufferUnrestrictedAccessAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed)：指定是否可以在非跨源隔离环境中使用 SharedArrayBuffers
+
+### <a name="deprecated-policy"></a>不推荐使用的策略
+
+- [InternetExplorerIntegrationTestingAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed)：允许 Internet Explorer 模式测试
+
+### <a name="obsoleted-policy"></a>已弃用策略
+
+- [EnableSha1ForLocalAnchors](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors)：当证书由本地信任锚点颁发时，允许使用 SHA-1 签名的证书
+
+## <a name="version-91086471-july-19"></a>版本 91.0.864.71：7 月 19 日
+
+> [!Important]
+>此更新包含已由 Chromium 团队报告为具有在野利用的 [CVE-2021-30563](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30563)。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide/vulnerability/ADV200002)。
+
+[此处](/deployedge/microsoft-edge-relnotes-security#july-19-2021)列出了稳定频道的安全更新。
+
+## <a name="version-91086467-july-8"></a>版本 91.0.864.67：7 月 8 日
 
 修复了各种 bug 和性能问题。
 

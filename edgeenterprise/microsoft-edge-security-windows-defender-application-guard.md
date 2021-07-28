@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
-ms.openlocfilehash: e6498ecdb0f2bf0ecb3ae12a602b73704c6c4599
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 6273204cc66fa90b1840f279106b3a26d895ca96
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642538"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675959"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
 
@@ -134,6 +134,32 @@ IE 模式支持应用程序防护功能，但我们预计不会在 IE 模式下�
 ### <a name="do-i-need-to-install-the-application-guard-chrome-extension"></a>是否需要安装应用程序防护 Chrome 扩展？
 
 否，Microsoft Edge 本身支持应用程序防护功能。 实际上，应用程序防护 Chrome 扩展配置在 Microsoft Edge 中不受支持。
+
+### <a name="can-employees-download-documents-from-the-application-guard-edge-session-onto-host-devices"></a>员工是否可以将应用程序防护 Edge 会话中的文档下载到主机设备上？
+
+在 Windows 10 企业版 版本 1803 中，用户可以将文档从独立的应用程序防护容器下载到主机电脑。 此功能由策略管理。
+
+在 Windows 10 企业版 版本 1709 或 Windows 10 Professional 版本 1803 中，无法将文件从独立的应用程序防护容器下载到主计算机。 但是，员工可以使用打印为 PDF 或打印为 XPS 选项并将这些文件保存至主机设备。
+
+### <a name="can-employees-copy-and-paste-between-the-host-device-and-the-application-guard-edge-session"></a>员工是否可以在主机设备与应用程序防护 Edge 会话之间进行复制和粘帖操作？
+
+根据组织的设置，员工可以在隔离容器 (.bmp) 和粘贴图像和文本。
+
+### <a name="why-dont-employees-see-their-favorites-in-the-application-guard-edge-session"></a>为什么员工在应用程序防护边缘会话中看不到他们的收藏夹？
+
+根据组织的设置，收藏夹同步可能已关闭。 若要管理策略，请参阅：Microsoft Edge 和 Microsoft Defender 应用程序防护 |Microsoft Docs。
+
+### <a name="why-arent-employees-able-to-see-their-extensions-in-the-application-guard-edge-session"></a>为什么员工无法查看应用程序防护边缘会话中的扩展？
+
+请确保在应用程序防护配置上启用扩展策略。
+
+### <a name="my-extension-doesnt-seem-to-work-in-edge-application-guard"></a>我的扩展似乎在 Edge 应用程序防护中不起作用？
+
+如果在配置中为 MDAG 启用了扩展策略，请检查扩展是否要求本机邮件处理组件，应用程序防护容器中不支持这些扩展。
+
+### <a name="im-trying-to-watch-playback-video-with-hdr-why-is-the-hdr-option-missing"></a>我尝试观看具有 HDR 的播放视频，为什么缺少 HDR 选项？
+
+为了使 HDR 视频播放在容器中正常工作，需要在应用程序防护中启用 vGPU 硬件加速。
 
 ### <a name="are-there-any-other-platform-related-faqs"></a>是否有其他与平台相关的常见问题？
 

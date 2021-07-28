@@ -3,19 +3,19 @@ title: Microsoft Edge 稳定渠道的存档发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 03/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 稳定渠道的存档发行说明
-ms.openlocfilehash: d50da924c3c78e38eb55b30cf219145d19fe9816
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: d8574e7b77babbf45a062ed9cadd4b60b616d972
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642388"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617952"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 稳定渠道的存档发行说明
 
@@ -90,7 +90,7 @@ ms.locfileid: "11642388"
   - 密码监视器。 如果保存到浏览器的任何密码与泄露凭据列表中显示的密码匹配，Microsoft Edge 将通知你并提示你更新密码。 密码监视器将代表你扫描匹配项，并且默认处于启用状态。
   - 编辑密码。 现在可以直接在 Microsoft Edge 设置中编辑保存的密码。 每次在 Microsoft Edge 外部更新密码时，都可以通过编辑“设置”中的已保存条目轻松地将保存的旧密码替换为新密码。 
 
-- **通过启动提升提高 Microsoft Edge 启动速度**。 为了提高 Microsoft Edge 启动速度，我们开发了一个名为启动提升的功能。 启动提升使 Microsoft Edge 能够在后台运行，从而加快 Microsoft Edge 启动速度。 注意：此功能仅限于随机选择的一组已启用实验的用户。 这些用户向功能团队提供反馈。
+- **通过启动增强提高 Microsoft Edge 启动速度**。 为了提高 Microsoft Edge 启动速度，我们开发了一个名为启动增强的功能。 启动增强使 Microsoft Edge 能够在后台运行，从而加快 Microsoft Edge 启动速度。 注意：此功能仅限于随机选择的一组已启用实验的用户。 这些用户向功能团队提供反馈。
 
 - **工作效率：**
 

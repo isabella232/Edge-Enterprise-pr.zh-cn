@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解展台模式功能以及如何配置 Microsoft Edge 展台模式的选项。
-ms.openlocfilehash: 38d94a5dfac15f810a463e43ad2fe44d51ee66c7
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 3483c402d9cd7e0d4a7542bcda98672523c0dfb6
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642188"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676119"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>配置 Microsoft Edge 展台模式
 
@@ -99,7 +99,7 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
   msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing --no-first-run
   ```
 
-- **--kiosk-idle-timeout-minutes=**：更改从上次用户活动到 Microsoft Edge 展台模式重置用户会话前的时间（以分钟为单位）。 将以下示例中的“值”替换为分钟数。
+- **--kiosk-idle-timeout-minutes=**： Change the time (in minutes) from the last user activity before Microsoft Edge kiosk mode resets the user's session by closing the browser. 注意：关闭后，此Microsoft Edge不会重新启动它。 需要单独的技术（如分配的访问权限或 Shell 启动）才能在空闲超时后自动重启 Edge。 将以下示例中的“值”替换为分钟数。
 
    ```
    --kiosk-idle-timeout-minutes=value
@@ -160,7 +160,9 @@ Microsoft Edge 版本 90 展台模式提供了广泛的功能列表。 请参阅
 
 ### <a name="multi-app-kiosk"></a>多应用展台。
 
-可用 Windows 10 上的[多应用指派访问](/windows/configuration/lock-down-windows-10-to-specific-apps)（相当于旧版 Microsoft Edge 的“普通浏览”展台模式类型）运行 Microsoft Edge。 若要使用多应用分配的访问权限配置 Microsoft Edge，请按照有关[如何设置多应用展台](/windows/configuration/lock-down-windows-10-to-specific-apps)的说明进行操作。 （Microsoft Edge Stable 渠道的 AUMID 为 **MSEdge**）。
+可用 Windows 10 上的[多应用指派访问](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)（相当于旧版 Microsoft Edge 的“普通浏览”展台模式类型）运行 Microsoft Edge。 若要使用多应用分配的访问权限配置 Microsoft Edge，请按照有关[如何设置多应用展台](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)的说明进行操作。  (Stable 渠道的 AUMID Microsoft Edge已**Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe！MSEDGE**) 。
+
+将 Microsoft Edge 与多应用分配的访问权限一同使用时，可以将 Microsoft Edge 展台配置为使用 [Microsoft Edge 浏览器策略](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies)配置浏览体验，以满足你的独特要求。
 
 ### <a name="configure-using-windows-settings"></a>使用 Windows 设置进行配置
 

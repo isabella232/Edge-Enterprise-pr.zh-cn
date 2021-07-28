@@ -3,23 +3,37 @@ title: Microsoft Edge 安全更新的发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 06/28/2021
+ms.date: 07/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: 27ac597b4570fd92b6938691fbf08b0bdd20ca43
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: e88d0a3726eca4acca519e51ff2d552240ee7ef8
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641338"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676069"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge 稳定渠道更新中包含的安全补丁的信息。
+
+## <a name="july-22-2021"></a>2021 年 7 月 22 日
+
+Microsoft 已发布最新的  **Microsoft Edge 稳定通道（版本 92.0.902.55）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+此更新包含下列特定于 Microsoft Edge 的更新：
+
+- [CVE-2021-36928](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36928)
+- [CVE-2021-36929](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36929)
+- [CVE-2021-36931](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36931)
+
+## <a name="july-19-2021"></a>2021 年 7 月 19 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 91.0.864.71）**，其中融入了 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告为具有在野利用的 [CVE-2021-30563](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30563)。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
 
 ## <a name="june-24-2021"></a>2021 年 6 月 24 日
 

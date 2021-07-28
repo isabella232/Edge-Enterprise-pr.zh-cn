@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何在企业中打包和自托管 Microsoft Edge 扩展。
-ms.openlocfilehash: aef4438212829006e39572fa938462f13721c580
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 8b0e9ed346848f7ee9330c51f6a1c9274df89371
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642868"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676109"
 ---
 # <a name="self-host-microsoft-edge-extensions"></a>自托管 Microsoft Edge 扩展
 
@@ -82,7 +82,7 @@ ms.locfileid: "11642868"
    > [!IMPORTANT]
    > 使用在首次创建 CRX 文件时生成和保存的同一 PEM 文件。 如果不使用相同的 PEM 文件，扩展的应用 ID 将会更改，并且更新将被视为新扩展。
 
-5. 将 CRX 文件拖放到扩展窗口中并验证它是否加载。
+5. 将 CRX 文件拖放到扩展窗口中并验证它是否加载。 此操作后将禁用扩展。 若要启用它，请向 ExtensionInstallAllowList 策略添加扩展的 CRX ID。 
 6. 测试更新的扩展。
 7. 将旧的 CRX 文件和 XML 文件替换为已更新扩展的新文件。
 
@@ -90,7 +90,7 @@ ms.locfileid: "11642868"
 
 ## <a name="distribute-a-privately-hosted-extension"></a>分发专用托管的扩展
 
-你可以共享 CRX 文件的托管位置的链接，用户一旦在浏览器中输入 URL，就会下载并安装扩展。 用户可以从"edge://extensions"页面启用扩展。 若要允许用户安装自托管扩展，你需要将扩展 CRX ID 添加到 [ExtensionInstallAllowList](/deployedge/microsoft-edge-policies#extensioninstallallowlist) 策略。
+你可以共享 CRX 文件的托管位置的链接，用户一旦在浏览器中输入 URL，就会下载并安装扩展。 用户可以从"edge://extensions"页面启用扩展。 若要允许用户安装自托管扩展，你需要将扩展 CRX ID 添加到 [ExtensionInstallAllowList](/deployedge/microsoft-edge-policies#extensioninstallallowlist) 策略，并添加 CRX 文件托管位置的 URL 到 [ExtensionInstallSources](/deployedge/microsoft-edge-policies#extensioninstallsources) 策略。
 
 或者，可以使用组策略 [ExtensionInstallForceList](/deployedge/microsoft-edge-manage-extensions-policies#force-install-an-extension) 在用户的设备上强制安装扩展。
 

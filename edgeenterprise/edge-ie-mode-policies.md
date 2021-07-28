@@ -3,19 +3,19 @@ title: 配置 IE 模式策略
 ms.author: collw
 author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/23/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 配置 IE 模式策略
-ms.openlocfilehash: 57d0db97a96baf361f88ca8ec90812373440c3d8
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 98d05af8769e25cfe2782a1e273f3b487afcead0
+ms.sourcegitcommit: c6452a458f825dab5638db9ff31268c2dc27f8db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641468"
+ms.lasthandoff: 07/24/2021
+ms.locfileid: "11677119"
 ---
 # <a name="configure-ie-mode-policies"></a>配置 IE 模式策略
 
@@ -50,9 +50,9 @@ ms.locfileid: "11641468"
 3. 单击**用户配置/计算机配置** > **管理模板** > **Microsoft Edge**。
 4. 双击**配置 Internet Explorer 集成**。
 5. 选中**已启用**。
-6. 在**选项**下，将下拉列表值设置为 
+6. 在**选项**下，将下拉列表值设置为
    -  **Internet Explorer 模式**：如果希望在 Microsoft Edge 中的 IE 模式下打开网站
-   -  **Internet Explorer 11**（如果希望在独立的 Internet Explorer 11 窗口中打开网站）
+   -  **Internet Explorer 11** 如果您希望网站在独立的 Internet Explorer 11 窗口中打开 (此选项在 2022 年 6 月 15 日之后将停用 Internet Explorer 11 桌面应用程序并退出支持。  2022 年 6 月 15 日之后，当 IE11 不再可用时，此选项的行为与 Internet Explorer **模式** 选项相同。)   
    -  **无**：如果希望阻止用户通过 edge://flags 或命令行来配置 Internet Explorer 模式
 
    > [!NOTE]

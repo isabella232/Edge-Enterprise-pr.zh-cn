@@ -1,4 +1,4 @@
-# last revised 05/03/2021
+# last revised 05/03/2021 
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -135,6 +135,8 @@
           href: edge-ie-mode-sitelist.md
         - name: 配置 IE 模式策略
           href: edge-ie-mode-policies.md
+        - name: IE 模式本地站点列表
+          href: edge-ie-mode-local-site-list.md
         - name: 禁用 Internet Explorer 11
           href: edge-ie-disable-ie11.md
         - name: 站点发现和列表管理
@@ -239,5 +241,5 @@
       href: microsoft-edge-video-security-smartscreen.md
     - name: 视频-安全性、兼容性和可管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
-- name: 常见问题解答
-  href: faqs-edge-in-the-enterprise.yml
+    - name: 常见问题解答
+      href: faqs-edge-in-the-enterprise.yml

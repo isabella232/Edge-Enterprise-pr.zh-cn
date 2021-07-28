@@ -1,9 +1,9 @@
 ---
 title: Microsoft Edge 更新策略文档
 ms.author: stmoody
-author: dan-wesley
+author: AndreaLBarr
 manager: tahills
-ms.date: 06/29/2021
+ms.date: 07/23/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 更新程序支持的所有策略的文档
-ms.openlocfilehash: a9808981acad544042c6e0ccb59ff755a670c848
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 9c7eca4d5bdd7c87bea141a422dce3b17f22067c
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642318"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675939"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新策略
 
@@ -41,7 +41,7 @@ ms.locfileid: "11642318"
 |[CreateDesktopShortcut](#createdesktopshortcut)|安装时阻止创建快捷方式（按渠道）|
 |[RollbackToTargetVersion](#rollbacktotargetversion)|回退到目标版本（按渠道）|
 |[TargetVersionPrefix](#targetversionprefix)|目标版本覆盖（各渠道）|
-
+|[UpdaterExperimentationAndConfigurationServiceControl](#UpdaterExperimentationAndConfigurationServiceControl)| 检索配置和实验|
 ### [<a name="preferences"></a>首选项](#preferences-policies)
 |策略名称|描述文字|
 |-|-|
@@ -201,7 +201,7 @@ ms.locfileid: "11642318"
 - GP ADMX文件名：msedgeupdate.admx
 ##### <a name="windows-registry-settings"></a>Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
-- 值名称： 
+- 值名称：
   - （稳定）：更新 {56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
   - (Beta)：更新 {2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
   - (Canary)：更新 {65C35B14-6C1D-4122-AC46-7148CC9D6497}
@@ -246,7 +246,6 @@ updates disabled 0x00000000
 0x00000001
 ```
 [返回页首](#microsoft-edge---update-policies)
-
 
 ### <a name="createdesktopshortcutdefault"></a>CreateDesktopShortcutDefault
 #### <a name="prevent-desktop-shortcut-creation-upon-install-default"></a>安装默认项时阻止创建快捷方式
@@ -401,6 +400,38 @@ updates disabled 0x00000000
 ```
 [返回页首](#microsoft-edge---update-policies)
 
+### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
+#### <a name="retrieve-configurations-and-experiments"></a>检索配置和实验
+>Microsoft Edge 更新 1.3.145.1 及更高版本
+
+#### <a name="description"></a>描述
+在Microsoft Edge 更新中，试验和配置服务用于部署实验有效负载。
+
+实验有效负载包含 Microsoft 为测试反馈启用的早期开发功能列表。
+
+如果启用此策略，实验有效负载会从试验和配置服务下载。
+
+如果禁用此策略，则完全停止与试验和配置服务的通信。
+
+如果未配置此策略，在托管设备上，此行为与策略"已禁用"相同。
+
+如果未配置此策略，则非托管设备上的行为与策略"已启用"相同。
+
+#### <a name="windows-information-and-settings"></a>Windows 信息和设置
+##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+- GP 唯一名称：UpdateExperimentationAndConfigureationServiceControl
+- GP 名称：控制更新程序与试验和配置服务的通信
+- GP 路径：管理模板/Microsoftt Edge 更新/Microsoft Edge 更新
+- GP ADMX文件名：msedgeupdate.admx
+##### <a name="windows-registry-settings"></a>Windows 注册表设置
+- 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- 值名称：UpdaterExperimentationAndConfigurationServiceControl
+- 值类型：REG_DWORD
+##### <a name="example-value"></a>示例值：
+```
+0x00000001
+```
+[返回页首](#microsoft-edge---update-policies)
 
 ## <a name="preferences-policies"></a>首选项策略
 
@@ -459,7 +490,6 @@ start hour : 0x00000001
 start min  : 0x00000002
 ```
 [返回页首](#microsoft-edge---update-policies)
-
 
 ## <a name="proxy-server-policies"></a>代理服务器策略
 
