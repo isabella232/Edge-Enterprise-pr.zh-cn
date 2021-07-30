@@ -1,21 +1,21 @@
 ---
 title: 诊断和修复 Microsoft Edge 同步问题
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: silvanam
-ms.date: 06/29/2021
+ms.date: 07/27/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 管理员可用于排查和修复常见企业同步问题的指南和工具
-ms.openlocfilehash: 0aca8c98492aead0673b5738aa5dba85c3a34314
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: c46fc716424faf361ea0a3bfab68737b64725473
+ms.sourcegitcommit: cb264068ccad14eb8ca8393ea04dd3dc8682527a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642228"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "11708651"
 ---
 # <a name="diagnose-and-fix-microsoft-edge-sync-issues"></a>诊断和修复 Microsoft Edge 同步问题
 
@@ -52,10 +52,10 @@ ms.locfileid: "11642228"
 1. 验证企业租户是否具有受支持的 M365 订阅。 [此处](/azure/information-protection/activate-office365)提供了可用订阅类型的当前列表。 如果租户没有受支持的订阅，他们可以单独购买 Azure 信息保护，也可以升级到受支持的某个订阅。
 2. 如果具有受支持的订阅，请验证租户是否具有可用的 Azure 信息保护 (AIP)。 有关检查 AIP 状态以及在必要时激活 AIP 的说明，请参阅[此处](/azure/information-protection/activate-office365)。
 3. 如果步骤 2 显示 AIP 处于活动状态，但仍无法使用同步功能，请启用企业状态漫游 (ESR)。 有关启用 ESR 的说明，请参阅[此处](/azure/active-directory/devices/enterprise-state-roaming-enable)。 请注意，无需将 ESR 保持启用状态。 如果此步骤修复了问题，可以禁用 ESR。
-4. 确认 Azure 信息保护未通过载入策略确定作用域。 可以使用 [Get-AadrmOnboardingControlPolicy](/powershell/module/aadrm/get-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程序查看是否启用了作用域功能。 接下来的两个示例将展示无作用域配置和作用域为特定安全组的配置。
+4. 确认 Azure 信息保护未通过载入策略确定作用域。 您可以使用 [Get-AIPServiceOnboardingControlPolicy](/powershell/module/aipservice/get-aipserviceonboardingcontrolpolicy?view=azureipps) PowerShell cmdlet 查看范围是否已启用。 确保安装了 aIPService PowerShell 监视器。 你可以在此处获取：安装 [Azure 信息保护的 AIPService PowerShell 模块](/azure/information-protection/install-powershell) 。 接下来的两个示例将展示无作用域配置和作用域为特定安全组的配置。
 
    ```powershell
-    PS C:\Work\scripts\PowerShell> Get-AadrmOnboardingControlPolicy
+    PS C:\Work\scripts\PowerShell> Get-AIPServiceOnboardingControlPolicy
  
     UseRmsUserLicense SecurityGroupObjectId                Scope
     ----------------- ---------------------                -----
@@ -64,16 +64,16 @@ ms.locfileid: "11642228"
 
    ```powershell
 
-    PS C:\Work\scripts\PowerShell> Get-AadrmOnboardingControlPolicy
+    PS C:\Work\scripts\PowerShell> Get-AIPServiceOnboardingControlPolicy
  
     UseRmsUserLicense SecurityGroupObjectId                Scope
     ----------------- ---------------------                -----
                 False f1488a05-8196-40a6-9483-524948b90282   All
    ```
 
-   如果启用了作用域功能，则应该将受影响的用户添加到相应作用域的安全组，或者删除该作用域。 在下面的示例中，载入将 AIP 的作用域设定成了指示的安全组，应该使用 [Set-AadrmOnboardingControlPolicy](/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程序删除作用域功能。
+   如果启用了作用域功能，则应该将受影响的用户添加到相应作用域的安全组，或者删除该作用域。 在下面的示例中，载入将 AIP 的范围设定为指示的安全组，并且应该使用 [Set-AIPServiceOnboardingControlPolicy](/powershell/module/aipservice/set-aipserviceonboardingcontrolpolicy?view=azureipps) PowerShell 小程序删除作用域。
 
-5. 确认已在租户中启用 IPCv3Service。 [Get-AadrmConfiguration](/powershell/module/aadrm/get-aadrmconfiguration?view=azureipps) PowerShell 小程序可显示该服务的状态。
+5. 确认已在租户中启用 IPCv3Service。 [Get-AIPServiceConfiguration](/powershell/module/aipservice/get-aipserviceconfiguration?view=azureipps) PowerShell cmdlet 显示服务的状态。
 
    :::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-scoped-cfg-example.png" alt-text="检查是否已启用 IPCv3Service。":::
 
