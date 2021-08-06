@@ -1,7 +1,7 @@
 ---
 title: 为用户自动启用密码监视器
 ms.author: supalsul
-author: AndreLBarr
+author:
 manager: tulasim
 ms.date: 07/12/2021
 audience: ITPro
