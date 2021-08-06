@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 Jamf 在 Mac 设备上配置 Microsoft Edge 策略设置
-ms.openlocfilehash: 8556a5b1d0fc01feb67fc86cb016a9ed47061b55
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: be706795d093b9dcecf33ee1bf7071286082fad1fea98a98b34145e87a9b7393
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641628"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725291"
 ---
 # <a name="configure-microsoft-edge-policy-settings-on-macos-with-jamf"></a>使用 Jamf 在 macOS 上配置 Microsoft Edge 策略设置
 
@@ -45,8 +45,8 @@ ms.locfileid: "11641628"
 若要获取策略清单，请执行以下操作：
 
 - 转到 [Microsoft Edge Enterprise 登陆页面](https://aka.ms/EdgeEnterprise)。
-- 在 "通道/版本" 下拉列表中，选择 **版本81或更高版本的任何通道。**_.
-- 在 "生成" 下拉列表中，选择 "任何_ *81 生成" 或 "更高* * _版本"。
+- 在“渠道/版本”下拉列表中，选择**任何版本为 81 或更高版本的渠道。***。
+- 在“内部版本”下拉列表上，选择任何**版本 81或更高版本。***。
 - 单击“获取策略文件”下载我们的策略模板捆绑包。
 
   > [!NOTE]
@@ -61,7 +61,7 @@ ms.locfileid: "11641628"
 请按照以下步骤将策略清单上传到 Jamf Pro，然后为 macOS 创建策略配置文件。
 
 1. 登录 Jamf。
-2. 选择 "_*计算机**" 选项卡。
+2. 选择“**计算机**”选项卡。
 3. 在“**内容管理**”下，选择“**配置文件**”。
 4. 在“**配置文件**”页面上，单击“**+ 新建**”。
 

@@ -11,19 +11,19 @@ metadata:
   ms.localizationpriority: medium
   ms.collection: M365-modern-desktop
   description: 有关在 () 部署Microsoft Edge常见问题解答
-  ms.openlocfilehash: a592a831f78c5d5e92c919112319120e0f0b3faf
-  ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+  ms.openlocfilehash: edf0ec730ece83126619519cdd45d20f3271dd99845f4786f29dde32befec2b6
+  ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/09/2021
-  ms.locfileid: "11641788"
+  ms.lasthandoff: 08/05/2021
+  ms.locfileid: "11725955"
 title: 有关企业 (的) 常见问题Microsoft Edge常见问题解答
 summary: >
   > [!NOTE]
 
   > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 sections:
-- name: 忽略
+- name: 已忽略
   questions:
   - question: 我怎么知道我拥有哪个版本的 Microsoft Edge？
     answer: >

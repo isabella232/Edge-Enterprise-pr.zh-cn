@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/29/2021
+ms.date: 08/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: 6816d420668673cdfefb303cc6765f9a22afce0f
-ms.sourcegitcommit: c74caed21e18d5d211a7fa6cb4f0cb3a14446f42
+ms.openlocfilehash: 8b76fc92fc5db3433990435e78ee14dcbe306b4096a6c1a6ba919faebc074768
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "11710360"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725755"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
@@ -24,21 +24,74 @@ ms.locfileid: "11710360"
 > [!NOTE]
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
 
+## <a name="version-93096111-august-3"></a>版本 93.0.961.11：8 月 3 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **中的初始Microsoft Edge。**  随着Microsoft Edge首选项，从版本 93 开始，向企业部署自定义设置将变得更加简单。
+
+- **IE 模式Microsoft Edge"nomerge"行为。**  从 Edge 93 开始，Microsoft Edge IE 模式将支持 nomerge。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的 nomerge 行为。 你将需要调整站点列表，以将需要阻止会话共享的站点配置为"nomerge"。 在后台，对于 Microsoft Edge 的每个窗口，首次访问该窗口中的 IE 模式选项卡时，如果该选项卡是指定的"nomerge"站点之一，则至少会锁定该窗口与其他所有 Microsoft Edge 窗口不同的"nomerge"IE 会话，直到关闭该窗口中的最后一个 IE 模式选项卡。 此行为遵循以前的行为，其中用户可以使用 nomerge 启动 IE，也可以Microsoft Edge其他机制启动 IE。
+
+- **选项卡组。**  将选项卡分类到用户定义的组的功能可帮助您更有效地跨多个工作流查找、切换和管理选项卡。 为了启用此功能，我们将从版本 93 开始启用选项卡Microsoft Edge分组。
+
+- **使用垂直选项卡时隐藏标题栏。**  通过隐藏浏览器的标题栏（同时在垂直选项卡中）获取额外几个像素。 从 Microsoft Edge版本 93 开始，可以转到"自定义工具栏"edge://settings/appearance 在"自定义工具栏"部分下选择在"垂直选项卡"模式下隐藏标题栏的选项。
+
+- **从悬停工具栏 (PiP) 图片。**  从 Edge 版本 93 开始，以 PiP 模式在 Picture (输入图片) 变得更加简单。 将鼠标悬停在受支持的视频上时，将显示一个工具栏，允许您在 PiP 窗口中查看该视频。  请注意：这目前适用于 macOS Microsoft Edge用户。  请在我们向用户继续推出时Windows检查。
+
+- **在 TLS 中删除 3DES。**  从 Edge v93 开始，将TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在Chromium项目上，Microsoft Edge项目。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Edge v93 中 [，TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 策略可用于支持需要保留与过时服务器的兼容性的方案。 此兼容性策略将过时，并停止在 Edge v95 中运行。 请确保在更新之前更新受影响的服务器。
+
+### <a name="new-policies"></a>新策略
+
+- [AutoplayAllowlist](/DeployEdge/microsoft-edge-policies#autoplayallowlist) 允许媒体自动播放特定网站
+- [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) 为 TLS 启用的 CECPQ2 后量子密钥协议
+- [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer)为文件资源管理器中的"文件资源管理器"SharePoint"视图"Microsoft Edge
+- [DefaultJavaScriptJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) 控制 JavaScript JIT 的使用
+- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled)允许通知将 Microsoft Edge设置为默认 PDF 阅读器
+- [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) 配置用户重写功能标志的能力
+- [ImplicitSignInEnabled](/DeployEdge/microsoft-edge-policies#implicitsigninenabled) 启用隐式登录
+- [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist)配置Enterprise云站点列表
+- [InternetExplorerIntegrationSiteListRefreshInterval](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationsitelistrefreshinterval)配置刷新Enterprise站点列表的频率
+- [JavaScriptJitAllowedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitallowedforsites) 允许 JavaScript 在这些网站上使用 JIT
+- [JavaScriptJitBlockedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitblockedforsites) 阻止 JavaScript 在这些网站上使用 JIT
+- [LocalBrowserDataShareEnabled](/DeployEdge/microsoft-edge-policies#localbrowserdatashareenabled)启用Windows搜索本地Microsoft Edge浏览数据
+- [MAUEnabled](/DeployEdge/microsoft-edge-policies#mauenabled)始终使用 Microsoft AutoUpdate 作为更新程序进行Microsoft Edge
+- [MSAWebSiteSSOUsingThisProfileAllowed](/DeployEdge/microsoft-edge-policies#msawebsitessousingthisprofileallowed) 允许使用此配置文件的单一登录 Microsoft 网站
+- [OneAuthAuthenticationEnforced](/DeployEdge/microsoft-edge-policies#oneauthauthenticationenforced)针对登录Flow OneAuth 身份验证
+- [PasswordGeneratorEnabled](/DeployEdge/microsoft-edge-policies#passwordgeneratorenabled) 允许用户在联机创建帐户时获取强密码建议
+- [PrimaryPasswordSetting](/DeployEdge/microsoft-edge-policies#primarypasswordsetting) 配置要求用户在使用密码自动填充时输入其设备密码的设置
+- [PrintingWebpageLayout](/DeployEdge/microsoft-edge-policies#printingwebpagelayout) 设置打印的布局
+- [RemoteDebuggingAllowed](/DeployEdge/microsoft-edge-policies#remotedebuggingallowed) 允许远程调试
+- [RelaunchWindow](/DeployEdge/microsoft-edge-policies#relaunchwindow) 设置重新启动的时间间隔
+- [TravelAssistanceEnabled](/DeployEdge/microsoft-edge-policies#travelassistanceenabled) 启用旅行协助
+- [TripleDESEnabled](/DeployEdge/microsoft-edge-policies#tripledesenabled) 在 TLS 中启用 3DES 密码套件
+
+#### <a name="deprecated-policy"></a>不推荐使用的策略
+
+- [LegacySameSiteCookieBehaviorEnabled](/DeployEdge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled) 启用默认的旧 SameSite Cookie 行为设置
+
+#### <a name="obsoleted-policy"></a>已过时的策略
+
+- [NewTabPageSetFeedType](/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype)配置Microsoft Edge选项卡页体验
+
+#### <a name="additional-change"></a>其他更改
+
+- [ConfigureShare](/DeployEdge/microsoft-edge-policies#configureshare) 添加 mac 平台支持
+
 ## <a name="version-92090262-july-29"></a>版本 92.0.902.62：7 月 29 日
 
-修复了各种 bug 和性能问题。
+修复了各种错误和性能问题。
 
 ## <a name="version-92090255-july-21"></a>版本 92.0.902.55：7 月 21 日
 
-修复了各种 bug 和性能问题。
+修复了各种错误和性能问题。
 
 ## <a name="version-92090245-july-12"></a>版本 92.0.902.45：7 月 12 日
 
-修复了各种 bug 和性能问题。
+修复了各种错误和性能问题。
 
 ## <a name="version-92090240-july-6"></a>版本 92.0.902.40：7 月 6 日
 
-修复了各种 bug 和性能问题。
+修复了各种错误和性能问题。
 
 ## <a name="version-92090222-june-21"></a>版本 92.0.902.22：6 月 21 日
 

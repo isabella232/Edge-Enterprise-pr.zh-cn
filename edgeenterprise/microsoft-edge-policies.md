@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 06/28/2021
+ms.date: 08/01/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: eba448024e86cd0c0ceb733b6363317d7c6ca5fb
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
-ms.translationtype: HT
+ms.openlocfilehash: 61ea386b4a0762f6b95a0f2c1944ca35d0749ea9d75f85330f85472414988200
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642828"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11724165"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -29,41 +29,6 @@ ms.locfileid: "11642828"
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
 
-## <a name="new-policies"></a>新策略
-
-下表列出了此次更新的新策略。
-
-|名称|描述文字|
-|--|--|
-|[AADWebSiteSSOUsingThisProfileEnabled](#aadwebsitessousingthisprofileenabled)|启用通过此配置文件对工作或学校网站进行单一登录|
-|[AutomaticHttpsDefault](#automatichttpsdefault)|配置自动 HTTPS|
-|[CECPQ2Enabled](#cecpq2enabled)|为 TLS 启用了 CECPQ2 后量子密钥协议|
-|[InsecurePrivateNetworkRequestsAllowed](#insecureprivatenetworkrequestsallowed)|指定是否允许不安全网站向更专用的网络终结点提出请求|
-|[InsecurePrivateNetworkRequestsAllowedForUrls](#insecureprivatenetworkrequestsallowedforurls)|允许列出的站点从不安全环境向更专用的网络终结点提出请求|
-|[InternetExplorerIntegrationLocalSiteListExpirationDays](#internetexplorerintegrationlocalsitelistexpirationdays)|指定站点在本地 IE 模式站点列表中保留的天数|
-|[InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed)|允许以 Internet Explorer 模式重新加载未配置的站点|
-|[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|启用 Windows 搜索本地 Microsoft Edge 浏览数据|
-|[TripleDESEnabled](#tripledesenabled)|在 TLS 中启用 3DES 密码套件|
-
-## <a name="deprecated-policies"></a>已弃用的策略
-
-下表列出了此更新的已弃用策略。
-
-|名称|描述文字|
-|--|--|
-|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允许 Internet Explorer 模式测试 (已弃用) |
-|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|启用默认旧 SameSite Cookie 行为设置 (已弃用) |
-
-## <a name="obsolete-policies"></a>已过时的策略
-
-下表列出了此更新的已过时策略。
-
-|名称|描述文字|
-|--|--|
-|[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|允许由本地信任密匙颁发的证书使用 SHA-1 签名 (已过时) |
-|[NewTabPageSetFeedType](#newtabpagesetfeedtype)|配置 Microsoft Edge 新选项卡页体验 (已过时) |
-|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|允许 WebDriver 替代不兼容的策略（已过时）|
-
 ## <a name="available-policies"></a>可用策略
 
 这些表列出了本版本 Microsoft Edge 中提供的所有与浏览器相关的组策略。 使用表中的链接获取有关特定策略的更多详细信息。
@@ -72,8 +37,10 @@ ms.locfileid: "11642828"
 - [Cast](#cast)
 - [内容设置](#content-settings)
 - [默认搜索提供程序](#default-search-provider)
+- [实验](#experimentation)
 - [Extensions](#extensions)
 - [HTTP 身份验证](#http-authentication)
+- [标识和登录](#identity-and-sign-in)
 - [展台模式设置](#kiosk-mode-settings)
 - [可管理性](#manageability)
 - [本机消息传递](#native-messaging)
@@ -115,6 +82,7 @@ ms.locfileid: "11642828"
 |[DefaultGeolocationSetting](#defaultgeolocationsetting)|默认地理位置设置|
 |[DefaultImagesSetting](#defaultimagessetting)|默认图像设置|
 |[DefaultInsecureContentSetting](#defaultinsecurecontentsetting)|控制不安全内容异常的使用|
+|[DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting)|控制 JavaScript JIT 的使用|
 |[DefaultJavaScriptSetting](#defaultjavascriptsetting)|默认 JavaScript 设置|
 |[DefaultNotificationsSetting](#defaultnotificationssetting)|默认通知设置|
 |[DefaultPluginsSetting](#defaultpluginssetting)|默认 Adobe Flash 设置（已过时）|
@@ -131,6 +99,8 @@ ms.locfileid: "11642828"
 |[InsecureContentBlockedForUrls](#insecurecontentblockedforurls)|在指定网站上阻止不安全内容|
 |[JavaScriptAllowedForUrls](#javascriptallowedforurls)|在特定网站上允许 JavaScript|
 |[JavaScriptBlockedForUrls](#javascriptblockedforurls)|在特定网站上阻止 JavaScript|
+|[JavaScriptJitAllowedForSites](#javascriptjitallowedforsites)|允许 JavaScript 在这些网站上使用 JIT|
+|[JavaScriptJitBlockedForSites](#javascriptjitblockedforsites)|阻止 JavaScript 在这些网站上使用 JIT|
 |[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|启用默认旧 SameSite Cookie 行为设置 (已弃用) |
 |[LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist)|在指定网站上还原为 Cookie 的旧 SameSite 行为|
 |[NotificationsAllowedForUrls](#notificationsallowedforurls)|在特定网站上允许通知|
@@ -140,6 +110,7 @@ ms.locfileid: "11642828"
 |[PopupsAllowedForUrls](#popupsallowedforurls)|在特定网站上允许弹出窗口|
 |[PopupsBlockedForUrls](#popupsblockedforurls)|在特定网站上阻止弹出窗口|
 |[RegisteredProtocolHandlers](#registeredprotocolhandlers)|注册协议处理程序|
+|[ShowPDFDefaultRecommendationsEnabled](#showpdfdefaultrecommendationsenabled)|允许通知将 Microsoft Edge设置为默认 PDF 阅读器|
 |[SpotlightExperiencesAndRecommendationsEnabled](#spotlightexperiencesandrecommendationsenabled)|选择用户是否可以接收自定义的背景图像和文本、建议、通知和Microsoft 服务提示|
 |[WebUsbAllowDevicesForUrls](#webusballowdevicesforurls)|授予特定网站连接到特定 USB 设备的访问权限|
 |[WebUsbAskForUrls](#webusbaskforurls)|在特定网站上允许 WebUSB|
@@ -157,6 +128,11 @@ ms.locfileid: "11642828"
 |[DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl)|默认搜索提供程序搜索 URL|
 |[DefaultSearchProviderSuggestURL](#defaultsearchprovidersuggesturl)|建议的默认搜索提供程序 URL|
 |[NewTabPageSearchBox](#newtabpagesearchbox)|配置新建选项卡页面搜索框体验|
+### [*<a name="experimentation"></a>实验*](#experimentation-policies)
+
+|策略名称|描述文字|
+|-|-|
+|[FeatureFlagOverridesControl](#featureflagoverridescontrol)|配置用户重写功能标志的能力|
 ### [*<a name="extensions"></a>Extensions*](#extensions-policies)
 
 |策略名称|描述文字|
@@ -181,6 +157,12 @@ ms.locfileid: "11642828"
 |[EnableAuthNegotiatePort](#enableauthnegotiateport)|在 Kerberos SPN 中包括非标准端口|
 |[NtlmV2Enabled](#ntlmv2enabled)|控制是否启用 NTLMv2 身份验证|
 |[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|适用于 HTTP Auth 的 Windows Hello 已启用|
+### [*<a name="identity-and-sign-in"></a>标识和登录*](#identity-and-sign-in-policies)
+
+|策略名称|描述文字|
+|-|-|
+|[ImplicitSignInEnabled](#implicitsigninenabled)|启用隐式登录|
+|[OneAuthAuthenticationEnforced](#oneauthauthenticationenforced)|针对登录Flow OneAuth 身份验证|
 ### [*<a name="kiosk-mode-settings"></a>展台模式设置*](#kiosk-mode-settings-policies)
 
 |策略名称|标题|
@@ -201,14 +183,16 @@ ms.locfileid: "11642828"
 |[NativeMessagingUserLevelHosts](#nativemessaginguserlevelhosts)|允许用户级本机消息传递主机（已安装但没有管理员权限）|
 ### [*<a name="password-manager-and-protection"></a>密码管理器和保护*](#password-manager-and-protection-policies)
 
-|策略名称|标题|
+|策略名称|描述文字|
 |-|-|
+|[PasswordGeneratorEnabled](#passwordgeneratorenabled)|允许用户在联机创建帐户时获取强密码建议|
 |[PasswordManagerEnabled](#passwordmanagerenabled)|允许将密码保存到密码管理器|
 |[PasswordMonitorAllowed](#passwordmonitorallowed)|如果用户发现其密码不安全，则允许其收到通知|
 |[PasswordProtectionChangePasswordURL](#passwordprotectionchangepasswordurl)|配置更改密码 URL|
 |[PasswordProtectionLoginURLs](#passwordprotectionloginurls)|配置密码保护服务应在其中捕获加盐密码哈希的企业登录 URL 列表|
 |[PasswordProtectionWarningTrigger](#passwordprotectionwarningtrigger)|配置密码保护警告触发器|
 |[PasswordRevealEnabled](#passwordrevealenabled)|启用“显示密码”按钮|
+|[PrimaryPasswordSetting](#primarypasswordsetting)|配置要求用户在使用密码自动填充时输入其设备密码的设置|
 ### [*<a name="performance"></a>性能*](#performance-policies)
 
 |策略名称|标题|
@@ -227,6 +211,7 @@ ms.locfileid: "11642828"
 |[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)|默认背景图形打印模式|
 |[PrintingEnabled](#printingenabled)|启用打印|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|默认打印页面大小|
+|[PrintingWebpageLayout](#printingwebpagelayout)|设置打印的布局|
 |[UseSystemPrintDialog](#usesystemprintdialog)|使用系统打印对话框打印|
 ### [*<a name="private-network-request-settings"></a>专用网络请求设置*](#private-network-request-settings-policies)
 
@@ -260,7 +245,7 @@ ms.locfileid: "11642828"
 |[SmartScreenEnabled](#smartscreenenabled)|配置 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|强制 Microsoft Defender SmartScreen 检查从受信任来源下载的内容|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|配置 Microsoft Defender SmartScreen 以阻止可能不需要的应用|
-### [*<a name="startup-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
 
 |策略名称|标题|
 |-|-|
@@ -308,6 +293,7 @@ ms.locfileid: "11642828"
 |[AutofillCreditCardEnabled](#autofillcreditcardenabled)|启用信用卡自动填充|
 |[AutomaticHttpsDefault](#automatichttpsdefault)|配置自动 HTTPS|
 |[AutoplayAllowed](#autoplayallowed)|允许网站媒体自动播放|
+|[AutoplayAllowlist](#autoplayallowlist)|允许媒体自动播放特定网站|
 |[BackgroundModeEnabled](#backgroundmodeenabled)|Microsoft Edge 关闭后继续运行后台应用|
 |[BackgroundTemplateListUpdatesEnabled](#backgroundtemplatelistupdatesenabled)|对“集锦”和使用模板的其他功能启用可用模板列表后台更新|
 |[BingAdsSuppression](#bingadssuppression)|阻止必应搜索结果中的所有广告|
@@ -334,6 +320,7 @@ ms.locfileid: "11642828"
 |[ConfigureOnPremisesAccountAutoSignIn](#configureonpremisesaccountautosignin)|配置当没有 Azure AD 域帐户时使用 Active Directory 域帐户自动登录|
 |[ConfigureOnlineTextToSpeech](#configureonlinetexttospeech)|配置联机文本到语音转换|
 |[ConfigureShare](#configureshare)|配置共享体验|
+|[ConfigureViewInFileExplorer](#configureviewinfileexplorer)|为文件资源管理器中的"文件资源管理器"SharePoint"视图"Microsoft Edge|
 |[CustomHelpLink](#customhelplink)|指定自定义帮助链接|
 |[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled)|已启用 DNS 拦截检查|
 |[DefaultBrowserSettingEnabled](#defaultbrowsersettingenabled)|将 Microsoft Edge 设为默认浏览器|
@@ -403,6 +390,7 @@ ms.locfileid: "11642828"
 |[InPrivateModeAvailability](#inprivatemodeavailability)|配置 InPrivate 模式可用性|
 |[InsecureFormsWarningsEnabled](#insecureformswarningsenabled)|启用不安全窗体的警告|
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|控制 IntensiveWakeUpThrottling 的功能|
+|[InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist)|配置Enterprise云站点列表|
 |[InternetExplorerIntegrationEnhancedHangDetection](#internetexplorerintegrationenhancedhangdetection)|为 Internet Explorer 模式配置增强的挂起检测|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|配置 Internet Explorer 集成|
 |[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允许在 Internet Explorer 模式下启动本地文件|
@@ -411,12 +399,15 @@ ms.locfileid: "11642828"
 |[InternetExplorerIntegrationLocalSiteListExpirationDays](#internetexplorerintegrationlocalsitelistexpirationdays)|指定站点在本地 IE 模式站点列表中保留的天数|
 |[InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed)|允许以 Internet Explorer 模式重新加载未配置的站点|
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|配置企业模式站点列表|
+|[InternetExplorerIntegrationSiteListRefreshInterval](#internetexplorerintegrationsitelistrefreshinterval)|配置刷新Enterprise站点列表的频率|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|指定从 Internet Explorer 模式页面启动时未配置网站的“页内”导航行为|
 |[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允许 Internet Explorer 模式测试 (已弃用) |
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|Intranet 重定向行为|
 |[IsolateOrigins](#isolateorigins)|针对特定源启用网站隔离|
 |[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|启用 Windows 搜索本地 Microsoft Edge 浏览数据|
 |[LocalProvidersEnabled](#localprovidersenabled)|允许来自本地提供程序的建议|
+|[MAUEnabled](#mauenabled)|始终使用 Microsoft AutoUpdate 作为更新程序进行Microsoft Edge|
+|[MSAWebSiteSSOUsingThisProfileAllowed](#msawebsitessousingthisprofileallowed)|允许使用此配置文件的单一登录 Microsoft 网站|
 |[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|将网站的托管配置值设置到特定来源|
 |[ManagedFavorites](#managedfavorites)|配置收藏夹|
 |[ManagedSearchEngines](#managedsearchengines)|管理搜索引擎|
@@ -441,6 +432,8 @@ ms.locfileid: "11642828"
 |[RedirectSitesFromInternetExplorerRedirectMode](#redirectsitesfrominternetexplorerredirectmode)|将不兼容的网站从 Internet Explorer 重新定向到 Microsoft Edge|
 |[RelaunchNotification](#relaunchnotification)|通知用户对于挂起的更新，推荐或需要重新启动浏览器|
 |[RelaunchNotificationPeriod](#relaunchnotificationperiod)|设置更新通知的时间段|
+|[RelaunchWindow](#relaunchwindow)|设置重新启动的时间间隔|
+|[RemoteDebuggingAllowed](#remotedebuggingallowed)|允许远程调试|
 |[RendererCodeIntegrityEnabled](#renderercodeintegrityenabled)|启用呈现器代码完整性|
 |[RequireOnlineRevocationChecksForLocalAnchors](#requireonlinerevocationchecksforlocalanchors)|指定本地信任密钥是否需要联机 OCSP/CRL 检查|
 |[ResolveNavigationErrorsUseWebService](#resolvenavigationerrorsusewebservice)|启用使用 Web 服务解决导航错误|
@@ -486,6 +479,7 @@ ms.locfileid: "11642828"
 |[TotalMemoryLimitMb](#totalmemorylimitmb)|设置单个 Microsoft Edge 实例可以使用的内存兆字节限制|
 |[TrackingPrevention](#trackingprevention)|阻止跟踪用户的 Web 浏览活动|
 |[TranslateEnabled](#translateenabled)|启用翻译|
+|[TravelAssistanceEnabled](#travelassistanceenabled)|启用旅行协助|
 |[TripleDESEnabled](#tripledesenabled)|在 TLS 中启用 3DES 密码套件|
 |[URLAllowlist](#urlallowlist)|定义允许的 URL 列表|
 |[URLBlocklist](#urlblocklist)|阻止对 URL 列表的访问|
@@ -1564,6 +1558,78 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 示例值：
 ``` xml
 <integer>2</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="defaultjavascriptjitsetting"></a>DefaultJavaScriptJitSetting
+
+  #### <a name="control-use-of-javascript-jit"></a>控制 JavaScript JIT 的使用
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  允许你设置是否将Microsoft Edge JIT (实时运行 v8 JavaScript) 编译器是否已启用。
+
+禁用 JavaScript JIT 意味着Microsoft Edge Web 内容的速度可能会变慢，并且也可能禁用 JavaScript 的某些部分，包括 WebAssembly。 禁用 JavaScript JIT 可能会允许Microsoft Edge以更安全的配置呈现 Web 内容。
+
+可以使用 [JavaScriptJitAllowedForSites](#javascriptjitallowedforsites) 和 [JavaScriptJitBlockedForSites](#javascriptjitblockedforsites) 策略为特定 URL 模式重写此策略。
+
+如果未配置此策略，将启用 JavaScript JIT。
+
+策略选项映射：
+
+* AllowJavaScriptJit (1) = 允许任何网站运行 JavaScript JIT
+
+* BlockJavaScriptJit (2) = 不允许任何网站运行 JavaScript JIT
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：DefaultJavaScriptJitSetting
+  - GP 名称：控制 JavaScript JIT 的使用
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：DefaultJavaScriptJitSetting
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：DefaultJavaScriptJitSetting
+  - 示例值：
+``` xml
+<integer>1</integer>
 ```
   
 
@@ -2663,6 +2729,146 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="javascriptjitallowedforsites"></a>JavaScriptJitAllowedForSites
+
+  #### <a name="allow-javascript-to-use-jit-on-these-sites"></a>允许 JavaScript 在这些网站上使用 JIT
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  允许你设置网站 URL 模式列表，以指定允许使用 JIT (实时运行 JavaScript 的网站) 编译器启用。
+
+有关有效网站 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 。 * 不是此策略的接受值。
+
+JavaScript JIT 策略例外将仅在 eTLD+1 (以站点粒度) 。 仅针对 subdomain.contoso.com 的策略集无法正确应用到 contoso.com 或 subdomain.contoso.com 因为它们都解析为没有策略的同一 eTLD+1 (contoso.com) 。 在这种情况下，必须在策略上设置策略 contoso.com 以正确应用于 contoso.com 和 subdomain.contoso.com。
+
+此策略按帧应用，而不是仅基于顶级源 URL，例如，如果 contoso.com 在 JavaScriptJitAllowedForSites 策略中列出，但 contoso.com 加载包含 fabrikam.com 的帧，contoso.com 将启用 JavaScript JIT，但 fabrikam.com 将使用 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting)中的策略（如果已设置，或默认为启用 JavaScript JIT）。
+
+如果未为站点配置此策略，则 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting) 中的策略将应用于该网站（如果已设置的话，否则会为网站启用 Javascript JIT）。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 字符串列表
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：JavaScriptJitAllowedForSites
+  - GP 名称：允许 JavaScript 在这些网站上使用 JIT
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 必需的 (路径) ：SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitAllowedForSites
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitAllowedForSites\1 = "[*.]example.edu"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：JavaScriptJitAllowedForSites
+  - 示例值：
+``` xml
+<array>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="javascriptjitblockedforsites"></a>JavaScriptJitBlockedForSites
+
+  #### <a name="block-javascript-from-using-jit-on-these-sites"></a>阻止 JavaScript 在这些网站上使用 JIT
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  允许你设置网站 URL 模式列表，以指定不允许在启用编译器的"实时" (运行 JavaScript JIT) 站点。
+
+禁用 JavaScript JIT 意味着Microsoft Edge Web 内容的速度可能会变慢，并且也可能禁用 JavaScript 的某些部分，包括 WebAssembly。 禁用 JavaScript JIT 可能会允许Microsoft Edge以更安全的配置呈现 Web 内容。
+
+有关有效 url 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此策略的接受值。
+
+JavaScript JIT 策略例外将仅在 eTLD+1 (以站点粒度) 。 仅针对 subdomain.contoso.com 的策略集无法正确应用到 contoso.com 或 subdomain.contoso.com 因为它们都解析为没有策略的同一 eTLD+1 (contoso.com) 。 在这种情况下，必须在策略上设置策略 contoso.com 以正确应用于 contoso.com 和 subdomain.contoso.com。
+
+此策略按帧应用，而不是仅基于顶级源 URL，例如，如果 contoso.com 在 JavaScriptJitBlockedForSites 策略中列出，但 contoso.com 加载包含 fabrikam.com 的帧，则 contoso.com 将禁用 JavaScript JIT，但 fabrikam.com 将使用 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting)中的策略（如果已设置，或默认为启用 JavaScript JIT）。
+
+如果未为站点配置此策略，则 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting) 中的策略将应用于网站（如果已设置的话）否则，会为网站启用 JavaScript JIT。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 字符串列表
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：JavaScriptJitBlockedForSites
+  - GP 名称：阻止 JavaScript 在这些网站上使用 JIT
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 必需的 (路径) ：SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites\1 = "[*.]example.edu"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：JavaScriptJitBlockedForSites
+  - 示例值：
+``` xml
+<array>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="legacysamesitecookiebehaviorenabled"></a>LegacySameSiteCookieBehaviorEnabled
 
   #### <a name="enable-default-legacy-samesite-cookie-behavior-setting-deprecated"></a>启用默认旧 SameSite Cookie 行为设置 (已弃用) 
@@ -3287,6 +3493,68 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
     <string>https://mail.contoso.com/mail/?extsrc=mailto&url=%s</string>
   </dict>
 </array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="showpdfdefaultrecommendationsenabled"></a>ShowPDFDefaultRecommendationsEnabled
+
+  #### <a name="allow-notifications-to-set-microsoft-edge-as-default-pdf-reader"></a>允许通知将 Microsoft Edge设置为默认 PDF 阅读器
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  通过此策略设置，你可以决定员工是否应该收到建议，Microsoft Edge PDF 处理程序。
+
+如果启用或不配置此设置，则员工会收到来自Microsoft Edge将自身设置为默认 PDF 处理程序的建议。
+
+如果禁用此设置，则员工不会收到来自 Microsoft Edge将其设置为默认 PDF 处理程序的任何通知。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：ShowPDFDefaultRecommendationsEnabled
+  - GP 名称：允许通知将 Microsoft Edge设置为默认 PDF 阅读器
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ShowPDFDefaultRecommendationsEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：ShowPDFDefaultRecommendationsEnabled
+  - 示例值：
+``` xml
+<true/>
 ```
   
 
@@ -4213,6 +4481,85 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
   [返回页首](#microsoft-edge---policies)
 
+  ## <a name="experimentation-policies"></a>实验策略
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="featureflagoverridescontrol"></a>FeatureFlagOverridesControl
+
+  #### <a name="configure-users-ability-to-override-feature-flags"></a>配置用户重写功能标志的能力
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  配置用户重写功能标志状态的能力。
+如果此策略设置为"CommandLineOverridesEnabled"，用户可以使用命令行参数替代功能标志的状态，但不能 edge://flags 页。
+
+如果此策略设置为"OverridesEnabled"，则用户可以使用命令行参数或自定义 edge://flags 状态。
+
+如果此策略设置为"OverridesDisabled"，则用户无法通过使用命令行参数或自定义页面覆盖功能标志 edge://flags 状态。
+
+如果未配置此策略，则行为与"OverridesEnabled"相同。
+
+策略选项映射：
+
+* CommandLineOverridesEnabled (2) = 仅允许用户使用命令行参数覆盖功能标志
+
+* OverridesEnabled (1) = 允许用户覆盖功能标志
+
+* OverridesDisabled (0) = 阻止用户覆盖功能标志
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：FeatureFlagOverridesControl
+  - GP 名称：配置用户覆盖功能标志的功能
+  - GP 路径 (强制) ：管理模板/Microsoft Edge/实验
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：FeatureFlagOverridesControl
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：FeatureFlagOverridesControl
+  - 示例值：
+``` xml
+<integer>1</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ## <a name="extensions-policies"></a>扩展策略
 
   [返回页首](#microsoft-edge---policies)
@@ -4235,7 +4582,7 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
 如果禁用此设置或将其保留为未设置，则允许安装外部扩展。
 
-外部扩展及其安装记录[在此处](/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options)。
+外部扩展及其安装记录在 https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options 。
 
 
   #### <a name="supported-features"></a>支持的功能：
@@ -4511,7 +4858,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 此策略取代了 [ExtensionInstallBlocklist](#extensioninstallblocklist) 策略。 如果以前强制安装的应用或扩展已从此列表中删除，则 Microsoft Edge 将自动卸载它。
 
-在 Microsoft Windows 实例上，只有当实例加入 Microsoft Active Directory 域并运行 Windows 10 专业版时，才能强制安装 Microsoft Edge Add-ons 网站外部的应用和扩展。
+对于Windows Microsoft Active Directory 域的实例，强制安装仅限于 Microsoft Edge 加载项网站中列出的应用和扩展。
 
 在 macOS 实例上，只有当实例是通过 MDM 管理或通过 MCX 加入域时，才能强制安装 Microsoft Edge 加载项网站外部的应用和扩展。
 
@@ -4519,7 +4866,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 策略的每个列表项都是一个字符串，其包含扩展 ID 和“更新”URL（可选），用分号 (;) 分隔。 扩展 ID 是在开发人员模式下找到的 32 个字母字符串，例如在 edge://extensions 上。 如果指定，“更新”URL 应指向更新清单 XML 文档 ([https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043))。 默认情况下，使用 Microsoft Edge Add-ons 网站的更新 URL。 此策略中设置的“更新”URL 仅用于初始安装；后续扩展更新使用扩展清单中的更新 URL。
 
-注意：此策略不适用于 InPrivate 模式。 [此处](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating)阅读有关托管扩展的信息。
+注意：此策略不适用于 InPrivate 模式。 阅读有关托管扩展 (https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 的信息。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -4651,7 +4998,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   设置此策略可控制 Microsoft Edge 的扩展管理设置，包括任何受现有扩展相关策略控制的设置。 此策略将取代可能设置的任何旧策略。
 
-此策略仅将扩展 ID 或更新 URL 映射到其特定设置。 可以针对特殊 ID"*"设置默认配置，此配置适用于在此策略中无自定义配置的所有扩展。 使用更新 URL，配置适用于扩展清单中所述的具有确切更新 URL 的扩展。 有关更多详细信息，请查看 [https://go.microsoft.com/fwlink/?linkid=2161555](https://go.microsoft.com/fwlink/?linkid=2161555) 上提供的 ExtensionSettings 策略的详细指南。
+此策略仅将扩展 ID 或更新 URL 映射到其特定设置。 可以针对特殊 ID"*"设置默认配置，此配置适用于在此策略中无自定义配置的所有扩展。 使用更新 URL，配置适用于扩展清单中所述的具有确切更新 URL 的扩展。 如果"override_update_url"标志设置为 true，则使用此策略的 [ExtensionInstallForcelist](#extensioninstallforcelist) 策略或"update_url"字段中指定的更新 URL 安装和更新扩展。 如果"override_update_url"是 Edge 加载项网站更新 URL，则忽略标志"update_url"。 有关更多详细信息，请查看 [https://go.microsoft.com/fwlink/?linkid=2161555](https://go.microsoft.com/fwlink/?linkid=2161555) 上提供的 ExtensionSettings 策略的详细指南。
 
 要阻止来自特定第三方应用商店的扩展，只需阻止该商店的 update_url。 例如，如果要阻止 Chrome Web Store 的扩展，可以使用以下 JSON。
 
@@ -4725,6 +5072,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
       "downloads"
     ],
     "installation_mode": "force_installed",
+    "override_update_url": true,
     "runtime_allowed_hosts": [
       "*://good.contoso.com"
     ],
@@ -4760,7 +5108,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   ##### <a name="compact-example-value"></a>精简示例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {"*": {"allowed_types": ["hosted_app"], "blocked_install_message": "Custom error message.", "blocked_permissions": ["downloads", "bookmarks"], "install_sources": ["https://company-intranet/apps"], "installation_mode": "blocked", "runtime_allowed_hosts": ["*://good.contoso.com"], "runtime_blocked_hosts": ["*://*.contoso.com"]}, "abcdefghijklmnopabcdefghijklmnop": {"blocked_permissions": ["history"], "installation_mode": "allowed", "minimum_version_required": "1.0.1"}, "bcdefghijklmnopabcdefghijklmnopa": {"allowed_permissions": ["downloads"], "installation_mode": "force_installed", "runtime_allowed_hosts": ["*://good.contoso.com"], "runtime_blocked_hosts": ["*://*.contoso.com"], "update_url": "https://contoso.com/update_url"}, "cdefghijklmnopabcdefghijklmnopab": {"blocked_install_message": "Custom error message.", "installation_mode": "blocked"}, "defghijklmnopabcdefghijklmnopabc,efghijklmnopabcdefghijklmnopabcd": {"blocked_install_message": "Custom error message.", "installation_mode": "blocked"}, "fghijklmnopabcdefghijklmnopabcde": {"blocked_install_message": "Custom removal message.", "installation_mode": "removed"}, "update_url:https://www.contoso.com/update.xml": {"allowed_permissions": ["downloads"], "blocked_permissions": ["wallpaper"], "installation_mode": "allowed"}}
+  SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {"*": {"allowed_types": ["hosted_app"], "blocked_install_message": "Custom error message.", "blocked_permissions": ["downloads", "bookmarks"], "install_sources": ["https://company-intranet/apps"], "installation_mode": "blocked", "runtime_allowed_hosts": ["*://good.contoso.com"], "runtime_blocked_hosts": ["*://*.contoso.com"]}, "abcdefghijklmnopabcdefghijklmnop": {"blocked_permissions": ["history"], "installation_mode": "allowed", "minimum_version_required": "1.0.1"}, "bcdefghijklmnopabcdefghijklmnopa": {"allowed_permissions": ["downloads"], "installation_mode": "force_installed", "override_update_url": true, "runtime_allowed_hosts": ["*://good.contoso.com"], "runtime_blocked_hosts": ["*://*.contoso.com"], "update_url": "https://contoso.com/update_url"}, "cdefghijklmnopabcdefghijklmnopab": {"blocked_install_message": "Custom error message.", "installation_mode": "blocked"}, "defghijklmnopabcdefghijklmnopabc,efghijklmnopabcdefghijklmnopabcd": {"blocked_install_message": "Custom error message.", "installation_mode": "blocked"}, "fghijklmnopabcdefghijklmnopabcde": {"blocked_install_message": "Custom removal message.", "installation_mode": "removed"}, "update_url:https://www.contoso.com/update.xml": {"allowed_permissions": ["downloads"], "blocked_permissions": ["wallpaper"], "installation_mode": "allowed"}}
   ```
   
 
@@ -4818,6 +5166,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
     </array>
     <key>installation_mode</key>
     <string>force_installed</string>
+    <key>override_update_url</key>
+    <true/>
     <key>runtime_allowed_hosts</key>
     <array>
       <string>*://good.contoso.com</string>
@@ -5399,6 +5749,123 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 
   [返回页首](#microsoft-edge---policies)
 
+  ## <a name="identity-and-sign-in-policies"></a>标识和登录策略
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="implicitsigninenabled"></a>ImplicitSignInEnabled
+
+  #### <a name="enable-implicit-sign-in"></a>启用隐式登录
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  配置此策略以允许/禁止隐式登录。
+
+如果已配置 [BrowserSignin](#browsersignin) 策略为"禁用浏览器登录"，则此策略不会生效。
+
+如果启用或不配置此设置，将启用隐式登录，Edge 将尝试根据用户登录到操作系统及其登录方式将用户登录到其配置文件。
+
+如果禁用此设置，将禁用隐式登录。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：ImplicitSignInEnabled
+  - GP 名称：启用隐式登录
+  - GP 路径 (强制) ：管理模板/Microsoft Edge/标识和登录
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ImplicitSignInEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="oneauthauthenticationenforced"></a>OneAuthAuthenticationEnforced
+
+  #### <a name="oneauth-authentication-flow-enforced-for-signin"></a>针对登录Flow OneAuth 身份验证
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  此策略允许用户决定是否使用 OneAuth 库在 Microsoft Edge RS3 Windows 10获取令牌。
+
+如果禁用或不配置此策略，登录过程将使用Windows帐户管理器。 Microsoft Edge无需密码即可使用登录到 Windows、Microsoft Office 或其他 Microsoft 应用程序的帐户登录。 或者，你可以提供有效的帐户和密码进行登录，这些帐户和密码Windows帐户管理器中供将来使用。 你将能够通过 Windows -Windows 设置 帐户 -> 电子邮件和帐户>帐户中存储的所有帐户。
+
+如果启用此策略，OneAuth 身份验证流将用于帐户登录。 OneAuth 身份验证流具有较少的依赖项，并且无需命令行管理程序Windows工作。 你使用的帐户不会存储在"电子邮件和帐户"页面中。
+
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：OneAuthAuthenticationEnforced
+  - GP 名称：强制登录Flow OneAuth 身份验证
+  - GP 路径 (强制) ：管理模板/Microsoft Edge/标识和登录
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：OneAuthAuthenticationEnforced
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ## <a name="kiosk-mode-settings-policies"></a>展台模式设置策略
 
   [返回页首](#microsoft-edge---policies)
@@ -5785,6 +6252,61 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   [返回页首](#microsoft-edge---policies)
 
   ## <a name="password-manager-and-protection-policies"></a>密码管理器和保护策略
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="passwordgeneratorenabled"></a>PasswordGeneratorEnabled
+
+  #### <a name="allow-users-to-get-a-strong-password-suggestion-whenever-they-are-creating-an-account-online"></a>允许用户在联机创建帐户时获取强密码建议
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  配置"密码生成器设置为用户启用/禁用该功能的开关。
+
+如果启用或不配置此策略，则密码生成器将为用户提供唯一的强密码建议 (在"注册和更改密码") 下拉列表中提供。
+
+如果禁用此策略，用户将不会再在"注册"或"更改密码"页上看到强密码建议。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：PasswordGeneratorEnabled
+  - GP 名称：允许用户在联机创建帐户时获取强密码建议
+  - GP 路径（强制）：管理模板/Microsoft Edge/密码管理器和保护
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：PasswordGeneratorEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
 
   [返回页首](#microsoft-edge---policies)
 
@@ -6201,6 +6723,71 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="primarypasswordsetting"></a>PrimaryPasswordSetting
+
+  #### <a name="configures-a-setting-that-asks-users-to-enter-their-device-password-while-using-password-autofill"></a>配置要求用户在使用密码自动填充时输入其设备密码的设置
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  该功能通过要求设备身份验证 (在保存的密码自动填充到 Web 表单之前确认用户的身份) ，帮助用户向他们的联机帐户添加一层额外的隐私。 这可确保未授权人员无法将保存的密码用于自动填充。
+
+此组策略配置为用户启用此功能的单选按钮选择器。 它还具有频率控制，用户可以在频率控制中指定提示他们进行身份验证的频率。
+
+如果设置此策略为"自动禁用此策略，或者不配置此策略，则自动填充将没有任何身份验证流"。
+
+如果此策略设置为"使用设备密码"，则用户需要在 Windows Hello 下输入其设备密码 (或首选身份验证模式（如果位于 Windows - mac) 上的 PIN、人脸识别或指纹以及等效选项）以证明其身份，并且只有在之后，其密码才能自动填充。 此外，默认情况下，身份验证提示的频率将设置为"始终"，但用户可以将提示更改为另一个选项，即"每次浏览会话一次"。
+
+策略选项映射：
+
+* 自动 (0) = 自动
+
+* WithDevicePassword (1) = 带设备密码
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：PrimaryPasswordSetting
+  - GP 名称：配置要求用户在使用密码自动填充时输入其设备密码的设置
+  - GP 路径（强制）：管理模板/Microsoft Edge/密码管理器和保护
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：PrimaryPasswordSetting
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ## <a name="performance-policies"></a>性能策略
 
   [返回页首](#microsoft-edge---policies)
@@ -6548,13 +7135,15 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 打印机目标包括扩展打印机和本地打印机。 扩展打印机也称为打印提供商目标，包括属于 Microsoft Edge 扩展的任何目标。
 本地打印机也称为本机打印目标，包括本地计算机可用的目标位置和共享网络打印机。
 
+在 Microsoft 版本 93 或更高版本中，如果此策略设置为"pdf"，还将从右键单击上下文菜单中禁用"另存为 Pdf"选项。
+
 策略选项映射：
 
 * privet (privet) = 基于 Zeroconf (mDNS + DNS-SD) 的协议目标
 
 * extension (extension) = 基于扩展的目标
 
-* pdf (pdf) =“另存为 PDF”目标
+* pdf (pdf) = "另存为 PDF"目标。  (93 或更高版本，也会禁用上下文菜单) 
 
 * local (local) = 本地打印机目标
 
@@ -6888,6 +7477,76 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   <key>name</key>
   <string>custom</string>
 </dict>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="printingwebpagelayout"></a>PrintingWebpageLayout
+
+  #### <a name="sets-layout-for-printing"></a>设置打印的布局
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  配置此策略将设置打印网页的布局。
+
+如果禁用或不配置此策略，用户可以决定是否以纵向布局还是横向布局打印网页。
+
+如果启用此策略，则所选选项将设置为布局选项。
+
+策略选项映射：
+
+* 纵向 (0) = 将布局选项设置为纵向
+
+* 横向 (1) = 将布局选项设置为横向
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：PrintingWebpageLayout
+  - GP 名称：设置打印的布局
+  - GP 路径（强制）：管理模板/Microsoft Edge/打印
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/打印
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称：PrintingWebpageLayout
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：PrintingWebpageLayout
+  - 示例值：
+``` xml
+<integer>0</integer>
 ```
   
 
@@ -7424,6 +8083,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\2 
 将 [ProxySettings](#proxysettings) 策略设置为 "接受以下字段"：
   * ProxyMode，可指定 Microsoft Edge 使用的代理服务器，并阻止用户更改代理设置。
   * ProxyPacUrl, 代理 .pac 文件的 URL
+  * ProxyPacMandatory，可防止网络堆栈通过无效或不可用的 PAC 脚本回滚到直接连接
   * ProxyServer, 代理服务器的 URL
   * ProxyBypassList, Microsoft Edge 跳过的代理主机列表。
 
@@ -7432,7 +8092,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\2 
   * system, 将使用系统的代理，并且忽略所有其他字段。
   * auto_detect，将忽略所有其他字段。
   * fixed_servers，将使用 "ProxyServer" 和 "ProxyBypassList" 字段。
-  * pac_script，将使用 "ProxyServer" 和 "ProxyBypassList" 字段。
+  * pac_script，使用 ProxyPacUrl、ProxyPacMandatory 和 ProxyBypassList 字段。
 
 有关更多详细示例，请转到 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
 
@@ -8113,7 +8773,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [返回页首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
 
   [返回页首](#microsoft-edge---policies)
 
@@ -8347,7 +9007,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果禁用或未配置此策略，Microsoft Edge 不会在新选项卡页上显示公司徽标或 Microsoft 徽标。
 
-有关确定 SHA-256 哈希的帮助，请转到[此处](/powershell/module/microsoft.powershell.utility/get-filehash)。
+有关确定 SHA-256 哈希的帮助，请参阅 https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -10477,13 +11137,13 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
     "allowed_origins": [
       "https://example.com",
       "https://.mail.example.com"
-    ], 
+    ],
     "protocol": "msteams"
-  }, 
+  },
   {
     "allowed_origins": [
       "*"
-    ], 
+    ],
     "protocol": "msoutlook"
   }
 ]
@@ -10519,7 +11179,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
       <string>https://.mail.example.com</string>
     </array>
     <key>protocol</key>
-    <string>teams</string>
+    <string>msteams</string>
   </dict>
   <dict>
     <key>allowed_origins</key>
@@ -10527,7 +11187,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
       <string>*</string>
     </array>
     <key>protocol</key>
-    <string>outlook</string>
+    <string>msoutlook</string>
   </dict>
 </array>
 ```
@@ -10901,7 +11561,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
 设置为“已启用”会将媒体自动播放设置为“允许”。  允许所有网站自动播放媒体。 用户不能替代此策略。
 
-设置为“已禁用”会将媒体自动播放设置为“阻止”。  不允许任何网站自动播放媒体。 用户不能替代此策略。
+设置为"已禁用"将媒体自动播放设置为"限制"。  这会将允许自动播放媒体的网站限制到具有高媒体参与度和活动 WebRTC 流的网页。 在版本 92 Microsoft Edge之前，这会将媒体自动播放设置为"阻止"。 用户不能替代此策略。
 
 需要关闭并重新打开一个选项卡，此策略才会生效。
 
@@ -10945,6 +11605,75 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 示例值：
 ``` xml
 <true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="autoplayallowlist"></a>AutoplayAllowlist
+
+  #### <a name="allow-media-autoplay-on-specific-sites"></a>允许媒体自动播放特定网站
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  根据 URL 模式定义允许自动播放媒体的网站列表。
+
+如果未配置此策略，则 [AutoplayAllowed](#autoplayallowed) 策略中的全局默认值 (如果设置为) ，则用户的个人配置将用于所有网站。
+
+关于有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
+
+注意： * 不是此策略的接受值。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 字符串列表
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：AutoplayAllowlist
+  - GP 名称：允许媒体自动播放特定网站
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 必需的 (路径) ：SOFTWARE\Policies\Microsoft\Edge\AutoplayAllowlist
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\AutoplayAllowlist\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\AutoplayAllowlist\2 = "[*.]contoso.edu"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：AutoplayAllowlist
+  - 示例值：
+``` xml
+<array>
+  <string>https://www.contoso.com</string>
+  <string>[*.]contoso.edu</string>
+</array>
 ```
   
 
@@ -12535,6 +13264,8 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
 从 Microsoft Edge 89 开始，如果现有本地配置文件已禁用[RoamingProfileSupportEnabled](#roamingprofilesupportenabled)策略，并且计算机现已混合加入，即 它拥有 Azure AD 帐户，它将本地配置文件自动升级到 Azure AD 配置文件，以获得完整的 Azure AD 同步功能。
 
+从 Microsoft Edge 93 开始，如果禁用[了策略 ImplicitSignInEnabled，](#implicitsigninenabled)则此策略将不会生效。
+
 策略选项映射：
 
 * Disabled (0) = 禁用
@@ -12653,12 +13384,13 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
   #### <a name="supported-versions"></a>支持的版本：
 
   - 在 Windows 上自 83 或更高版本起
+  - 在 macOS 上自 93 或更高版本起
 
   #### <a name="description"></a>描述
 
-  如果将此策略设置为“ShareAllowed”（默认值），用户将能够从 Microsoft Edge 中的“设置及更多”菜单访问 Windows 10 共享体验，以便与系统上的其他应用共享。
+  如果此策略设置为默认 ("ShareAllowed") ，用户将能够从 Microsoft Edge 中的"设置"和"更多"菜单访问"共享"体验，以便与系统上的其他应用共享。
 
-如果将此策略设置为“ShareDisallowed”，用户将无法访问 Windows 10 共享体验。 如果“共享"按钮位于工具栏上，它也将被隐藏。
+如果此策略设置为"ShareDisallowed"，用户将无法访问"共享"体验。 如果“共享"按钮位于工具栏上，它也将被隐藏。
 
 策略选项映射：
 
@@ -12700,6 +13432,90 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 ```
 0x00000001
 ```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：ConfigureShare
+  - 示例值：
+``` xml
+<integer>1</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="configureviewinfileexplorer"></a>ConfigureViewInFileExplorer
+
+  #### <a name="configure-the-view-in-file-explorer-feature-for-sharepoint-pages-in-microsoft-edge"></a>为文件资源管理器中的"文件资源管理器"SharePoint"视图"Microsoft Edge
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  此设置允许你在使用 Microsoft Edge 时配置"在文件资源管理器中查看"功能，以在 SharePoint Online 中管理Microsoft Edge。
+
+你需要列出允许使用此功能的特定域，并列出 rtFa 和 FedAuth SharePoint身份验证 (所需的) 。
+
+在后台，该策略允许具有 viewinfileexplorer： scheme 的 URL 在与域列表匹配的页面上打开 Windows 文件资源管理器中的 WebDAV URL，并使用您为 WebDAV 身份验证指定的 Cookie。
+
+如果启用此策略，可以在列出的文档库上使用"在文件SharePoint查看"功能。 你将需要指定SharePoint和身份验证 Cookie。 请参阅下面的示例值。
+
+如果禁用或不配置此策略，则不能对文档库使用"在文件资源管理器中SharePoint功能。
+
+请注意，虽然此选项通过 Microsoft Edge 提供，而不是使用"在文件资源管理器中查看"选项，但建议用于管理 SharePoint 外部的文件和文件夹的方法是同步 SharePoint 文件或移动或复制 SharePoint 中的文件。
+同步SharePoint文件 https://go.microsoft.com/fwlink/p/?linkid=2166983 ：移动或复制SharePoint：https://go.microsoft.com/fwlink/p/?linkid=2167123
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - Dictionary
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：ConfigureViewInFileExplorer
+  - GP 名称：配置"文件资源管理器中的查看"功能以SharePoint页面中Microsoft Edge
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ConfigureViewInFileExplorer
+  - 值类型：REG_SZ
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\ConfigureViewInFileExplorer = [
+  {
+    "cookies": [
+      "rtFa",
+      "FedAuth"
+    ],
+    "domain": "contoso.sharepoint.com"
+  }
+]
+```
+
+  ##### <a name="compact-example-value"></a>精简示例值：
+
+  ```
+  SOFTWARE\Policies\Microsoft\Edge\ConfigureViewInFileExplorer = [{"cookies": ["rtFa", "FedAuth"], "domain": "contoso.sharepoint.com"}]
+  ```
+  
 
   
 
@@ -14807,11 +15623,13 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
   #### <a name="description"></a>描述
 
-  此策略允许绕过 Microsoft Edge 内置的受限端口列表。 端口集定义为允许传出连接的逗号分隔列表。
+  有一个内置于限制端口的列表Microsoft Edge。 与这些端口的连接将失败。 此策略允许绕过该列表。 端口集定义为允许传出连接的逗号分隔列表。
 
 限制端口以防止 Microsoft Edge 被用作攻击各种网络漏洞的途径。 设置此策略可能会使网络受到攻击。 此策略旨在暂时解决错误代码"ERR_UNSAFE_PORT"，同时将被阻止端口上运行的服务迁移到标准端口 (例如端口 80 或 443)。
 
 恶意网站可以轻松检测此策略是否设置，以及针对哪些端口，然后使用该信息来设定攻击目标。
+
+此策略中列出的每个端口都标有可以取消阻止的日期。 在此日期之后，将限制端口，无论它是否由此策略的值指定。
 
 将该值留空或未设置意味着将阻止所有受限制的端口。 通过此策略设置的无效端口值将被忽略，同时仍将应用有效的端口值。
 
@@ -14819,11 +15637,15 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
 策略选项映射：
 
-* 554 (554) = 端口 554 (2021/10/15 到期) 
+* 554 (554) = 端口 554 (2021/10/15) 
 
-* 10080 (10080) = 端口 10080 (2022/04/01 到期) 
+* 10080 (10080) = 端口 10080 (可以取消阻止，直到 2022/04/01) 
 
-* 6566 (6566) = 端口 6566 (2021/10/15 到期) 
+* 6566 (6566) = 端口 6566 (2021/10/15) 
+
+* 989 (989) = 端口 989 (2022/02/01) 
+
+* 990 (990) = 端口 990 (2022/02/01 之前可以取消阻止) 
 
 配置此策略时，请使用上述信息。
 
@@ -17246,6 +18068,65 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="internetexplorerintegrationcloudsitelist"></a>InternetExplorerIntegrationCloudSiteList
+
+  #### <a name="configure-the-enterprise-mode-cloud-site-list"></a>配置Enterprise云站点列表
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  M365 管理中心中的"Microsoft Edge 站点列表"设置允许你在兼容的云位置托管站点列表 () ，并通过内置体验管理站点列表 () 的内容。 此设置允许你指定 M365 管理中心内要向用户部署的站点列表。 用户必须使用有效的工作Microsoft Edge学校帐户登录。 否则Microsoft Edge不会从云位置下载站点列表。
+
+此设置仅适用于配置 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 设置时。
+
+如果配置此策略，Microsoft Edge将使用指定的站点列表。 启用后，可以在 M365 管理中心输入你创建并发布到云的站点列表的标识符。
+
+此设置优先于 Microsoft Edge 的[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)策略以及 Internet Explorer 的网站列表设置 (使用 Enterprise 模式 IE 网站列表) 。 如果禁用或不配置此策略，Microsoft Edge [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)策略。
+
+要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2165707](https://go.microsoft.com/fwlink/?linkid=2165707)
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 字符串
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerIntegrationCloudSiteList
+  - GP 名称：配置Enterprise模式云站点列表
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InternetExplorerIntegrationCloudSiteList
+  - 值类型：REG_SZ
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+"aba95e58-070f-4784-8dcd-e5fd46c2c6d6"
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="internetexplorerintegrationenhancedhangdetection"></a>InternetExplorerIntegrationEnhancedHangDetection
 
   #### <a name="configure-enhanced-hang-detection-for-internet-explorer-mode"></a>为 Internet Explorer 模式配置增强的挂起检测
@@ -17735,6 +18616,63 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="internetexplorerintegrationsitelistrefreshinterval"></a>InternetExplorerIntegrationSiteListRefreshInterval
+
+  #### <a name="configure-how-frequently-the-enterprise-mode-site-list-is-refreshed"></a>配置刷新Enterprise站点列表的频率
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  此设置允许你为模式站点列表指定Enterprise刷新间隔。 刷新间隔以分钟为单位指定。
+
+此设置仅在配置 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 或 [InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist) 设置时适用。
+
+如果配置此策略，Microsoft Edge将尝试使用指定的刷新间隔检索Enterprise模式站点列表的更新版本。
+
+如果禁用或不配置此策略，Microsoft Edge默认刷新间隔（当前为 120 分钟）。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerIntegrationSiteListRefreshInterval
+  - GP 名称：配置Enterprise站点列表刷新的频率
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InternetExplorerIntegrationSiteListRefreshInterval
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x000000f0
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="internetexplorerintegrationsiteredirect"></a>InternetExplorerIntegrationSiteRedirect
 
   #### <a name="specify-how-in-page-navigations-to-unconfigured-sites-behave-when-started-from-internet-explorer-mode-pages"></a>指定从 Internet Explorer 模式页面启动时未配置网站的“页内”导航行为
@@ -18132,6 +19070,110 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
   #### <a name="mac-information-and-settings"></a>Mac 信息和设置
   
   - 首选项项名称：LocalProvidersEnabled
+  - 示例值：
+``` xml
+<false/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="mauenabled"></a>MAUEnabled
+
+  #### <a name="always-use-microsoft-autoupdate-as-the-updater-for-microsoft-edge"></a>始终使用 Microsoft AutoUpdate 作为更新程序进行Microsoft Edge
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  通过此策略，你可以配置Microsoft Edge程序。
+
+如果启用此策略，Microsoft Edge Microsoft AutoUpdate 更新此策略。
+
+如果禁用或不配置此策略，Microsoft Edge将更新Microsoft Edge 更新。
+
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：MAUEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="msawebsitessousingthisprofileallowed"></a>MSAWebSiteSSOUsingThisProfileAllowed
+
+  #### <a name="allow-single-sign-on-for-microsoft-sites-using-this-profile"></a>允许使用此配置文件的单一登录 Microsoft 网站
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  "允许使用此配置文件的单一登录 Microsoft 网站"选项允许非 MSA 配置文件使用计算机上已有的 MSA 凭据对 Microsoft 网站使用单一登录。 此选项仅为非 MSA 配置文件的 设置 -> Profiles -> Profile Preferences 中作为切换开关向最终用户显示。
+
+如果禁用此策略，非 MSA 配置文件将不能对使用计算机上存在 MSA 凭据的 Microsoft 网站使用单一登录。
+
+如果启用或不配置此策略，用户将可以使用 设置 选项，以确保非 MSA 配置文件能够使用计算机上存在的 MSA 凭据对 Microsoft 网站使用单一登录，但计算机上仅存在一个 MSA 帐户。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：MSAWebSiteSSOUsingThisProfileAllowed
+  - GP 名称：允许使用此配置文件对 Microsoft 网站进行单一登录
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称：MSAWebSiteSSOUsingThisProfileAllowed
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：MSAWebSiteSSOUsingThisProfileAllowed
   - 示例值：
 ``` xml
 <false/>
@@ -19008,6 +20050,8 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
 从 Microsoft Edge 89 开始，如果存在禁用同步且计算机已混合加入的现有本地配置文件，它将本地配置文件自动升级到 Azure AD 配置文件，使其不可删除，而不是创建新的不可删除的 Azure AD 配置文件。
 
+从 Microsoft Edge 93 开始，如果禁用[了策略 ImplicitSignInEnabled，](#implicitsigninenabled)则此策略将不会生效。
+
   #### <a name="supported-features"></a>支持的功能：
 
   - 可以强制：是
@@ -19875,6 +20919,166 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="relaunchwindow"></a>RelaunchWindow
+
+  #### <a name="set-the-time-interval-for-relaunch"></a>设置重新启动的时间间隔
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  指定重新启动通知期结束的目标时间窗口。
+
+根据 [RelaunchNotification](#relaunchnotification) 和 [RelaunchNotificationPeriod](#relaunchnotificationperiod) 策略设置，通知用户需要重新启动浏览器或设备。 当 [RelaunchNotification](#relaunchnotification) 策略设置为"必需"时，将在通知期结束时强制重新启动浏览器和设备。 此 RelaunchWindow 策略可用于延迟通知期的结束，以便它位于特定时间范围内。
+
+如果未配置此策略，则默认目标时间窗口Microsoft Edge 2 AM 到 4 AM 之间。 用户的默认目标Microsoft Edge是全天 (，即，通知期的结束从不延迟) 。
+
+注意：虽然策略可以接受条目中的多个项目，但除第一项外的所有项都被忽略。
+警告：设置此策略可能会延迟软件更新的应用。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - Dictionary
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：RelaunchWindow
+  - GP 名称：设置重新启动的时间间隔
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：RelaunchWindow
+  - 值类型：REG_SZ
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
+  "entries": [
+    {
+      "duration_mins": 240,
+      "start": {
+        "hour": 2,
+        "minute": 15
+      }
+    }
+  ]
+}
+```
+
+  ##### <a name="compact-example-value"></a>精简示例值：
+
+  ```
+  SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {"entries": [{"duration_mins": 240, "start": {"hour": 2, "minute": 15}}]}
+  ```
+  
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：RelaunchWindow
+  - 示例值：
+``` xml
+<key>RelaunchWindow</key>
+<dict>
+  <key>entries</key>
+  <array>
+    <dict>
+      <key>duration_mins</key>
+      <integer>240</integer>
+      <key>start</key>
+      <dict>
+        <key>hour</key>
+        <integer>2</integer>
+        <key>minute</key>
+        <integer>15</integer>
+      </dict>
+    </dict>
+  </array>
+</dict>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="remotedebuggingallowed"></a>RemoteDebuggingAllowed
+
+  #### <a name="allow-remote-debugging"></a>允许远程调试
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  控制用户是否可以使用远程调试。
+
+如果启用或不配置此策略，用户可能会通过指定远程调试-端口和 --remote-debugging-pipe 命令行开关来使用远程调试。
+
+如果禁用此策略，则不允许用户使用远程调试。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：RemoteDebuggingAllowed
+  - GP 名称：允许远程调试
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：RemoteDebuggingAllowed
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：RemoteDebuggingAllowed
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="renderercodeintegrityenabled"></a>RendererCodeIntegrityEnabled
 
   #### <a name="enable-renderer-code-integrity"></a>启用呈现器代码完整性
@@ -20434,7 +21638,7 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
   #### <a name="description"></a>描述
 
-  从版本 91（2021 年 5 月左右）开始，将删除对禁止显示 TLS 1.0/1.1 警告的支持，然后此策略将停止工作。
+  从版本 91 开始，从 Microsoft Edge 中删除了对禁止显示 TLS 1.0/1.1 警告的支持，然后此策略停止工作。
 
 设置 TLS 的最低支持版本。 如果未配置此策略，则 Microsoft Edge 将显示适用于 TLS 1.0 和 TLS 1.1 的错误，但用户将可以忽略它。
 
@@ -21289,15 +22493,15 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   
   #### <a name="supported-versions"></a>支持的版本：
 
-  - 自 91 或更高版本起，在 Windows 和 macOS 上
+  - 在 Windows 和 macOS 上自 92 或更高版本起
 
   #### <a name="description"></a>描述
 
   指定是否可以在非跨源隔离环境中使用 SharedArrayBuffers。  SharedArrayBuffer 是一个二进制数据缓冲区，可用于在共享内存上创建视图。  SharedArrayBuffers 在几个常用 CPU 中具有内存访问漏洞。
 
-如果启用此策略，则允许网站使用 SharedArrayBuffers。
+如果启用此策略，则允许网站使用 SharedArrayBuffers，没有任何限制。
 
-如果禁用或不配置此策略，网站将被阻止使用 SharedArrayBuffers。
+如果禁用或不配置此策略，则仅允许网站在跨源隔离时使用 SharedArrayBuffers。
 
 Microsoft Edge 91 及以上版本使用 SharedArrayBuffers 时，出于 Web 兼容性原因，Microsoft Edge 需要跨源隔离。
 
@@ -22763,6 +23967,70 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="travelassistanceenabled"></a>TravelAssistanceEnabled
+
+  #### <a name="enable-travel-assistance"></a>启用旅行协助
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在 Windows 和 macOS 上自 93 或更高版本起
+
+  #### <a name="description"></a>描述
+
+  配置此策略以允许/禁止旅行协助。
+
+旅行协助功能向在浏览器中执行旅行相关任务的用户提供有用且相关信息。 此功能为 Microsoft 收集的源中的用户提供受信任的经验证的建议/信息。
+
+如果启用或不配置此设置，将在用户执行旅行相关任务时为用户启用旅行协助。
+
+如果禁用此设置，将禁用旅行协助，并且用户将看不到任何与旅行相关的建议。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：TravelAssistanceEnabled
+  - GP 名称：启用旅行协助
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称：TravelAssistanceEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：TravelAssistanceEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="tripledesenabled"></a>TripleDESEnabled
 
   #### <a name="enable-3des-cipher-suites-in-tls"></a>在 TLS 中启用 3DES 密码套件
@@ -23784,7 +25052,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   #### <a name="allow-webdriver-to-override-incompatible-policies-obsolete"></a>允许 WebDriver 替代不兼容的策略（已过时）
 
-  >已弃用：此策略已弃用。 当前受支持，但在未来的版本中将过时。
+  
   >已过时：该策略已过时，Microsoft Edge 版本 84 后将无法正常工作。
   #### <a name="supported-versions"></a>支持的版本：
 

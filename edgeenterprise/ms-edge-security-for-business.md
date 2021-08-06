@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 适用于企业的 Microsoft Edge 安全
-ms.openlocfilehash: d16b22b63212e3f5319b0bb7df1e457e45cd6208
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: f3ed91c76cb686b0ce67608f749817cce48b412831f29c7734fa0eec06694dd5
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642298"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11727385"
 ---
 # <a name="microsoft-edge-security-for-your-business"></a>适用于企业的 Microsoft Edge 安全
 

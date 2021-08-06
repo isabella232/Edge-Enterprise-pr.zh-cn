@@ -12,12 +12,12 @@ metadata:
   author: dan-wesley
   ms.author: kvice
   ms.date: 02/02/2021
-  ms.openlocfilehash: 807aaa38da97222da8d52e36ad55995ef1c44e80
-  ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+  ms.openlocfilehash: 2aeb0e2452ce009c5c798bdee3c07ed324c6efbe2d96fa12e5fe92d6dd020e54
+  ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/24/2021
-  ms.locfileid: "11448136"
+  ms.lasthandoff: 08/05/2021
+  ms.locfileid: "11725945"
 landingContent:
 - title: 了解有关企业中的 Microsoft Edge 的信息
   linkLists:
@@ -33,7 +33,7 @@ landingContent:
     links:
     - text: Microsoft Edge 视频
       url: microsoft-edge-videos.md
-    - text: Microsoft Edge YouTube 频道
+    - text: Microsoft EdgeYouTube 频道
       url: https://www.youtube.com/channel/UCIGx7oT8p6-jUpOfg98yelA
 - title: 部署和更新 Microsoft Edge
   linkLists:
@@ -51,9 +51,9 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: 在 Windows 上配置 Microsoft Edge
+    - text: 在Microsoft Edge配置Windows
       url: configure-microsoft-edge.md
-    - text: 在 macOS 上配置 Microsoft Edge
+    - text: 在 macOS Microsoft Edge配置应用程序
       url: configure-microsoft-edge-on-mac.md
     - text: 将 Microsoft Edge 设为默认浏览器
       url: edge-default-browser.md

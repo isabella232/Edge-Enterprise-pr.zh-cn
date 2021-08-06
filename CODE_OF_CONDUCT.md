@@ -1,17 +1,17 @@
 ---
-ms.openlocfilehash: 71d25157130742dc22171ceb7bbcda563b3f93ae
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 539b1bfc810aa62738af95866bfe584d568b0dca71aebed0bd81db0bdaebade3
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979188"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11724815"
 ---
-# Microsoft 开放源代码行为准则
+# <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 开放源代码行为准则
 
-此项目采用了 [Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。
+此项目采用 Microsoft [开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。
 
 资源：
 
 - [Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)
-- [Microsoft 行为准则常见问题](https://opensource.microsoft.com/codeofconduct/faq/)
-- 联系 [opencode@microsoft.com](mailto:opencode@microsoft.com) 有疑问或疑点
+- [Microsoft 行为准则常见问题解答](https://opensource.microsoft.com/codeofconduct/faq/)
+- 如果 [opencode@microsoft.com](mailto:opencode@microsoft.com) 问题或问题，请与联系人联系

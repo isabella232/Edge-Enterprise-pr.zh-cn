@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 为 Internet Explorer 模式配置企业模式网站列表的分步指南。
-ms.openlocfilehash: 72de393a5da0b4b0e2950951ae527f6ef870e110
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: ec0d1364f3db00bc78e29bab8abbfcf1748f68494791fd5288a435a8b1230018
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641808"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11724415"
 ---
 # <a name="enterprise-site-configuration-strategy"></a>企业网站配置策略
 

@@ -1,7 +1,7 @@
 ---
 title: 为用户自动启用密码监视器
 ms.author: supalsul
-author:
+author: AndreLBarr
 manager: tulasim
 ms.date: 07/12/2021
 audience: ITPro
@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 为用户自动启用密码监视器
-ms.openlocfilehash: bd1fe390b972c66cd9b4c20ab3a9fabde76c7e03
-ms.sourcegitcommit: 65530c0bad3097a510f507503eae9c5c67db47a0
+ms.openlocfilehash: 19008283cb687cb903da63d74277cc0b326b91ad14e48d1e14861d765d61479a
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "11643879"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11727078"
 ---
 # <a name="password-monitor-auto-enabled-for-users"></a>为用户自动启用密码监视器
 

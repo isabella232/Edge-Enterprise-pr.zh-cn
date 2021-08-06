@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 Microsoft Intune 配置适用于 Windows 的 Microsoft Edge 策略设置。
-ms.openlocfilehash: adcd80f68250a9694b9bbaa21fb7941ebcbaf15a
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: cd11c8c92d67197d9cf1a24691615b0a56dd727626b9741b5664a5d1080ba950
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641668"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725453"
 ---
 # <a name="configure-microsoft-edge-policy-settings-with-microsoft-intune"></a>使用 Microsoft Intune 配置 Microsoft Edge 策略设置
 
