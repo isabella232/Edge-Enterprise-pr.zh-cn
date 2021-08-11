@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: c1556f18520c4b7101ea7296a2a1be67ad6ae0d2
-ms.sourcegitcommit: cb264068ccad14eb8ca8393ea04dd3dc8682527a
+ms.openlocfilehash: 95fc6b86846b2ee8b0e528b88aed107e1431502d1060d0dd45b22aa5304a72e7
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2021
-ms.locfileid: "11708661"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725745"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -30,6 +30,14 @@ ms.locfileid: "11708661"
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-92090262-july-29"></a>版本 92.0.902.62：6 月 29 日
+
+修复了各种 bug 和性能问题。
+
+### <a name="modified-policy"></a>修改的策略
+
+- AutoplayAllowed - 现在，设置为“已禁用”将媒体自动播放设置为“限制”
 
 ## <a name="version-92090255-july-22"></a>版本 92.0.902.55：7 月 22 日
 

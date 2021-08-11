@@ -77,9 +77,11 @@
   items:
     - name: 为 Windows 配置
       href: configure-microsoft-edge.md
-    - name: 使用 Intune 为 Windows 配置
+    - name: 使用 Intune 针对 Windows 进行配置
       href: /mem/intune/configuration/administrative-templates-configure-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
-    - name: 每个站点配置（按策略）
+    - name: 使用首次运行的“初始首选项”设置配置Microsoft Edge
+      href: Initial-preferences-support-on-Microsoft-Edge-browser.md
+    - name: 按策略进行的每站点配置
       href: Per-Site-Configuration-by-Policy.md
     - name: 使用移动设备管理为 Windows 配置
       href: configure-edge-with-mdm.md
