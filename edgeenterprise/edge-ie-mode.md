@@ -3,19 +3,19 @@ title: 什么是 Internet Explorer 模式？
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 06/28/2021
+ms.date: 08/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解 Microsoft Edge 中的 Internet Explorer 模式如何提供对需要 Internet Explorer 11 的网站的访问和新式网站的访问权限。
-ms.openlocfilehash: 7d1d9d201abee9cd9f0d648f2757e3276945d2f4dcf635ea0cd17a64e684aec4
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: cc88c6745d40bfd33a345d76e2b2090f0f33243271350e4449d698d4a0fab71e
+ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726056"
+ms.lasthandoff: 08/06/2021
+ms.locfileid: "11810192"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>什么是 Internet Explorer (IE) 模式？
 
@@ -47,16 +47,16 @@ ms.locfileid: "11726056"
 ### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>IE 模式支持以下 Internet Explorer 功能
 
 - 所有文档模式和企业模式。
-- ActiveX 控件（例如 Java 或 Silverlight）
+- ActiveX 控件（例如 Java 或 Silverlight）。 **注意**：Silverlight [将于](https://support.microsoft.com/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788) 2021 年 10 月 12 日终止支持。 
 - 浏览器帮助程序对象 
-- 影响安全区域设置和内核模式的 Internet Explorer 设置和组策略
-- 适用于 IE 的 F12 开发人员工具，随 [IEChooser](/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows-10) 一起启动
+- Internet Explorer影响安全区域设置和受保护模式的组设置和组策略
+- 适用于 IE 的 F12 开发人员工具，随 [IEChooser](/deployedge/edge-ie-mode-faq#how-can-i-debug-my-legacy-application-while-using-ie-mode-on-microsoft-edge-) 一起启动
 - Microsoft Edge 扩展（不支持直接与 IE 页面内容交互的扩展。）
 
 ### <a name="ie-mode-doesnt-support-the-following-internet-explorer-functionality"></a>IE 模式不支持以下 Internet Explorer 功能
 
 - Internet Explorer 工具栏
-- 影响导航菜单的 Internet Explorer 设置和组策略（例如 - 搜索引擎和主页。）
+- 控制导航菜单的 Internet Explorer 的设置和组策略。
 - IE11 或 Microsoft Edge F12 开发人员工具
 
 ## <a name="prerequisites"></a>必备条件
