@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/05/2021
+ms.date: 08/06/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 02841bd8574a71be63181d474d076dab9c48642e208e7a9c016f330bb1d68e08
-ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
+ms.openlocfilehash: ab373397b49405ec608e27e8f51309489715d940
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2021
-ms.locfileid: "11810212"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882118"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -57,7 +57,7 @@ ms.locfileid: "11810212"
 
 **直接从工具栏管理扩展**。 工具栏上新增的扩展菜单将允许你轻松隐藏/固定扩展。 管理扩展和查找新扩展的快速链接将使你轻松找到新扩展和管理现有扩展。
 
-**自动播放的默认设置将设置为“限制”**。  为了帮助你在上网时保持专注，从 Microsoft Edge 版本 92 开始，我们将自动播放媒体的默认设置从“允许”更改成了“限制”。
+**自动播放的默认值将设置为限制**。  为了帮助你在上网时保持专注，从 Microsoft Edge 版本 92 开始，我们将自动播放媒体的默认设置从“允许”更改成了“限制”。
 
 **付款工具现在可跨设备同步**。 从 Microsoft Edge 版本 92 开始，可以选择跨已登录设备同步付款信息。 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 目前，此功能仅在美国可用，并且仅适用于 MSA 用户（而非 AAD）
