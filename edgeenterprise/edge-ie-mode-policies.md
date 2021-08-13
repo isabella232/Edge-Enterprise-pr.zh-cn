@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 配置 IE 模式策略
-ms.openlocfilehash: a4b5e029935aed7e5d3cf23cc681448464b2f4e4a96d9d380d9cfb60ced88b2b
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 7ca8dffb0bc20acf954cf0f272f3894b39355846
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726105"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882128"
 ---
 # <a name="configure-ie-mode-policies"></a>配置 IE 模式策略
 
@@ -75,10 +75,8 @@ ms.locfileid: "11726105"
     > [!NOTE]
     > 配置 Microsoft Edge 策略并不是一项强制性要求。 许多组织将此策略用于重写目的，便于他们使用 IE 策略将当前网站列表定位到所有用户，并使用 Microsoft Edge 策略更轻松地将更新后的版本定位到试点网站用户。
 
-有关企业模式站点列表的更多信息，请参阅：
+有关模式站点列表Enterprise，请参阅使用Enterprise[站点列表管理器。](/deployedge/edge-ie-mode-site-list-manager)
 
-- [使用 Enterprise Mode Site List Manager](/internet-explorer/ie11-deploy-guide/use-the-enterprise-mode-site-list-manager)
-- [使用文件和 Enterprise Mode Site List Manager（架构 v.2）将多个站点添加到企业模式站点列表](/internet-explorer/ie11-deploy-guide/add-multiple-sites-to-enterprise-mode-site-list-using-the-version-2-schema-and-enterprise-mode-tool)。
 
 ### <a name="configure-using-the-use-the-enterprise-mode-ie-website-list-policy"></a>使用“使用企业模式 IE 网站列表”策略进行配置
 

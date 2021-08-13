@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 61ea386b4a0762f6b95a0f2c1944ca35d0749ea9d75f85330f85472414988200
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 9693195b466da999c7ada8f6a4453401e684326f
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724165"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882248"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -245,7 +245,7 @@ ms.locfileid: "11724165"
 |[SmartScreenEnabled](#smartscreenenabled)|配置 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|强制 Microsoft Defender SmartScreen 检查从受信任来源下载的内容|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|配置 Microsoft Defender SmartScreen 以阻止可能不需要的应用|
-### [*<a name="startup-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
 
 |策略名称|标题|
 |-|-|
@@ -320,7 +320,7 @@ ms.locfileid: "11724165"
 |[ConfigureOnPremisesAccountAutoSignIn](#configureonpremisesaccountautosignin)|配置当没有 Azure AD 域帐户时使用 Active Directory 域帐户自动登录|
 |[ConfigureOnlineTextToSpeech](#configureonlinetexttospeech)|配置联机文本到语音转换|
 |[ConfigureShare](#configureshare)|配置共享体验|
-|[ConfigureViewInFileExplorer](#configureviewinfileexplorer)|为文件资源管理器中的"文件资源管理器"SharePoint"视图"Microsoft Edge|
+|[ConfigureViewInFileExplorer](#configureviewinfileexplorer)|在文件资源管理器中为文件资源管理器中的SharePoint配置Microsoft Edge|
 |[CustomHelpLink](#customhelplink)|指定自定义帮助链接|
 |[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled)|已启用 DNS 拦截检查|
 |[DefaultBrowserSettingEnabled](#defaultbrowsersettingenabled)|将 Microsoft Edge 设为默认浏览器|
@@ -390,7 +390,7 @@ ms.locfileid: "11724165"
 |[InPrivateModeAvailability](#inprivatemodeavailability)|配置 InPrivate 模式可用性|
 |[InsecureFormsWarningsEnabled](#insecureformswarningsenabled)|启用不安全窗体的警告|
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|控制 IntensiveWakeUpThrottling 的功能|
-|[InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist)|配置Enterprise云站点列表|
+|[InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist)|配置Enterprise模式云站点列表|
 |[InternetExplorerIntegrationEnhancedHangDetection](#internetexplorerintegrationenhancedhangdetection)|为 Internet Explorer 模式配置增强的挂起检测|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|配置 Internet Explorer 集成|
 |[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允许在 Internet Explorer 模式下启动本地文件|
@@ -2741,15 +2741,15 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
   #### <a name="description"></a>描述
 
-  允许你设置网站 URL 模式列表，以指定允许使用 JIT (实时运行 JavaScript 的网站) 编译器启用。
+  允许你设置网站 URL 模式列表，这些模式指定允许使用 JIT (实时运行 JavaScript 的网站) 编译器启用。
 
 有关有效网站 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 。 * 不是此策略的接受值。
 
 JavaScript JIT 策略例外将仅在 eTLD+1 (以站点粒度) 。 仅针对 subdomain.contoso.com 的策略集无法正确应用到 contoso.com 或 subdomain.contoso.com 因为它们都解析为没有策略的同一 eTLD+1 (contoso.com) 。 在这种情况下，必须在策略上设置策略 contoso.com 以正确应用于 contoso.com 和 subdomain.contoso.com。
 
-此策略按帧应用，而不是仅基于顶级源 URL，例如，如果 contoso.com 在 JavaScriptJitAllowedForSites 策略中列出，但 contoso.com 加载包含 fabrikam.com 的帧，contoso.com 将启用 JavaScript JIT，但 fabrikam.com 将使用 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting)中的策略（如果已设置，或默认为启用 JavaScript JIT）。
+此策略按帧应用，而不是仅基于顶级源 URL，例如，如果 contoso.com 在 JavaScriptJitAllowedForSites 策略中列出，但 contoso.com 加载包含 fabrikam.com 的帧，则 contoso.com 将启用 JavaScript JIT，但 fabrikam.com 将使用 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting)中的策略（如果已设置，或默认为启用 JavaScript JIT）。
 
-如果未为站点配置此策略，则 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting) 中的策略将应用于该网站（如果已设置的话，否则会为网站启用 Javascript JIT）。
+如果未为站点配置此策略，则 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting) 中的策略将应用于网站（如果已设置的话，否则会为网站启用 Javascript JIT）。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -2810,7 +2810,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitAllowedForSites\1 = "[*.]example.e
 
   #### <a name="description"></a>描述
 
-  允许你设置网站 URL 模式列表，以指定不允许在启用编译器的"实时" (运行 JavaScript JIT) 站点。
+  允许你设置网站 URL 模式列表，以指定不允许在启用编译器的"实时" (运行 JavaScript JIT) 的网站。
 
 禁用 JavaScript JIT 意味着Microsoft Edge Web 内容的速度可能会变慢，并且也可能禁用 JavaScript 的某些部分，包括 WebAssembly。 禁用 JavaScript JIT 可能会允许Microsoft Edge以更安全的配置呈现 Web 内容。
 
@@ -2818,7 +2818,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitAllowedForSites\1 = "[*.]example.e
 
 JavaScript JIT 策略例外将仅在 eTLD+1 (以站点粒度) 。 仅针对 subdomain.contoso.com 的策略集无法正确应用到 contoso.com 或 subdomain.contoso.com 因为它们都解析为没有策略的同一 eTLD+1 (contoso.com) 。 在这种情况下，必须在策略上设置策略 contoso.com 以正确应用于 contoso.com 和 subdomain.contoso.com。
 
-此策略按帧应用，而不是仅基于顶级源 URL，例如，如果 contoso.com 在 JavaScriptJitBlockedForSites 策略中列出，但 contoso.com 加载包含 fabrikam.com 的帧，则 contoso.com 将禁用 JavaScript JIT，但 fabrikam.com 将使用 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting)中的策略（如果已设置，或默认为启用 JavaScript JIT）。
+此策略按帧应用，而不是仅基于顶级源 URL，例如，如果 contoso.com 在 JavaScriptJitBlockedForSites 策略中列出，但 contoso.com 加载包含 fabrikam.com 的帧，则 contoso.com 将禁用 JavaScript JIT，但 fabrikam.com 将使用 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting)中的策略（如果设置或默认为启用 JavaScript JIT）。
 
 如果未为站点配置此策略，则 [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting) 中的策略将应用于网站（如果已设置的话）否则，会为网站启用 JavaScript JIT。
 
@@ -4502,7 +4502,7 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
 如果此策略设置为"OverridesEnabled"，则用户可以使用命令行参数或自定义 edge://flags 状态。
 
-如果此策略设置为"OverridesDisabled"，则用户无法通过使用命令行参数或自定义页面覆盖功能标志 edge://flags 状态。
+如果此策略设置为"OverridesDisabled"，则用户不能使用命令行参数或自定义页面覆盖功能标志 edge://flags 状态。
 
 如果未配置此策略，则行为与"OverridesEnabled"相同。
 
@@ -4532,7 +4532,7 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
   - GP 唯一名称：FeatureFlagOverridesControl
   - GP 名称：配置用户覆盖功能标志的功能
-  - GP 路径 (强制) ：管理模板/Microsoft Edge/实验
+  - 强制 (GP 路径) ：管理模板/Microsoft Edge/试验
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
 
@@ -4858,7 +4858,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 此策略取代了 [ExtensionInstallBlocklist](#extensioninstallblocklist) 策略。 如果以前强制安装的应用或扩展已从此列表中删除，则 Microsoft Edge 将自动卸载它。
 
-对于Windows Microsoft Active Directory 域的实例，强制安装仅限于 Microsoft Edge 加载项网站中列出的应用和扩展。
+对于Windows加入 Microsoft Active Directory 域的实例，强制安装仅限于 Microsoft Edge 加载项网站中列出的应用和扩展。
 
 在 macOS 实例上，只有当实例是通过 MDM 管理或通过 MCX 加入域时，才能强制安装 Microsoft Edge 加载项网站外部的应用和扩展。
 
@@ -5824,9 +5824,9 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 
   此策略允许用户决定是否使用 OneAuth 库在 Microsoft Edge RS3 Windows 10获取令牌。
 
-如果禁用或不配置此策略，登录过程将使用Windows帐户管理器。 Microsoft Edge无需密码即可使用登录到 Windows、Microsoft Office 或其他 Microsoft 应用程序的帐户登录。 或者，你可以提供有效的帐户和密码进行登录，这些帐户和密码Windows帐户管理器中供将来使用。 你将能够通过 Windows -Windows 设置 帐户 -> 电子邮件和帐户>帐户中存储的所有帐户。
+如果禁用或不配置此策略，登录过程将使用Windows帐户管理器。 Microsoft Edge无需密码即可使用登录到 Windows、Microsoft Office 或其他 Microsoft 应用程序的帐户进行登录。 或者，你可以提供登录的有效帐户和密码，这些帐户和密码将Windows帐户管理器中供将来使用。 你将能够通过 Windows -Windows 设置 帐户 -> 电子邮件和帐户>帐户中存储的所有帐户。
 
-如果启用此策略，OneAuth 身份验证流将用于帐户登录。 OneAuth 身份验证流具有较少的依赖项，并且无需命令行管理程序Windows工作。 你使用的帐户不会存储在"电子邮件和帐户"页面中。
+如果启用此策略，OneAuth 身份验证流将用于帐户登录。 OneAuth 身份验证流具有较少的依赖项，可以在没有命令行管理程序Windows工作。 你使用的帐户不会存储在"电子邮件和帐户"页面中。
 
 
   #### <a name="supported-features"></a>支持的功能：
@@ -6269,7 +6269,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
   配置"密码生成器设置为用户启用/禁用该功能的开关。
 
-如果启用或不配置此策略，则密码生成器将为用户提供唯一的强密码建议 (在"注册和更改密码") 下拉列表中提供。
+如果启用或不配置此策略，则密码生成器将为用户提供唯一的强密码建议 (在"注册和更改密码") 下拉选项。
 
 如果禁用此策略，用户将不会再在"注册"或"更改密码"页上看到强密码建议。
 
@@ -6735,7 +6735,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   #### <a name="description"></a>描述
 
-  该功能通过要求设备身份验证 (在保存的密码自动填充到 Web 表单之前确认用户的身份) ，帮助用户向他们的联机帐户添加一层额外的隐私。 这可确保未授权人员无法将保存的密码用于自动填充。
+  该功能通过要求设备身份验证 (在保存的密码自动填写到 Web 表单之前确认用户的身份) ，帮助用户向他们的联机帐户添加一层额外的隐私。 这可确保未授权人员无法将保存的密码用于自动填充。
 
 此组策略配置为用户启用此功能的单选按钮选择器。 它还具有频率控制，用户可以在频率控制中指定提示他们进行身份验证的频率。
 
@@ -8773,7 +8773,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [返回页首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
 
   [返回页首](#microsoft-edge---policies)
 
@@ -13264,7 +13264,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
 从 Microsoft Edge 89 开始，如果现有本地配置文件已禁用[RoamingProfileSupportEnabled](#roamingprofilesupportenabled)策略，并且计算机现已混合加入，即 它拥有 Azure AD 帐户，它将本地配置文件自动升级到 Azure AD 配置文件，以获得完整的 Azure AD 同步功能。
 
-从 Microsoft Edge 93 开始，如果禁用[了策略 ImplicitSignInEnabled，](#implicitsigninenabled)则此策略将不会生效。
+从 Microsoft Edge 93 开始，如果策略[ImplicitSignInEnabled](#implicitsigninenabled)已禁用，则此策略不会生效。
 
 策略选项映射：
 
@@ -13388,7 +13388,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
   #### <a name="description"></a>描述
 
-  如果此策略设置为默认 ("ShareAllowed") ，用户将能够从 Microsoft Edge 中的"设置"和"更多"菜单访问"共享"体验，以便与系统上的其他应用共享。
+  如果此策略设置为默认 ("ShareAllowed") ，则用户将能够从 Microsoft Edge 中的 设置 和"更多"菜单访问"共享"体验，以便与系统上的其他应用共享。
 
 如果此策略设置为"ShareDisallowed"，用户将无法访问"共享"体验。 如果“共享"按钮位于工具栏上，它也将被隐藏。
 
@@ -13446,7 +13446,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
   ### <a name="configureviewinfileexplorer"></a>ConfigureViewInFileExplorer
 
-  #### <a name="configure-the-view-in-file-explorer-feature-for-sharepoint-pages-in-microsoft-edge"></a>为文件资源管理器中的"文件资源管理器"SharePoint"视图"Microsoft Edge
+  #### <a name="configure-the-view-in-file-explorer-feature-for-sharepoint-pages-in-microsoft-edge"></a>在文件资源管理器中为文件资源管理器中的SharePoint配置Microsoft Edge
 
   
   
@@ -13456,18 +13456,18 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
   #### <a name="description"></a>描述
 
-  此设置允许你在使用 Microsoft Edge 时配置"在文件资源管理器中查看"功能，以在 SharePoint Online 中管理Microsoft Edge。
+  此设置允许你在使用 Microsoft Edge 时配置 SharePoint Online 中的文件管理中的"在文件资源管理器中查看"Microsoft Edge。
 
-你需要列出允许使用此功能的特定域，并列出 rtFa 和 FedAuth SharePoint身份验证 (所需的) 。
+你需要列出允许使用此功能的特定域，并列出使用 rtFa 和 FedAuth SharePoint身份验证 (所需的) 。
 
 在后台，该策略允许具有 viewinfileexplorer： scheme 的 URL 在与域列表匹配的页面上打开 Windows 文件资源管理器中的 WebDAV URL，并使用您为 WebDAV 身份验证指定的 Cookie。
 
 如果启用此策略，可以在列出的文档库上使用"在文件SharePoint查看"功能。 你将需要指定SharePoint和身份验证 Cookie。 请参阅下面的示例值。
 
-如果禁用或不配置此策略，则不能对文档库使用"在文件资源管理器中SharePoint功能。
+如果禁用或不配置此策略，则不能使用文档库上的"在文件资源管理器中SharePoint功能。
 
 请注意，虽然此选项通过 Microsoft Edge 提供，而不是使用"在文件资源管理器中查看"选项，但建议用于管理 SharePoint 外部的文件和文件夹的方法是同步 SharePoint 文件或移动或复制 SharePoint 中的文件。
-同步SharePoint文件 https://go.microsoft.com/fwlink/p/?linkid=2166983 ：移动或复制SharePoint：https://go.microsoft.com/fwlink/p/?linkid=2167123
+同步你的SharePoint文件 https://go.microsoft.com/fwlink/p/?linkid=2166983 ：移动或复制SharePoint：https://go.microsoft.com/fwlink/p/?linkid=2167123
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -15643,7 +15643,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
 * 6566 (6566) = 端口 6566 (2021/10/15) 
 
-* 989 (989) = 端口 989 (2022/02/01) 
+* 989 (989) = 端口 989 (在 2022/02/01) 
 
 * 990 (990) = 端口 990 (2022/02/01 之前可以取消阻止) 
 
@@ -18070,7 +18070,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   ### <a name="internetexplorerintegrationcloudsitelist"></a>InternetExplorerIntegrationCloudSiteList
 
-  #### <a name="configure-the-enterprise-mode-cloud-site-list"></a>配置Enterprise云站点列表
+  #### <a name="configure-the-enterprise-mode-cloud-site-list"></a>配置Enterprise模式云站点列表
 
   
   
@@ -18080,9 +18080,9 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   #### <a name="description"></a>描述
 
-  M365 管理中心中的"Microsoft Edge 站点列表"设置允许你在兼容的云位置托管站点列表 () ，并通过内置体验管理站点列表 () 的内容。 此设置允许你指定 M365 管理中心内要向用户部署的站点列表。 用户必须使用有效的工作Microsoft Edge学校帐户登录。 否则Microsoft Edge不会从云位置下载站点列表。
+  M365 管理中心中的"Microsoft Edge 站点列表"设置允许你在兼容的云位置托管站点列表 () ，并通过内置体验管理站点列表 () 的内容。 此设置允许你指定 M365 管理中心内要向用户部署的站点列表。 必须使用有效的工作或学校Microsoft Edge登录用户。 否则Microsoft Edge不会从云位置下载站点列表。
 
-此设置仅适用于配置 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 设置时。
+此设置仅在配置 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 设置时适用。
 
 如果配置此策略，Microsoft Edge将使用指定的站点列表。 启用后，可以在 M365 管理中心输入你创建并发布到云的站点列表的标识符。
 
@@ -19090,11 +19090,11 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   #### <a name="description"></a>描述
 
-  通过此策略，你可以配置Microsoft Edge程序。
+  此策略允许你配置由用户Microsoft Edge程序。
 
 如果启用此策略，Microsoft Edge Microsoft AutoUpdate 更新此策略。
 
-如果禁用或不配置此策略，Microsoft Edge将更新Microsoft Edge 更新。
+如果禁用或不配置此策略，Microsoft Edge更新Microsoft Edge 更新。
 
 
   #### <a name="supported-features"></a>支持的功能：
@@ -19132,7 +19132,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   #### <a name="description"></a>描述
 
-  "允许使用此配置文件的单一登录 Microsoft 网站"选项允许非 MSA 配置文件使用计算机上已有的 MSA 凭据对 Microsoft 网站使用单一登录。 此选项仅为非 MSA 配置文件的 设置 -> Profiles -> Profile Preferences 中作为切换开关向最终用户显示。
+  "允许使用此配置文件的单一登录 Microsoft 网站"选项允许非 MSA 配置文件使用计算机上已有的 MSA 凭据对 Microsoft 网站使用单一登录。 此选项仅为非 MSA 配置文件的 设置 -> 配置文件 -> 配置文件首选项中作为切换项向最终用户显示。
 
 如果禁用此策略，非 MSA 配置文件将不能对使用计算机上存在 MSA 凭据的 Microsoft 网站使用单一登录。
 
@@ -20050,7 +20050,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
 从 Microsoft Edge 89 开始，如果存在禁用同步且计算机已混合加入的现有本地配置文件，它将本地配置文件自动升级到 Azure AD 配置文件，使其不可删除，而不是创建新的不可删除的 Azure AD 配置文件。
 
-从 Microsoft Edge 93 开始，如果禁用[了策略 ImplicitSignInEnabled，](#implicitsigninenabled)则此策略将不会生效。
+从 Microsoft Edge 93 开始，如果策略[ImplicitSignInEnabled](#implicitsigninenabled)已禁用，则此策略不会生效。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -21638,7 +21638,7 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
   #### <a name="description"></a>描述
 
-  从版本 91 开始，从 Microsoft Edge 中删除了对禁止显示 TLS 1.0/1.1 警告的支持，然后此策略停止工作。
+  从版本 91 开始，已从 Microsoft Edge 中删除对禁止显示 TLS 1.0/1.1 警告的支持，然后此策略停止工作。
 
 设置 TLS 的最低支持版本。 如果未配置此策略，则 Microsoft Edge 将显示适用于 TLS 1.0 和 TLS 1.1 的错误，但用户将可以忽略它。
 

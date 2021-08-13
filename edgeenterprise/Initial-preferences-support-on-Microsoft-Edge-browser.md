@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 浏览器上的初始首选项Microsoft Edge支持。
-ms.openlocfilehash: 4ac5e69ad1efa61752097348324f917d9155d4f823d520895296c8ab01d7065c
-ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
+ms.openlocfilehash: 39af88d21107ad548166c749c3ba765754270b48
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2021
-ms.locfileid: "11810223"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882258"
 ---
-# <a name="configure-microsoft-edge-using-initial-preferences-settings-for-the-first-run"></a>为Microsoft Edge一次运行时使用初始首选项设置配置策略
+# <a name="configure-microsoft-edge-using-initial-preferences-settings-for-the-first-run"></a>使用首次运行的“初始首选项”设置配置Microsoft Edge
 
 使用以下信息在 Microsoft Edge设备上配置"初始首选项Windows设置。
 
@@ -26,9 +26,9 @@ ms.locfileid: "11810223"
 
 ## <a name="configure-policy-settings-on-windows"></a>在 Windows 上配置策略设置
 
-从 Microsoft Edge 93 开始，Microsoft 支持数量有限的初始首选项（以前称为"主首选项）"，以帮助管理员为首次运行配置浏览器;请参阅下面的受支持设置列表。  
+从 93 Microsoft Edge，Microsoft 支持数量有限的初始首选项（以前称为"主首选项）"，以帮助管理员为首次运行配置浏览器;请参阅下面的受支持设置列表。  
 
-部署后，初始首选项充当托管设备上的默认浏览器设置;这些是管理员首选的设置为默认设置，但用户可以更改这些设置，也可以不用于某些设备，因为它们未加入 Active Directory® 域。
+部署后，初始首选项充当托管设备上的默认浏览器设置;这些是管理员首选的设置，用作默认设置，但用户可以更改这些设置，也可以不用于某些设备，因为它们未加入 Active Directory® 域。
 
 初始首选项设置的一些示例包括默认主页的初始配置或具有特定 URL 的选项卡。
 
@@ -56,7 +56,7 @@ To get started， download the example *initial_preferences* file form this loca
 
 ## <a name="2-customize-and-validate-the-initial_preferences-file"></a>2：自定义和验证initial_preferences文件
 
-自定义已下载的 initial_preferences *中的首选项* 设置并验证更改以确保 JSON 代码中没有错误。 如果发现错误，请检查文件语法和 *initial_preferences，更正* 并再次验证。 用于验证 JSON、Online [JSON 工具](https://jsonformatter.org/)或[JSON](https://code.visualstudio.com/docs/languages/json)编辑的示例工具Visual Studio Code。
+自定义已下载的 initial_preferences 中的首选项** 设置并验证更改以确保 JSON 代码中没有任何错误。 如果发现错误，请检查文件语法和 *initial_preferences，更正* 并再次验证。 用于验证 JSON、Online [JSON 工具](https://jsonformatter.org/)或[JSON](https://code.visualstudio.com/docs/languages/json)编辑的示例工具Visual Studio Code。
 
 ## <a name="3-deploy-preferences-to-users-computer"></a>3：将首选项部署到用户的计算机
 

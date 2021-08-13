@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: bea9c325471617c0ad680b0dabe8cd0d847d5ac0d95941f773471f74ffd0f771
-ms.sourcegitcommit: b5093c47bd5e927cde1d486eb71e0ee2483a8bd8
+ms.openlocfilehash: 8d76d11f40f179534120429d3494a50cc19f4a32
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "11810466"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882228"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
@@ -28,28 +28,28 @@ ms.locfileid: "11810466"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **中的初始Microsoft Edge。**  从 Microsoft Edge版本 93 开始，Microsoft Edge"初始首选项"将更轻松地部署到企业。
+- **中的初始Microsoft Edge。**  从 Microsoft Edge版本 93 开始，Microsoft Edge初始首选项将更轻松地部署到企业。
 
-- **IE 模式Microsoft Edge"nomerge"行为。**  从 Microsoft Edge版本 93 开始，IE 模式在 Microsoft Edge将支持_nomerge_。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于 Microsoft Edge 的每个窗口，首次访问该窗口中的 IE 模式选项卡时，如果该选项卡是指定的"nomerge"站点之一，则至少会锁定该窗口与其他所有 Microsoft Edge 窗口不同的"nomerge"IE 会话，直到关闭该窗口中的最后一个 IE 模式选项卡。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
+- **IE 模式Microsoft Edge"nomerge"行为。**  从 Microsoft Edge版本 93 开始，Microsoft Edge上的 IE 模式将支持_nomerge_。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于 Microsoft Edge 的每个窗口，首次访问该窗口中的 IE 模式选项卡时，如果它是指定的"nomerge"站点之一，则至少会锁定该窗口与所有其他 Microsoft Edge 窗口不同的"nomerge"IE 会话，直到关闭该窗口中的最后一个 IE 模式选项卡。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
 
 - **选项卡组。**  将选项卡分类到用户定义的组的功能可帮助您更有效地跨多个工作流查找、切换和管理选项卡。 为了启用此功能，我们将从版本 93 开始启用选项卡Microsoft Edge分组。
 
-- **使用垂直选项卡时隐藏标题栏。**  通过隐藏浏览器的标题栏（同时在垂直选项卡中）获取额外几个像素。 从 Microsoft Edge版本 93 开始，可以转到"自定义工具栏"edge://settings/appearance 在"自定义工具栏"部分下选择在"垂直选项卡"模式下隐藏标题栏的选项。
+- **使用垂直选项卡时隐藏标题栏。**  通过隐藏浏览器的标题栏（同时在垂直选项卡中）获取额外几个像素。 从 Microsoft Edge版本 93 开始，可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在"垂直选项卡"模式下隐藏标题栏的选项。
 
-- **从悬停工具栏 (PiP) 图片。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (进入图片) 变得更加简单。 将鼠标悬停在受支持的视频上时，将显示一个工具栏，允许您在 PiP 窗口中查看该视频。  注意：这当前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
+- **从悬停工具栏 (PiP) 图片。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (输入图片) 变得更加简单。 将鼠标悬停在受支持的视频上时，将显示一个工具栏，允许您在 PiP 窗口中查看该视频。  注意：这当前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
 
-- **在 TLS 中删除 3DES。**  从 Microsoft Edge版本 93 开始，将TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在Chromium项目上，Microsoft Edge项目。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，Microsoft Edge 93 版本中[，TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled)策略可用于支持需要保留与过时服务器的兼容性的方案。 此兼容性策略将过时，在版本 95 Microsoft Edge停止工作。 请确保在更新之前更新受影响的服务器。
+- **在 TLS 中删除 3DES。**  从 Microsoft Edge版本 93 开始，将TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在 Chromium项目中，Microsoft Edge项目。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，Microsoft Edge版本 93 中[，TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled)策略可用于支持需要保留与过时服务器的兼容性的方案。 此兼容性策略将过时，在版本 95 Microsoft Edge停止工作。 请确保在更新之前更新受影响的服务器。
 
 ### <a name="new-policies"></a>新策略
 
 - [AutoplayAllowlist](/DeployEdge/microsoft-edge-policies#autoplayallowlist) 允许媒体自动播放特定网站
 - [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) 为 TLS 启用的 CECPQ2 后量子密钥协议
-- [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer)为文件资源管理器中的"文件资源管理器"SharePoint"视图"Microsoft Edge
+- [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer)在文件资源管理器中为文件资源管理器中的SharePoint配置Microsoft Edge
 - [DefaultJavaScriptJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) 控制 JavaScript JIT 的使用
 - [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled)允许通知将 Microsoft Edge设置为默认 PDF 阅读器
 - [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) 配置用户重写功能标志的能力
 - [ImplicitSignInEnabled](/DeployEdge/microsoft-edge-policies#implicitsigninenabled) 启用隐式登录
-- [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist)配置Enterprise云站点列表
+- [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist)配置Enterprise模式云站点列表
 - [InternetExplorerIntegrationSiteListRefreshInterval](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationsitelistrefreshinterval)配置刷新Enterprise站点列表的频率
 - [JavaScriptJitAllowedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitallowedforsites) 允许 JavaScript 在这些网站上使用 JIT
 - [JavaScriptJitBlockedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitblockedforsites) 阻止 JavaScript 在这些网站上使用 JIT
@@ -77,7 +77,11 @@ ms.locfileid: "11810466"
 
 - [ConfigureShare](/DeployEdge/microsoft-edge-policies#configureshare) 添加 mac 平台支持
 
-## <a name="version-92090262-july-29"></a>版本 92.0.902.62：7 月 29 日
+## <a name="version-93096118-august-10"></a>版本 93.0.961.18：8 月 10 日
+
+修复了各种错误和性能问题。
+
+## <a name="version-92090262-july-29"></a>版本 92.0.902.62：6 月 29 日
 
 修复了各种错误和性能问题。
 
@@ -97,7 +101,7 @@ ms.locfileid: "11810466"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如) 上周的食谱"。
+- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了仅标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如) 上周的食谱"。
 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 策略调整将网站保留在本地站点列表中的天数。
@@ -106,19 +110,19 @@ ms.locfileid: "11810466"
 - **MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用 [本指南](/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
 
 - **付款工具现在跨设备同步**。 从 Microsoft Edge 版本 92 开始，可以选择跨已登录设备同步付款信息。
-请注意：这是限制性的功能推出。 如果你看不到此功能，请在我们继续推出时尽快查看。
+请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时尽快查看。
 
 - **“禁用开发人员模式扩展”警告可以永久消除**。 从 Microsoft Edge 版本 92 开始，可以通过单击"不要再次显示此扩展"选项来关闭"禁用开发人员模式扩展"警告。
-请注意：这是限制性的功能推出。 如果你看不到此功能，请在我们继续推出时尽快查看。
+请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时尽快查看。
 
 - **直接从工具栏管理扩展**。 工具栏上新增的扩展菜单将允许你轻松隐藏/固定扩展。 管理扩展和查找新扩展的快速链接将使你轻松找到新扩展和管理现有扩展。
-请注意：这是限制性的功能推出。 如果你看不到此功能，请在我们继续推出时尽快查看。
+请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时尽快查看。
 
 - **自动 HTTPS**。 用户可以选择在可能支持此更安全协议的域上将导航从 HTTP 升级到 HTTPS。 此支持还可以配置为在所有域上尝试 HTTPS 传输。
 请注意：我们正在试验此功能，如果你已选择退出实验，则将不会看到此行为。
 
 - **字体呈现的改进**。 改进了文本呈现，以提高清晰度并降低模糊度。
-请注意：这是限制性的功能推出。 如果你看不到此功能，请在我们继续推出时尽快查看。
+请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时尽快查看。
 
 ### <a name="policy-updates"></a>策略更新
 

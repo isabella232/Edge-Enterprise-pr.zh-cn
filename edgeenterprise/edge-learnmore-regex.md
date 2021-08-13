@@ -1,33 +1,33 @@
 ---
 title: 正则表达式 2 语法
 ms.author: comanea
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlyn
-ms.date: 06/29/2021
+ms.date: 08/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 正则表达式 2 语法
-ms.openlocfilehash: 48c19aaf039d239c05ef1b7e35faa8cfd6cb37349e53066b45d8183f6c64638d
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 78f21846c142d67470cd421a34baafa9d0021bd0
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11725995"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882138"
 ---
 # <a name="regular-expression-2-re2h-syntax"></a>正则表达式 2 (re2.h) 语法
 
 正则表达式是描述字符串集的表示法。 如果字符串位于正则表达式所描述的集合中，通常表示正则表达式匹配该字符串。
 
-最简单的正则表达式是单个文本字符。 除了 *\*+?()|* 等元字符，字符匹配自身。 若要匹配元字符，请使用反斜杠将其转义，如： \+ 匹配加号字符。
+最简单的正则表达式是单个文本字符。 除了 `\*+?()|` 等元字符，字符匹配自身。 若要匹配元字符，请用反杠转义它： `\+` 匹配文字加字符。
 
 可以更改或连接两个正则表达式，形成一个新的正则表达式：如果 *e<sub>1</sub>* 匹配 _s_，*e<sub>2</sub>* 匹配 _t_，则 *e<sub>1</sub> * | *e<sub>2</sub>* 匹配 _s_ 或 _t_，而且*e<sub>1</sub>* *e<sub>2</sub>* 匹配 _st_。
 
-元字符 _\*_、_+_ 和 _?_ 是重复运算符： *e<sub>1</sub>* _\*_ 匹配零个或多个（可能是不同的）字符串序列，其中每个字符串匹配 *e<sub>1</sub>*；*e<sub>1</sub>* _+_ 匹配一个或多个；*e<sub>1</sub>* _?_ 匹配零个或一个。
+元字符 _`\`_、_+_ 和 _?_ 是重复运算符： *e<sub>1</sub>* _`\`_ 匹配零个或多个（可能是不同的）字符串序列，其中每个字符串匹配 *e<sub>1</sub>*；*e<sub>1</sub>* _+_ 匹配一个或多个；*e<sub>1</sub>* _?_ 匹配零个或一个。
 
-运算符的优先级从最弱到最强排序，依次是替换、连接和重复运算符。 可采用显式括号强制改变运算顺序，就像在算术表达式中一样。 示例： _ab|cd_ 等同于 _(ab)|(cd)_；_ab\*_ 等同于 _a(b\*)_ 。
+运算符的优先级从最弱到最强排序，依次是替换、连接和重复运算符。 可采用显式括号强制改变运算顺序，就像在算术表达式中一样。 一些示例 _：ab|cd_ 相当于 (_ ab) | (cd) _ ; _`ab\`_ 等效于 _`a(b\)`_ 。
 
 目前所介绍的语法大部分为传统的 Unix _egrep_ 正则表达式语法。 此子集足以描述所有常规语言：笼统来讲，常规语言是一组字符串，可在单个传递文本的过程中仅使用固定数量的内存进行匹配。 较新的正则表达式功能（尤其是 Perl 和那些已复制的功能）添加了许多新的运算符和转义序列，令正则表达式更简洁，有时含义模糊，但通常功能没有增强。
 
