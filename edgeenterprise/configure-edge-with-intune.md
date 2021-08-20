@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 Microsoft Intune 配置适用于 Windows 的 Microsoft Edge 策略设置。
-ms.openlocfilehash: cd11c8c92d67197d9cf1a24691615b0a56dd727626b9741b5664a5d1080ba950
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 63eb29018bf4ec9c5a32d11b215f422e150383c9
+ms.sourcegitcommit: e811be46e3236534c5fa17c728ffc1005c5cc295
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11725453"
+ms.lasthandoff: 08/19/2021
+ms.locfileid: "11907256"
 ---
 # <a name="configure-microsoft-edge-policy-settings-with-microsoft-intune"></a>使用 Microsoft Intune 配置 Microsoft Edge 策略设置
 
@@ -53,7 +53,8 @@ ms.locfileid: "11725453"
 3. 从**设备** | **概述**中，选择 **配置文件**（在“策略”标题下）。
 4. 在顶部命令栏中，选择**创建配置文件**。
 5. 在**平台**下方的下拉列表中，选择 **Windows 10 及更高版本**。
-6. 在**配置文件**下方的下拉列表中，选择**管理模板**然后单击**创建**按钮。 下一个屏幕截图将显示下拉列表，以选择平台和配置文件类型。
+6. 在"配置文件类型"下面的下拉列表**中，** 选择 **"模板"。**
+7. 在" **模板名称"** 下， **选择"管理模板"，** 然后单击"创建 **"** 按钮。 下一个屏幕截图将显示下拉列表，以选择平台和配置文件类型。
 
     ![选择平台和配置文件类型](./media/configure-edge-with-intune/create-profile-platform.png)
 
