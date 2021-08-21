@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/05/2021
+ms.date: 08/20/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: a03e6c8d88d8e5959b267492bceaceba4b766c37
-ms.sourcegitcommit: e811be46e3236534c5fa17c728ffc1005c5cc295
+ms.openlocfilehash: 5bf7a834343c4a5531f1c73cc77996e6e016eb2e
+ms.sourcegitcommit: 81ecf79c5fd604cae91aaec3786859172c83ec79
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2021
-ms.locfileid: "11907266"
+ms.lasthandoff: 08/20/2021
+ms.locfileid: "11909907"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
@@ -23,6 +23,10 @@ ms.locfileid: "11907266"
 
 > [!NOTE]
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-93096127-august-20"></a>版本 93.0.961.27：8 月 20 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-93096124-august-18"></a>版本 93.0.961.24：8 月 18 日
 
@@ -32,13 +36,13 @@ ms.locfileid: "11907266"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **中的初始Microsoft Edge。**  从 Microsoft Edge版本 93 开始，Microsoft Edge初始首选项将更容易部署到企业。
+- **中的初始Microsoft Edge。**  从 Microsoft Edge版本 93 开始，Microsoft Edge初始首选项将更轻松地部署到企业。
 
-- **IE 模式Microsoft Edge"nomerge"行为。**  从 Microsoft Edge版本 93 开始，IE 模式Microsoft Edge不支持_merge_。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于 Microsoft Edge 的每个窗口，首次访问该窗口中的 IE 模式选项卡时，如果它是指定的"nomerge"站点之一，则至少会锁定该窗口与所有其他 Microsoft Edge 窗口不同的"nomerge"IE 会话，直到关闭该窗口中的最后一个 IE 模式选项卡。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
+- **IE 模式Microsoft Edge"nomerge"行为。**  从 Microsoft Edge版本 93 开始，IE 模式Microsoft Edge不支持_merge_。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于 Microsoft Edge 的每个窗口，首次访问该窗口中的 IE 模式选项卡时，如果它是指定的"nomerge"站点之一，则至少会锁定该窗口与其他所有 Microsoft Edge 窗口不同的"nomerge"IE 会话，直到该窗口中的最后一个 IE 模式选项卡关闭。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
 
 - **选项卡组。**  将选项卡分类到用户定义的组的功能可帮助您更有效地跨多个工作流查找、切换和管理选项卡。 为了启用此功能，我们将从版本 93 开始启用选项卡Microsoft Edge分组。
 
-- **使用垂直选项卡时隐藏标题栏。**  通过隐藏浏览器的标题栏（同时在垂直选项卡中）获取额外几个像素。 从 Microsoft Edge版本 93 开始，您可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在垂直选项卡模式下隐藏标题栏的选项。
+- **使用垂直选项卡时隐藏标题栏。**  通过隐藏浏览器的标题栏（同时在垂直选项卡中）获取额外几个像素。 从 Microsoft Edge版本 93 开始，可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在"垂直选项卡"模式下隐藏标题栏的选项。
 
 - **从悬停工具栏 (PiP) 图片。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (输入图片) 变得更加简单。 将鼠标悬停在受支持的视频上时，将显示一个工具栏，允许您在 PiP 窗口中查看该视频。  注意：这当前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
 
