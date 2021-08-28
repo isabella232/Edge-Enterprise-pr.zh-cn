@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
-ms.openlocfilehash: 4bb8f48bd5ccdfd555d44cecc8cfe9253a6ba17e42f60e2b8a0086411c10e9fb
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 4d9f5b0590199a9938b19e60fdd38e7c0098ac76
+ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727008"
+ms.lasthandoff: 08/27/2021
+ms.locfileid: "11925988"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
 
@@ -50,6 +50,13 @@ ms.locfileid: "11727008"
 ## <a name="whats-new"></a>新增功能
 
 新版 Microsoft Edge 浏览器中的应用程序防护支持与 Microsoft Edge 旧版具有同等的功能，并包括多项改进。
+
+### <a name="enable-application-guard-in-passive-mode-and-browse-edge-normally"></a>在被动模式下启用应用程序防护并正常浏览 Edge
+
+从 Microsoft Edge 94 开始，用户现在可以选择配置被动模式，这意味着应用程序防护将忽略站点列表配置，用户可以正常浏览边缘。 可通过策略控制此支持。 你可以更新边缘策略 [ApplicationGuardPassiveModeEnabled](/deployedge/microsoft-edge-policies#applicationguardpassivemodeenabled) 以启用或禁用被动模式。
+
+> [!Note]
+> 此策略仅影响 Edge，因此如果启用了相应的扩展，来自其他浏览器的导航可能会重定向到应用程序防护容器。
 
 ### <a name="favorites-synchronizing-from-the-host-to-the-container"></a>从主机同步到容器的收藏夹
 
@@ -155,7 +162,7 @@ IE 模式支持应用程序防护功能，但我们预计不会在 IE 模式下�
 
 ### <a name="my-extension-doesnt-seem-to-work-in-edge-application-guard"></a>我的扩展似乎在 Edge 应用程序防护中不起作用？
 
-如果在配置中为 MDAG 启用了扩展策略，请检查扩展是否要求本机邮件处理组件，应用程序防护容器中不支持这些扩展。
+如果在配置中为 MDAG 启用了扩展策略，请检查扩展是否要求本机邮件处理组件，这些扩展在应用程序防护容器中不受支持。
 
 ### <a name="im-trying-to-watch-playback-video-with-hdr-why-is-the-hdr-option-missing"></a>我尝试观看具有 HDR 的播放视频，为什么缺少 HDR 选项？
 

@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: d6912d275ca74bdd46b4d5997e34d62502562986
-ms.sourcegitcommit: 43e123dcb1a871e3fb9e0fdab096b8ea3d372bc7
+ms.openlocfilehash: dc2eebb2faabd4c04e0db4a5be4ffaaaff8aebcf
+ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2021
-ms.locfileid: "11925319"
+ms.lasthandoff: 08/27/2021
+ms.locfileid: "11925998"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
@@ -23,6 +23,10 @@ ms.locfileid: "11925319"
 
 > [!NOTE]
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-93096133-august-27"></a>版本 93.0.961.33：8 月 27 日
+
+修复了各种错误和性能问题。
 
 ## <a name="version-93096127-august-20"></a>版本 93.0.961.27：8 月 20 日
 
@@ -36,23 +40,23 @@ ms.locfileid: "11925319"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **中的初始Microsoft Edge。**  从 Microsoft Edge版本 93 开始，Microsoft Edge初始首选项将更轻松地部署到企业。
+- **中的初始Microsoft Edge。**  从 Microsoft Edge版本 93 开始，Microsoft Edge"初始首选项"将更轻松地部署到企业。
 
-- **IE 模式Microsoft Edge"nomerge"行为。**  从 Microsoft Edge版本 93 开始，IE 模式Microsoft Edge不支持_merge_。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于 Microsoft Edge 的每个窗口，首次访问该窗口中的 IE 模式选项卡时，如果它是指定的"nomerge"站点之一，则至少会锁定该窗口与其他所有 Microsoft Edge 窗口不同的"nomerge"IE 会话，直到该窗口中的最后一个 IE 模式选项卡关闭。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
+- **IE 模式Microsoft Edge"nomerge"行为。**  从 Microsoft Edge版本 93 开始，IE 模式Microsoft Edge不支持_merge_。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于 Microsoft Edge 的每个窗口，首次访问该窗口中的 IE 模式选项卡时，如果它是指定的"nomerge"站点之一，则至少会锁定该窗口与其他所有 Microsoft Edge 窗口不同的"nomerge"IE 会话，直到关闭该窗口中的最后一个 IE 模式选项卡。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
 
 - **选项卡组。**  将选项卡分类到用户定义的组的功能可帮助您更有效地跨多个工作流查找、切换和管理选项卡。 为了启用此功能，我们将从版本 93 开始启用选项卡Microsoft Edge分组。
 
-- **使用垂直选项卡时隐藏标题栏。**  通过隐藏浏览器的标题栏（同时在垂直选项卡中）获取额外几个像素。 从 Microsoft Edge版本 93 开始，可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在"垂直选项卡"模式下隐藏标题栏的选项。
+- **使用垂直选项卡时隐藏标题栏。**  通过隐藏浏览器的标题栏（同时在垂直选项卡中）获取额外几个像素。 从 Microsoft Edge版本 93 开始，您可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在"垂直选项卡"模式下隐藏标题栏的选项。
 
-- **从悬停工具栏 (PiP) 图片。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (输入图片) 变得更加简单。 将鼠标悬停在受支持的视频上时，将显示一个工具栏，允许您在 PiP 窗口中查看该视频。  注意：这当前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
+- **从悬停工具栏 (PiP) 图片。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (进入图片) 变得更加简单。 将鼠标悬停在受支持的视频上时，将显示一个工具栏，允许您在 PiP 窗口中查看该视频。  注意：这当前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
 
 - **在 TLS 中删除 3DES。**  从 Microsoft Edge版本 93 开始，将TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在Chromium项目上，Microsoft Edge项目。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，Microsoft Edge 93 版本中[，TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled)策略可用于支持需要保留与过时服务器的兼容性的方案。 此兼容性策略将过时，在版本 95 Microsoft Edge停止工作。 请确保在更新之前更新受影响的服务器。
 
-- **绕过 directInvoke ClickOnce和 DirectInvoke 提示的策略。**  我们更新了策略，以允许ClickOnce指定域的提示和 DirectInvoke 应用绕过指定文件类型。 为此，你需要：
+- **绕过 directInvoke ClickOnce和 DirectInvoke 提示的策略。**  我们已更新我们的策略，以允许从ClickOnce域绕过 DirectInvoke 应用的提示和 DirectInvoke 应用。 为此，你需要：
 
   - 启用 [ClickOnceEnabled](/deployedge/microsoft-edge-policies#clickonceenabled) 或 [DirectInvokeEnabled](/deployedge/microsoft-edge-policies#directinvokeenabled)
   - 启用[AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes)策略，并设置应禁用 ClickOnce DirectInvoke 的特定文件类型的列表
-  - 启用[AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls)策略，并设置将禁用 ClickOnce DirectInvoke 的特定域的列表
+  - 启用[AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls)策略并设置特定域的列表，ClickOnce和 DirectInvoke 将被禁用
 
   注意：AutoOpenAllowedForURLs 是 AutoOpenFileTypes 的一个策略。 如果未设置 AutoOpenAllowedForURLs 并且设置了 AutoOpenFileTypes，则列出的文件类型将自动从所有 URL 打开。
 
@@ -60,7 +64,7 @@ ms.locfileid: "11925319"
 
 - [AutoplayAllowlist](/DeployEdge/microsoft-edge-policies#autoplayallowlist) 允许媒体自动播放特定网站
 - [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) 为 TLS 启用的 CECPQ2 后量子密钥协议
-- [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer)配置"在文件资源管理器中查看"功能以SharePoint页面中Microsoft Edge
+- [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer)为文件资源管理器中的"文件资源管理器"SharePoint"视图Microsoft Edge
 - [DefaultJavaScriptJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) 控制 JavaScript JIT 的使用
 - [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled)允许通知将 Microsoft Edge设置为默认 PDF 阅读器
 - [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) 配置用户重写功能标志的能力
@@ -117,7 +121,7 @@ ms.locfileid: "11925319"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果) 如"上个星期的食谱"。
+- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如) 上周的食谱"。
 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 策略调整将网站保留在本地站点列表中的天数。
