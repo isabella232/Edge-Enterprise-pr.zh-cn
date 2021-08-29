@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 6a4c65d253a88384da7393ab846777093dc86e86
-ms.sourcegitcommit: 584a6a9877ae0c3fcb9acc0b8c158e280b0360ff
+ms.openlocfilehash: 3c21b06358d4aa563b67027d65a1aa5fec5f5dfc
+ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2021
-ms.locfileid: "11912057"
+ms.lasthandoff: 08/27/2021
+ms.locfileid: "11926008"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -30,6 +30,10 @@ ms.locfileid: "11912057"
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-92090284-august-26"></a>版本 92.0.902.84：8 月 26 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-92090278-august-19"></a>版本 92.0.902.78：8 月 19 日
 

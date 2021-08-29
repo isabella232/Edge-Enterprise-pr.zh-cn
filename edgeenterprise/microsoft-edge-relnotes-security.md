@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: b4f4a217a56bfb37a7f623e5040876ac268ff561
-ms.sourcegitcommit: 81ecf79c5fd604cae91aaec3786859172c83ec79
+ms.openlocfilehash: 28069b5693e0314ec5c99ea41f3ddedef9fe5ff2
+ms.sourcegitcommit: af1b1bad562dfd71c20bfab4fe00512cf956beb7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2021
-ms.locfileid: "11909917"
+ms.lasthandoff: 08/27/2021
+ms.locfileid: "11926028"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
@@ -104,7 +104,6 @@ Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 89.0.774.77�
 
 Microsoft 已发布最新的 **Microsoft Edge 稳定通道（版本 89.0.774.68）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
-
 ## <a name="march-13-2021"></a>2021 年 3 月 13 日
 
 Microsoft 发布了最新的 **Microsoft Edge 稳定渠道（版本 89.0.774.54），** 其中包含了 Chromium 项目的最新安全更新。 此更新包含已由 Chromium 团队报告用于现实中的 [CVE-2021-21193](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21193)。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
@@ -123,7 +122,11 @@ Microsoft 已发布最新的 **Microsoft Edge 稳定频道（版本 88.0.705.63�
 
 ## <a name="february-4-2021"></a>2021 年 2 月 4 日
 
-Microsoft 已发布最新的 **Microsoft Edge 稳定频道（版本 88.0.705.62）**，其中包含 Chromium 项目的最新安全更新。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
+Microsoft 已发布最新的  **Microsoft Edge 稳定频道（版本 88.0.705.62）**，其中融入了 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+此更新包含下列特定于 Microsoft Edge 的更新：
+
+- [CVE-2021-24113](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-24113)
 
 ## <a name="january-21-2021"></a>2021 年 1 月 21 日
 
