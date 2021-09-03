@@ -1,9 +1,9 @@
 ---
 title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
-author: AndreaLBarr
+author: dan-wesley
 manager: tahills
-ms.date: 08/31/2021
+ms.date: 08/30/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 9b71e641af62b0ad56e4f2e9bf52a061dafa52a3
-ms.sourcegitcommit: 5aeaeb85eba7572d1871ad55568a8bea4d4a4e5f
+ms.openlocfilehash: cd59eca6d07284c61a0c61537f45d36771d133f3
+ms.sourcegitcommit: e83b355a9d95f2c8ec858b05e5b7cf8837f8a82b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2021
-ms.locfileid: "11934571"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "11936560"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -254,7 +254,7 @@ ms.locfileid: "11934571"
 |[SmartScreenEnabled](#smartscreenenabled)|配置 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|强制 Microsoft Defender SmartScreen 检查从受信任来源下载的内容|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|配置 Microsoft Defender SmartScreen 以阻止可能不需要的应用|
-### [*<a name="startup-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
 
 |策略名称|标题|
 |-|-|
@@ -9043,7 +9043,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [返回页首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
 
   [返回页首](#microsoft-edge---policies)
 
@@ -21247,9 +21247,9 @@ QUIC 是一种传输层网络协议，可提高当前使用 TCP 的 Web 应用�
 
 系统会根据 [RelaunchNotification](#relaunchnotification) 和 [RelaunchNotificationPeriod](#relaunchnotificationperiod) 策略设置通知用户需要重启浏览器或设备。 当 [RelaunchNotification](#relaunchnotification) 策略设置为‘必需’时，浏览器和设备会在通知期结束时强制重启。 此 RelaunchWindow 策略可用于延迟结束通知期，使其处于特定时间窗户内。
 
-如果不配置此策略，则 Microsoft Edge 的默认目标时间窗口为凌晨 2 点到凌晨 4 点。 Microsoft Edge 的默认目标时间窗口为全天(即，从不延迟结束通知期)。
+如果不配置此策略，则默认的目标时间窗口为全天（即，从不延迟结束通知期）。
 
-注意: 虽然该策略可以接受条目中的多个项，但会忽略除第一项之外的所有项。
+注意: 虽然此策略可接受条目中的多个项，但会忽略除第一项之外的所有项。
 警告: 设置此策略可能会延迟软件更新的应用。
 
   #### <a name="supported-features"></a>受支持的功能:
