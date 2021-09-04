@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/19/2021
+ms.date: 09/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 3c21b06358d4aa563b67027d65a1aa5fec5f5dfc
-ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
+ms.openlocfilehash: e759a78587c594460b49d6858f127bcac90ff8d3
+ms.sourcegitcommit: a74b88408fcf820706c1ca2fd19d7ef83a1ddd76
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2021
-ms.locfileid: "11926008"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "11938204"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -29,9 +29,37 @@ ms.locfileid: "11926008"
 > [!NOTE]
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
 >
-> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将发生的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
 
-## <a name="version-92090284-august-26"></a>版本 92.0.902.84：8 月 26 日
+## <a name="version-93096138-september-02"></a>版本 93.0.961.38: 9 月 2 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#september-02-2021) 列出了稳定渠道安全性更新。
+
+### <a name="feature-updates"></a>功能更新
+
+- **Microsoft Edge 中的初始首选项。**  现在，Microsoft Edge 支持有限数量的“初始首选项”(旧称为“主首选项”)。 在其用户首次运行浏览器之前，IT 管理员可以将这些设置部署为默认设置。 此处的其他信息: [使用首次运行的“初始首选项”设置配置 Microsoft Edge](/deployedge/initial-preferences-support-on-microsoft-edge-browser)。
+
+- **Microsoft Edge 上的 IE 模式将支持“无合并”行为。**  对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，其将位于单独会话中，类似于 IE11 中的无合并行为。 需要调整站点列表，从而配置需要阻止会话共享为“无合并”的站点。 在后台，对于每个 Microsoft Edge 窗口，当首次在该窗口中访问 IE 模式选项卡时，如果其为其中一个指定的“无合并”站点，则该窗口至少会锁定到所有其他Microsoft Edge 窗口的不同“无合并”IE 会话中，直到最后的 IE 模式选项卡在该窗口中关闭。 此遵循之前的行为: 用户可以启动具有不合并的 IE，也可以通过其他机制在无合并的情况下启动 Microsoft Edge。  此处的其他信息: [IE 模式疑难解答与 FAQ | Microsoft Docs](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)
+
+- **用于停止隐式登录的新策略。**  [ImplicitSignInEnabled](/deployedge/microsoft-edge-policies#implicitsigninenabled) 策略允许系统管理员在Microsoft Edge 浏览器上禁用隐式登录。
+
+- **用于绕过 ClickOnce 和 DirectInvoke 提示的策略。** 我们更新了策略，以允许绕过来自指定域的指定文件类型的 ClickOnce 提示和 DirectInvoke 应用。 为此，需要:
+
+  - 启用 [ClickOnceEnabled](/deployedge/microsoft-edge-policies#clickonceenabled) 或 [DirectInvokeEnabled](/deployedge/microsoft-edge-policies#directinvokeenabled)
+  - 启用 [AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes) 策略，并设置应禁用 ClickOnce 和 DirectInvoke 的特定文件类型的列表
+  - 启用 [AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls) 策略并设置将禁用 ClickOnce 和 DirectInvoke 的特定域的列表。
+
+  注意: AutoOpenAllowedForURL 为 AutoOpenFileTypes 的策略。 如果未设置 AutoOpenAllowedForURL 但设置了 AutoOpenFileTypes，则列出的文件类型将从所有 URL 中自动打开。
+
+- **选项卡组。**  我们正在启用选项卡分组，其有助于将选项卡分类为用户定义的组，并帮助高效查找、切换和管理多个工作流中的选项卡。  
+
+- **使用“垂直标签”时隐藏标题栏。**  当在“垂直标签”中时，隐藏浏览器的标题栏以重获额外多个像素。 现在，你可以转到 edge://settings/appearance，在“自定义工具栏”部分下，选择在“垂直标签”模式下隐藏标题栏的选项。
+
+- **悬停工具栏中的视频画中画(PiP)。**  当将鼠标悬停在受支持的视频上时，工具栏将显示，允许在 PiP 窗口中查看该视频。  请注意: 此功能当前适用于 macOS 上的 Microsoft Edge 用户。  
+
+- **在 TLS 中删除 3DES。 将删除对 TLS_RSA_WITH_3DES_EDE_CBC_SHA 密码套件的支持。** 此更改发生在 Microsoft Edge 基于的 Chromium 项目中。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 策略将可用于支持需要保留与过时服务器的兼容性的场景。 此兼容性策略将过时，并停止在 Microsoft Edge 版本 95 中工作。 请确保在此之前更新受影响的服务器。
+
+## <a name="version-92090284-august-26"></a>版本 92.0.902.84: 8 月 26 日
 
 修复了各种 bug 和性能问题。
 
