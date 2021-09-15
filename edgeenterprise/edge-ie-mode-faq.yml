@@ -4,19 +4,19 @@ metadata:
   ms.author: shisub
   author: AndreaLBarr
   manager: srugh
-  ms.date: 08/31/2021
+  ms.date: 09/31/2021
   audience: ITPro
   ms.topic: conceptual
   ms.prod: microsoft-edge
   ms.localizationpriority: medium
   ms.collection: M365-modern-desktop
   description: Microsoft Edge Internet Explorer 模式的疑难解答和常见问题解答
-  ms.openlocfilehash: 591d963ed807c65b580e74fe10ad989bdceb852e
-  ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+  ms.openlocfilehash: b332f6b7399627e91d7dd51c624c3d56f9317ee5
+  ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/12/2021
-  ms.locfileid: "11978933"
+  ms.lasthandoff: 09/15/2021
+  ms.locfileid: "12016531"
 title: IE 模式疑难解答和常见问题解答
 summary: >
   >[!Note]
@@ -79,8 +79,7 @@ sections:
 
 
       若要检查 Microsoft Edge 是否安装在系统级别，请在 Microsoft Edge 地址栏中键入“edge://version”。 “可执行文件路径”将会显示以“C:\Program Files”** 开头的路径，这就表示是系统安装。 如果“可执行文件路径”以“C:\Users\”**开头，请使用管理员特权卸载并重新安装 Microsoft Edge。
-  - question: >
-      错误消息：“要在 IE 模式下打开此页面，请尝试重启 Microsoft Edge。”
+  - question: 收到错误消息"若要在 IE 模式下打开此页面，请尝试重新启动Microsoft Edge"。
     answer: >
       如果 Internet Explorer 中出现意外错误，你可能就会看到此错误。 重启 Microsoft Edge 通常可以修复此错误。
   - question: >
@@ -99,7 +98,18 @@ sections:
       是的，Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用，并将于 2022 年 6 月 15 (（生命周期[常见问题 - Internet Explorer）](https://support.microsoft.com/help/17454/)中的列表。现在使用的相同 IE11 应用和网站可以在Microsoft Edge模式下Internet Explorer打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
   - question: >
       如何在 IE 模式下对旧版应用程序进行调试Microsoft Edge？
-    answer: "可以使用 IEChooser 启动开发人员Internet Explorer调试 IE 模式选项卡的内容。 若要使用 IEChooser，请执行以下步骤。\n1. 打开 IEChooser。\n    - 打开“运行”对话框。 例如，按 `Windows logo key`  +  `R` 。\n    - 输入 `%systemroot%\\system32\\f12\\IEChooser.exe` ，然后选择\"确定 **\"。**\n2. 在 IEChooser 中，选择\"IE 模式\"选项卡的条目。\n  \n"
+    answer: >
+      可以使用 IEChooser 启动开发人员Internet Explorer调试 IE 模式选项卡的内容。 若要使用 IEChooser，请执行以下步骤。
+
+      1. 打开 IEChooser。
+          - 打开“运行”对话框。 例如，按 `Windows logo key`  +  `R` 。
+          - 输入 `%systemroot%\system32\f12\IEChooser.exe` ，然后选择"确定 **"。**
+      2. 在 IEChooser 中，选择"IE 模式"选项卡的条目。
+  - question: 当站点配置为在Microsoft Edge站点列表中打开 IE 模式时，我能否Enterprise测试该站点？
+    answer: >-
+      是的，在现代化旧网站时，可以在新网站上测试 IE 模式配置Microsoft Edge。 为此，可以使用命令行Microsoft Edge `--ie-mode-test` 运行命令。 确保没有运行任何其他Microsoft Edge实例。
+
+      然后，可以选择设置和 (省略号图标...) >"在>打开站点"。
   - question: >
       是否可在 IE 模式下的 SharePoint 中使用“使用资源管理器打开”或“在文件资源管理器中查看”？
     answer: >

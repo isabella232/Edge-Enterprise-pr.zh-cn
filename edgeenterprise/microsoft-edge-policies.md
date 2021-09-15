@@ -5063,7 +5063,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
 此列表中的每个项目都是扩展样式匹配模式（请参阅 [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039)）。 用户可以轻松地从与此列表中的项目匹配的任何 URL 安装项目。 这些模式必须允许 *.crx 文件的位置和从其启动下载的页面（换句话说，即引用者）。 不要在需要身份验证的位置承载文件。
 
-[ExtensionInstallBlocklist](#extensioninstallblocklist) 策略优先于此策略。 不会安装阻止列表上的任何扩展，即使它来自此列表上的网站也是如此。
+
+            [ExtensionInstallBlocklist](#extensioninstallblocklist) 策略优先于此策略。 不会安装阻止列表上的任何扩展，即使它来自此列表上的网站也是如此。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -8345,10 +8346,18 @@ SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\2 
 
 此策略将替代以下各个策略：
 
-[ProxyMode](#proxymode)
-[ProxyPacUrl](#proxypacurl)
-[ProxyServer](#proxyserver)
-[ProxyBypassList](#proxybypasslist)
+
+            [ProxyMode](#proxymode)
+            
+
+            [ProxyPacUrl](#proxypacurl)
+            
+
+            [ProxyServer](#proxyserver)
+            
+
+            [ProxyBypassList](#proxybypasslist)
+          
 
 将 [ProxySettings](#proxysettings) 策略设置为 "接受以下字段"：
   * ProxyMode，可指定 Microsoft Edge 使用的代理服务器，并阻止用户更改代理设置。
@@ -11477,7 +11486,8 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
 
   #### <a name="description"></a>描述
 
-  [AutoOpenFileTypes](#autoopenfiletypes)将应用到的 URL 的列表。 该策略对用户通过下载架... > “总是打开这种类型的文件”菜单项自动打开的值没有影响。
+  
+            [AutoOpenFileTypes](#autoopenfiletypes)将应用到的 URL 的列表。 该策略对用户通过下载架... > “总是打开这种类型的文件”菜单项自动打开的值没有影响。
 
 如果在此策略中设置URL，则只有在URL是此策略的一部分并且文件类型在[AutoOpenFileTypes](#autoopenfiletypes)中列出时，策略才会自动打开文件。 如果任一条件为 false，则下载不会通过策略自动打开。
 
@@ -12407,7 +12417,8 @@ SOFTWARE\Policies\Microsoft\Edge\AutoplayAllowlist\2 = "[*.]contoso.edu"
 
 如果将此策略设置为“启用”，则用户可以登录到浏览器。 登录到浏览器并不意味着默认情况下启用同步；用户必须单独选择加入才能使用此功能。
 
-如果将此策略设置为 'Force'，用户必须登录到配置文件才能使用浏览器。 默认情况下，这将允许用户选择是否要同步到其帐户，除非域管理员已禁用同步或使用了 [SyncDisabled](#syncdisabled) 策略。 [BrowserGuestModeEnabled](#browserguestmodeenabled) 策略的默认值设置为 false。
+如果将此策略设置为 'Force'，用户必须登录到配置文件才能使用浏览器。 默认情况下，这将允许用户选择是否要同步到其帐户，除非域管理员已禁用同步或使用了 [SyncDisabled](#syncdisabled) 策略。 
+            [BrowserGuestModeEnabled](#browserguestmodeenabled) 策略的默认值设置为 false。
 
 如果未配置此策略，则用户可以决定是否要启用浏览器登录选项并根据需要使用它。
 
@@ -16665,7 +16676,8 @@ Microsoft Edge 的默认引用者策略已从其当前的 no-referrer-when-downg
 
 若要使此策略按预期工作，[BrowserSignin](#browsersignin) 策略必须配置，或者必须设置为"启用"。 如果 [BrowserSignin](#browsersignin) 设置为"已禁用"，则 [ForceSync](#forcesync) 将不会生效。
 
-[SyncDisabled](#syncdisabled) 不可配置，或者必须设置为 False。 如果设置为 True，则 [ForceSync](#forcesync) 不会生效。
+
+            [SyncDisabled](#syncdisabled) 不可配置，或者必须设置为 False。 如果设置为 True，则 [ForceSync](#forcesync) 不会生效。
 
 0 = 不会自动启动同步并显示同步许可（默认） 1 = 为 Azure AD/Azure AD 降级用户配置文件启用强制同步，并且不显示同步许可提示
 
@@ -17191,19 +17203,40 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 注意：也可以使用其他特定策略管理首次运行体验中向用户显示的特定配置选项。 你可以将 HideFirstRunExperience 策略与这些策略搭配使用，以便在受管理设备上配置特定浏览器体验。 其他一些策略包括：
 
--[AutoImportAtFirstRun](#autoimportatfirstrun)
 
--[NewTabPageLocation](#newtabpagelocation)
+            -
+            [AutoImportAtFirstRun](#autoimportatfirstrun)
+          
 
--[NewTabPageSetFeedType](#newtabpagesetfeedtype)
 
--[ForceSync](#forcesync)
+            -
+            [NewTabPageLocation](#newtabpagelocation)
+          
 
--[SyncDisabled](#syncdisabled)
 
--[BrowserSignin](#browsersignin)
+            -
+            [NewTabPageSetFeedType](#newtabpagesetfeedtype)
+          
 
--[NonRemovableProfileEnabled](#nonremovableprofileenabled)
+
+            -
+            [ForceSync](#forcesync)
+          
+
+
+            -
+            [SyncDisabled](#syncdisabled)
+          
+
+
+            -
+            [BrowserSignin](#browsersignin)
+          
+
+
+            -
+            [NonRemovableProfileEnabled](#nonremovableprofileenabled)
+          
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17328,7 +17361,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着 Microsoft Edge 将在首次运行时导入自动填充数据，但用户可以在手动导入期间选择或清除**自动填充数据**选项。
 
-**注意**：此策略当前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）和 Mozilla Firefox（Windows 7、8 和 10 以及 macOS 上）浏览器导入。
+
+            **注意**：此策略当前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）和 Mozilla Firefox（Windows 7、8 和 10 以及 macOS 上）浏览器导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17396,7 +17430,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入设置，但用户可以在手动导入期间选择或清除**浏览器设置**选项。
 
-**注意**：此策略当前管理导入 Google Chrome（在 Windows 7、8 和 10 以及 macOS 上）。
+
+            **注意**：此策略当前管理导入 Google Chrome（在 Windows 7、8 和 10 以及 macOS 上）。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17462,7 +17497,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入 Cookie。
 
-**注意**：此策略当前管理导入 Google Chrome（在 Windows 7、8 和 10 以及 macOS 上）。
+
+            **注意**：此策略当前管理导入 Google Chrome（在 Windows 7、8 和 10 以及 macOS 上）。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17530,7 +17566,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入扩展，但用户可以在手动导入期间选择或清除**收藏夹**选项。
 
-**注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
+
+            **注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17598,7 +17635,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入收藏夹，但用户可以在手动导入期间选择或清除**收藏夹**选项。
 
-**注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）、Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）和 Apple Safari（macOS 上）浏览器导入。
+
+            **注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）、Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）和 Apple Safari（macOS 上）浏览器导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17666,7 +17704,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入浏览历史记录，但用户可以在手动导入期间选择或清除**历史记录**选项。
 
-**注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）、Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）和 Apple Safari (macOS) 浏览器导入。
+
+            **注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）、Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）和 Apple Safari (macOS) 浏览器导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17734,7 +17773,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入主页设置，但用户可以在手动导入期间选择或清除**主页**选项。
 
-**注意**：此策略当前管理从 Internet Explorer（在 Windows 7、8 和 10 上）导入。
+
+            **注意**：此策略当前管理从 Internet Explorer（在 Windows 7、8 和 10 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17802,7 +17842,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入打开的选项卡，但用户可以在手动导入期间选择或清除“**打开的选项卡**”选项。
 
-**注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
+
+            **注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17870,7 +17911,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入付款信息，但用户可以在手动导入期间选择或清除“**付款信息**”选项。
 
-**注意：** 此策略目前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）导入。
+
+            **注意：** 此策略目前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17938,7 +17980,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入密码，但用户可以在手动导入期间选择或清除“**密码**”选项。
 
-**注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）和 Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）浏览器导入。
+
+            **注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）和 Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）浏览器导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18006,7 +18049,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入搜索引擎设置，但用户可以在手动导入期间选择或清除“**搜索引擎**”选项。
 
-**注意**：此策略当前管理从 Internet Explorer（在 Windows 7、8 和 10 上）导入。
+
+            **注意**：此策略当前管理从 Internet Explorer（在 Windows 7、8 和 10 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18072,7 +18116,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入快捷方式。
 
-**注意**：此策略目前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）导入。
+
+            **注意**：此策略目前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18140,7 +18185,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着，Microsoft Edge 首次运行时将导入启动设置，但用户可以在手动导入期间选择或清除**浏览器设置**选项。
 
-**注意**：此策略当前管理从 Microsoft Edge 旧版 和 Google Chrome 浏览器 (在 Windows 7、8 和 10 上) 导入。
+
+            **注意**：此策略当前管理从 Microsoft Edge 旧版 和 Google Chrome 浏览器 (在 Windows 7、8 和 10 上) 导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -19141,7 +19187,8 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 如果未配置此策略，则浏览器将使用 DNS 拦截检查和 Intranet 重定向建议的默认行为。 在 M88 中，默认情况下启用它们，但在将来的版本中将默认禁用它们。
 
-[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 是一个相关策略，它也可能会禁用 DNS 拦截检查。 但是，此策略是更灵活的版本，它可能会单独控制 Intranet 重定向信息栏，并且可能会在将来进行扩展。
+
+            [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 是一个相关策略，它也可能会禁用 DNS 拦截检查。 但是，此策略是更灵活的版本，它可能会单独控制 Intranet 重定向信息栏，并且可能会在将来进行扩展。
 如果 [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 或此策略请求禁用拦截检查，则检查将被禁用。
 如果此策略禁用了 DNS 拦截检查，但启用了 [GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar)，则单字查询仍将导致 Intranet 导航。
 
@@ -21516,7 +21563,8 @@ SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
 
 如果禁用此策略，Microsoft Edge 将使用本机 API 尝试解决网络连接和导航问题。
 
-**注意**：除了 Windows 8 和更高版本的 Windows 之外，Microsoft Edge *始终*使用本机 API 来解决连接问题。
+
+            **注意**：除了 Windows 8 和更高版本的 Windows 之外，Microsoft Edge *始终*使用本机 API 来解决连接问题。
 
 如果未配置此策略，Microsoft Edge 将遵循 edge://settings/privacy 处“服务”下设置的用户首选项。
 具体而言，有一个“**使用 Web 服务帮助解决导航错误**”开关，用户可以打开或关闭该开关。 请注意，如果已启用此策略 (ResolveNavigationErrorsUseWebService)，则“**使用 Web 服务帮助解决导航错误**”设置将打开，但用户无法使用开关更改该设置。 如果禁用此策略，“**使用 Web 服务帮助解决导航错误**”设置将关闭，用户无法使用开关更改该设置。
@@ -21700,7 +21748,8 @@ SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
 
 如果禁用该策略或不对其进行配置，则仅使用常规本地配置文件。
 
-[SyncDisabled](#syncdisabled) 仅禁用云同步，并且对此策略没有影响。
+
+            [SyncDisabled](#syncdisabled) 仅禁用云同步，并且对此策略没有影响。
 
 有关使用漫游用户配置文件的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058)。
 

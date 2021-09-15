@@ -1,10 +1,8 @@
-# last revised 05/03/2021 
+# last revised 09/09/2021 
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
   href: /microsoft-edge/
-- name: Microsoft Edge 内容更新
-  href: microsoft-edge-content-updates.md
 - name: Microsoft Edge 入门
   items:
     - name: 了解 Microsoft Edge 渠道
