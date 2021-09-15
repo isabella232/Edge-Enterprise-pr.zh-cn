@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 正则表达式 2 语法
 ms.openlocfilehash: 78f21846c142d67470cd421a34baafa9d0021bd0
-ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "11882138"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978967"
 ---
 # <a name="regular-expression-2-re2h-syntax"></a>正则表达式 2 (re2.h) 语法
 
@@ -27,7 +27,7 @@ ms.locfileid: "11882138"
 
 元字符 _`\`_、_+_ 和 _?_ 是重复运算符： *e<sub>1</sub>* _`\`_ 匹配零个或多个（可能是不同的）字符串序列，其中每个字符串匹配 *e<sub>1</sub>*；*e<sub>1</sub>* _+_ 匹配一个或多个；*e<sub>1</sub>* _?_ 匹配零个或一个。
 
-运算符的优先级从最弱到最强排序，依次是替换、连接和重复运算符。 可采用显式括号强制改变运算顺序，就像在算术表达式中一样。 一些示例 _：ab|cd_ 相当于 (_ ab) | (cd) _ ; _`ab\`_ 等效于 _`a(b\)`_ 。
+运算符的优先级从最弱到最强排序，依次是替换、连接和重复运算符。 可采用显式括号强制改变运算顺序，就像在算术表达式中一样。 一些示例 _：ab|cd_ 等效于 (_ ab) | (cd) _ ; _`ab\`_ 等效于 _`a(b\)`_ 。
 
 目前所介绍的语法大部分为传统的 Unix _egrep_ 正则表达式语法。 此子集足以描述所有常规语言：笼统来讲，常规语言是一组字符串，可在单个传递文本的过程中仅使用固定数量的内存进行匹配。 较新的正则表达式功能（尤其是 Perl 和那些已复制的功能）添加了许多新的运算符和转义序列，令正则表达式更简洁，有时含义模糊，但通常功能没有增强。
 

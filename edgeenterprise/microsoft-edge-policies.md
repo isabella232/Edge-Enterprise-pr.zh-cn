@@ -12,11 +12,11 @@ ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
 ms.openlocfilehash: cd59eca6d07284c61a0c61537f45d36771d133f3
-ms.sourcegitcommit: e83b355a9d95f2c8ec858b05e5b7cf8837f8a82b
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "11936560"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978901"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -142,7 +142,7 @@ ms.locfileid: "11936560"
 |[FeatureFlagOverridesControl](#featureflagoverridescontrol)|配置用户替代功能标志的能力|
 ### [*<a name="extensions"></a>扩展*](#extensions-policies)
 
-|策略名称|描述文字|
+|策略名称|标题|
 |-|-|
 |[BlockExternalExtensions](#blockexternalextensions)|阻止安装外部扩展|
 |[ExtensionAllowedTypes](#extensionallowedtypes)|配置允许的扩展类型|
@@ -254,7 +254,7 @@ ms.locfileid: "11936560"
 |[SmartScreenEnabled](#smartscreenenabled)|配置 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|强制 Microsoft Defender SmartScreen 检查从受信任来源下载的内容|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|配置 Microsoft Defender SmartScreen 以阻止可能不需要的应用|
-### [*<a name="startup-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
 
 |策略名称|标题|
 |-|-|
@@ -9043,7 +9043,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [返回页首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
 
   [返回页首](#microsoft-edge---policies)
 

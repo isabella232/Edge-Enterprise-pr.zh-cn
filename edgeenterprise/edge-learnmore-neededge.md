@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容
-ms.openlocfilehash: 0d60dd2bdef87942087399afd5034454eead66ddc8e244df04c6e86ae2a73700
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: ec59380b82dc975ba3075d6e008bc0da05136f72
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724237"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978861"
 ---
 # <a name="redirection-from-internet-explorer-to-microsoft-edge-for-compatibility-with-modern-web-sites"></a>从 Internet Explorer 重定向到 Microsoft Edge，以便与现代网站兼容
 

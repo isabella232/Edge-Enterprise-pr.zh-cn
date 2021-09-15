@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用“企业站点发现”为 IE 模式做准备
-ms.openlocfilehash: c3f8cbd18c4353bfa32e379c26038ced432b6ac5bbdbb0ed1579add7ad0b74da
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: bbcf829e8c2504286ea68df673dabd9b296887c9
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724535"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978892"
 ---
 # <a name="enterprise-site-discovery-step-by-step-guide"></a>“企业站点发现”分步指南
 

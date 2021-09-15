@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 预配 Microsoft Edge 收藏夹
-ms.openlocfilehash: 9b84c883ffd6ac39339c05a9a54a1912910341870cb35d7e338e6fde1e9ff5f3
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 2d75e9c22a8aa9cc70d8b96c280934137396620a
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726008"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978667"
 ---
 # <a name="provision-favorites-for-microsoft-edge"></a>预配 Microsoft Edge 收藏夹
 

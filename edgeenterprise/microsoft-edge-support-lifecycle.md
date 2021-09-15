@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 生命周期
-ms.openlocfilehash: c9967a093168e0a289cd26f8c3927fc4188f916564e221b66394c6a510083ed1
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 941b77920978bba82dd5edcb192ddfab898f4053
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726955"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978952"
 ---
 # <a name="microsoft-edge-lifecycle-policy"></a>Microsoft Edge 生命周期策略
 
@@ -31,7 +31,7 @@ ms.locfileid: "11726955"
 
 Microsoft Edge更新功能更加频繁和灵活。 由于浏览器版本并不绑定到 Windows 主版本，因此必须更新负责管理的生命周期策略以反映这一点。 今后Microsoft Edge遵循新式[生命周期策略](https://support.microsoft.com/help/30881/modern-lifecycle-policy)。 安全更新和服务更新仅适用于最新的 Stable 渠道版本和最新的 Beta 渠道版本。 使用较早版本的 Microsoft Edge 可能意味着你丢失了最新的质量和安全更新，因此不建议使用。  协助支持如下所述。
 
-## <a name="servicing-and-assisted-support-timeline-for-microsoft-edge-77-93"></a>77-93 Microsoft Edge和协助支持时间线
+## <a name="servicing-and-assisted-support-timeline-for-microsoft-edge-77-93"></a>77-93 的维护Microsoft Edge协助支持时间线
 
 Microsoft Edge Stable 渠道版本 77 的主要发布周期为 6 周，一直持续到版本 93。  我们为最近的三个 Stable 渠道版本和最新的 Beta 渠道版本提供了协助支持。 稳定频道发布的有效协助支持持续时间约为18周。 Beta 渠道版本的有效支持期为大约 6 周;不支持以前的 Beta 渠道版本。  请参考下表。
 
@@ -47,7 +47,7 @@ Microsoft Edge Stable 渠道版本 77 的主要发布周期为 6 周，一直持
 
 从稳定频道版本 94 开始，Microsoft Edge 将移动到 4 周的主要发布周期节奏。 我们将继续为最近的三个 Stable 渠道版本和最新的 Beta 渠道版本提供协助支持。 稳定渠道版本的有效辅助支持期约为 12 周。
 
-我们知道，管理复杂环境的企业客户需要更多的时间来计划和测试Microsoft Edge更新。 为了帮助需要延长时间线来管理更新的企业客户，Microsoft Edge将提供与更长 **、8**周的主要发布周期一致的"扩展稳定"选项。 协助支持适用于最近的两个扩展稳定渠道版本。 扩展稳定渠道版本的有效辅助支持期约为 16 周。 请参考下表。
+我们意识到管理复杂环境的企业客户需要更多的时间来计划和测试Microsoft Edge更新。 为了帮助需要延长时间线来管理更新的企业客户，Microsoft Edge将提供与更长 **、8**周的主要发布周期一致的"扩展稳定"选项。 协助支持适用于最近的两个扩展稳定渠道版本。 扩展稳定渠道版本的有效辅助支持期约为 16 周。 请参考下表。
 
 |     发布选项              |     支持的主要版本版本    |     服务的主要版本版本    |     支持跨版本覆盖    |     服务范围    |
 |---------------------------------|----------------------------------------|---------------------------------------|-----------------------------------------|---------------------------|

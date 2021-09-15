@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 .plist 在 macOS 上配置 Microsoft Edge 策略设置
-ms.openlocfilehash: df8a51869665416ae7babe24fb7419ccaf723af6b8ca0381065d97b3728a4d87
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: d2e604e13f0fb7f81b2fb492073eba0751407771
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11725275"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978712"
 ---
 # <a name="configure-microsoft-edge-policy-settings-for-macos-using-a-plist"></a>使用 .plist 配置适用于 macOS 的 Microsoft Edge 策略设置
 
