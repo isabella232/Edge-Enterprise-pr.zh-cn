@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: '使用命令行选项配置代理设置 '
-ms.openlocfilehash: d10002e5595836976a33a1b70743fe78b7987f00725546d3aae9c241d661c6eb
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 99a5f0776ea42f1e26050e0d30adb48a63907b8c
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724395"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978932"
 ---
 # <a name="how-to-use-microsoft-edge-command-line-options-to-configure-proxy-settings"></a>如何使用 Microsoft Edge 命令行选项配置代理设置
 
