@@ -12,12 +12,12 @@ metadata:
   author: dan-wesley
   ms.author: kvice
   ms.date: 02/02/2021
-  ms.openlocfilehash: 2aeb0e2452ce009c5c798bdee3c07ed324c6efbe2d96fa12e5fe92d6dd020e54
-  ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+  ms.openlocfilehash: 807aaa38da97222da8d52e36ad55995ef1c44e80
+  ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/05/2021
-  ms.locfileid: "11725945"
+  ms.lasthandoff: 09/12/2021
+  ms.locfileid: "11978707"
 landingContent:
 - title: 了解有关企业中的 Microsoft Edge 的信息
   linkLists:
@@ -51,9 +51,9 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: 在Microsoft Edge配置Windows
+    - text: 配置Microsoft Edge Windows
       url: configure-microsoft-edge.md
-    - text: 在 macOS Microsoft Edge配置应用程序
+    - text: 在 macOS Microsoft Edge配置客户端
       url: configure-microsoft-edge-on-mac.md
     - text: 将 Microsoft Edge 设为默认浏览器
       url: edge-default-browser.md

@@ -11,16 +11,17 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解 Microsoft Edge 中的 Internet Explorer 模式如何提供对需要 Internet Explorer 11 的网站的访问和新式网站的访问权限。
 ms.openlocfilehash: cf2271f8b95c97a63695abf471ae67e693798ff2
-ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "11882278"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978856"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>什么是 Internet Explorer (IE) 模式？
 
 >[!Note]
-> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表， [请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表， [请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 
+            [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 我们在 Microsoft Edge 中创建了 Internet Explorer （IE） 模式，适用于仍需要 Internet Explorer 11 后向兼容现有网站但也需要现代浏览器的组织。 通过此功能，组织可以更加轻松地使用一个浏览器，用于旧版 Web/应用或新式 Web/应用。 本文简要介绍了将 Microsoft Edge 与 IE 模式一同使用。
 
@@ -47,7 +48,8 @@ ms.locfileid: "11882278"
 ### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>IE 模式支持以下 Internet Explorer 功能
 
 - 所有文档模式和企业模式。
-- ActiveX 控件（例如 Java 或 Silverlight）。 **注意**：Silverlight [将于](https://support.microsoft.com/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788) 2021 年 10 月 12 日终止支持。 
+- ActiveX 控件（例如 Java 或 Silverlight）。 
+            **注意**：Silverlight [将于](https://support.microsoft.com/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788) 2021 年 10 月 12 日终止支持。 
 - 浏览器帮助程序对象 
 - Internet Explorer影响安全区域设置和受保护模式的组设置和组策略
 - 适用于 IE 的 F12 开发人员工具，随 [IEChooser](/deployedge/edge-ie-mode-faq#how-can-i-debug-my-legacy-application-while-using-ie-mode-on-microsoft-edge-) 一起启动
@@ -71,22 +73,36 @@ ms.locfileid: "11882278"
  | 操作系统 | 版本       | 更新 |
  |------------------|---------------|---------|
  | Windows 10       | 1909 或更高版本 |         |
- | Windows 10       | 1903          | [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) 或更高版本 |
- | Windows Server   | 1903          | [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) 或更高版本 |
- | Windows 10       | 1809          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) 或更高版本 |
- | Windows Server   | 1809          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) 或更高版本 |
- | Windows Server   | 2019          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) 或更高版本 |
- | Windows 10       | 1803          | [KB4512509](https://support.microsoft.com/help/4512509/windows-10-update-kb4512509) 或更高版本 |
- | Windows 10       | 1709          | [KB4512494](https://support.microsoft.com/help/4512494/windows-10-update-kb4512494) 或更高版本 |
- | Windows 10       | 1607          | [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) 或更高版本 |
- | Windows Server   | 2016          | [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) 或更高版本 |
- | Windows 10       | 初始版本，2015 年 7 月 | [KB4520011](https://support.microsoft.com/help/4520011/windows-10-update-kb4520011) 或更高版本 |
- | Windows 8       | 8.1              | [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) 或更高版本；或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
- | Windows Server   | 2012 R2       | [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) 或更高版本；或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
+ | Windows 10       | 1903          | 
+            [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) 或更高版本 |
+ | Windows Server   | 1903          | 
+            [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) 或更高版本 |
+ | Windows 10       | 1809          | 
+            [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) 或更高版本 |
+ | Windows Server   | 1809          | 
+            [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) 或更高版本 |
+ | Windows Server   | 2019          | 
+            [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) 或更高版本 |
+ | Windows 10       | 1803          | 
+            [KB4512509](https://support.microsoft.com/help/4512509/windows-10-update-kb4512509) 或更高版本 |
+ | Windows 10       | 1709          | 
+            [KB4512494](https://support.microsoft.com/help/4512494/windows-10-update-kb4512494) 或更高版本 |
+ | Windows 10       | 1607          | 
+            [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) 或更高版本 |
+ | Windows Server   | 2016          | 
+            [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) 或更高版本 |
+ | Windows 10       | 初始版本，2015 年 7 月 | 
+            [KB4520011](https://support.microsoft.com/help/4520011/windows-10-update-kb4520011) 或更高版本 |
+ | Windows 8       | 8.1              | 
+            [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) 或更高版本；或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
+ | Windows Server   | 2012 R2       | 
+            [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) 或更高版本；或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
  | Windows 8  | 嵌入            | 安装 [KB4492872](https://support.microsoft.com/help/4492872/update-for-internet-explorer-april-16-2019) 以升级到 Internet Explorer 11；然后安装 [KB4507447](https://support.microsoft.com/help/4507447/windows-server-2012-update-kb4507447) 或更高版本或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
  | Windows Server   | 2012           | 安装 [KB4492872](https://support.microsoft.com/help/4492872/update-for-internet-explorer-april-16-2019) 以升级到 Internet Explorer 11；然后安装 [KB4507447](https://support.microsoft.com/help/4507447/windows-server-2012-update-kb4507447) 或更高版本或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
- | Windows 7        |  SP1**        | [KB4507437](https://support.microsoft.com/help/4507437/windows-7-update-kb4507437) 或更高版本；或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
- | Windows Server   |  2008 R2**    | [KB4507437](https://support.microsoft.com/help/4507437/windows-7-update-kb4507437) 或更高版本；或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
+ | Windows 7        |  SP1**        | 
+            [KB4507437](https://support.microsoft.com/help/4507437/windows-7-update-kb4507437) 或更高版本；或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
+ | Windows Server   |  2008 R2**    | 
+            [KB4507437](https://support.microsoft.com/help/4507437/windows-7-update-kb4507437) 或更高版本；或者 [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) 或更高版本 |
   > [!IMPORTANT]
   > ** 即使不再为 Windows 7 和 Windows Server 2008 R2 提供支持服务，Microsoft Edge 也将支持这些操作系统。 要在这些操作系统中支持 IE 模式，设备需要具有[适用于 Windows 7 的扩展安全更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 建议尽快升级到支持的操作系统以保证安全。 对于具有扩展安全更新的 Microsoft Edge 的支持应当视为达到受支持的操作系统状态的一种临时过渡。
 

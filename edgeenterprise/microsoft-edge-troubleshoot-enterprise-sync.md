@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 管理员可用于排查和修复常见企业同步问题的指南和工具
-ms.openlocfilehash: 61ef4b69e16ecc2955f3f4dc46b9a22e3a8563a1e5c691430fe0645ceb23ad79
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: c46fc716424faf361ea0a3bfab68737b64725473
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11725708"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979029"
 ---
 # <a name="diagnose-and-fix-microsoft-edge-sync-issues"></a>诊断和修复 Microsoft Edge 同步问题
 

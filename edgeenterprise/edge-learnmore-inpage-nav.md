@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 让页内导航继续保持 Internet Explorer 模式
-ms.openlocfilehash: f1c40977ba07f0a85bc64aab8e609163f9a68dd2eb7487adff6b6a1fcbd110f2
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 20b18d121c3babfaacffd4a08316b25be714d95e
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724277"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978869"
 ---
 # <a name="keep-in-page-navigation-in-internet-explorer-mode"></a>让页内导航继续保持 Internet Explorer 模式
 
@@ -60,7 +60,7 @@ ms.locfileid: "11724277"
 
    - **默认** - 只有配置为以 Internet Explorer 模式打开的网站才会以该模式打开。 任何未配置为以 Internet Explorer 模式打开的网站都将重定向回 Microsoft Edge。
    - **只让自动导航继续保持 Internet Explorer 模式** - 如果想要默认体验，但又让所有转到未配置网站的自动导航（如 302 重定向）都继续保持 Internet Explorer 模式，请使用此选项。
-   - **** 保持所有页面内导航Internet Explorer模式**_ (_** 建议) - 从以 IE 模式加载的页面到未配置网站的所有导航都保持Internet Explorer模式。
+   - 将页面内导航保持为**Internet Explorer**模式**_ (_** 建议最低) - 从以 IE 模式加载的页面到未配置网站的所有导航都保留在 Internet Explorer 模式下。
 
 6. 单击**确定**或**应用**以保存策略设置。
 

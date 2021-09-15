@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 策略映射概述
-ms.openlocfilehash: 81360f9f505aada047f7832a29cb5d44a79beb29f40c0887d6e1c5501ca708a7
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: da10a1cf099a39ef03002bc539e3cf01eb9ccba3
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727545"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979015"
 ---
 # <a name="microsoft-edge-policy-mapping-overview"></a>Microsoft Edge 策略映射概述
 
