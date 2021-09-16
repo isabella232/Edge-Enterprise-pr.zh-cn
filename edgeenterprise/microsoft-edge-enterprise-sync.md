@@ -1,25 +1,26 @@
 ---
 title: 配置 Microsoft Edge 企业同步
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: silvanam
-ms.date: 06/28/2021
+ms.date: 09/07/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 用于配置 Microsoft Edge 以同步收藏夹、密码和其他浏览器数据的管理员和用户选项。
-ms.openlocfilehash: ea5a9c3b4433aef1c87e2416da90774f7efce85582334c30cd5174b62b1cd0eb
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 5caec237eebcd18a83b8f32d638ace2fa2914e38
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727345"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978998"
 ---
 # <a name="configure-microsoft-edge-enterprise-sync"></a>配置 Microsoft Edge 企业同步
 
-本文介绍管理员如何将 Microsoft Edge 配置为跨所有已登录设备同步用户收藏夹、密码、其他浏览器数据。如果你不是管理员，请通过本文了解如何跨设备登录和同步 Microsoft Edge。 [登录以在设备之间同步 Microsoft Edge](https://support.microsoft.com/microsoft-edge/sign-in-to-sync-microsoft-edge-across-devices-e6ffa79b-ed52-aa32-47e2-5d5597fe4674)。
+本文介绍管理员如何将 Microsoft Edge 配置为跨所有已登录设备同步用户收藏夹、密码、其他浏览器数据。如果你不是管理员，请通过本文了解如何跨设备登录和同步 Microsoft Edge。 
+            [登录以在设备之间同步 Microsoft Edge](https://support.microsoft.com/microsoft-edge/sign-in-to-sync-microsoft-edge-across-devices-e6ffa79b-ed52-aa32-47e2-5d5597fe4674)。
 
 > [!NOTE]
 > 除非另有说明，否则本文适用于 Microsoft Edge 版本 77 或更高版本。
@@ -47,7 +48,7 @@ ms.locfileid: "11727345"
 适用于 Azure Active Directory (Azure AD) 帐户的 Microsoft Edge 同步功能可供以下任何订阅使用：
 
 - Azure AD Premium（P1 或 P2）
-- M365 商业高级版
+- M365 商业高级版、商业标准版或商业基础版
 - Office 365 E1 及更高版本
 - Azure 信息保护 (AIP)（P1 或 P2）
 - 所有 EDU 订阅（Microsoft 教育应用版（学生）或 Microsoft 教育应用版（教职员工）、Exchange Online 学生版或教职员工版、O365 A1 或更高版本、M365 A1 或更高版本，或者适用于学生或教职员的 Azure 信息保护 P1 或 P2）
@@ -56,12 +57,18 @@ ms.locfileid: "11727345"
 
 管理员可以使用以下组策略配置和管理 Microsoft Edge 同步：
 
-- [SyncDisabled](./microsoft-edge-policies.md#syncdisabled)：完全禁用同步。
-- [SavingBrowserHistoryDisabled](./microsoft-edge-policies.md#savingbrowserhistorydisabled)：禁止保存浏览历史记录和同步。此策略还将禁用打开选项卡同步。
-- [AllowDeletingBrowserHistory](./microsoft-edge-policies.md#allowdeletingbrowserhistory)：当此策略设置为禁用时，还将禁用历史记录同步。
-- [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled)：配置从同步中排除的类型列表。
-- [RoamingProfileSupportEnabled](./microsoft-edge-policies.md#roamingprofilesupportenabled)：允许 Active Directory (AD) 配置文件使用本地存储。 有关更多信息，请参阅 [Active Directory (AD) 用户的本地同步](./microsoft-edge-on-premises-sync.md)。
-- [ForceSync：](/deployedge/microsoft-edge-policies#forcesync)默认启用同步，无需用户同意。  
+- 
+            [SyncDisabled](./microsoft-edge-policies.md#syncdisabled)：完全禁用同步。
+- 
+            [SavingBrowserHistoryDisabled](./microsoft-edge-policies.md#savingbrowserhistorydisabled)：禁止保存浏览历史记录和同步。此策略还将禁用打开选项卡同步。
+- 
+            [AllowDeletingBrowserHistory](./microsoft-edge-policies.md#allowdeletingbrowserhistory)：当此策略设置为禁用时，还将禁用历史记录同步。
+- 
+            [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled)：配置从同步中排除的类型列表。
+- 
+            [RoamingProfileSupportEnabled](./microsoft-edge-policies.md#roamingprofilesupportenabled)：允许 Active Directory (AD) 配置文件使用本地存储。 有关更多信息，请参阅 [Active Directory (AD) 用户的本地同步](./microsoft-edge-on-premises-sync.md)。
+- 
+            [ForceSync：](/deployedge/microsoft-edge-policies#forcesync)默认启用同步，无需用户同意。  
 
 ## <a name="configure-microsoft-edge-sync"></a>配置 Microsoft Edge 同步
 
