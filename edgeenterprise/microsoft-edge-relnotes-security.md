@@ -3,23 +3,35 @@ title: Microsoft Edge 安全更新的发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/02/2021
+ms.date: 09/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: e44339eed45620fa6fe4b76e5b201e2308baa69f
-ms.sourcegitcommit: 9f7324ff156de0a0c75e2217104e543f182649f2
+ms.openlocfilehash: 16d5bde6800bae3bb48b8698c332fdc4201c223a
+ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "11938298"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "12016541"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge 稳定渠道更新中包含的安全修补程序的信息。
+
+## <a name="september-11-2021"></a>2021 年 9 月 11 日
+
+Microsoft 已发布最新的**Microsoft Edge 稳定渠道(版本 93.0.961.47)**，其中包含了 Chromium 项目的最新安全更新。此更新包含[CVE-2021-30632](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632)，据 Chromium 团队报告会受到外部攻击。  有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)
+
+## <a name="september-9-2021"></a>2021 年 9 月 9 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定渠道(版本 93.0.961.44) **其中包含了 Chromium 项目的最新安全更新。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)
+
+此更新包含下列 Microsoft Edge 专属更新：
+
+- [CVE-2021-38669](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38669)
 
 ## <a name="september-2-2021"></a>2021 年 9 月 2 日
 
@@ -27,11 +39,11 @@ Microsoft 已发布最新的  **Microsoft Edge 稳定渠道（版本 93.0.961.
 
 此更新包含下列 Microsoft Edge 专属更新：
 
-- [CVE-2021-26436](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26436)
 - [CVE-2021-36930](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36930)
+- [CVE-2021-26436](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26436)
+- [CVE-2021-26439](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26439)
 - [CVE-2021-38641](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38641)
 - [CVE-2021-38642](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38642)
-- [CVE-2021-38670](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38670)
 
 ## <a name="august-19-2021"></a>2021 年 8 月 19 日
 
