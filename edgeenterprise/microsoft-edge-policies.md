@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: cd59eca6d07284c61a0c61537f45d36771d133f3
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 44dac3dd6bb489ac43e50433319b0a7908495df5
+ms.sourcegitcommit: 6eefb7cb134f25a1e2d1f515a3a8600524a4b6e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978901"
+ms.lasthandoff: 09/16/2021
+ms.locfileid: "12017986"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -13734,11 +13734,13 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
   ### <a name="configureviewinfileexplorer"></a>ConfigureViewInFileExplorer
 
-  #### <a name="configure-the-view-in-file-explorer-feature-for-sharepoint-pages-in-microsoft-edge"></a>为 Microsoft Edge 中的 SharePoint 页面配置“在文件资源管理器中查看”功能
+  #### <a name="configure-the-view-in-file-explorer-feature-for-sharepoint-pages-in-microsoft-edge"></a>在 Microsoft Edge 中为 SharePoint 页面配置在文件资源管理器中查看功能
+
+> [!NOTE]
+> 目前，ConfigureViewInFileExplorer 策略只能应用于已加入 Microsoft Active Directory 域的 Windows 实例、Windows 10 专业版或注册用于设备管理的企业版实例。
 
   
-  
-  #### <a name="supported-versions"></a>受支持的版本:
+  #### <a name="supported-versions"></a>支持的版本：
 
   - 在 Windows 上自 93 或更高版本起
 

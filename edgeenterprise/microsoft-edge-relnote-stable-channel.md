@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 88a3636504f1d28c3a5aaddf5d3ce773b4c2318a
-ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
+ms.openlocfilehash: e13778ee9a93a4621ad77a00da1d85def3f97225
+ms.sourcegitcommit: 6eefb7cb134f25a1e2d1f515a3a8600524a4b6e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "12016551"
+ms.lasthandoff: 09/16/2021
+ms.locfileid: "12017966"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -35,7 +35,7 @@ ms.locfileid: "12016551"
 ## <a name="version-93096147-september-11"></a>版本 93.0.961.47：9 月 11 日
 
 > [!Important]
-> 此更新包含 [CVE-2021-30632](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632)，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+> 此更新包含 [CVE-2021-30632](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632) 修补程序，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
 
             [此处](/deployedge/microsoft-edge-relnotes-security#september-11-2021) 列出了稳定渠道安全性更新。
@@ -586,4 +586,4 @@ ms.locfileid: "12016551"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
