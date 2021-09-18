@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/09/2021
+ms.date: 09/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: e13778ee9a93a4621ad77a00da1d85def3f97225
-ms.sourcegitcommit: 6eefb7cb134f25a1e2d1f515a3a8600524a4b6e3
+ms.openlocfilehash: cf37c34aa1c0d61e2118acf8a599ff574d6ff156
+ms.sourcegitcommit: dbe3fb9932022554c118ac02d4e9ab5f09c53709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2021
-ms.locfileid: "12017966"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "12018982"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -31,6 +31,14 @@ ms.locfileid: "12017966"
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将发生的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-93096152-september-16"></a>版本 93.0.961.52：9 月 16 日
+
+>[!Important]
+>此更新包含[CVE-2021-30633](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632)的修补程序，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+
+            [此处](/deployedge/microsoft-edge-relnotes-security#september-16-2021) 列出了稳定渠道安全性更新。
 
 ## <a name="version-93096147-september-11"></a>版本 93.0.961.47：9 月 11 日
 
@@ -586,4 +594,4 @@ ms.locfileid: "12017966"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
