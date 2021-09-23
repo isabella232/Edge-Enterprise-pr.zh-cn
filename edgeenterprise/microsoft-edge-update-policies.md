@@ -1,9 +1,9 @@
 ---
 title: Microsoft Edge 更新策略文档
 ms.author: stmoody
-author: AndreaLBarr
+author: RyanHechtMSFT
 manager: tahills
-ms.date: 07/23/2021
+ms.date: 09/23/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 更新程序支持的所有策略的文档
-ms.openlocfilehash: 9c7eca4d5bdd7c87bea141a422dce3b17f22067c
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: b96fc0e44434b5ab36a16b1bc14f0aebe0deacf4
+ms.sourcegitcommit: 8e5294e82cf62abc916cfd24692f55925330d42b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978956"
+ms.lasthandoff: 09/23/2021
+ms.locfileid: "12037212"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新策略
 
@@ -41,6 +41,7 @@ ms.locfileid: "11978956"
 |[CreateDesktopShortcut](#createdesktopshortcut)|安装时阻止创建快捷方式（按渠道）|
 |[RollbackToTargetVersion](#rollbacktotargetversion)|回退到目标版本（按渠道）|
 |[TargetVersionPrefix](#targetversionprefix)|目标版本覆盖（各渠道）|
+|[TargetChannelOverride](#targetchanneloverride)|仅 Stable (目标) |
 |[UpdaterExperimentationAndConfigurationServiceControl](#UpdaterExperimentationAndConfigurationServiceControl)| 检索配置和实验|
 ### [<a name="preferences"></a>首选项](#preferences-policies)
 |策略名称|描述文字|
@@ -397,6 +398,42 @@ updates disabled 0x00000000
 ##### <a name="example-value"></a>示例值：
 ```
 83.0.499.12
+```
+[返回页首](#microsoft-edge---update-policies)
+
+### <a name="targetchanneloverride"></a>TargetChannelOverride
+>Microsoft Edge 更新 1.3.147.1 及更高版本
+
+#### <a name="description"></a>描述
+指定应Microsoft Edge频道频道。 
+
+如果启用此小功能，Microsoft Edge配置以下选项，该频道将更新至频道：
+
+  - 稳定：Microsoft Edge更新到最新稳定版本。
+  - Beta：Microsoft Edge更新到最新的 beta 版本。
+  - 开发人员：Microsoft Edge更新到最新的开发版本。
+  - 扩展稳定Microsoft Edge更新到最新的扩展稳定版本，其发布节奏比稳定更新。 有关详细信息，请访问 https://go.microsoft.com/fwlink/?linkid=2163508 。
+
+如果未配置此策略，Microsoft Edge更新到适用于稳定渠道的最新版本。
+
+此策略仅在 Stable Microsoft Edge可用。
+
+此策略仅在加入Microsoft® Active Directory®域的Windows实例上可用。
+#### <a name="windows-information-and-settings"></a>Windows 信息和设置
+##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+- GP 唯一名称：TargetChannelOverride
+- GP 名称：目标通道替代
+- GP 路径： 
+  - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge
+- GP ADMX文件名：msedgeupdate.admx
+##### <a name="windows-registry-settings"></a>Windows 注册表设置
+- 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- 值名称： 
+  -  (Stable) ：TargetChannel{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
+- 值类型：REG_SZ
+##### <a name="example-value"></a>示例值：
+```
+extended
 ```
 [返回页首](#microsoft-edge---update-policies)
 
