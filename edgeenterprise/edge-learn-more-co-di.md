@@ -3,23 +3,25 @@ title: Microsoft Edge 中的 ClickOnce 和 DirectInvoke
 ms.author: collw
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/16/2021
+ms.date: 09/21/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解有关 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 的信息。
-ms.openlocfilehash: 2da2892a958946ad73d362e6ea929bcfbc2af6a8
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 48702082dc3c352519c8003e226bf99c63765150
+ms.sourcegitcommit: 85818deae134b48d7f2766e53b4400a1b4d4277d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978669"
+ms.lasthandoff: 09/23/2021
+ms.locfileid: "12034431"
 ---
 # <a name="understand-the-clickonce-and-directinvoke-features-in-microsoft-edge"></a>了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 功能
 
-ClickOnce和 DirectInvoke 是 IE 和 Microsoft Edge 中提供的功能，支持使用文件处理程序从网站下载文件。 尽管它们适用于不同的用途，但这两个功能都允许网站指定在用户的设备上将请求下载的文件传递到文件处理程序。 ClickOnce 请求由 Windows 中的本机文件处理程序进行处理。 DirectInvoke 请求由承载文件的网站指定的注册文件处理程序进行处理。
+ClickOnce和 DirectInvoke 是 IE 和 Microsoft Edge中提供的功能，支持使用文件处理程序从网站下载文件。 尽管它们适用于不同的用途，但这两个功能都允许网站指定在用户的设备上将请求下载的文件传递到文件处理程序。 ClickOnce 请求由 Windows 中的本机文件处理程序进行处理。 DirectInvoke 请求由承载文件的网站指定的注册文件处理程序进行处理。
+
+在设置 ClickOnce 或 DirectInvoke 后，ClickOnce设置其他企业策略可以绕过 directInvoke 或 DirectInvoke 提示。 这些策略可以支持绕过所有域ClickOnce或指定域的指定文件类型的 DirectInvoke 提示。
 
 有关这些功能的详细信息，请参阅：
 
@@ -88,6 +90,10 @@ ClickOnce 和 DirectInvoke 受 Microsoft Defender SmartScreen 的 URL 信誉扫�
 ## <a name="clickonce-and-directinvoke-policies"></a>ClickOnce 和 DirectInvoke 策略
 
 有两个组策略可用于为企业用户启用或禁用 ClickOnce 和 DirectInvoke。 这两个策略是 [ClickOnceEnabled](./microsoft-edge-policies.md#clickonceenabled) 和 [DirectInvokeEnabled](./microsoft-edge-policies.md#directinvokeenabled)。 这两个策略在组策略编辑器中分别标记为“允许用户使用 ClickOnce 协议打开文件”和“允许用户使用 DirectInvoke 协议打开文件”。
+
+若要指定应 () 提示的文件类型 ClickOnce 或 DirectInvoke 提示，请使用组策略编辑器中标记为"应在下载时自动打开的文件类型列表"的策略。 这将允许在所有域下载后自动打开指定的文件类型。  
+
+若要绕过 ClickOnce 或 DirectInvoke 对特定域的特定文件类型的提示，请设置两个附加策略，在组策略编辑器中标记为"下载时应自动打开的文件类型列表"和"可应用 AutoOpen-FileTypes 的 URL"。 请注意，策略"可以应用 AutoOpen- FileTypes 的 URL"是"应下载时自动打开的文件类型列表"的一个欢迎策略，不自行执行任何操作。  
 
 ## <a name="clickonce-and-directinvoke-behavior"></a>ClickOnce 和 DirectInvoke 行为
 
