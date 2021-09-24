@@ -3,19 +3,19 @@ title: Microsoft Edge 支持的操作系统
 ms.author: srugh
 author: srugh
 manager: seanlynd
-ms.date: 06/28/2021
+ms.date: 09/23/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 支持的操作系统
-ms.openlocfilehash: 3c5af933e6a9e6bf66f0f486f77c8ddd9364a53e
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 7d8381e81fc3b74c1849d02a117943f3cb8bf389
+ms.sourcegitcommit: 0d71862fe4f6550f7910618872a174b95695df4b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978971"
+ms.lasthandoff: 09/24/2021
+ms.locfileid: "12044470"
 ---
 # <a name="microsoft-edge-supported-operating-systems"></a>Microsoft Edge 支持的操作系统
 
@@ -28,7 +28,6 @@ ms.locfileid: "11978971"
 
 > [!NOTE]
 > 产品功能和功能可用性在旧的操作系统上可能会有所不同。 为确保 Microsoft Edge 正确安装，请使用下面最新版本的指定操作系统。 本指南包括适用的最新累积更新。
-
 
 Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上受支持。
 
@@ -51,6 +50,7 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 - Windows Server 2012 R2
 - Windows Server 2016 (LTSC)
 - Windows Server 2019 (LTSC)
+- Windows Server 2022 (LTSC)
 - Windows Server (SAC)
 
 > [!IMPORTANT]
@@ -86,8 +86,10 @@ Microsoft Edge 不支持 Chromebook。
 
 ## <a name="recent-changes"></a>最近更改
 
-- **2020 年 12 月 17 日** - Windows 7 和 Windows Server 2008 R2 上对 Microsoft Edge 支持将延续到 2022 年 1 月 15 日。
-- **2021/01/28** - Microsoft Edge 支持 Apple Silicon Macs。
+- 
+            **2020 年 12 月 17 日** - Windows 7 和 Windows Server 2008 R2 上对 Microsoft Edge 支持将延续到 2022 年 1 月 15 日。
+- 
+            **2021/01/28** - Microsoft Edge 支持 Apple Silicon Macs。
 
 ## <a name="see-also"></a>另请参阅
 
