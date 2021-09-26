@@ -3,23 +3,27 @@ title: Microsoft Edge 安全更新的发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/22/2021
+ms.date: 09/24/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: d58c2e4b9cde8724b36eeb92c02112762fe5a7be
-ms.sourcegitcommit: 85818deae134b48d7f2766e53b4400a1b4d4277d
+ms.openlocfilehash: 3d90844417994b7941b4e27122ef9564cc40e19f
+ms.sourcegitcommit: 6ef4b2e1dee45f33edb7fa8f83c93b4d169adca9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2021
-ms.locfileid: "12034461"
+ms.lasthandoff: 09/25/2021
+ms.locfileid: "12044824"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge 稳定渠道更新中包含的安全修补程序的信息。
+
+## <a name="september-24-2021"></a>2021 年 9 月 24 日
+
+Microsoft 已发布最新的  **Microsoft Edge 稳定渠道（版本 94.0.992.31）**，其中包含了 Chromium 项目的最新安全更新。 此更新包含 [CVE-2021-37973](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37973) 的修补程序，Chromium 团队已将其报告为具有野外漏洞。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)
 
 ## <a name="september-16-2021"></a>2021 年 9 月 16 日
 
