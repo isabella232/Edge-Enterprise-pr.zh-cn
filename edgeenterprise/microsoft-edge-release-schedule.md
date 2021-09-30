@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 发布计划
-ms.openlocfilehash: 89594a26880354105f2f4605b261e5d3ba0836d7
-ms.sourcegitcommit: efd607fff9c09638a476bb75c7f6835184066e4d
+ms.openlocfilehash: 67baf905f8da680aceaa24e29ffc117e41f5ee9c
+ms.sourcegitcommit: 884bdb6ef9484ed3b080b4c5ab091f5f29ba2928
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/29/2021
-ms.locfileid: "12056023"
+ms.locfileid: "12056698"
 ---
 # <a name="microsoft-edge-release-schedule"></a>Microsoft Edge 发布计划
 
@@ -48,7 +48,7 @@ Microsoft 提供了四个称为“频道”的选项，用于管理为 Microsoft
 | 92 | 已发布<br>版本 | 2021 年 6 月 8 日<br>[92.0.902.9](/deployedge/microsoft-edge-relnote-beta-channel#version-9209029-june-08) | 2021 年 7 月 22 日<BR>[92.0.902.55](/deployedge/microsoft-edge-relnote-stable-channel#version-92090255-july-22) |
 | 93 | 已发布<br>版本 | 2021 年 8 月 3 日<br>[93.0.961.11](/deployedge/microsoft-edge-relnote-beta-channel#version-93096111-August-03) | 2021 年 9 月 2 日<BR>[93.0.961.38](/deployedge/microsoft-edge-relnote-stable-channel#version-93096138-September-02) |
 | 94 | 发布日期<br>版本 | 2021 年 9 月 2 日<br>[94.0.992.9](/deployedge/microsoft-edge-relnote-beta-channel#version-9409929-September-02) | 2021 年 9 月 24 日<BR>[94.0.992.31](/deployedge/microsoft-edge-relnote-stable-channel#version-94099231-September-24) |
-| 95 | 发布时间<br>版本 | 82-Sep-2021<br>[95.0.1020.9](/deployedge/microsoft-edge-relnote-beta-channel#version-95010209-September-28) | 2021 年 10 月 21 日这一周 |
+| 95 | 发布时间<br>版本 | 28-Sep-2021<br>[95.0.1020.9](/deployedge/microsoft-edge-relnote-beta-channel#version-95010209-September-28) | 2021 年 10 月 21 日这一周 |
 | 96 | 目标版本 | 2021 年 10 月 26 日这一周 | 2021 年 11 月 18 日这一周 |
 | 97 | 目标版本 | 2021 年 11 月 30 日这一周 | 2022 年 1 月 6 日这一周 |
 
