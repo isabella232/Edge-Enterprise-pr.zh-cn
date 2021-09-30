@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解 Microsoft Edge 中的 Internet Explorer 模式如何提供对需要 Internet Explorer 11 的网站的访问和新式网站的访问权限。
-ms.openlocfilehash: cf2271f8b95c97a63695abf471ae67e693798ff2
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: a426d9bd9d2ac3d81682e9fc2304e9e90d3461f8
+ms.sourcegitcommit: 4442aa94d4ff2fef8dd6f389ec0c6823b150d04f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978856"
+ms.lasthandoff: 09/28/2021
+ms.locfileid: "12053321"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>什么是 Internet Explorer (IE) 模式？
 
@@ -38,12 +38,12 @@ ms.locfileid: "11978856"
 
 只有（通过策略）专门配置的网站会使用 IE 模式，其他所有网站都会呈现为新式网站。 若要让网站使用 IE 模式，需要执行以下操作：
 
-- 在下面一个策略中定义的 Enterprise Mode Site List XML 中列出网站：
+- 在下面一个策略中定义的企业模式站点列表 XML 中列出网站：
   - Microsoft Edge 78 或更高版本，“配置企业模式站点列表”
   - Internet Explorer，“使用企业模式 IE 网站列表”
   > [!NOTE]
   > 我们只处理一个 Enterprise Mode Site List。 Microsoft Edge 网站列表策略优先于 Internet Explorer 网站列表策略。
-- 所有 Intranet 网站都已启用“将所有 Intranet 网站发送到 Internet Explorer”**** 组策略（Microsoft Edge 77 或更高版本）。
+- 配置**将所有 Intranet 站点发送到 Internet Explorer** 组策略，并将其设为**已启用**（Microsoft Edge 77 或更高版本。）
 
 ### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>IE 模式支持以下 Internet Explorer 功能
 
