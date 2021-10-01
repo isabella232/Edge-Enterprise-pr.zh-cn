@@ -3,19 +3,19 @@ title: 'Microsoft Edge 密码管理器安全性 '
 ms.author: v-andreabarr
 author: AndreaLBarr
 manager: collw
-ms.date: 06/29/2021
+ms.date: 09/30/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 密码管理器安全性
-ms.openlocfilehash: 816bbd2c18fcae0a20a19fb0feab199454aa67b6
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 6f9dadab36c755113ad647e7e78a0bbbb2f8c965
+ms.sourcegitcommit: 2bf511511f131b8497b3e162c44286c217508885
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979034"
+ms.lasthandoff: 10/01/2021
+ms.locfileid: "12057331"
 ---
 # <a name="microsoft-edge-password-manager-security"></a>Microsoft Edge 密码管理器安全性 
 
@@ -141,7 +141,7 @@ Microsoft 安全团队当前对蠕虫的影响进行了评分，该蠕虫会危�
 （在自动填充其数据之前对用户进行身份验证）的主密码功能更加便捷，便于更广泛的威胁缓解。 具体而言，它有助于减少数据暴露给潜在恶意软件或实际本地攻击者的窗口。 但是，主密码不是万能密码，本地攻击者和专用恶意软件具有各种避开主密码保护的策略。
 
 > [!Note]
-> Microsoft 意识到在自动填充之前识别验证用户的重要性，此功能会在将来的版本中添加到 Microsoft Edge。
+> Microsoft Edge现在能够在自动填充功能之前启用身份验证;这为用户提供了一层额外的隐私，并阻止其存储的密码被除了他们外的其他任何人使用。 有关详细信息，请参阅 [保存的密码的其他隐私](https://support.microsoft.com/topic/additional-privacy-for-your-saved-passwords-31dbd670-e314-4901-a546-6f302548502e)。  
 
 ## <a name="can-using-a-password-manager-impact-my-privacy"></a>使用密码管理器会影响我的隐私吗？
 
