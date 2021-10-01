@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 08/30/2021
+ms.date: 09/26/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 44dac3dd6bb489ac43e50433319b0a7908495df5
-ms.sourcegitcommit: 6eefb7cb134f25a1e2d1f515a3a8600524a4b6e3
+ms.openlocfilehash: 5e4deb6e75ab44c1706e17fe57232c703f2374dc
+ms.sourcegitcommit: 884bdb6ef9484ed3b080b4c5ab091f5f29ba2928
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2021
-ms.locfileid: "12017986"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "12056728"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -104,11 +104,12 @@ ms.locfileid: "12017986"
 |[ImagesBlockedForUrls](#imagesblockedforurls)|在这些网站上阻止图像|
 |[InsecureContentAllowedForUrls](#insecurecontentallowedforurls)|在指定网站上允许不安全内容|
 |[InsecureContentBlockedForUrls](#insecurecontentblockedforurls)|在指定网站上阻止不安全内容|
+|[IntranetFileLinksEnabled](#intranetfilelinksenabled)|允许在 Windows 文件资源管理器中打开来自 Microsoft Edge 的 Intranet 区域文件 URL 链接|
 |[JavaScriptAllowedForUrls](#javascriptallowedforurls)|在特定网站上允许 JavaScript|
 |[JavaScriptBlockedForUrls](#javascriptblockedforurls)|在特定站点上阻止 JavaScript|
 |[JavaScriptJitAllowedForSites](#javascriptjitallowedforsites)|允许 JavaScript 在这些站点上使用 JIT|
 |[JavaScriptJitBlockedForSites](#javascriptjitblockedforsites)|阻止 JavaScript 在这些站点上使用 JIT|
-|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|启用默认旧 SameSite Cookie 行为设置 (已弃用) |
+|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|启用默认的旧 SameSite Cookie 行为设置（已过时）|
 |[LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist)|在指定网站上还原为 Cookie 的旧 SameSite 行为|
 |[NotificationsAllowedForUrls](#notificationsallowedforurls)|在特定网站上允许通知|
 |[NotificationsBlockedForUrls](#notificationsblockedforurls)|在特定网站上阻止通知|
@@ -213,8 +214,10 @@ ms.locfileid: "12017986"
 |-|-|
 |[DefaultPrinterSelection](#defaultprinterselection)|默认打印机选择规则|
 |[PrintHeaderFooter](#printheaderfooter)|打印页眉和页脚|
+|[PrintPostScriptMode](#printpostscriptmode)|打印 PostScript 模式|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|将系统默认打印机设置为默认打印机|
 |[PrintRasterizationMode](#printrasterizationmode)|打印光栅化模式|
+|[PrintRasterizePdfDpi](#printrasterizepdfdpi)|打印光栅化 PDF DPI|
 |[PrinterTypeDenyList](#printertypedenylist)|在拒绝列表上禁用打印机类型|
 |[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)|限制背景图形打印模式|
 |[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)|默认背景图形打印模式|
@@ -254,7 +257,7 @@ ms.locfileid: "12017986"
 |[SmartScreenEnabled](#smartscreenenabled)|配置 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|强制 Microsoft Defender SmartScreen 检查从受信任来源下载的内容|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|配置 Microsoft Defender SmartScreen 以阻止可能不需要的应用|
-### [*<a name="startup-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
 
 |策略名称|标题|
 |-|-|
@@ -293,6 +296,7 @@ ms.locfileid: "12017986"
 |[ApplicationLocaleValue](#applicationlocalevalue)|设置应用程序区域设置|
 |[AudioCaptureAllowed](#audiocaptureallowed)|允许或阻止音频捕获|
 |[AudioCaptureAllowedUrls](#audiocaptureallowedurls)|无需请求许可即可访问音频捕获设备的网站|
+|[AudioProcessHighPriorityEnabled](#audioprocesshighpriorityenabled)|允许音频进程在 Windows 上以高于正常的优先级运行|
 |[AudioSandboxEnabled](#audiosandboxenabled)|允许运行音频沙盒|
 |[AutoImportAtFirstRun](#autoimportatfirstrun)|首次运行时自动导入另一个浏览器的数据和设置|
 |[AutoLaunchProtocolsFromOrigins](#autolaunchprotocolsfromorigins)|定义可以从列出的源启动外部应用程序而不提示用户的协议列表|
@@ -309,6 +313,7 @@ ms.locfileid: "12017986"
 |[BlockThirdPartyCookies](#blockthirdpartycookies)|阻止第三方 Cookie|
 |[BrowserAddProfileEnabled](#browseraddprofileenabled)|允许从“标识”浮出控件或“设置”页面创建配置文件|
 |[BrowserGuestModeEnabled](#browserguestmodeenabled)|启用来宾模式|
+|[BrowserLegacyExtensionPointsBlockingEnabled](#browserlegacyextensionpointsblockingenabled)|启用浏览器旧扩展点阻止|
 |[BrowserNetworkTimeQueriesEnabled](#browsernetworktimequeriesenabled)|允许向浏览器网络时间服务发送查询|
 |[BrowserSignin](#browsersignin)|浏览器登录设置|
 |[BrowsingDataLifetime](#browsingdatalifetime)|浏览数据生存期设置|
@@ -329,7 +334,8 @@ ms.locfileid: "12017986"
 |[ConfigureOnPremisesAccountAutoSignIn](#configureonpremisesaccountautosignin)|配置当没有 Azure AD 域帐户时使用 Active Directory 域帐户自动登录|
 |[ConfigureOnlineTextToSpeech](#configureonlinetexttospeech)|配置联机文本到语音转换|
 |[ConfigureShare](#configureshare)|配置“共享”体验|
-|[ConfigureViewInFileExplorer](#configureviewinfileexplorer)|为 Microsoft Edge 中的 SharePoint 页面配置“在文件资源管理器中查看”功能|
+|[ConfigureViewInFileExplorer](#configureviewinfileexplorer)|在 Microsoft Edge 中为 SharePoint 页面配置在文件资源管理器中查看功能|
+|[CrossOriginWebAssemblyModuleSharingEnabled](#crossoriginwebassemblymodulesharingenabled)|指定是否可以跨源发送 WebAssembly 模块|
 |[CustomHelpLink](#customhelplink)|指定自定义帮助链接|
 |[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled)|已启用 DNS 拦截检查|
 |[DefaultBrowserSettingEnabled](#defaultbrowsersettingenabled)|将 Microsoft Edge 设为默认浏览器|
@@ -347,6 +353,7 @@ ms.locfileid: "12017986"
 |[DisableScreenshots](#disablescreenshots)|禁止拍摄屏幕截图|
 |[DiskCacheDir](#diskcachedir)|设置磁盘缓存目录|
 |[DiskCacheSize](#diskcachesize)|设置磁盘缓存大小（以字节为单位）|
+|[DisplayCapturePermissionsPolicyEnabled](#displaycapturepermissionspolicyenabled)|指定是选中还是跳过显示捕获权限策略|
 |[DnsOverHttpsMode](#dnsoverhttpsmode)|控制 DNS-over-HTTPS 的模式|
 |[DnsOverHttpsTemplates](#dnsoverhttpstemplates)|指定所需 DNS-over-HTTPS 解析程序的 URI 模板|
 |[DownloadDirectory](#downloaddirectory)|设置下载目录|
@@ -410,7 +417,9 @@ ms.locfileid: "12017986"
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|配置“企业模式站点列表”|
 |[InternetExplorerIntegrationSiteListRefreshInterval](#internetexplorerintegrationsitelistrefreshinterval)|配置刷新“企业模式站点列表”的频率|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|指定从 Internet Explorer 模式页面启动时未配置网站的“页内”导航行为|
-|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允许 Internet Explorer 模式测试 (已弃用) |
+|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允许 Internet Explorer 模式测试（已过时）|
+|[InternetExplorerIntegrationWindowOpenHeightAdjustment](#internetexplorerintegrationwindowopenheightadjustment)|配置源自 IE 模式页面和 Edge 模式页面的 window.open 高度之间的像素调整|
+|[InternetExplorerIntegrationWindowOpenWidthAdjustment](#internetexplorerintegrationwindowopenwidthadjustment)|配置源自 IE 模式页面和 Edge 模式页面的 window.open 宽度之间的像素调整|
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|Intranet 重定向行为|
 |[IsolateOrigins](#isolateorigins)|针对特定源启用网站隔离|
 |[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|启用 Windows 搜索本地 Microsoft Edge 浏览数据|
@@ -464,6 +473,7 @@ ms.locfileid: "12017986"
 |[SensorsBlockedForUrls](#sensorsblockedforurls)|阻止访问特定网站上的传感器|
 |[SerialAskForUrls](#serialaskforurls)|在特定网站上允许串行 API|
 |[SerialBlockedForUrls](#serialblockedforurls)|在特定网站上阻止串行 API|
+|[ShadowStackCrashRollbackBehavior](#shadowstackcrashrollbackbehavior)|配置 ShadowStack 故障回滚行为|
 |[SharedArrayBufferUnrestrictedAccessAllowed](#sharedarraybufferunrestrictedaccessallowed)|指定是否可以在非跨源隔离环境中使用 SharedArrayBuffers|
 |[ShowMicrosoftRewards](#showmicrosoftrewards)|展示 Microsoft Rewards体验|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在收藏夹栏中显示 Microsoft Office 快捷方式（已弃用）|
@@ -499,6 +509,7 @@ ms.locfileid: "12017986"
 |[VerticalTabsAllowed](#verticaltabsallowed)|为浏览器侧面的选项卡配置垂直布局的可用性|
 |[VideoCaptureAllowed](#videocaptureallowed)|允许或阻止视频捕获|
 |[VideoCaptureAllowedUrls](#videocaptureallowedurls)|无需请求许可即可访问视频捕获设备的网站|
+|[VisualSearchEnabled](#visualsearchenabled)|已启用视觉搜索|
 |[WPADQuickCheckEnabled](#wpadquickcheckenabled)|设置 WPAD 优化|
 |[WebAppInstallForceList](#webappinstallforcelist)|配置强制安装的 Web 应用列表|
 |[WebCaptureEnabled](#webcaptureenabled)|在 Microsoft Edge 中启用网络捕获功能|
@@ -2723,6 +2734,65 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="intranetfilelinksenabled"></a>IntranetFileLinksEnabled
+
+  #### <a name="allow-intranet-zone-file-url-links-from-microsoft-edge-to-open-in-windows-file-explorer"></a>允许在 Windows 文件资源管理器中打开来自 Microsoft Edge 的 Intranet 区域文件 URL 链接
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  通过此设置，指向 Intranet 区域 HTTPS 网站中 Intranet 区域文件的链接可以为该文件或目录打开 Windows 文件资源管理器。
+
+如果启用此策略，来自 Intranet 区域 HTTPS 页的 Intranet 区域文件 URL 链接将为该文件或目录打开 Windows 文件资源管理器。
+
+如果禁用或未配置此策略，则文件 URL 链接将不会打开。
+
+Microsoft Edge 使用为 Internet Explorer 配置的 Intranet 区域定义。 请注意，https://localhost/ 因为是允许的 Intranet 区域主机的例外而被专门阻止，而环回地址（127.0.0.*、[::1]）则默认视为 Internet 区域。
+
+除非禁用了 [ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox) 策略，否则用户可以按每个协议/每个站点选择退出提示。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：IntranetFileLinksEnabled
+  - GP 名称：允许在 Windows 文件资源管理器中打开来自 Microsoft Edge 的 Intranet 区域文件 URL 链接
+  - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：IntranetFileLinksEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="javascriptallowedforurls"></a>JavaScriptAllowedForUrls
 
   #### <a name="allow-javascript-on-specific-sites"></a>在特定网站上允许 JavaScript
@@ -2999,19 +3069,19 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites\1 = "[*.]example.e
 
   ### <a name="legacysamesitecookiebehaviorenabled"></a>LegacySameSiteCookieBehaviorEnabled
 
-  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting-deprecated"></a>启用默认旧 SameSite Cookie 行为设置 (已弃用) 
+  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting-obsolete"></a>启用默认的旧 SameSite Cookie 行为设置（已过时）
 
-  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
   
+  >已过时：此策略已过时，并且在 Microsoft Edge 94 后无法正常工作。
   #### <a name="supported-versions"></a>支持的版本：
 
-  - 在 Windows 和 macOS 上自 80 或更高版本起
+  - 在自 80 起至 94 为止的 Windows 和 macOS 上
 
   #### <a name="description"></a>描述
 
-  此策略已弃用，因为它仅作为一种短期机制，使企业在发现与 SameSite 行为更改不兼容时有更多的时间来更新其环境。
+  此策略不起作用，因为它只是一种短期机制，让企业在发现与 SameSite 行为更改不兼容时有更多的时间来更新其环境。
 
-它在 Microsoft Edge 版本 95 中不起作用。 如果仍需要旧 Cookie 行为，请使用 [LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist) 来对每个域分别配置行为。
+如果仍需要旧 Cookie 行为，请使用 [LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist) 来对每个域分别配置行为。
 
 允许你将所有 Cookie 恢复为旧的 SameSite 行为。 还原为旧行为会导致未指定 SameSite 属性的 Cookie 被视为 “SameSite=None”，删除了 “SameSite=None” Cookie 携带 “Secure” 属性的要求，并在评估两个站点是否为同一站点时跳过方案比较。
 
@@ -3040,7 +3110,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites\1 = "[*.]example.e
   ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 
   - GP 唯一名称：LegacySameSiteCookieBehaviorEnabled
-  - GP 名称：启用默认旧版 SameSite cookie 行为设置 (已弃用) 
+  - GP 名称：启用默认旧 SameSite Cookie 行为设置（已过时）
   - GP 路径（强制）：管理模板/Microsoft Edge/内容设置
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -3087,7 +3157,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites\1 = "[*.]example.e
 
 如果未设置此策略，则将使用全局默认值。 全局默认值也将用于你指定的模式未涵盖的域上的 Cookie。
 
-在使用已弃用[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)策略的 Microsoft Edge 版本 95 之前，可以配置全局默认值。 如果未设置 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)，则全局默认值将回退到其他配置源。
+全局默认值可以使用 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) 策略进行配置。 如果未设置 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)，则全局默认值将回退到其他配置源。
 
 请注意，此策略中列出的模式将被视为域而不是 URL，因此不应指定方案或端口。
 
@@ -6127,7 +6197,7 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
   
   #### <a name="supported-versions"></a>支持的版本：
 
-  - 在 Windows 和 macOS 上自87或更高版本起
+  - 在 87 版或更高版本的 Windows 上
 
   #### <a name="description"></a>描述
 
@@ -6172,13 +6242,6 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 0x00000001
 ```
 
-  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
-  
-  - 首选项项名称：KioskAddressBarEditingEnabled
-  - 示例值：
-``` xml
-<true/>
-```
   
 
   [返回页首](#microsoft-edge---policies)
@@ -7258,6 +7321,73 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="printpostscriptmode"></a>PrintPostScriptMode
+
+  #### <a name="print-postscript-mode"></a>打印 PostScript 模式
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  控制 Microsoft Edge 在 Microsoft Windows 上的打印方式。
+
+在 Microsoft Windows 上打印到 PostScript 打印机时，不同的 PostScript 生成方法可能影响打印性能。
+
+如果将此策略设置为“默认”，则 Microsoft Edge 在生成 PostScript 时将使用一组默认选项。 对于特定文本，将始终使用类型 3 字体呈现文本。
+
+如果将此策略设置为 Type42，Microsoft Edge 将使用类型 42 字体呈现文本（如果可能）。 这应该会提高某些 PostScript 打印机的打印速度。
+
+如果未配置此策略，Microsoft Edge 将处于默认模式。
+
+策略选项映射：
+
+* Default (0) = 默认值
+
+* Type42 (1) = Type42
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：PrintPostScriptMode
+  - GP 名称：打印 PostScript 模式
+  - GP 路径（强制）：管理模板/Microsoft Edge/打印
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：PrintPostScriptMode
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="printpreviewusesystemdefaultprinter"></a>PrintPreviewUseSystemDefaultPrinter
 
   #### <a name="set-the-system-default-printer-as-the-default-printer"></a>将系统默认打印机设置为默认打印机
@@ -7381,6 +7511,70 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 0x00000001
 ```
 
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="printrasterizepdfdpi"></a>PrintRasterizePdfDpi
+
+  #### <a name="print-rasterize-pdf-dpi"></a>打印光栅化 PDF DPI
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  在 Microsoft Edge 打印带光栅化的 PDF 时，控制打印图像解析度。
+
+使用“打印到图像”选项打印 PDF 时，指定除设备打印机设置或 PDF 默认值之外的打印分辨率可能比较有利。  高分辨率将显著增加处理和打印时间，而低分辨率可能导致图像质量不佳。
+
+如果设置此策略，则允许在光栅化 PDF 以进行打印时指定要使用的特定分辨率。
+
+如果将此策略设置为零或未配置，则在页面图像光栅化期间将使用系统默认分辨率。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：PrintRasterizePdfDpi
+  - GP 名称：打印光栅化 PDF DPI
+  - GP 路径（强制）：管理模板/Microsoft Edge/打印
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：PrintRasterizePdfDpi
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x0000012c
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称：PrintRasterizePdfDpi
+  - 示例值：
+``` xml
+<integer>300</integer>
+```
   
 
   [返回页首](#microsoft-edge---policies)
@@ -9052,7 +9246,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [返回页首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
 
   [返回页首](#microsoft-edge---policies)
 
@@ -11166,6 +11360,62 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="audioprocesshighpriorityenabled"></a>AudioProcessHighPriorityEnabled
+
+  #### <a name="allow-the-audio-process-to-run-with-priority-above-normal-on-windows"></a>允许音频进程在 Windows 上以高于正常的优先级运行
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  此策略控制 Windows 上音频进程的优先级。
+如果启用此策略，音频进程将以高于正常的优先级运行。
+如果禁用此策略，音频进程将以正常优先级运行。
+如果未配置此策略，则将使用音频进程的默认配置。
+此策略旨在作为临时措施，使企业能够以更高的优先级运行音频，以解决音频捕获的某些性能问题。
+未来将删除此策略。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：AudioProcessHighPriorityEnabled
+  - GP 名称：允许音频进程在 Windows 上以高于正常的优先级运行
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：AudioProcessHighPriorityEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="audiosandboxenabled"></a>AudioSandboxEnabled
 
   #### <a name="allow-the-audio-sandbox-to-run"></a>允许运行音频沙盒
@@ -11372,7 +11622,9 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
 来源匹配模式使用与[URLBlocklist](#urlblocklist)策略类似的格式，这些格式被记录在[https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
-但是，此策略的原始匹配模式不能包含"/path" 或 "@query"元素。 包含"/path" 或 "@query"元素的任何模式都将被忽略。
+但是，此策略的原始匹配模式不能包含"/path" 或 "@query"元素。 将忽略包含“/path”或“@query”元素的任何模式。
+
+此策略无法按预期适用于 file://* 通配符。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -11493,7 +11745,9 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
 
 如果未设置此策略，则所有文件类型均位于[AutoOpenFileTypes](#autoopenfiletypes)中的下载将自动打开。
 
-URL 模式必须按[https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)进行格式设置。
+URL 模式必须按[https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 进行格式设置。
+
+此策略无法按预期适用于 file://* 通配符。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -12337,6 +12591,61 @@ SOFTWARE\Policies\Microsoft\Edge\AutoplayAllowlist\2 = "[*.]contoso.edu"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="browserlegacyextensionpointsblockingenabled"></a>BrowserLegacyExtensionPointsBlockingEnabled
+
+  #### <a name="enable-browser-legacy-extension-point-blocking"></a>启用浏览器旧扩展点阻止
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  在 Microsoft Edge 的浏览器进程上设置 ProcessExtensionPointDisablePolicy，以阻止从旧版第三方应用程序注入代码。
+
+如果启用或未配置此策略，则应用 ProcessExtensionPointDisablePolicy 来阻止浏览器进程中的旧扩展点。
+
+如果禁用此策略，则不会应用 ProcessExtensionPointDisablePolicy 来阻止浏览器进程中的旧扩展点。 此设置对 Microsoft Edge 的安全性和稳定性具有不利影响，因为未知和潜在的恶意代码可能在 Microsoft Edge 的浏览器进程中加载。 仅当与必须在 Microsoft Edge 浏览器进程内运行的第三方软件存在兼容性问题时，才关闭该策略。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：BrowserLegacyExtensionPointsBlockingEnabled
+  - GP 名称：启用浏览器旧扩展点阻止
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：BrowserLegacyExtensionPointsBlockingEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="browsernetworktimequeriesenabled"></a>BrowserNetworkTimeQueriesEnabled
 
   #### <a name="allow-queries-to-a-browser-network-time-service"></a>允许向浏览器网络时间服务发送查询
@@ -12909,7 +13218,9 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
 
 根据 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 构建你的 URL 模式。 由于证书对给定主机名有效，与方案、端口或路径无关，因此仅考虑 URL 的主机名部分。 不支持通配符主机。
 
-如果未配置此策略，则应通过证书透明度披露的任何证书如果未披露，则将被视为不受信任。
+如果未配置此策略，则应通过证书透明度披露的任何证书如果未披露，将被视为不受信任。
+
+此策略无法按预期适用于 file://* 通配符。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -13807,6 +14118,68 @@ SOFTWARE\Policies\Microsoft\Edge\ConfigureViewInFileExplorer = [
   ```
   
 
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="crossoriginwebassemblymodulesharingenabled"></a>CrossOriginWebAssemblyModuleSharingEnabled
+
+  #### <a name="specifies-whether-webassembly-modules-can-be-sent-cross-origin"></a>指定是否可以跨源发送 WebAssembly 模块
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  指定 WebAssembly 模块是否可以发送到另一个窗口或跨源工作进程。 作为弃用 document.domain 工作的一部分，将启用跨源 WebAssembly 模块共享，请参阅 https://github.com/mikewest/deprecating-document-domain。 此策略允许重新启用跨源 WebAssembly 模块共享。 这会在弃用过程中提供更长的转换期。
+
+如果启用此策略，站点可以无限制地跨源发送 WebAssembly 模块。
+
+如果禁用或未配置此策略，站点只能将 WebAssembly 模块发送到同一源中的窗口和工作进程。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：CrossOriginWebAssemblyModuleSharingEnabled
+  - GP 名称：指定是否可以跨源发送 WebAssembly 模块
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：CrossOriginWebAssemblyModuleSharingEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：CrossOriginWebAssemblyModuleSharingEnabled
+  - 示例值：
+``` xml
+<true/>
+```
   
 
   [返回页首](#microsoft-edge---policies)
@@ -14866,6 +15239,70 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   - 示例值：
 ``` xml
 <integer>104857600</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="displaycapturepermissionspolicyenabled"></a>DisplayCapturePermissionsPolicyEnabled
+
+  #### <a name="specifies-whether-the-display-capture-permissions-policy-is-checked-or-skipped"></a>指定是选中还是跳过显示捕获权限策略
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  根据以下规范，显示捕获权限策略限制对 getDisplayMedia() 的访问权限：https://www.w3.org/TR/screen-capture/#feature-policy-integration。但如果禁用此策略，则不强制执行此要求，并且允许从在其他情况下将禁止的上下文中获取 getDisplayMedia()。 此企业策略是临时的；按计划将在 Microsoft Edge 版本 100 后删除。
+它旨在取消阻止应用程序不符合规范但需要时间修复的企业用户。
+
+如果启用或未配置此策略，网站只能从显示捕获权限策略允许的上下文中调用 getDisplayMedia()。
+
+如果禁用此策略，网站甚至可以从显示捕获权限策略不允许的上下文中调用 getDisplayMedia()。
+请注意，其他限制可能仍然适用。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：DisplayCapturePermissionsPolicyEnabled
+  - GP 名称：指定是选中还是跳过显示捕获权限策略
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：DisplayCapturePermissionsPolicyEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：DisplayCapturePermissionsPolicyEnabled
+  - 示例值：
+``` xml
+<true/>
 ```
   
 
@@ -19112,19 +19549,19 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   ### <a name="internetexplorerintegrationtestingallowed"></a>InternetExplorerIntegrationTestingAllowed
 
-  #### <a name="allow-internet-explorer-mode-testing-deprecated"></a>允许 Internet Explorer 模式测试 (已弃用) 
+  #### <a name="allow-internet-explorer-mode-testing-obsolete"></a>允许 Internet Explorer 模式测试（已过时）
 
-  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
   
+  >已过时：此策略已过时，并且在 Microsoft Edge 94 后无法正常工作。
   #### <a name="supported-versions"></a>支持的版本：
 
-  - 在 86 版或更高版本的 Windows 上
+  - 在自 86 其至 94 为止的 Windows 上
 
   #### <a name="description"></a>描述
 
-  此策略已弃用，请改为使用 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 策略。 它在 Microsoft Edge 版本 95 中不起作用。
+  此策略已过时，因为它已由改进的功能取代。 它在版本 94 之后的 Microsoft Edge 中不起作用。 要允许用户在 Internet Explorer 模式下打开应用程序，请改用 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 策略。 或者，用户仍然可以使用 --ie-mode-test 标记。
 
-通过使用此策略，用户可以在 Microsoft Edge 中打开 Internet Explorer 模式选项卡，在 Internet Explorer 模式下测试应用程序。
+通过使用此策略，用户可以在 Microsoft Edge 中打开 Internet Explorer 模式选项卡来在 Internet Explorer 模式下测试应用程序。
 
 用户可以通过选择 "在 Internet Explorer 模式下打开网站"，在 "更多工具" 菜单内执行此操作。
 
@@ -19151,7 +19588,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
   ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 
   - GP 唯一名称：InternetExplorerIntegrationTestingAllowed
-  - GP 名称：允许 Internet Explorer 模式测试 (已弃用) 
+  - GP 名称：允许 Internet Explorer 模式测试（已过时）
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -19167,6 +19604,116 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 ```
 0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationwindowopenheightadjustment"></a>InternetExplorerIntegrationWindowOpenHeightAdjustment
+
+  #### <a name="configure-the-pixel-adjustment-between-windowopen-heights-sourced-from-ie-mode-pages-vs-edge-mode-pages"></a>配置源自 IE 模式页面和 Edge 模式页面的 window.open 高度之间的像素调整
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  使用此设置，可以指定对通过 window.open 从 Internet Explorer 模式网站生成的弹出窗口的高度进行自定义调整。
+
+如果配置此策略，则 Microsoft Edge 将调整值添加到高度（以像素为单位）。 具体差异取决于 IE 和 Edge 的 UI 配置，但典型的差异是 5。
+
+如果禁用或未配置此策略，则 Microsoft Edge 在窗口高度计算方面将 IE 模式 window.open 视为与 Edge 模式 window.open 相同。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerIntegrationWindowOpenHeightAdjustment
+  - GP 名称：配置源自 IE 模式页面和 Edge 模式页面的 window.open 高度之间的像素调整
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InternetExplorerIntegrationWindowOpenHeightAdjustment
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000005
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationwindowopenwidthadjustment"></a>InternetExplorerIntegrationWindowOpenWidthAdjustment
+
+  #### <a name="configure-the-pixel-adjustment-between-windowopen-widths-sourced-from-ie-mode-pages-vs-edge-mode-pages"></a>配置源自 IE 模式页面和 Edge 模式页面的 window.open 宽度之间的像素调整
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  通过此设置，可以指定对通过 window.open 从 Internet Explorer 模式网站生成的弹出窗口宽度的自定义调整。
+
+如果配置此策略，则 Microsoft Edge 将调整值添加到宽度（以像素为单位）。 具体差异取决于 IE 和 Edge 的 UI 配置，但典型的差异是 4。
+
+如果禁用或未配置此策略，Microsoft Edge 在窗口宽度计算方面将 IE 模式 window.open 视为与 Edge 模式 window.open 相同。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerIntegrationWindowOpenWidthAdjustment
+  - GP 名称：配置源自 IE 模式页面和 Edge 模式页面的 window.open 宽度之间的像素调整
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InternetExplorerIntegrationWindowOpenWidthAdjustment
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000004
 ```
 
   
@@ -22789,6 +23336,75 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="shadowstackcrashrollbackbehavior"></a>ShadowStackCrashRollbackBehavior
+
+  #### <a name="configure-shadowstack-crash-rollback-behavior"></a>配置 ShadowStack 故障回滚行为
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  指定此功能触发崩溃后，Microsoft Edge 是否应启用硬件强制实施的堆栈保护安全功能。
+
+如果未配置此策略，Microsoft Edge 将管理该设置，以安全推出硬件强制实施的堆栈保护，并最终强制为所有用户启用该功能。
+
+将此策略设置为“禁用”，以在此功能触发崩溃后始终禁用硬件强制实施的堆栈保护。
+
+将此策略设置为“DisableUntilUpdate”，以在此功能触发崩溃后禁用硬件强制执行的堆栈保护，但在 Microsoft Edge 可能解决该问题后将其启用。
+
+将此策略设置为“启用”，以在此功能触发崩溃后始终启用硬件强制执行的堆栈保护。
+
+策略选项映射：
+
+* Disable (0) = 禁用硬件强制实施的堆栈保护
+
+* DisableUntilUpdate (1) = 在下一次 Microsoft Edge 更新之前，禁用硬件强制实施的堆栈保护
+
+* Enable (2) = 启用硬件强制实施的堆栈保护
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：ShadowStackCrashRollbackBehavior
+  - GP 名称：配置 ShadowStack 故障回退行为
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ShadowStackCrashRollbackBehavior
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="sharedarraybufferunrestrictedaccessallowed"></a>SharedArrayBufferUnrestrictedAccessAllowed
 
   #### <a name="specifies-whether-sharedarraybuffers-can-be-used-in-a-non-cross-origin-isolated-context"></a>指定是否可以在非跨源隔离环境中使用 SharedArrayBuffers
@@ -24421,6 +25037,8 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
 如果未配置此策略，则 [URLBlocklist](#urlblocklist) 策略中的阻止列表不存在例外。
 
+此策略无法按预期适用于 file://* 通配符。
+
   #### <a name="supported-features"></a>支持的功能：
 
   - 可以强制：是
@@ -24498,7 +25116,9 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
 此策略不会阻止页面通过 JavaScript 动态更新。 例如，如果阻止“contoso.com/abc”，只要页面不刷新，用户仍可以访问“contoso.com”并单击链接访问“contoso.com/abc”。
 
-如果未配置此策略，则不会阻止任何 URL。
+如果未配置此策略，则不阻止任何 URL。
+
+此策略无法按预期适用于 file://* 通配符。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -24535,9 +25155,8 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\2 = "https://ssl.server.com"
 SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\3 = "hosting.com/bad_path"
 SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\4 = "https://server:8080/path"
 SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\5 = ".exact.hostname.com"
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\6 = "file://*"
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\7 = "custom_scheme:*"
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\6 = "custom_scheme:*"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\7 = "*"
 
 ```
 
@@ -24552,7 +25171,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   <string>hosting.com/bad_path</string>
   <string>https://server:8080/path</string>
   <string>.exact.hostname.com</string>
-  <string>file://*</string>
   <string>custom_scheme:*</string>
   <string>*</string>
 </array>
@@ -25053,6 +25671,61 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="visualsearchenabled"></a>VisualSearchEnabled
+
+  #### <a name="visual-search-enabled"></a>已启用视觉搜索
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  通过视觉搜索，可以快速浏览有关图像中实体的更多相关内容。
+
+如果启用或未配置此策略，将通过图像悬停、上下文菜单和在边栏中搜索启用视觉搜索。
+
+如果禁用此策略，则将禁用视觉搜索，并且你将无法通过悬停、上下文菜单和在边栏中搜索获取有关图像的详细信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：VisualSearchEnabled
+  - GP 名称：已启用视觉搜索
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称：VisualSearchEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="wpadquickcheckenabled"></a>WPADQuickCheckEnabled
 
   #### <a name="set-wpad-optimization"></a>设置 WPAD 优化
@@ -25131,14 +25804,18 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
   配置此策略以指定一个无需用户交互即可自行安装的网页应用列表，并且用户无法卸载或关闭这些应用程序。
 
-策略的每个列表项都是具有强制成员的对象：url (要安装的 web 应用的 URL) 
+策略的每个列表项都是具有强制成员的对象：url（要安装的 web 应用的 URL）
 
-和 3 个可选成员：
+和 5 个可选成员：
 - default_launch_container（指定 web 应用打开时使用的窗口模式 - 默认为新选项卡。）
 
-- create_desktop_shortcut（如果要创建 Linux 和 Microsoft Windows 桌面快捷方式，则为 true。）
+- create_desktop_shortcut（如果要创建 Linux 和 Microsoft Windows 桌面快捷方式，则为 true）。
 
-- fallback_app_name（从 Microsoft Edge 90 开始，如果应用名称不是渐进式 Web App (PWA) ，则允许覆盖应用名称，或者，如果应用名称是 PWA，则允许覆盖临时安装的应用名称，但在安装完成之前需要进行身份验证。）
+- fallback_app_name（从 Microsoft Edge 版本 90 开始，如果应用名称不是渐进式 Web App (PWA)，则允许覆盖应用名称，或者，如果应用名称是 PWA，则允许替代临时安装的应用名称，但在安装完成之前需要进行身份验证。 如果同时提供 custom_name 和 fallback_app_name，则将忽略后者。）
+
+- custom_name（从 Microsoft Edge 版本 96 开始，允许永久替代所有 Web 应用和 PWA 的应用名称。）
+
+- custom_icon（从 Microsoft Edge 版本 96 开始，允许替代已安装应用的应用图标。 图标必须为正方形，大小最大为 1 MB，并采用以下格式之一：jpeg、png、gif、webp、ico。 哈希值必须是图标文件的 SHA256 哈希。）
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -25183,7 +25860,19 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
     "default_launch_container": "window",
     "fallback_app_name": "Editor",
-    "url": "https://app.contoso.com/editor"
+    "url": "https://app.contoso.edu/editor"
+  },
+  {
+    "custom_name": "Spreadsheets",
+    "default_launch_container": "window",
+    "url": "https://app.contoso.edu/sheets"
+  },
+  {
+    "custom_icon": {
+      "hash": "c28f469c450e9ab2b86ea47038d2b324c6ad3b1e9a4bd8960da13214afd0ca38",
+      "url": "https://mydomain.example.com/sunny_icon.png"
+    },
+    "url": "https://weather.example.com"
   }
 ]
 ```
@@ -25191,7 +25880,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### <a name="compact-example-value"></a>精简示例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "fallback_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "fallback_app_name": "Editor", "url": "https://app.contoso.edu/editor"}, {"custom_name": "Spreadsheets", "default_launch_container": "window", "url": "https://app.contoso.edu/sheets"}, {"custom_icon": {"hash": "c28f469c450e9ab2b86ea47038d2b324c6ad3b1e9a4bd8960da13214afd0ca38", "url": "https://mydomain.example.com/sunny_icon.png"}, "url": "https://weather.example.com"}]
   ```
   
 
@@ -25222,7 +25911,26 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
     <key>fallback_app_name</key>
     <string>Editor</string>
     <key>url</key>
-    <string>https://app.contoso.com/editor</string>
+    <string>https://app.contoso.edu/editor</string>
+  </dict>
+  <dict>
+    <key>custom_name</key>
+    <string>Spreadsheets</string>
+    <key>default_launch_container</key>
+    <string>window</string>
+    <key>url</key>
+    <string>https://app.contoso.edu/sheets</string>
+  </dict>
+  <dict>
+    <key>custom_icon</key>
+    <dict>
+      <key>hash</key>
+      <string>c28f469c450e9ab2b86ea47038d2b324c6ad3b1e9a4bd8960da13214afd0ca38</string>
+      <key>url</key>
+      <string>https://mydomain.example.com/sunny_icon.png</string>
+    </dict>
+    <key>url</key>
+    <string>https://weather.example.com</string>
   </dict>
 </array>
 ```
