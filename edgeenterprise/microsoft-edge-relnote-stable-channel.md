@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/24/2021
+ms.date: 10/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 491debce74949c9e146acdcf825c99edf2f7f81e
-ms.sourcegitcommit: 6ef4b2e1dee45f33edb7fa8f83c93b4d169adca9
+ms.openlocfilehash: f15c8e1d4dcd037b0948e7309387ba3baa5d1ffa
+ms.sourcegitcommit: 2bf511511f131b8497b3e162c44286c217508885
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2021
-ms.locfileid: "12044834"
+ms.lasthandoff: 10/01/2021
+ms.locfileid: "12057332"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -30,7 +30,19 @@ ms.locfileid: "12044834"
 > [!NOTE]
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
 >
-> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [即将向 Microsoft Edge 推出的影响网站兼容性的更改](/ microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-94099238-october-1"></a>版本 94.0.992.38：10 月 1 日
+
+> [!Important]
+> 此次更新包含 [CVE-2021-37975](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37975) 和 [CVE-2021-37976](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37976) 的修复程序，Chromium 团队已报告该程序存在在野攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+
+            [此处](/deployedge/microsoft-edge-relnotes-security#october-01-2021) 列出了稳定频道的安全更新。
+
+## <a name="version-94099237-september-30"></a>版本 94.0.992.37：9 月 30 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-94099231-september-24"></a>版本 94.0.992.31：9 月 24 日
 
@@ -324,7 +336,7 @@ ms.locfileid: "12044834"
 ## <a name="version-91086448-june-11"></a>版本 91.0.864.48：6 月 11 日
 
 > [!Important]
->此更新包含 [CVE-2021-30551](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30551) 的修补程序，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide/vulnerability/ADV200002)。
+>此更新包含 [CVE-2021-30551](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30551) 的修补程序，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide/vulnerability/ADV200002)。
 
 
             [此处](/deployedge/microsoft-edge-relnotes-security#june-11-2021) 列出了稳定频道的安全更新。
