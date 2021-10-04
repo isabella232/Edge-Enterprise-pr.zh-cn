@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 有关使用 ExtensionSettings 策略配置 Microsoft Edge 扩展的详细参考指南。
-ms.openlocfilehash: 67e3cffaa842f591a3d4c3035104addd19e34fd8
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 3660910a252377efe8dff47dec8f811ecdd2018e
+ms.sourcegitcommit: b67ebf9a68205407f5eaec343cb0722cfdd17396
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978909"
+ms.lasthandoff: 10/04/2021
+ms.locfileid: "12061101"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>ExtensionSettings 策略的详细指南
 
@@ -52,7 +52,35 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 | **runtime_allowed_hosts**| 允许扩展与指定网站交互，即使它们也在 runtime_blocked_hosts 中定义了。 最多可以指定 100 个条目。 将放弃额外的条目。<br>主机模式格式类似于 [匹配模式](/microsoft-edge/extensions-chromium/enterprise/match-patterns) ，但不能定义路径。 例如：<br>- *://*.example.com<br>- *://example.*—支持 eTLD 通配符     |
 | **runtime_blocked_hosts**| 阻止扩展与指定的网站交互或修改网站。 修改包括阻止 JavaScript 注入、Cookie 访问、Web 请求修改。<br>最多可以指定 100 个条目。 将放弃额外的条目。<br>主机模式格式类似于匹配模式，但不能定义路径。 例如：<br>- *://*.example.com<br>- *://example.*—支持 eTLD 通配符   |
 | **override_update_url**| 在 Edge 93 中可用<br>如果设置为 `true` ，则 Edge 将使用 ExtensionSettings 策略或 ExtensionInstallForcelist 策略中指定的更新 URL 进行后续扩展更新。<br>如果未设置或设置为 ，Edge 将使用扩展清单中指定的 `false` URL 进行更新。|
+| **toolbar_state**| 在 Edge 94 中可用<br>此策略设置允许你向工具栏强制显示已安装的扩展。 默认状态是 `default_shown` 适用于所有扩展。 此设置可能具有以下状态<br>-`force_shown`：可以选择强制在工具栏上显示已安装的扩展。 用户将无法从工具栏中隐藏特定的扩展图标。<br>-`default_hidden`：在此状态中，扩展在安装时在工具栏中隐藏。 如果需要，用户可以在工具栏上显示它们。<br>-`default_shown`：这是浏览器上所有已安装扩展的失聪设置。
 
+这些是全局范围内允许的键 (*) ： 
+
+- blocked_permissions
+- installation_mode - 只有"blocked"、"allowed"或"removed"是此范围中的有效值。
+- runtime_blocked_hosts
+- blocked_install_message
+- allowed_types
+- runtime_allowed_hosts
+- install_sources
+
+这些是单个扩展作用域中允许的键： 
+
+- blocked_permissions
+- minimum_version_required
+- blocked_install_message
+- toolbar_state (94) 中可用
+- installation_mode - `"blocked"` 、 `"allowed"` 、 、 和 `"removed"` `"force_installed"` `"normal_installed"` 是可能的值。
+- runtime_allowed_hosts
+- update_url
+- override_update_url
+- runtime_blocked_hosts
+- toolbar_state
+
+这些键是更新 URL 范围内允许的键： 
+
+- blocked_permissions
+- installation_mode - 仅 `"blocked"` `"allowed"` ， 或 `"removed"` 是此范围中的有效值。
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>在 Windows 组策略编辑器中使用 JSON 字符串进行配置
 
