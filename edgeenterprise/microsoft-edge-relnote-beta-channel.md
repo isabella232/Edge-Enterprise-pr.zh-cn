@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/28/2021
+ms.date: 10/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: c62d540b014a47f1240d542c68ee52822719239f
-ms.sourcegitcommit: 4442aa94d4ff2fef8dd6f389ec0c6823b150d04f
+ms.openlocfilehash: a2957d3c52d18fe75cb52719896438e6becf6dbd
+ms.sourcegitcommit: e825c6a1b0e63004288e13f6bb672743b0ecfafb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2021
-ms.locfileid: "12053311"
+ms.lasthandoff: 10/05/2021
+ms.locfileid: "12068998"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
@@ -24,13 +24,17 @@ ms.locfileid: "12053311"
 > [!NOTE]
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
 
+## <a name="version-950102014-october-5"></a>版本 95.0.1020.14：10 月 5 日
+
+修复了各种 bug 和性能问题。
+
 ## <a name="version-95010209-september-28"></a>版本 95.0.1020.9：9 月 28 日
 
 ### <a name="feature-updates"></a>功能更新
 
-- **View in File Explorer support for SharePoint Online libraries in Microsoft Edge.**  现在，可以在 SharePoint Online 新式文档库上启用"在文件资源管理器中查看"功能。 若要使此体验可见且适用于你的用户，你需要启用 Microsoft Edge 策略"为 Microsoft Edge 中的 SharePoint 页面配置文件资源管理器中的查看功能["，](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)并更新 SharePoint Online 租户配置。 了解更多信息：在 SharePoint 中通过文件资源管理器查看Microsoft Edge [- SharePoint Microsoft 365 |Microsoft Docs](/SharePoint/sharepoint-view-in-edge)。
+- **在文件资源管理器中查看对 SharePoint Online 库的支持Microsoft Edge。**  现在，可以在联机新式文档库上启用"SharePoint资源管理器"功能。 若要使此体验可见且适用于你的用户，你需要启用 Microsoft Edge 策略"为 Microsoft Edge 中的 SharePoint 页面配置文件资源管理器中的查看功能["，](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)并更新 SharePoint Online 租户配置。 了解更多信息：SharePoint文件资源管理器查看Microsoft Edge [- SharePoint Microsoft 365 |Microsoft Docs](/SharePoint/sharepoint-view-in-edge)。
 
-- **Intranet 区域文件 URL 链接将在Windows资源管理器中打开。**  您可以允许指向源自 Intranet 区域 HTTPS 网站的 Intranet 区域文件的文件 URL 链接打开该文件Windows或目录的文件资源管理器。 可以使用 [IntranetFileLinksEnabled](/deployedge/microsoft-edge-policies#intranetfilelinksenabled) 策略启用此体验。
+- **Intranet 区域文件 URL 链接将在Windows资源管理器中打开。**  您可以允许指向源自 Intranet 区域 HTTPS 网站的 Intranet 区域文件的文件 URL 链接打开该文件Windows或目录的"文件资源管理器"。 可以使用 [IntranetFileLinksEnabled](/deployedge/microsoft-edge-policies#intranetfilelinksenabled) 策略启用此体验。
 
 - **下载体验的改进。**  对下载用户体验的支持正扩展到渐进式 Web 应用程序 PWA 和 WebView。 我们还将开始支持拖放到文件资源管理器和桌面。
 
@@ -45,7 +49,7 @@ ms.locfileid: "12053311"
 - [DisplayCapturePermissionsPolicyEnabled](/DeployEdge/microsoft-edge-policies#displaycapturepermissionspolicyenabled) 指定是检查还是跳过显示捕获权限策略
 - [InternetExplorerIntegrationWindowOpenHeightAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) 配置来自 IE 模式页面与边缘模式页面的 window.open 高度之间的像素调整
 - [InternetExplorerIntegrationWindowOpenWidthAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenwidthadjustment) 配置来自 IE 模式页面与边缘模式页面的 window.open 宽度之间的像素调整
-- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled)允许从浏览器打开 intranet 区域文件 URL Microsoft Edge在Windows资源管理器中打开
+- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled)允许在文件资源管理器中打开Microsoft Edge Intranet 区域Windows URL 链接
 - [ShadowStackCrashRollbackBehavior](/DeployEdge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) 配置 ShadowStack 故障回滚行为
 - [VisualSearchEnabled](/DeployEdge/microsoft-edge-policies#visualsearchenabled) 启用可视搜索
 
@@ -114,23 +118,23 @@ ms.locfileid: "12053311"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **Microsoft Edge 中的初始首选项。**  从 Microsoft Edge版本 93 开始，Microsoft Edge企业部署将更容易添加初始[首选项](/deployedge/initial-preferences-support-on-microsoft-edge-browser)。
+- **Microsoft Edge 中的初始首选项。**  从 Microsoft Edge版本 93 开始，Microsoft Edge"初始首选项"，将用户部署到[企业将变得更加简单](/deployedge/initial-preferences-support-on-microsoft-edge-browser)。
 
 - **Microsoft Edge 上的 IE 模式将支持“无合并”行为。**  从 Microsoft Edge版本 93 开始，Microsoft Edge上的 IE 模式将支持"无合并"。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于每个 Microsoft Edge 窗口，当首次在该窗口中访问 IE 模式选项卡时，如果其为其中一个指定的“无合并”站点，则该窗口至少会锁定到所有其他Microsoft Edge 窗口的不同“无合并”IE 会话中，直到最后的 IE 模式选项卡在该窗口中关闭。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--no-merge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
 
-- **选项卡组。**  将选项卡分类到用户定义的组的功能可帮助您更有效地跨多个工作流查找、切换和管理选项卡。 为了启用此功能，我们将从版本 93 开始启用选项卡Microsoft Edge分组。
+- **选项卡组。**  将选项卡分类到用户定义的组的功能可帮助您更有效地跨多个工作流查找、切换和管理选项卡。 若要启用此功能，我们将从版本 93 开始启用选项卡Microsoft Edge分组。
 
-- **使用“垂直标签”时隐藏标题栏。**  当在“垂直标签”中时，隐藏浏览器的标题栏以重获额外多个像素。 从 Microsoft Edge版本 93 开始，可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在垂直选项卡模式下隐藏标题栏的选项。
+- **使用“垂直标签”时隐藏标题栏。**  当在“垂直标签”中时，隐藏浏览器的标题栏以重获额外多个像素。 从 Microsoft Edge版本 93 开始，您可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在"垂直选项卡"模式下隐藏标题栏的选项。
 
 - **悬停工具栏中的视频画中画(PiP)。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (输入图片) 变得更加简单。 当将鼠标悬停在受支持的视频上时，工具栏将显示，允许在 PiP 窗口中查看该视频。  注意：这当前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
 
-- **在 TLS 中删除 3DES。**  从 Microsoft Edge版本 93 开始，将TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在 Microsoft Edge 基于的 Chromium 项目中。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 策略将可用于支持需要保留与过时服务器的兼容性的场景。 此兼容性策略将过时，并停止在 Microsoft Edge 版本 95 中工作。 请确保在此之前更新受影响的服务器。
+- **在 TLS 中删除 3DES。**  从 Microsoft Edge版本 93 开始，将TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在 Microsoft Edge 所基于的 Chromium 项目中。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 策略将可用于支持需要保留与过时服务器的兼容性的场景。 此兼容性策略将过时，并停止在 Microsoft Edge 版本 95 中工作。 请确保在此之前更新受影响的服务器。
 
 - **用于绕过 ClickOnce 和 DirectInvoke 提示的策略。**  我们更新了策略，以允许绕过来自指定域的指定文件类型的 ClickOnce 提示和 DirectInvoke 应用。 为此，需要:
 
   - 启用 [ClickOnceEnabled](/deployedge/microsoft-edge-policies#clickonceenabled) 或 [DirectInvokeEnabled](/deployedge/microsoft-edge-policies#directinvokeenabled)
   - 启用 [AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes) 策略，并设置应禁用 ClickOnce 和 DirectInvoke 的特定文件类型的列表
-  - 启用[AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls)策略并设置特定域的列表，ClickOnce和 DirectInvoke 将禁用这些域的列表
+  - 启用[AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls)策略并设置特定域的列表，ClickOnce和 DirectInvoke 将被禁用
 
   注意: AutoOpenAllowedForURL 为 AutoOpenFileTypes 的策略。 如果未设置 AutoOpenAllowedForURL 但设置了 AutoOpenFileTypes，则列出的文件类型将从所有 URL 中自动打开。
 
@@ -195,7 +199,7 @@ ms.locfileid: "12053311"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了仅标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如"上个星期的食谱") "。
+- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了仅标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如"上个星期的食谱") 。
 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 策略调整将网站保留在本地站点列表中的天数。
@@ -204,10 +208,10 @@ ms.locfileid: "12053311"
 - **MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用 [本指南](/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
 
 - **付款工具现在跨设备同步**。 从 Microsoft Edge 版本 92 开始，可以选择跨已登录设备同步付款信息。
-请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时尽快查看。
+请注意：这是限制性的功能推出。 如果你看不到此功能，请在我们继续推出时尽快查看。
 
 - **“禁用开发人员模式扩展”警告可以永久消除**。 从 Microsoft Edge 版本 92 开始，可以通过单击"不要再次显示此扩展"选项来关闭"禁用开发人员模式扩展"警告。
-请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时尽快查看。
+请注意：这是限制性的功能推出。 如果你看不到此功能，请在我们继续推出时尽快查看。
 
 - **直接从工具栏管理扩展**。 工具栏上新增的扩展菜单将允许你轻松隐藏/固定扩展。 管理扩展和查找新扩展的快速链接将使你轻松找到新扩展和管理现有扩展。
 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时尽快查看。

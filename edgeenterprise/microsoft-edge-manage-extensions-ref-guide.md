@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 有关使用 ExtensionSettings 策略配置 Microsoft Edge 扩展的详细参考指南。
-ms.openlocfilehash: 3660910a252377efe8dff47dec8f811ecdd2018e
-ms.sourcegitcommit: b67ebf9a68205407f5eaec343cb0722cfdd17396
+ms.openlocfilehash: 7dceff78172626d70863883e0762be2f4cb7e51c
+ms.sourcegitcommit: e825c6a1b0e63004288e13f6bb672743b0ecfafb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2021
-ms.locfileid: "12061101"
+ms.lasthandoff: 10/05/2021
+ms.locfileid: "12069008"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>ExtensionSettings 策略的详细指南
 
@@ -57,7 +57,7 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 这些是全局范围内允许的键 (*) ： 
 
 - blocked_permissions
-- installation_mode - 只有"blocked"、"allowed"或"removed"是此范围中的有效值。
+- installation_mode - 仅 `"blocked"` `"allowed"` ， 或 `"removed"` 是此作用域中的有效值。
 - runtime_blocked_hosts
 - blocked_install_message
 - allowed_types
@@ -69,7 +69,6 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 - blocked_permissions
 - minimum_version_required
 - blocked_install_message
-- toolbar_state (94) 中可用
 - installation_mode - `"blocked"` 、 `"allowed"` 、 、 和 `"removed"` `"force_installed"` `"normal_installed"` 是可能的值。
 - runtime_allowed_hosts
 - update_url
@@ -80,7 +79,7 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 这些键是更新 URL 范围内允许的键： 
 
 - blocked_permissions
-- installation_mode - 仅 `"blocked"` `"allowed"` ， 或 `"removed"` 是此范围中的有效值。
+- installation_mode - 仅 `"blocked"` `"allowed"` ， 或 `"removed"` 是此作用域中的有效值。
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>在 Windows 组策略编辑器中使用 JSON 字符串进行配置
 
