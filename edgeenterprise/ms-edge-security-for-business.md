@@ -3,19 +3,19 @@ title: 适用于企业的 Microsoft Edge 安全
 ms.author: collw
 author: seanongit
 manager: chuckf
-ms.date: 06/29/2021
+ms.date: 10/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 适用于企业的 Microsoft Edge 安全
-ms.openlocfilehash: d16b22b63212e3f5319b0bb7df1e457e45cd6208
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 1480edb80698a20f27c4b0f365da9f18ee5fb46e
+ms.sourcegitcommit: 1c664ec030947d89cb5d7c4b834c9292cc1c87b6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979010"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "12087698"
 ---
 # <a name="microsoft-edge-security-for-your-business"></a>适用于企业的 Microsoft Edge 安全
 
@@ -27,9 +27,9 @@ Microsoft Edge 建立在 Chromium 开放源代码项目（与 Google Chrome 核�
 
 ### <a name="highest-rated-protection-against-phishing-and-malware"></a>抵御网站钓鱼和恶意软件的最高级别防护
 
-根据 NSS Labs 的一项独立研究，相比 Google Chrome 的安全浏览，内置在 Microsoft Edge 中的 SmartScreen 可阻止更多的[网络钓鱼](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWASN1)和[恶意软件](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWANMW)企图。 SmartScreen 可在用户联机工作时提供网站和下载的实时信誉检查，它是 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一部分，它汲取从 Microsoft 庞大的全球资产、研究人员和合作伙伴网络产生的信号和见解。 通过对基于云的动态危险网站和下载列表进行检查，Microsoft Edge 有助于检测和阻止快速消失的短暂威胁。  
+根据来自 Microsoft Edge 的一项独立Microsoft Defender SmartScreen，与[](https://aka.ms/EdgePhishingReport)Google [](https://aka.ms/EdgeMalwareReport) Chrome 保险箱 浏览中一样，CyberRatings.org。Microsoft Defender SmartScreen 在用户联机工作时对网站和下载提供实时信誉检查，它是 Microsoft Intelligent Security [Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security)的一部分，它绘制从 Microsoft 的大型全球资产、研究人员和合作伙伴网络生成的信号和见解。 通过对基于云的动态危险网站和下载列表进行检查，Microsoft Edge 有助于检测和阻止快速消失的短暂威胁。  
 
-在[NSS Labs的网络钓鱼防护](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWASN1)测试期间，[Microsoft Edge SmartScreen](//DeployEdge/microsoft-edge-security-smartscreen) 阻止了 95.5% 的网络钓鱼尝试，在[NSS Labs的恶意软件保护](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWANMW)测试期间阻止了 98.5% 的恶意软件尝试，而 Chrome 的安全浏览率分别为 86.9% 和 86.0%。
+[Microsoft Edge SmartScreen](//DeployEdge/microsoft-edge-security-smartscreen)在[CyberRatings.org Web](https://aka.ms/EdgePhishingReport)浏览器与网络钓鱼测试期间阻止了 92.3% 的网络钓鱼尝试，在 CyberRatings.org Web 浏览器和恶意软件测试期间阻止了 97.4% 的恶意软件尝试。与 Chrome 的 保险箱 浏览率分别为 84.6% 和 86.3% 相比。 [](https://aka.ms/EdgeMalwareReport)
 
 ### <a name="the-only-browser-on-windows-10-that-natively-supports-hardware-isolation"></a>Windows 10 上唯一本机支持硬件隔离的浏览器
 
