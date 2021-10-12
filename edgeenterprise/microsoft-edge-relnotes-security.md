@@ -3,27 +3,31 @@ title: Microsoft Edge 安全更新的发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 10/01/2021
+ms.date: 10/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: 050f9976390d9b5f279b9f0fa11d1494e9f82391
-ms.sourcegitcommit: 2bf511511f131b8497b3e162c44286c217508885
+ms.openlocfilehash: aa43929500041e1b2b7a5b292f8384d372bc429f
+ms.sourcegitcommit: 65720e81583a7e78849593c90100204e3c33066e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2021
-ms.locfileid: "12057338"
+ms.lasthandoff: 10/12/2021
+ms.locfileid: "12089395"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge 稳定渠道更新中包含的安全修补程序的信息。
 
+## <a name="october-11-2021"></a>2021 年 10 月 11 日
+
+Microsoft 发布了最新的 **Microsoft Edge稳定频道（版本 94.0.992.47），** 其中包含 Chromium 项目的最新安全更新。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
+
 ## <a name="october-1-2021"></a>2021 年 10 月 1 日
 
-Microsoft 已发布最新的 **Microsoft Edge 稳定渠道 (94.0.992.38)**，其中并入了 Chromium 项目的最新安全更新。 此次更新包含 [CVE-2021-37975](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37975) 和 [CVE-2021-37976](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37976) 的修复程序，Chromium 团队已报告该程序存在在野攻击。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+Microsoft 发布了最新的 **Microsoft Edge稳定频道（版本 94.0.992.38），** 其中包含 Chromium 项目的最新安全更新。 此次更新包含 [CVE-2021-37975](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37975) 和 [CVE-2021-37976](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37976) 的修复程序，Chromium 团队已报告该程序存在在野攻击。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
 ## <a name="september-24-2021"></a>2021 年 9 月 24 日
 
