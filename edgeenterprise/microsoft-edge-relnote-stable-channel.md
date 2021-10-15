@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 10/11/2021
+ms.date: 10/14/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 7e9e48357eed0664b0f305eadf790689aa4ac93e
-ms.sourcegitcommit: 65720e81583a7e78849593c90100204e3c33066e
+ms.openlocfilehash: 6ed7942320875a57e43bea73c98bac6cafe6146e
+ms.sourcegitcommit: 568c379989a5fbc64ca3d724a0afb69bbc650b41
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2021
-ms.locfileid: "12089405"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "12094505"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -30,6 +30,10 @@ ms.locfileid: "12089405"
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](https://docs.microsoft.com/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-94099250-october-14"></a>版本 94.0.992.50：10 月 14 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-94099247-october-11"></a>版本 94.0.992.47：10 月 11 日
 
@@ -51,7 +55,7 @@ ms.locfileid: "12089405"
 > [!Important]
 > 此更新包含 [CVE-2021-37973](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37973) 的修补程序，Chromium 团队已将其报告为具有野外漏洞。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
-[此处](/deployedge/microsoft-edge-relnotes-security#september-24-2021) 列出了稳定频道的安全更新。
+[此处](/deployedge/microsoft-edge-relnotes-security#september-24-2021)列出了稳定频道的安全更新。
 
 ### <a name="feature-updates"></a>功能更新
 
