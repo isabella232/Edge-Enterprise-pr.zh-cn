@@ -3,19 +3,19 @@ title: 企业新选项卡页面的向后兼容性
 ms.author: ruchir
 author: dan-wesley
 manager: vwehren
-ms.date: 06/29/2021
+ms.date: 10/21/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 企业新选项卡页面的向后兼容性
-ms.openlocfilehash: e2534f9df82aa81843d7cd292ada99a4c7574a3c
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: eb8e7a69da876e844a576c20f0194d14c92eaeee
+ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978708"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "12107517"
 ---
 # <a name="backwards-compatibility-for-the-enterprise-new-tab-page"></a>企业新选项卡页面的向后兼容性
 
@@ -31,7 +31,7 @@ ms.locfileid: "11978708"
 > [!NOTE]
 > Office 365 的内容最初是使用 [Office.com](https://www.office.com) 域提供服务的。
 
-如果你的组织对 MSN.com 域的访问收到了限制，我们强烈建议授予用户访问此 [url](https://ntp.msn.com)的权限。
+如果你的组织 MSN.com 域的访问权限，我们强烈建议为用户提供对此 的访问权限 [https://ntp.msn.com](https://ntp.msn.com) 。
 
 如果需要更多时间来启用对 MSN 域的访问，我们建议使用 [NewTabPageSetFeedType](./microsoft-edge-policies.md#newtabpagesetfeedtype)，以便为新的选项卡页面选择 Microsoft 新闻或 Office 365 源体验。
 

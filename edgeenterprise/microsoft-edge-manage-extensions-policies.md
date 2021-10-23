@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用组策略在企业中管理 Microsoft Edge 扩展
-ms.openlocfilehash: dad239a448ec1f0ebef60c7072bfaad5c3baed57
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: a244fd0fc3c8743b9f677d2a6fc1fee835aab822
+ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978991"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "12107507"
 ---
 # <a name="use-group-policies-to-manage-microsoft-edge-extensions"></a>使用组策略管理 Microsoft Edge 扩展
 
@@ -163,6 +163,7 @@ ms.locfileid: "11978991"
 
 > [!NOTE]
 > 对于托管在 Chrome Web store 中的扩展，请使用以下字符串，如：`pckdojakecnhhplcgfflhndiffaohfah;https://clients2.google.com/service/update2/crx`。
+> 对于自托管扩展，请使用模式 extension_id;update_url，update_url指向更新清单 XML 文件的位置。 例如，`mfjlfjaknfckffgjgmdfeheeealceoak;https://file_location.azurewebsites.net/picture_of_the_day.xml`。
 
 ## <a name="block-extensions-from-a-specific-store-or-update-url"></a>阻止来自特定商店或更新 URL 的扩展
 

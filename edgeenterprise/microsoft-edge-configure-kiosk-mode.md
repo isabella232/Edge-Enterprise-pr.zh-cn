@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解展台模式功能以及如何配置 Microsoft Edge 展台模式的选项。
-ms.openlocfilehash: 3483c402d9cd7e0d4a7542bcda98672523c0dfb6
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 38d9b143a910c1e475e5fc8413ef657de395a659
+ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978996"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "12107557"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>配置 Microsoft Edge 展台模式
 
@@ -86,6 +86,13 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=fullscreen
 ```
 msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
 ```
+
+### <a name="kiosk-mode-download-files-on-exit"></a>展台模式 退出时下载文件
+
+若要将 Edge 设置为在展台实例关闭时删除下载的文件，必须设置以下 2 个组策略：
+- [退出时删除下载](./microsoft-edge-policies.md#kioskdeletedownloadsonexit) = 已启用
+- [设置下载目录](.//microsoft-edge-policies.md#downloaddirectory) = ${local_app_data}\Microsoft\Edge\KioskDownloads 
+
 
 ### <a name="additional-command-line-options"></a>其他命令行选项
 
