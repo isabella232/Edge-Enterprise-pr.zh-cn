@@ -3,19 +3,19 @@ title: 配置适用于 Windows 的 Microsoft Edge
 ms.author: brianalt
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 06/28/2021
+ms.date: 10/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: 在 Windows 设备上配置 Microsoft Edge 策略设置
-ms.openlocfilehash: a5db4352e723539843a5ad80a7b067e670bced5c
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+description: 了解如何在 Windows 设备上配置 Microsoft Edge 策略设置
+ms.openlocfilehash: 05e12b157b434fcad53ddd25922dc8f394ad3157
+ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978705"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "12107457"
 ---
 # <a name="configure-microsoft-edge-policy-settings-on-windows"></a>在 Windows 上配置 Microsoft Edge 策略设置
 
@@ -35,10 +35,10 @@ Microsoft Edge 支持_强制_和_推荐的_策略。 强制策略会覆盖用户
 >[!TIP]
 > 你可以使用 Microsoft Intune 配置 Microsoft Edge 策略设置。 有关详细信息，请参阅[使用 Microsoft Intune 配置 Microsoft Edge](configure-edge-with-intune.md)。
 
-有以下两个适用于 Microsoft Edge 的管理模板，这两个模板都可以在计算机或 Active Directory 域级别应用：
+有两种用于 Microsoft Edge 的管理模板，这两种模板都可以与常用的组策略管理工具一起应用，例如用于单台计算机的应用程序的本地组策略编辑器或 Microsoft Windows 域网络的组策略管理控制台。 这些模板包括：
 
-- *msedge.admx*，用于[配置 Microsoft Edge 设置](microsoft-edge-policies.md)
-- *msedgeupdate.admx*，用于[管理 Microsoft Edge 更新](microsoft-edge-update-policies.md)。
+- *msedge.admx*，用于[配置 Microsoft Edge 设置](./microsoft-edge-policies.md)
+- *msedgeupdate.admx*，用于[管理 Microsoft Edge 更新](./microsoft-edge-update-policies.md)。
 
 首先，请下载并安装 Microsoft Edge 管理模板。
 
