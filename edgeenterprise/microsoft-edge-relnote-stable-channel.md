@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge Stable 渠道发行说明
-ms.author: aguta
-author: AndreaLBarr
+ms.author: leahtu
+author: dan-wesley
 manager: srugh
-ms.date: 10/14/2021
+ms.date: 10/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 6ed7942320875a57e43bea73c98bac6cafe6146e
-ms.sourcegitcommit: 568c379989a5fbc64ca3d724a0afb69bbc650b41
+ms.openlocfilehash: e416f04adfdd96f7d14cb662ce2a1fd052951d26
+ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "12094505"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "12107447"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -29,7 +29,51 @@ ms.locfileid: "12094505"
 > [!NOTE]
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](microsoft-edge-update-progressive-rollout.md)。
 >
-> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](https://docs.microsoft.com/microsoft-edge/web-platform/site-impacting-changes)。
+> Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-950102030-october-21"></a>版本 95.0.1020.30: 10 月 21 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#october-21-2021)列出了稳定频道的安全更新。
+
+### <a name="feature-updates"></a>功能更新
+
+- **在 Microsoft Edge 中查看对 SharePoint Online 库的文件资源管理器支持。**  现在可以在 SharePoint Online 新式文档库上启用“文件资源管理器视图”功能。 若要使此体验可见且适用于用户，需要启用 Microsoft Edge 策略 [在 Microsoft Edge 中为 SharePoint 页面配置“文件资源管理器视图”功能](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)，并更新 SharePoint Online 租户配置。 了解更多信息: [在 Microsoft Edge 中使用“文件资源管理器”查看 SharePoint 文件](/SharePoint/sharepoint-view-in-edge)。
+
+- **Intranet 区域文件 URL 链接将在 Windows 文件资源管理器中打开。**  你可以允许文件 URL 链接到源自 Intranet 区域 HTTPS 网站的 Intranet 区域文件，以打开该文件或目录的 Windows 文件资源管理器。 可以使用 [IntranetFileLinksEnabled](/deployedge/microsoft-edge-policies#intranetfilelinksenabled) 策略启用此体验。
+
+- **对下载体验进行的改进。** 对下载用户体验的支持已扩展到渐进式 Web 应用程序 PWA 和 WebView。 我们还将开始支持拖放到文件资源管理器和桌面。
+
+- **继续你在 PDF 文件上的工作。**  现在，你将能够从上次关闭 PDF 文档的位置继续阅读。
+
+- **当笔记本电脑进入延长电池使用时间模式时，效率模式会延长延长电池寿命。**  当笔记本电脑进入电池保护模式时，效率模式将变得活跃，以允许浏览器管理资源使用状态来延长机器的电池寿命。 当效率模式变为活动状态时，将有四个选项: 拔出电源和电池电量不足、不拔出电源、始终和从不。 请注意: 这是限制性功能推出的功能。 如果无法看到此功能，请在我们稍后继续推出时再返回查看。
+
+- **添加到 PDF 文档的自由格式文本框。** 我们现在支持向 PDF 文档添加自由格式文本框。 可以使用这些框来填写表单并添加可见笔记。
+
+- **添加到集合的引文支持。**  我们改进了集合体验，尤其是对于学生和研究人员。 集合将开始支持引文和阅读列表。
+
+- **更快地更新密码，并减少单击次数。** 现在，浏览器将直接转到给定网站的“更改密码”页面。 此操作可节省时间和单击次数，无需手动导航到页面。 在进入此页面上后，浏览器还将自动填充现有密码，并建议使用强大且唯一的新密码。  请注意: 此功能目前仅在有限数量的站点上可用。
+
+- **自动创建账户。** 我们现在在注册页面上提供额外的支持，允许一键创建在线账户。 可以在点击报名表中任何表单字段时，选择建议下拉来执行此操作。 这样做不仅会显示与注册表单相关的信息，而且还会显示一个强大的新密码建议。 选择后，所有相关信息将填充在相应的字段中，建议的密码将在提交到网站时自动存储。 请注意: 此功能目前仅在有限数量的站点上可用。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [BrowserLegacyExtensionPointsBlockingEnabled](/DeployEdge/microsoft-edge-policies#browserlegacyextensionpointsblockingenabled) 启用浏览器旧扩展点阻止
+- [CrossOriginWebAssemblyModuleSharingEnabled](/DeployEdge/microsoft-edge-policies#crossoriginwebassemblymodulesharingenabled) 指定 WebAssembly 模块是否可以跨源发送
+- [DisplayCapturePermissionsPolicyEnabled](/DeployEdge/microsoft-edge-policies#displaycapturepermissionspolicyenabled) 指定是否检查或跳过显示捕获权限策略
+- [InternetExplorerIntegrationWindowOpenHeightAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) 配置来自 IE 模式页面与 Edge 模式页面的 window.open 高度像素调整
+- [InternetExplorerIntegrationWindowOpenWidthAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenwidthadjustment) 配置来自 IE 模式页面与 Edge 模式页面的 window.open 宽度像素调整
+- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled) 允许在 Windows 文件资源管理器中打开来自 Microsoft Edge 的 Intranet 区域文件 URL 链接
+- [NewSmartScreenLibraryEnabled](/DeployEdge/microsoft-edge-policies#newsmartscreenlibraryenabled) 启用新的 SmartScreen 库
+- [ShadowStackCrashRollbackBehavior](/DeployEdge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) 配置 ShadowStack 故障回滚行为
+- [VisualSearchEnabled](/DeployEdge/microsoft-edge-policies#visualsearchenabled) 已启用视觉搜索
+
+#### <a name="obsoleted-policies"></a>已过时的策略
+
+- [InternetExplorerIntegrationTestingAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed)：允许 Internet Explorer 模式测试
+- [LegacySameSiteCookieBehaviorEnabled](/DeployEdge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled) 启用默认的旧 SameSite Cookie 行为设置
+
 
 ## <a name="version-94099250-october-14"></a>版本 94.0.992.50：10 月 14 日
 
@@ -200,7 +244,7 @@ ms.locfileid: "12094505"
 
 **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 [InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 [InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 策略调整将站点保留在本地站点列表中的天数。 请注意，对于端到端体验，Windows 10 版本 1909 需要 KB5003698 或更高版本; Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更高版本。 有关详细信息，请参阅 [ IE 模式下的本地站点列表](/deployedge/edge-ie-mode-local-site-list)。
 
-**MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用[此指南](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
+**MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用[此指南](/docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
 
 **"禁用开发人员模式扩展"警告可以消除 2 周**。 从 Microsoft Edge 版本 92 开始，可以在警告对话框下拉列表中选择将"禁用开发人员模式扩展"警告暂停 2 周。
 
