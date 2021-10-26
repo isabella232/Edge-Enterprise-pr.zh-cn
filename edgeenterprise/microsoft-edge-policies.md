@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 09/26/2021
+ms.date: 10/20/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 5e4deb6e75ab44c1706e17fe57232c703f2374dc
-ms.sourcegitcommit: 884bdb6ef9484ed3b080b4c5ab091f5f29ba2928
+ms.openlocfilehash: 934dd2b8430184914ab080f0138a10601caa6a04
+ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "12056728"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "12107547"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -28,6 +28,22 @@ ms.locfileid: "12056728"
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
+
+## <a name="new-policies"></a>新策略
+
+以下策略已添加到此文档更新中。
+
+|策略名称|描述文字|
+|-|-|
+[TyposquattingChecker 设置](#typosquattingchecker-settings)|提供警告消息以帮助保护用户免受潜在的误植域名站点的危害。|
+|[ApplicationGuardUploadBlockingEnabled](#applicationguarduploadblockingenabled)|防止处于应用程序防护中时上传文件|
+|[EfficiencyMode](#efficiencymode)|配置效率模式何时应处于活动状态|
+|[NewSmartScreenLibraryEnabled](#newsmartscreenlibraryenabled)|启用新的 SmartScreen 库|
+|[AutoLaunchProtocolsComponentEnabled](#autolaunchprotocolscomponentenabled)|已启用自动启动协议组件|
+|[ForceSyncTypes](#forcesynctypes)|配置用于同步的类型列表|
+|[InternetExplorerIntegrationComplexNavDataTypes](#internetexplorerintegrationcomplexnavdatatypes)|配置在进入或退出 Internet Explorer 模式时是否发送窗体数据和 HTTP 标头|
+|[RendererAppContainerEnabled](#rendererappcontainerenabled)|在应用容器中启用呈现器|
+|[SharedLinksEnabled](#sharedlinksenabled)|显示从历史记录中的 Microsoft 365 应用共享的链接|
 
 ## <a name="available-policies"></a>可用策略
 
@@ -53,6 +69,7 @@ ms.locfileid: "12056728"
 - [睡眠选项卡设置](#sleeping-tabs-settings)
 - [SmartScreen 设置](#smartscreen-settings)
 - [启动、主页和新选项卡页](#startup-home-page-and-new-tab-page)
+- [TyposquattingChecker 设置](#typosquattingchecker-settings)
 - [其他](#additional)
 
 
@@ -69,6 +86,7 @@ ms.locfileid: "12056728"
 |[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|已启用应用程序防护收藏夹同步|
 |[ApplicationGuardPassiveModeEnabled](#applicationguardpassivemodeenabled)|忽略“应用程序防护”站点列表配置并正常浏览 Edge|
 |[ApplicationGuardTrafficIdentificationEnabled](#applicationguardtrafficidentificationenabled)|Application Guard 通信标识|
+|[ApplicationGuardUploadBlockingEnabled](#applicationguarduploadblockingenabled)|防止处于应用程序防护中时上传文件|
 ### [*<a name="cast"></a>投放*](#cast-policies)
 
 |策略名称|标题|
@@ -143,7 +161,7 @@ ms.locfileid: "12056728"
 |[FeatureFlagOverridesControl](#featureflagoverridescontrol)|配置用户替代功能标志的能力|
 ### [*<a name="extensions"></a>扩展*](#extensions-policies)
 
-|策略名称|标题|
+|策略名称|描述文字|
 |-|-|
 |[BlockExternalExtensions](#blockexternalextensions)|阻止安装外部扩展|
 |[ExtensionAllowedTypes](#extensionallowedtypes)|配置允许的扩展类型|
@@ -205,8 +223,9 @@ ms.locfileid: "12056728"
 |[PrimaryPasswordSetting](#primarypasswordsetting)|配置要求用户在使用密码自动填充时输入设备密码的设置|
 ### [*<a name="performance"></a>性能*](#performance-policies)
 
-|策略名称|标题|
+|策略名称|描述文字|
 |-|-|
+|[EfficiencyMode](#efficiencymode)|配置效率模式何时应处于活动状态|
 |[StartupBoostEnabled](#startupboostenabled)|启用启动增强|
 ### [*<a name="printing"></a>打印*](#printing-policies)
 
@@ -249,15 +268,16 @@ ms.locfileid: "12056728"
 |[SleepingTabsTimeout](#sleepingtabstimeout)|为睡眠选项卡设置后台选项卡闲置时长|
 ### [*<a name="smartscreen-settings"></a>SmartScreen 设置*](#smartscreen-settings-policies)
 
-|策略名称|标题|
+|策略名称|描述文字|
 |-|-|
+|[NewSmartScreenLibraryEnabled](#newsmartscreenlibraryenabled)|启用新的 SmartScreen 库|
 |[PreventSmartScreenPromptOverride](#preventsmartscreenpromptoverride)|阻止跳过 Microsoft Defender SmartScreen 有关网站的提示|
 |[PreventSmartScreenPromptOverrideForFiles](#preventsmartscreenpromptoverrideforfiles)|阻止跳过 Microsoft Defender SmartScreen 有关下载的警告|
 |[SmartScreenAllowListDomains](#smartscreenallowlistdomains)|配置 Microsoft Defender SmartScreen 无法为其触发警告的域列表|
 |[SmartScreenEnabled](#smartscreenenabled)|配置 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|强制 Microsoft Defender SmartScreen 检查从受信任来源下载的内容|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|配置 Microsoft Defender SmartScreen 以阻止可能不需要的应用|
-### [*<a name="startup-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>启动&comma;、主页和新选项卡页*](#startup-home-page-and-new-tab-page-policies)
 
 |策略名称|标题|
 |-|-|
@@ -275,6 +295,11 @@ ms.locfileid: "12056728"
 |[RestoreOnStartup](#restoreonstartup)|启动时要执行的操作|
 |[RestoreOnStartupURLs](#restoreonstartupurls)|浏览器启动时要打开的网站|
 |[ShowHomeButton](#showhomebutton)|在工具栏上显示“主页”按钮|
+### [*<a name="typosquattingchecker-settings"></a>TyposquattingChecker 设置*](#typosquattingchecker-settings-policies)
+
+|策略名称|描述文字|
+|-|-|
+|[TyposquattingCheckerEnabled](#typosquattingcheckerenabled)|配置 Edge TyposquattingChecker|
 ### [*<a name="additional"></a>附加*](#additional-policies)
 
 |策略名称|描述文字|
@@ -299,6 +324,7 @@ ms.locfileid: "12056728"
 |[AudioProcessHighPriorityEnabled](#audioprocesshighpriorityenabled)|允许音频进程在 Windows 上以高于正常的优先级运行|
 |[AudioSandboxEnabled](#audiosandboxenabled)|允许运行音频沙盒|
 |[AutoImportAtFirstRun](#autoimportatfirstrun)|首次运行时自动导入另一个浏览器的数据和设置|
+|[AutoLaunchProtocolsComponentEnabled](#autolaunchprotocolscomponentenabled)|已启用自动启动协议组件|
 |[AutoLaunchProtocolsFromOrigins](#autolaunchprotocolsfromorigins)|定义可以从列出的源启动外部应用程序而不提示用户的协议列表|
 |[AutoOpenAllowedForURLs](#autoopenallowedforurls)|AutoOpenFileTypes 可应用的 URL|
 |[AutoOpenFileTypes](#autoopenfiletypes)|在下载中应该自动打开的文件类型列表|
@@ -381,6 +407,7 @@ ms.locfileid: "12056728"
 |[ForceLegacyDefaultReferrerPolicy](#forcelegacydefaultreferrerpolicy)|使用 no-referrer-when-downgrade 的默认引用者策略（过时）|
 |[ForceNetworkInProcess](#forcenetworkinprocess)|强制网络代码在浏览器进程中运行（已过时）|
 |[ForceSync](#forcesync)|强制同步浏览器数据，但不显示同步许可提示|
+|[ForceSyncTypes](#forcesynctypes)|配置用于同步的类型列表|
 |[ForceYouTubeRestrict](#forceyoutuberestrict)|强制最低 YouTube 受限模式|
 |[FullscreenAllowed](#fullscreenallowed)|允许全屏模式|
 |[GloballyScopeHTTPAuthCacheEnabled](#globallyscopehttpauthcacheenabled)|启用全局范围的 HTTP 身份验证缓存|
@@ -407,6 +434,7 @@ ms.locfileid: "12056728"
 |[InsecureFormsWarningsEnabled](#insecureformswarningsenabled)|启用不安全窗体的警告|
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|控制 IntensiveWakeUpThrottling 功能|
 |[InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist)|配置“企业模式云站点列表”|
+|[InternetExplorerIntegrationComplexNavDataTypes](#internetexplorerintegrationcomplexnavdatatypes)|配置在进入或退出 Internet Explorer 模式时是否发送窗体数据和 HTTP 标头|
 |[InternetExplorerIntegrationEnhancedHangDetection](#internetexplorerintegrationenhancedhangdetection)|为 Internet Explorer 模式配置增强的挂起检测|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|配置 Internet Explorer 集成|
 |[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允许在 Internet Explorer 模式下启动本地文件|
@@ -452,6 +480,7 @@ ms.locfileid: "12056728"
 |[RelaunchNotificationPeriod](#relaunchnotificationperiod)|设置更新通知的时间段|
 |[RelaunchWindow](#relaunchwindow)|设置重启的时间间隔|
 |[RemoteDebuggingAllowed](#remotedebuggingallowed)|允许远程调试|
+|[RendererAppContainerEnabled](#rendererappcontainerenabled)|在应用容器中启用呈现器|
 |[RendererCodeIntegrityEnabled](#renderercodeintegrityenabled)|启用呈现器代码完整性|
 |[RequireOnlineRevocationChecksForLocalAnchors](#requireonlinerevocationchecksforlocalanchors)|指定本地信任密钥是否需要联机 OCSP/CRL 检查|
 |[ResolveNavigationErrorsUseWebService](#resolvenavigationerrorsusewebservice)|启用使用 Web 服务解决导航错误|
@@ -475,6 +504,7 @@ ms.locfileid: "12056728"
 |[SerialBlockedForUrls](#serialblockedforurls)|在特定网站上阻止串行 API|
 |[ShadowStackCrashRollbackBehavior](#shadowstackcrashrollbackbehavior)|配置 ShadowStack 故障回滚行为|
 |[SharedArrayBufferUnrestrictedAccessAllowed](#sharedarraybufferunrestrictedaccessallowed)|指定是否可以在非跨源隔离环境中使用 SharedArrayBuffers|
+|[SharedLinksEnabled](#sharedlinksenabled)|显示从历史记录中的 Microsoft 365 应用共享的链接|
 |[ShowMicrosoftRewards](#showmicrosoftrewards)|展示 Microsoft Rewards体验|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在收藏夹栏中显示 Microsoft Office 快捷方式（已弃用）|
 |[ShowRecommendationsEnabled](#showrecommendationsenabled)|允许来自 Microsoft Edge 的建议和促销通知|
@@ -832,6 +862,62 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
   - 路径（推荐）：不适用
   - 值名称：ApplicationGuardTrafficIdentificationEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="applicationguarduploadblockingenabled"></a>ApplicationGuardUploadBlockingEnabled
+
+  #### <a name="prevents-files-from-being-uploaded-while-in-application-guard"></a>防止处于应用程序防护中时上传文件
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  设置是否可以在应用程序防护中上传文件。
+
+如果启用此策略，用户将无法在应用程序防护中上传文件。
+
+如果禁用或未配置此策略，用户将能够在应用程序防护中上传文件。
+
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: ApplicationGuardUploadBlockingEnabled
+  - GP 名称: 防止处于应用程序防护中时上传文件
+  - GP 路径(强制): 管理模板/Microsoft Edge/“应用程序防护”设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称: ApplicationGuardUploadBlockingEnabled
   - 值类型：REG_DWORD
 
   ##### <a name="example-value"></a>示例值：
@@ -4780,7 +4866,7 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
 如果禁用此设置或将其保留为未设置，则允许安装外部扩展。
 
-外部扩展及其安装记录在 https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options 。
+将外部扩展及其安装记录在 [备用扩展分发方法](/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options)。
 
 
   #### <a name="supported-features"></a>支持的功能：
@@ -5064,7 +5150,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 策略的每个列表项都是一个字符串，其包含扩展 ID 和“更新”URL（可选），用分号 (;) 分隔。 扩展 ID 是在开发人员模式下找到的 32 个字母字符串，例如在 edge://extensions 上。 如果指定，“更新”URL 应指向更新清单 XML 文档 ([https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043))。 默认情况下，使用 Microsoft Edge Add-ons 网站的更新 URL。 此策略中设置的“更新”URL 仅用于初始安装；后续扩展更新使用扩展清单中的更新 URL。
 
-注意：此策略不适用于 InPrivate 模式。 阅读有关托管扩展 (https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 的信息。
+注意：此策略不适用于 InPrivate 模式。 [在 Microsoft Edge 外接程序站点上的发布和更新扩展程序上](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 阅读关于托管扩展程序的信息。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -5133,8 +5219,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
 此列表中的每个项目都是扩展样式匹配模式（请参阅 [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039)）。 用户可以轻松地从与此列表中的项目匹配的任何 URL 安装项目。 这些模式必须允许 *.crx 文件的位置和从其启动下载的页面（换句话说，即引用者）。 不要在需要身份验证的位置承载文件。
 
-
-            [ExtensionInstallBlocklist](#extensioninstallblocklist) 策略优先于此策略。 不会安装阻止列表上的任何扩展，即使它来自此列表上的网站也是如此。
+[ExtensionInstallBlocklist](#extensioninstallblocklist) 策略优先于此策略。 不会安装阻止列表上的任何扩展，即使它来自此列表上的网站也是如此。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -7126,6 +7211,88 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="efficiencymode"></a>EfficiencyMode
+
+  #### <a name="configure-when-efficiency-mode-should-become-active"></a>配置效率模式何时应处于活动状态
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  此策略设置允许你配置效率模式何时变为活动状态。 默认情况下，当设备拔出电源且电池电量不足时，效率模式将处于活动状态。 在没有电池的设备上，默认情况下效率模式永远不会处于活动状态。
+
+将此策略设置为“AlwaysActive”，效率模式将始终处于活动状态。
+
+将此策略设置为“NeverActive”，效率模式永远不会变为活动状态。
+
+将此策略设置为“ActiveWhenUnplugged”，当拔出设备时，效率模式将变为活动状态。 如果设备没有电池，效率模式将永远不会变为活动状态。
+
+将此策略设置为“ActiveWhenUnpluggedBatteryLow”，当拔出设备以及电池电量不足时，效率模式将变为活动状态。 如果设备没有电池，效率模式将永远不会变为活动状态。
+
+如果未配置此策略，用户可以在 edge://settings/system 中选择效率模式选项。
+
+了解更多有关效率的信息模式: [https://go.microsoft.com/fwlink/?linkid=2173921](https://go.microsoft.com/fwlink/?linkid=2173921)
+
+策略选项映射：
+
+* AlwaysActive (0) = 效率模式始终处于活动状态
+
+* NeverActive (1) = 效率模式永远不会处于活动状态
+
+* ActiveWhenUnplugged (2) = 拔出设备插头时效率模式处于活动状态
+
+* ActiveWhenUnpluggedBatteryLow (3) = 当设备拔出电源且电池电量不足时，效率模式处于活动状态
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: EfficiencyMode
+  - GP 名称: 配置效率模式何时应处于活动状态
+  - GP 路径（强制）：管理模板/Microsoft Edge/性能
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/性能
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称: EfficiencyMode
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000003
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称: EfficiencyMode
+  - 示例值：
+``` xml
+<integer>3</integer>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="startupboostenabled"></a>StartupBoostEnabled
 
   #### <a name="enable-startup-boost"></a>启用启动增强
@@ -7329,7 +7496,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   
   #### <a name="supported-versions"></a>支持的版本：
 
-  - 在自 95 起或更高版本的 Windows 上
+  - 在自 96 起或更高版本的 Windows 上
 
   #### <a name="description"></a>描述
 
@@ -7523,7 +7690,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   
   #### <a name="supported-versions"></a>支持的版本：
 
-  - 在自 95 起或更高版本的 Windows 和 macOS 上
+  - 在自 96 起或更高版本的 Windows 和 macOS 上
 
   #### <a name="description"></a>描述
 
@@ -8174,9 +8341,9 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
 请注意，此策略仅影响不安全源，因此此列表中包含的安全源将被忽略(例如 https://example.com))。
 
-有关有效 url 模式的详细信息，请参阅 https://docs.microsoft.com/en-us/DeployEdge/edge-learnmmore-url-list-filter%20format。
+有关有效 URL 模式的详细信息，请参阅 [基于 URL 列表策略的筛选器格式](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
 
-  #### <a name="supported-features"></a>受支持的功能:
+  #### <a name="supported-features"></a>支持的功能：
 
   - 可以强制：是
   - 可以推荐：否
@@ -8540,18 +8707,10 @@ SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\2 
 
 此策略将替代以下各个策略：
 
-
-            [ProxyMode](#proxymode)
-            
-
-            [ProxyPacUrl](#proxypacurl)
-            
-
-            [ProxyServer](#proxyserver)
-            
-
-            [ProxyBypassList](#proxybypasslist)
-          
+[ProxyMode](#proxymode)
+[ProxyPacUrl](#proxypacurl)
+[ProxyServer](#proxyserver)
+[ProxyBypassList](#proxybypasslist)
 
 将 [ProxySettings](#proxysettings) 策略设置为 "接受以下字段"：
   * ProxyMode，可指定 Microsoft Edge 使用的代理服务器，并阻止用户更改代理设置。
@@ -8855,6 +9014,72 @@ SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu
   [返回页首](#microsoft-edge---policies)
 
   ## <a name="smartscreen-settings-policies"></a>SmartScreen 设置策略
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="newsmartscreenlibraryenabled"></a>NewSmartScreenLibraryEnabled
+
+  #### <a name="enable-new-smartscreen-library"></a>启用新的 SmartScreen 库
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 95 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  允许 Microsoft Edge 浏览器对站点 URL 或应用程序下载的任何 SmartScreen 检查加载新的 SmartScreen 库 (libSmartScreenN)。
+
+如果启用此策略，Microsoft Edge 将使用新库 (libSmartScreenN) 中的 SmartScreen 实现。
+
+如果禁用或未配置此策略，Microsoft Edge 将继续使用旧库 (libSmartScreen) 中的 SmartScreen 实现。
+
+此策略仅在加入 Microsoft Active Directory 域的 Windows 实例、已注册设备管理的 Windows 10 专业版或企业版实例，或者通过 MDM 托管或通过 MCX 加入域的 macOS 实例上可用。
+
+创建此临时策略是为了支持更新新的 SmartScreen 客户端。 将与旧客户端一起弃用并删除此策略。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: NewSmartScreenLibraryEnabled
+  - GP 名称: 启用新的 SmartScreen 库
+  - GP 路径（强制）：管理模板/Microsoft Edge/SmartScreen 设置
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/SmartScreen 设置
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称: NewSmartScreenLibraryEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称: NewSmartScreenLibraryEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
 
   [返回页首](#microsoft-edge---policies)
 
@@ -9246,7 +9471,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [返回页首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>启动&comma;、主页和新选项卡页
 
   [返回页首](#microsoft-edge---policies)
 
@@ -9480,7 +9705,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果禁用或未配置此策略，Microsoft Edge 不会在新选项卡页上显示公司徽标或 Microsoft 徽标。
 
-有关确定 SHA-256 哈希的帮助，请参阅 https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash。
+有关确定 SHA-256 哈希值的帮助，请参阅 [Get-FileHash](/powershell/module/microsoft.powershell.utility/get-filehash)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -10260,6 +10485,74 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   #### <a name="mac-information-and-settings"></a>Mac 信息和设置
   
   - 首选项项名称：ShowHomeButton
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ## <a name="typosquattingchecker-settings-policies"></a>TyposquattingChecker 设置策略
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="typosquattingcheckerenabled"></a>TyposquattingCheckerEnabled
+
+  #### <a name="configure-edge-typosquattingchecker"></a>配置 Edge TyposquattingChecker
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  使用此策略设置，可以配置是否打开 Edge TyposquattingChecker。 Edge TyposquattingChecker 提供警告消息以帮助保护用户免受潜在的误植域名站点的危害。 默认情况下，Edge TyposquattingChecker 处于开启状态。
+
+如果启用此策略，则会打开 Edge TyposquattingChecker。
+
+如果禁用此策略，则会关闭 Edge TyposquattingChecker。
+
+如果未配置此策略，则会打开 Edge TyposquattingChecker，但用户可以选择是否使用 Edge TyposquattingChecker。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: TyposquattingCheckerEnabled
+  - GP 名称: 配置 Edge TyposquattingChecker
+  - GP 路径 (强制): 管理模板/Microsoft Edge/TyposquattingChecker 设置
+  - GP 路径 (推荐): 管理模板/Microsoft Edge - 默认设置 (用户可替代)/TyposquattingChecker 设置
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称: TyposquattingCheckerEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称: TyposquattingCheckerEnabled
   - 示例值：
 ``` xml
 <true/>
@@ -11596,6 +11889,68 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="autolaunchprotocolscomponentenabled"></a>AutoLaunchProtocolsComponentEnabled
+
+  #### <a name="autolaunch-protocols-component-enabled"></a>已启用自动启动协议组件
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  指定是否应启用自动启动协议组件。 此组件允许 Microsoft 提供类似于 [AutoLaunchProtocolsFromOrigins](#autolaunchprotocolsfromorigins) 策略的列表，允许某些外部协议在不提示的情况下启动或阻止某些协议 (在指定的源上)。 默认情况下，启用此组件。
+
+如果启用或未配置此策略，则会启用自动启动协议组件。
+
+如果禁用此策略，则会禁用自动启动协议组件。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: AutoLaunchProtocolsComponentEnabled
+  - GP 名称: 已启用自动启动协议组件
+  - GP 路径（强制）：管理模板 /Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): 不适用
+  - 值名称: AutoLaunchProtocolsComponentEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称: AutoLaunchProtocolsComponentEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="autolaunchprotocolsfromorigins"></a>AutoLaunchProtocolsFromOrigins
 
   #### <a name="define-a-list-of-protocols-that-can-launch-an-external-application-from-listed-origins-without-prompting-the-user"></a>定义可以从列出的源启动外部应用程序而不提示用户的协议列表
@@ -11738,8 +12093,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
 
   #### <a name="description"></a>描述
 
-  
-            [AutoOpenFileTypes](#autoopenfiletypes)将应用到的 URL 的列表。 该策略对用户通过下载架... > “总是打开这种类型的文件”菜单项自动打开的值没有影响。
+  [AutoOpenFileTypes](#autoopenfiletypes)将应用到的 URL 的列表。 该策略对用户通过下载架... > “总是打开这种类型的文件”菜单项自动打开的值没有影响。
 
 如果在此策略中设置URL，则只有在URL是此策略的一部分并且文件类型在[AutoOpenFileTypes](#autoopenfiletypes)中列出时，策略才会自动打开文件。 如果任一条件为 false，则下载不会通过策略自动打开。
 
@@ -12726,8 +13080,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoplayAllowlist\2 = "[*.]contoso.edu"
 
 如果将此策略设置为“启用”，则用户可以登录到浏览器。 登录到浏览器并不意味着默认情况下启用同步；用户必须单独选择加入才能使用此功能。
 
-如果将此策略设置为 'Force'，用户必须登录到配置文件才能使用浏览器。 默认情况下，这将允许用户选择是否要同步到其帐户，除非域管理员已禁用同步或使用了 [SyncDisabled](#syncdisabled) 策略。 
-            [BrowserGuestModeEnabled](#browserguestmodeenabled) 策略的默认值设置为 false。
+如果将此策略设置为 'Force'，用户必须登录到配置文件才能使用浏览器。 默认情况下，这将允许用户选择是否要同步到其帐户，除非域管理员已禁用同步或使用了 [SyncDisabled](#syncdisabled) 策略。 [BrowserGuestModeEnabled](#browserguestmodeenabled) 策略的默认值设置为 false。
 
 如果未配置此策略，则用户可以决定是否要启用浏览器登录选项并根据需要使用它。
 
@@ -14045,13 +14398,11 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
   ### <a name="configureviewinfileexplorer"></a>ConfigureViewInFileExplorer
 
-  #### <a name="configure-the-view-in-file-explorer-feature-for-sharepoint-pages-in-microsoft-edge"></a>在 Microsoft Edge 中为 SharePoint 页面配置在文件资源管理器中查看功能
-
-> [!NOTE]
-> 目前，ConfigureViewInFileExplorer 策略只能应用于已加入 Microsoft Active Directory 域的 Windows 实例、Windows 10 专业版或注册用于设备管理的企业版实例。
+  #### <a name="configure-the-view-in-file-explorer-feature-for-sharepoint-pages-in-microsoft-edge"></a>为 Microsoft Edge 中的 SharePoint 页面配置“在文件资源管理器中查看”功能
 
   
-  #### <a name="supported-versions"></a>支持的版本：
+  
+  #### <a name="supported-versions"></a>受支持的版本:
 
   - 在 Windows 上自 93 或更高版本起
 
@@ -17115,8 +17466,7 @@ Microsoft Edge 的默认引用者策略已从其当前的 no-referrer-when-downg
 
 若要使此策略按预期工作，[BrowserSignin](#browsersignin) 策略必须配置，或者必须设置为"启用"。 如果 [BrowserSignin](#browsersignin) 设置为"已禁用"，则 [ForceSync](#forcesync) 将不会生效。
 
-
-            [SyncDisabled](#syncdisabled) 不可配置，或者必须设置为 False。 如果设置为 True，则 [ForceSync](#forcesync) 不会生效。
+[SyncDisabled](#syncdisabled) 不可配置，或者必须设置为 False。 如果设置为 True，则 [ForceSync](#forcesync) 不会生效。 如果要确保特定数据类型同步或不同步，请使用 [ForceSyncTypes](#forcesynctypes) 策略和 [SyncTypesListDisabled](#synctypeslistdisabled) 策略。
 
 0 = 不会自动启动同步并显示同步许可（默认） 1 = 为 Azure AD/Azure AD 降级用户配置文件启用强制同步，并且不显示同步许可提示
 
@@ -17159,6 +17509,71 @@ Microsoft Edge 的默认引用者策略已从其当前的 no-referrer-when-downg
   - 示例值：
 ``` xml
 <true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="forcesynctypes"></a>ForceSyncTypes
+
+  #### <a name="configure-the-list-of-types-that-are-included-for-synchronization"></a>配置用于同步的类型列表
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  如果启用此策略，所有指定的数据类型将包含在 Azure AD/Azure AD-降级用户配置文件的同步中。 该策略可用于确保上传到 Microsoft Edge 同步服务的数据类型。
+
+可为此策略提供以下数据类型之一：“favorites”、“settings”、“passwords”、“addressesAndMore”、“extensions”、“history”、“openTabs”和“collections”。 请注意，这些数据类型名称区分大小写。
+
+用户将无法替代已启用的数据类型。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 字符串列表
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: ForceSyncTypes
+  - GP 名称: 配置用于同步的类型列表
+  - GP 路径（强制）：管理模板 /Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径 (强制): SOFTWARE\Policies\Microsoft\Edge\ForceSyncTypes
+  - 路径(推荐): 不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\ForceSyncTypes\1 = "favorites"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称: ForceSyncTypes
+  - 示例值：
+``` xml
+<array>
+  <string>favorites</string>
+</array>
 ```
   
 
@@ -17642,40 +18057,19 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 注意：也可以使用其他特定策略管理首次运行体验中向用户显示的特定配置选项。 你可以将 HideFirstRunExperience 策略与这些策略搭配使用，以便在受管理设备上配置特定浏览器体验。 其他一些策略包括：
 
+-[AutoImportAtFirstRun](#autoimportatfirstrun)
 
-            -
-            [AutoImportAtFirstRun](#autoimportatfirstrun)
-          
+-[NewTabPageLocation](#newtabpagelocation)
 
+-[NewTabPageSetFeedType](#newtabpagesetfeedtype)
 
-            -
-            [NewTabPageLocation](#newtabpagelocation)
-          
+-[ForceSync](#forcesync)
 
+-[SyncDisabled](#syncdisabled)
 
-            -
-            [NewTabPageSetFeedType](#newtabpagesetfeedtype)
-          
+-[BrowserSignin](#browsersignin)
 
-
-            -
-            [ForceSync](#forcesync)
-          
-
-
-            -
-            [SyncDisabled](#syncdisabled)
-          
-
-
-            -
-            [BrowserSignin](#browsersignin)
-          
-
-
-            -
-            [NonRemovableProfileEnabled](#nonremovableprofileenabled)
-          
+-[NonRemovableProfileEnabled](#nonremovableprofileenabled)
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17800,8 +18194,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着 Microsoft Edge 将在首次运行时导入自动填充数据，但用户可以在手动导入期间选择或清除**自动填充数据**选项。
 
-
-            **注意**：此策略当前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）和 Mozilla Firefox（Windows 7、8 和 10 以及 macOS 上）浏览器导入。
+**注意**：此策略当前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）和 Mozilla Firefox（Windows 7、8 和 10 以及 macOS 上）浏览器导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17869,8 +18262,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入设置，但用户可以在手动导入期间选择或清除**浏览器设置**选项。
 
-
-            **注意**：此策略当前管理导入 Google Chrome（在 Windows 7、8 和 10 以及 macOS 上）。
+**注意**：此策略当前管理导入 Google Chrome（在 Windows 7、8 和 10 以及 macOS 上）。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -17936,8 +18328,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入 Cookie。
 
-
-            **注意**：此策略当前管理导入 Google Chrome（在 Windows 7、8 和 10 以及 macOS 上）。
+**注意**：此策略当前管理导入 Google Chrome（在 Windows 7、8 和 10 以及 macOS 上）。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18005,8 +18396,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入扩展，但用户可以在手动导入期间选择或清除**收藏夹**选项。
 
-
-            **注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
+**注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18074,8 +18464,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入收藏夹，但用户可以在手动导入期间选择或清除**收藏夹**选项。
 
-
-            **注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）、Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）和 Apple Safari（macOS 上）浏览器导入。
+**注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）、Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）和 Apple Safari（macOS 上）浏览器导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18143,8 +18532,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入浏览历史记录，但用户可以在手动导入期间选择或清除**历史记录**选项。
 
-
-            **注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）、Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）和 Apple Safari (macOS) 浏览器导入。
+**注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）、Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）和 Apple Safari (macOS) 浏览器导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18212,8 +18600,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入主页设置，但用户可以在手动导入期间选择或清除**主页**选项。
 
-
-            **注意**：此策略当前管理从 Internet Explorer（在 Windows 7、8 和 10 上）导入。
+**注意**：此策略当前管理从 Internet Explorer（在 Windows 7、8 和 10 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18281,8 +18668,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入打开的选项卡，但用户可以在手动导入期间选择或清除“**打开的选项卡**”选项。
 
-
-            **注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
+**注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18350,8 +18736,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入付款信息，但用户可以在手动导入期间选择或清除“**付款信息**”选项。
 
-
-            **注意：** 此策略目前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）导入。
+**注意：** 此策略目前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18419,8 +18804,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入密码，但用户可以在手动导入期间选择或清除“**密码**”选项。
 
-
-            **注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）和 Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）浏览器导入。
+**注意**：此策略当前管理从 Internet Explorer（Windows 7、8 和 10 上）、Google Chrome（在 Windows 7、8 和 10 上以及 macOS 上）和 Mozilla Firefox（Windows 7、8 和 10 上以及 macOS 上）浏览器导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18488,8 +18872,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入搜索引擎设置，但用户可以在手动导入期间选择或清除“**搜索引擎**”选项。
 
-
-            **注意**：此策略当前管理从 Internet Explorer（在 Windows 7、8 和 10 上）导入。
+**注意**：此策略当前管理从 Internet Explorer（在 Windows 7、8 和 10 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18555,8 +18938,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入快捷方式。
 
-
-            **注意**：此策略目前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）导入。
+**注意**：此策略目前管理从 Google Chrome（Windows 7、8 和 10 以及 macOS 上）导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18624,8 +19006,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 可将此策略设置为建议。 这意味着，Microsoft Edge 首次运行时将导入启动设置，但用户可以在手动导入期间选择或清除**浏览器设置**选项。
 
-
-            **注意**：此策略当前管理从 Microsoft Edge 旧版 和 Google Chrome 浏览器 (在 Windows 7、8 和 10 上) 导入。
+**注意**：此策略当前管理从 Microsoft Edge 旧版 和 Google Chrome 浏览器 (在 Windows 7、8 和 10 上) 导入。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -18918,6 +19299,75 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 ```
 "aba95e58-070f-4784-8dcd-e5fd46c2c6d6"
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationcomplexnavdatatypes"></a>InternetExplorerIntegrationComplexNavDataTypes
+
+  #### <a name="configure-whether-form-data-and-http-headers-will-be-sent-when-entering-or-exiting-internet-explorer-mode"></a>配置在进入或退出 Internet Explorer 模式时是否发送窗体数据和 HTTP 标头
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  从 Microsoft Edge 96 版本开始，在 Internet Explorer 模式和 Microsoft Edge 之间切换的导航将包括窗体数据和其他 HTTP 标头。
+
+如果启用此策略，则可以指定哪些数据类型应该包含在 Microsoft Edge 和 Internet Explorer 模式的导航中。
+
+如果禁用或未配置此策略，Microsoft Edge 将使用新行为，即在更改模式的导航中包括窗体数据和其他标头。
+
+若要了解更多信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2174004](https://go.microsoft.com/fwlink/?linkid=2174004)
+
+策略选项映射：
+
+* IncludeNone (0) = 请勿发送窗体数据或标头
+
+* IncludeFormDataOnly (1) = 仅发送窗体数据
+
+* IncludeHeadersOnly (2) = 仅发送其他标头
+
+* IncludeFormDataAndHeaders (3) = 发送窗体数据和其他标头
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: InternetExplorerIntegrationComplexNavDataTypes
+  - GP 名称: 配置在进入或退出 Internet Explorer 模式时是否发送窗体数据和 HTTP 标头
+  - GP 路径(强制): 管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): 不适用
+  - 值名称: InternetExplorerIntegrationComplexNavDataTypes
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000003
 ```
 
   
@@ -19736,8 +20186,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 如果未配置此策略，则浏览器将使用 DNS 拦截检查和 Intranet 重定向建议的默认行为。 在 M88 中，默认情况下启用它们，但在将来的版本中将默认禁用它们。
 
-
-            [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 是一个相关策略，它也可能会禁用 DNS 拦截检查。 但是，此策略是更灵活的版本，它可能会单独控制 Intranet 重定向信息栏，并且可能会在将来进行扩展。
+[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 是一个相关策略，它也可能会禁用 DNS 拦截检查。 但是，此策略是更灵活的版本，它可能会单独控制 Intranet 重定向信息栏，并且可能会在将来进行扩展。
 如果 [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 或此策略请求禁用拦截检查，则检查将被禁用。
 如果此策略禁用了 DNS 拦截检查，但启用了 [GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar)，则单字查询仍将导致 Intranet 导航。
 
@@ -21987,6 +22436,65 @@ SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="rendererappcontainerenabled"></a>RendererAppContainerEnabled
+
+  #### <a name="enable-renderer-in-app-container"></a>在应用容器中启用呈现器
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  将“呈现器”进程启动到“应用容器”中，以获得额外的安全优势。
+
+如果未配置此策略，Microsoft Edge 将在将来的更新中启动应用容器中的呈现器进程。
+
+如果启用此策略，Microsoft Edge 将在应用容器中启动呈现器进程。
+
+如果禁用此策略，Microsoft Edge 将不会在应用容器中启动呈现器进程。
+
+仅在与必须在 Microsoft Edge 的呈现器进程内运行的第三方软件存在兼容性问题时，才关闭该策略。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: RendererAppContainerEnabled
+  - GP 名称: 在应用容器中启用呈现器
+  - GP 路径（强制）：管理模板 /Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): 不适用
+  - 值名称: RendererAppContainerEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="renderercodeintegrityenabled"></a>RendererCodeIntegrityEnabled
 
   #### <a name="enable-renderer-code-integrity"></a>启用呈现器代码完整性
@@ -22112,8 +22620,7 @@ SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
 
 如果禁用此策略，Microsoft Edge 将使用本机 API 尝试解决网络连接和导航问题。
 
-
-            **注意**：除了 Windows 8 和更高版本的 Windows 之外，Microsoft Edge *始终*使用本机 API 来解决连接问题。
+**注意**：除了 Windows 8 和更高版本的 Windows 之外，Microsoft Edge *始终*使用本机 API 来解决连接问题。
 
 如果未配置此策略，Microsoft Edge 将遵循 edge://settings/privacy 处“服务”下设置的用户首选项。
 具体而言，有一个“**使用 Web 服务帮助解决导航错误**”开关，用户可以打开或关闭该开关。 请注意，如果已启用此策略 (ResolveNavigationErrorsUseWebService)，则“**使用 Web 服务帮助解决导航错误**”设置将打开，但用户无法使用开关更改该设置。 如果禁用此策略，“**使用 Web 服务帮助解决导航错误**”设置将关闭，用户无法使用开关更改该设置。
@@ -22297,8 +22804,7 @@ SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
 
 如果禁用该策略或不对其进行配置，则仅使用常规本地配置文件。
 
-
-            [SyncDisabled](#syncdisabled) 仅禁用云同步，并且对此策略没有影响。
+[SyncDisabled](#syncdisabled) 仅禁用云同步，并且对此策略没有影响。
 
 有关使用漫游用户配置文件的详细信息，请参阅[https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058)。
 
@@ -23461,6 +23967,70 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   #### <a name="mac-information-and-settings"></a>Mac 信息和设置
   
   - 首选项项名称：SharedArrayBufferUnrestrictedAccessAllowed
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="sharedlinksenabled"></a>SharedLinksEnabled
+
+  #### <a name="show-links-shared-from-microsoft-365-apps-in-history"></a>显示从历史记录中的 Microsoft 365 应用共享的链接
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  允许 Microsoft Edge 在历史记录中显示最近来自 Microsoft 365 应用的由用户共享或与用户共享的链接。
+
+如果启用或未配置此策略，Microsoft Edge 会在历史记录中显示最近来自 Microsoft 365 应用的由用户共享或与用户共享的链接。
+
+如果禁用此策略，Microsoft Edge 不会在历史记录中显示最近来自 Microsoft 365 应用的由用户共享或与用户共享的链接。 已禁用 Microsoft Edge 设置中的控件并设置为关闭。
+
+此策略仅适用于 Microsoft Edge 本地用户配置文件和使用 Azure Active Directory 登录的配置文件。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: SharedLinksEnabled
+  - GP 名称: 显示从历史记录中的 Microsoft 365 应用共享的链接
+  - GP 路径（强制）：管理模板 /Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): 不适用
+  - 值名称: SharedLinksEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称: SharedLinksEnabled
   - 示例值：
 ``` xml
 <true/>

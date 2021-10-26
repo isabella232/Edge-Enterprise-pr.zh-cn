@@ -135,6 +135,8 @@
           href: edge-ie-mode-sitelist.md
         - name: 配置 IE 模式策略
           href: edge-ie-mode-policies.md
+        - name: 云站点列表管理 Internet Explorer (IE) 模式
+          href: edge-ie-mode-cloud-site-list-mgmt.md
         - name: IE 模式本地站点列表
           href: edge-ie-mode-local-site-list.md
         - name: 禁用 Internet Explorer 11

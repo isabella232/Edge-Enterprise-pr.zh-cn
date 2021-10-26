@@ -1,25 +1,29 @@
 ---
 title: Microsoft Edge 安全更新的发行说明
-ms.author: aguta
-author: AndreaLBarr
+ms.author: leahtu
+author: dan-wesley
 manager: srugh
-ms.date: 10/08/2021
+ms.date: 10/21/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: aa43929500041e1b2b7a5b292f8384d372bc429f
-ms.sourcegitcommit: 65720e81583a7e78849593c90100204e3c33066e
+ms.openlocfilehash: 2e49fcae65239c726b9f6452a0f4dfc227ad9394
+ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2021
-ms.locfileid: "12089395"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "12107467"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge 稳定渠道更新中包含的安全修补程序的信息。
+
+## <a name="october-21-2021"></a>2021 年 10 月 21 日
+
+Microsoft 发布了最新的 **Microsoft Edge稳定频道（版本 95.0.1020.30），** 其中包含 Chromium 项目的最新安全更新。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
 
 ## <a name="october-11-2021"></a>2021 年 10 月 11 日
 
