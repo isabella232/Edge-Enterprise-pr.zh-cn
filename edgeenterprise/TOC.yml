@@ -1,4 +1,4 @@
-# last revised 09/09/2021 
+# last revised 10/26/2021 
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -161,6 +161,8 @@
   items:
     - name: 业务安全性
       href: ms-edge-security-for-business.md
+    - name: 针对易受攻击的旧版应用的新式安全保护
+      href: microsoft-edge-security-iemode-safer-than-ie.md
     - name: 中断潜在危险文件的下载
       href: microsoft-edge-security-downloads-interruptions.md
     - name: Microsoft Edge 终结点的允许列表
