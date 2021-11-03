@@ -12,12 +12,12 @@ metadata:
   author: dan-wesley
   ms.author: kvice
   ms.date: 02/02/2021
-  ms.openlocfilehash: 807aaa38da97222da8d52e36ad55995ef1c44e80
-  ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+  ms.openlocfilehash: 5b4735d08b4af0e65cca1cabee04ed8538926932
+  ms.sourcegitcommit: 42f01cad0bf15224222b2aeadb48f03d46c35723
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/12/2021
-  ms.locfileid: "11978707"
+  ms.lasthandoff: 11/03/2021
+  ms.locfileid: "12154524"
 landingContent:
 - title: 了解有关企业中的 Microsoft Edge 的信息
   linkLists:
@@ -51,7 +51,7 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: 配置Microsoft Edge Windows
+    - text: 在Microsoft Edge配置Windows
       url: configure-microsoft-edge.md
     - text: 在 macOS Microsoft Edge配置客户端
       url: configure-microsoft-edge-on-mac.md
@@ -77,8 +77,6 @@ landingContent:
       url: microsoft-edge-update-policies.md
     - text: WebView2 策略参考
       url: microsoft-edge-webview-policies.md
-    - text: 策略映射概述
-      url: microsoft-edge-policy-map-overview.md
     - text: Microsoft 安全基线博客
       url: https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines
 - title: 与社区互动或获取帮助

@@ -1,4 +1,4 @@
-# last revised 10/26/2021 
+# last revised 11/02/2021 
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -43,12 +43,6 @@
       href: microsoft-edge-release-schedule.md
     - name: 安全更新
       href: microsoft-edge-relnotes-security.md
-    - name: Microsoft Edge 策略映射
-      items:
-        - name: 策略映射概述
-          href: microsoft-edge-policy-map-overview.md
-        - name: Google Chrome 到 Microsoft Edge 策略映射
-          href: microsoft-edge-policy-map-chrome-to-newedge.md
     - name: 支持的操作系统
       href: microsoft-edge-supported-operating-systems.md
     - name: 生命周期策略
