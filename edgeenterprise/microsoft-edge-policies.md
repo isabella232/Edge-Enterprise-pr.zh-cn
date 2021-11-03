@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 10/20/2021
+ms.date: 10/28/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 934dd2b8430184914ab080f0138a10601caa6a04
-ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
+ms.openlocfilehash: 4c50682333cfb21d9b0026c5ebb11f5169c3aa5c
+ms.sourcegitcommit: 42f01cad0bf15224222b2aeadb48f03d46c35723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "12107547"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "12154586"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -33,17 +33,9 @@ ms.locfileid: "12107547"
 
 以下策略已添加到此文档更新中。
 
-|策略名称|描述文字|
-|-|-|
-[TyposquattingChecker 设置](#typosquattingchecker-settings)|提供警告消息以帮助保护用户免受潜在的误植域名站点的危害。|
-|[ApplicationGuardUploadBlockingEnabled](#applicationguarduploadblockingenabled)|防止处于应用程序防护中时上传文件|
-|[EfficiencyMode](#efficiencymode)|配置效率模式何时应处于活动状态|
-|[NewSmartScreenLibraryEnabled](#newsmartscreenlibraryenabled)|启用新的 SmartScreen 库|
-|[AutoLaunchProtocolsComponentEnabled](#autolaunchprotocolscomponentenabled)|已启用自动启动协议组件|
-|[ForceSyncTypes](#forcesynctypes)|配置用于同步的类型列表|
-|[InternetExplorerIntegrationComplexNavDataTypes](#internetexplorerintegrationcomplexnavdatatypes)|配置在进入或退出 Internet Explorer 模式时是否发送窗体数据和 HTTP 标头|
-|[RendererAppContainerEnabled](#rendererappcontainerenabled)|在应用容器中启用呈现器|
-|[SharedLinksEnabled](#sharedlinksenabled)|显示从历史记录中的 Microsoft 365 应用共享的链接|
+| 策略名称 | 标题 |
+|--|--|
+|[InternetExplorerModeToolbarButtonEnabled](#internetexplorermodetoolbarbuttonenabled)|在工具栏中显示“在 Internet Explorer 模式下重新加载”按钮|
 
 ## <a name="available-policies"></a>可用策略
 
@@ -161,7 +153,7 @@ ms.locfileid: "12107547"
 |[FeatureFlagOverridesControl](#featureflagoverridescontrol)|配置用户替代功能标志的能力|
 ### [*<a name="extensions"></a>扩展*](#extensions-policies)
 
-|策略名称|描述文字|
+|策略名称|标题|
 |-|-|
 |[BlockExternalExtensions](#blockexternalextensions)|阻止安装外部扩展|
 |[ExtensionAllowedTypes](#extensionallowedtypes)|配置允许的扩展类型|
@@ -448,12 +440,13 @@ ms.locfileid: "12107547"
 |[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允许 Internet Explorer 模式测试（已过时）|
 |[InternetExplorerIntegrationWindowOpenHeightAdjustment](#internetexplorerintegrationwindowopenheightadjustment)|配置源自 IE 模式页面和 Edge 模式页面的 window.open 高度之间的像素调整|
 |[InternetExplorerIntegrationWindowOpenWidthAdjustment](#internetexplorerintegrationwindowopenwidthadjustment)|配置源自 IE 模式页面和 Edge 模式页面的 window.open 宽度之间的像素调整|
+|[InternetExplorerModeToolbarButtonEnabled](#internetexplorermodetoolbarbuttonenabled)|在工具栏中显示“在 Internet Explorer 模式下重新加载”按钮|
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|Intranet 重定向行为|
 |[IsolateOrigins](#isolateorigins)|针对特定源启用网站隔离|
 |[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|启用 Windows 搜索本地 Microsoft Edge 浏览数据|
 |[LocalProvidersEnabled](#localprovidersenabled)|允许来自本地提供程序的建议|
 |[MAUEnabled](#mauenabled)|始终将 Microsoft AutoUpdate 用作 Microsoft Edge 的更新程序|
-|[MSAWebSiteSSOUsingThisProfileAllowed](#msawebsitessousingthisprofileallowed)|允许使用此配置文件为 Microsoft 站点进行单一登录|
+|[MSAWebSiteSSOUsingThisProfileAllowed](#msawebsitessousingthisprofileallowed)|允许使用此配置文件的单一登录 Microsoft 个人网站|
 |[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|将网站的托管配置值设置到特定来源|
 |[ManagedFavorites](#managedfavorites)|配置收藏夹|
 |[ManagedSearchEngines](#managedsearchengines)|管理搜索引擎|
@@ -550,8 +543,8 @@ ms.locfileid: "12107547"
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制通过 WebRTC 暴露本地 IP 地址|
 |[WebRtcRespectOsRoutingTableEnabled](#webrtcrespectosroutingtableenabled)|通过 WebRTC 建立对等连接时启用对 Windows 操作系统路由表规则的支持|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 使用的本地 UDP 端口的范围|
-|[WebWidgetAllowed](#webwidgetallowed)|启用 Web 构件|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 启动时允许Web构件|
+|[WebWidgetAllowed](#webwidgetallowed)|启用 Microsoft Edge 栏|
+|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|允许在 Windows 启动时使用 Microsoft Edge 栏|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|使用 Windows 代理解析程序（已弃用）|
 |[WindowOcclusionEnabled](#windowocclusionenabled)|启用“窗口封闭”|
 
@@ -4866,7 +4859,7 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
 如果禁用此设置或将其保留为未设置，则允许安装外部扩展。
 
-将外部扩展及其安装记录在 [备用扩展分发方法](/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options)。
+外部扩展及其安装记录在 https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options 。
 
 
   #### <a name="supported-features"></a>支持的功能：
@@ -5150,7 +5143,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 策略的每个列表项都是一个字符串，其包含扩展 ID 和“更新”URL（可选），用分号 (;) 分隔。 扩展 ID 是在开发人员模式下找到的 32 个字母字符串，例如在 edge://extensions 上。 如果指定，“更新”URL 应指向更新清单 XML 文档 ([https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043))。 默认情况下，使用 Microsoft Edge Add-ons 网站的更新 URL。 此策略中设置的“更新”URL 仅用于初始安装；后续扩展更新使用扩展清单中的更新 URL。
 
-注意：此策略不适用于 InPrivate 模式。 [在 Microsoft Edge 外接程序站点上的发布和更新扩展程序上](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 阅读关于托管扩展程序的信息。
+注意：此策略不适用于 InPrivate 模式。 阅读有关托管扩展 (https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 的信息。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -8341,9 +8334,9 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
 请注意，此策略仅影响不安全源，因此此列表中包含的安全源将被忽略(例如 https://example.com))。
 
-有关有效 URL 模式的详细信息，请参阅 [基于 URL 列表策略的筛选器格式](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+有关有效 url 模式的详细信息，请参阅 https://docs.microsoft.com/en-us/DeployEdge/edge-learnmmore-url-list-filter%20format。
 
-  #### <a name="supported-features"></a>支持的功能：
+  #### <a name="supported-features"></a>受支持的功能:
 
   - 可以强制：是
   - 可以推荐：否
@@ -9705,7 +9698,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果禁用或未配置此策略，Microsoft Edge 不会在新选项卡页上显示公司徽标或 Microsoft 徽标。
 
-有关确定 SHA-256 哈希值的帮助，请参阅 [Get-FileHash](/powershell/module/microsoft.powershell.utility/get-filehash)。
+有关确定 SHA-256 哈希的帮助，请参阅 https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -16564,7 +16557,7 @@ Microsoft 会保留一个列表，列出出于兼容性原因要对某些域执�
 
   #### <a name="data-type"></a>数据类型：
 
-  - Dictionary
+  - 字符串列表
 
   #### <a name="windows-information-and-settings"></a>Windows 信息和设置
 
@@ -16578,62 +16571,27 @@ Microsoft 会保留一个列表，列出出于兼容性原因要对某些域执�
 
   ##### <a name="windows-registry-settings"></a>Windows 注册表设置
 
-  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
-  - 路径(推荐): 不适用
-  - 值名称: ExemptDomainFileTypePairsFromFileTypeDownloadWarnings
-  - 值类型: REG_SZ
+  - 路径(必需) : SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings
+  - 路径（推荐）：不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
 
   ##### <a name="example-value"></a>示例值：
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings = [
-  {
-    "domains": [
-      "https://contoso.com",
-      "contoso2.com"
-    ],
-    "file_extension": "jnlp"
-  },
-  {
-    "domains": [
-      "*"
-    ],
-    "file_extension": "swf"
-  }
-]
+SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\1 = {"file_extension": "jnlp", "domains": ["https://contoso.com", "contoso2.com"]}
+SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {"file_extension": "swf", "domains": ["*"]}
+
 ```
-
-  ##### <a name="compact-example-value"></a>精简示例值：
-
-  ```
-  SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings = [{"domains": ["https://contoso.com", "contoso2.com"], "file_extension": "jnlp"}, {"domains": ["*"], "file_extension": "swf"}]
-  ```
-  
 
   #### <a name="mac-information-and-settings"></a>Mac 信息和设置
   
   - 首选参数名称： ExemptDomainFileTypePairsFromFileTypeDownloadWarnings
   - 示例值：
 ``` xml
-<key>ExemptDomainFileTypePairsFromFileTypeDownloadWarnings</key>
 <array>
-  <dict>
-    <key>domains</key>
-    <array>
-      <string>https://contoso.com</string>
-      <string>contoso2.com</string>
-    </array>
-    <key>file_extension</key>
-    <string>jnlp</string>
-  </dict>
-  <dict>
-    <key>domains</key>
-    <array>
-      <string>*</string>
-    </array>
-    <key>file_extension</key>
-    <string>swf</string>
-  </dict>
+  <string>{'file_extension': 'jnlp', 'domains': ['https://contoso.com', 'contoso2.com']}</string>
+  <string>{'file_extension': 'swf', 'domains': ['*']}</string>
 </array>
 ```
   
@@ -20170,6 +20128,61 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="internetexplorermodetoolbarbuttonenabled"></a>InternetExplorerModeToolbarButtonEnabled
+
+  #### <a name="show-the-reload-in-internet-explorer-mode-button-in-the-toolbar"></a>在工具栏中显示“在 Internet Explorer 模式下重新加载”按钮
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 96 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  设置此策略以在工具栏Internet Explorer重新加载按钮。 用户可以通过单击按钮来隐藏工具栏中的 edge://settings/appearance。  只有在 [启用 InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 策略或用户已选择启用允许在 Internet Explorer 模式下重新加载网站时，该按钮才显示在工具栏上。
+
+如果启用此策略，在 Internet 模式下重新加载按钮将固定到工具栏。
+
+如果禁用或不配置此策略，则默认情况下，工具栏中不会显示 Internet Explorer 模式重新加载按钮。 用户可以在 edge://settings/appearance 中切换"显示Internet Explorer模式"按钮。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerModeToolbarButtonEnabled
+  - GP 名称：在工具栏中显示Internet Explorer模式下的重载按钮
+  - GP 路径(强制): 管理模板/Microsoft Edge/
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称：InternetExplorerModeToolbarButtonEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="intranetredirectbehavior"></a>IntranetRedirectBehavior
 
   #### <a name="intranet-redirection-behavior"></a>Intranet 重定向行为
@@ -20479,17 +20492,17 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   ### <a name="msawebsitessousingthisprofileallowed"></a>MSAWebSiteSSOUsingThisProfileAllowed
 
-  #### <a name="allow-single-sign-on-for-microsoft-sites-using-this-profile"></a>允许使用此配置文件为 Microsoft 站点进行单一登录
+  #### <a name="allow-single-sign-on-for-microsoft-personal-sites-using-this-profile"></a>允许使用此配置文件的单一登录 Microsoft 个人网站
 
   
   
-  #### <a name="supported-versions"></a>受支持的版本:
+  #### <a name="supported-versions"></a>支持的版本：
 
   - 在 Windows 和 macOS 上自 93 或更高版本起
 
   #### <a name="description"></a>描述
 
-  ‘允许使用此配置文件为 Microsoft 站点进行单一登录’选项允许非 MSA 配置文件使用计算机上存在的 MSA 凭据为 Microsoft 站点使用单一登录。 此选项仅在非 MSA 配置文件的“设置”->“配置文件”->“配置文件首选项”中作为切换向最终用户显示。
+  "允许使用此配置文件的单一登录 Microsoft 网站"选项允许非 MSA 配置文件使用计算机上已有的 MSA 凭据对 Microsoft 网站使用单一登录。 此选项仅在非 MSA 配置文件的“设置”->“配置文件”->“配置文件首选项”中作为切换向最终用户显示。
 
 如果禁用此策略，则非 MSA 配置文件将无法使用计算机上存在的 MSA 凭据为 Microsoft 站点使用单一登录。
 
@@ -20510,7 +20523,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
   ##### <a name="group-policy-admx-info"></a>组策略(ADMX)信息
 
   - GP 唯一名称: MSAWebSiteSSOUsingThisProfileAllowed
-  - GP 名称: 允许使用此配置文件为 Microsoft 站点进行单一登录
+  - GP 名称：允许使用此配置文件单一登录 Microsoft 个人网站
   - GP 路径(强制): 管理模板/Microsoft Edge/
   - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
   - GP ADMX 文件名：MSEdge.admx
@@ -23854,15 +23867,15 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   #### <a name="description"></a>描述
 
-  指定此功能触发崩溃后，Microsoft Edge 是否应启用硬件强制实施的堆栈保护安全功能。
+  Microsoft Edge 硬件强制执行的堆栈保护安全功能。 此功能可能会导致浏览器在不表示试图破坏浏览器安全性的情况下意外崩溃。
 
-如果未配置此策略，Microsoft Edge 将管理该设置，以安全推出硬件强制实施的堆栈保护，并最终强制为所有用户启用该功能。
+使用此策略，可以控制在遇到由此功能触发的崩溃后，硬件强制执行的堆栈保护功能的行为。
 
-将此策略设置为“禁用”，以在此功能触发崩溃后始终禁用硬件强制实施的堆栈保护。
+将此策略设置为"禁用"，以禁用该功能。
 
-将此策略设置为“DisableUntilUpdate”，以在此功能触发崩溃后禁用硬件强制执行的堆栈保护，但在 Microsoft Edge 可能解决该问题后将其启用。
+将此策略设置为"DisableUntilUpdate"可禁用该功能，直到下次Microsoft Edge更新。
 
-将此策略设置为“启用”，以在此功能触发崩溃后始终启用硬件强制执行的堆栈保护。
+将此策略设置为"启用"，以启用该功能。
 
 策略选项映射：
 
@@ -27025,7 +27038,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   ### <a name="webwidgetallowed"></a>WebWidgetAllowed
 
-  #### <a name="enable-the-web-widget"></a>启用 Web 构件
+  #### <a name="enable-the-edge-bar"></a>启用 Microsoft Edge 栏
 
   
   
@@ -27035,19 +27048,19 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   #### <a name="description"></a>描述
 
-  启用 Web 构件。 启用此功能后，用户可以使用构件从桌面或应用程序中搜索网页。 构件提供一个搜索框，显示 web 建议并打开 Microsoft Edge 中的所有 web 搜索。 "搜索" 框提供搜索（由必应提供支持）和 URL 建议。 该构件还包含源磁贴，用户可单击该磁贴以查看有关新 Microsoft Edge 浏览器选项卡或窗口中 msn.com 的详细信息。 源磁贴可能包含广告。 可从 Microsoft Edge 设置或 Microsoft Edge 中的 "更多工具" 菜单启动构件。
+  启用边缘栏。 启用后，用户可以使用边缘栏从桌面或应用程序搜索 Web。 边缘栏提供了一个搜索框，显示 Web 建议，并打开所有 web 搜索 Microsoft Edge。 "搜索" 框提供搜索（由必应提供支持）和 URL 建议。 边缘栏还包括订阅源磁贴，用户可以单击这些磁贴来查看有关 msn.com 浏览器选项卡Microsoft Edge窗口中的内容详细信息。 源磁贴可能包含广告。 可从 Microsoft Edge 设置或 Microsoft Edge 中的"更多工具"菜单启动 Edge 栏。
 
-如果启用或未配置此策略：将自动为所有配置文件启用网页构件。
-在 "Microsoft Edge 设置" 中，用户将看到用于启动构件的选项。
-在 "Microsoft Edge 设置" 中，用户将看到菜单项用于在 Windows 启动时运行构件（自动启动）。
-如果启用了 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) 策略，则启动时启用该构件的选项将切换。
-如果已禁用或未配置 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) ，则启动时启用该构件的选项将关闭。
-用户将看到从 "Microsoft Edge" 的 "更多工具" 菜单启动构件的菜单项。 用户可从 "更多工具" 启动构件。
-可通过系统托盘中的 "退出" 选项或通过从任务栏关闭构件来关闭构件。 如果启用了自动启动，将在系统重新启动时重新启动该构件。
+如果启用或不配置此策略：将自动启用所有配置文件的边缘栏。
+在 Microsoft Edge 设置中，用户将看到用于启动边缘栏的选项。
+在 Microsoft Edge 设置中，用户将在启动时看到要运行边缘栏的 Windows (自动启动) 。
+如果启用 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) 策略，启用边缘栏的选项将处于打开状态。
+如果禁用或不配置 [ WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) ，启用边缘栏的选项将关闭。
+用户将看到菜单项，以从"更多工具"菜单Microsoft Edge 启动边缘栏。 用户可以从"更多工具"启动边缘栏。
+可通过系统托盘中的"退出"选项，或从任务栏关闭边缘栏来关闭边缘栏。 如果打开自动启动，边缘栏将在系统重启时重新启动。
 
-如果禁用此策略：将禁用所有配置文件的 Web 构件。
-从 Microsoft Edge 设置启动构件的选项将被禁用。
-在 Windows 启动时启动 "开始" 的选项（自动启动）将被禁用。
+如果禁用此策略：将禁用所有配置文件的边缘栏。
+从边缘栏启动 Microsoft Edge 设置将处于禁用状态。
+在 Windows 启动时，启动边缘栏的选项（自动启动）将被禁用。
 从 Microsoft Edge "更多工具" 菜单启动构件的选项将被禁用。
 
   #### <a name="supported-features"></a>支持的功能：
@@ -27065,8 +27078,8 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 
   - GP 唯一名称： WebWidgetAllowed
-  - GP名称：启用 Web 构件
-  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 名称：启用边缘栏
+  - GP 路径（强制）：管理模板 /Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
 
@@ -27089,7 +27102,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   ### <a name="webwidgetisenabledonstartup"></a>WebWidgetIsEnabledOnStartup
 
-  #### <a name="allow-the-web-widget-at-windows-startup"></a>在 Windows 启动时允许Web构件
+  #### <a name="allow-the-edge-bar-at-windows-startup"></a>允许在 Windows 启动时使用 Microsoft Edge 栏
 
   
   
@@ -27099,16 +27112,16 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   #### <a name="description"></a>描述
 
-  允许 Web 构件在 Windows 启动时开始运行。
+  允许边缘栏在启动时 Windows 运行。
 
-如果启用：默认情况下，Web 构件将在 Windows 启动时开始运行。
-如果通过 [WebWidgetAllowed "](#webwidgetallowed) " 策略禁用了构件，则在 Windows 启动时，此策略将不会启动该构件。
+如果启用：默认情况下，边缘栏将在 Windows 启动时开始运行。
+如果通过[WebWidgetAllowed](#webwidgetallowed)策略禁用边缘栏，则在 Windows 启动时，此策略将不会启动边缘栏。
 
-如果禁用此策略： 所有配置文件的Web构件不会在 Windows 启动时启动。
-在 Windows 启动时启动构件的选项将在 "Microsoft Edge 设置" 中被禁用，并处于关闭状态。
+如果禁用此策略： 所有配置文件的边缘栏不会在 Windows 启动时启动。
+在 Windows 启动时启动边缘栏的选项将在 "Microsoft Edge 设置" 中被禁用，并处于关闭状态。
 
-如果未配置策略：所有配置文件的 Web 构件不会在 Windows 启动时启动。
-在 Windows 启动时，启动构件的选项将在 "Microsoft Edge 设置" 中处于关闭状态。
+如果未配置策略：所有配置文件的边缘栏不会在 Windows 启动时启动。
+在 Windows 启动时，启动边缘栏的选项将在 "Microsoft Edge 设置" 中处于关闭状态。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -27125,8 +27138,8 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 
   - GP 唯一名称： WebWidgetIsEnabledOnStartup
-  - GP名称：在 Windows 启动时允许Web构件
-  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 名称：允许在 Windows 启动时使用边缘栏
+  - GP 路径（强制）：管理模板 /Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
 
