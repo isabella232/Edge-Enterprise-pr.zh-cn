@@ -3,35 +3,35 @@ title: 'Microsoft Edge 中的 Enterprise Site List Manager '
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 11/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
-description: '启用并使用 Microsoft Edge 中的 Enterprise Site List Manager '
-ms.openlocfilehash: add635a17d05cb4be94e710fd99ab480b992a579
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+description: 启用并使用 Microsoft Edge 中的 Enterprise Site List Manager
+ms.openlocfilehash: 51377d9818f7cf82653c3582ef78c8245b2c7704
+ms.sourcegitcommit: 4ec03873a85f065d9bfa6203cfe6c3e938f79bc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978889"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "12155049"
 ---
 # <a name="enterprise-site-list-manager-in-microsoft-edge"></a>Microsoft Edge 中的企业网站列表管理器
 
 >[!Note]
 > Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表，[请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
-本文介绍如何启用和访问 Microsoft Edge 中的 Enterprise Site List Manager 以创建、编辑和导出 Internet Explorer 模式的 Enterprise Mode Site List。
+本文介绍了如何启用对 Microsoft Edge 中 Enterprise 站点列表管理器的访问和使用，以创建、编辑和导出 Enterprise 模式站点列表以用于 Internet Explorer (IE) 模式。
 
 > [!NOTE]
-> 本文适用于 Microsoft Edge 版本 89 或更高版本。 
+> 本文适用于 Microsoft Edge 版本 89 或更高版本。
 
 ## <a name="overview"></a>概述
 
-Enterprise Site List Manager 是[独立 Enterprise Mode Site List Manager 工具](https://www.microsoft.com/download/details.aspx?id=49974)的浏览器内版本，可让创建、编辑和导出组织的站点列表。
+Enterprise Site List Manager 是独立 Enterprise Mode Site List Manager 工具的浏览器内版本，可让创建、编辑和导出组织的站点列表。 您可以在以下位置访问浏览器内Enterprise网站列表管理器*edge://compat/SiteListManager。*
 
-通过 Microsoft Edge 中的 Enterprise Site List Manager，可以进一步改进用于 Internet Explorer 模式的工具。 独立工具将继续在下载中心中提供，但无法获得任何功能更新。
+以后通过 Internet Explorer 中的网站列表管理器Enterprise (edge://compat/SiteListManager) 工具Microsoft Edge。 ** 独立工具将继续在下载中心中提供，但无法获得任何功能更新。
 
 ## <a name="enabling-access-to-enterprise-site-list-manager"></a>允许访问 Enterprise Site List Manager
 
@@ -51,7 +51,7 @@ Enterprise Site List Manager 工具使用 v.2 版本的架构。 如果将 v.1 �
 > 你只能添加特定的 URL，而无法添加 Internet 或 Intranet 区域。
 
 1. 在 Enterprise Site List Manager 中，单击“ **添加站点**”。
-2. 在 URL 框中输入要添加的站点网址，例如： <domain>.com or <domain>.com/<path> 。
+2. 在 URL 框中输入要添加的站点网址，例如： \<domain\>.com or \<domain\>.com/\<path\> 。
 3. 从“**打开方式**” 列表中选择以下选项之一：
 
    - **IE11**。 在 IE11 应用程序中打开站点。

@@ -150,7 +150,7 @@
         - name: 将文件扩展名与 Internet Explorer 模式关联
           href: edge-ie-mode-add-guidance-filetype-associations.md
         - name: IE 模式故障排除和常见问题解答
-          href: edge-ie-mode-faq.yml
+          href: edge-ie-mode-faq.md
 - name: Microsoft Edge 安全
   items:
     - name: 业务安全性

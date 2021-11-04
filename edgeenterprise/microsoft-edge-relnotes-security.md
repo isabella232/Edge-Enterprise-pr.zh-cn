@@ -3,23 +3,27 @@ title: Microsoft Edge 安全更新的发行说明
 ms.author: leahtu
 author: dan-wesley
 manager: srugh
-ms.date: 10/21/2021
+ms.date: 10/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: 2e49fcae65239c726b9f6452a0f4dfc227ad9394
-ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
+ms.openlocfilehash: bfdc084cdd944cb43cfa6089deb0a77b9c9ebe01
+ms.sourcegitcommit: 42f01cad0bf15224222b2aeadb48f03d46c35723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "12107467"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "12154484"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge 稳定渠道更新中包含的安全修补程序的信息。
+
+## <a name="october-29-2021"></a>2021 年 10 月 29 日
+
+Microsoft 发布了最新的  **Microsoft Edge 稳定渠道（版本 95.0.1020.40）**，其中包含 Chromium 项目的最新安全更新。 此次更新包含 [CVE-2021-38000](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38000) 和 [CVE-2021-38003](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38003) 的修复程序，Chromium 团队已报告该程序存在在野攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
 
 ## <a name="october-21-2021"></a>2021 年 10 月 21 日
 
@@ -317,4 +321,4 @@ Microsoft 已发布最新的 **Microsoft Edge Stable 渠道（版本 79.0.309.68
 
 ## <a name="see-also"></a>另请参阅
 
-- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
