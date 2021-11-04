@@ -3,19 +3,19 @@ title: Microsoft Edge 终结点的允许列表
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 11/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 终结点的允许列表
-ms.openlocfilehash: 735e18e63095405dad4fdd51d51654956b564ca7
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 9e6a87290f2f73ba11bc98eecd3aa693c35b5ace
+ms.sourcegitcommit: 3e155a4395ae3a2ae478eb4b52c436b1c1f2e5db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979035"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "12155206"
 ---
 # <a name="allow-list-for-microsoft-edge-endpoints"></a>Microsoft Edge 终结点的允许列表
 
@@ -103,6 +103,12 @@ Microsoft Edge 用于检查新的更新内容的服务。
   - `https://api.aadrm.cn` （针对中国租户）
 
 - [Windows 通知服务终结点](/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)
+
+### <a name="cloud-site-list-management"></a>云站点列表管理
+
+用于下载Microsoft Edge IE 模式云托管Internet Explorer () 服务。 有关详细信息，请参阅云 [站点列表管理](https://aka.ms/CloudSiteList)
+
+- `https://edge.microsoft.com/`
 
 ## <a name="other-browser-support-services"></a>其他浏览器支持服务
 
