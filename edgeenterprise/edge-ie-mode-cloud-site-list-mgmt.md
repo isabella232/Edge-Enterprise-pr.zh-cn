@@ -3,19 +3,19 @@ title: 云站点列表管理 Internet Explorer (IE) 模式 (公共预览版) "
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 10/21/2021
+ms.date: 11/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何使用 IE 模式配置和使用云站点列表 Microsoft 365 管理中心。
-ms.openlocfilehash: 765b263df9425af5bdc9b694789a67cea59af779
-ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
+ms.openlocfilehash: 29984aa559c0afda5be0457fcbe618dc264a3e68
+ms.sourcegitcommit: 4ec03873a85f065d9bfa6203cfe6c3e938f79bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "12108758"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "12155039"
 ---
 # <a name="cloud-site-list-management-for-ie-mode-public-preview"></a>适用于 IE 模式的云站点列表管理 (公共预览版) 
 
@@ -25,7 +25,10 @@ ms.locfileid: "12108758"
 
 当你将工作流和应用程序从 IE11 转换到 IE 模式时，**云站点列表管理**允许你在云中管理 IE 模式的网站列表。 可以使用** Microsoft 365管理中心**中的网站列表体验** Microsoft Edge 网站列表**。
 
-**此体验现在为公共预览版。**
+若要了解详细信息，请观看 [IE 模式视频的云站点列表管理体验](https://www.youtube.com/watch?v=9-GovDcryXQ)。
+
+> [!NOTE]
+> 此体验现在为公共预览版。
 
 预览体验使你能够将组织的站点列表存储在兼容的云位置，无需本地基础结构来托管站点列表。 可以通过管理中心创建、导入、导出网站列表和审核对网站列表 Microsoft 365 管理更改。 你可以将多个站点列表发布到云，并使用组策略分配不同的设备组以使用不同的列表。
 
@@ -34,9 +37,8 @@ ms.locfileid: "12108758"
 以下先决条件适用于此公共预览版。
 
 1. 客户必须具有一个 Azure AD 租户。
-2. 租户订阅必须包含 Exchange 服务。 有关详细信息，请参阅 [常见问题解答](#faq)。
-3. 管理员必须安装 Microsoft Edge 版本 93 或更高版本，以及最新版本的[策略文件](https://aka.ms/edgeenterprise)。
-4. 管理员必须是租户上的[ Edge 管理员](/azure/active-directory/roles/permissions-reference#edge-administrator)或[全局管理员](/azure/active-directory/roles/permissions-reference#global-administrator)才能访问Microsoft Edge 站点列表体验。
+2. 管理员必须安装 Microsoft Edge 版本 93 或更高版本，以及最新版本的[策略文件](https://aka.ms/edgeenterprise)。
+3. 管理员必须是租户上的[ Edge 管理员](/azure/active-directory/roles/permissions-reference#edge-administrator)或[全局管理员](/azure/active-directory/roles/permissions-reference#global-administrator)才能访问Microsoft Edge 站点列表体验。
    - 若要选择加入公共预览版，全局管理员需要选择租户加入定向发布。 有关详细信息，请参阅 [选择加入公共预览版](#opt-in-to-public-preview)。
 
 ## <a name="the-preview-experience"></a>预览体验
@@ -161,9 +163,9 @@ ms.locfileid: "12108758"
 
 ## <a name="faq"></a>常见问题
 
-### <a name="why-is-my-tenant-required-to-have-an-exchange-service-subscription-for-this-feature"></a>为什么我的租户需要具有此功能的 Exchange 服务订阅？
+### <a name="when-i-select-microsoft-edge-site-lists-and-try-to-create-a-new-list-i-get-this-error---request-failed-with-status-code-500-why-is-that"></a>在选择“Microsoft Edge 站点列表”并尝试创建新列表时，收到此错误：“请求失败，状态代码为 500”。 为什么？
 
-此订阅可确保立即与租户进行正确的后端关联，该关联发生在首次选择 Microsoft Edge 列表时。 当 Exchange 服务不属于订阅时， Microsoft 365 管理中心的关联请求将失败。 将警报发送到预配系统以解决该问题。  这将导致你使用体验延迟三天。
+Microsoft Edge 站点列表将其数据和配置存储在与 Exchange Online、SharePoint Online、Teams 和 Azure Active Directory 等企业云服务共享的服务基础结构中。 在极少数情况下，当 Microsoft Edge 站点列表是使用此基础结构的第一项功能时，预配可能需要一些时间。 在这些情况下，来自 Microsoft 365 管理中心的初始请求将失败。 当请求失败时，会向预配系统发送警报以解决该问题。 通常，预配将在三天内完成。 因此，如果收到此错误，请在几天后重试，然后创建一个新列表。 如果仍无法创建新列表，或者如需紧急协助，请联系 Microsoft 支持部门。
 
 ### <a name="can-users-who-havent-signed-in-to-microsoft-edge-download-the-site-list"></a>尚未登录 Microsoft Edge 的用户能否下载站点列表？
 
