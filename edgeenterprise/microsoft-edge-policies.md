@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 10/28/2021
+ms.date: 11/04/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 4c50682333cfb21d9b0026c5ebb11f5169c3aa5c
-ms.sourcegitcommit: 42f01cad0bf15224222b2aeadb48f03d46c35723
+ms.openlocfilehash: dfffb6935c8452ff1e9c9d4767d7ccbbd1c63af3
+ms.sourcegitcommit: 3e155a4395ae3a2ae478eb4b52c436b1c1f2e5db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2021
-ms.locfileid: "12154586"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "12155236"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -33,9 +33,10 @@ ms.locfileid: "12154586"
 
 以下策略已添加到此文档更新中。
 
-| 策略名称 | 标题 |
+| 策略名称 | 描述文字 |
 |--|--|
-|[InternetExplorerModeToolbarButtonEnabled](#internetexplorermodetoolbarbuttonenabled)|在工具栏中显示“在 Internet Explorer 模式下重新加载”按钮|
+|[AccessibilityImageLabelsEnabled](#accessibilityimagelabelsenabled)|获取启用了 Microsoft 的图像说明|
+|[EdgeEnhanceImagesEnabled](#edgeenhanceimagesenabled)|已启用增强图像|
 
 ## <a name="available-policies"></a>可用策略
 
@@ -153,7 +154,7 @@ ms.locfileid: "12154586"
 |[FeatureFlagOverridesControl](#featureflagoverridescontrol)|配置用户替代功能标志的能力|
 ### [*<a name="extensions"></a>扩展*](#extensions-policies)
 
-|策略名称|标题|
+|策略名称|描述文字|
 |-|-|
 |[BlockExternalExtensions](#blockexternalextensions)|阻止安装外部扩展|
 |[ExtensionAllowedTypes](#extensionallowedtypes)|配置允许的扩展类型|
@@ -297,6 +298,7 @@ ms.locfileid: "12154586"
 |策略名称|描述文字|
 |-|-|
 |[AADWebSiteSSOUsingThisProfileEnabled](#aadwebsitessousingthisprofileenabled)|启用通过此配置文件对工作或学校网站进行单一登录|
+|[AccessibilityImageLabelsEnabled](#accessibilityimagelabelsenabled)|获取启用了 Microsoft 的图像说明|
 |[AddressBarMicrosoftSearchInBingProviderEnabled](#addressbarmicrosoftsearchinbingproviderenabled)|在地址栏中启用 Microsoft 必应搜索建议|
 |[AdsSettingForIntrusiveAdsSites](#adssettingforintrusiveadssites)|含侵扰广告的网站的广告设置|
 |[AllowDeletingBrowserHistory](#allowdeletingbrowserhistory)|启用删除浏览器和下载历史记录|
@@ -377,6 +379,7 @@ ms.locfileid: "12154586"
 |[DownloadDirectory](#downloaddirectory)|设置下载目录|
 |[DownloadRestrictions](#downloadrestrictions)|允许下载限制|
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|启用“集锦”功能|
+|[EdgeEnhanceImagesEnabled](#edgeenhanceimagesenabled)|已启用增强图像|
 |[EdgeShoppingAssistantEnabled](#edgeshoppingassistantenabled)|已启用在 Microsoft Edge 中购物的功能|
 |[EditFavoritesEnabled](#editfavoritesenabled)|允许用户编辑收藏夹|
 |[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Re-enable deprecated web platform features for a limited time (obsolete)|
@@ -4859,7 +4862,7 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
 如果禁用此设置或将其保留为未设置，则允许安装外部扩展。
 
-外部扩展及其安装记录在 https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options 。
+将外部扩展及其安装记录在 [备用扩展分发方法](/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options)。
 
 
   #### <a name="supported-features"></a>支持的功能：
@@ -5143,7 +5146,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 策略的每个列表项都是一个字符串，其包含扩展 ID 和“更新”URL（可选），用分号 (;) 分隔。 扩展 ID 是在开发人员模式下找到的 32 个字母字符串，例如在 edge://extensions 上。 如果指定，“更新”URL 应指向更新清单 XML 文档 ([https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043))。 默认情况下，使用 Microsoft Edge Add-ons 网站的更新 URL。 此策略中设置的“更新”URL 仅用于初始安装；后续扩展更新使用扩展清单中的更新 URL。
 
-注意：此策略不适用于 InPrivate 模式。 阅读有关托管扩展 (https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 的信息。
+注意：此策略不适用于 InPrivate 模式。 [在 Microsoft Edge 外接程序站点上的发布和更新扩展程序上](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 阅读关于托管扩展程序的信息。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -8334,9 +8337,9 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
 请注意，此策略仅影响不安全源，因此此列表中包含的安全源将被忽略(例如 https://example.com))。
 
-有关有效 url 模式的详细信息，请参阅 https://docs.microsoft.com/en-us/DeployEdge/edge-learnmmore-url-list-filter%20format。
+有关有效 URL 模式的详细信息，请参阅 [基于 URL 列表策略的筛选器格式](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
 
-  #### <a name="supported-features"></a>受支持的功能:
+  #### <a name="supported-features"></a>支持的功能：
 
   - 可以强制：是
   - 可以推荐：否
@@ -9698,7 +9701,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果禁用或未配置此策略，Microsoft Edge 不会在新选项卡页上显示公司徽标或 Microsoft 徽标。
 
-有关确定 SHA-256 哈希的帮助，请参阅 https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash。
+有关确定 SHA-256 哈希值的帮助，请参阅 [Get-FileHash](/powershell/module/microsoft.powershell.utility/get-filehash)。
 
   #### <a name="supported-features"></a>支持的功能：
 
@@ -10612,6 +10615,72 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   #### <a name="mac-information-and-settings"></a>Mac 信息和设置
   
   - 首选项项名称：AADWebSiteSSOUsingThisProfileEnabled
+  - 示例值：
+``` xml
+<false/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="accessibilityimagelabelsenabled"></a>AccessibilityImageLabelsEnabled
+
+  #### <a name="get-image-descriptions-from-microsoft-enabled"></a>获取启用了 Microsoft 的图像说明
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 自 97 或更高版本起在 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  允许屏幕阅读器用户获取 Web 上未标记图像的说明。
+
+如果启用或未配置此策略，则用户可以选择使用匿名 Microsoft 服务。 此服务为用户在使用屏幕阅读器时在 Web 上遇到的未标记图像提供自动说明。
+
+如果禁用此策略，则用户无法启用"从 Microsoft 获取图像说明"功能。
+
+启用此功能后，需要生成说明的图像内容将发送到 Microsoft 服务器以生成说明。
+
+不会向 Microsoft 发送 Cookie 或其他用户数据，并且 Microsoft 不会保存或记录任何图像内容。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：AccessibilityImageLabelsEnabled
+  - GP 名称：从已启用 Microsoft 获取图像说明
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：AccessibilityImageLabelsEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：AccessibilityImageLabelsEnabled
   - 示例值：
 ``` xml
 <false/>
@@ -15998,6 +16067,68 @@ Windows 10 设备不支持此策略。 若要在 Windows 10 上控制此数据�
   #### <a name="mac-information-and-settings"></a>Mac 信息和设置
   
   - 首选项项名称：EdgeCollectionsEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="edgeenhanceimagesenabled"></a>EdgeEnhanceImagesEnabled
+
+  #### <a name="enhance-images-enabled"></a>已启用增强图像
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 自 97 或更高版本起在 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  设置Microsoft Edge是否可以自动增强图像，以便通过更好的颜色、光线和对比度显示更清晰的图像。
+
+如果启用此策略或未配置策略，Microsoft Edge将自动增强特定 Web 应用程序上的图像。
+
+如果禁用此策略，Microsoft Edge将不会增强图像。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：EdgeEnhanceImagesEnabled
+  - GP 名称：已启用增强图像
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：EdgeEnhanceImagesEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：EdgeEnhanceImagesEnabled
   - 示例值：
 ``` xml
 <true/>
