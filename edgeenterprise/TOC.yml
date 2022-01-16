@@ -1,4 +1,4 @@
-# last revised 11/02/2021 
+# last revised 01/11/2022
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -83,7 +83,7 @@
       href: configure-microsoft-edge-on-mac-jamf.md
 - name: 使用 Microsoft Edge 企业版功能
   items:
-    - name: 用于虚拟化桌面基础结构的 Edge
+    - name: 适用于虚拟化桌面基础结构的 Microsoft Edge
       href: edge-for-virtualized-desktop-infrastructure.md
     - name: 配置和试验
       href: edge-configuration-and-experiments.md
@@ -157,7 +157,7 @@
       href: ms-edge-security-for-business.md
     - name: 针对易受攻击的旧版应用的新式安全保护
       href: microsoft-edge-security-iemode-safer-than-ie.md
-    - name: 中断潜在危险文件的下载
+    - name: 发现并中断包含潜在危险文件的下载
       href: microsoft-edge-security-downloads-interruptions.md
     - name: Microsoft Edge 终结点的允许列表
       href: microsoft-edge-security-endpoints.md
@@ -239,5 +239,5 @@
       href: microsoft-edge-video-security-smartscreen.md
     - name: 视频-安全性、兼容性和可管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
-    - name: 常见问题解答
-      href: faqs-edge-in-the-enterprise.yml
+    - name: Microsoft Edge 常见问题解答
+      href: microsoft-edge-frequently-asked-questions.md

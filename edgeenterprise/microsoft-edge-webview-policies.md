@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 政策文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/04/2021
+ms.date: 01/13/2022
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 7337b0111e6c445854f9a14effcbcbd5a635f623
-ms.sourcegitcommit: 3e155a4395ae3a2ae478eb4b52c436b1c1f2e5db
+ms.openlocfilehash: b7810b746abc82bd5c50adb39cc582b71336db63
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "12155213"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297840"
 ---
 # <a name="microsoft-edge-webview2---policies"></a>Microsoft Edge WebView2 - 策略
 
@@ -33,6 +33,7 @@ ms.locfileid: "12155213"
 这些表列出了本版本 Microsoft Edge WebView2 中提供的所有组策略。 使用表中的链接获取有关特定策略的更多详细信息。
 
 - [加载器替代设置](#loader-override-settings)
+- [附加](#additional)
 
 
 ### [*<a name="loader-override-settings"></a>加载器替代设置*](#loader-override-settings-policies)
@@ -41,6 +42,11 @@ ms.locfileid: "12155213"
 |-|-|
 |[BrowserExecutableFolder](#browserexecutablefolder)|配置浏览器可执行文件文件夹的位置|
 |[ReleaseChannelPreference](#releasechannelpreference)|设置发布渠道搜索顺序首选项|
+### [*<a name="additional"></a>附加*](#additional-policies)
+
+|策略名称|字幕|
+|-|-|
+|[ExperimentationAndConfigurationServiceControl](#experimentationandconfigurationservicecontrol)|控制与试验和配置服务的通信|
 
 
 
@@ -153,6 +159,87 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder = "Name: *, Va
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference = "Name: *, Value: 1"
 
+```
+
+  
+
+  [返回页首](#microsoft-edge-webview2---policies)
+
+  ## <a name="additional-policies"></a>其他策略
+
+  [返回页首](#microsoft-edge-webview2---policies)
+
+  ### <a name="experimentationandconfigurationservicecontrol"></a>ExperimentationAndConfigurationServiceControl
+
+  #### <a name="control-communication-with-the-experimentation-and-configuration-service"></a>控制与试验和配置服务的通信
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - Windows 97 或更高版本
+
+  #### <a name="description"></a>描述
+
+  试验和配置服务用于将试验和配置有效负载部署到客户端。
+
+试验有效负载包括 Microsoft 为测试和反馈启用的早期开发功能列表。
+
+配置有效负载包含 Microsoft 希望部署到的建议设置列表以优化用户体验。
+
+配置有效负载还可能包含出于兼容性原因对某些域采取的操作列表。 例如，如果某个网站被破坏，则浏览器可能会替代该网站上的用户代理字符串。 当 Microsoft 尝试解决网站所有者的问题时，这些操作中的每一个操作都是临时的。
+
+如果将此策略设置为 'FullMode' 模式，则会从实验和配置服务下载完整的有效负载。 这包括试验和配置有效负载。
+
+如果将此策略设置为 'ConfigurationsOnlyMode' 模式，则仅下载配置有效负载。
+
+如果将此策略设置为 "RestrictedMode"，将完全停止与实验和配置服务的通信。 Microsoft 不建议此设置。
+
+如果未配置此策略，则在 Stable 和 Beta 渠道的受管理设备上，行为与 'ConfigurationsOnlyMode' 模式相同。 在 Canary 和 Dev 频道上，行为与“FullMode”相同。
+
+如果未配置此策略，则在未被管理的设备上，该行为与“FullMode”相同。
+
+策略选项映射：
+
+* FullMode (2) = 检索配置和实验
+
+* ConfigurationsOnlyMode (1) = 仅检索配置
+
+* RestrictedMode (0) = 禁用与实验和配置服务的通信
+
+配置此策略时，请使用上述信息。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 整型
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：ExperimentationAndConfigurationServiceControl
+  - GP 名称：控制与试验和配置服务的通信
+  - GP 路径（强制）：Administrative Templates/Microsoft Edge WebView2/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdgeWebView2.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\WebView2
+  - 路径（推荐）：不适用
+  - 值名称：ExperimentationAndConfigurationServiceControl
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000002
 ```
 
   
