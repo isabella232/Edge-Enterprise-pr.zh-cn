@@ -1,34 +1,41 @@
 ---
 title: Microsoft Edge 更新策略文档
 ms.author: stmoody
-author: RyanHechtMSFT
+author: dan-wesley
 manager: tahills
-ms.date: 09/23/2021
+ms.date: 11/15/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 更新程序支持的所有策略的文档
-ms.openlocfilehash: b96fc0e44434b5ab36a16b1bc14f0aebe0deacf4
-ms.sourcegitcommit: 8e5294e82cf62abc916cfd24692f55925330d42b
-ms.translationtype: MT
+ms.openlocfilehash: 68b59a66f48633b88063ee33acbc71d819b0cbc7
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2021
-ms.locfileid: "12037212"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297610"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新策略
 
 最新版本的 Microsoft Edge 包含以下策略，你可以使用这些策略控制更新 Microsoft Edge 的方式和时间。
 
-有关 Microsoft Edge 中可用的其他策略的信息，请查看 [Microsoft Edge 浏览器策略引用](microsoft-edge-policies.md)
+有关 Microsoft Edge 中可用的其他策略的信息，请查看 [Microsoft Edge 浏览器策略引用](./microsoft-edge-policies.md)
+
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
+
 ## <a name="available-policies"></a>可用策略
 这些表列出了本版本 Microsoft Edge 中提供的所有与更新相关的组策略。 使用表中的链接获取有关特定策略的更多详细信息。
 
-|&nbsp;|&nbsp;| |**-**|-| |**[应用程序](#applications)**|[首选项](#preferences)| |**[代理服务器](#proxy-server)**|[Microsoft Edge WebView](#microsoft-edge-webview)|
+|||
+|-|-|
+|[应用程序](#applications)|[首选项](#preferences)|
+|[代理服务器](#proxy-server)|[Microsoft Edge 更新](#microsoft-edge-update)|
+|[Microsoft Edge Web 视图](#microsoft-edge-webview)||
+
 ### [<a name="applications"></a>应用程序](#applications-policies)
 |策略名称|描述文字|
 |-|-|
@@ -41,13 +48,13 @@ ms.locfileid: "12037212"
 |[CreateDesktopShortcut](#createdesktopshortcut)|安装时阻止创建快捷方式（按渠道）|
 |[RollbackToTargetVersion](#rollbacktotargetversion)|回退到目标版本（按渠道）|
 |[TargetVersionPrefix](#targetversionprefix)|目标版本覆盖（各渠道）|
-|[TargetChannelOverride](#targetchanneloverride)|仅 Stable (目标) |
-|[UpdaterExperimentationAndConfigurationServiceControl](#UpdaterExperimentationAndConfigurationServiceControl)| 检索配置和实验|
+|[TargetChannel](#targetchannel)|目标频道替代（每个频道）|
+
 ### [<a name="preferences"></a>首选项](#preferences-policies)
 |策略名称|描述文字|
 |-|-|
-|[AutoUpdateCheckPeriodMinutes](#autoupdatecheckperiodminutes)|自动更新检查期间替代|
-|[UpdatesSuppressed](#updatessuppressed)|每天中取消自动更新检查的时间段|
+|[AutoUpdateCheckPeriodMinutes](#autoupdatecheckperiodminutes)|Microsoft 自动更新检查期间替代|
+|[UpdatesSuppressed](#updatessuppressed)|每天中取消 Microsoft 自动更新检查的时间段|
 
 ### [<a name="proxy-server"></a>代理服务器](#proxy-server-policies)
 |策略名称|描述文字|
@@ -55,6 +62,11 @@ ms.locfileid: "12037212"
 |[ProxyMode](#proxymode)|选择指定代理服务器设置的方式|
 |[ProxyPacUrl](#proxypacurl)|代理 .pac 文件的 URL|
 |[ProxyServer](#proxyserver)|代理服务器的地址或 URL|
+
+### [<a name="microsoft-edge-update"></a>Microsoft Edge 更新](#microsoft-edge-update-policies)
+|策略名称|字幕|
+|-|-|
+|[UpdaterExperimentationAndConfigurationServiceControl](#updaterexperimentationandconfigurationservicecontrol)|控制更新程序与该实验和配置服务的通信|
 
 ### [<a name="microsoft-edge-webview"></a>Microsoft Edge Web 视图](#microsoft-edge-webview-policies)
 |策略名称|标题|
@@ -72,9 +84,9 @@ ms.locfileid: "12037212"
 #### <a name="description"></a>描述
 可指定所有渠道的默认行为，以允许或阻止域连接设备上的Microsoft Edge。
 
-通过为那些特定渠道启用“[允许安装](#install)”策略，可为个别渠道覆盖此策略。
+通过为那些特定渠道启用“[允许安装](#install-webview)”策略，可为个别渠道覆盖此策略。
 
-如果禁用此策略，则会阻止 Microsoft Edge的安装。 只有当 "[允许安装](#install)" 策略设置为 "未配置" 时，才会影响Microsoft Edge软件的安装。
+如果禁用此策略，则会阻止 Microsoft Edge的安装。 只有当 "[允许安装](#install-webview)" 策略设置为 "未配置" 时，才会影响Microsoft Edge软件的安装。
 
 此策略不会阻止运行 Microsoft Edge 更新，也不会阻止用户使用其他方法安装 Microsoft Edge 软件。
 
@@ -202,7 +214,7 @@ ms.locfileid: "12037212"
 - GP ADMX文件名：msedgeupdate.admx
 ##### <a name="windows-registry-settings"></a>Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
-- 值名称：
+- 值名称： 
   - （稳定）：更新 {56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
   - (Beta)：更新 {2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
   - (Canary)：更新 {65C35B14-6C1D-4122-AC46-7148CC9D6497}
@@ -210,10 +222,7 @@ ms.locfileid: "12037212"
 - 值类型：REG_DWORD
 ##### <a name="example-value"></a>示例值：
 ```
-always allow updates 0x00000001
-Automatic silent updates only 0x00000003
-manual updates only 0x00000002
-updates disabled 0x00000000
+0x00000001
 ```
 [返回页首](#microsoft-edge---update-policies)
 
@@ -222,7 +231,7 @@ updates disabled 0x00000000
 #### <a name="allow-microsoft-edge-side-by-side-browser-experience"></a>允许 Microsoft Edge 并行浏览器体验
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
-#### <a name="description"></a>说明
+#### <a name="description"></a>描述
 此策略允许用户并行运行 Microsoft Edge (Edge HTML) 和 Microsoft Edge（基于 Chromium）。
 
 如果将此策略设置为“未配置”，则在安装 Microsoft Edge（基于 Chromium）稳定渠道和 2019 年 11 月安全更新后，Microsoft Edge（基于 Chromium）将替换 Microsoft Edge (Edge HTML)。  此行为与“已禁用”设置相同。
@@ -232,6 +241,8 @@ updates disabled 0x00000000
 如果“已启用”此策略，则在安装 Microsoft Edge（基于 Chromium）后，Microsoft Edge（基于 Chromium）和 Microsoft Edge (Edge HTML) 可并行运行。
 
 若要使此组策略生效，必须先配置它，然后再通过 Windows 更新自动安装 Microsoft Edge（基于 Chromium）。 注意：通过使用 Microsoft Edge（基于 Chromium）阻止程序工具包，用户可以阻止自动更新 Microsoft Edge（基于 Chromium）。
+
+从 Windows 10 20H2 Microsoft Edge 旧版开始不支持并行浏览器体验。
 #### <a name="windows-information-and-settings"></a>Windows 信息和设置
 ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 - GP 唯一名称：Allowsxs
@@ -247,6 +258,7 @@ updates disabled 0x00000000
 0x00000001
 ```
 [返回页首](#microsoft-edge---update-policies)
+
 
 ### <a name="createdesktopshortcutdefault"></a>CreateDesktopShortcutDefault
 #### <a name="prevent-desktop-shortcut-creation-upon-install-default"></a>安装默认项时阻止创建快捷方式
@@ -401,74 +413,48 @@ updates disabled 0x00000000
 ```
 [返回页首](#microsoft-edge---update-policies)
 
-### <a name="targetchanneloverride"></a>TargetChannelOverride
+
+### <a name="targetchannel"></a>TargetChannel
+#### <a name="target-channel-override"></a>目标频道替代
 >Microsoft Edge 更新 1.3.147.1 及更高版本
 
 #### <a name="description"></a>描述
-指定应Microsoft Edge频道频道。 
+指定 Microsoft Edge 应更新到的频道。
 
-如果启用此小功能，Microsoft Edge配置以下选项，该频道将更新至频道：
+如果启用此策略，Microsoft Edge 更新将根据你配置以下选项的方式进行更新：
 
-  - 稳定：Microsoft Edge更新到最新稳定版本。
-  - Beta：Microsoft Edge更新到最新的 beta 版本。
-  - 开发人员：Microsoft Edge更新到最新的开发版本。
-  - 扩展稳定Microsoft Edge更新到最新的扩展稳定版本，其发布节奏比稳定更新。 有关详细信息，请访问 https://go.microsoft.com/fwlink/?linkid=2163508 。
+  - 稳定版：Microsoft Edge 将会更新到最新的稳定版本。
+  - Beta 版：Microsoft Edge 将会更新到最新的 Beta 版本。
+  - 开发版：Microsoft Edge 将会更新到最新的开发版本。
+  - 扩展稳定版：Microsoft Edge 将会更新到最新的扩展稳定版本，其发布节奏比稳定版更长。 有关详细信息，请访问 [https://go.microsoft.com/fwlink/?linkid=2163508](https://go.microsoft.com/fwlink/?linkid=2163508)。
 
-如果未配置此策略，Microsoft Edge更新到适用于稳定渠道的最新版本。
-
-此策略仅在 Stable Microsoft Edge可用。
+如果未配置此策略，Microsoft Edge 将会更新到默认频道的最新版本。
 
 此策略仅在加入Microsoft® Active Directory®域的Windows实例上可用。
 #### <a name="windows-information-and-settings"></a>Windows 信息和设置
 ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
-- GP 唯一名称：TargetChannelOverride
+- GP 唯一名称：TargetChannel
 - GP 名称：目标通道替代
 - GP 路径： 
   - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge
+  - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Beta
+  - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Canary
+  - Administrative Templates/Microsoft Edge Update/Applications/Microsoft Edge Dev
 - GP ADMX文件名：msedgeupdate.admx
 ##### <a name="windows-registry-settings"></a>Windows 注册表设置
 - 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名称： 
-  -  (Stable) ：TargetChannel{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
+  - (Stable): TargetChannel{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
+  - (Beta): TargetChannel{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
+  - (Canary): TargetChannel{65C35B14-6C1D-4122-AC46-7148CC9D6497}
+  - (Dev): TargetChannel{0D50BFEC-CD6A-4F9A-964C-C7416E3ACB10}
 - 值类型：REG_SZ
 ##### <a name="example-value"></a>示例值：
 ```
-extended
+dev
 ```
 [返回页首](#microsoft-edge---update-policies)
 
-### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
-#### <a name="retrieve-configurations-and-experiments"></a>检索配置和实验
->Microsoft Edge 更新 1.3.145.1 及更高版本
-
-#### <a name="description"></a>描述
-在Microsoft Edge 更新中，试验和配置服务用于部署实验有效负载。
-
-实验有效负载包含 Microsoft 为测试反馈启用的早期开发功能列表。
-
-如果启用此策略，实验有效负载会从试验和配置服务下载。
-
-如果禁用此策略，则完全停止与试验和配置服务的通信。
-
-如果未配置此策略，在托管设备上，此行为与策略"已禁用"相同。
-
-如果未配置此策略，则非托管设备上的行为与策略"已启用"相同。
-
-#### <a name="windows-information-and-settings"></a>Windows 信息和设置
-##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
-- GP 唯一名称：UpdateExperimentationAndConfigureationServiceControl
-- GP 名称：控制更新程序与试验和配置服务的通信
-- GP 路径：管理模板/Microsoftt Edge 更新/Microsoft Edge 更新
-- GP ADMX文件名：msedgeupdate.admx
-##### <a name="windows-registry-settings"></a>Windows 注册表设置
-- 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
-- 值名称：UpdaterExperimentationAndConfigurationServiceControl
-- 值类型：REG_DWORD
-##### <a name="example-value"></a>示例值：
-```
-0x00000001
-```
-[返回页首](#microsoft-edge---update-policies)
 
 ## <a name="preferences-policies"></a>首选项策略
 
@@ -478,9 +464,11 @@ extended
 >Microsoft Edge 更新 1.2.145.5 和更高版本
 
 #### <a name="description"></a>描述
-如果启用了此策略，你可以为各次自动更新检查间隔的最小分钟数设置一个值。 否则，默认情况下，自动更新将每 10 小时检查一次更新。
+自动更新检查之间的最短间隔分钟数。
 
-  如果你想要禁用所有自动更新检查，请将该值设置为 0（不推荐）。
+将此策略设置为值 0，可禁用 Microsoft Edge 更新的所有定期网络流量。 不建议这样做，因为这样会阻止 Microsoft Edge 更新自身接收稳定性和安全性更新。
+
+“更新策略覆盖默认值”和每个应用程序的“更新策略覆盖”设置应该用于管理应用程序更新，而不是此设置。
 #### <a name="windows-information-and-settings"></a>Windows 信息和设置
 ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 - GP 唯一名称：AutoUpdateCheckPeriodMinutes
@@ -528,11 +516,12 @@ start min  : 0x00000002
 ```
 [返回页首](#microsoft-edge---update-policies)
 
+
 ## <a name="proxy-server-policies"></a>代理服务器策略
 
 [返回页首](#microsoft-edge---update-policies)
 ### <a name="proxymode"></a>ProxyMode
-#### <a name="choose-how-to-specify-proxy-server-settings"></a>选择指定代理服务器设置的方式
+#### <a name="choose-how-to-specify-a-proxy-server-setting"></a>选择指定代理服务器设置的方式
 >Microsoft Edge 更新 1.3.21.81 和更高版本
 
 #### <a name="description"></a>描述
@@ -565,7 +554,7 @@ fixed_servers
 
 
 ### <a name="proxypacurl"></a>ProxyPacUrl
-#### <a name="url-to-a-proxy-pac-file"></a>代理 .pac 文件的 URL
+#### <a name="url-to-proxy-pac-file"></a>代理 .pac 文件的 URL
 >Microsoft Edge 更新 1.3.21.81 和更高版本
 
 #### <a name="description"></a>描述
@@ -594,7 +583,7 @@ https://www.microsoft.com
 
 
 ### <a name="proxyserver"></a>ProxyServer
-#### <a name="address-or-url-of-proxy-server"></a>代理服务器的地址或 URL
+#### <a name="address-or-url-of-a-proxy-server"></a>代理服务器的地址或 URL
 >Microsoft Edge 更新 1.3.21.81 和更高版本
 
 #### <a name="description"></a>说明
@@ -618,6 +607,42 @@ https://www.microsoft.com
 ##### <a name="example-value"></a>示例值：
 ```
 https://www.microsoft.com
+```
+[返回页首](#microsoft-edge---update-policies)
+
+
+## <a name="microsoft-edge-update-policies"></a>Microsoft Edge 更新策略
+
+[返回页首](#microsoft-edge---update-policies)
+### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
+#### <a name="control-updaters-communication-with-the-experimentation-and-configuration-service"></a>控制更新程序与该实验和配置服务的通信
+>Microsoft Edge 更新 1.3.145.1 及更高版本
+
+#### <a name="description"></a>描述
+在 Microsoft Edge 更新中，试验和配置服务用于部署试验有效负载。
+
+试验有效负载包括 Microsoft 为测试和反馈启用的早期开发功能列表。
+
+如果启用此策略，则会从实验和配置服务下载实验有效负载。
+
+如果禁用此策略，将完全停止与实验和配置服务的通信。
+
+如果未配置此策略，则在未被管理的设备上，该行为与“已禁用”相同。
+
+如果未配置此策略，则在未被管理的设备上，该行为与“已启用”相同。
+#### <a name="windows-information-and-settings"></a>Windows 信息和设置
+##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+- GP 唯一名称：UpdaterExperimentationAndConfigurationServiceControl
+- GP 名称：控制更新程序与该实验和配置服务的通信
+- GP 路径：Administrative Templates/Microsoft Edge Update/Microsoft Edge Update
+- GP ADMX文件名：msedgeupdate.admx
+##### <a name="windows-registry-settings"></a>Windows 注册表设置
+- 路径：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- 值名称：UpdaterExperimentationAndConfigurationServiceControl
+- 值类型：REG_DWORD
+##### <a name="example-value"></a>示例值：
+```
+0x00000001
 ```
 [返回页首](#microsoft-edge---update-policies)
 
@@ -683,7 +708,6 @@ https://www.microsoft.com
 ```
 [返回页首](#microsoft-edge---update-policies)
 
-
 ## <a name="see-also"></a>另请参阅
-  - [配置 Microsoft Edge](configure-microsoft-edge.md)
+  - [配置 Microsoft Edge](./configure-microsoft-edge.md)
   - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
