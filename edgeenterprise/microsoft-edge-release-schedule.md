@@ -3,19 +3,19 @@ title: Microsoft Edge 发布计划
 ms.author: leahtu
 author: dan-wesley
 manager: srugh
-ms.date: 11/03/2021
+ms.date: 01/07/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 发布计划
-ms.openlocfilehash: a95dcac43ceea77ca10e20b6a0bda2df54690ce4
-ms.sourcegitcommit: 4ec03873a85f065d9bfa6203cfe6c3e938f79bc5
+ms.openlocfilehash: 66cf34f81d65da6d9b3b413172de357cd94f4ae1
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "12155129"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12298231"
 ---
 # <a name="microsoft-edge-release-schedule"></a>Microsoft Edge 发布计划
 
@@ -45,11 +45,11 @@ Microsoft 提供了四个称为“频道”的选项，用于管理为 Microsoft
 | 90 | 已发布<br>版本 | 2021 年 3 月 16 日<br>[90.0.818.8](/deployedge/microsoft-edge-relnote-archive-beta-channel#version-9008188-march-16)  | 2021 年 4 月 15 日<BR>[90.0.818.39](/deployedge/microsoft-edge-relnote-archive-stable-channel#version-90081839-april-15) |  |
 | 91 | 已发布<br>版本 | 2021 年 4 月 30 日<br>[91.0.864.11](/deployedge/microsoft-edge-relnote-archive-beta-channel#version-91086411-april-30) | 2021 年 5 月 27 日<BR>[91.0.864.37](/deployedge/microsoft-edge-relnote-archive-stable-channel#version-91086437-may-27) |  |
 | 92 | 已发布<br>版本 | 2021 年 6 月 8 日<br>[92.0.902.9](/deployedge/microsoft-edge-relnote-archive-beta-channel#version-9209029-june-08) | 2021 年 7 月 22 日<BR>[92.0.902.55](/deployedge/microsoft-edge-relnote-archive-stable-channel#version-92090255-july-22) |  |
-| 93 | 已发布<br>版本 | 2021 年 8 月 3 日<br>[93.0.961.11](/deployedge/microsoft-edge-relnote-beta-channel#version-93096111-August-03) | 2021 年 9 月 2 日<BR>[93.0.961.38](/deployedge/microsoft-edge-relnote-stable-channel#version-93096138-September-02) |  |
-| 94 | 发布日期<br>版本 | 2021 年 9 月 2 日<br>[94.0.992.9](/deployedge/microsoft-edge-relnote-archive-beta-channel#version-9409929-September-02) | 2021 年 9 月 24 日<BR>[94.0.992.31](/deployedge/microsoft-edge-relnote-stable-channel#version-94099231-September-24) | 2021 年 9 月 24 日<BR>[94.0.992.31](/deployedge/microsoft-edge-relnote-stable-channel#version-94099231-September-24) |
-| 95 | 发布时间<br>版本 | 28-Sep-2021<br>[95.0.1020.9](/deployedge/microsoft-edge-relnote-beta-channel#version-95010209-September-28) | 2021 年 10 月 21 日<br>[95.0.1020.30](/deployedge/microsoft-edge-relnote-stable-channel#version-950102030-october-21) | 不适用 |
-| 96 | 发布时间<br>版本  | 2021 年 11 月 1 日<br>[96.0.1054.8](/DeployEdge/microsoft-edge-relnote-beta-channel?branch=pr-en-us-1163#version-96010548-november-1) | 2021 年 11 月 18 日这一周 | 2021 年 11 月 18 日这一周 |
-| 97 | 目标版本 | 2021 年 11 月 30 日这一周 | 2022 年 1 月 6 日这一周 | 不适用  |
+| 93 | 已发布<br>版本 | 2021 年 8 月 3 日<br>[93.0.961.11](/deployedge/microsoft-edge-relnote-beta-channel#version-93096111-August-03) | 2021 年 9 月 2 日<BR>[93.0.961.38](/deployedge/microsoft-edge-relnote-archive-stable-channel#version-93096138-September-02) |  |
+| 94 | 发布日期<br>版本 | 2021 年 9 月 2 日<br>[94.0.992.9](/deployedge/microsoft-edge-relnote-archive-beta-channel#version-9409929-September-02) | 2021 年 9 月 24 日<BR>[94.0.992.31](/deployedge/microsoft-edge-relnote-archive-stable-channel#version-94099231-September-24) | 2021 年 9 月 24 日<BR>[94.0.992.31](/deployedge/microsoft-edge-relnote-stable-channel#version-94099231-September-24) |
+| 95 | 发布时间<br>版本 | 28-Sep-2021<br>[95.0.1020.9](/deployedge/microsoft-edge-relnote-archive-beta-channel#version-95010209-September-28) | 2021 年 10 月 21 日<br>[95.0.1020.30](/deployedge/microsoft-edge-relnote-stable-channel#version-950102030-october-21) | 不适用 |
+| 96 | 发布时间<br>版本  | 2021 年 11 月 1 日<br>[96.0.1054.8](/DeployEdge/microsoft-edge-relnote-beta-channel?branch=pr-en-us-1163#version-96010548-november-1) | 2021 年 11 月 19 日<br>[96.0.1054.29](/deployedge/microsoft-edge-relnote-stable-channel#version-960105429-november-19) | 2022 年 1 月 6 日<br>96.0.1054.72 |
+| 97 | 发布日期<br>版本 | 2021 年 12 月 1 日<br>[97.0.1072.21](/DeployEdge/microsoft-edge-relnote-beta-channel?branch=pr-en-us-1245#version-970107221-december-1) | 2022 年 1 月 6 日<br>[97.0.1072.55](/deployedge/microsoft-edge-relnote-stable-channel#version-970107255-january-6)| 不适用  |
 | 98 | 目标版本 | 2022 年 1 月 11 日这一周 | 2022 年 2 月 3 日这一周 | 2022 年 2 月 3 日这一周 |
 | 99 | 目标版本 | 2022 年 2 月 8 日这一周 | 2022 年 3 月 3 日这一周 | 不适用  |
 | 100 | 目标版本 | 2022 年 3 月 8 日这一周 | 2022 年 3 月 31 日这一周 | 2022 年 3 月 31 日这一周 |
