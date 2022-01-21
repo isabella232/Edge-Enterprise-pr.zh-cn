@@ -1,25 +1,25 @@
 ---
-title: Microsoft Edge 的 Windows 更新
+title: 用于支持 Microsoft Edge 的 Windows 更新
 ms.author: jtkim
-author: RyanHechtMSFT
+author: dan-wesley
 manager: srugh
-ms.date: 09/23/2021
+ms.date: 11/17/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: Microsoft Edge 的 Windows 更新。
-ms.openlocfilehash: 0232e269861430df9a152006d2a8476c353eae46
-ms.sourcegitcommit: 8e5294e82cf62abc916cfd24692f55925330d42b
+description: 用于支持 Microsoft Edge 的 Windows 更新。
+ms.openlocfilehash: 85f60b3ee09154c702debcfb222567996be9462f
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2021
-ms.locfileid: "12037202"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12298160"
 ---
 # <a name="windows-updates-to-support-the-next-version-of-microsoft-edge"></a>用于支持下一版本 Microsoft Edge 的 Windows 更新
 
-本文介绍了如何更新 Windows 以支持下一版本的 Microsoft Edge。
+本文介绍了如何更新 Windows 以支持下一版本的 Microsoft Edge
 
 > [!IMPORTANT]
 > 有关 Microsoft Edge 旧版服务终止的信息，请参阅 Microsoft Edge 产品团队[博客文章](https://aka.ms/EdgeLegacyEOS)。
@@ -46,50 +46,23 @@ ms.locfileid: "12037202"
 - 所有尝试启动当前版本的 Microsoft Edge 的操作都将重定向到下一版本的 Microsoft Edge。
 
   > [!NOTE]
-  > 用户级别安装不会触发这些行为。
+  > 用户级别安装不会触发前面的行为。
 
 除了以前的更改之外，还存在无论是否安装了下一版本 Microsoft Edge 的稳定渠道都将发生的更改。
 
-- Microsoft Edge 将为下一个版本的 Microsoft Edge 不支持的书籍和 XML 协议取消注册。 尝试打开这些协议的用户将获得一个对话框，此对话框将提示他们选择默认应用。 请在[下载 ePub 应用以继续阅读电子书](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsupport.microsoft.com%2Fhelp%2F4517840&data=02%7C01%7Cv-danwes%40microsoft.com%7Cc9f8571b880549c30fcf08d72be5eaf9%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637026138803983526&sdata=qtb3DvVZQ6H%2FFXnBievkl%2B%2BngAQXwl340PcH8kRc3y4%3D&reserved=0)中了解有关图书支持更改的更多信息。
+- Microsoft Edge 将为下一个版本的 Microsoft Edge 不支持的书籍和 XML 协议取消注册。 尝试打开这些协议的用户将获得一个对话框，此对话框将提示他们选择默认应用。 请访问 Microsoft Store，查看我们为电子书阅读器提供的建议。
+  
+## <a name="older-versions-of-windows"></a>其他版本的 Windows
 
-## <a name="timeline"></a>时间线
+若要在运行早于 Windows 10 RS4 的 Windows 版本的设备上部署 Microsoft Edge，请使用 [配置服务器](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge?bc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Fbreadcrumb%2Ftoc.json&toc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Ftoc.json)、[Microsoft Intune](https://docs.microsoft.com/mem/intune/apps/apps-windows-edge?bc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Fbreadcrumb%2Ftoc.json&toc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Ftoc.json) 或升级到受支持的 Windows 10 版本。 以下文章列出了当前支持的 Windows 10 和 Windows 11 版本。
 
-支持所述体验所需的更改将随 Windows 不同版本的三个更新一起提供。
+- [受支持的 Windows 客户端版本](/windows/release-health/supported-versions-windows-client)
 
-### <a name="windows-versions-1903-and-1909"></a>Windows 版本 1903 和 1909
+> [!NOTE]
+> 对于 Windows 10 RS4-20H1，请从 2021 年 5 月或更高版本来部署 Windows LCU 以获取 Microsoft Edge。 有关详细信息，请参阅 [Windows 10 更新历史记录](https://support.microsoft.com/topic/windows-10-update-history-1b6aac92-bf01-42b5-b158-f80c6d93eb11)
 
-- 可选的 2019 年 7 月更新中的第一组更改，与 2019 年 8 月安全更新一起提供。
-- 可选的 2019 年 8 月更新中的第二组更改，与 2019 年 9 月安全更新一起提供。
-
-  > [!NOTE]
-  > 在此更新中，Microsoft Edge 将取消注册 XML 协议。
-
-- 可选的 2019 年 9 月更新中的第三组更改，与 2019 年 10 月安全更新一起提供。
-
-  > [!NOTE]
-  > 在此更新中，Microsoft Edge 将不再支持电子书。
-
-### <a name="windows-versions-1709-1803-and-1809"></a>Windows 版本 1709、1803 和 1809
-
-- 可选的 2019 年 8 月更新中的第一组更改，与 2019 年 9 月安全更新一起提供。
-- 可选的 2019 年 9 月更新中的第二组更改，与 2019 年 10 月安全更新一起提供。
-
-  > [!NOTE]
-  > 在此更新中，Microsoft Edge 将取消注册 XML 协议。
-
-- 可选的 2019 年 10 月更新中的第三组更改，与 2019 年 11 月安全更新一起提供。
-
-  > [!NOTE]
-  > 在此更新中，Microsoft Edge 将不再支持电子书。
-
-下表提供了每组更改中的特定更新的详细信息。
-
-| Windows 10 | 详细信息 | 需要下载的内容 |
-|--|--|--|
-| 版本 1709 | [KB4525241](https://support.microsoft.com/help/4525241/windows-10-update-kb4525241) | [Windows 10 版本 1709 的累积更新](https://www.catalog.update.microsoft.com/Search.aspx?q=4525241) |
-| 版本 1803  | [KB4525237](https://support.microsoft.com/help/4525237/windows-10-update-kb4525237) | [Windows 10 版本 1803 的累积更新](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4525237) |
-| 版本 1809  | [KB4523205](https://support.microsoft.com/help/4523205/windows-10-update-kb4523205) | [Windows 10 版本 1809 的累积更新](https://www.catalog.update.microsoft.com/Search.aspx?q=4523205) |
-| 版本 1903 和 1909 |[KB4517389](https://support.microsoft.com/help/4517389/windows-10-update-kb4517389)  | [Windows 10 版本 1903 和 1909 的累积更新](https://www.catalog.update.microsoft.com/Search.aspx?q=4517389) |
+> [!IMPORTANT]
+> 如果需要此处未列出的更新，请运行 Windows 更新或与管理员联系。
 
 ## <a name="see-also"></a>另请参阅
 

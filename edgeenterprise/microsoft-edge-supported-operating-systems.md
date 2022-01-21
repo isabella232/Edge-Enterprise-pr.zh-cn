@@ -3,19 +3,19 @@ title: Microsoft Edge 支持的操作系统
 ms.author: srugh
 author: srugh
 manager: seanlynd
-ms.date: 09/23/2021
+ms.date: 11/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 支持的操作系统
-ms.openlocfilehash: 7d8381e81fc3b74c1849d02a117943f3cb8bf389
-ms.sourcegitcommit: 0d71862fe4f6550f7910618872a174b95695df4b
+ms.openlocfilehash: 2cc3f4151a025e01c5af16b11f079aa7431e33c1
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2021
-ms.locfileid: "12044470"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297890"
 ---
 # <a name="microsoft-edge-supported-operating-systems"></a>Microsoft Edge 支持的操作系统
 
@@ -54,7 +54,7 @@ Microsoft Edge 遵循新式生命周期策略，并且在以下操作系统上�
 - Windows Server (SAC)
 
 > [!IMPORTANT]
-> ** 我们将继续支持在 Windows 7 和 Windows Server 2008 R2 上运行 Microsoft Edge，直到 2022 年 1 月 15 日。 这些操作系统已不再受支持，Microsoft 建议你移至受支持的操作系统（如 Windows 10）。 Microsoft Edge 可帮助你提高上网安全性，但你的电脑仍可能容易受到安全风险的影响。 要在这些操作系统中支持 IE 模式，设备需要具有[适用于 Windows 7 的扩展安全更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 如果未安装 Windows 7 扩展安全更新，Internet Explorer 功能很容易受到安全风险的影响。 此外，如果未通过扩展安全更新继续提供服务，IE 模式功能可能停止运行。  
+> ** 我们将继续支持在 Windows 7 和在 Windows Server 2008 R2 上运行 Microsoft Edge，直到 2023 年 1 月 15 日。 这些操作系统已不再受支持，Microsoft 建议你移至受支持的操作系统（如 Windows 10）。 Microsoft Edge 可帮助你提高上网安全性，但你的电脑仍可能容易受到安全风险的影响。 要在这些操作系统中支持 IE 模式，设备需要具有[适用于 Windows 7 的扩展安全更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 如果未安装 Windows 7 扩展安全更新，Internet Explorer 功能很容易受到安全风险的影响。 此外，如果未通过扩展安全更新继续提供服务，IE 模式功能可能停止运行。 Windows 7 上的 Microsoft Edge 可以使用内置自动更新引擎或使用配置服务器和 WSUS 进行更新。
 >
 > *** 与上面类似，对于不再享受支持服务但 Microsoft Edge 支持的 Windows 10 SAC 版本，建议尽快升级到支持的 Win10 SAC 版本以保持安全。 在此状态下支持 Microsoft Edge 应视为用于进入支持的操作系统状态的一种临时途径。
 >
@@ -86,10 +86,9 @@ Microsoft Edge 不支持 Chromebook。
 
 ## <a name="recent-changes"></a>最近更改
 
-- 
-            **2020 年 12 月 17 日** - Windows 7 和 Windows Server 2008 R2 上对 Microsoft Edge 支持将延续到 2022 年 1 月 15 日。
-- 
-            **2021/01/28** - Microsoft Edge 支持 Apple Silicon Macs。
+- **2020 年 12 月 17 日** - Windows 7 和 Windows Server 2008 R2 上对 Microsoft Edge 支持将延续到 2022 年 1 月 15 日。
+- **2021/01/28** - Microsoft Edge 支持 Apple Silicon Macs。
+- **11/05/2021** - Microsoft Edge 对在 Windows 7 和在 Windows Server 2008 R2 上的支持延长至 2023 年 1 月 15 日，以获得关键安全性和稳定性更新。
 
 ## <a name="see-also"></a>另请参阅
 

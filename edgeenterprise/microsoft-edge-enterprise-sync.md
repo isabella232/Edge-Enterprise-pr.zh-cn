@@ -3,23 +3,25 @@ title: 配置 Microsoft Edge 企业同步
 ms.author: collw
 author: dan-wesley
 manager: silvanam
-ms.date: 10/26/2021
+ms.date: 11/10/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 用于配置 Microsoft Edge 以同步收藏夹、密码和其他浏览器数据的管理员和用户选项。
-ms.openlocfilehash: 2f9ca20bbfeec619f0cc4d2846a527586a49f5ef
-ms.sourcegitcommit: 9c4d3803ee060d83f2081482e7f2cb4ab6b86f7c
+ms.openlocfilehash: b6f7544d78fe82e0e632b04ad8380196725f2bbe
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2021
-ms.locfileid: "12117083"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12298180"
 ---
 # <a name="configure-microsoft-edge-enterprise-sync"></a>配置 Microsoft Edge 企业同步
 
-本文介绍管理员如何将 Microsoft Edge 配置为跨所有已登录设备同步用户收藏夹、密码、其他浏览器数据。如果你不是管理员，请通过本文了解如何跨设备登录和同步 Microsoft Edge。 [登录以在设备之间同步 Microsoft Edge](https://support.microsoft.com/microsoft-edge/sign-in-to-sync-microsoft-edge-across-devices-e6ffa79b-ed52-aa32-47e2-5d5597fe4674)。
+本文介绍了管理员如何配置 Microsoft Edge，以便在所有登录设备上同步用户收藏夹、密码和其他浏览器数据。
+
+如果你不是管理员，请使用以下文章作为指南，了解如何跨设备登录和同步 Microsoft Edge: [登录以跨设备同步 Microsoft Edge](https://support.microsoft.com/microsoft-edge/sign-in-to-sync-microsoft-edge-across-devices-e6ffa79b-ed52-aa32-47e2-5d5597fe4674)。
 
 > [!NOTE]
 > 除非另有说明，否则本文适用于 Microsoft Edge 版本 77 或更高版本。
@@ -37,24 +39,27 @@ ms.locfileid: "12117083"
 - 打开选项卡（在 Microsoft Edge 版本 88 中可用）
 - 历史记录（在 Microsoft Edge 版本 88 中可用）
 
-用户同意后即可启用同步功能，并且用户可以针对上面列出的每种数据类型打开或关闭同步功能。 如果用户遇到同步问题，他们需要依次选择“**设置**” > “**配置文件**” > “**重置同步**”来重置同步。
+用户同意后即可启用同步功能，并且用户可以针对上面列出的每种数据类型打开或关闭同步功能。 如果用户遇到同步问题，他们需要依次选择 **设置** > **配置文件** > **重置同步** 来重置同步。
 
 > [!NOTE]
-> 将上载其他设备连接和配置数据（如设备名称、品牌和型号），以支持同步功能。
+> 将上载其他设备连接和配置数据 (如设备名称、设备品牌和设备型号)，以支持同步功能。
 
 ## <a name="prerequisites"></a>必备条件
 
 适用于 Azure Active Directory (Azure AD) 帐户的 Microsoft Edge 同步功能可供以下任何订阅使用：
 
 - Azure AD Premium（P1 或 P2）
-- M365 商业高级版、商业标准版或**商业基础版\***
+  
+  - 对于仅具有 Azure AD P1 或 P2 的客户，需要启用Azure AD 企业状态漫游功能才能使用 Microsoft Edge 企业同步。若要了解详细信息，请参阅 [在 Azure Active Directory 中的启用企业状态漫游](/azure/active-directory/devices/enterprise-state-roaming-enable) 一文。
+
+- Microsoft 365 商业高级版、商业标准版或**商业基础版\***
 
    > [!IMPORTANT]
    > **\**_ 我们发现 _* 商业基础版**存在同步方面的问题，正在着手解决这一问题。 在此期间，此版本无法按预期方式工作。
 
 - Office 365 E1 及更高版本
 - Azure 信息保护 (AIP)（P1 或 P2）
-- 所有 EDU 订阅（Microsoft 教育应用版（学生）或 Microsoft 教育应用版（教职员工）、Exchange Online 学生版或教职员工版、O365 A1 或更高版本、M365 A1 或更高版本，或者适用于学生或教职员的 Azure 信息保护 P1 或 P2）
+- 所有 EDU 订阅 (Microsoft 教育应用版 (学生) 或 Microsoft 教育应用版 (教职员工)、Exchange Online 学生版或教职员工版、O365 A1 或更高版本、Microsoft 365 A1 或更高版本，或者适用于学生或教职员的 Azure 信息保护 P1 或 P2)
 
 ## <a name="sync-group-policies"></a>同步组策略
 

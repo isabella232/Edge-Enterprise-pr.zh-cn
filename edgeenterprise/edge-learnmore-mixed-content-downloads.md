@@ -1,25 +1,25 @@
 ---
-title: Microsoft Edge 和混合内容下载
+title: 了解 Microsoft Edge 如何处理混合内容下载
 ms.author: collw
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 11/24/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: Microsoft Edge 和混合内容下载
-ms.openlocfilehash: 4871b23145d365e814c5cf1cac7699044f3da35e
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
-ms.translationtype: MT
+description: 了解关于混合内容下载以及 Microsoft Edge 对此操作的处理方式。
+ms.openlocfilehash: c199a8b763e456daac34bd1ba07e64ced50358f5
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978868"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12298280"
 ---
-# <a name="learn-about-microsoft-edge-and-mixed-content-downloads"></a>了解 Microsoft Edge 和混合内容下载
+# <a name="learn-how-microsoft-edge-handles-mixed-content-downloads"></a>了解 Microsoft Edge 如何处理混合内容下载
 
-本文介绍混合内容下载以及 Microsoft Edge 对此操作的处理方式。
+本文定义了混合内容下载以及说明 Microsoft Edge 对此操作的处理方式。
 
 >[!NOTE]
 >本文适用于 Microsoft Edge 版本 85 或更高版本。
@@ -31,7 +31,7 @@ ms.locfileid: "11978868"
 - 一个或多个下载位置重定向是通过不安全的 HTTP 连接加载的。
 - 最终下载位置是通过不安全的 HTTP 连接加载的。
 
-这两种场景都是混合内容，因为请求是通过安全 HTTPS 发出的，并且最终下载目标同时涉及到 HTTP 和 HTTPS 内容。 新式浏览器将显示有关此类型内容的警告，向用户表明，即使访问的原始页面是安全的，下载内容也可能是不安全的。
+前面任何一种场景都是混合内容下载，因为请求是通过安全 HTTPS 发出的，并且 HTTP 和 HTTPS 连接都用来到达最终下载目的地。 新式浏览器将显示有关此类型内容的警告表明，即使访问的原始页面是安全访问，下载内容也可能是不安全传输。
 
 ## <a name="download-warnings-and-user-options"></a>下载警告和用户选项
 
