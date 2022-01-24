@@ -3,26 +3,92 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 11/03/2021
+ms.date: 01/07/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: bcc2ecf91c6d90443de26b5bff1c744d7582aa18
-ms.sourcegitcommit: 4ec03873a85f065d9bfa6203cfe6c3e938f79bc5
+ms.openlocfilehash: ddb745c206dc392dc1dbb46a0522db9648ba624e
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "12155099"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297710"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
-本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 [此处](microsoft-edge-relnote-archive-beta-channel.md)提供了这些发行说明的存档版本。
+本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 这些发行说明的存档版本可在存档发行说明中Microsoft Edge Beta[频道。](./microsoft-edge-relnote-archive-beta-channel.md)
 
 > [!NOTE]
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-970107254-january-5"></a>版本 97.0.1072.54：1 月 5 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107252-january-3"></a>版本 97.0.1072.52：1 月 3 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107241-december-20"></a>版本 97.0.1072.41：12 月 20 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107234-december-13"></a>版本 97.0.1072.34：12 月 13 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107228-december-8"></a>版本 97.0.1072.28：12 月 8 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107221-december-1"></a>版本 97.0.1072.21：12 月 1 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **在设备上登录多个工作或学校帐户时，使用当前配置文件登录网站。** 当在设备上登录多个工作或学校帐户时，将要求用户从帐户选取器中选择一个帐户，以继续访问网站。 在此版本中，系统将提示用户Microsoft Edge登录到使用登录到当前配置文件的工作和学校帐户自动登录网站。 用户可以在"配置文件"首选项**中设置和关闭此功能**。
+
+- **在 macOS 上添加对 Microsoft Endpoint Data Loss Prevention (DLP) 的支持。** Microsoft Endpoint DLP 策略强制在 macOS 上本地可用。
+
+- **打开数字签名的 PDF 文件。**  数字签名广泛使用以验证文档的真实性和更改。 用户可以直接从浏览器验证 PDF 文件的签名，而无需任何外接程序。
+
+- **引文中的引Microsoft Edge。** 研究源是学生常见的要求。 他们必须管理许多研究参考和源，这不是一项简单的任务。 他们还必须将这些引文转换为正确的引文格式，如 APA、MLA 和 Chicago。 预览版中目前Microsoft Edge ("引文"这一) 为学生提供了一种在在线研究时管理和生成引文的更好方法。 在"集合"或 设置 及更多** (Alt-F) **中打开引文后，Microsoft Edge 自动生成学生稍后可以使用的引文，以便他们专注于研究。 完成后，他们可以轻松地将这些引文编译为最终可交付结果。 有关详细信息，请参阅预览引文[Microsoft Edge。](https://blogs.windows.com/msedgedev/2021/11/04/preview-citations-feature-edge/)
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [AccessibilityImageLabelsEnabled](/DeployEdge/microsoft-edge-policies#accessibilityimagelabelsenabled) - 从 Microsoft 启用获取图像说明
+- [CORSNonWildcardRequestHeadersSupport](/DeployEdge/microsoft-edge-policies#corsnonwildcardrequestheaderssupport) - 启用 CORS 非通配符请求标头支持
+- [EdgeDiscoverEnabled](/DeployEdge/microsoft-edge-policies#edgediscoverenabled) - 发现Microsoft Edge
+- [EdgeEnhanceImagesEnabled](/DeployEdge/microsoft-edge-policies#edgeenhanceimagesenabled) - 增强已启用的图像
+- [InternetExplorerModeTabInEdgeModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorermodetabinedgemodeallowed) - 允许为 Internet Explorer 模式配置的站点在 Microsoft Edge
+- [SameOriginTabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#sameorigintabcaptureallowedbyorigins) - 允许这些源捕获同源选项卡
+- [ScreenCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#screencaptureallowedbyorigins) - 允许通过这些源捕获桌面、窗口和选项卡
+- [SerialAllowAllPortsForUrls](/DeployEdge/microsoft-edge-policies#serialallowallportsforurls) - 自动授予站点连接所有串行端口的权限
+- [SerialAllowUsbDevicesForUrls](/DeployEdge/microsoft-edge-policies#serialallowusbdevicesforurls) - 自动授予站点连接到 USB 串行设备的权限
+- [SmartScreenDnsRequestsEnabled](/DeployEdge/microsoft-edge-policies#smartscreendnsrequestsenabled) - Microsoft Defender SmartScreen DNS 请求
+- [TabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#tabcaptureallowedbyorigins) - 允许这些原点捕获 Tab
+- [WebSQLInThirdPartyContextEnabled](/DeployEdge/microsoft-edge-policies#websqlinthirdpartycontextenabled) - 强制重新启用第三方上下文中的 WebSQL
+- [WindowCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#windowcaptureallowedbyorigins) - 允许通过这些原点捕获 Window 和 Tab
+
+## <a name="version-960105434-november-23"></a>版本 96.0.1054.34：11 月 23 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-960105426-november-17"></a>版本 96.0.1054.26：11 月 17 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-960105424-november-16"></a>版本 96.0.1054.24：11 月 16 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-960105413-november-5"></a>版本 96.0.1054.13：11 月 5 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-96010548-november-1"></a>版本 96.0.1054.8：11 月 1 日
 
@@ -32,13 +98,11 @@ ms.locfileid: "12155099"
 
 - **了解如何使用数学规划求解求解数学问题。** 我们很高兴地宣布，您可以使用数学规划求解在 Microsoft Edge中获取有关各种数学概念的帮助。 这些概念包括从算术和二次方等式到三角法和计算。 利用数学规划求解，您可以拍摄手写或打印的数学问题的图片，然后提供一个即时解决方案以及分步说明，以帮助您了解如何在没有帮助的情况下找到解决方案。 数学规划求解还附带数学键盘，可用于轻松键入数学问题。 此键盘无需四处搜索传统键盘来查找所需的数学字符。 解决你的问题后，数学规划求解提供了一些选项，可以继续学习测验、工作表和视频教程。
 
-- **滚动 PDF 文档的改进。** 我们正在改进滚动性能，以在 PDF 文档中提供更流畅的滚动体验。 在滚动期间，你将看不到白色条出现。
-
 - **PDF 上的任意多边形突出显示。** 通过添加任意格式突出显示器改进了 PDF 查看和标记体验。 你可以突出显示你无法访问的 PDF 中的部分和扫描过的文档。
 
-- **控制流实施技术 (CET) 。**  Microsoft Edge将开始支持更安全的浏览模式，该模式对浏览器进程使用依赖于硬件的控制流。 控制流在此受支持的硬件上提供：Intel 第 11 代。 或 AMD 管理 3。 可以通过使用组策略将映像文件执行选项 (IFEO) CET。
+- **硬件强制执行的堆栈保护。**  Microsoft Edge将开始支持更安全的浏览模式，该模式对 Intel 第 11 代受支持硬件上的浏览器进程使用 (控制流。 或 AMD 管理 3) 。 注意：因为这是受控功能推出，你可能不会注意到此功能在所有设备上都已启用。 你可以启用或禁用硬件强制执行的堆栈保护，方法为使用组策略操作 IFEO (图像) 执行选项。
 
-- **用于错误等同网站的新警告对话框。** 浏览器现在将在 URL 与其他网站非常相似的一些网站上显示警告。 此 UI 使用客户端启发来提醒用户有关可能欺骗热门网站的网站。 有关详细信息，请参阅什么是错[位？。](https://support.microsoft.com/topic/what-is-typosquatting-54a18872-8459-4d47-b3e3-d84d9a362eb0)
+- **用于错误等同网站的新警告对话框。** 浏览器现在将在 URL 类似于其他网站的一些网站上显示警告。 此 UI 使用客户端启发来提醒用户有关可能欺骗热门网站的网站。 有关详细信息，请参阅什么是错[位？。](https://support.microsoft.com/topic/what-is-typosquatting-54a18872-8459-4d47-b3e3-d84d9a362eb0)
 
 - **改进了 IE 模式和新式浏览器之间的切换。**  从此版本的 Microsoft Edge开始，Microsoft Edge 和 Internet Explorer 模式之间的导航将包括表单数据和其他 HTTP 标头。 引用者标头、帖子数据、表单数据和请求方法将跨这两种体验正确转发。 您可以使用 [InternetExplorerIntegrationComplexNavDataTypes 策略指定应包含哪些](/deployedge/microsoft-edge-policies#internetexplorerintegrationcomplexnavdatatypes) 数据类型。 有关详细信息，请参阅此常见问题解答：[我的应用程序需要在 IE](./edge-ie-mode-faq.md#my-application-requires-transferring-post-data-between-ie-mode-and-microsoft-edge-is-this-supported)模式和 IE 模式之间传输 POST Microsoft Edge。
 
@@ -46,7 +110,7 @@ ms.locfileid: "12155099"
 
 - **使用 Microsoft Edge WSUS 更新 WebWiew2。** 使用 WSUS 更新 Microsoft Edge IT 管理员还将能够使用 WSUS Microsoft Edge WebView2。 此功能使管理员能够更轻松地为脱机设备提供服务。
 
-- **Server 的 WSUS 更新。** Microsoft Edge Stable、Beta、Dev)  (的 Microsoft Edge 渠道的 WSUS 和目录更新现在将适用于安装了 Microsoft Edge 的 Windows Server SK，包括 Windows Server 2022。 若要详细了解如何为 WSUS 配置 WSUS Microsoft Edge，请参阅[Update Microsoft Edge](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge?bc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Fbreadcrumb%2Ftoc.json&toc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Ftoc.json#update-microsoft-edge)。
+- **Server 的 WSUS 更新。** Microsoft Edge 渠道的 WSUS 和目录更新 (Stable、Beta、Dev) 现在将应用于安装了 Microsoft Edge 的 Windows Server SK，包括 Windows Server 2022。 若要详细了解如何为 WSUS 配置 WSUS Microsoft Edge，请参阅[Update Microsoft Edge](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge?bc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Fbreadcrumb%2Ftoc.json&toc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Ftoc.json#update-microsoft-edge)。
 
 ### <a name="policy-updates"></a>策略更新
 
@@ -79,48 +143,7 @@ ms.locfileid: "12155099"
 
 修复了各种 bug 和性能问题。
 
-## <a name="version-95010209-september-28"></a>版本 95.0.1020.9：9 月 28 日
-
-### <a name="feature-updates"></a>功能更新
-
-- **在 Microsoft Edge 中查看对 SharePoint Online 库的文件资源管理器支持。**  现在，你可以为联机新式文档库启用"SharePoint资源管理器"功能。 若要使此体验可见且适用于你的用户，你需要启用 Microsoft Edge"在 Microsoft Edge 中为[SharePoint](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)页面配置文件资源管理器中的查看功能"策略，并更新 SharePoint Online 租户配置。 了解更多信息：SharePoint文件资源管理器查看Microsoft Edge [- SharePoint Microsoft 365 |Microsoft Docs](/SharePoint/sharepoint-view-in-edge)。
-
-- **Intranet 区域文件 URL 链接将在 Windows 文件资源管理器中打开。**  你可以允许文件 URL 链接到源自 Intranet 区域 HTTPS 网站的 Intranet 区域文件，以打开该文件或目录的 Windows 文件资源管理器。 可以使用 [IntranetFileLinksEnabled](/deployedge/microsoft-edge-policies#intranetfilelinksenabled) 策略启用此体验。
-
-- **对下载体验进行的改进。**  对下载用户体验的支持正扩展到渐进式 Web 应用程序 PWA 和 WebView。 我们还将开始支持拖放到文件资源管理器和桌面。
-
-- **继续你在 PDF 文件上的工作。**  可以从上次关闭 PDF 文档的位置继续阅读。
-
-- **当笔记本电脑进入延长电池使用时间模式时，效率模式会延长延长电池寿命。**  当笔记本电脑进入电池保护模式时，效率模式将变得活跃，以允许浏览器管理资源使用状态来延长机器的电池寿命。 对于效率模式何时变为活动状态、拔掉电池和电量不足、已拔掉、始终和从不，你有四个选项。 注意：这是受控功能推出。 具有电池的设备应已打开该功能。
-
-***新策略***
-
-- [BrowserLegacyExtensionPointsBlockingEnabled](/DeployEdge/microsoft-edge-policies#browserlegacyextensionpointsblockingenabled) - 启用浏览器旧版扩展点阻止。
-- [CrossOriginWebAssemblyModuleSharingEnabled](/DeployEdge/microsoft-edge-policies#crossoriginwebassemblymodulesharingenabled) - 指定是否可以跨源发送 WebAssembly 模块。
-- [DisplayCapturePermissionsPolicyEnabled](/DeployEdge/microsoft-edge-policies#displaycapturepermissionspolicyenabled) - 指定是检查还是跳过显示捕获权限策略。
-- [InternetExplorerIntegrationWindowOpenHeightAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) - 配置来自 IE 模式页面与 Microsoft Edge 模式页面的 window.open 高度之间的像素调整。
-- [InternetExplorerIntegrationWindowOpenWidthAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) - 配置来自 IE 模式页面与 Microsoft Edge 模式页面的 window.open 宽度之间的像素调整。
-- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled) - 允许在文件资源管理器Microsoft Edge打开 Intranet 区域Windows URL 链接。
-- [ShadowStackCrashRollbackBehavior](/DeployEdge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) - 配置 ShadowStack 故障回滚行为。
-- [VisualSearchEnabled](/DeployEdge/microsoft-edge-policies#visualsearchenabled) - 启用视觉搜索。
-
-***已过时的策略***
-
-- [InternetExplorerIntegrationTestingAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed) - 允许 Internet Explorer 模式测试。
-- [LegacySameSiteCookieBehaviorEnabled](/DeployEdge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled) - 启用默认旧式 SameSite Cookie 行为设置。
-
-## <a name="version-94099223-september-17"></a>版本 94.0.992.23：9 月 17 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-94099219-september-13"></a>版本 94.0.992.19：9 月 13 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-94099214-september-7"></a>版本 94.0.992.14：9 月 7 日
-
-修复了各种 bug 和性能问题。
-
+<!-- archive from version 95.0.1020.9: September 28 to version 94.0.992.14: September 7 ---->
 <!-- archive from Version 94.0.992.9: September 2 to Version 92.0.902.40: July 6 -->
 <!--Archive on Oct 27 From Version 92.0.902.22: June 21 to Version 89.0.774.23: February 8  -->
 <!--- Archived from Version 87.0.664.18: October 26 to to version 89.0.774.18: February 3 ---->
@@ -130,4 +153,4 @@ ms.locfileid: "12155099"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

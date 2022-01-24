@@ -3,23 +3,23 @@ title: 使用移动设备管理配置 Microsoft Edge
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 06/29/2021
+ms.date: 11/17/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用移动设备管理配置 Microsoft Edge。
-ms.openlocfilehash: 0927d64366652986b87c2f517ca8ebafd4c9ac55
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 96fa6f4d096d8acd5369b92de7e1d979191e13ec
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978713"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297730"
 ---
 # <a name="configure-microsoft-edge-using-mobile-device-management"></a>使用移动设备管理配置 Microsoft Edge
 
-本文介绍了如何使用[移动设备管理 (MDM)](/windows/client-management/mdm/) 通过 [ADMX 引入](/windows/client-management/mdm/win32-and-centennial-app-policy-configuration)来配置 Windows 10 上的 Microsoft Edge。 本文还介绍了：
+本文介绍了如何使用移动设备管理Microsoft Edge MDM Windows 10 MDM ([配置](/windows/client-management/mdm/)) [ADMX Ingestion。](/windows/client-management/mdm/win32-and-centennial-app-policy-configuration) 本文还介绍了：
 
 - 如何[为 Microsoft Edge 策略创建开放移动联盟统一资源标识符 (OMA-URI)](#create-an-oma-uri-for-microsoft-edge-policies)。
 - 如何[使用 ADMX 引入和自定义 OMA-URI 在 Intune 中配置 Microsoft Edge](#configure-microsoft-edge-in-intune-using-admx-ingestion)。
@@ -51,9 +51,9 @@ ms.locfileid: "11978713"
 
 ## <a name="create-an-oma-uri-for-microsoft-edge-policies"></a>为 Microsoft Edge 策略创建 OMA-URI
 
-以下各部分介绍了如何创建 OMA-URI 路径，以及如何为强制和推荐的浏览器策略查找和定义 XML 格式的值。
+以下各节介绍如何创建 OMA-URI 路径，以及如何查找和定义 XML 格式的值，以用于强制和推荐的浏览器策略。
 
-在开始之前，请从 [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)下载 Microsoft Edge 策略模板文件 (MicrosoftEdgePolicyTemplates.cab)，然后提取内容。
+在开始使用之前，请从 Microsoft Edge登录页面下载 Microsoft Edge Enterprise策略模板文件 (MicrosoftEdgePolicyTemplates.cab) [并](https://aka.ms/EdgeEnterprise)提取内容。
 
 定义 OMA-URI 有三个步骤：
 
@@ -91,7 +91,7 @@ ms.locfileid: "11978713"
 
 ### <a name="specify-the-data-type"></a>指定数据类型
 
-OMA-URI 数据类型始终为“字符串”。
+OMA-URI 数据类型始终为"字符串"。
 
 ### <a name="set-the-value-for-a-browser-policy"></a>设置浏览器策略的值
 
@@ -150,14 +150,21 @@ OMA-URI 数据类型始终为“字符串”。
 若要使用“ApplicationLocaleValue”策略将区域设置设为“es-US”，请执行以下操作：<br>
 `<enabled/> <data id="ApplicationLocaleValue" value="es-US"/>`
 
-### <a name="create-the-oma-uri-for-a-recommended-policies"></a>为推荐的策略创建 OMA-URI
+字典数据类型被视为大型字符串，但通常需要字符串转义才能将值转换为正确的形式。
+
+例如，若要设置 ManagedFavorites 策略，该值为：
+
+```xml
+<enabled/> <data id="ManagedFavorites" value="[{&quot;toplevel_name&quot;: &quot;My managed favorites folder&quot;}, {&quot;name&quot;: &quot;Microsoft&quot;, &quot;url&quot;: &quot;microsoft.com&quot;}, {&quot;name&quot;: &quot;Bing&quot;, &quot;url&quot;: &quot;bing.com&quot;}, {&quot;children&quot;: [{&quot;name&quot;: &quot;Microsoft Edge Insiders&quot;, &quot;url&quot;: &quot;www.microsoftedgeinsider.com&quot;}, {&quot;name&quot;: &quot;Microsoft Edge&quot;, &quot;url&quot;: &quot;www.microsoft.com/windows/microsoft-edge&quot;}], &quot;name&quot;: &quot;Microsoft Edge links&quot;}]"/>
+```
+
+### <a name="create-the-oma-uri-for-recommended-policies"></a>为推荐的策略创建 OMA-URI
 
 为推荐的策略定义 URI 路径取决于你要配置的策略。
 
 #### <a name="to-define-the-uri-path-for-a-recommended-policy"></a>要为推荐的策略定义 URI 路径，请执行以下步骤
 
 使用 URI 路径公式（*`./Device/Vendor/MSFT/Policy/Config/<ADMXIngestName>~Policy~<ADMXNamespace>~<ADMXCategory>/<PolicyName>`*）和以下步骤定义 URI 路径：
-
 1. 使用任何 xml 编辑器打开 **msedge.admx**。
 2. 如果要配置的策略不在组中，请跳到第 4 步，然后从路径中删除 `~<ADMXCategory>`。
 3. 如果要配置的策略位于组中：
@@ -183,7 +190,7 @@ OMA-URI 数据类型始终为“字符串”。
 
 下表显示了推荐策略的 OMA-URI 路径的示例。
 
-|              策略               |             OMA-URI                      |
+|      策略    |   OMA-URI  |
 |-----------------------------------|------------------------------------------|
 | [RegisteredProtocolHandlers](./microsoft-edge-policies.md#registeredprotocolhandlers)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~ContentSettings_recommended/RegisteredProtocolHandlers_recommended`                        |
 | [PasswordManagerEnabled](./microsoft-edge-policies.md#passwordmanagerenabled)                       | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge_recommended~PasswordManager_recommended/PasswordManagerEnabled_recommended`                        |
@@ -247,16 +254,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 值   | `<enabled/><data id="DiskCacheSize" value="1000000"/>`                               |
 
 #### <a name="list-of-strings-data-type-examples"></a>字符串列表数据类型示例
-<!--
-*[NotificationsAllowedForUrls](./microsoft-edge-policies.md#NotificationsAllowedForUrls):*
 
-| Field   | Value                                                                                |
-|---------|--------------------------------------------------------------------------------------|
-| Name    | Microsoft Edge: NotificationsAllowedForUrls                                          |
-| OMA-URI | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge~ContentSettings/NotificationsAllowedForUrls`    |
-| Type    | String                                                                               |
-| Value   | `<enabled/><data id="NotificationsAllowedForUrlsDesc" value="https://www.contoso.com"/>`<br>For multiple list items: `<data id="NotificationsAllowedForUrlsDesc" value="https://www.contoso.com;[*.]contoso.edu"/>`                           |
--->
 *[RestoreOnStartupURLS](./microsoft-edge-policies.md#restoreonstartupurls)：*
 
 | 字段   | 值                                                                                |
@@ -275,20 +273,29 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/><data id="ExtensionInstallForcelistDesc" value="1&#xF000;gbchcmhmhahfdphkhkmpfmihenigjmpp;https://extensionwebstorebase.edgesv.net/v1/crx"/>`                               |
 
-#### <a name="dictionary-and-string-data-type-example"></a>字典和字符串数据类型示例
+#### <a name="dictionary-and-string-data-type-examples"></a>字典和字符串数据类型示例
 
 *[ProxyMode](./microsoft-edge-policies.md#proxymode)：*
 
-| 字段   | 值                                                                                |
-|---------|--------------------------------------------------------------------------------------|
+| 字段   | 值      |
+|---------|------------|
 | 名称    | Microsoft Edge：ProxyMode                                                            |
 | OMA-URI | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge~ProxyMode/ProxyMode`  |
 | 类型    | 字符串                                                                               |
 | 值   | `<enabled/><data id="ProxyMode" value="auto_detect"/>`                               |
 
+*[ManagedFavorites](./microsoft-edge-policies.md#managedfavorites)：*
+
+| 字段   | 值    |
+|---------|----------|
+| 名称    | Microsoft Edge：ManagedFavorites                                                            |
+| OMA-URI | `./Device/Vendor/MSFT/Policy/Config/Edge~Policy~microsoft_edge/ManagedFavorites`  |
+| 类型    | 字符串                                                                               |
+| 值   | `<enabled/> <data id="ManagedFavorites" value="[{&quot;toplevel_name&quot;: &quot;My managed favorites folder&quot;}, {&quot;name&quot;: &quot;Microsoft&quot;, &quot;url&quot;: &quot;microsoft.com&quot;}, {&quot;name&quot;: &quot;Bing&quot;, &quot;url&quot;: &quot;bing.com&quot;}, {&quot;children&quot;: [{&quot;name&quot;: &quot;Microsoft Edge Insiders&quot;, &quot;url&quot;: &quot;www.microsoftedgeinsider.com&quot;}, {&quot;name&quot;: &quot;Microsoft Edge&quot;, &quot;url&quot;: &quot;www.microsoft.com/windows/microsoft-edge&quot;}], &quot;name&quot;: &quot;Microsoft Edge links&quot;}]"/>`                               |
+
 ## <a name="configure-microsoft-edge-in-intune-using-admx-ingestion"></a>使用 ADMX 引入在 Intune 中配置 Microsoft Edge
 
-使用 Microsoft Intune 配置 Microsoft Edge 的推荐方法是使用管理模板配置文件，如[使用 Microsoft Intune 配置 Microsoft Edge 策略设置](./configure-edge-with-intune.md)中所述。 如果想要评估 Intune 内的 Microsoft Edge 管理模板中当前不可用的策略，你可以使用 [Intune 中 Windows 10 设备的自定义设置](/intune/configuration/custom-settings-windows-10)来配置 Microsoft Edge。
+使用管理模板Microsoft Edge配置Microsoft Intune是使用管理模板配置文件。 此配置文件在 Configure [Microsoft Edge policy settings with Microsoft Intune 中进行了介绍](./configure-edge-with-intune.md)。 如果你想要评估当前在 Intune 中的 Microsoft Edge 管理模板中不可用的策略，可以使用 Intune 中 Windows 10 设备的自定义设置配置[Microsoft Edge。](/intune/configuration/custom-settings-windows-10)
 
 本部分介绍了以下操作方法：
 
@@ -403,7 +410,7 @@ OMA-URI 示例及其 URI 路径、类型和示例值。
 ## <a name="see-also"></a>另请参阅
 
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-- [使用 Microsoft Intune 配置 Microsoft Edge 策略设置](configure-edge-with-intune.md)
+- [使用 Microsoft Intune 配置 Microsoft Edge 策略设置](./configure-edge-with-intune.md)
 - [移动设备管理](/windows/client-management/mdm/)
 - [在 Intune 中对 Windows 10 设备使用自定义设置](/intune/configuration/custom-settings-windows-10)
 - [Win32 和桌面桥应用策略配置](/windows/client-management/mdm/win32-and-centennial-app-policy-configuration)
