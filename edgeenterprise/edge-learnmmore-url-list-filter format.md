@@ -3,19 +3,19 @@ title: 适用于 Microsoft Edge URL 策略的筛选器格式
 ms.author: brianalt
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 12/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解用于 Microsoft Edge URLBlocklist 和 URLAllowlist 策略的筛选器格式。
-ms.openlocfilehash: e178dad518ff4bee07bf89d9faca3231ee6cf246
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 777813f600058619c0e6b4dbb093accd5279bf5c
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978670"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297720"
 ---
 # <a name="filter-format-for-url-list-based-policies"></a>基于 URL 列表的策略的筛选器格式
 
@@ -102,9 +102,9 @@ ms.locfileid: "11978670"
 ## <a name="content-license"></a>内容许可证
 
 > [!NOTE]
-> 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 [可在此处找到原始 Chromium 页面](https://www.chromium.org/administrators/url-blacklist-filter-format)。
+> 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 [可在此处找到原始 Chromium 页面](https://www.chromium.org/administrators/url-blocklist-filter-format)。
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
 ## <a name="see-also"></a>另请参阅
 
