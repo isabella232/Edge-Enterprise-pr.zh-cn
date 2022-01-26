@@ -1,35 +1,39 @@
 ---
-title: Microsoft Edge 中的数据丢失防护
+title: 了解数据丢失防护Microsoft Edge
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 06/28/2021
+ms.date: 11/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
-description: Microsoft Edge 中的数据丢失防护 (DLP)
-ms.openlocfilehash: acbc9dab14c193f4f7cb06eb61e676083bfdf6ef
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+description: 了解数据丢失防护 (DLP) 中Microsoft Edge
+ms.openlocfilehash: b20a9eb965256adcebd47a5eb1805fb4f0a5992b
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978980"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297900"
 ---
-# <a name="data-loss-prevention-dlp-in-microsoft-edge"></a>Microsoft Edge 中的数据丢失防护 (DLP)
+# <a name="understand-data-loss-prevention-dlp-in-microsoft-edge"></a>了解数据丢失防护 (DLP) 中Microsoft Edge
 
-数据丢失防护（DLP）是一套识别和保护企业敏感数据免受未经授权即泄露的技术系统。 为遵守商业标准和行业法规，组织必须保护敏感信息，防止其未经授权的泄露。 敏感信息包括财务数据或个人身份信息（PII），例如信用卡号码、社会保险号码或健康记录等。
+本文介绍了如何使用 ENDPOINT DLP Microsoft Edge WIP (DLP) 支持数据丢失防护Windows WIP (DLP) 。
+
+## <a name="dlp-defined"></a>已定义 DLP
+
+数据丢失防护（DLP）是一套识别和保护企业敏感数据免受未经授权即泄露的技术系统。 为遵守商业标准和行业法规，组织必须保护敏感信息，防止其未经授权的泄露。 敏感信息包括财务数据或个人信息。 个人信息的一些示例包括信用卡号、社会保险号和健康记录。
 
 远程工作更加强调使用DLP。 随着个人与工作活动在设备上的使用的增加，企业发现在工作场所之外未经授权共享企业数据的风险亦正在增加。
 
-这种用户活动的融合也扩散到了设备上，数据通过各种公共和私有网络在个人和企业设备之间移动。 最终的结果是敏感数据暴露的风险大大增加。
+用户活动的这种混合还传播到设备，其中数据通过各种公用和专用网络在个人和公司设备之间移动。 最终的结果是敏感数据暴露的风险大大增加。
 
 Microsoft Edge 原身支持两种不同的DLP解决方案，即Microsoft Endpoint DLP和Windows信息保护（WIP）。
 
 ## <a name="microsoft-endpoint-data-loss-prevention-endpoint-dlp"></a>使用 Microsoft 终结点数据丢失防护（终结点 DLP）
 
-Microsoft 终结点 DLP 是运用现代概念（例如以数据为中心的保护）的下一代数据丢失防护。 它内置在 Windows 10 和 Microsoft Edge 中，因此无需在设备上具备其他代理或插件。
+Microsoft 终结点 DLP 是运用现代概念（例如以数据为中心的保护）的下一代数据丢失防护。 它内置了Windows 10 Microsoft Edge因此不需要在设备上使用更多代理或插件。
 
 > [!NOTE]
 > 这适用于 Microsoft Edge 85 或更高版本。
@@ -40,7 +44,7 @@ Microsoft 终结点 DLP 是运用现代概念（例如以数据为中心的保�
 - [了解 Microsoft 365 终结点数据丢失防护](/microsoft-365/compliance/endpoint-dlp-learn-about?preserve-view=true&view=o365-worldwide)
 - [终结点数据丢失防护入门](/microsoft-365/compliance/endpoint-dlp-getting-started?preserve-view=true&view=o365-worldwide)
 
-Microsoft Edge 对敏感文件执行管理员配置的策略，并记录不合规活动的审核事件。
+Microsoft Edge对敏感文件强制执行管理员配置的策略，并记录不合规活动的审核事件。
 
 可在运行 Windows 10 的设备上审核和管理的用户活动包括以下活动：
 
