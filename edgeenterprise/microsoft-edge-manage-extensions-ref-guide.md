@@ -3,21 +3,21 @@ title: ExtensionSettings 策略的详细指南
 ms.author: aspoddar
 author: dan-wesley
 manager: balajek
-ms.date: 06/29/2021
+ms.date: 01/12/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 有关使用 ExtensionSettings 策略配置 Microsoft Edge 扩展的详细参考指南。
-ms.openlocfilehash: 7dceff78172626d70863883e0762be2f4cb7e51c
-ms.sourcegitcommit: e825c6a1b0e63004288e13f6bb672743b0ecfafb
+ms.openlocfilehash: 429b5efeb667ec0d100e397d9c12185420dbc31c
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2021
-ms.locfileid: "12069008"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297930"
 ---
-# <a name="detailed-guide-to-the-extensionsettings-policy"></a>ExtensionSettings 策略的详细指南
+# <a name="a-detailed-guide-to-configuring-extensions-using-the-extensionsettings-policy"></a>使用 ExtensionSettings 策略配置扩展的详细指南
 
 Microsoft Edge 提供了多种方法来管理扩展。 一种常见方法是在 Windows 组策略编辑器或 Windows 注册表中使用 [ExtensionSettings](/deployedge/microsoft-edge-policies#extensionsettings) 策略在一处通过 JSON 字符串设置多个策略。
 
@@ -26,7 +26,7 @@ Microsoft Edge 提供了多种方法来管理扩展。 一种常见方法是在 
 
 ## <a name="before-you-begin"></a>在你开始前
 
-你决定是要在此处设置所有扩展管理设置，还是通过其他策略设置这些控件。
+确定是想要在 ExtensionSettings 策略中设置所有扩展管理设置，还是通过其他策略设置这些控件。
   
 ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他策略，包括以下策略：
 
@@ -38,9 +38,9 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 
 ## <a name="extensionsettings-policy-fields"></a>ExtensionSettings 策略字段
 
-此策略可以控制更新 URL 等设置，从中下载扩展以进行初始安装，以及阻止权限，或不允许运行哪些权限。 下表描述了可用的策略字段。
+此策略可以控制更新 URL 等设置，其中扩展将下载用于初始安装，以及阻止权限。 您还可以使用此策略来确定不允许运行哪些权限。 下表描述了可用的策略字段。
 
-| &nbsp; | 描述 |
+| 策略字段 | 描述 |
 |--|--|
 | **allowed_types** | 只能用于配置默认配置 *。 指定允许用户在 Microsoft Edge 上安装的应用或扩展类型。 该值为字符串列表，其中每个字符串应为以下类型之一："extension"、"theme"、"user_script" 和 "hosted_app"。   |
 | **blocked_install_message**| 如果阻止用户安装某些扩展，可以指定在用户尝试安装这些扩展时在浏览器中显示的自定义消息。<br>将文本追加到在 Microsoft Edge 加载项网站上显示的一般错误消息。 例如，你可以告诉用户如何联系其 IT 部门或特定扩展不可用的原因。 消息的长度最多可为 1000 个字符。   |
@@ -51,47 +51,47 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 | **update_url** | 仅适用于 force_installed和normal_installed。 指定 Microsoft Edge 应从何处下载扩展。 如果扩展托管在 Microsoft Edge 加载项网站中，请使用以下位置：`https://edge.microsoft.com/extensionwebstorebase/v1/crx`。<br>Microsoft Edge 使用为初始扩展安装指定的 URL。 对于后续扩展更新，Microsoft Edge 使用扩展清单中的 URL。   |
 | **runtime_allowed_hosts**| 允许扩展与指定网站交互，即使它们也在 runtime_blocked_hosts 中定义了。 最多可以指定 100 个条目。 将放弃额外的条目。<br>主机模式格式类似于 [匹配模式](/microsoft-edge/extensions-chromium/enterprise/match-patterns) ，但不能定义路径。 例如：<br>- *://*.example.com<br>- *://example.*—支持 eTLD 通配符     |
 | **runtime_blocked_hosts**| 阻止扩展与指定的网站交互或修改网站。 修改包括阻止 JavaScript 注入、Cookie 访问、Web 请求修改。<br>最多可以指定 100 个条目。 将放弃额外的条目。<br>主机模式格式类似于匹配模式，但不能定义路径。 例如：<br>- *://*.example.com<br>- *://example.*—支持 eTLD 通配符   |
-| **override_update_url**| 在 Edge 93 中可用<br>如果设置为 `true` ，则 Edge 将使用 ExtensionSettings 策略或 ExtensionInstallForcelist 策略中指定的更新 URL 进行后续扩展更新。<br>如果未设置或设置为 ，Edge 将使用扩展清单中指定的 `false` URL 进行更新。|
-| **toolbar_state**| 在 Edge 94 中可用<br>此策略设置允许你向工具栏强制显示已安装的扩展。 默认状态是 `default_shown` 适用于所有扩展。 此设置可能具有以下状态<br>-`force_shown`：可以选择强制在工具栏上显示已安装的扩展。 用户将无法从工具栏中隐藏特定的扩展图标。<br>-`default_hidden`：在此状态中，扩展在安装时在工具栏中隐藏。 如果需要，用户可以在工具栏上显示它们。<br>-`default_shown`：这是浏览器上所有已安装扩展的失聪设置。
+| **override_update_url**| 93 Microsoft Edge可用<br>如果此字段设置为 ，则Microsoft Edge使用 ExtensionSettings 策略或 `true` ExtensionInstallForcelist 策略中指定的更新 URL 进行后续扩展更新。<br>如果未设置此字段或将 此字段设置为 ，Microsoft Edge将使用扩展的清单中指定的 `false` URL 进行更新。|
+| **toolbar_state**| 94 Microsoft Edge可用<br>此策略设置允许你向工具栏强制显示已安装的扩展。 默认状态是 `default_shown` 适用于所有扩展。 此设置可能具有以下状态<br>-`force_shown`：可以选择强制在工具栏上显示已安装的扩展。 用户将无法从工具栏中隐藏指定的扩展图标。<br>-`default_hidden`：在此状态中，扩展在安装时在工具栏中隐藏。 如果需要，用户可以在工具栏上显示它们。<br>-`default_shown`：这是浏览器上所有已安装扩展的默认设置。
 
-这些是全局范围内允许的键 (*) ： 
+全局作用域允许以下键 (*) ：
 
 - blocked_permissions
-- installation_mode - 仅 `"blocked"` `"allowed"` ， 或 `"removed"` 是此作用域中的有效值。
+- installation_mode - 仅 `"blocked"` 、 或 是 `"allowed"` `"removed"` 此作用域中的有效值。
 - runtime_blocked_hosts
 - blocked_install_message
 - allowed_types
 - runtime_allowed_hosts
 - install_sources
 
-这些是单个扩展作用域中允许的键： 
+在单个扩展作用域中允许以下键：
 
 - blocked_permissions
 - minimum_version_required
 - blocked_install_message
-- installation_mode - `"blocked"` 、 `"allowed"` 、 、 和 `"removed"` `"force_installed"` `"normal_installed"` 是可能的值。
+- installation_mode - `"blocked"` `"allowed"` 、 `"removed"` 、 、 `"force_installed"` 和 `"normal_installed"` 是可能的值。
 - runtime_allowed_hosts
 - update_url
 - override_update_url
 - runtime_blocked_hosts
 - toolbar_state
 
-这些键是更新 URL 范围内允许的键： 
+更新 URL 作用域允许以下键：
 
 - blocked_permissions
-- installation_mode - 仅 `"blocked"` `"allowed"` ， 或 `"removed"` 是此作用域中的有效值。
+- installation_mode - 仅 `"blocked"` 、 或 是 `"allowed"` `"removed"` 此作用域中的有效值。
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>在 Windows 组策略编辑器中使用 JSON 字符串进行配置
 
 使用 GPO 使用扩展设置策略的步骤假定你已导入 adM/ADMX for Microsoft Edge 策略。
 
-1. 打开组策略编辑器，转到 **Microsoft Edge >扩展>配置扩展管理设置策略**。
-2. 启用策略，并在文本框中输入其紧凑的 JavaScript 对象表示法 (JSON) 数据作为一行，不带换行符。
+1. 打开组策略编辑器，然后转到Microsoft Edge >**扩展>配置扩展管理设置策略**。
+2. 启用策略，并输入其紧凑的 JavaScript 对象表示法 (JSON) 数据作为不带换行符的单个行在文本框中。
 3. 若要验证策略并将其压缩为单行，请使用 JSON 压缩工具。
 
 ### <a name="properly-format-json-for-the-extension-settings-policy"></a>为扩展设置策略正确设置 JSON 格式
 
-你需要了解此策略的两个部分 - 默认范围和单个作用域。 对于没有其自身作用域的扩展，默认范围为 catch-all。 单个范围仅应用于该扩展。  
+您需要了解此策略的两个部分：默认范围和单个作用域。 对于没有其自身作用域的扩展，默认范围为 catch-all。 单个范围仅应用于该扩展。  
 
 默认范围由星号 (*) 标识。 下一个示例定义了默认范围和单个扩展范围。
 
@@ -125,7 +125,7 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 
 #### <a name="using-installation_mode-property-to-allow-and-block-extensions"></a>使用 installation_mode 属性允许和阻止扩展
 
-- 用户可以安装所有扩展 - 这是默认设置 
+- 用户可以安装所有扩展 - 默认设置
 
   `{ "*": {"installation_mode": "allowed" }}`
 - 用户无法安装任何扩展。  
@@ -146,7 +146,7 @@ ExtensionSettings 策略可以覆盖已在组策略其他位置设置的其他�
 
    `{"nckgahadagoaajjgafhacjanaoiihapd": {"installation_mode": "force_installed","update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"}}`
   
-在上面的示例中，如果使用 "normal_installed" 而不是 "force_installed"，则无需用户交互即可自动安装扩展，但可以禁用扩展。  
+在上一示例中，如果使用"normal_installed"而不是"force_installed"，则会自动安装扩展，而无需用户交互，但他们可以禁用扩展。  
 
    > [!TIP]
    > 正确设置 JSON 字符串的格式可能比较棘手。 在实现策略之前，请使用 JSON 检查器。 或尝试早期版本的 [扩展设置生成器工具](https://microsoft.github.io/edge-extension-settings-generator/minimal)
@@ -164,11 +164,11 @@ ExtensionSettings 策略应写入此建下的注册表：
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\`
 
-你将创建的下一个键是单个作用域的扩展 ID 或默认作用域的星号 (*)。 例如，将以下位置用于适用于 Google Hangouts 的设置：
+你将创建的下一个键是单个作用域的扩展 ID 或默认作用域的星号 (*)。 例如，对于适用于 Google Hangouts 的设置，你将在注册表中使用以下位置：
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\nckgahadagoaajjgafhacjanaoiihapd`
 
-对于应用于默认作用域的设置，请使用以下位置：
+对于应用于"默认作用域" (星号) ，请使用注册表中的以下位置：
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\*`
 

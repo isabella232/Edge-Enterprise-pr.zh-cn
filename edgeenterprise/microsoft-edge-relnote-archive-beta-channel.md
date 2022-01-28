@@ -3,23 +3,65 @@ title: Microsoft Edge Beta 渠道的存档发行说明
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 11/03/2021
+ms.date: 12/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道的存档发行说明
-ms.openlocfilehash: bb45f1dbcb1afecd40c0b163c1ac35d99af6126d
-ms.sourcegitcommit: 4ec03873a85f065d9bfa6203cfe6c3e938f79bc5
+ms.openlocfilehash: cc4170aadbdb1220598542cca9ad04886ea86547
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "12155108"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12297910"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的存档发行说明
 
 本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 若要了解 Microsoft Edge 渠道，请参阅 [Microsoft Edge 渠道概述](microsoft-edge-channels.md)。 [此处](microsoft-edge-relnotes-security.md)列出所有安全更新。
+
+## <a name="version-95010209-september-28"></a>版本 95.0.1020.9：9 月 28 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **在 Microsoft Edge 中查看对 SharePoint Online 库的文件资源管理器支持。**  现在，你可以为联机新式文档库启用"SharePoint资源管理器"功能。 若要使此体验可见且适用于你的用户，你需要启用 Microsoft Edge"在 Microsoft Edge 中为[SharePoint](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)页面配置文件资源管理器中的查看功能"策略，并更新 SharePoint Online 租户配置。 了解更多信息：SharePoint文件资源管理器中的文件Microsoft Edge [- SharePoint Microsoft 365 |Microsoft Docs](/SharePoint/sharepoint-view-in-edge)。
+
+- **Intranet 区域文件 URL 链接将在 Windows 文件资源管理器中打开。**  你可以允许文件 URL 链接到源自 Intranet 区域 HTTPS 网站的 Intranet 区域文件，以打开该文件或目录的 Windows 文件资源管理器。 可以使用 [IntranetFileLinksEnabled](/deployedge/microsoft-edge-policies#intranetfilelinksenabled) 策略启用此体验。
+
+- **对下载体验进行的改进。**  对下载用户体验的支持正扩展到渐进式 Web 应用程序 PWA 和 WebView。 我们还将开始支持拖放到文件资源管理器和桌面。
+
+- **继续你在 PDF 文件上的工作。**  可以从上次关闭 PDF 文档的位置继续阅读。
+
+- **当笔记本电脑进入延长电池使用时间模式时，效率模式会延长延长电池寿命。**  当笔记本电脑进入电池保护模式时，效率模式将变得活跃，以允许浏览器管理资源使用状态来延长机器的电池寿命。 对于效率模式何时变为活动状态、拔掉电池和电量不足、已拔掉、始终和从不，你有四个选项。 注意：这是受控功能推出。 具有电池的设备应已打开该功能。
+
+***新策略***
+
+- [BrowserLegacyExtensionPointsBlockingEnabled](/DeployEdge/microsoft-edge-policies#browserlegacyextensionpointsblockingenabled) - 启用浏览器旧版扩展点阻止。
+- [CrossOriginWebAssemblyModuleSharingEnabled](/DeployEdge/microsoft-edge-policies#crossoriginwebassemblymodulesharingenabled) - 指定是否可以跨源发送 WebAssembly 模块。
+- [DisplayCapturePermissionsPolicyEnabled](/DeployEdge/microsoft-edge-policies#displaycapturepermissionspolicyenabled) - 指定是检查还是跳过显示捕获权限策略。
+- [InternetExplorerIntegrationWindowOpenHeightAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) - 配置来自 IE 模式页面与 Microsoft Edge 模式页面的 window.open 高度之间的像素调整。
+- [InternetExplorerIntegrationWindowOpenWidthAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) - 配置来自 IE 模式页面与 Microsoft Edge 模式页面的 window.open 宽度之间的像素调整。
+- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled) - 允许在"文件资源管理器"Microsoft Edge打开 Intranet 区域Windows URL 链接。
+- [ShadowStackCrashRollbackBehavior](/DeployEdge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) - 配置 ShadowStack 故障回滚行为。
+- [VisualSearchEnabled](/DeployEdge/microsoft-edge-policies#visualsearchenabled) - 启用视觉搜索。
+
+***已过时的策略***
+
+- [InternetExplorerIntegrationTestingAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed) - 允许 Internet Explorer 模式测试。
+- [LegacySameSiteCookieBehaviorEnabled](/DeployEdge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled) - 启用默认旧式 SameSite Cookie 行为设置。
+
+## <a name="version-94099223-september-17"></a>版本 94.0.992.23：9 月 17 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-94099219-september-13"></a>版本 94.0.992.19：9 月 13 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-94099214-september-7"></a>版本 94.0.992.14：9 月 7 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-9409929-september-2"></a>版本 94.0.992.9：9 月 2 日
 
@@ -69,7 +111,7 @@ ms.locfileid: "12155108"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **Microsoft Edge 中的初始首选项。**  从 Microsoft Edge版本 93 开始，Microsoft Edge初始首选项 将更容易[部署到企业](/deployedge/initial-preferences-support-on-microsoft-edge-browser)。
+- **Microsoft Edge 中的初始首选项。**  从 Microsoft Edge版本 93 开始，Microsoft Edge"初始首选项"将更容易[部署到企业](/deployedge/initial-preferences-support-on-microsoft-edge-browser)。
 
 - **Microsoft Edge 上的 IE 模式将支持“无合并”行为。**  从 Microsoft Edge版本 93 开始，Microsoft Edge上的 IE 模式将支持"无合并"。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于每个 Microsoft Edge 窗口，当首次在该窗口中访问 IE 模式选项卡时，如果其为其中一个指定的“无合并”站点，则该窗口至少会锁定到所有其他Microsoft Edge 窗口的不同“无合并”IE 会话中，直到最后的 IE 模式选项卡在该窗口中关闭。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--no-merge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
 
@@ -77,7 +119,7 @@ ms.locfileid: "12155108"
 
 - **使用“垂直标签”时隐藏标题栏。**  当在“垂直标签”中时，隐藏浏览器的标题栏以重获额外多个像素。 从 Microsoft Edge版本 93 开始，可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在垂直选项卡模式下隐藏标题栏的选项。
 
-- **悬停工具栏中的视频画中画(PiP)。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (输入图片) 变得更加简单。 当将鼠标悬停在受支持的视频上时，工具栏将显示，允许在 PiP 窗口中查看该视频。  注意：这目前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
+- **悬停工具栏中的视频画中画(PiP)。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (进入图片) 变得更加简单。 当将鼠标悬停在受支持的视频上时，工具栏将显示，允许在 PiP 窗口中查看该视频。  注意：这当前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
 
 - **在 TLS 中删除 3DES。**  从 Microsoft Edge版本 93 开始，将TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在 Microsoft Edge 基于的 Chromium 项目中。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 策略将可用于支持需要保留与过时服务器的兼容性的场景。 此兼容性策略将过时，并停止在 Microsoft Edge 版本 95 中工作。 请确保在此之前更新受影响的服务器。
 
@@ -150,7 +192,7 @@ ms.locfileid: "12155108"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了仅标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如) 上个星期的食谱"。
+- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了仅标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如) 上周的食谱"。
 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 策略调整将网站保留在本地站点列表中的天数。
@@ -1111,4 +1153,4 @@ ms.locfileid: "12155108"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Microsoft Edge 企业版登录页面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
