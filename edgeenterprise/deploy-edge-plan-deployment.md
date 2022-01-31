@@ -3,19 +3,19 @@ title: 计划 Microsoft Edge 部署
 ms.author: collw
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 12/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 计划 Microsoft Edge 部署
-ms.openlocfilehash: be85aa5182bbee51f90fe42e80cdee0b9c793b4e
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 66d0999bcf80aa5bdf7232cedff36a8bbb3ef264
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978692"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12298140"
 ---
 # <a name="plan-your-deployment-of-microsoft-edge"></a>计划 Microsoft Edge 部署
 
@@ -24,18 +24,30 @@ ms.locfileid: "11978692"
 >[!NOTE]
 >本文适用于 Microsoft Edge 版本 77 或更高版本。
 
+## <a name="article-content"></a>文章内容
+
 以下部分针对 Microsoft Edge 部署规划提供了具体指导。
 
-- [评估浏览器环境和要求](#evaluate-your-existing-browser-environment-and-browser-needs)
-- [确保 Windows 10 设备准备就绪](#make-sure-your-windows-10-devices-are-ready)
-- [选择部署方法](#determine-your-deployment-methodology)
-- [进行站点发现](#do-site-discovery)
-- [选择渠道策略](#determine-your-channel-strategy)
-- [确定和配置策略](#define-and-configure-policies)
-- [测试应用兼容性](#do-app-compatibility-testing)
-- [Microsoft Edge 试点](#deploy-microsoft-edge-to-a-pilot-group)
-- [评估试点](#validate-your-deployment)
-- [在企业中部署 Microsoft Edge](#broad-deployment-of-microsoft-edge)
+   - [评估现有浏览器环境和浏览器需求](#evaluate-your-existing-browser-environment-and-browser-needs)
+  - [确保 Windows 10 设备就绪](#make-sure-your-windows-10-devices-are-ready)
+  - [确定部署方法](#determine-your-deployment-methodology)
+    - [按角色部署到最终用户](#deploy-to-end-users-by-role)
+    - [按站点部署到最终用户](#deploy-to-end-users-by-site)
+  - [进行站点发现](#do-site-discovery)
+    - [如果已经部署并配置了旧版 Microsoft Edge](#if-youve-already-deployed-and-configured-the-legacy-version-of-microsoft-edge)
+    - [如果已将 Internet Explorer 配置为默认浏览器](#if-youve-configured-internet-explorer-as-your-default-browser)
+    - [分析站点发现数据](#analyze-site-discovery-data)
+  - [确定渠道策略](#determine-your-channel-strategy)
+    - [多个设备和渠道](#multiple-devices-and-channels)
+  - [定义和配置策略](#define-and-configure-policies)
+    - [定义更新策略和策略](#define-your-update-strategy-and-policies)
+  - [执行应用兼容性测试](#do-app-compatibility-testing)
+    - [内部业务线应用测试](#internal-line-of-business-app-testing)
+    - [第三方应用支持](#third-party-app-support)
+  - [将 Microsoft Edge 部署到试点组](#deploy-microsoft-edge-to-a-pilot-group)
+  - [验证你的部署](#validate-your-deployment)
+  - [Microsoft Edge 的广泛部署](#broad-deployment-of-microsoft-edge)
+  - [另请参阅](#see-also)
 
 ## <a name="evaluate-your-existing-browser-environment-and-browser-needs"></a>评估现有浏览器环境和浏览器需求
 
@@ -59,7 +71,7 @@ ms.locfileid: "11978692"
 - 初始部署过程中配置哪些功能至关重要？
 - 解决任何已确定的兼容性或配置问题的过程是什么？
 
-你还应了解感兴趣的功能的**先决条件**，例如：
+还应了解 **感兴趣的** 功能的先决条件，例如：
 
 - [Windows Defender 应用程序防护](/windows/security/threat-protection/windows-defender-application-guard/reqs-wd-app-guard)
 - [Internet Explorer 模式](./edge-ie-mode.md)
@@ -141,7 +153,7 @@ Microsoft Edge 通过[多个渠道](./microsoft-edge-channels.md)进行发布。
 
 首先，考虑希望用户拥有的首次运行体验。 如果想要自动导入当前浏览器中的设置，请配置 [AutoImportAtFirstRun](./microsoft-edge-policies.md#autoimportatfirstrun) 策略。
 
-对于安全策略，我们建议从 Microsoft Edge 安全基准开始。 可以使用[推荐的安全配置基准设置](https://techcommunity.microsoft.com/t5/Microsoft-Security-Baselines/Security-baseline-DRAFT-for-Chromium-based-Microsoft-Edge/ba-p/949991)或使用 [Microsoft Intune](/intune/protect/security-baseline-settings-edge) 来应用安全基准。
+对于安全策略，我们建议从 Microsoft Edge 安全基准开始。 可以使用 Microsoft 安全基线博客或[](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines)安全基线博客来应用安全[Microsoft Intune。](/intune/protect/security-baseline-settings-edge)
 
 对于其他策略，我们建议查看 [Microsoft Edge](./microsoft-edge-policies.md) 和 [Microsoft Edge 更新](./microsoft-edge-update-policies.md)的策略配置。
 

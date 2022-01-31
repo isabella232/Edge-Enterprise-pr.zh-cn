@@ -3,19 +3,19 @@ title: 配置 Microsoft Edge 展台模式
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 11/30/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解展台模式功能以及如何配置 Microsoft Edge 展台模式的选项。
-ms.openlocfilehash: 38d9b143a910c1e475e5fc8413ef657de395a659
-ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
+ms.openlocfilehash: fa53f52dd9115d85da6fec6a75aefb972c9f6ece
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "12107557"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12298300"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>配置 Microsoft Edge 展台模式
 
@@ -73,7 +73,7 @@ Microsoft Edge 展台模式提供两种浏览器锁定体验，因此组织可�
 
 ## <a name="use-kiosk-mode-features"></a>使用展台模式功能
 
-对于数字/交互式标牌和公共浏览，可通过以下 Windows 10 命令行选项调用 Microsoft Edge 展台模式功能。
+Microsoft Edge"数字/交互式标志"和"公共浏览"Windows 10以下命令行选项调用展台模式功能。
 
 ### <a name="kiosk-mode-digitalinteractive-signage"></a>展台模式数字/交互式标牌
  
@@ -89,9 +89,9 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
 
 ### <a name="kiosk-mode-download-files-on-exit"></a>展台模式 退出时下载文件
 
-若要将 Edge 设置为在展台实例关闭时删除下载的文件，必须设置以下 2 个组策略：
+若要设置Microsoft Edge在展台实例关闭时删除下载的文件，必须配置以下两个组策略：
 - [退出时删除下载](./microsoft-edge-policies.md#kioskdeletedownloadsonexit) = 已启用
-- [设置下载目录](.//microsoft-edge-policies.md#downloaddirectory) = ${local_app_data}\Microsoft\Edge\KioskDownloads 
+- [设置下载目录](./microsoft-edge-policies.md#downloaddirectory) = ${local_app_data}\Microsoft\Edge\KioskDownloads 
 
 
 ### <a name="additional-command-line-options"></a>其他命令行选项
@@ -106,7 +106,7 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
   msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing --no-first-run
   ```
 
-- **--kiosk-idle-timeout-minutes=**： Change the time (in minutes) from the last user activity before Microsoft Edge kiosk mode resets the user's session by closing the browser. 注意：关闭后，此Microsoft Edge不会重新启动。 需要单独的技术（如分配的访问权限或 Shell 启动）才能在空闲超时后自动重启 Edge。 将以下示例中的“值”替换为分钟数。
+- **--kiosk-idle-timeout-minutes=**： Change the time (in minutes) from the last user activity before Microsoft Edge kiosk mode resets the user's session by closing the browser. 注意：关闭后，此Microsoft Edge不会重新启动它。 需要单独的技术（如分配的访问权限或 Shell 启动）才能在空闲超时后自动重启 Edge。 将以下示例中的“值”替换为分钟数。
 
    ```
    --kiosk-idle-timeout-minutes=value
@@ -167,9 +167,9 @@ Microsoft Edge 版本 90 展台模式提供了广泛的功能列表。 请参阅
 
 ### <a name="multi-app-kiosk"></a>多应用展台。
 
-可用 Windows 10 上的[多应用指派访问](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)（相当于旧版 Microsoft Edge 的“普通浏览”展台模式类型）运行 Microsoft Edge。 若要使用多应用分配的访问权限配置 Microsoft Edge，请按照有关[如何设置多应用展台](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)的说明进行操作。  (Stable 渠道的 AUMID Microsoft Edge为**Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe！MSEDGE**) 。
+可用 Windows 10 上的[多应用指派访问](/windows/configuration/lock-down-windows-10-to-specific-apps)（相当于旧版 Microsoft Edge 的“普通浏览”展台模式类型）运行 Microsoft Edge。 若要使用多应用分配的访问权限配置 Microsoft Edge，请按照有关[如何设置多应用展台](/windows/configuration/lock-down-windows-10-to-specific-apps)的说明进行操作。  (Stable 渠道的 AUMID Microsoft Edge为**Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe！MSEDGE**) 。
 
-将 Microsoft Edge 与多应用分配的访问权限一同使用时，可以将 Microsoft Edge 展台配置为使用 [Microsoft Edge 浏览器策略](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies)配置浏览体验，以满足你的独特要求。
+使用Microsoft Edge应用分配的访问权限时，你可以配置 Microsoft Edge kiosk 以使用[Microsoft Edge 浏览器](./microsoft-edge-policies.md)策略来配置浏览体验以满足你的独特要求。
 
 ### <a name="configure-using-windows-settings"></a>使用 Windows 设置进行配置
 
@@ -188,15 +188,15 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 
    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-1-assigned-access.png" alt-text="设置具有分配的访问权限的展台":::
 
-4. 在“**设置展台** ”页面上，单击“ **入门**”。
+4. 在"**设置展台"页面上**   ，选择" **开始使用"。**
 
    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-2-get-started.png" alt-text="展台页面 - 入门":::
 
-5. 键入名称以创建新的展台帐户，或从填充的下拉列表中选择现有帐户，然后单击“ **下一步**”。
+5. 键入名称以创建新的展台帐户，或从填充的下拉列表中选择现有帐户，然后选择下一 **步**。
 
    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-3-create-account.png" alt-text="展台模式 - 创建帐户":::
 
-6. 在“**选择展台应用** ”页面上，选择“**Microsoft Edge**”，然后单击“ **下一步**”。
+6. 在"**选择展台应用**"   页面上，**** 选择Microsoft Edge"，然后选择"下一 **步"。**
 
    > [!NOTE]
    > 这仅适用于 Microsoft Edge Dev、Beta、Stable 渠道。
@@ -219,7 +219,7 @@ Windows 设置是设置一个或两个单应用展台设备的最简单方法。
 
     :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-7-enter-idle-time.png" alt-text="展台模式 - 输入空闲时间":::
 
-11. 单击“ **下一步**”。
+11. 选择“ **下一步**”。
 12. 关闭“ **设置** ”窗口，保存并应用你的选择。
 
     :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="展台模式 - 完成设置":::

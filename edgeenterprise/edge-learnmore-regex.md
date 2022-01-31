@@ -1,21 +1,21 @@
 ---
 title: 正则表达式 2 语法
 ms.author: comanea
-author: AndreaLBarr
+author: dan-wesley
 manager: seanlyn
-ms.date: 08/12/2021
+ms.date: 01/11/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 正则表达式 2 语法
-ms.openlocfilehash: 78f21846c142d67470cd421a34baafa9d0021bd0
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: bdb49090a4d9b0611d3485570757fd86946c4ca5
+ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978967"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "12298270"
 ---
 # <a name="regular-expression-2-re2h-syntax"></a>正则表达式 2 (re2.h) 语法
 
@@ -27,13 +27,13 @@ ms.locfileid: "11978967"
 
 元字符 _`\`_、_+_ 和 _?_ 是重复运算符： *e<sub>1</sub>* _`\`_ 匹配零个或多个（可能是不同的）字符串序列，其中每个字符串匹配 *e<sub>1</sub>*；*e<sub>1</sub>* _+_ 匹配一个或多个；*e<sub>1</sub>* _?_ 匹配零个或一个。
 
-运算符的优先级从最弱到最强排序，依次是替换、连接和重复运算符。 可采用显式括号强制改变运算顺序，就像在算术表达式中一样。 一些示例 _：ab|cd_ 等效于 (_ ab) | (cd) _ ; _`ab\`_ 等效于 _`a(b\)`_ 。
+运算符的优先级从最弱到最强排序，依次是替换、连接和重复运算符。 显式括号可用于强制不同的含义，就像在算术表达式中一样。 一些示例 _：ab|cd_ 等效于 (_ ab) | (cd) _ ; _`ab\`_ 等效于 _`a(b\)`_ 。
 
-目前所介绍的语法大部分为传统的 Unix _egrep_ 正则表达式语法。 此子集足以描述所有常规语言：笼统来讲，常规语言是一组字符串，可在单个传递文本的过程中仅使用固定数量的内存进行匹配。 较新的正则表达式功能（尤其是 Perl 和那些已复制的功能）添加了许多新的运算符和转义序列，令正则表达式更简洁，有时含义模糊，但通常功能没有增强。
+目前所介绍的语法大部分为传统的 Unix _egrep_ 正则表达式语法。 此子集足以描述所有常规语言。 常规语言是一组字符串，只需使用固定的内存量通过文本一次传递就可以匹配。 较新的正则表达式 (尤其是 Perl，以及那些已复制它的语言) 添加了许多新的运算符和转义序列。 这些更改使正则表达式更简洁，有时更模糊，但功能并不强大。
 
 本页列出了 RE2 接受的正则表达式语法。
 
-还列出了 PCRE、PERL 和 VIM 接受的一些语法。
+它还列出了 PCRE、PERL 和 VIM 接受的一些语法。
 
 ## <a name="syntax-tables"></a>语法表
 
