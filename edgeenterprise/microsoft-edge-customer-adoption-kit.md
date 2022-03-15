@@ -3,19 +3,19 @@ title: Microsoft Edge 客户采用材料
 ms.author: collw
 author: AndreaLBarr
 manager: seanlynd
-ms.date: 06/29/2021
+ms.date: 02/24/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 客户采用材料
-ms.openlocfilehash: d3c3fc426cf67e054aa37cabb3ac1ca42c1ab5d9
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 36e2a0495eca2e860261aaf2ac8d2bb72e582f07
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979009"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445866"
 ---
 # <a name="customer-adoption-materials-for-microsoft-edge"></a>Microsoft Edge 的客户采用材料
 
@@ -96,4 +96,5 @@ ms.locfileid: "11979009"
 
 ## <a name="see-also"></a>另请参阅
 
+- [Microsoft Edge设置指南](https://assistants.microsoft.com/microsoftedgesetupguide)
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)

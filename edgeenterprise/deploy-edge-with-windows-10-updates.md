@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 Windows 10 更新部署 Microsoft Edge
-ms.openlocfilehash: 9102ef37c6a5329a5cba79ed976237d7fd7e2063
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 1f3a99259cb28c46e4f6f30de05fade6ac158336
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978691"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445826"
 ---
 # <a name="deploy-microsoft-edge-with-windows-10-updates"></a>使用 Windows 10 更新部署 Microsoft Edge
 
@@ -23,7 +23,14 @@ ms.locfileid: "11978691"
 
 ## <a name="for-windows-10-release-20h2"></a>对于 Windows 10 版本 20H2
 
-Windows 10 版本 20H2 已将 Microsoft Edge 安装为其默认浏览器。
+Windows 10 20H2 及更高版本Microsoft Edge预安装为默认浏览器。 但是，Windows 10 20H2 附带的 Edge 版本 84 和 Windows 10 21H2 附带的 Edge 版本 92 现已过时。 尽管Microsoft Edge在用户登录后会自动将自身更新到较新版本，但由于更新的时间取决于各种因素，因此这有些不成功。 对于希望获得更大控制权并且希望确保 Edge (Stable 渠道) 在用户登录之前更新到最新版本的组织，以下 PowerShell 命令可用于在 Windows OOBE 期间强制进行边缘更新。
+
+`Start-Process -FilePath "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" -argumentlist "/silent /install appguid={56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}&appname=Microsoft%20Edge&needsadmin=True"`
+
+如果使用 Windows Autopilot，则有可能使用 [Microsoft Win32](/mem/intune/apps/apps-win32-prepare) 内容准备工具将此脚本打包为 .intunewin 文件。 然后，可以将它设置为 ESP 注册状态页的必需 (ESP) 应用。
+
+> [!NOTE]
+> 如果当前利用目标通道覆盖或[](/deployedge/microsoft-edge-update-policies#target-channel-override)目标版本覆盖等[](/deployedge/microsoft-edge-update-policies#targetversionprefix)策略保留在较旧版本的边缘上，请注意，上述脚本不会考虑任何策略，只会更新到最新版本。 默认情况下，Edge 不会降级自身，包括以后收到此类策略后。
 
 ## <a name="for-windows-10-releases-rs4-through-20h1"></a>适用于 Windows 10 版本 RS4 至 20H1
 

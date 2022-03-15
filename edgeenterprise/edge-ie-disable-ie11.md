@@ -3,19 +3,19 @@ title: 禁用 Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 07/09/2021
+ms.date: 02/15/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge Internet Explorer 11 和使用Internet Explorer模式。
-ms.openlocfilehash: b70da0ff7437d1f5e70cec40e31211046a66205a
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: c5452745e362ffc71842c7b5a25b84cea48816d6
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978940"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445806"
 ---
 # <a name="disable-internet-explorer-11"></a>禁用 Internet Explorer 11
 
@@ -30,13 +30,14 @@ ms.locfileid: "11978940"
 
 - Windows 更新
 
+  - Windows 11
   - Windows 10，版本 21H1 或更高版本
-  - Windows 10，版本 2004;Windows服务器版本 2004;Windows 10，版本 20H2;Windows服务器版本[20H2：KB4598291](https://support.microsoft.com/topic/february-2-2021-kb4598291-os-builds-19041-789-and-19042-789-preview-6a766199-a4f1-616e-1f5c-58bdc3ca5e3b)或更高版本
-  - Windows 10版本[1909：KB4598298](https://support.microsoft.com/topic/january-21-2021-kb4598298-os-build-18363-1350-preview-02dfd9ba-91a2-1b82-dede-42f288c02511)或更高版本
-  - WindowsServer 2019;Windows 10 企业版 2019 [LTSC：KB4598296](https://support.microsoft.com/topic/january-21-2021-kb4598296-os-build-17763-1728-preview-4c0931ff-45b7-ff59-5e00-c03b5afb363d)或更高版本
-  - Windows Server 2016;[Windows 10 企业版 2016 长期服务版：KB4601318](https://support.microsoft.com/topic/february-9-2021-kb4601318-os-build-14393-4225-c5e3de6c-e3e6-ffb5-6197-48b9ce16446e)或更高版本
-  - [Windows 10 企业版 2015 长期服务：KB4601331](https://support.microsoft.com/office/february-9-2021%e2%80%94kb4601331-os-build-10240-18842-6227d078-fef3-8d67-27e0-1882e6cb79ff?ui=en-US&rs=en-US&ad=US)或更高版本
-  - Windows 8.1;Windows Server 2012[R2：KB4601384](https://support.microsoft.com/topic/february-9-2021-kb4601384-monthly-rollup-16bdbb75-dd4b-2910-abc5-7891c9756b96)或更高版本
+  - Windows 10，版本 2004;Windows Server 版本 2004;Windows 10，版本 20H2;Windows Server 版本 20H2：[KB4598291](https://support.microsoft.com/topic/february-2-2021-kb4598291-os-builds-19041-789-and-19042-789-preview-6a766199-a4f1-616e-1f5c-58bdc3ca5e3b) 或更高版本
+  - Windows 10版本 1909：[KB4598298](https://support.microsoft.com/topic/january-21-2021-kb4598298-os-build-18363-1350-preview-02dfd9ba-91a2-1b82-dede-42f288c02511) 或更高版本
+  - Windows Server 2019;Windows 10 企业版 2019 LTSC[：KB4598296](https://support.microsoft.com/topic/january-21-2021-kb4598296-os-build-17763-1728-preview-4c0931ff-45b7-ff59-5e00-c03b5afb363d) 或更高版本
+  - Windows Server 2016;Windows 10 企业版 2016 长期服务版：[KB4601318](https://support.microsoft.com/topic/february-9-2021-kb4601318-os-build-14393-4225-c5e3de6c-e3e6-ffb5-6197-48b9ce16446e) 或更高版本
+  - Windows 10 企业版 2015 长期服务：[KB4601331](https://support.microsoft.com/office/february-9-2021%e2%80%94kb4601331-os-build-10240-18842-6227d078-fef3-8d67-27e0-1882e6cb79ff?ui=en-US&rs=en-US&ad=US) 或更高版本
+  - Windows 8.1;Windows Server 2012 R2：[KB4601384](https://support.microsoft.com/topic/february-9-2021-kb4601384-monthly-rollup-16bdbb75-dd4b-2910-abc5-7891c9756b96) 或更高版本
   - [Windows Server 2012：KB4601348](https://support.microsoft.com/topic/february-9-2021-kb4601348-monthly-rollup-2c338c0c-73d6-fb80-cc91-f1a86e80db0c)或更高版本
   
 - Microsoft Edge 稳定渠道

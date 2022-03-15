@@ -3,19 +3,19 @@ title: Microsoft Edge 和 Microsoft Defender 应用程序防护
 ms.author: srugh
 author: AndreaLBarr
 manager: seanlyn
-ms.date: 06/29/2021
+ms.date: 03/07/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
-ms.openlocfilehash: 4d9f5b0590199a9938b19e60fdd38e7c0098ac76
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: fd5293dae19be2aa0939e3a14eeb118907ad375a
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978973"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445486"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Microsoft Edge 对 Microsoft Defender 应用程序防护的支持
 
@@ -129,7 +129,7 @@ ms.locfileid: "11978973"
 
 - [系统要求](/windows/security/threat-protection/microsoft-defender-application-guard/reqs-md-app-guard)
 - [安装 Microsoft Defender 应用程序防护](/windows/security/threat-protection/microsoft-defender-application-guard/install-md-app-guard)
-- [配置 Microsoft Defender 组策略设置](/windows/security/threat-protection/microsoft-defender-application-guard/configure-md-app-guard)
+- [配置应用程序防护组策略设置](/windows/security/threat-protection/microsoft-defender-application-guard/configure-md-app-guard)
 - [测试应用程序防护](/windows/security/threat-protection/microsoft-defender-application-guard/test-scenarios-md-app-guard)
 
 ## <a name="frequently-asked-questions"></a>常见问题
@@ -150,7 +150,7 @@ IE 模式支持应用程序防护功能，但我们预计不会在 IE 模式下�
 
 ### <a name="can-employees-copy-and-paste-between-the-host-device-and-the-application-guard-edge-session"></a>员工是否可以在主机设备与应用程序防护 Edge 会话之间进行复制和粘帖操作？
 
-根据组织的设置，员工可以在隔离容器 (.bmp) 和粘贴图像和文本。
+根据组织的设置，员工可以将图像 (.bmp) 复制和粘贴到隔离容器和从隔离容器复制和粘贴文本。
 
 ### <a name="why-dont-employees-see-their-favorites-in-the-application-guard-edge-session"></a>为什么员工在应用程序防护边缘会话中看不到他们的收藏夹？
 

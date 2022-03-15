@@ -3,24 +3,24 @@ title: 配置 IE 模式策略
 ms.author: collw
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/23/2021
+ms.date: 03/01/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 配置 IE 模式策略
-ms.openlocfilehash: 7ca8dffb0bc20acf954cf0f272f3894b39355846
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: de1165da7e2f86a8865db396fab6c640b9c96805
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978968"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445625"
 ---
 # <a name="configure-ie-mode-policies"></a>配置 IE 模式策略
 
 >[!Note]
-> Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停止支持（若要查看包含内容的列表，[请参阅常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)）。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+> 11 Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停用支持。 有关作用域内内容的列表，请参阅 Internet Explorer [11 桌面应用停用常见问题解答](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)。 若要设置Microsoft Edge，请参阅Microsoft Edge[设置指南](https://go.microsoft.com/fwlink/?linkid=2188234)。 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文介绍了如何配置 IE 模式策略。
 
@@ -52,7 +52,7 @@ ms.locfileid: "11978968"
 5. 选中**已启用**。
 6. 在**选项**下，将下拉列表值设置为
    -  **Internet Explorer 模式**：如果希望在 Microsoft Edge 中的 IE 模式下打开网站
-   -  **Internet Explorer 11** 如果您希望网站在独立的 Internet Explorer 11 窗口中打开 (此选项在 2022 年 6 月 15 日之后将停用 Internet Explorer 11 桌面应用程序并退出支持。  2022 年 6 月 15 日之后，当 IE11 不再可用时，此选项的行为与 Internet Explorer **模式** 选项相同。)   
+   -  **Internet Explorer 11** 如果您希望网站在独立的 Internet Explorer 11 窗口中打开 (此选项在 2022 年 6 月 15 日之后将停用 Internet Explorer 11 桌面应用程序并退出支持，将不受支持。  2022 年 6 月 15 日之后，当 IE11 不再可用时，此选项的行为与 Internet Explorer **模式** 选项相同。)   
    -  **无**：如果希望阻止用户通过 edge://flags 或命令行来配置 Internet Explorer 模式
 
    > [!NOTE]
@@ -75,7 +75,7 @@ ms.locfileid: "11978968"
     > [!NOTE]
     > 配置 Microsoft Edge 策略并不是一项强制性要求。 许多组织将此策略用于重写目的，便于他们使用 IE 策略将当前网站列表定位到所有用户，并使用 Microsoft Edge 策略更轻松地将更新后的版本定位到试点网站用户。
 
-有关模式站点列表Enterprise，请参阅使用Enterprise[站点列表管理器。](/deployedge/edge-ie-mode-site-list-manager)
+有关模式站点列表Enterprise，请参阅使用 Enterprise [站点列表管理器](/deployedge/edge-ie-mode-site-list-manager)。
 
 
 ### <a name="configure-using-the-use-the-enterprise-mode-ie-website-list-policy"></a>使用“使用企业模式 IE 网站列表”策略进行配置
@@ -140,7 +140,10 @@ IE 模式可使用为 Internet Explorer 配置 Enterprise Site List 的现有策
    - Microsoft Edge Dev 版本 77 或更高版本
    - Microsoft Edge Canary 版本 77 或更高版本
    - Microsoft Edge 版本 45 或更低版本
-9. 单击**确定**或**应用**以保存这些设置。
+9. 单击**确定**或**应用**以保存这些设置。  
+
+    > [!TIP]
+    > 若要查找需要添加到 IE 模式站点列表中的站点，请参阅配置 [IE 模式Microsoft Edge](https://go.microsoft.com/fwlink/?linkid=2188235)指南。 如果你已有站点列表，本指南中的工具将帮助你将列表应用到正确的用户。
 
 ## <a name="see-also"></a>另请参阅
 

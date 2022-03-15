@@ -3,30 +3,168 @@ title: Microsoft Edge 稳定渠道的存档发行说明
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/06/2022
+ms.date: 03/07/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 稳定渠道的存档发行说明
-ms.openlocfilehash: 0e0239e6cf73cbad694613d36eb0fed5b71a3d65
-ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.openlocfilehash: 0bbe93e8758e093738c679aea9ce769975f47116
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "12298200"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445846"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 稳定渠道的存档发行说明
 
 这些发行说明提供有关 Microsoft Edge Stable 渠道中包含的新功能和非安全更新的信息。 [此处](microsoft-edge-relnotes-security.md)列出所有安全更新。
+
+## <a name="version-960105429-november-19"></a>版本 96.0.1054.29：11 月 19 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#november-19-2021) 列出了稳定渠道安全性更新。
+
+### <a name="feature-updates"></a>功能更新
+
+- **公共预览版中适用于 IE 模式的云站点列表管理。** 通过云站点列表管理，可以在云中管理 IE 模式的网站列表，而无需本地基础结构来托管组织的站点列表。 您可以使用云站点列表管理中心中的Microsoft Edge网站列表体验来访问Microsoft 365 管理管理功能。 若要了解更多信息，请参阅适用于 [IE 模式的云站点列表管理 (公共预览) ](./edge-ie-mode-cloud-site-list-mgmt.md) 文章。
+  
+- **改进了 IE 模式和新式浏览器之间的切换。** 从此版本的 Microsoft Edge 开始，Microsoft Edge 和 Internet Explorer 模式之间的导航将包括表单数据和其他 HTTP 标头。 引用者标头、帖子数据、表单数据和请求方法将跨这两种体验正确转发。 您可以使用 InternetExplorerIntegrationComplexNavDataTypes 策略指定应包含哪些数据类型。 有关详细信息，请参阅此常见问题解答：[我的应用程序需要在 IE 模式和 IE 模式之间传输 POST Microsoft Edge。这是否受支持？](./edge-ie-mode-faq.md#my-application-requires-transferring-post-data-between-ie-mode-and-microsoft-edge-is-this-supported)
+
+- **使用 Microsoft Edge WSUS 更新 WebWiew2。** 使用 WSUS Windows Server Update Services (更新) IT 管理员Microsoft Edge还将能够使用 WSUS Microsoft Edge WebView2。 此功能使管理员能够更轻松地为脱机设备提供服务。
+
+- **Server 的 WSUS 更新。** 适用于 Microsoft Edge 渠道（ (Stable、Beta 和 Dev) ）的 WSUS 和目录更新现在将适用于安装了 Microsoft Edge 的 Windows Server SK，包括 Windows Server 2022。 若要详细了解如何为 WSUS 配置 WSUS Microsoft Edge，请参阅 [Update Microsoft Edge](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge?bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json&toc=https://docs.microsoft.com/DeployEdge/toc.json#update-microsoft-edge)。
+
+- **Microsoft Edge自动启动协议组件。** Microsoft Edge 96 引入了自动启动协议组件，该组件包含自动允许或阻止[](https://textslashplain.com/2019/07/16/updating-browsers-quickly-flags-respins-and-components/)方案原点词典的列表。 这样可保护客户免受危险方案 (例如，具有 0 天) 的协议处理程序，同时消除已知安全配对 (例如，Teams 网站可以打开 Teams 客户端应用) 。 如果出于某种原因，您不希望 Microsoft Edge 阻止易受攻击的协议处理程序并允许已知安全配对、使用 *edge://settings/content/applicationLinks* 中的切换或将 [AutoLaunchProtocolsComponentEnabled](/deployedge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) 策略设置为 False。
+
+- **直接通过协议 (PWA) 启动渐进式 Web 应用。** 让已安装的 PWA 处理使用特定协议的链接，实现更加集成的体验。
+
+- **快速Office浏览器中查看文件。** 用户现在可以查看 Office 文件，包括文档、电子表格和演示文稿，只需在浏览器中浏览 Microsoft Edge 即可查看这些文件，而无需下载文件，然后在其他应用程序中打开它。 对于托管在 OneDrive 或 SharePoint 上的 Office，文件打开体验不会SharePoint。
+  
+- **PDF 上的任意多边形突出显示。** 通过添加任意格式突出显示器改进了 PDF 查看和标记体验。 你可以突出显示你无法访问的 PDF 中的部分和扫描过的文档。
+
+- **硬件强制执行的堆栈保护。** Microsoft Edge支持更安全的浏览模式，该模式对 Intel 第 11 代受支持硬件上的浏览器进程使用依赖于硬件 (流。 或 AMD 为) 。 注意：因为这是受控功能推出，你可能不会注意到此功能在所有设备上都已启用。 可以通过使用组策略操作 IFEO 中的映像文件执行选项 (或禁用硬件) 堆栈保护。
+
+- **用于错误等同网站的新警告对话框。** 浏览器将在 URL 与其他网站非常相似的一些网站上显示警告。 此 UI 使用客户端启发来提醒用户有关可能欺骗热门网站的网站。 有关详细信息，请参阅 [什么是错位？](https://support.microsoft.com/topic/what-is-typosquatting-54a18872-8459-4d47-b3e3-d84d9a362eb0)。
+  
+- **添加到工具栏中迷你工具栏的沉浸式阅读器。**  我们将字典功能添加到浮动工具栏，以帮助你阅读和研究。 您将能够在拼写检查体验中更快速、更轻松地查找单词的拼写沉浸式阅读器定义。
+  
+- **了解如何使用数学规划求解求解数学问题。** 我们很高兴地宣布，您可以使用数学规划求解在 Microsoft Edge中获取有关各种数学概念的帮助。 这些概念包括从算术和二次方等式到三角法和计算。 利用数学规划求解，您可以拍摄手写或打印的数学问题的图片，然后提供一个即时解决方案以及分步说明，以帮助您了解如何在没有帮助的情况下找到解决方案。 数学规划求解还附带数学键盘，可用于轻松键入数学问题。 此键盘无需四处搜索传统键盘来查找所需的数学字符。 解决你的问题后，数学规划求解提供了一些选项，可以继续学习测验、工作表和视频教程。
+
+- **对 WebRTC 的拆分隧道 VPN 支持。** 允许企业客户从 VPN 拆分隧道中获益，该隧道适用于 Microsoft Edge。 您可以使用 [WebRtcRespectOsRoutingTableEnabled 策略启用](/deployedge/microsoft-edge-policies#webrtcrespectosroutingtableenabled) 此功能。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [ApplicationGuardUploadBlockingEnabled](/DeployEdge/microsoft-edge-policies#applicationguarduploadblockingenabled) - 防止在应用程序防护中上传文件
+- [AudioProcessHighPriorityEnabled](/DeployEdge/microsoft-edge-policies#audioprocesshighpriorityenabled) - 允许音频进程在音频流上以高于正常Windows
+- [AutoLaunchProtocolsComponentEnabled](/DeployEdge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) - 启用自动启动协议组件
+- [EfficiencyMode](/DeployEdge/microsoft-edge-policies#efficiencymode) - 配置效率模式应处于活动状态时
+- [ForceSyncTypes](/DeployEdge/microsoft-edge-policies#forcesynctypes) - 配置同步包含的类型列表
+- [InternetExplorerIntegrationComplexNavDataTypes](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcomplexnavdatatypes) - 配置在进入或退出表单模式时是否发送表单数据和 HTTP Internet Explorer标头
+- [InternetExplorerModeToolbarButtonEnabled](/DeployEdge/microsoft-edge-policies#internetexplorermodetoolbarbuttonenabled) - 在工具栏Internet Explorer模式按钮中显示重新加载
+- [PrintPostScriptMode](/DeployEdge/microsoft-edge-policies#printpostscriptmode) - 打印PostScript模式
+- [PrintRasterizePdfDpi](/DeployEdge/microsoft-edge-policies#printrasterizepdfdpi) - 打印 Rasterize PDF DPI
+- [RendererAppContainerEnabled](/DeployEdge/microsoft-edge-policies#rendererappcontainerenabled) - 在应用容器中启用呈现器
+- [SharedLinksEnabled](/DeployEdge/microsoft-edge-policies#sharedlinksenabled) - 在历史记录中显示Microsoft 365应用共享的链接
+- [TyposquattingCheckerEnabled](/DeployEdge/microsoft-edge-policies#typosquattingcheckerenabled) - 配置 Edge TyposquattingChecker
+
+## <a name="version-950102053-november-12"></a>版本 95.0.1020.53：11 月 12 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-950102044-november-4"></a>版本 95.0.1020.44：11 月 4 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-94099258-october-30"></a>版本 94.0.992.58：10 月 30 日
+
+修复了扩展稳定版的各种 bug 和性能问题。
+
+## <a name="version-950102040-october-29"></a>版本 95.0.1020.40：10 月 29 日
+
+> [!IMPORTANT]
+> 此次更新包含 [CVE-2021-38000](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38000) 和 [CVE-2021-38003](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38003) 的修复程序，Chromium 团队已报告该程序存在在野攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+[此处](/deployedge/microsoft-edge-relnotes-security#october-29-2021) 列出了稳定频道的安全更新。
+
+## <a name="version-950102038-october-28"></a>版本 95.0.1020.38：10 月 28 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-94099257-october-27"></a>版本 94.0.992.57：10 月 27 日
+
+修复了扩展稳定版的各种 bug 和性能问题。
+
+## <a name="version-950102030-october-21"></a>版本 95.0.1020.30: 10 月 21 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#october-21-2021)列出了稳定频道的安全更新。
+
+### <a name="feature-updates"></a>功能更新
+
+- **在 Microsoft Edge 中查看对 SharePoint Online 库的文件资源管理器支持。**  现在可以在 SharePoint Online 新式文档库上启用“文件资源管理器视图”功能。 若要使此体验可见且适用于用户，需要启用 Microsoft Edge 策略 [在 Microsoft Edge 中为 SharePoint 页面配置“文件资源管理器视图”功能](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)，并更新 SharePoint Online 租户配置。 了解更多信息: [在 Microsoft Edge 中使用“文件资源管理器”查看 SharePoint 文件](/SharePoint/sharepoint-view-in-edge)。
+
+- **Intranet 区域文件 URL 链接将在 Windows 文件资源管理器中打开。**  你可以允许文件 URL 链接到源自 Intranet 区域 HTTPS 网站的 Intranet 区域文件，以打开该文件或目录的 Windows 文件资源管理器。 可以使用 [IntranetFileLinksEnabled](/deployedge/microsoft-edge-policies#intranetfilelinksenabled) 策略启用此体验。
+
+- **对下载体验进行的改进。** 对下载用户体验的支持已扩展到渐进式 Web 应用程序 PWA 和 WebView。 我们还将开始支持拖放到文件资源管理器和桌面。
+
+- **继续你在 PDF 文件上的工作。**  现在，你将能够从上次关闭 PDF 文档的位置继续阅读。
+
+- **当笔记本电脑进入延长电池使用时间模式时，效率模式会延长延长电池寿命。**  当笔记本电脑进入电池保护模式时，效率模式将变得活跃，以允许浏览器管理资源使用状态来延长机器的电池寿命。 当效率模式变为活动状态时，将有四个选项: 拔出电源和电池电量不足、不拔出电源、始终和从不。 请注意: 这是限制性功能推出的功能。 如果无法看到此功能，请在我们稍后继续推出时再返回查看。
+
+- **添加到 PDF 文档的自由格式文本框。** 我们现在支持向 PDF 文档添加自由格式文本框。 可以使用这些框来填写表单并添加可见笔记。
+
+- **添加到集合的引文支持。**  我们改进了集合体验，尤其是对于学生和研究人员。 集合将开始支持引文和阅读列表。
+
+- **更快地更新密码，并减少单击次数。** 现在，浏览器将直接转到给定网站的“更改密码”页面。 此操作可节省时间和单击次数，无需手动导航到页面。 在进入此页面上后，浏览器还将自动填充现有密码，并建议使用强大且唯一的新密码。  请注意: 此功能目前仅在有限数量的站点上可用。
+
+- **自动创建账户。** 我们现在在注册页面上提供额外的支持，允许一键创建在线账户。 可以在点击报名表中任何表单字段时，选择建议下拉来执行此操作。 这样做不仅会显示与注册表单相关的信息，而且还会显示一个强大的新密码建议。 选择后，所有相关信息将填充在相应的字段中，建议的密码将在提交到网站时自动存储。 请注意: 此功能目前仅在有限数量的站点上可用。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [BrowserLegacyExtensionPointsBlockingEnabled](/DeployEdge/microsoft-edge-policies#browserlegacyextensionpointsblockingenabled) 启用浏览器旧扩展点阻止
+- [CrossOriginWebAssemblyModuleSharingEnabled](/DeployEdge/microsoft-edge-policies#crossoriginwebassemblymodulesharingenabled) 指定 WebAssembly 模块是否可以跨源发送
+- [DisplayCapturePermissionsPolicyEnabled](/DeployEdge/microsoft-edge-policies#displaycapturepermissionspolicyenabled) 指定是否检查或跳过显示捕获权限策略
+- [InternetExplorerIntegrationWindowOpenHeightAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) 配置来自 IE 模式页面与 Edge 模式页面的 window.open 高度像素调整
+- [InternetExplorerIntegrationWindowOpenWidthAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenwidthadjustment) 配置来自 IE 模式页面与 Edge 模式页面的 window.open 宽度像素调整
+- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled) 允许在 Windows 文件资源管理器中打开来自 Microsoft Edge 的 Intranet 区域文件 URL 链接
+- [NewSmartScreenLibraryEnabled](/DeployEdge/microsoft-edge-policies#newsmartscreenlibraryenabled) 启用新的 SmartScreen 库
+- [ShadowStackCrashRollbackBehavior](/DeployEdge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) 配置 ShadowStack 故障回滚行为
+- [VisualSearchEnabled](/DeployEdge/microsoft-edge-policies#visualsearchenabled) 已启用视觉搜索
+
+#### <a name="obsoleted-policies"></a>已过时的策略
+
+- [InternetExplorerIntegrationTestingAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed)：允许 Internet Explorer 模式测试
+- [LegacySameSiteCookieBehaviorEnabled](/DeployEdge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled) 启用默认的旧 SameSite Cookie 行为设置
+
+## <a name="version-94099250-october-14"></a>版本 94.0.992.50：10 月 14 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-94099247-october-11"></a>版本 94.0.992.47：10 月 11 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#october-11-2021) 列出了稳定频道的安全更新。
+
+## <a name="version-94099238-october-1"></a>版本 94.0.992.38：10 月 1 日
+
+> [!Important]
+> 此次更新包含 [CVE-2021-37975](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37975) 和 [CVE-2021-37976](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37976) 的修复程序，Chromium 团队已报告该程序存在在野攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+[此处](/deployedge/microsoft-edge-relnotes-security#october-01-2021) 列出了稳定频道的安全更新。
+
+## <a name="version-94099237-september-30"></a>版本 94.0.992.37：9 月 30 日
+
+修复了各种 bug 和性能问题。
 
 ## <a name="version-94099231-september-24"></a>版本 94.0.992.31：9 月 24 日
 
 > [!Important]
 > 此更新包含 [CVE-2021-37973](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37973) 的修补程序，Chromium 团队已将其报告为具有野外漏洞。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
-[此处](/deployedge/microsoft-edge-relnotes-security#september-24-2021)列出了稳定频道的安全更新。
+[此处](/deployedge/microsoft-edge-relnotes-security#september-24-2021) 列出了稳定频道的安全更新。
 
 ### <a name="feature-updates"></a>功能更新
 
@@ -171,7 +309,7 @@ ms.locfileid: "12298200"
 
 **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 [InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 [InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 策略调整将站点保留在本地站点列表中的天数。 请注意，对于端到端体验，Windows 10 版本 1909 需要 KB5003698 或更高版本; Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更高版本。 有关详细信息，请参阅 [ IE 模式下的本地站点列表](/deployedge/edge-ie-mode-local-site-list)。
 
-**MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用[此指南](/docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
+**MHTML 文件将默认以 Internet Explorer 模式打开**。 从 Microsoft Edge 92 稳定版开始，MHTML 文件类型将在 Microsoft Edge 上以 Internet Explorer 模式自动打开，而不是在 Internet Explorer (IE11) 打开。 在用浏览器查看 Outlook 电子邮件时会经常遇到这种情况。 此更改仅在 IE11 是此文件类型的默认处理程序时发生。 如果想要更改此设置，可以在安装稳定版本 92 更新之前使用[此指南](/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)。
 
 **"禁用开发人员模式扩展"警告可以消除 2 周**。 从 Microsoft Edge 版本 92 开始，可以在警告对话框下拉列表中选择将"禁用开发人员模式扩展"警告暂停 2 周。
 
@@ -246,7 +384,7 @@ ms.locfileid: "12298200"
 ## <a name="version-91086448-june-11"></a>版本 91.0.864.48：6 月 11 日
 
 > [!Important]
->此更新包含 [CVE-2021-30551](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30551) 的修补程序，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide/vulnerability/ADV200002)。
+>此更新包含 [CVE-2021-30551](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30551) 的修补程序，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide/vulnerability/ADV200002)。
 
 [此处](/deployedge/microsoft-edge-relnotes-security#june-11-2021) 列出了稳定频道的安全更新。
 
@@ -386,7 +524,7 @@ ms.locfileid: "12298200"
 ## <a name="version-89077477-april-14"></a>版本 89.0.774.77：4 月 14 日
 
 > [!Important]
->此更新包含[CVE-2021-21206](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21206)和[CVE-2021-21220](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21220)的修补程序，Chromium 团队已报告它们具有通配符攻击。  有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+>此更新包含 [CVE-2021-21206](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21206) 和 [CVE-2021-21220](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21220) 的修补程序，Chromium 团队已报告它们具有通配符攻击。  有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
 [此处](/deployedge/microsoft-edge-relnotes-security#april-14-2021) 列出了稳定频道的安全更新。
 
@@ -871,8 +1009,7 @@ ms.locfileid: "12298200"
 - [AutoOpenAllowedForURLs](./microsoft-edge-policies.md#autoopenallowedforurls) - AutoOpenFileTypes 可应用的 URL。
 - [AutoOpenFileTypes](./microsoft-edge-policies.md#autoopenfiletypes) - 下载时自动打开的文件类型列表。
 - [DefaultSearchProviderContextMenuAccessAllowed](./microsoft-edge-policies.md#defaultsearchprovidercontextmenuaccessallowed) - 允许默认搜索提供程序中的上下文菜单搜索访问。
-- [EnableSha1ForLocalAnchors](./microsoft-edge-policies.md#enablesha1forlocalanchors) - 允许由本地信任定位点颁发的 SHA - 1 签名证书。
-- [ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](./microsoft-edge-policies.md#exemptdomainfiletypepairsfromfiletypedownloadwarnings) - 对域上指定的文件类型，禁用基于文件类型扩展名下载的警告。
+- [EnableSha1ForLocalAnchors](./microsoft-edge-policies.md#enablesha1forlocalanchors) - 允许由本地信任定位点颁发的 SHA - 1 签名证书。 <!--- [ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](./microsoft-edge-policies.md#exemptdomainfiletypepairsfromfiletypedownloadwarnings) - Disable download file type extension-based warnings for specified file types on domains. -->
 - [IntensiveWakeUpThrottlingEnabled](./microsoft-edge-policies.md#intensivewakeupthrottlingenabled) - 控制 IntensiveWakeUpThrottling 功能。
 - [NewTabPagePrerenderEnabled](./microsoft-edge-policies.md#newtabpageprerenderenabled) - 启用新选项卡页面的预加载，以便快速呈现。
 - [NewTabPageSearchBox](./microsoft-edge-policies.md#newtabpagesearchbox) - 配置新的选项卡页面搜索框体验。
@@ -1059,7 +1196,7 @@ ms.locfileid: "12298200"
 
 - 许多开发工具更新，包括新的远程调试支持、UI 改进等。 有关详细信息，请参见[开发工具 (Microsoft Edge 83) 中的新增功能](/microsoft-edge/devtools-guide-chromium/whats-new/2020/03/devtools)。
 
-- MCAS (Microsoft Cloud Access Security) 警告方案现已推出。 有了它，管理员可设置警告（“MCAS 阻止”的一种新类别），用户可在警告中覆盖“MCAS 阻止”页面。 MDATP E5 阻止功能已与 Microsoft Edge 中的 SmartScreen 阻止功能集成，可提供无缝体验。 通过此体验，可整页呈红色表示阻止并显示“你的组织已阻止此网站”消息，而不是只显示 toast 通知。
+- Microsoft Defender for Cloud Apps 警告方案现已可用。 这使管理员能够设置警告，这是一种新的 Defender for Cloud Apps 阻止类别，用户可以替代 Defender for Cloud Apps 阻止页面。 MDATP E5 阻止功能已与 Microsoft Edge 中的 SmartScreen 阻止功能集成，可提供无缝体验。 通过此体验，可整页呈红色表示阻止并显示“你的组织已阻止此网站”消息，而不是只显示 toast 通知。
 
 - 在页面关闭期间禁止同步 XmlHttpRequest。 将取消在网页卸载期间发送同步 XmlHttpRequest 的操作。 此更改将提高浏览器的性能和可靠性，但如果有 Web 应用程序尚未更新以使用更新式的 Web API（包括 sendBeacon 和 fetch），则这些应用可能会受到影响。 在 Microsoft Edge 88 版本之后，才可使用用于禁用此更改并在页面关闭期间允许同步 XHR 的组策略。 有关详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
 

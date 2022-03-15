@@ -3,24 +3,24 @@ title: 将文件扩展名与 Internet Explorer 模式关联
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 11/24/2021
+ms.date: 02/24/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 将文件扩展名与 Internet Explorer 模式关联
-ms.openlocfilehash: c7d72e94079ff35d8ffe49c068585b0c97d208cc
-ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.openlocfilehash: 1d25baa224e4fdcdd76bd599ccedb807c9dd7061
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "12298250"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445747"
 ---
 # <a name="associate-file-extensions-with-internet-explorer-mode"></a>将文件扩展名与 Internet Explorer 模式关联
 
 >[!Note]
-> the Internet Explorer 11 desktop application will be retired and out of support on June 15， 2022. To see a list of what's in scope， [read this FAQ](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)) . 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+> 11 Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用并停用支持。 To see a list of what's in scope， [read this FAQ](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)) . 现在使用的 IE11 应用和网站可以在 Microsoft Edge 的 Internet Explorer 模式下打开。 [在此处了解详细信息](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文介绍如何将 Microsoft Edge 和 Internet Explorer 模式与桌面应用程序的文件扩展名相关联。
 
@@ -40,7 +40,7 @@ ms.locfileid: "12298250"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\Application]
 "ApplicationCompany"="Microsoft Corporation"
 "ApplicationName"="Microsoft Edge with IE Mode"
-"ApplicationIcon"="C:\\<edge_installation_dir>\\msedge.exe,4"
+"ApplicationIcon"="C:\\<edge_installation_dir>\\msedge.exe,0"
 "AppUserModelId"=""
 ```
 
@@ -63,7 +63,7 @@ ms.locfileid: "12298250"
 "MSEdgeIEModeMHT"=hex(0):
 ```
 
-设置上一示例中所述的键后，用户将在"打开方式"菜单上看到另一**** 个选项，以使用 IE 模式Microsoft Edge \.mht \<channel\> 文件。
+设置上一示例中所述的键后，用户将在"打开方式"菜单上看到另一**** 个选项，以使用带 IE 模式Microsoft Edge \.mht \<channel\> 文件。
 
 ## <a name="registry-example"></a>注册表示例
 
@@ -80,7 +80,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\Application]
 "ApplicationCompany"="Microsoft Corporation"
 "ApplicationName"="Microsoft Edge with IE Mode"
-"ApplicationIcon"="C:\\<edge_installation_dir>\\msedge.exe,4"
+"ApplicationIcon"="C:\\<edge_installation_dir>\\msedge.exe,0"
 "AppUserModelId"=""
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\MSEdgeIEModeMHT\DefaultIcon]
@@ -97,7 +97,7 @@ Windows Registry Editor Version 5.00
 
 ## <a name="configuring-file-types-to-open-in-internet-explorer-mode"></a>配置文件类型以在 Internet Explorer 模式下打开
 
-从 Microsoft Edge 88 开始，可以使用"显示上下文菜单"策略将特定文件类型链接配置为在 Internet Explorer 模式下打开，以在 Internet Explorer[模式下打开](./microsoft-edge-policies.md#internetexplorerintegrationreloadiniemodeallowed)。
+从 Microsoft Edge 88 开始，可以使用策略"显示上下文菜单"以在 Internet Explorer 模式下配置要以 Internet Explorer 模式打开[的特定文件类型链接](./microsoft-edge-policies.md#internetexplorerintegrationreloadiniemodeallowed)。
 
 通过在此策略[“在 Internet Explorer 模式下打开本地文件文件扩展名允许列表”](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist)中指定文件扩展名，可以定义此选项应应用的文件类型。 
 

@@ -3,19 +3,19 @@ title: Microsoft Edge 就绪
 ms.author: bshiers
 author: dan-wesley
 manager: chstaab
-ms.date: 06/29/2021
+ms.date: 02/09/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 就绪
-ms.openlocfilehash: 4a5758e94e61776c98e4e3421e09b32815670b4b
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: e38da707be04a7eafbefcc90cff0e272e0f76ac0
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978860"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445696"
 ---
 # <a name="ready-for-microsoft-edge"></a>Microsoft Edge 就绪
 
@@ -44,7 +44,7 @@ Microsoft 不会在 Microsoft Edge 中测试或验证这些应用程序。 该�
 
 | 提供程序 |  产品 | 支持声明 |
 |-|-|-|
-| 并发  | TMS 5.23  | https://www.accruent.com/resources/blog-posts/accruent-enhances-tms-microsoft-edge-compatibility-new-automations?utm_source=linkedin&utm_medium=organic-social&utm_campaign=healthcare-general  |
+| Accruent  | TMS 5.23  | https://www.accruent.com/resources/blog-posts/accruent-enhances-tms-microsoft-edge-compatibility-new-automations?utm_source=linkedin&utm_medium=organic-social&utm_campaign=healthcare-general  |
 | Acumatica  | Acumatica ERP  | https://help-2020r1.acumatica.com/Wiki/(W(1))/ShowWiki.aspx?pageid=a8d5d39d-513a-4f93-b484-a95eb33103a1  |
 | 自适应（工作日）    | Workday 自适应计划   | https://www.adaptiveplanning.com/uk/products/adaptive-technology-foundation  |
 | Adobe  | Creative Cloud产品（Acrobat、Photoshop、Illustrator）  | https://helpx.adobe.com/creative-cloud/system-requirements.html?promoid=P79NQR4R&mv=other  |

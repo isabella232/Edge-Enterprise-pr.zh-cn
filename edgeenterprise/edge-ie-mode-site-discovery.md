@@ -3,19 +3,19 @@ title: “企业站点发现”分步指南
 ms.author: collw
 author: appcompatguy
 manager: saudm
-ms.date: 06/29/2021
+ms.date: 01/19/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用“企业站点发现”为 IE 模式做准备
-ms.openlocfilehash: bbcf829e8c2504286ea68df673dabd9b296887c9
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: a93569f455e5671a2d4adf8f5f70238d3f23143d
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978892"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445596"
 ---
 # <a name="enterprise-site-discovery-step-by-step-guide"></a>“企业站点发现”分步指南
 
@@ -119,7 +119,7 @@ ms.locfileid: "11978892"
 7. 在“**连接到 Windows Management Instrumentation (WMI)**”对话框中，输入已在其中配置站点发现的计算机的名称。 如果要连接到其他计算机，则需要凭据以及访问 WMI 的权限。
 8. 在“**WMI 命名空间**”文本框中，输入 **root\cimv2\IETelemetry**
 9. 选择“**连接**”
-10. 在“**添加硬件清单类**”对话框的“**清单类**”列表中，选择 WMI 类 **IESystemINfo**、**IEUrlInfo** 和 **IECountInfo*。
+10. 在"**添加硬件清单类**"对话框的"清单**** 类"列表中，选择 WMI 类 **IESystemINfo**、**IEUrlInfo** 和 **IECountInfo**。
 11. 单击“**确定**”关闭“**类限定符**”对话框和其他打开的对话。
 
 客户端更新管理点中的设置后，将在下次运行硬件清单（默认为每七天一次）时报表数据。

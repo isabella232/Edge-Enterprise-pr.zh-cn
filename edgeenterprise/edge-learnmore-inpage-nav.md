@@ -3,19 +3,19 @@ title: 让页内导航继续保持 Internet Explorer 模式
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 02/15/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 让页内导航继续保持 Internet Explorer 模式
-ms.openlocfilehash: 20b18d121c3babfaacffd4a08316b25be714d95e
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 2b340f403d66f78372cc4b3a045d0c0ebb6b849b
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978869"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445856"
 ---
 # <a name="keep-in-page-navigation-in-internet-explorer-mode"></a>让页内导航继续保持 Internet Explorer 模式
 
@@ -30,11 +30,11 @@ ms.locfileid: "11978869"
 
 此策略需要以下 Windows 更新：
 
+- Windows 11
 - Windows 10 版本 1909 和 1903，Windows Server 版本 1909 和 1903 ([KB4532695](https://support.microsoft.com/help/4532695))
 - Windows 10 版本 1809，Windows Server 版本 1809，Windows Server 2019 ([KB4534321](https://support.microsoft.com/help/4534321))
 - Windows 10 版本 1803 ([KB4534308](https://support.microsoft.com/help/4534308))
 - Windows 10 版本 1709 ([KB4534318](https://support.microsoft.com/help/4534318))
-
 
 ## <a name="about-this-policy"></a>关于此策略
 
@@ -60,7 +60,7 @@ ms.locfileid: "11978869"
 
    - **默认** - 只有配置为以 Internet Explorer 模式打开的网站才会以该模式打开。 任何未配置为以 Internet Explorer 模式打开的网站都将重定向回 Microsoft Edge。
    - **只让自动导航继续保持 Internet Explorer 模式** - 如果想要默认体验，但又让所有转到未配置网站的自动导航（如 302 重定向）都继续保持 Internet Explorer 模式，请使用此选项。
-   - 将页面内导航保持为**Internet Explorer**模式**_ (_** 建议最低) - 从以 IE 模式加载的页面到未配置网站的所有导航都保留在 Internet Explorer 模式下。
+   - 将所有页面内导航保持为 **Internet Explorer** 模式**_ (_** 建议最低) - 从以 IE 模式加载的页面到未配置网站的所有导航都保留在 Internet Explorer 模式下。
 
 6. 单击**确定**或**应用**以保存策略设置。
 

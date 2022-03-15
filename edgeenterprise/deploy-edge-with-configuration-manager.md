@@ -3,19 +3,19 @@ title: 使用 System Center Configuration Manager 部署 Microsoft Edge
 ms.author: kvice
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 06/29/2021
+ms.date: 02/24/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何使用 System Center Configuration Manager (SCCM) 部署 Microsoft Edge。
-ms.openlocfilehash: b0efa986c7f230f455d052f8e003616e081e324a
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: aa5272ebbd05a48a5418404ab8827d0b3795b2c9
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978690"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445716"
 ---
 # <a name="deploy-microsoft-edge-using-system-center-configuration-manager"></a>使用 System Center Configuration Manager 部署 Microsoft Edge
 
@@ -31,6 +31,9 @@ ms.locfileid: "11978690"
 从 [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)下载 Microsoft Edge Enterprise 安装文件（**MicrosoftEdgeDevEnterpriseX64.msi** 和/或 **MicrosoftEdgeDevEnterpriseX86.msi**）。
 
 请确保将 Microsoft Edge 安装文件存储在可访问的网络位置。
+
+> [!TIP]
+> 使用 Microsoft Edge[设置指南](https://assistants.microsoft.com/microsoftedgesetupguide)自动执行 Configuration Manager 步骤。
 
 ## <a name="create-the-application"></a>创建应用程序
 
