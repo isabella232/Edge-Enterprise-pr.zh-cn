@@ -3,23 +3,23 @@ title: 配置适用于 Windows 的 Microsoft Edge
 ms.author: brianalt
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 10/19/2021
+ms.date: 03/01/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何在 Windows 设备上配置 Microsoft Edge 策略设置
-ms.openlocfilehash: 05e12b157b434fcad53ddd25922dc8f394ad3157
-ms.sourcegitcommit: f0966278011219cbab4590487a8b34cb76a73232
+ms.openlocfilehash: ed89a1d356fcfa7b6bf3681a7d75848ed2c94f31
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "12107457"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445326"
 ---
 # <a name="configure-microsoft-edge-policy-settings-on-windows"></a>在 Windows 上配置 Microsoft Edge 策略设置
 
-使用以下信息在 Windows 设备上配置 Microsoft Edge 策略设置。
+使用以下信息在 Windows 设备上配置 Microsoft Edge 策略设置。 如果尚未设置 Microsoft Edge，请参阅 [Microsoft Edge 安装指南](https://go.microsoft.com/fwlink/?linkid=2187484)。
 
 > [!NOTE]
 > 本文适用于 Microsoft Edge 版本 77 或更高版本。
@@ -48,7 +48,7 @@ Microsoft Edge 支持_强制_和_推荐的_策略。 强制策略会覆盖用户
 
 将管理模板文件添加到相应位置时，Microsoft Edge 策略设置将在组策略编辑器中立即可用。
 
-转到 [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)以下载 Microsoft Edge 策略模板文件 (*MicrosoftEdgePolicyTemplates.cab*)，然后提取内容。
+转到 [Microsoft Edge 企业版登陆页面](https://aka.ms/EdgeEnterprise)以下载 Microsoft Edge 策略模板文件，然后提取内容。
 
 #### <a name="add-the-administrative-template-to-active-directory"></a>将管理模板添加到 Active Directory 中
 
