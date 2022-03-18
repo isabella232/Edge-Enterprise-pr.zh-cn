@@ -3,19 +3,19 @@ title: 配置 Microsoft Edge 企业同步
 ms.author: collw
 author: dan-wesley
 manager: silvanam
-ms.date: 11/10/2021
+ms.date: 02/16/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 用于配置 Microsoft Edge 以同步收藏夹、密码和其他浏览器数据的管理员和用户选项。
-ms.openlocfilehash: b6f7544d78fe82e0e632b04ad8380196725f2bbe
-ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.openlocfilehash: abb81c28c0e4e45423dd7285e929ac82a9773657
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "12298180"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445616"
 ---
 # <a name="configure-microsoft-edge-enterprise-sync"></a>配置 Microsoft Edge 企业同步
 
@@ -52,11 +52,7 @@ ms.locfileid: "12298180"
   
   - 对于仅具有 Azure AD P1 或 P2 的客户，需要启用Azure AD 企业状态漫游功能才能使用 Microsoft Edge 企业同步。若要了解详细信息，请参阅 [在 Azure Active Directory 中的启用企业状态漫游](/azure/active-directory/devices/enterprise-state-roaming-enable) 一文。
 
-- Microsoft 365 商业高级版、商业标准版或**商业基础版\***
-
-   > [!IMPORTANT]
-   > **\**_ 我们发现 _* 商业基础版**存在同步方面的问题，正在着手解决这一问题。 在此期间，此版本无法按预期方式工作。
-
+- Microsoft 365 商业高级版、商业标准版或商业基础版
 - Office 365 E1 及更高版本
 - Azure 信息保护 (AIP)（P1 或 P2）
 - 所有 EDU 订阅 (Microsoft 教育应用版 (学生) 或 Microsoft 教育应用版 (教职员工)、Exchange Online 学生版或教职员工版、O365 A1 或更高版本、Microsoft 365 A1 或更高版本，或者适用于学生或教职员的 Azure 信息保护 P1 或 P2)

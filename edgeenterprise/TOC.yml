@@ -1,4 +1,4 @@
-# last revised 01/11/2022
+# last revised 03/08/2022
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -121,6 +121,8 @@
       href: microsoft-edge-pdf.md
     - name: 将 Microsoft Edge 设为默认浏览器
       href: edge-default-browser.md
+    - name: 对 WebRTC 的拆分隧道 VPN 支持
+      href: microsoft-edge-vpn-split-tunneling.md
     - name: 在 Internet Explorer 模式下使用 Microsoft Edge
       items:
         - name: 什么是 Internet Explorer (IE) 模式?
@@ -143,7 +145,7 @@
               href: edge-ie-mode-site-list-manager.md
         - name: 让页内导航继续保持 IE 模式
           href: edge-learnmore-inpage-nav.md
-        - name: 从 Microsoft Edge 到 Internet Explorer 的 Cookie 共享
+        - name: Microsoft Edge 和 Internet Explorer 之间的 Cookie 共享
           href: edge-ie-mode-add-guidance-cookieshare.md
         - name: IE 模式下可配置的网站
           href: edge-learnmore-configurable-sites-ie-mode.md
@@ -157,6 +159,8 @@
       href: ms-edge-security-for-business.md
     - name: 针对易受攻击的旧版应用的新式安全保护
       href: microsoft-edge-security-iemode-safer-than-ie.md
+    - name: 使用 Microsoft Edge 更安全地进行浏览
+      href: microsoft-edge-security-browse-safer.md
     - name: 发现并中断包含潜在危险文件的下载
       href: microsoft-edge-security-downloads-interruptions.md
     - name: Microsoft Edge 终结点的允许列表

@@ -3,26 +3,26 @@ title: 云站点列表管理 Internet Explorer (IE) 模式"
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/15/2021
+ms.date: 03/08/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何使用 IE 模式配置和使用云站点列表 Microsoft 365 管理中心。
-ms.openlocfilehash: 4c37c2b3ec98252f430bf635456c6849def0a0e3
-ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.openlocfilehash: dd8e083b3b7919a56c013ffd0c389dcd8d94a745
+ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "12298101"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "12445736"
 ---
 # <a name="cloud-site-list-management-for-internet-explorer-ie-mode"></a>云站点列表管理 Internet Explorer (IE) 模式
 
 本文介绍如何通过 Microsoft 365 管理中心为Internet Explorer （IE） 模式配置和使用云站点列表管理。
 
 > [!NOTE]
-> 此体验目前仅适用于全球云实例。
+> 此用户体验目前仅适用于全球云实例。
 
 ## <a name="overview"></a>概述
 
@@ -31,9 +31,6 @@ ms.locfileid: "12298101"
 若要了解详细信息，请观看下一个视频。
 
 [![适用于 IE 模式的新云站点列表管理](media/edge-ie-mode-cloud-site-list-mgmt/0.png)](https://www.youtube.com/watch?v=p3FyGvsNKC8 "|::ref1::|")。
-
-> [!NOTE]
-> 此体验当前正在向所有用户推出，预计在 12 月中旬完成。
 
 体验使你能够将组织的站点列表存储在兼容的云位置，无需本地基础结构来托管站点列表。 可以通过管理中心创建、导入、导出网站列表和审核对网站列表 Microsoft 365 管理更改。 你可以将多个站点列表发布到云，并使用组策略分配不同的设备组以使用不同的列表。
 
@@ -47,7 +44,12 @@ ms.locfileid: "12298101"
 
 ## <a name="cloud-site-list-management-experience"></a>云站点列表管理体验
 
-体验有三个方面。
+云站点列表管理体验有四个方面：
+
+- 将企业站点列表发布到云。
+- 将云站点列表与Microsoft Edge关联。
+- 管理Microsoft 365管理中心的网站列表内容。
+- 在Microsoft 365管理中心查看网站反馈。
 
 ### <a name="publish-enterprise-site-list-to-the-cloud"></a>将企业站点列表发布到云
 
@@ -64,6 +66,10 @@ ms.locfileid: "12298101"
 
 管理员可以创建新列表或将现有网站列表导入到 Microsoft Edge 网站列表体验中。 他们可以添加、编辑、删除网站列表内容，并查看注释历史记录以跟踪对单个条目的更改。 下一部分介绍如何选择加入公共预览版，并访问Microsoft 365 管理中心的 Microsoft Edge 网站列表体验。
 
+### <a name="view-site-feedback-on-the-microsoft-365-admin-center"></a>在Microsoft 365管理中心查看网站反馈
+
+使用 Microsoft Edge 版本 99， 管理员可以使用[InternetExplorerIntegrationCloudUserSitesReporting](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudusersitesreporting)和[InternetExplorerIntegrationCloudNeutralSitesReporting](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudneutralsitesreporting) 策略来识别其网站列表中的空白与网站反馈。 他们可以查看用户已添加到其[本地网站列表](/deployedge/edge-ie-mode-local-site-list)，以及可能配置错误的非特定网站的网站。
+
 ## <a name="publish-enterprise-site-list-to-the-cloud"></a>将企业站点列表发布到云
 
 使用以下步骤作为创建网站列表、导入网站列表和发布网站列表的指南。 完成这些步骤之前，请登录 Microsoft 365 管理中心。
@@ -73,7 +79,7 @@ ms.locfileid: "12298101"
 3. 你将看到 ** Microsoft Edge 网站列表** 选项。
 
    > [!NOTE]
-   > 如果在我们向所有生产实例推出时，在组织设置页面上看不到此选项，则需要选择加入 **定向发布**。 如果看不到 **Microsoft Edge网站列表** 选项，请参阅此常见问题解答: [我在 Microsoft 365 管理中心的组织设置页面中无法看到 Microsoft Edge 网站列表选项。为什么会这样?](#i-do-not-see-the-microsoft-edge-site-lists-option-in-the-org-settings-page-on-microsoft-365-admin-center-why-is-that)
+   > 如果在我们向所有生产实例推出时，在组织设置页面上看不到此选项，则需要选择加入 **定向发布**。 如果看不到 **Microsoft Edge 站点列表**选项，请参阅此常见问题解答：[我在 Microsoft 365 管理中心的“组织设置”页面中未看到“Microsoft Edge 站点列表”选项。为什么会这样?](#i-dont-see-the-microsoft-edge-site-lists-option-in-the-org-settings-page-on-microsoft-365-admin-center-why-is-that)
 
 ### <a name="steps-to-create-a-site-list"></a>创建网站列表的步骤
 
@@ -89,7 +95,7 @@ ms.locfileid: "12298101"
 3. 在右侧面板上，选择**浏览**。
 4. 选择要导入的文件，然后选择面板底部的**上传**。
 5. 你可以浏览上传文件中 URL。 如果要选取其他文件，可以选择面板顶部的**上传其他文件**。 如果一切正常，请选择面板底部的**添加**。
-6. 导入列表后，选择**关闭面板**。 
+6. 导入列表后，选择**关闭面板**。
 
 ### <a name="steps-to-publish-a-site-list"></a>发布网站列表的步骤
 
@@ -114,6 +120,7 @@ ms.locfileid: "12298101"
 ## <a name="manage-site-list-contents-on-the-microsoft-365-admin-center"></a>管理 Microsoft 365 管理中心上的网站列表内容
 
 可以添加单个网站条目、删除网站条目和查看注释更改历史记录。
+
 如果混合方案要求将站点列表托管在本地，则可以从 Microsoft 365 管理中心导出站点列表。 使用以下步骤作为管理网站列表内容的指南。
 
 ### <a name="add-individual-sites-to-the-site-list"></a>将单个网站添加到网站列表
@@ -150,7 +157,7 @@ ms.locfileid: "12298101"
 
 1. 选择要复制到另一个列表的网站条目。 选择 **复制到更多列表**。
 2. 从下拉列表中选择要复制到的一个或多个网站列表。
-3. 选择窗格底部的 **复制网站**。
+3. 选择窗格底部的“**复制站点**”。
 4. 看到站点条目已复制的确认后，它将保留在从中复制的站点列表中。 它还会显示在复制到的站点列表中。
 
    > [!NOTE]
@@ -164,9 +171,54 @@ ms.locfileid: "12298101"
 2. 在生成的页面上，你将看到站点列表条目和**导出列表**选项。
 3. 选择**导出列表**，以下载站点列表 XML 文件。
 
+## <a name="view-site-feedback-on-the-microsoft-365-admin-center"></a>在Microsoft 365管理中心查看网站反馈
+
+"网站反馈"选项卡显示用户要添加到其本地 IE 模式站点列表的网站，以及Microsoft Edge报告的可能配置错误的非特定网站。 你将看到网站地址、添加此网站的用户数，以及哪些已发布的云托管站点列出了反馈来源。 可以通过将单个条目添加到现有网站列表、暂停或删除反馈来对其执行操作。 还可以查看更改历史记录和注释。
+
+> [!NOTE]
+> 此功能当前正在向所有用户推出，预计将于 3 月中旬完成推出。
+
+### <a name="add-a-site-to-site-lists"></a>将网站添加到网站列表
+
+使用以下步骤从网站反馈将网站添加到一个或多个网站列表。
+
+1. 选择要添加的条目。 选择**添加到网站列表**。  
+2. 从下拉列表中选择要添加到的一个或多个网站列表。 选取应用于打开站点的引擎，并根据需要添加注释。
+3. 选择面板底部的 **"添加网站** "。
+
+   > [!NOTE]
+   > 此条目的状态将更新为**Resolved**，因为它**Added**。 此网站现在将显示在所选网站列表中。
+
+### <a name="pause-incoming-feedback-on-a-site"></a>暂停网站上的传入反馈
+
+可以通过暂停反馈来推迟对挂起条目的操作。 可以暂停反馈 30 天或无限期。 使用以下步骤暂停传入反馈。  
+
+1. 选择要暂停反馈的条目。 选择**暂停反馈**。  
+2. 根据需要添加批注，然后选择要暂停反馈的时间。  
+3. 选择面板底部**Pause**。
+
+    > [!NOTE]
+    > 此条目的状态将更新为**Resolved**，因为它**Paused**。 如果暂停了 30 天，则在 30 天后（如果有任何传入反馈）后，条目状态将刷新回**Pending**，以便你采取行动。
+
+### <a name="delete-feedback-on-a-site"></a>删除网站上的反馈
+
+使用以下步骤删除反馈条目。
+
+1. 选择要删除的条目。 选择**删除反馈**。
+2. 在弹出对话框中选择**删除**。
+
+    > [!NOTE]
+    > 如果删除某个条目，如果用户继续将网站添加到其本地网站列表，或者Microsoft Edge将其检测为可能配置错误的非特定网站，则该条目将来可能会重新显示为传入反馈。
+
+### <a name="view-the-change-history-for-site-feedback-entries"></a>查看网站反馈条目的更改历史记录
+
+若要查看更改历史记录，请执行以下操作：
+
+- 选择要查看其更改历史记录的条目，然后在侧面板中选择 **"反馈历史记录"**。
+
 ## <a name="faq"></a>常见问题
 
-### <a name="i-do-not-see-the-microsoft-edge-site-lists-option-in-the-org-settings-page-on-microsoft-365-admin-center-why-is-that"></a>我在 Microsoft 365 管理中心的“组织设置”页面中看不到“Microsoft Edge 网站列表”选项。 为什么？
+### <a name="i-dont-see-the-microsoft-edge-site-lists-option-in-the-org-settings-page-on-microsoft-365-admin-center-why-is-that"></a>我在Microsoft 365管理中心的"组织设置"页中看不到"Microsoft Edge网站列表"选项。 为什么？
 
 推出将于 12 月中旬完成时提供体验。 在推出体验时，需要选择在 Microsoft 365 管理中心查看此体验。 你必须是 Microsoft 365 的全局管理员，才能选择加入。
 
@@ -197,8 +249,8 @@ Microsoft Edge 站点列表将其数据和配置存储在与 Exchange Online、S
 
 首次下载时，需要显式浏览器登录，以访问站点列表。 在用户登录后注销的情况下，网站列表缓存在 Microsoft Edge 中。 即使用户从其 Azure Active Directory （Azure AD） 帐户注销 Microsoft Edge，列表也会保持缓存状态。 配置云站点列表策略时，Microsoft Edge不会尝试回退到非云下载位置。 Microsoft Edge 尝试在下列时间更新缓存的站点列表（请注意，如果用户未登录到 Microsoft Edge，所有尝试都将失败）：
 
-- 重新启动浏览器后 60 秒。 如果需要缩短 60 秒启动延迟，可以使用 [InternetExplorerIntegrationSiteListRefreshInterval](/deployedge/microsoft-edge-policies#internetexplorerintegrationsitelistrefreshinterval) 策略更改延迟时间。
-- 每两小时运行 Microsoft Edge 一次。
+- 重新启动浏览器后 60 秒。
+- 每两小时运行 Microsoft Edge 一次。 可以使用 [InternetExplorerIntegrationSiteListRefreshInterval](/deployedge/microsoft-edge-policies#internetexplorerintegrationsitelistrefreshinterval) 策略更改 120 分钟的刷新间隔。 最小刷新间隔为 30 分钟。
 
 ## <a name="support-and-feedback"></a>支持和反馈
 
@@ -208,4 +260,3 @@ Microsoft Edge 站点列表将其数据和配置存储在与 Exchange Online、S
 
 - [关于 IE 模式](./edge-ie-mode.md)
 - [Microsoft Edge Enterprise 登录页面](https://aka.ms/EdgeEnterprise)
-  
