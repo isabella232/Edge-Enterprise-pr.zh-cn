@@ -1,55 +1,158 @@
 ---
 title: Microsoft Edge Beta 渠道的存档发行说明
-ms.author: aguta
+ms.author: leahtu
 author: dan-wesley
 manager: srugh
-ms.date: 02/07/2022
+ms.date: 04/08/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道的存档发行说明
-ms.openlocfilehash: ec734f8c84e55a178455c4886a2492b200afc10d
-ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
+ms.openlocfilehash: 71db889e373c09832ead59547b08b0a285ed0b78
+ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "12445316"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "12473648"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的存档发行说明
 
 本发行说明提供有关 Microsoft Edge Beta 渠道中包含的新功能和非安全更新的信息。 若要了解 Microsoft Edge 渠道，请参阅 [Microsoft Edge 渠道概述](microsoft-edge-channels.md)。 [此处](microsoft-edge-relnotes-security.md)列出所有安全更新。
 
-## <a name="version-970107221-december-1"></a>版本 97.0.1072.21：12 月 1 日
+## <a name="version-990115011-february-9"></a>版本 99.0.1150.11：2 月 9 日
 
 ### <a name="feature-updates"></a>功能更新
 
-- **在设备上登录多个工作或学校帐户时，使用当前配置文件登录网站。** 当在设备上登录多个工作或学校帐户时，将要求用户从帐户选取器中选择一个帐户，以继续访问网站。 在此版本中，系统将提示用户Microsoft Edge登录到当前配置文件的工作和学校帐户自动登录网站。 用户可以在"配置文件"首选项中设置**此功能**。
+- **用户代理字符串中即将推出三位数版本号。** 从版本 100 开始，Microsoft Edge 将在 User-Agent 标头中发送三位数的版本号，例如“Edg/100”。 从 Microsoft Edge 97 开始，网站所有者可以通过在 *edge://flags* 中启用 **#force-major-version-to-100** 实验标志来测试此即将推出的代理字符串，以确保其 User-Agent 分析逻辑可靠且按预期工作。
 
-- **在 macOS 上添加对 Microsoft Endpoint Data Loss Prevention (DLP) 的支持。** Microsoft Endpoint DLP 策略强制在 macOS 上本地可用。
+- **使用网站的配置文件首选项个性化设置多配置文件体验。** 用户可以个性化设置其多配置文件体验，并能够创建自定义网站列表，以在 Microsoft Edge 中自动切换配置文件。
 
-- **打开数字签名的 PDF 文件。**  数字签名广泛使用以验证文档的真实性和更改。 用户可以直接从浏览器验证 PDF 文件的签名，而无需任何外接程序。
+- **适用于 IE 模式的双向 Cookie 共享。** 此功能扩展了已可用的 Cookie 共享功能，并允许用户将特定会话 Cookie 从 Internet Explorer/IE 模式同步到Microsoft Edge。 有关详细信息，请参阅[Microsoft Edge和 Internet Explorer 之间的 Cookie 共享](/deployedge/edge-ie-mode-add-guidance-cookieshare)。
 
-- **引文中的引Microsoft Edge。** 研究源是学生常见的要求。 他们必须管理许多研究参考和源，这不是一项简单的任务。 他们还必须将这些引文转换为正确的引文格式，如 APA、MLA 和 Chicago。 Preview Microsoft Edge (中的这一新"引文"功能) 学生在联机研究时管理和生成引文的更好方法。 在"集合"或 设置 及更多 ** (Alt-F) **中打开引文后，Microsoft Edge 自动生成学生稍后可以使用的引文，以便他们专注于研究。 完成后，他们可以轻松地将这些引文编译为最终可交付结果。 有关详细信息，请参阅预览引[文Microsoft Edge](https://blogs.windows.com/msedgedev/2021/11/04/preview-citations-feature-edge/)。
+- **使用页面缩略图导航 PDF 文档。** 现在，你将能够使用表示页面的缩略图浏览 PDF 文档。 这些缩略图将显示在 PDF 阅读器左侧的窗格中。
+
+- **配置将禁用用于保存和填充的密码管理器用户界面 (UI) 的域列表。** 使用 [PasswordManagerBlocklist](/deployedge/microsoft-edge-policies#passwordmanagerblocklist) 策略配置域列表（仅限 HTTP/HTTPS 架构和主机名），其中 Microsoft Edge 应禁用密码管理器。 这意味着将禁用保存和填充工作流，这可确保无法将这些网站的密码保存或自动填充到 Web 表单中。
+
+- **在公共预览) 中使用 API 的 (更新Microsoft Edge加载项存储的扩展。** 可以将这些 API 直接集成到生成管道中，并将包更新发布到Microsoft Edge加载项网站。 若要了解详细信息，请参阅[在专用预览版中使用Microsoft Edge加载项 API () ](/microsoft-edge/extensions-chromium/publish/api/using-addons-api)
 
 ### <a name="policy-updates"></a>策略更新
 
 #### <a name="new-policies"></a>新策略
 
-- [AccessibilityImageLabelsEnabled](/DeployEdge/microsoft-edge-policies#accessibilityimagelabelsenabled) - 从 Microsoft 启用获取图像说明
-- [CORSNonWildcardRequestHeadersSupport - 启用](/DeployEdge/microsoft-edge-policies#corsnonwildcardrequestheaderssupport) CORS 非通配符请求标头支持
-- [EdgeDiscoverEnabled](/DeployEdge/microsoft-edge-policies#edgediscoverenabled) - 发现Microsoft Edge
-- [EdgeEnhanceImagesEnabled](/DeployEdge/microsoft-edge-policies#edgeenhanceimagesenabled) - 增强已启用的图像
-- [InternetExplorerModeTabInEdgeModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorermodetabinedgemodeallowed) - 允许为 Internet Explorer 模式配置的站点在 Microsoft Edge
-- [SameOriginTabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#sameorigintabcaptureallowedbyorigins) - 允许这些源捕获同源选项卡
-- [ScreenCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#screencaptureallowedbyorigins) - 允许通过这些源捕获桌面、窗口和选项卡
-- [SerialAllowAllPortsForUrls](/DeployEdge/microsoft-edge-policies#serialallowallportsforurls) - 自动授予站点连接所有串行端口的权限
-- [SerialAllowUsbDevicesForUrls](/DeployEdge/microsoft-edge-policies#serialallowusbdevicesforurls) - 自动授予站点连接到 USB 串行设备的权限
-- [SmartScreenDnsRequestsEnabled](/DeployEdge/microsoft-edge-policies#smartscreendnsrequestsenabled) - Microsoft Defender SmartScreen DNS 请求
-- [TabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#tabcaptureallowedbyorigins) - 允许这些原点捕获 Tab
+- [AllowGamesMenu](/DeployEdge/microsoft-edge-policies#allowgamesmenu) - 允许用户访问游戏菜单
+- [DoNotSilentlyBlockProtocolsFromOrigins](/DeployEdge/microsoft-edge-policies#donotsilentlyblockprotocolsfromorigins) - 定义防淹没防护无法静默阻止的协议列表
+- [HubsSidebarEnabled](/DeployEdge/microsoft-edge-policies#hubssidebarenabled) - 显示中心边栏
+- [InternetExplorerIntegrationCloudNeutralSitesReporting](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudneutralsitesreporting) - 配置向 M365 管理中心网站列表应用报告可能配置错误的中性网站 URL
+- [InternetExplorerIntegrationCloudUserSitesReporting](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudusersitesreporting) - 配置向 M365 管理中心网站列表应用报告 IE 模式用户列表条目
+- [PasswordManagerBlocklist](/DeployEdge/microsoft-edge-policies#passwordmanagerblocklist) - 配置将禁用密码管理器 UI（保存和填充）的域列表
+- [RelatedMatchesCloudServiceEnabled](/DeployEdge/microsoft-edge-policies#relatedmatchescloudserviceenabled) - 在“在页面上查找”中配置相关匹配项
+- [SignInCtaOnNtpEnabled](/DeployEdge/microsoft-edge-policies#signinctaonntpenabled) - 启用登录单击操作对话框
+- [UserAgentReduction](/DeployEdge/microsoft-edge-policies#useragentreduction) - 启用或禁用 User-Agent 减少
+
+## <a name="version-980110848-february-8"></a>版本 98.0.1108.48：2 月 8 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-980110843-february-3"></a>版本 98.0.1108.43：2 月 3 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-980110842-february-2"></a>版本 98.0.1108.42：2 月 2 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-980110839-january-31"></a>版本 98.0.1108.39：1 月 31 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-980110833-january-24"></a>版本 98.0.1108.33：1 月 24 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-980110827-january-19"></a>版本 98.0.1108.27：1 月 19 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-980110823-january-14"></a>版本 98.0.1108.23：1 月 14 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **增强 Web 安全性。** 在浏览器安全性优先Microsoft Edge的浏览模式，在浏览 Web 时可为你提供额外的保护层。 管理员可以将以下组策略应用于最终用户桌面 (Windows、macOS 和 Linux) ，以帮助防范零天。 这些策略还使重要网站和业务线应用程序继续按预期工作。 此功能是向前迈出的一大步，因为它使我们能够根据历史趋势) 缓解不可预见的活动零天 (。 启用后，此功能将硬件强制实施的 Stack Protection、任意代码防护 (ACG) 和内容Flow防护 (CFG) 作为支持安全缓解措施，以提高用户在 Web 上的安全性。
+组策略：
+  - [EnhanceSecurityMode](/DeployEdge/microsoft-edge-policies#enhancesecuritymode)
+  - [EnhanceSecurityModeBypassListDomains](/DeployEdge/microsoft-edge-policies#enhancesecuritymodebypasslistdomains)
+  - [EnhanceSecurityModeEnforceListDomains](/DeployEdge/microsoft-edge-policies#enhancesecuritymodeenforcelistdomains)
+
+- **自定义主密码。** 浏览器已具备在 Web 表单中自动填充保存密码之前，用户可以添加身份验证步骤的功能。 这增加了另一层隐私，有助于防止未经授权的用户使用保存的密码登录网站。 自定义主密码是同一功能的演变，用户现在可以使用自己选择的自定义字符串作为主密码。 启用后，用户将输入此密码进行身份验证，并将其保存的密码自动填充到 Web 表单中。
+
+- **添加到 Microsoft Edge 的叠加滚动条。** 我们已使用基于叠加的设计更新了滚动条。 用户可以在 *edge://flags* 中启用此功能。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [AddressBarEditingEnabled](/DeployEdge/microsoft-edge-policies#addressbareditingenabled) - 配置地址栏编辑。
+- [EdgeFollowEnabled](/DeployEdge/microsoft-edge-policies#edgefollowenabled) - 在Microsoft Edge中启用关注服务。
+- [EnhanceSecurityMode](/DeployEdge/microsoft-edge-policies#enhancesecuritymode) - 增强Microsoft Edge中的安全状态。
+- [EnhanceSecurityModeBypassListDomains](/DeployEdge/microsoft-edge-policies#enhancesecuritymodebypasslistdomains) - 配置不会强制实施增强安全模式的域列表。
+- [EnhanceSecurityModeEnforceListDomains](/DeployEdge/microsoft-edge-policies#enhancesecuritymodeenforcelistdomains) - 配置将始终强制实施增强安全模式的域列表。
+- [InAppSupportEnabled](/DeployEdge/microsoft-edge-policies#inappsupportenabled) - 已启用应用内支持。
+- [MicrosoftEdgeInsiderPromotionEnabled](/DeployEdge/microsoft-edge-policies#microsoftedgeinsiderpromotionenabled) - Microsoft Edge预览体验成员升级已启用。
+- [PrintStickySettings](/DeployEdge/microsoft-edge-policies#printstickysettings) - 打印预览粘性设置。
+- [SandboxExternalProtocolBlocked](/DeployEdge/microsoft-edge-policies#sandboxexternalprotocolblocked) - 允许Microsoft Edge阻止沙盒 iframe 中外部协议的导航。
+- [U2fSecurityKeyApiEnabled](/DeployEdge/microsoft-edge-policies#u2fsecuritykeyapienabled) - 允许使用已弃用的 U2F 安全密钥 API。
+
+## <a name="version-970107254-january-5"></a>版本 97.0.1072.54：1 月 5 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107252-january-3"></a>版本 97.0.1072.52：1 月 3 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107241-december-20"></a>版本 97.0.1072.41：12 月 20 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107234-december-13"></a>版本 97.0.1072.34：12 月 13 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107228-december-8"></a>版本 97.0.1072.28：12 月 8 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-970107221-december-1"></a>版本 97.0.1072.21：12 月 1 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **在设备上登录多个工作或学校帐户时，使用当前配置文件登录网站。** 当在设备上登录多个工作或学校帐户时，将要求用户从帐户选取器中选择一个帐户来继续访问网站。 在此版本中，系统将提示用户允许Microsoft Edge使用登录到当前配置文件的工作和学校帐户自动登录到网站。 用户可以在**设置/配置文件首选项**中打开和关闭此功能。
+
+- **在 macOS 上添加对 Microsoft 终结点数据丢失防护 (DLP) 的支持。** Microsoft Endpoint DLP 策略强制在 macOS 上以本机方式提供。
+
+- **打开数字签名的 PDF 文件。**  数字签名广泛用于验证文档的真实性和更改。 用户可以直接从浏览器验证 PDF 文件的签名，而无需任何加载项。
+
+- **Microsoft Edge 中的引文。** 研究的引用来源是学生的普遍要求。 他们必须管理许多研究参考资料和来源，这不是一项简单的任务。 他们还必须将这些引文转换为正确的引文格式，如 APA、MLA 和 Chicago。 Microsoft Edge (的这种新的“引文”功能现在以预览版) 为学生提供了一种更好的方式来管理和生成在线研究时引文。 在“集锦”中或从“**设置及更多 (Alt-F)**”打开“引文”后，Microsoft Edge 会自动生成学生以后可以使用的引文，以便他们可以专注于其研究。 完成后，他们可以轻松地将这些引文编译为最终可交付结果。 有关详细信息，请参阅[在 Microsoft Edge 中预览引文](https://blogs.windows.com/msedgedev/2021/11/04/preview-citations-feature-edge/)。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [AccessibilityImageLabelsEnabled](/DeployEdge/microsoft-edge-policies#accessibilityimagelabelsenabled) - 启用从 Microsoft 获取图像说明
+- [CORSNonWildcardRequestHeadersSupport](/DeployEdge/microsoft-edge-policies#corsnonwildcardrequestheaderssupport) -启用 CORS 非通配符请求标头支持
+- [EdgeDiscoverEnabled](/DeployEdge/microsoft-edge-policies#edgediscoverenabled) - 发现 Microsoft Edge 中的功能
+- [EdgeEnhanceImagesEnabled](/DeployEdge/microsoft-edge-policies#edgeenhanceimagesenabled) - 启用增强图像
+- [InternetExplorerModeTabInEdgeModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorermodetabinedgemodeallowed) - 允许为 Internet Explorer 模式配置的网站在 Microsoft Edge 中打开
+- [SameOriginTabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#sameorigintabcaptureallowedbyorigins) - 允许这些源捕获同一源选项卡
+- [ScreenCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#screencaptureallowedbyorigins) - 允许按这些源捕获桌面、窗口和选项卡
+- [SerialAllowAllPortsForUrls](/DeployEdge/microsoft-edge-policies#serialallowallportsforurls) - 自动授予网站连接所有串行端口的权限
+- [SerialAllowUsbDevicesForUrls](/DeployEdge/microsoft-edge-policies#serialallowusbdevicesforurls) - 自动授予网站连接到 USB 串行设备的权限
+- [SmartScreenDnsRequestsEnabled](/DeployEdge/microsoft-edge-policies#smartscreendnsrequestsenabled) - 启用 Microsoft Defender SmartScreen DNS 请求
+- [TabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#tabcaptureallowedbyorigins) - 允许按这些源捕获选项卡
 - [WebSQLInThirdPartyContextEnabled](/DeployEdge/microsoft-edge-policies#websqlinthirdpartycontextenabled) - 强制重新启用第三方上下文中的 WebSQL
-- [WindowCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#windowcaptureallowedbyorigins) - 允许通过这些原点捕获 Window 和 Tab
+- [WindowCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#windowcaptureallowedbyorigins) - 允许按这些源捕获窗口和选项卡
 
 #### <a name="obsoleted-policies"></a>已过时的策略
 
@@ -71,45 +174,43 @@ ms.locfileid: "12445316"
 
 修复了各种 bug 和性能问题。
 
-
-
 ## <a name="version-96010548-november-1"></a>版本 96.0.1054.8：11 月 1 日
 
 ### <a name="feature-updates"></a>功能更新
 
-- **直接通过协议 (PWA) 启动渐进式 Web 应用。** 让已安装的 PWA 处理使用特定协议的链接，实现更加集成的体验。
+- **直接通过协议链接启动渐进式 Web 应用 (PWA) 。** 让已安装的 PWA 处理使用特定协议进行更集成体验的链接。
 
-- **了解如何使用数学规划求解求解数学问题。** 我们很高兴地宣布，您可以使用数学规划求解在 Microsoft Edge中获取有关各种数学概念的帮助。 这些概念包括从算术和二次方等式到三角法和计算。 利用数学规划求解，您可以拍摄手写或打印的数学问题的图片，然后提供一个即时解决方案以及分步说明，以帮助您了解如何在没有帮助的情况下找到解决方案。 数学规划求解还附带数学键盘，可用于轻松键入数学问题。 此键盘无需四处搜索传统键盘来查找所需的数学字符。 解决你的问题后，数学规划求解提供了一些选项，可以继续学习测验、工作表和视频教程。
+- **了解如何解决数学求解器的数学问题。** 我们很高兴地宣布，你可以使用数学求解器在Microsoft Edge，以获得各种数学概念的帮助。 这些概念的范围从基本算术和二次公式到三角和微积分。 数学求解器可让你拍摄手写或打印数学问题的图片，然后提供一个即时解决方案，其中包含分步说明，帮助你了解如何在没有帮助的情况下访问解决方案。 数学求解器还附带了一个数学键盘，可用于轻松键入数学问题。 此键盘无需在传统键盘周围搜索即可找到所需的数学字符。 解决问题后，Math Solver 提供了继续学习测验、工作表和视频教程的选项。
 
-- **PDF 上的任意多边形突出显示。** 通过添加任意格式突出显示器改进了 PDF 查看和标记体验。 你可以突出显示你无法访问的 PDF 中的部分和扫描过的文档。
+- **PDF 上的任意格式突出显示。** 通过添加自由格式荧光笔，PDF 查看和标记体验得到改进。 可以突出显示你无权访问的 PDF 中的各节，以及扫描的文档。
 
-- **硬件强制执行的堆栈保护。**  Microsoft Edge支持更安全的浏览模式，该模式对 Intel 第 11 代受支持硬件上的浏览器进程使用依赖于硬件 (流。 或 AMD 为) 。 注意：因为这是受控功能推出，你可能不会注意到此功能在所有设备上都已启用。 可以通过使用组策略操作 IFEO 中的映像文件执行选项 (或禁用硬件) 堆栈保护。
+- **硬件强制的 Stack Protection。**  Microsoft Edge将开始支持更安全的浏览模式，该模式在受支持的硬件 (Intel 11 Gen 上对浏览器进程使用依赖硬件的控制流。 或 AMD Zen 3) 。 注意：由于这是受控功能推出，因此你可能没有注意到在所有设备上都启用了此功能。 可以通过使用组策略 (IFEO) 操作映像文件执行选项来启用或禁用硬件强制实施的 Stack Protection。
 
-- **用于错误等同网站的新警告对话框。** 浏览器现在将在 URL 类似于其他网站的一些网站上显示警告。 此 UI 使用客户端启发来提醒用户有关可能欺骗热门网站的网站。 有关详细信息，请参阅 [什么是错位？](https://support.microsoft.com/topic/what-is-typosquatting-54a18872-8459-4d47-b3e3-d84d9a362eb0)。
+- **用于键入网站的新警告对话框。** 浏览器现在会在某些具有类似于其他网站的 URL 的站点上显示警告。 此 UI 使用客户端启发式方法警告用户可能欺骗热门网站的网站。 有关详细信息，请参阅[什么是拼写错误？](https://support.microsoft.com/topic/what-is-typosquatting-54a18872-8459-4d47-b3e3-d84d9a362eb0)
 
-- **改进了 IE 模式和新式浏览器之间的切换。**  从此版本的 Microsoft Edge 开始，Microsoft Edge 和 Internet Explorer 模式之间的导航将包括表单数据和其他 HTTP 标头。 引用者标头、帖子数据、表单数据和请求方法将跨这两种体验正确转发。 您可以使用 [InternetExplorerIntegrationComplexNavDataTypes 策略指定应包含哪些](/deployedge/microsoft-edge-policies#internetexplorerintegrationcomplexnavdatatypes) 数据类型。 有关详细信息，请参阅此常见问题解答：[我的应用程序需要在 IE 模式和 IE](./edge-ie-mode-faq.md#my-application-requires-transferring-post-data-between-ie-mode-and-microsoft-edge-is-this-supported) 模式之间传输 POST Microsoft Edge。
+- **改进了 IE 模式与新式浏览器之间的交互。**  从此版本的Microsoft Edge开始，Microsoft Edge和 Internet Explorer 模式之间的导航将包括表单数据和其他 HTTP 标头。 引用器标头、发布数据、表单数据和请求方法将在两种体验中正确转发。 可以使用 [InternetExplorerIntegrationComplexNavDataTypes](/deployedge/microsoft-edge-policies#internetexplorerintegrationcomplexnavdatatypes) 策略指定应包含哪些数据类型。 有关详细信息，请参阅此常见问题解答：[我的应用程序需要在 IE 模式和Microsoft Edge之间传输 POST 数据](./edge-ie-mode-faq.md#my-application-requires-transferring-post-data-between-ie-mode-and-microsoft-edge-is-this-supported)。
 
-- **公共预览版中适用于 IE 模式的云站点列表管理。**  通过云站点列表管理，可以在云中管理 IE 模式的网站列表，而无需本地基础结构来托管组织的站点列表。 您可以使用云站点列表管理中心中的Microsoft Edge网站列表体验来访问Microsoft 365 管理管理功能。 若要了解更多信息，请参阅适用于 [IE 模式的云站点列表管理 (公共预览) ](./edge-ie-mode-cloud-site-list-mgmt.md) 文章。
+- **公共预览版中适用于 IE 模式的云站点列表管理。**  通过云站点列表管理，你可以在云中管理 IE 模式的站点列表，而无需本地基础结构来托管组织的站点列表。 可以使用Microsoft 365 管理中心的Microsoft Edge站点列表体验访问云站点列表管理功能。 若要了解详细信息，请参阅 [适用于 IE 模式的云站点列表管理 (公共预览) ](./edge-ie-mode-cloud-site-list-mgmt.md) 一文。
 
-- **使用 Microsoft Edge WSUS 更新 WebWiew2。** 使用 WSUS 更新 Microsoft Edge IT 管理员还将能够使用 WSUS Microsoft Edge WebView2。 此功能使管理员能够更轻松地为脱机设备提供服务。
+- **使用 WSUS 更新 Microsoft Edge WebWiew2。** 使用 WSUS 更新Microsoft Edge的 IT 管理员还可以使用 WSUS 更新 Microsoft Edge WebView2。 此功能使管理员可以更轻松地为脱机设备提供服务。
 
-- **Server 的 WSUS 更新。** Microsoft Edge、Beta、Dev)  (Microsoft Edge 渠道的 WSUS 和目录更新现在将适用于安装了 Microsoft Edge 的 Windows Server SK，包括 Windows Server 2022。 若要详细了解如何为 WSUS 配置 WSUS Microsoft Edge，请参阅 [Update Microsoft Edge](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge?bc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Fbreadcrumb%2Ftoc.json&toc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Ftoc.json#update-microsoft-edge)。
+- **服务器的 WSUS 更新。** Microsoft Edge通道 (稳定、Beta、开发) 的 WSUS 和目录更新现在将应用于已安装Microsoft Edge的Windows服务器 SKU，包括 Windows Server 2022。 有关如何为Microsoft Edge配置 WSUS 更新的详细信息，请参阅[更新Microsoft Edge](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge?bc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Fbreadcrumb%2Ftoc.json&toc=https%3A%2F%2Fdocs.microsoft.com%2FDeployEdge%2Ftoc.json#update-microsoft-edge)。
 
 ### <a name="policy-updates"></a>策略更新
 
 #### <a name="new-policies"></a>新策略
 
-- [ApplicationGuardUploadBlockingEnabled](/DeployEdge/microsoft-edge-policies#applicationguarduploadblockingenabled) - 防止在应用程序防护中上传文件。
-- [AudioProcessHighPriorityEnabled](/DeployEdge/microsoft-edge-policies#audioprocesshighpriorityenabled) - 允许音频进程在音频流上以高于正常Windows。
-- [AutoLaunchProtocolsComponentEnabled](/DeployEdge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) - 启用自动启动协议组件。
-- [EfficiencyMode](/DeployEdge/microsoft-edge-policies#efficiencymode) - 配置效率模式应处于活动状态时。
-- [ForceSyncTypes](/DeployEdge/microsoft-edge-policies#forcesynctypes) - 配置同步包括的类型列表。
-- [InternetExplorerIntegrationComplexNavDataTypes](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcomplexnavdatatypes) - 配置在进入或退出表单模式时是否发送表单数据和 HTTP Internet Explorer标头。
-- [InternetExplorerModeToolbarButtonEnabled](/DeployEdge/microsoft-edge-policies#internetexplorermodetoolbarbuttonenabled) - 在工具栏Internet Explorer模式按钮中显示重新加载。
-- [PrintPostScriptMode](/DeployEdge/microsoft-edge-policies#printpostscriptmode) - 以PostScript打印。
-- [PrintRasterizePdfDpi](/DeployEdge/microsoft-edge-policies#printrasterizepdfdpi) - 以 Rasterize PDF DPI 进行打印。
+- [ApplicationGuardUploadBlockingEnabled](/DeployEdge/microsoft-edge-policies#applicationguarduploadblockingenabled) - 防止在 Application Guard 中上传文件。
+- [AudioProcessHighPriorityEnabled](/DeployEdge/microsoft-edge-policies#audioprocesshighpriorityenabled) - 允许音频进程在Windows上以高于正常状态的优先级运行。
+- [AutoLaunchProtocolsComponentEnabled](/DeployEdge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) - 已启用 AutoLaunch 协议组件。
+- [EfficiencyMode](/DeployEdge/microsoft-edge-policies#efficiencymode) - 配置效率模式何时应处于活动状态。
+- [ForceSyncTypes](/DeployEdge/microsoft-edge-policies#forcesynctypes) - 配置用于同步的类型列表。
+- [InternetExplorerIntegrationComplexNavDataTypes](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcomplexnavdatatypes) - 配置在进入或退出 Internet Explorer 模式时是否发送表单数据和 HTTP 标头。
+- [InternetExplorerModeToolbarButtonEnabled](/DeployEdge/microsoft-edge-policies#internetexplorermodetoolbarbuttonenabled) - 在工具栏中显示 Internet Explorer 模式下的重载按钮。
+- [PrintPostScriptMode](/DeployEdge/microsoft-edge-policies#printpostscriptmode) - 以PostScript模式打印。
+- [PrintRasterizePdfDpi](/DeployEdge/microsoft-edge-policies#printrasterizepdfdpi) - 在光栅化 PDF DPI 中打印。
 - [RendererAppContainerEnabled](/DeployEdge/microsoft-edge-policies#rendererappcontainerenabled) - 在应用容器中启用呈现器。
-- [SharedLinksEnabled](/DeployEdge/microsoft-edge-policies#sharedlinksenabled) - 在历史记录中显示Microsoft 365应用共享的链接。
+- [SharedLinksEnabled](/DeployEdge/microsoft-edge-policies#sharedlinksenabled) - 显示从历史记录中的Microsoft 365应用共享的链接。
 - [TyposquattingCheckerEnabled](/DeployEdge/microsoft-edge-policies#typosquattingcheckerenabled) - 配置 Edge TyposquattingChecker。
 
 <!-- end major 96 --->
@@ -130,25 +231,25 @@ ms.locfileid: "12445316"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **在 Microsoft Edge 中查看对 SharePoint Online 库的文件资源管理器支持。**  现在，你可以为联机新式文档库SharePoint"在文件资源管理器中查看"功能。 若要使此体验可见且适用于你的用户，你需要启用 Microsoft Edge"在 Microsoft Edge 中为 SharePoint 页面配置文件资源管理器中的查看功能["](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)策略，并更新 SharePoint Online 租户配置。 了解更多信息：SharePoint文件资源管理器查看Microsoft Edge [- SharePoint Microsoft 365 |Microsoft Docs](/SharePoint/sharepoint-view-in-edge)。
+- **在 Microsoft Edge 中查看对 SharePoint Online 库的文件资源管理器支持。**  现在，可以为SharePoint联机新式文档库启用视图文件资源管理器功能。 若要使此体验可见且适用于用户，需要启用Microsoft Edge[“为Microsoft Edge中的SharePoint页面配置视图文件资源管理器功能”](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)策略，并更新SharePoint联机租户配置。 了解详细信息：[使用Microsoft Edge中的文件资源管理器查看SharePoint文件 - SharePoint Microsoft 365 |Microsoft Docs](/SharePoint/sharepoint-view-in-edge)。
 
 - **Intranet 区域文件 URL 链接将在 Windows 文件资源管理器中打开。**  你可以允许文件 URL 链接到源自 Intranet 区域 HTTPS 网站的 Intranet 区域文件，以打开该文件或目录的 Windows 文件资源管理器。 可以使用 [IntranetFileLinksEnabled](/deployedge/microsoft-edge-policies#intranetfilelinksenabled) 策略启用此体验。
 
-- **对下载体验进行的改进。**  对下载用户体验的支持正扩展到渐进式 Web 应用程序 PWA 和 WebView。 我们还将开始支持拖放到文件资源管理器和桌面。
+- **对下载体验进行的改进。**  正在将对下载用户体验的支持扩展到渐进式 Web 应用程序 PVA 和 WebView。 我们还将开始支持拖放到文件资源管理器和桌面。
 
-- **继续你在 PDF 文件上的工作。**  可以从上次关闭 PDF 文档的位置继续阅读。
+- **继续你在 PDF 文件上的工作。**  可以继续从上次关闭 PDF 文档的位置进行读取。
 
-- **当笔记本电脑进入延长电池使用时间模式时，效率模式会延长延长电池寿命。**  当笔记本电脑进入电池保护模式时，效率模式将变得活跃，以允许浏览器管理资源使用状态来延长机器的电池寿命。 对于效率模式何时变为活动状态、拔掉电池和电量不足、已拔掉、始终和从不，你有四个选项。 注意：这是受控功能推出。 具有电池的设备应已打开该功能。
+- **当笔记本电脑进入延长电池使用时间模式时，效率模式会延长延长电池寿命。**  当笔记本电脑进入电池保护模式时，效率模式将变得活跃，以允许浏览器管理资源使用状态来延长机器的电池寿命。 当效率模式变为活动、拔下插头和电池电量、拔下插头、始终和从不时，你将有四个选项。 注意：这是受控功能推出。 具有电池的设备应启用该功能。
 
 ***新策略***
 
-- [BrowserLegacyExtensionPointsBlockingEnabled](/DeployEdge/microsoft-edge-policies#browserlegacyextensionpointsblockingenabled) - 启用浏览器旧版扩展点阻止。
+- [BrowserLegacyExtensionPointsBlockingEnabled](/DeployEdge/microsoft-edge-policies#browserlegacyextensionpointsblockingenabled) - 启用浏览器旧扩展点阻止。
 - [CrossOriginWebAssemblyModuleSharingEnabled](/DeployEdge/microsoft-edge-policies#crossoriginwebassemblymodulesharingenabled) - 指定是否可以跨源发送 WebAssembly 模块。
 - [DisplayCapturePermissionsPolicyEnabled](/DeployEdge/microsoft-edge-policies#displaycapturepermissionspolicyenabled) - 指定是检查还是跳过显示捕获权限策略。
-- [InternetExplorerIntegrationWindowOpenHeightAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) - 配置来自 IE 模式页面与 Microsoft Edge 模式页面的 window.open 高度之间的像素调整。
-- [InternetExplorerIntegrationWindowOpenWidthAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) - 配置来自 IE 模式页面与 Microsoft Edge 模式页面的 window.open 宽度之间的像素调整。
-- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled) - 允许在文件资源管理器Microsoft Edge打开 Intranet 区域Windows URL 链接。
-- [ShadowStackCrashRollbackBehavior](/DeployEdge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) - 配置 ShadowStack 故障回滚行为。
+- [InternetExplorerIntegrationWindowOpenHeightAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) - 配置来自 IE 模式页的 window.open 高度与Microsoft Edge模式页之间的像素调整。
+- [InternetExplorerIntegrationWindowOpenWidthAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) - 配置来自 IE 模式页的 window.open 宽度与Microsoft Edge模式页之间的像素调整。
+- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled) - 允许Microsoft Edge中的 intranet 区域文件 URL 链接在Windows 文件资源管理器中打开。
+- [ShadowStackCrashRollbackBehavior](/DeployEdge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) - 配置 ShadowStack 崩溃回滚行为。
 - [VisualSearchEnabled](/DeployEdge/microsoft-edge-policies#visualsearchenabled) - 启用视觉搜索。
 
 ***已过时的策略***
@@ -172,7 +273,7 @@ ms.locfileid: "12445316"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **Microsoft Edge Beta 和稳定渠道更新的节奏为 4 周。**  我们将对主要版本采用新的 4 周发布周期。 可以在此处阅读有关该决策的更多信息： https://blogs.windows.com/msedgedev/2021/03/12/new-release-cycles-microsoft-edge-extended-stable/
+- **Microsoft Edge转到 Beta 和稳定频道中更新的 4 周节奏。**  我们将为主要版本采用新的 4 周发布周期。 可在此处阅读有关决策的详细信息： https://blogs.windows.com/msedgedev/2021/03/12/new-release-cycles-microsoft-edge-extended-stable/
 
 - **即将提供新的扩展稳定选项。**  我们将向托管企业客户提供新的扩展稳定选项。 扩展稳定选项将保留偶数编号修订版，并且每 8 周更新一次。 将提供每两周一次的安全更新。  请在此处查看其他信息：https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
 
@@ -184,9 +285,9 @@ ms.locfileid: "12445316"
 
 - **为本地帐户启用隐式登录。**   通过启用 OnlyOnPremisesImplicitSigninEnabled 策略，将仅启用本地帐户进行隐式登录。  Microsoft Edge 不会尝试隐式登录到 MSA 或 AAD 帐户。 从本地帐户升级到 AAD 帐户也将停止。
 
-- **添加到 PDF 文档的自由格式文本框。**  我们现在支持将自由格式文本框添加到 PDF 文档，您可以使用这些文本框填充表单和添加可见便笺。
+- **添加到 PDF 文档的自由格式文本框。**  我们现在支持将免费表单文本框添加到 PDF 文档，你可以使用这些文档来填写表单和添加可见笔记。
 
-- **轻松更新密码。**  浏览器现在将你直接转到给定网站的"更改密码"页面，通过避免需要手动导航到该页面来节省时间和单击。 进入此页面后，浏览器还将自动填充现有密码，并建议一个唯一的强密码。  请注意：此功能当前在有限数量的网站上可用。  
+- **轻松更新密码。**  现在，浏览器将直接转到给定网站的“更改密码”页面，从而节省时间并单击，避免手动导航到页面。 在此页上，浏览器还会自动填充现有密码，并建议使用强而唯一的新密码。  请注意：目前此功能在数量有限的站点上可用。  
 
 - **新建辅助功能设置页。** 我们已将与辅助功能相关的设置组合在单个页面上。 可以在主设置列表下找到新的 edge://settings/accessibility 页面。 可在此处找到可放大网页和在焦点区域周围显示高可见性大纲的设置，以及有助于改善 Web 浏览体验的其他设置。 我们将继续在 Microsoft Edge 的未来版本中在此处添加新设置。
 
@@ -216,23 +317,23 @@ ms.locfileid: "12445316"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **Microsoft Edge 中的初始首选项。**  从 Microsoft Edge版本 93 开始，Microsoft Edge初始首选项将更容易[部署到企业](/deployedge/initial-preferences-support-on-microsoft-edge-browser)。
+- **Microsoft Edge 中的初始首选项。**  从 Microsoft Edge 版本 93 开始，通过添加[初始首选项](/deployedge/initial-preferences-support-on-microsoft-edge-browser)，将Microsoft Edge部署到企业将变得更加容易。
 
-- **Microsoft Edge 上的 IE 模式将支持“无合并”行为。**  从 Microsoft Edge版本 93 开始，Microsoft Edge上的 IE 模式将支持"无合并"。 对于最终用户，当从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 你将需要调整站点列表，以配置需要阻止会话共享的站点。 在后台，对于每个 Microsoft Edge 窗口，当首次在该窗口中访问 IE 模式选项卡时，如果其为其中一个指定的“无合并”站点，则该窗口至少会锁定到所有其他Microsoft Edge 窗口的不同“无合并”IE 会话中，直到最后的 IE 模式选项卡在该窗口中关闭。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--no-merge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
+- **Microsoft Edge 上的 IE 模式将支持“无合并”行为。**  从 Microsoft Edge 版本 93 开始，Microsoft Edge上的 IE 模式将支持“无合并”。 对于最终用户，从 IE 模式应用程序启动新的浏览器窗口时，它将位于单独的会话中，类似于 IE11 中的行为。 需要调整网站列表，以配置需要阻止会话共享的站点。 在后台，对于每个 Microsoft Edge 窗口，当首次在该窗口中访问 IE 模式选项卡时，如果其为其中一个指定的“无合并”站点，则该窗口至少会锁定到所有其他Microsoft Edge 窗口的不同“无合并”IE 会话中，直到最后的 IE 模式选项卡在该窗口中关闭。 请在[此处](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--no-merge--option-that-was-supported-in-internet-explorer-11-)了解详细信息。
 
-- **选项卡组。**  将选项卡分类到用户定义的组的功能可帮助您更有效地跨多个工作流查找、切换和管理选项卡。 为了启用此功能，我们将从版本 93 开始启用选项卡Microsoft Edge分组。
+- **选项卡组。**  将选项卡分类到用户定义组的功能可帮助你更有效地查找、切换和管理多个工作流中的选项卡。 若要启用此功能，我们将从版本 93 开始启用选项卡分组Microsoft Edge。
 
-- **使用“垂直标签”时隐藏标题栏。**  当在“垂直标签”中时，隐藏浏览器的标题栏以重获额外多个像素。 从 Microsoft Edge版本 93 开始，您可以转到 edge://settings/appearance，在"自定义工具栏"部分下，选择在"垂直选项卡"模式下隐藏标题栏的选项。
+- **使用“垂直标签”时隐藏标题栏。**  当在“垂直标签”中时，隐藏浏览器的标题栏以重获额外多个像素。 从Microsoft Edge版本 93 开始，可以转到 edge://settings/appearance，在“自定义工具栏”部分下，选择在垂直选项卡模式下隐藏标题栏的选项。
 
-- **悬停工具栏中的视频画中画(PiP)。**  从 Microsoft Edge版本 93 开始，在 PiP 模式的图片 (输入图片) 变得更加简单。 当将鼠标悬停在受支持的视频上时，工具栏将显示，允许在 PiP 窗口中查看该视频。  注意：这当前适用于 macOS Microsoft Edge用户。  在我们向用户继续推出时，请Windows检查。
+- **悬停工具栏中的视频画中画(PiP)。**  从Microsoft Edge版本 93 开始，在图片 (PiP) 模式下输入图片会变得更加容易。 当将鼠标悬停在受支持的视频上时，工具栏将显示，允许在 PiP 窗口中查看该视频。  注意：此功能目前适用于 macOS 上的Microsoft Edge用户。  在我们继续向Windows用户推出时，请立即返回。
 
-- **在 TLS 中删除 3DES。**  从 Microsoft Edge版本 93 开始，将TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在 Microsoft Edge 基于的 Chromium 项目中。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 策略将可用于支持需要保留与过时服务器的兼容性的场景。 此兼容性策略将过时，并停止在 Microsoft Edge 版本 95 中工作。 请确保在此之前更新受影响的服务器。
+- **在 TLS 中删除 3DES。**  从Microsoft Edge版本 93 开始，将删除对TLS_RSA_WITH_3DES_EDE_CBC_SHA密码套件的支持。 此更改发生在 Microsoft Edge 所基于的 Chromium 项目中。 有关详细信息，请导航到 [Chrome 平台状态条目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 策略将可用于支持需要保留与过时服务器的兼容性的场景。 此兼容性策略将过时，并停止在 Microsoft Edge 版本 95 中工作。 请确保在此之前更新受影响的服务器。
 
 - **用于绕过 ClickOnce 和 DirectInvoke 提示的策略。**  我们更新了策略，以允许绕过来自指定域的指定文件类型的 ClickOnce 提示和 DirectInvoke 应用。 为此，需要:
 
   - 启用 [ClickOnceEnabled](/deployedge/microsoft-edge-policies#clickonceenabled) 或 [DirectInvokeEnabled](/deployedge/microsoft-edge-policies#directinvokeenabled)
   - 启用 [AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes) 策略，并设置应禁用 ClickOnce 和 DirectInvoke 的特定文件类型的列表
-  - 启用 [AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls) 策略并设置特定域的列表，ClickOnce和 DirectInvoke 将被禁用
+  - 启用 [AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls) 策略，并设置将禁用 ClickOnce 和 DirectInvoke 的特定域的列表
 
   注意: AutoOpenAllowedForURL 为 AutoOpenFileTypes 的策略。 如果未设置 AutoOpenAllowedForURL 但设置了 AutoOpenFileTypes，则列出的文件类型将从所有 URL 中自动打开。
 
@@ -297,7 +398,7 @@ ms.locfileid: "12445316"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **地址栏上的浏览器历史记录的自然语言搜索**。 借助地址栏中的自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了标题/URL 关键字匹配之外，您还可以根据页面内容/说明/ (查找搜索结果，例如) 上个星期的食谱"。
+- **在地址栏上对浏览器历史记录进行自然语言搜索**。 由于直接从地址栏进行自然语言搜索，现在可以更轻松地查找要查找的文章/网站。 除了游戏/URL 关键字匹配之外，还可以根据页面内容/说明/计时 (（例如“上周的蛋糕食谱”) ）查找搜索结果。
 请注意：这是限制性的功能推出。 如果看不到此功能，请在我们继续推出时再检查。
 
 - **用户可以轻松地在 Microsoft Edge 上进入 Internet Explorer 模式**。 从 Microsoft Edge 版本 92 开始，用户可以在 Microsoft Edge 上以 Internet Explorer 模式重新加载站点，而不是等待站点在 Enterprise 模式站点列表中被配置的同时依赖独立 IE 11 应用程序。 系统将提示用户将网站添加到其本地站点列表，以便在 Microsoft Edge 中导航到的相同页面将在接下来 30 天内自动以 IE 模式呈现。 可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 策略配置此体验，并允许访问 IE 模式入口点，以及允许将站点添加到本地站点列表。 可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 策略调整将网站保留在本地站点列表中的天数。
@@ -388,7 +489,7 @@ ms.locfileid: "12445316"
 Enterprise administrators may opt out of this behavior one of these two policies: 
 
     - [ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](./deployedge/microsoft-edge-policies.md#exemptdomainfiletypepairsfromfiletypedownloadwarnings) - Disable download file type extension-based warnings for specified file types on domains --->
-有关详细信息，请参阅安全[Microsoft Edge下载中断](/deployedge/microsoft-edge-security-downloads-interruptions)
+有关详细信息，请参阅[Microsoft Edge安全下载中断](/deployedge/microsoft-edge-security-downloads-interruptions)
 
 ### <a name="policy-updates"></a>策略更新
 

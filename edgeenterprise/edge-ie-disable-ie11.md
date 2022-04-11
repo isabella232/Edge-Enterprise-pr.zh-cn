@@ -3,19 +3,19 @@ title: 禁用 Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 02/15/2022
+ms.date: 04/08/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge Internet Explorer 11 和使用Internet Explorer模式。
-ms.openlocfilehash: c5452745e362ffc71842c7b5a25b84cea48816d6
-ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
+ms.openlocfilehash: 3ddb012b48b0b9d8448cdee910ed28db85a0e044
+ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "12445806"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "12473626"
 ---
 # <a name="disable-internet-explorer-11"></a>禁用 Internet Explorer 11
 
@@ -30,18 +30,16 @@ ms.locfileid: "12445806"
 
 - Windows 更新
 
-  - Windows 11
-  - Windows 10，版本 21H1 或更高版本
-  - Windows 10，版本 2004;Windows Server 版本 2004;Windows 10，版本 20H2;Windows Server 版本 20H2：[KB4598291](https://support.microsoft.com/topic/february-2-2021-kb4598291-os-builds-19041-789-and-19042-789-preview-6a766199-a4f1-616e-1f5c-58bdc3ca5e3b) 或更高版本
+  - Windows 10版本 21H1 或更高版本
+  - Windows 10版本 2004;Windows服务器版本 2004;Windows 10版本 20H2;Windows服务器版本 20H2：[KB4598291](https://support.microsoft.com/topic/february-2-2021-kb4598291-os-builds-19041-789-and-19042-789-preview-6a766199-a4f1-616e-1f5c-58bdc3ca5e3b) 或更高版本
   - Windows 10版本 1909：[KB4598298](https://support.microsoft.com/topic/january-21-2021-kb4598298-os-build-18363-1350-preview-02dfd9ba-91a2-1b82-dede-42f288c02511) 或更高版本
-  - Windows Server 2019;Windows 10 企业版 2019 LTSC[：KB4598296](https://support.microsoft.com/topic/january-21-2021-kb4598296-os-build-17763-1728-preview-4c0931ff-45b7-ff59-5e00-c03b5afb363d) 或更高版本
+  - Windows服务器 2019;Windows 10 企业版 2019 LTSC：[KB4598296](https://support.microsoft.com/topic/january-21-2021-kb4598296-os-build-17763-1728-preview-4c0931ff-45b7-ff59-5e00-c03b5afb363d) 或更高版本
   - Windows Server 2016;Windows 10 企业版 2016 长期服务版：[KB4601318](https://support.microsoft.com/topic/february-9-2021-kb4601318-os-build-14393-4225-c5e3de6c-e3e6-ffb5-6197-48b9ce16446e) 或更高版本
   - Windows 10 企业版 2015 长期服务：[KB4601331](https://support.microsoft.com/office/february-9-2021%e2%80%94kb4601331-os-build-10240-18842-6227d078-fef3-8d67-27e0-1882e6cb79ff?ui=en-US&rs=en-US&ad=US) 或更高版本
   - Windows 8.1;Windows Server 2012 R2：[KB4601384](https://support.microsoft.com/topic/february-9-2021-kb4601384-monthly-rollup-16bdbb75-dd4b-2910-abc5-7891c9756b96) 或更高版本
   - [Windows Server 2012：KB4601348](https://support.microsoft.com/topic/february-9-2021-kb4601348-monthly-rollup-2c338c0c-73d6-fb80-cc91-f1a86e80db0c)或更高版本
   
 - Microsoft Edge 稳定渠道
-
 
 ## <a name="overview"></a>概述
 
@@ -56,15 +54,16 @@ ms.locfileid: "12445806"
 
 当您启用禁用 **Internet Explorer 11 作为** 独立浏览器策略时，所有 IE11 活动将重定向到 Microsoft Edge，并且用户具有以下体验：
 
-- 将删除"开始"菜单上的 IE11 图标，但任务栏上的图标将保留。
+- “开始”菜单和任务栏上的 IE11 图标将被删除。
 - 当用户尝试启动使用 IE11 的快捷方式或文件关联时，他们将被重定向以在 Microsoft Edge 中打开相同的文件/URL。
 - 当用户尝试通过直接调用 IE11 iexplore.exe，Microsoft Edge 将改为启动。
 
 作为为此体验设置策略的一部分，可以选择为尝试启动 IE11 的每个用户显示重定向消息。 可以将此消息设置为显示"始终"或"每个用户一次"。 默认情况下，不会显示下一张屏幕截图中显示的重定向消息。
 
-:::image type="content" source="media/edge-ie-disable-ie11/disable-ie-redirect-msg.png" alt-text="尝试在重定向到 Microsoft Edge 处于活动状态后打开 IE 时发出警报。":::
+:::image type="content" source="media/edge-ie-disable-ie11/disable-ie-redirect-msg2.png" alt-text="尝试在重定向到 Microsoft Edge 处于活动状态后打开 IE 时发出警报。":::
 
 如果你的企业模式站点列表包含配置为在 IE11 应用中打开的应用程序，并且你通过此策略禁用 IE11，它们在 Microsoft Edge 上将在 IE 模式下打开。
+
 > [!NOTE]
 > 将站点配置为在 IE11 应用程序中打开并设置禁用 IE11 策略时，用户流存在已知问题。 此问题已在 Microsoft Edge 版本 91.0.840.0 或更高版本中修复。
 
@@ -72,9 +71,9 @@ ms.locfileid: "12445806"
 
 若要使用组策略禁用 Internet Explorer 11，请按照以下步骤操作：
 
-1. 确保你有必备的操作系统更新。 此步骤将直接更新计算机上的 ADMX 文件（特别是 inetres.adml 和 inetres.admx）。 请注意，如果要更新中央存储，则需要从有必备更新的计算机上复制 .adml 和 .admx 文件。 有关详细信息，请参阅[创建和管理中央存储](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
+1. 确保你有必备的操作系统更新。 此步骤将直接更新计算机上的 ADMX 文件（特别是 inetres.adml 和 inetres.admx）。 请注意，如果要更新 Central Store，则需要从具有必要更新的计算机复制 .adml 和 .admx 文件，或从[此](https://www.microsoft.com/download/details.aspx?id=103124&msclkid=eae4a72fb1fb11ecb97ca3096b36cc06)处下载最新的Windows 10管理员模板。 有关详细信息，请参阅[创建和管理中央存储](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. 打开组策略编辑器。
-3. 转到***计算机配置/管理模板/Windows 组件/Internet Explorer。*** 
+3. 转到***计算机配置/管理模板/Windows 组件/Internet Explorer。***
 4. 双击禁用 **Internet Explorer 11 作为独立浏览器**。
 5. 选择 **"已启用"。**
 6. 在 **"** 选项"下，选取下列值之一：
@@ -83,7 +82,7 @@ ms.locfileid: "12445806"
    - **始终**  如果希望每次从 IE11 重定向用户时通知用户。
    - **每个用户一次**  如果希望仅在第一次重定向用户时通知用户。
 
-7. 单击 **"**   确定 **"或"应用**   "保存此策略设置。
+7.  **SelectOKorApplyto**  ****  保存此策略设置。
 
 ## <a name="see-also"></a>另请参阅
 

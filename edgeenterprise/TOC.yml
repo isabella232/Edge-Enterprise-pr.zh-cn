@@ -1,4 +1,4 @@
-# last revised 03/08/2022
+# last revised 03/16/2022
 - name: Microsoft Edge 企业版文档
   href: index.yml
 - name: Microsoft Edge 文档
@@ -203,6 +203,8 @@
           href: edge-learn-more-co-di.md
         - name: 用于配置代理设置的命令行选项
           href: edge-learnmore-cmdline-options-proxy-settings.md
+        - name: 可配置的 Microsoft Edge 命令
+          href: edge-learnmore-configurable-edge-commands.md
         - name: 基于 URL 列表的策略的筛选器格式
           href: edge-learnmmore-url-list-filter format.md
         - name: 混合内容下载

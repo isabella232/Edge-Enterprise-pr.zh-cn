@@ -1,73 +1,139 @@
 ---
 title: Microsoft Edge 稳定渠道的存档发行说明
-ms.author: aguta
+ms.author: leahtu
 author: dan-wesley
 manager: srugh
-ms.date: 03/07/2022
+ms.date: 03/31/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 稳定渠道的存档发行说明
-ms.openlocfilehash: 0bbe93e8758e093738c679aea9ce769975f47116
-ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
+ms.openlocfilehash: d2c1d9de5d68b008190bbdcc24aee83c352978aa
+ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "12445846"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "12473595"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 稳定渠道的存档发行说明
 
 这些发行说明提供有关 Microsoft Edge Stable 渠道中包含的新功能和非安全更新的信息。 [此处](microsoft-edge-relnotes-security.md)列出所有安全更新。
 
-## <a name="version-960105429-november-19"></a>版本 96.0.1054.29：11 月 19 日
+## <a name="version-970107255-january-6"></a>版本 97.0.1072.55：1 月 6 日
 
-[此处](/deployedge/microsoft-edge-relnotes-security#november-19-2021) 列出了稳定渠道安全性更新。
+[此处](/deployedge/microsoft-edge-relnotes-security#january-6-2022)列出了稳定频道的安全更新。
 
 ### <a name="feature-updates"></a>功能更新
 
-- **公共预览版中适用于 IE 模式的云站点列表管理。** 通过云站点列表管理，可以在云中管理 IE 模式的网站列表，而无需本地基础结构来托管组织的站点列表。 您可以使用云站点列表管理中心中的Microsoft Edge网站列表体验来访问Microsoft 365 管理管理功能。 若要了解更多信息，请参阅适用于 [IE 模式的云站点列表管理 (公共预览) ](./edge-ie-mode-cloud-site-list-mgmt.md) 文章。
+- **在设备上登录多个工作或学校帐户时，使用当前配置文件登录网站。** 当在设备上登录多个工作或学校帐户时，将要求用户从帐户选取器中选择一个帐户来继续访问网站。 在此版本中，系统将提示用户让 Microsoft Edge 使用已登录当前配置文件的工作或学校帐户自动登录网站。 用户可以在“**设置**” > “**配置文件首选项**”中打开和关闭此功能。
+
+- **在 macOS 上添加对 Microsoft 终结点数据丢失防护 (DLP) 的支持。** Microsoft 终结点 DLP 策略实施将在 macOS 上本地提供。
+
+- **自动 HTTPS。** 用户可以在可能支持此更安全协议的域上将导航从 HTTP 升级到 HTTPS。 此支持还可以配置为在所有域上尝试 HTTPS 传输。 请注意: 这是限制性功能推出的功能。 如果没有看到此功能，请在我们继续推出时回来查看。
+
+- **在第三方上下文中阻止 WebSQL。** 将阻止第三方框架使用旧版 WebSQL 功能。 在 Microsoft Edge 版本 101 之前，[WebSQLInThirdPartyContextEnabled](/deployedge/microsoft-edge-policies#websqlinthirdpartycontextenabled) 策略可作为选择退出选项使用。 此更改发生在 Microsoft Edge 所基于的 Chromium 项目中。 有关详细信息，请导航到 [Chrome Platform Status](https://chromestatus.com/feature/5684870116278272) 条目。
+
+- **Microsoft Edge 中的引文。** 研究的引用来源是学生的普遍要求。 他们必须管理许多研究参考资料和来源，这不是一项简单的任务。 他们还必须将这些引文转换为正确的引文格式，如 APA、MLA 和 Chicago。 这项新的“引文”功能现已在 Microsoft Edge 中预览，它为学生提供了一种在线研究时管理和生成引文的更好方法。 在“集锦”中或从“**设置及更多 (Alt-F)**”打开“引文”后，Microsoft Edge 会自动生成学生以后可以使用的引文，以便他们可以专注于其研究。 完成后，他们可以轻松地将这些引文编译为最终可交付结果。 有关详细信息，请参阅[在 Microsoft Edge 中预览引文](https://blogs.windows.com/msedgedev/2021/11/04/preview-citations-feature-edge/)。
+
+- **控制流保护 (CFG)。** Microsoft Edge 将通过打击内存损坏漏洞和保护间接调用来开始支持更精细的保护。 仅 Windows 8 及更高版本支持 CFG。 有关详细信息，请参阅[控制流防护](/windows/win32/secbp/control-flow-guard)。
   
-- **改进了 IE 模式和新式浏览器之间的切换。** 从此版本的 Microsoft Edge 开始，Microsoft Edge 和 Internet Explorer 模式之间的导航将包括表单数据和其他 HTTP 标头。 引用者标头、帖子数据、表单数据和请求方法将跨这两种体验正确转发。 您可以使用 InternetExplorerIntegrationComplexNavDataTypes 策略指定应包含哪些数据类型。 有关详细信息，请参阅此常见问题解答：[我的应用程序需要在 IE 模式和 IE 模式之间传输 POST Microsoft Edge。这是否受支持？](./edge-ie-mode-faq.md#my-application-requires-transferring-post-data-between-ie-mode-and-microsoft-edge-is-this-supported)
-
-- **使用 Microsoft Edge WSUS 更新 WebWiew2。** 使用 WSUS Windows Server Update Services (更新) IT 管理员Microsoft Edge还将能够使用 WSUS Microsoft Edge WebView2。 此功能使管理员能够更轻松地为脱机设备提供服务。
-
-- **Server 的 WSUS 更新。** 适用于 Microsoft Edge 渠道（ (Stable、Beta 和 Dev) ）的 WSUS 和目录更新现在将适用于安装了 Microsoft Edge 的 Windows Server SK，包括 Windows Server 2022。 若要详细了解如何为 WSUS 配置 WSUS Microsoft Edge，请参阅 [Update Microsoft Edge](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge?bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json&toc=https://docs.microsoft.com/DeployEdge/toc.json#update-microsoft-edge)。
-
-- **Microsoft Edge自动启动协议组件。** Microsoft Edge 96 引入了自动启动协议组件，该组件包含自动允许或阻止[](https://textslashplain.com/2019/07/16/updating-browsers-quickly-flags-respins-and-components/)方案原点词典的列表。 这样可保护客户免受危险方案 (例如，具有 0 天) 的协议处理程序，同时消除已知安全配对 (例如，Teams 网站可以打开 Teams 客户端应用) 。 如果出于某种原因，您不希望 Microsoft Edge 阻止易受攻击的协议处理程序并允许已知安全配对、使用 *edge://settings/content/applicationLinks* 中的切换或将 [AutoLaunchProtocolsComponentEnabled](/deployedge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) 策略设置为 False。
-
-- **直接通过协议 (PWA) 启动渐进式 Web 应用。** 让已安装的 PWA 处理使用特定协议的链接，实现更加集成的体验。
-
-- **快速Office浏览器中查看文件。** 用户现在可以查看 Office 文件，包括文档、电子表格和演示文稿，只需在浏览器中浏览 Microsoft Edge 即可查看这些文件，而无需下载文件，然后在其他应用程序中打开它。 对于托管在 OneDrive 或 SharePoint 上的 Office，文件打开体验不会SharePoint。
-  
-- **PDF 上的任意多边形突出显示。** 通过添加任意格式突出显示器改进了 PDF 查看和标记体验。 你可以突出显示你无法访问的 PDF 中的部分和扫描过的文档。
-
-- **硬件强制执行的堆栈保护。** Microsoft Edge支持更安全的浏览模式，该模式对 Intel 第 11 代受支持硬件上的浏览器进程使用依赖于硬件 (流。 或 AMD 为) 。 注意：因为这是受控功能推出，你可能不会注意到此功能在所有设备上都已启用。 可以通过使用组策略操作 IFEO 中的映像文件执行选项 (或禁用硬件) 堆栈保护。
-
-- **用于错误等同网站的新警告对话框。** 浏览器将在 URL 与其他网站非常相似的一些网站上显示警告。 此 UI 使用客户端启发来提醒用户有关可能欺骗热门网站的网站。 有关详细信息，请参阅 [什么是错位？](https://support.microsoft.com/topic/what-is-typosquatting-54a18872-8459-4d47-b3e3-d84d9a362eb0)。
-  
-- **添加到工具栏中迷你工具栏的沉浸式阅读器。**  我们将字典功能添加到浮动工具栏，以帮助你阅读和研究。 您将能够在拼写检查体验中更快速、更轻松地查找单词的拼写沉浸式阅读器定义。
-  
-- **了解如何使用数学规划求解求解数学问题。** 我们很高兴地宣布，您可以使用数学规划求解在 Microsoft Edge中获取有关各种数学概念的帮助。 这些概念包括从算术和二次方等式到三角法和计算。 利用数学规划求解，您可以拍摄手写或打印的数学问题的图片，然后提供一个即时解决方案以及分步说明，以帮助您了解如何在没有帮助的情况下找到解决方案。 数学规划求解还附带数学键盘，可用于轻松键入数学问题。 此键盘无需四处搜索传统键盘来查找所需的数学字符。 解决你的问题后，数学规划求解提供了一些选项，可以继续学习测验、工作表和视频教程。
-
-- **对 WebRTC 的拆分隧道 VPN 支持。** 允许企业客户从 VPN 拆分隧道中获益，该隧道适用于 Microsoft Edge。 您可以使用 [WebRtcRespectOsRoutingTableEnabled 策略启用](/deployedge/microsoft-edge-policies#webrtcrespectosroutingtableenabled) 此功能。
+  > [!NOTE]
+  > 这是一项不断发展的技术，请分享你反馈，以帮助我们加强对它的支持。
 
 ### <a name="policy-updates"></a>策略更新
 
 #### <a name="new-policies"></a>新策略
 
-- [ApplicationGuardUploadBlockingEnabled](/DeployEdge/microsoft-edge-policies#applicationguarduploadblockingenabled) - 防止在应用程序防护中上传文件
-- [AudioProcessHighPriorityEnabled](/DeployEdge/microsoft-edge-policies#audioprocesshighpriorityenabled) - 允许音频进程在音频流上以高于正常Windows
-- [AutoLaunchProtocolsComponentEnabled](/DeployEdge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) - 启用自动启动协议组件
-- [EfficiencyMode](/DeployEdge/microsoft-edge-policies#efficiencymode) - 配置效率模式应处于活动状态时
-- [ForceSyncTypes](/DeployEdge/microsoft-edge-policies#forcesynctypes) - 配置同步包含的类型列表
-- [InternetExplorerIntegrationComplexNavDataTypes](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcomplexnavdatatypes) - 配置在进入或退出表单模式时是否发送表单数据和 HTTP Internet Explorer标头
-- [InternetExplorerModeToolbarButtonEnabled](/DeployEdge/microsoft-edge-policies#internetexplorermodetoolbarbuttonenabled) - 在工具栏Internet Explorer模式按钮中显示重新加载
+- [AccessibilityImageLabelsEnabled](/DeployEdge/microsoft-edge-policies#accessibilityimagelabelsenabled) - 启用从 Microsoft 获取图像说明
+- [CORSNonWildcardRequestHeadersSupport](/DeployEdge/microsoft-edge-policies#corsnonwildcardrequestheaderssupport) -启用 CORS 非通配符请求标头支持
+- [EdgeDiscoverEnabled](/DeployEdge/microsoft-edge-policies#edgediscoverenabled) - 发现 Microsoft Edge 中的功能
+- [EdgeEnhanceImagesEnabled](/DeployEdge/microsoft-edge-policies#edgeenhanceimagesenabled) - 启用增强图像
+- [InternetExplorerModeTabInEdgeModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorermodetabinedgemodeallowed) - 允许为 Internet Explorer 模式配置的网站在 Microsoft Edge 中打开
+- [SameOriginTabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#sameorigintabcaptureallowedbyorigins) - 允许这些源捕获同一源选项卡
+- [ScreenCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#screencaptureallowedbyorigins) - 允许按这些源捕获桌面、窗口和选项卡
+- [SerialAllowAllPortsForUrls](/DeployEdge/microsoft-edge-policies#serialallowallportsforurls) - 自动授予网站连接所有串行端口的权限
+- [SerialAllowUsbDevicesForUrls](/DeployEdge/microsoft-edge-policies#serialallowusbdevicesforurls) - 自动授予网站连接到 USB 串行设备的权限
+- [SmartScreenDnsRequestsEnabled](/DeployEdge/microsoft-edge-policies#smartscreendnsrequestsenabled) - 启用 Microsoft Defender SmartScreen DNS 请求
+- [TabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#tabcaptureallowedbyorigins) - 允许按这些源捕获选项卡
+- [WebSQLInThirdPartyContextEnabled](/DeployEdge/microsoft-edge-policies#websqlinthirdpartycontextenabled) - 强制重新启用第三方上下文中的 WebSQL
+- [WindowCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#windowcaptureallowedbyorigins) - 允许按这些源捕获窗口和选项卡
+
+## <a name="version-960105462-december-17"></a>版本 96.0.1054.62：12 月 17 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-960105457-december-14"></a>版本 96.0.1054.57：12 月 14 日
+
+> [!Important]
+> 此更新包含 [CVE-2021-4102](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-4102) 的修补程序，Chromium 团队已将其报告为具有自动散布型病毒攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+[此处](/deployedge/microsoft-edge-relnotes-security#december-14-2021) 列出了稳定渠道安全性更新。
+
+## <a name="version-960105453-december-10"></a>版本 96.0.1054.53：12 月 10 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#december-10-2021) 列出了稳定频道的安全更新。
+
+## <a name="version-960105443-december-2"></a>版本 96.0.1054.43：12 月 2 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-960105441-november-30"></a>版本 96.0.1054.41：11 月 30 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-960105434-november-23"></a>版本 96.0.1054.34：11 月 23 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-960105429-november-19"></a>版本 96.0.1054.29：11 月 19 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#november-19-2021) 列出了稳定频道的安全更新。
+
+### <a name="feature-updates"></a>功能更新
+
+- **公共预览版中适用于 IE 模式的云站点列表管理。** 通过云站点列表管理，你可以在云中管理 IE 模式的站点列表，而无需本地基础结构来托管组织的站点列表。 可以使用Microsoft 365 管理中心的Microsoft Edge站点列表体验访问云站点列表管理功能。 若要了解详细信息，请参阅 [适用于 IE 模式的云站点列表管理 (公共预览) ](./edge-ie-mode-cloud-site-list-mgmt.md) 一文。
+  
+- **改进了 IE 模式与新式浏览器之间的交互。** 从此版本的Microsoft Edge开始，Microsoft Edge和 Internet Explorer 模式之间的导航将包括表单数据和其他 HTTP 标头。 引用器标头、发布数据、表单数据和请求方法将在两种体验中正确转发。 可以使用 InternetExplorerIntegrationComplexNavDataTypes 策略指定应包含哪些数据类型。 有关详细信息，请参阅此常见问题解答：[我的应用程序需要在 IE 模式和Microsoft Edge之间传输 POST 数据。是否支持此功能？](./edge-ie-mode-faq.md#my-application-requires-transferring-post-data-between-ie-mode-and-microsoft-edge-is-this-supported)
+
+- **使用 WSUS 更新 Microsoft Edge WebWiew2。** 使用 Windows Server Update Services (WSUS) 更新Microsoft Edge的 IT 管理员还可以使用 WSUS 更新 Microsoft Edge WebView2。 此功能使管理员可以更轻松地为脱机设备提供服务。
+
+- **服务器的 WSUS 更新。** Microsoft Edge通道 (稳定、Beta 和开发人员) 的 WSUS 和目录更新现在将应用于已安装Microsoft Edge的Windows服务器 SKU，包括 Windows Server 2022。 有关如何为Microsoft Edge配置 WSUS 更新的详细信息，请参阅[更新Microsoft Edge](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge?bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json&toc=https://docs.microsoft.com/DeployEdge/toc.json#update-microsoft-edge)。
+
+- **Microsoft Edge自动启动协议组件。** Microsoft Edge 96 引入了 AutoLaunch 协议[组件](https://textslashplain.com/2019/07/16/updating-browsers-quickly-flags-respins-and-components/)，其中包含自动允许或阻止方案源字典的列表。 这可保护客户免受危险方案 (例如，使用 0 天) 的协议处理程序，同时消除来自已知安全配对的提示 (例如，Teams网站可以打开Teams客户端应用) 。 如果出于某种原因，不希望Microsoft Edge阻止易受攻击的协议处理程序并允许已知安全配对，请在 *edge://settings/content/applicationLinks* 中使用切换，或将 [AutoLaunchProtocolsComponentEnabled 策略](/deployedge/microsoft-edge-policies#autolaunchprotocolscomponentenabled)设置为 False。
+
+- **直接通过协议链接启动渐进式 Web 应用 (PWA) 。** 让已安装的 PWA 处理使用特定协议进行更集成体验的链接。
+
+- **在浏览器中快速查看Office文件。** 用户现在可以在浏览器中直接浏览Microsoft Edge时查看Office文件，包括文档、电子表格和演示文稿，而无需下载文件，然后在其他应用程序中打开它。 对于托管在OneDrive或SharePoint上的Office文件，文件打开体验中不会有任何更改。
+  
+- **PDF 上的任意格式突出显示。** 通过添加自由格式荧光笔，PDF 查看和标记体验得到改进。 可以突出显示你无权访问的 PDF 中的各节，以及扫描的文档。
+
+- **硬件强制的 Stack Protection。** Microsoft Edge将开始支持更安全的浏览模式，该模式在受支持的硬件 (Intel 11 Gen 上对浏览器进程使用依赖硬件的控制流。 或 AMD Zen 3) 。 注意：由于这是受控功能推出，因此你可能没有注意到在所有设备上都启用了此功能。 可以通过使用组策略 (IFEO) 操作映像文件执行选项来启用或禁用硬件强制实施的 Stack Protection。
+
+- **用于键入网站的新警告对话框。** 浏览器会在某些包含 URL 的站点上显示警告，这些 URL 看起来与其他网站非常相似。 此 UI 使用客户端启发式方法警告用户可能欺骗热门网站的网站。 有关详细信息，请参阅[什么是拼写错误？](https://support.microsoft.com/topic/what-is-typosquatting-54a18872-8459-4d47-b3e3-d84d9a362eb0)
+  
+- **在沉浸式阅读器中添加到微型工具栏的字典。**  我们将字典功能添加到微型工具栏，以帮助你阅读和研究。 在沉浸式阅读器体验中，你将能够更快、更轻松地查找单词的拼写和定义。
+  
+- **了解如何解决数学求解器的数学问题。** 我们很高兴地宣布，你可以使用数学求解器在Microsoft Edge，以获得各种数学概念的帮助。 这些概念的范围从基本算术和二次公式到三角和微积分。 数学求解器可让你拍摄手写或打印数学问题的图片，然后提供一个即时解决方案，其中包含分步说明，帮助你了解如何在没有帮助的情况下访问解决方案。 数学求解器还附带了一个数学键盘，可用于轻松键入数学问题。 此键盘无需在传统键盘周围搜索即可找到所需的数学字符。 解决问题后，Math Solver 提供了继续学习测验、工作表和视频教程的选项。
+
+- **拆分对 WebRTC 的隧道 VPN 支持。** 使企业客户能够从 VPN 拆分隧道中获益，以便在Microsoft Edge上实现对等流量。 可以使用 [WebRtcRespectOsRoutingTableEnabled](/deployedge/microsoft-edge-policies#webrtcrespectosroutingtableenabled) 策略启用此功能。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [ApplicationGuardUploadBlockingEnabled](/DeployEdge/microsoft-edge-policies#applicationguarduploadblockingenabled) - 防止在 Application Guard 中上传文件
+- [AudioProcessHighPriorityEnabled](/DeployEdge/microsoft-edge-policies#audioprocesshighpriorityenabled) - 允许音频进程在Windows上以高于正常状态的优先级运行
+- [AutoLaunchProtocolsComponentEnabled](/DeployEdge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) - 已启用 AutoLaunch 协议组件
+- [EfficiencyMode](/DeployEdge/microsoft-edge-policies#efficiencymode) - 配置效率模式何时应处于活动状态
+- [ForceSyncTypes](/DeployEdge/microsoft-edge-policies#forcesynctypes) - 配置用于同步的类型列表
+- [InternetExplorerIntegrationComplexNavDataTypes](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcomplexnavdatatypes) - 配置在进入或退出 Internet Explorer 模式时是否发送表单数据和 HTTP 标头
+- [InternetExplorerModeToolbarButtonEnabled](/DeployEdge/microsoft-edge-policies#internetexplorermodetoolbarbuttonenabled) - 在工具栏的 Internet Explorer 模式下显示重载按钮
 - [PrintPostScriptMode](/DeployEdge/microsoft-edge-policies#printpostscriptmode) - 打印PostScript模式
-- [PrintRasterizePdfDpi](/DeployEdge/microsoft-edge-policies#printrasterizepdfdpi) - 打印 Rasterize PDF DPI
+- [PrintRasterizePdfDpi](/DeployEdge/microsoft-edge-policies#printrasterizepdfdpi) - 打印光栅化 PDF DPI
 - [RendererAppContainerEnabled](/DeployEdge/microsoft-edge-policies#rendererappcontainerenabled) - 在应用容器中启用呈现器
-- [SharedLinksEnabled](/DeployEdge/microsoft-edge-policies#sharedlinksenabled) - 在历史记录中显示Microsoft 365应用共享的链接
+- [SharedLinksEnabled](/DeployEdge/microsoft-edge-policies#sharedlinksenabled) - 显示从历史记录中的Microsoft 365应用共享的链接
 - [TyposquattingCheckerEnabled](/DeployEdge/microsoft-edge-policies#typosquattingcheckerenabled) - 配置 Edge TyposquattingChecker
 
 ## <a name="version-950102053-november-12"></a>版本 95.0.1020.53：11 月 12 日
@@ -384,7 +450,7 @@ ms.locfileid: "12445846"
 ## <a name="version-91086448-june-11"></a>版本 91.0.864.48：6 月 11 日
 
 > [!Important]
->此更新包含 [CVE-2021-30551](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30551) 的修补程序，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide/vulnerability/ADV200002)。
+>此更新包含 [CVE-2021-30551](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30551) 的修补程序，Chromium 团队已将其报告为具有外围攻击。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide/vulnerability/ADV200002)。
 
 [此处](/deployedge/microsoft-edge-relnotes-security#june-11-2021) 列出了稳定频道的安全更新。
 
@@ -524,7 +590,7 @@ ms.locfileid: "12445846"
 ## <a name="version-89077477-april-14"></a>版本 89.0.774.77：4 月 14 日
 
 > [!Important]
->此更新包含 [CVE-2021-21206](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21206) 和 [CVE-2021-21220](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21220) 的修补程序，Chromium 团队已报告它们具有通配符攻击。  有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+>此更新包含 [CVE-2021-21206](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21206) 和 [CVE-2021-21220](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21220) 的修补程序，Chromium团队已将其报告为在野外有攻击。  有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
 
 [此处](/deployedge/microsoft-edge-relnotes-security#april-14-2021) 列出了稳定频道的安全更新。
 
@@ -1196,7 +1262,7 @@ ms.locfileid: "12445846"
 
 - 许多开发工具更新，包括新的远程调试支持、UI 改进等。 有关详细信息，请参见[开发工具 (Microsoft Edge 83) 中的新增功能](/microsoft-edge/devtools-guide-chromium/whats-new/2020/03/devtools)。
 
-- Microsoft Defender for Cloud Apps 警告方案现已可用。 这使管理员能够设置警告，这是一种新的 Defender for Cloud Apps 阻止类别，用户可以替代 Defender for Cloud Apps 阻止页面。 MDATP E5 阻止功能已与 Microsoft Edge 中的 SmartScreen 阻止功能集成，可提供无缝体验。 通过此体验，可整页呈红色表示阻止并显示“你的组织已阻止此网站”消息，而不是只显示 toast 通知。
+- Microsoft Defender for Cloud Apps警告方案现已推出。 这使管理员能够设置警告，这是Defender for Cloud应用块的新类别，用户可在其中替代Defender for Cloud应用块页。 MDATP E5 阻止功能已与 Microsoft Edge 中的 SmartScreen 阻止功能集成，可提供无缝体验。 通过此体验，可整页呈红色表示阻止并显示“你的组织已阻止此网站”消息，而不是只显示 toast 通知。
 
 - 在页面关闭期间禁止同步 XmlHttpRequest。 将取消在网页卸载期间发送同步 XmlHttpRequest 的操作。 此更改将提高浏览器的性能和可靠性，但如果有 Web 应用程序尚未更新以使用更新式的 Web API（包括 sendBeacon 和 fetch），则这些应用可能会受到影响。 在 Microsoft Edge 88 版本之后，才可使用用于禁用此更改并在页面关闭期间允许同步 XHR 的组策略。 有关详细信息，请参阅 [Microsoft Edge 中影响网站兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
 
