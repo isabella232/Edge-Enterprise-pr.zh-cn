@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: leahtu
 author: dan-wesley
 manager: srugh
-ms.date: 03/10/2022
+ms.date: 04/07/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: a7e11586c77b600253f25c2819a26e72e18f4b28
-ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
+ms.openlocfilehash: 0cf9c2d0ac7a60c03ad6c80d4186629d296a73c6
+ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "12445636"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "12473668"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -30,6 +30,69 @@ ms.locfileid: "12445636"
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](./microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-1000118536-april-7"></a>版本 100.0.1185.36：4 月 7 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#april-7-2022) 列出了稳定频道的安全更新。
+
+## <a name="version-1000118529-april-1"></a>版本 100.0.1185.29：4 月 1 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#april-1-2022)列出了稳定频道的安全更新。
+
+### <a name="feature-updates"></a>功能更新
+
+- **用户代理字符串中的三位数版本号。** Microsoft Edge 现在将发送一个三位数的版本号，例如 User-Agent 标头中的 Edg/100。 这可能会混淆使用错误分析器来确定 User-Agent 字符串版本号的脚本或服务器端分析。 可以使用 [ForceMajorVersionToMinorPositionInUserAgent](/deployedge/microsoft-edge-policies#forcemajorversiontominorpositioninuseragent) 策略来控制是否应在 99 版本冻结 User-Agent 字符串主版本。 此外， **#force-major-version-to-minor** 标志可用于 *edge://flags* 中，以将 User-Agent 字符串中的主要版本冻结为 99。
+
+- **简化 Microsoft 365 应用程序协议激活。** 现在 受信任的 Microsoft 云存储服务上的 Microsoft 365 应用程序协议激活将直接启动某些 Microsoft 365 应用程序，包括 SharePoint 子域和 Microsoft OneDrive URL。 可以使用策略 [AutoLaunchProtocolsComponentEnabled](/deployedge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) 和 [AutoLaunchProtocolsFromOrigins](/deployedge/microsoft-edge-policies#autolaunchprotocolsfromorigins) 启用应用程序协议激活提示（如果需要），并定义启用或禁用警告的其他应用程序和服务。
+
+- **硬件强制实施的堆栈保护。** Microsoft Edge 将通过打击内存损坏漏洞和保护间接调用来继续支持更精细的保护。 硬件强制实施的堆栈保护仅受 Windows 8 及更高版本的支持。 有关详细信息，请参阅[硬件强制实施的堆栈保护](https://techcommunity.microsoft.com/t5/windows-kernel-internals-blog/developer-guidance-for-hardware-enforced-stack-protection/ba-p/2163340)。 可以使用 [ShadowStackCrashRollbackBehavior](/deployedge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) 策略来控制此功能行为。
+
+- **在 Microsoft Outlook 和文件资源管理器中预览 PDF 文件。** 用户可以在轻量级且丰富的只读预览版中查看 PDF 文件。 此功能适用于 Outlook 桌面 PDF 附件或使用文件资源管理器的本地 PDF 文件。
+
+- **打开数字签名的 PDF 文件。** 数字签名广泛用于验证文档的真实性和文档中所做的更改。 可以使用 [PDFSecureMode](/deployedge/microsoft-edge-policies#pdfsecuremode) 策略直接从浏览器为 PDF 文件启用数字签名验证，而无需任何加载项。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [AdsTransparencyEnabled](/DeployEdge/microsoft-edge-policies#adstransparencyenabled) - 配置是否启用广告透明度功能
+- [DefaultWebHidGuardSetting](/DeployEdge/microsoft-edge-policies#defaultwebhidguardsetting) - 控制 WebHID API 的使用
+- [HideRestoreDialogEnabled](/DeployEdge/microsoft-edge-policies#hiderestoredialogenabled) - 在浏览器崩溃后隐藏还原页对话框
+- [PDFSecureMode](/DeployEdge/microsoft-edge-policies#pdfsecuremode) - 本机 PDF 阅读器中的安全模式和基于证书的数字签名验证
+- [PromptOnMultipleMatchingCertificates](/DeployEdge/microsoft-edge-policies#promptonmultiplematchingcertificates) - 当多个证书匹配时提示用户选择证书
+- [WebHidAskForUrls](/DeployEdge/microsoft-edge-policies#webhidaskforurls) - 允许在这些网站上使用 WebHID API
+- [WebHidBlockedForUrls](/DeployEdge/microsoft-edge-policies#webhidblockedforurls) - 阻止这些网站上的 WebHID API
+
+#### <a name="deprecated-policy"></a>已弃用策略
+
+- [BackgroundTemplateListUpdatesEnabled](/DeployEdge/microsoft-edge-policies#backgroundtemplatelistupdatesenabled) - 对“集锦”和使用模板的其他功能启用可用模板列表后台更新
+
+#### <a name="obsoleted-policy"></a>已过时的策略
+
+- [AllowSyncXHRInPageDismissal](/DeployEdge/microsoft-edge-policies#allowsyncxhrinpagedismissal) - 允许页面在页面关闭期间发送同步 XHR 请求。
+
+## <a name="version-980110892-march-26"></a>版本 98.0.1108.92：3 月 26 日
+
+修复了扩展稳定版的各种 bug 和性能问题。
+
+## <a name="version-990115055-march-26"></a>版本 99.0.1150.55：3 月 26 日
+
+> [!Important]
+> 此更新包含 [CVE-2022-1096](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-1096) 的修补程序，Chromium 团队已将其报告为具有在野利用。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+[此处](/deployedge/microsoft-edge-relnotes-security#march-26-2022) 列出了稳定渠道安全性更新。
+
+## <a name="version-990115052-march-24"></a>版本 99.0.1150.52：3 月 24 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-980110884-march-17"></a>版本 98.0.1108.84：3 月 17 日
+
+修复了扩展稳定版的各种 bug 和性能问题。
+
+## <a name="version-990115046-march-17"></a>版本 99.0.1150.46：3 月 17 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#march-17-2022) 列出了稳定频道的安全更新。
 
 ## <a name="version-990115039-march-10"></a>版本 99.0.1150.39：3 月 10 日
 
@@ -72,7 +135,6 @@ ms.locfileid: "12445636"
 - [RelatedMatchesCloudServiceEnabled](/DeployEdge/microsoft-edge-policies#relatedmatchescloudserviceenabled) - 在“在页面上查找”中配置相关匹配项
 - [SignInCtaOnNtpEnabled](/DeployEdge/microsoft-edge-policies#signinctaonntpenabled) - 启用登录单击操作对话框
 - [UserAgentReduction](/DeployEdge/microsoft-edge-policies#useragentreduction) - 启用或禁用 User-Agent 减少
-
 
 ## <a name="version-980110862-february-24"></a>版本 98.0.1108.62：2 月 24 日
 
@@ -151,72 +213,7 @@ ms.locfileid: "12445636"
 
 修复了扩展稳定版的各种 bug 和性能问题。
 
-## <a name="version-970107255-january-6"></a>版本 97.0.1072.55：1 月 6 日
-
-[此处](/deployedge/microsoft-edge-relnotes-security#january-6-2022)列出了稳定频道的安全更新。
-
-### <a name="feature-updates"></a>功能更新
-
-- **在设备上登录多个工作或学校帐户时，使用当前配置文件登录网站。** 当在设备上登录多个工作或学校帐户时，将要求用户从帐户选取器中选择一个帐户来继续访问网站。 在此版本中，系统将提示用户让 Microsoft Edge 使用已登录当前配置文件的工作或学校帐户自动登录网站。 用户可以在“**设置**” > “**配置文件首选项**”中打开和关闭此功能。
-
-- **在 macOS 上添加对 Microsoft 终结点数据丢失防护 (DLP) 的支持。** Microsoft 终结点 DLP 策略实施将在 macOS 上本地提供。
-
-- **自动 HTTPS。** 用户可以在可能支持此更安全协议的域上将导航从 HTTP 升级到 HTTPS。 此支持还可以配置为在所有域上尝试 HTTPS 传输。 请注意: 这是限制性功能推出的功能。 如果没有看到此功能，请在我们继续推出时回来查看。
-
-- **在第三方上下文中阻止 WebSQL。** 将阻止第三方框架使用旧版 WebSQL 功能。 在 Microsoft Edge 版本 101 之前，[WebSQLInThirdPartyContextEnabled](/deployedge/microsoft-edge-policies#websqlinthirdpartycontextenabled) 策略可作为选择退出选项使用。 此更改发生在 Microsoft Edge 所基于的 Chromium 项目中。 有关详细信息，请导航到 [Chrome Platform Status](https://chromestatus.com/feature/5684870116278272) 条目。
-
-- **Microsoft Edge 中的引文。** 研究的引用来源是学生的普遍要求。 他们必须管理许多研究参考资料和来源，这不是一项简单的任务。 他们还必须将这些引文转换为正确的引文格式，如 APA、MLA 和 Chicago。 这项新的“引文”功能现已在 Microsoft Edge 中预览，它为学生提供了一种在线研究时管理和生成引文的更好方法。 在“集锦”中或从“**设置及更多 (Alt-F)**”打开“引文”后，Microsoft Edge 会自动生成学生以后可以使用的引文，以便他们可以专注于其研究。 完成后，他们可以轻松地将这些引文编译为最终可交付结果。 有关详细信息，请参阅[在 Microsoft Edge 中预览引文](https://blogs.windows.com/msedgedev/2021/11/04/preview-citations-feature-edge/)。
-
-- **控制流保护 (CFG)。** Microsoft Edge 将通过打击内存损坏漏洞和保护间接调用来开始支持更精细的保护。 仅 Windows 8 及更高版本支持 CFG。 有关详细信息，请参阅[控制流防护](/windows/win32/secbp/control-flow-guard)。
-  
-  > [!NOTE]
-  > 这是一项不断发展的技术，请分享你反馈，以帮助我们加强对它的支持。
-
-### <a name="policy-updates"></a>策略更新
-
-#### <a name="new-policies"></a>新策略
-
-- [AccessibilityImageLabelsEnabled](/DeployEdge/microsoft-edge-policies#accessibilityimagelabelsenabled) - 启用从 Microsoft 获取图像说明
-- [CORSNonWildcardRequestHeadersSupport](/DeployEdge/microsoft-edge-policies#corsnonwildcardrequestheaderssupport) -启用 CORS 非通配符请求标头支持
-- [EdgeDiscoverEnabled](/DeployEdge/microsoft-edge-policies#edgediscoverenabled) - 发现 Microsoft Edge 中的功能
-- [EdgeEnhanceImagesEnabled](/DeployEdge/microsoft-edge-policies#edgeenhanceimagesenabled) - 启用增强图像
-- [InternetExplorerModeTabInEdgeModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorermodetabinedgemodeallowed) - 允许为 Internet Explorer 模式配置的网站在 Microsoft Edge 中打开
-- [SameOriginTabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#sameorigintabcaptureallowedbyorigins) - 允许这些源捕获同一源选项卡
-- [ScreenCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#screencaptureallowedbyorigins) - 允许按这些源捕获桌面、窗口和选项卡
-- [SerialAllowAllPortsForUrls](/DeployEdge/microsoft-edge-policies#serialallowallportsforurls) - 自动授予网站连接所有串行端口的权限
-- [SerialAllowUsbDevicesForUrls](/DeployEdge/microsoft-edge-policies#serialallowusbdevicesforurls) - 自动授予网站连接到 USB 串行设备的权限
-- [SmartScreenDnsRequestsEnabled](/DeployEdge/microsoft-edge-policies#smartscreendnsrequestsenabled) - 启用 Microsoft Defender SmartScreen DNS 请求
-- [TabCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#tabcaptureallowedbyorigins) - 允许按这些源捕获选项卡
-- [WebSQLInThirdPartyContextEnabled](/DeployEdge/microsoft-edge-policies#websqlinthirdpartycontextenabled) - 强制重新启用第三方上下文中的 WebSQL
-- [WindowCaptureAllowedByOrigins](/DeployEdge/microsoft-edge-policies#windowcaptureallowedbyorigins) - 允许按这些源捕获窗口和选项卡
-
-## <a name="version-960105462-december-17"></a>版本 96.0.1054.62：12 月 17 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-960105457-december-14"></a>版本 96.0.1054.57：12 月 14 日
-
-> [!Important]
-> 此更新包含 [CVE-2021-4102](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-4102) 的修补程序，Chromium 团队已将其报告为具有自动散布型病毒攻击。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
-
-[此处](/deployedge/microsoft-edge-relnotes-security#december-14-2021) 列出了稳定渠道安全性更新。
-
-## <a name="version-960105453-december-10"></a>版本 96.0.1054.53：12 月 10 日
-
-[此处](/deployedge/microsoft-edge-relnotes-security#december-10-2021) 列出了稳定频道的安全更新。
-
-## <a name="version-960105443-december-2"></a>版本 96.0.1054.43：12 月 2 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-960105441-november-30"></a>版本 96.0.1054.41：11 月 30 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-960105434-november-23"></a>版本 96.0.1054.34：11 月 23 日
-
-修复了各种 bug 和性能问题。
-
+<!---- From Version 97.0.1072.55: January 6 to Version 96.0.1054.34: November 23 ---->
 <!---archive from Version 96.0.1054.29: November 19 to Version 94.0.992.57: October 27 --->
 <!-- archive from Version 95.0.1020.30: October 21 to Version 94.0.992.37: September 30 -->
 <!-- archive from Version 94.0.992.31: September 24 to Version 93.0.961.44: September 9  -->

@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/14/2022
+ms.date: 04/08/2022
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: e86f07c5cd09376bea2efbc9796d5169dab7cbde
-ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
+ms.openlocfilehash: 8007ccf6be3169e91d9f2db8832733ef6de9b49e
+ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "12445346"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "12473575"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -31,13 +31,11 @@ ms.locfileid: "12445346"
 
 ## <a name="new-policies"></a>新策略
 
-下表列出了作为本文更新的一部分的新策略和已弃用的策略。
+下表列出了本文更新中的新策略。
 
-| 策略名称 | 字幕 |
-|:-----|:-----|
-|[EdgeAssetDeliveryServiceEnabled](#edgeassetdeliveryserviceenabled)|允许功能从资产传递服务下载资产|
-|[PDFSecureMode](#pdfsecuremode)|本机 PDF 阅读器中的安全模式和基于证书的数字签名验证|
-|[BackgroundTemplateListUpdatesEnabled](#backgroundtemplatelistupdatesenabled)|对“集锦”和使用模板的其他功能启用可用模板列表后台更新(已弃用)|
+| 策略名称 | 标题 |
+|:----|:----|
+|[AllHttpAuthSchemesAllowedForOrigins](#allhttpauthschemesallowedfororigins)|允许所有 HTTP 身份验证的源列表|
 
 ## <a name="available-policies"></a>可用策略
 
@@ -54,7 +52,6 @@ ms.locfileid: "12445346"
 - [“展台模式”设置](#kiosk-mode-settings)
 - [可管理性](#manageability)
 - [本机消息传递](#native-messaging)
-- [Other](#other)
 - [密码管理器和保护](#password-manager-and-protection)
 - [性能](#performance)
 - [允许或拒绝屏幕捕获](#permit-or-deny-screen-capture)
@@ -170,6 +167,7 @@ ms.locfileid: "12445346"
 
 |策略名称|标题|
 |-|-|
+|[AllHttpAuthSchemesAllowedForOrigins](#allhttpauthschemesallowedfororigins)|允许所有 HTTP 身份验证的源列表|
 |[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|允许跨域 HTTP 身份验证提示|
 |[AuthNegotiateDelegateAllowlist](#authnegotiatedelegateallowlist)|指定 Microsoft Edge 可将用户凭据委派到的服务器列表|
 |[AuthSchemes](#authschemes)|支持的身份验证方案|
@@ -181,8 +179,9 @@ ms.locfileid: "12445346"
 |[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|已启用适用于 HTTP Auth 的 Windows Hello|
 ### [*<a name="identity-and-sign-in"></a>身份和登录*](#identity-and-sign-in-policies)
 
-|策略名称|字幕|
+|策略名称|描述文字|
 |-|-|
+|[EdgeDefaultProfileEnabled](#edgedefaultprofileenabled)|已启用默认配置文件设置|
 |[ImplicitSignInEnabled](#implicitsigninenabled)|启用隐式登录|
 |[OneAuthAuthenticationEnforced](#oneauthauthenticationenforced)|登录的强制执行的 OneAuth 身份验证流|
 |[OnlyOnPremisesImplicitSigninEnabled](#onlyonpremisesimplicitsigninenabled)|只为隐式登录启用本地帐户|
@@ -194,6 +193,7 @@ ms.locfileid: "12445346"
 |-|-|
 |[KioskAddressBarEditingEnabled](#kioskaddressbareditingenabled)|配置地址栏编辑，实现展台模式的公共浏览体验。|
 |[KioskDeleteDownloadsOnExit](#kioskdeletedownloadsonexit)|Microsoft Edge 关闭时删除作为展台会话的一部分下载的文件|
+|[KioskSwipeGesturesEnabled](#kioskswipegesturesenabled)|已启用 Microsoft Edge 展台模式下的轻扫手势|
 ### [*<a name="manageability"></a>可管理性*](#manageability-policies)
 
 |策略名称|标题|
@@ -206,11 +206,6 @@ ms.locfileid: "12445346"
 |[NativeMessagingAllowlist](#nativemessagingallowlist)|控制用户可使用的本机消息传递主机|
 |[NativeMessagingBlocklist](#nativemessagingblocklist)|配置本机消息传递阻止列表|
 |[NativeMessagingUserLevelHosts](#nativemessaginguserlevelhosts)|允许用户级本机消息传递主机（已安装但没有管理员权限）|
-### [*<a name="other"></a>Other*](#other-policies)
-
-|策略名称|字幕|
-|-|-|
-|[PromptOnMultipleMatchingCertificates](#promptonmultiplematchingcertificates)|当多个证书匹配时提示用户选择证书|
 ### [*<a name="password-manager-and-protection"></a>密码管理器和保护*](#password-manager-and-protection-policies)
 
 |策略名称|字幕|
@@ -375,11 +370,12 @@ ms.locfileid: "12445346"
 |[ComponentUpdatesEnabled](#componentupdatesenabled)|在 Microsoft Edge 中启用组件更新|
 |[ConfigureDoNotTrack](#configuredonottrack)|配置 Do Not Track|
 |[ConfigureFriendlyURLFormat](#configurefriendlyurlformat)|配置从 Microsoft Edge 复制的 URL 的默认粘贴格式，并确定用户是否可以使用其他格式|
+|[ConfigureKeyboardShortcuts](#configurekeyboardshortcuts)|配置要为其禁用键盘快捷方式的命令列表|
 |[ConfigureOnPremisesAccountAutoSignIn](#configureonpremisesaccountautosignin)|配置当没有 Azure AD 域帐户时使用 Active Directory 域帐户自动登录|
 |[ConfigureOnlineTextToSpeech](#configureonlinetexttospeech)|配置联机文本到语音转换|
 |[ConfigureShare](#configureshare)|配置“共享”体验|
 |[ConfigureViewInFileExplorer](#configureviewinfileexplorer)|在 Microsoft Edge 中为 SharePoint 页面配置在文件资源管理器中查看功能|
-|[CrossOriginWebAssemblyModuleSharingEnabled](#crossoriginwebassemblymodulesharingenabled)|指定是否可以跨源发送 WebAssembly 模块|
+|[CrossOriginWebAssemblyModuleSharingEnabled](#crossoriginwebassemblymodulesharingenabled)|指定是否可以跨源发送 WebAssembly 模块（已过时）|
 |[CustomHelpLink](#customhelplink)|指定自定义帮助链接|
 |[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled)|已启用 DNS 拦截检查|
 |[DefaultBrowserSettingEnabled](#defaultbrowsersettingenabled)|将 Microsoft Edge 设为默认浏览器|
@@ -427,7 +423,7 @@ ms.locfileid: "12445346"
 |[FavoritesBarEnabled](#favoritesbarenabled)|启用收藏夹栏|
 |[FetchKeepaliveDurationSecondsOnShutdown](#fetchkeepalivedurationsecondsonshutdown)|获取关机时的保留持续时间|
 |[ForceBingSafeSearch](#forcebingsafesearch)|强制实施必应安全搜索|
-|[ForceCertificatePromptsOnMultipleMatches](#forcecertificatepromptsonmultiplematches)|配置当配置了“AutoSelectCertificateForUrls”的网站有多个证书匹配项时，Microsoft Edge 是否应自动选择证书|
+|[ForceCertificatePromptsOnMultipleMatches](#forcecertificatepromptsonmultiplematches)|当使用“AutoSelectCertificateForUrls”配置的网站具有多个证书匹配项时，配置 Microsoft Edge 是否应自动选择证书（已弃用）|
 |[ForceEphemeralProfiles](#forceephemeralprofiles)|启用临时配置文件的使用|
 |[ForceGoogleSafeSearch](#forcegooglesafesearch)|强制实施 Google 安全搜索|
 |[ForceLegacyDefaultReferrerPolicy](#forcelegacydefaultreferrerpolicy)|使用 no-referrer-when-downgrade 的默认引用者策略（过时）|
@@ -480,6 +476,7 @@ ms.locfileid: "12445346"
 |[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允许 Internet Explorer 模式测试（已过时）|
 |[InternetExplorerIntegrationWindowOpenHeightAdjustment](#internetexplorerintegrationwindowopenheightadjustment)|配置源自 IE 模式页面和 Edge 模式页面的 window.open 高度之间的像素调整|
 |[InternetExplorerIntegrationWindowOpenWidthAdjustment](#internetexplorerintegrationwindowopenwidthadjustment)|配置源自 IE 模式页面和 Edge 模式页面的 window.open 宽度之间的像素调整|
+|[InternetExplorerModeEnableSavePageAs](#internetexplorermodeenablesavepageas)|允许在 Internet Explorer 模式下使用“页面另存为”|
 |[InternetExplorerModeTabInEdgeModeAllowed](#internetexplorermodetabinedgemodeallowed)|允许为 Internet Explorer 模式配置的网站在 Microsoft Edge 中打开|
 |[InternetExplorerModeToolbarButtonEnabled](#internetexplorermodetoolbarbuttonenabled)|在工具栏中显示“在 Internet Explorer 模式下重新加载”按钮|
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|Intranet 重定向行为|
@@ -496,6 +493,7 @@ ms.locfileid: "12445346"
 |[MediaRouterCastAllowAllIPs](#mediaroutercastallowallips)|允许 Google Cast 连接到所有 IP 地址上的 Cast 设备|
 |[MetricsReportingEnabled](#metricsreportingenabled)|启用使用情况和故障相关数据报告（过时）|
 |[MicrosoftEdgeInsiderPromotionEnabled](#microsoftedgeinsiderpromotionenabled)|已启用 Microsoft Edge 预览体验成员促销|
+|[MicrosoftOfficeMenuEnabled](#microsoftofficemenuenabled)|允许用户访问 Microsoft Office 菜单|
 |[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|启用本机窗口封闭（已弃用）|
 |[NavigationDelayForInitialSiteListDownloadTimeout](#navigationdelayforinitialsitelistdownloadtimeout)|为企业模式站点列表设置延迟选项卡导航延迟的超时|
 |[NetworkPredictionOptions](#networkpredictionoptions)|启用网络预测|
@@ -508,6 +506,7 @@ ms.locfileid: "12445346"
 |[ProactiveAuthEnabled](#proactiveauthenabled)|启用主动身份验证（已过时）|
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|启用完整选项卡促销内容|
 |[PromptForDownloadLocation](#promptfordownloadlocation)|询问在何处保存下载的文件|
+|[PromptOnMultipleMatchingCertificates](#promptonmultiplematchingcertificates)|当多个证书匹配时提示用户选择证书|
 |[QuicAllowed](#quicallowed)|允许 QUIC 协议|
 |[QuickViewOfficeFilesEnabled](#quickviewofficefilesenabled)|在 Microsoft Edge 中管理 QuickView Office 文件功能|
 |[RedirectSitesFromInternetExplorerPreventBHOInstall](#redirectsitesfrominternetexplorerpreventbhoinstall)|阻止安装可将不兼容的网站从 Internet Explorer 重定向到 Microsoft Edge 的 BHO|
@@ -549,6 +548,7 @@ ms.locfileid: "12445346"
 |[ShowRecommendationsEnabled](#showrecommendationsenabled)|允许来自 Microsoft Edge 的建议和促销通知|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|启用签名的 HTTP Exchange (SXG) 支持|
 |[SitePerProcess](#siteperprocess)|对每个网站启用网站隔离|
+|[SiteSafetyServicesEnabled](#sitesafetyservicesenabled)|允许用户配置网站安全服务|
 |[SmartActionsBlockList](#smartactionsblocklist)|阻止对服务列表执行智能操作|
 |[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|启用拼写检查|
@@ -591,7 +591,7 @@ ms.locfileid: "12445346"
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制通过 WebRTC 暴露本地 IP 地址|
 |[WebRtcRespectOsRoutingTableEnabled](#webrtcrespectosroutingtableenabled)|通过 WebRTC 建立对等连接时启用对 Windows 操作系统路由表规则的支持|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 使用的本地 UDP 端口的范围|
-|[WebSQLInThirdPartyContextEnabled](#websqlinthirdpartycontextenabled)|强制重新启用第三方上下文中的 WebSQL (已弃用)|
+|[WebSQLInThirdPartyContextEnabled](#websqlinthirdpartycontextenabled)|强制重新启用第三方上下文中的 WebSQL（已过时）|
 |[WebWidgetAllowed](#webwidgetallowed)|启用 Microsoft Edge 栏|
 |[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|允许在 Windows 启动时使用 Microsoft Edge 栏|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|使用 Windows 代理解析程序|
@@ -5403,6 +5403,22 @@ Google 的建议 URL 可指定为：“{google:baseURL}complete/search?output=ch
 
 注意：此策略还会影响使用 [ExtensionInstallForcelist](#extensioninstallforcelist) 强制安装的扩展和应用。
 
+策略选项映射：
+
+* 扩展（扩展）= 扩展
+
+* 主题（主题）= 主题
+
+* user_script (user_script) = 用户脚本
+
+* hosted_app (hosted_app) = 托管应用
+
+* legacy_packaged_app (legacy_packaged_app) = 旧版打包应用
+
+* platform_app (platform_app) = 平台应用
+
+配置此策略时，请使用上述信息。
+
   #### <a name="supported-features"></a>支持的功能：
 
   - 可以强制：是
@@ -5970,6 +5986,70 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="allhttpauthschemesallowedfororigins"></a>AllHttpAuthSchemesAllowedForOrigins
+
+  #### <a name="list-of-origins-that-allow-all-http-authentication"></a>允许所有 HTTP 身份验证的源列表
+
+  
+  
+  #### <a name="supported-versions"></a>受支持的版本:
+
+  - 在自 102 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  设置此策略以指定哪些源允许使用 Microsoft Edge 支持的所有 HTTP 身份验证方案，而不考虑 [AuthSchemes](#authschemes) 策略。
+
+根据此格式设置源模式的格式（https://www.chromium.org/administrators/url-blocklist-filter-format)。 最多可在 [AllHttpAuthSchemesAllowedForOrigins](#allhttpauthschemesallowedfororigins) 中定义 1,000 个异常。
+允许对整个源或源的部件使用通配符。 部件包括方案、主机或端口。
+
+  #### <a name="supported-features"></a>受支持的功能:
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 字符串列表
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：AllHttpAuthSchemesAllowedForOrigins
+  - GP 名称：允许使用所有 HTTP 身份验证的源的列表
+  - GP 路径（强制）：管理模板/Microsoft Edge/HTTP 身份验证
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge\AllHttpAuthSchemesAllowedForOrigins
+  - 路径(推荐): 不适用
+  - 值名称：1, 2, 3, ...
+  - 值类型：REG_SZ 列表
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\AllHttpAuthSchemesAllowedForOrigins\1 = "*.example.com"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名：AllHttpAuthSchemesAllowedForOrigins
+  - 示例值：
+``` xml
+<array>
+  <string>*.example.com</string>
+</array>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="allowcrossoriginauthprompt"></a>AllowCrossOriginAuthPrompt
 
   #### <a name="allow-cross-origin-http-authentication-prompts"></a>允许跨域 HTTP 身份验证提示
@@ -6114,7 +6194,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   - 可以强制：是
   - 可以推荐：否
-  - 动态策略刷新：否 - 需要重新启动浏览器
+  - 动态策略刷新：是
 
   #### <a name="data-type"></a>数据类型：
 
@@ -6497,6 +6577,65 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
   [返回顶部](#microsoft-edge---policies)
 
   ## <a name="identity-and-sign-in-policies"></a>身份和登录策略
+
+  [返回顶部](#microsoft-edge---policies)
+
+  ### <a name="edgedefaultprofileenabled"></a>EdgeDefaultProfileEnabled
+
+  #### <a name="default-profile-setting-enabled"></a>已启用默认配置文件设置
+
+  
+  
+  #### <a name="supported-versions"></a>受支持的版本:
+
+  - 在自 101 或起更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  通过配置此策略后，可以在 Microsoft Edge 中设置一个在打开浏览器时使用的默认配置文件（而不是使用上一个配置文件）。 在已指定“--profile-directory”参数时，此策略不会产生影响。 将值设置为“默认”可引用默认配置文件。 值区分大小写。
+策略的值是配置文件的名称（区分大小写），并且可以使用作为特定配置文件名称的字符串进行配置。
+值“Edge 儿童模式”和“来宾配置文件”被认为是无用值，因为它们不应是默认配置文件。
+此策略将不会影响以下方案：
+  1) 在“配置文件首选项”的“网站配置文件首选项”中指定的设置
+  2) 从 Outlook 和 Teams 打开的链接。
+
+以下语句处于未指定“--profile-directory”的条件下，并且配置的值不是“Edge 儿童模式”或“来宾配置文件”：如果启用此策略并使用特定配置文件名称对其进行配置，并且可以找到指定的配置文件，则 Microsoft Edge 将在启动时使用指定的配置文件，并且“外部链接的默认配置文件”设置将更改为指定的配置文件名称并灰显。如果启用此策略并使用特定配置文件名称对其进行配置，但找不到该策略，则该策略的行为将表现为以前从未设置过。
+如果启用此策略，但未配置或禁用此策略，则该策略的行为将类似于以前从未设置过。
+
+  #### <a name="supported-features"></a>受支持的功能:
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 字符串
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：EdgeDefaultProfileEnabled
+  - GP 名称：已启用默认配置文件设置
+  - GP 路径(强制): 管理模板/Microsoft Edge/身份和登录
+  - GP 路径(推荐): 不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：EdgeDefaultProfileEnabled
+  - 值类型：REG_SZ
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+"Default"
+```
+
+  
 
   [返回顶部](#microsoft-edge---policies)
 
@@ -6910,6 +7049,63 @@ Samba 和 Windows 服务器的所有最新版本都支持 NTLMv2。 只应禁用
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="kioskswipegesturesenabled"></a>KioskSwipeGesturesEnabled
+
+  #### <a name="swipe-gestures-in-microsoft-edge-kiosk-mode-enabled"></a>已启用 Microsoft Edge 展台模式下的轻扫手势
+
+  
+  
+  #### <a name="supported-versions"></a>受支持的版本:
+
+  - 在自 101 或起更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  此策略仅适用于 Microsoft Edge 展台模式。
+
+如果启用或未配置此策略，轻扫手势将按预期方式运行。
+
+如果禁用此策略，用户将无法使用轻扫手势（例如向前和向后导航、刷新页面）。
+
+有关配置展台模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578)。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：KioskSwipeGesturesEnabled
+  - GP 名称：已启用 Microsoft Edge 展台模式下的轻扫手势
+  - GP 路径（强制）：管理模板/Microsoft Edge/展台模式设置
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：KioskSwipeGesturesEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ## <a name="manageability-policies"></a>可管理性策略
 
   [返回页首](#microsoft-edge---policies)
@@ -7165,71 +7361,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 示例值：
 ``` xml
 <false/>
-```
-  
-
-  [返回页首](#microsoft-edge---policies)
-
-  ## <a name="other-policies"></a>其他策略
-
-  [返回页首](#microsoft-edge---policies)
-
-  ### <a name="promptonmultiplematchingcertificates"></a>PromptOnMultipleMatchingCertificates
-
-  #### <a name="prompt-the-user-to-select-a-certificate-when-multiple-certificates-match"></a>当多个证书匹配时提示用户选择证书
-
-  
-  
-  #### <a name="supported-versions"></a>支持的版本：
-
-  - 自 100 或更高版本起在 Windows 和 macOS 上
-
-  #### <a name="description"></a>说明
-
-  此策略控制当多个证书与 [AutoSelectCertificateForUrls](#autoselectcertificateforurls) 匹配时是否提示用户选择客户端证书。
-此配置与 [ForceCertificatePromptsOnMultipleMatches](#forcecertificatepromptsonmultiplematches) 相同，我们更愿意使用此配置。
-如果此策略设置为 True，则每当自动选择策略与多个证书匹配时，系统都会提示用户选择客户端证书。
-如果此策略设置为 False 或未设置，则仅当没有证书与自动选择匹配时，才会提示用户。
-
-  #### <a name="supported-features"></a>支持的功能：
-
-  - 可以强制：是
-  - 可以推荐：否
-  - 动态策略刷新：是
-
-  #### <a name="data-type"></a>数据类型：
-
-  - 布尔
-
-  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
-
-  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
-
-  - GP 唯一名称：PromptOnMultipleMatchingCertificates
-  - GP 名称：当多个证书匹配时提示用户选择证书
-  - GP 路径（强制）：Administrative Templates/Microsoft Edge/Other
-  - GP 路径（推荐）：不适用
-  - GP ADMX 文件名：MSEdge.admx
-
-  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
-
-  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
-  - 路径（推荐）：不适用
-  - 值名称：PromptOnMultipleMatchingCertificates
-  - 值类型：REG_DWORD
-
-  ##### <a name="example-value"></a>示例值：
-
-```
-0x00000001
-```
-
-  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
-  
-  - 首选项项名称：PromptOnMultipleMatchingCertificates
-  - 示例值：
-``` xml
-<true/>
 ```
   
 
@@ -14672,10 +14803,10 @@ SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
 
   此策略已弃用，因为它仅作为一种短期机制提供，目的是让企业能够在发现与内置证书验证程序不兼容时有更多的时间来更新环境和报告问题。
 
-如果计划删除对 Mac OS X 上旧版证书验证程序的支持，则它在 Microsoft Edge 版本 104 中不起作用。
+如果计划删除对 Mac OS X 上旧版证书验证程序的支持，则它在 Microsoft Edge 版本 107 中不起作用。
 
 
-  #### <a name="supported-features"></a>支持的功能：
+  #### <a name="supported-features"></a>受支持的功能:
 
   - 可以强制：是
   - 可以推荐：否
@@ -15608,6 +15739,76 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="configurekeyboardshortcuts"></a>ConfigureKeyboardShortcuts
+
+  #### <a name="configure-the-list-of-commands-for-which-to-disable-keyboard-shortcuts"></a>配置要为其禁用键盘快捷方式的命令列表
+
+  
+  
+  #### <a name="supported-versions"></a>受支持的版本:
+
+  - 在自 101 或起更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  配置要为其禁用键盘快捷方式的 Microsoft Edge 命令的列表。
+
+有关要禁用的可能命令的列表，请参阅 [https://go.microsoft.com/fwlink/?linkid=2186950](https://go.microsoft.com/fwlink/?linkid=2186950)。
+
+如果启用此策略，则“已禁用”列表中的命令将不再由键盘快捷方式激活。
+
+如果禁用此策略，则所有键盘快捷方式将照常运行。
+
+注意：禁用命令将仅删除其快捷方式映射。 如果通过浏览器 UI 访问，则“已禁用”列表中的命令仍将有效。
+
+  #### <a name="supported-features"></a>受支持的功能:
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - Dictionary
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：ConfigureKeyboardShortcuts
+  - GP 名称：配置要为其禁用键盘快捷方式的命令列表
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：ConfigureKeyboardShortcuts
+  - 值类型：REG_SZ
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\ConfigureKeyboardShortcuts = {
+  "disabled": [
+    "new_tab"
+  ]
+}
+```
+
+  ##### <a name="compact-example-value"></a>精简示例值：
+
+  ```
+  SOFTWARE\Policies\Microsoft\Edge\ConfigureKeyboardShortcuts = {"disabled": ["new_tab"]}
+  ```
+  
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="configureonpremisesaccountautosignin"></a>ConfigureOnPremisesAccountAutoSignIn
 
   #### <a name="configure-automatic-sign-in-with-an-active-directory-domain-account-when-there-is-no-azure-ad-domain-account"></a>配置当没有 Azure AD 域帐户时使用 Active Directory 域帐户自动登录
@@ -15902,17 +16103,17 @@ SOFTWARE\Policies\Microsoft\Edge\ConfigureViewInFileExplorer = [
 
   ### <a name="crossoriginwebassemblymodulesharingenabled"></a>CrossOriginWebAssemblyModuleSharingEnabled
 
-  #### <a name="specifies-whether-webassembly-modules-can-be-sent-cross-origin"></a>指定是否可以跨源发送 WebAssembly 模块
+  #### <a name="specifies-whether-webassembly-modules-can-be-sent-cross-origin-obsolete"></a>指定是否可以跨源发送 WebAssembly 模块（已过时）
 
   
-  
-  #### <a name="supported-versions"></a>支持的版本：
+  >已过时：此策略已过时，并且在 Microsoft Edge 98 后无法正常工作。
+  #### <a name="supported-versions"></a>受支持的版本:
 
-  - 在自 95 起或更高版本的 Windows 和 macOS 上
+  - 在自 95 起至 98 为止的 Windows 和 macOS 上
 
   #### <a name="description"></a>描述
 
-  指定 WebAssembly 模块是否可以发送到另一个窗口或跨源工作进程。 作为弃用 document.domain 工作的一部分，将启用跨源 WebAssembly 模块共享，请参阅 https://github.com/mikewest/deprecating-document-domain。 此策略允许重新启用跨源 WebAssembly 模块共享。 这会在弃用过程中提供更长的转换期。
+  指定 WebAssembly 模块是否可以发送到另一个窗口或跨源工作进程。 作为弃用 document.domain 工作的一部分，将弃用跨源 WebAssembly 模块共享，请参阅 https://github.com/mikewest/deprecating-document-domain。 此策略已允许重新启用跨源 WebAssembly 模块共享。 此策略已过时，因为它在弃用过程中旨在提供更长的转换期。
 
 如果启用此策略，站点可以无限制地跨源发送 WebAssembly 模块。
 
@@ -15933,8 +16134,8 @@ SOFTWARE\Policies\Microsoft\Edge\ConfigureViewInFileExplorer = [
   ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 
   - GP 唯一名称：CrossOriginWebAssemblyModuleSharingEnabled
-  - GP 名称：指定是否可以跨源发送 WebAssembly 模块
-  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 名称：指定是否可以跨源发送 WebAssembly 模块（已过时）
+  - GP 路径(强制): 管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
 
@@ -17442,11 +17643,13 @@ SOFTWARE\Policies\Microsoft\Edge\DoNotSilentlyBlockProtocolsFromOrigins = [
 
   配置 Microsoft Edge 完全阻止的下载类型，而不允许用户替代安全决策。
 
-设置 'BlockDangerousDownloads' 可允许所有下载，但带有 Microsoft Defender SmartScreen 警告的下载除外。
+将“BlockDangerousDownloads”设置为允许所有下载，但不包括带有 Microsoft Defender SmartScreen 已知或潜在危险下载警告或具有危险文件类型扩展名的下载。
 
-设置 'BlockPotentiallyDangerousDownloads' 可允许所有下载，但带有 Microsoft Defender SmartScreen 警告的潜在危险或不需要的下载除外。
+将“BlockPotentiallyDangerousDownloads”设置为允许所有下载，但不包括带有 Microsoft Defender SmartScreen 潜在危险或不需要的下载警告或具有危险文件类型扩展名的下载。
 
 设置 "BlockAllDownloads" 以阻止所有下载。
+
+将“BlockMaliciousDownloads”设置为允许所有下载，但带有 Microsoft Defender SmartScreen 已知恶意下载警告的下载除外。
 
 如果未配置此策略或设置 'DefaultDownloadSecurity' 选项，则下载将根据 Microsoft Defender SmartScreen 分析结果执行常规安全限制。
 
@@ -17458,11 +17661,13 @@ SOFTWARE\Policies\Microsoft\Edge\DoNotSilentlyBlockProtocolsFromOrigins = [
 
 * DefaultDownloadSecurity (0) = 无特殊限制
 
-* BlockDangerousDownloads (1) = 阻止危险下载
+* BlockDangerousDownloads (1) = 阻止恶意下载和危险文件类型
 
-* BlockPotentiallyDangerousDownloads (2) = 阻止潜在的危险或有害下载
+* BlockPotentiallyDangerousDownloads (2) = 阻止潜在的危险或不需要的下载和危险文件类型
 
 * BlockAllDownloads (3) = 阻止所有下载
+
+* BlockMaliciousDownloads (4) = 阻止恶意下载
 
 配置此策略时，请使用上述信息。
 
@@ -19120,9 +19325,9 @@ SOFTWARE\Policies\Microsoft\Edge\ExplicitlyAllowedNetworkPorts\1 = "10080"
 
   ### <a name="forcecertificatepromptsonmultiplematches"></a>ForceCertificatePromptsOnMultipleMatches
 
-  #### <a name="configure-whether-microsoft-edge-should-automatically-select-a-certificate-when-there-are-multiple-certificate-matches-for-a-site-configured-with-autoselectcertificateforurls"></a>配置当配置了“AutoSelectCertificateForUrls”的网站有多个证书匹配项时，Microsoft Edge 是否应自动选择证书
+  #### <a name="configure-whether-microsoft-edge-should-automatically-select-a-certificate-when-there-are-multiple-certificate-matches-for-a-site-configured-with-autoselectcertificateforurls-deprecated"></a>当使用“AutoSelectCertificateForUrls”配置的网站具有多个证书匹配项时，配置 Microsoft Edge 是否应自动选择证书（已弃用）
 
-  
+  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
   
   #### <a name="supported-versions"></a>支持的版本：
 
@@ -19130,9 +19335,9 @@ SOFTWARE\Policies\Microsoft\Edge\ExplicitlyAllowedNetworkPorts\1 = "10080"
 
   #### <a name="description"></a>描述
 
-  切换是否在有多个证书可用且网站配置了 [AutoSelectCertificateForUrls](#autoselectcertificateforurls) 时提示用户选择证书。 如果未为网站配置 [AutoSelectCertificateForUrls](#autoselectcertificateforurls)，则系统将始终提示用户选择证书。
+  此策略已弃用，因为我们将迁移到新策略。 它在 Microsoft Edge 版本 104 中不起作用。 要使用的新策略为 [PromptOnMultipleMatchingCertificates](#promptonmultiplematchingcertificates)。
 
-此配置与首选 [PromptOnMultipleMatchingCertificates](#promptonmultiplematchingcertificates) 相同。
+切换是否在有多个证书可用且网站配置了 [AutoSelectCertificateForUrls](#autoselectcertificateforurls) 时提示用户选择证书。 如果未为网站配置 [AutoSelectCertificateForUrls](#autoselectcertificateforurls)，则系统将始终提示用户选择证书。
 
 如果将此策略设置为 True，则只有当有多个证书时，Microsoft Edge 才会提示用户为 [AutoSelectCertificateForUrls](#autoselectcertificateforurls) 中定义的列表上的网站选择证书。
 
@@ -19153,7 +19358,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExplicitlyAllowedNetworkPorts\1 = "10080"
   ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 
   - GP 唯一名称：ForceCertificatePromptsOnMultipleMatches
-  - GP 名称：配置当配置了“AutoSelectCertificateForUrls”的网站有多个证书匹配项时，Microsoft Edge 是否应自动选择证书
+  - GP 名称：当使用“AutoSelectCertificateForUrls”配置的网站具有多个证书匹配项时，配置 Microsoft Edge 是否应自动选择证书（已弃用）
   - GP 路径（强制）：管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
@@ -20577,7 +20782,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 如果未配置此策略，则首次运行时将导入扩展，在以后的浏览会话期间，用户可以选择是否手动导入它们。
 
-还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入扩展，但用户可以在手动导入期间选择或清除**收藏夹**选项。
+还可将此策略设置为建议。 这意味着 Microsoft Edge 在首次运行时将导入扩展，但用户可以在手动导入期间选择或清除“**扩展**”选项。
 
 **注意**：此策略目前仅支持从 Google Chrome（在 Windows 7、8、10和 macOS 上）导入。
 
@@ -22537,6 +22742,66 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="internetexplorermodeenablesavepageas"></a>InternetExplorerModeEnableSavePageAs
+
+  #### <a name="allow-save-page-as-in-internet-explorer-mode"></a>允许在 Internet Explorer 模式下使用“页面另存为”
+
+  
+  
+  #### <a name="supported-versions"></a>受支持的版本:
+
+  - 在自 101 或起更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  此策略在 Internet Explorer 模式下启用“页面另存为”功能。
+用户可以使用此选项在浏览器中保存当前页面。 当用户重新打开已保存的页面时，它将加载到默认浏览器中。
+
+如果启用此策略，则在“更多工具”中将可以点击“页面另存为”选项。
+
+如果禁用或未配置此策略，则用户无法在“更多工具”中选择“页面另存为”选项。
+
+注意：如果要使“Ctrl+S”快捷方式生效，用户必须启用 Internet Explorer 策略“在 Internet Explorer 模式下启用扩展热键”。
+
+要了解有关 Internet Explorer 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：InternetExplorerModeEnableSavePageAs
+  - GP 名称：允许在 Internet Explorer 模式下使用“页面另存为”
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：InternetExplorerModeEnableSavePageAs
+  - 值类型: REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="internetexplorermodetabinedgemodeallowed"></a>InternetExplorerModeTabInEdgeModeAllowed
 
   #### <a name="allow-sites-configured-for-internet-explorer-mode-to-open-in-microsoft-edge"></a>允许为 Internet Explorer 模式配置的网站在 Microsoft Edge 中打开
@@ -23735,6 +24000,68 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="microsoftofficemenuenabled"></a>MicrosoftOfficeMenuEnabled
+
+  #### <a name="allow-users-to-access-the-microsoft-office-menu"></a>允许用户访问 Microsoft Office 菜单
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 自 100 或更高版本起在 Windows 和 macOS 上
+
+  #### <a name="description"></a>说明
+
+  当用户可以访问 Microsoft Office 菜单时，他们可以访问 Office 应用程序，如 Microsoft Word 和 Microsoft Excel。
+
+如果启用或未配置此策略，则用户可以打开 Microsoft Office 菜单。
+
+如果禁用此策略，用户将无法访问 Microsoft Office 菜单。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：MicrosoftOfficeMenuEnabled
+  - GP 名称：允许用户访问 Microsoft Office 菜单
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：MicrosoftOfficeMenuEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称：MicrosoftOfficeMenuEnabled
+  - 示例值：
+``` xml
+<false/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="nativewindowocclusionenabled"></a>NativeWindowOcclusionEnabled
 
   #### <a name="enable-native-window-occlusion-deprecated"></a>启用本机窗口封闭（已弃用）
@@ -24490,6 +24817,66 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="promptonmultiplematchingcertificates"></a>PromptOnMultipleMatchingCertificates
+
+  #### <a name="prompt-the-user-to-select-a-certificate-when-multiple-certificates-match"></a>当多个证书匹配时提示用户选择证书
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 自 100 或更高版本起在 Windows 和 macOS 上
+
+  #### <a name="description"></a>说明
+
+  此策略控制当多个证书与 [AutoSelectCertificateForUrls](#autoselectcertificateforurls) 匹配时是否提示用户选择客户端证书。
+如果此策略设置为 True，则每当自动选择策略与多个证书匹配时，系统都会提示用户选择客户端证书。
+如果此策略设置为 False 或未设置，则仅当没有证书与自动选择匹配时，才会提示用户。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：PromptOnMultipleMatchingCertificates
+  - GP 名称：当多个证书匹配时提示用户选择证书
+  - GP 路径(强制): 管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称：PromptOnMultipleMatchingCertificates
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项项名称：PromptOnMultipleMatchingCertificates
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="quicallowed"></a>QuicAllowed
 
   #### <a name="allow-quic-protocol"></a>允许 QUIC 协议
@@ -25127,7 +25514,9 @@ SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
 
 仅在与必须在 Microsoft Edge 的呈现器进程内运行的第三方软件存在兼容性问题时，才关闭该策略。
 
-  #### <a name="supported-features"></a>支持的功能：
+此策略仅在 Windows 10 设备上受支持。
+
+  #### <a name="supported-features"></a>受支持的功能:
 
   - 可以强制：是
   - 可以推荐：否
@@ -25805,10 +26194,10 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
 如果禁用此策略，Microsoft Edge 将不会阻止这些导航。
 
-管理员可以使用此需要更多时间来更新受此新限制影响的内部网站的方法。 此企业策略是临时的；按计划将在 Microsoft Edge 版本 104 后删除。
+管理员可以使用此需要更多时间来更新受此新限制影响的内部网站的方法。 此企业策略是临时的；按计划将在 Microsoft Edge 版本 117 后删除。
 
 
-  #### <a name="supported-features"></a>支持的功能：
+  #### <a name="supported-features"></a>受支持的功能:
 
   - 可以强制：是
   - 可以推荐：否
@@ -27145,6 +27534,68 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   #### <a name="mac-information-and-settings"></a>Mac 信息和设置
   
   - 首选项项名称：SitePerProcess
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="sitesafetyservicesenabled"></a>SiteSafetyServicesEnabled
+
+  #### <a name="allow-users-to-configure-site-safety-services"></a>允许用户配置网站安全服务
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 自 101 或更高版本起在 Windows 和 macOS 上
+
+  #### <a name="description"></a>说明
+
+  此策略禁止站点安全服务在页面信息对话框中显示热门网站信息。
+
+如果启用或未配置此策略，则将显示热门站点信息。
+
+如果禁用此策略，则不会显示热门站点信息。
+
+  #### <a name="supported-features"></a>受支持的功能:
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称：SiteSafetyServicesEnabled
+  - GP 名称：允许用户配置网站安全服务
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称：SiteSafetyServicesEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称：SiteSafetyServicesEnabled
   - 示例值：
 ``` xml
 <true/>
@@ -29963,19 +30414,19 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   ### <a name="websqlinthirdpartycontextenabled"></a>WebSQLInThirdPartyContextEnabled
 
-  #### <a name="force-websql-in-third-party-contexts-to-be-re-enabled-deprecated"></a>强制重新启用第三方上下文中的 WebSQL (已弃用)
+  #### <a name="force-websql-in-third-party-contexts-to-be-re-enabled-obsolete"></a>强制重新启用第三方上下文中的 WebSQL（已过时）
 
-  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
   
-  #### <a name="supported-versions"></a>支持的版本：
+  >已过时：此策略已过时，并且在 Microsoft Edge 100 后无法正常工作。
+  #### <a name="supported-versions"></a>受支持的版本:
 
-  - 自 97 或更高版本起在 Windows 和 macOS 上
+  - 在自 97 起至 100 为止的 Windows 和 macOS 上
 
   #### <a name="description"></a>描述
 
-  此策略已弃用，因为它作为一种短期机制提供，当发现其网页内容与在第三方背景下禁用 WebSQL 的变化不兼容时，请给企业更多的时间来更新。 它在 Microsoft Edge 版本 101 中不起作用。
+  此策略已过时，因为它原本是一种短期机制，当发现它与在第三方上下文中禁用 WebSQL 的更改不兼容时，该策略将为企业提供更多时间来更新其 web 内容。 它在版本 100 之后的 Microsoft Edge 中不起作用。
 
-默认情况下，第三方上下文中的 WebSQL (例如跨站点 iframe) 从 Microsoft Edge 版本 97 开始关闭，并将在版本 101 中完全删除。
+默认情况下，第三方上下文中的 WebSQL（例如跨站点 iframe）从 Microsoft Edge 版本 97 开始将处于关闭状态，并将在版本 101 中完全删除。
 
 如果启用此策略，则将重新启用第三方上下文中的 WebSQL。
 
@@ -29996,8 +30447,8 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
 
   - GP 唯一名称: WebSQLInThirdPartyContextEnabled
-  - GP 名称: 强制重新启用第三方上下文中的 WebSQL (已弃用)
-  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 名称：强制重新启用第三方上下文中的 WebSQL（已过时）
+  - GP 路径(强制): 管理模板/Microsoft Edge/
   - GP 路径（推荐）：不适用
   - GP ADMX 文件名：MSEdge.admx
 

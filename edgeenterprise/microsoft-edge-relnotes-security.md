@@ -3,23 +3,55 @@ title: Microsoft Edge 安全更新的发行说明
 ms.author: leahtu
 author: dan-wesley
 manager: srugh
-ms.date: 03/03/2022
+ms.date: 04/07/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全更新的发行说明
-ms.openlocfilehash: c62f4891e2986ccd55f1c41b8313c223567d63a1
-ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
+ms.openlocfilehash: 0ab346a202bb8bf42239430000ebc0692d8f7992
+ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "12445306"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "12473589"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全更新的发行说明
 
 本发行说明提供有关 Microsoft Edge 稳定渠道更新中包含的安全修补程序的信息。
+
+## <a name="april-7-2022"></a>2022 年 4 月 7 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定渠道（版本 100.0.1185.36）**，其中包含 Chromium 项目的最新安全更新。 有关详细信息，请参阅[安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+## <a name="april-1-2022"></a>2022 年 4 月 1 日
+
+Microsoft 已发布最新的**Microsoft Edge 稳定渠道（版本 100.0.1185.29）**，其中包含 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+此更新包含以下 Microsoft Edge 专属更新：
+
+- [CVE-2022-24523](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-24523)
+- [CVE-2022-24475](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-24475)
+- [CVE-2022-26891](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26891)
+- [CVE-2022-26895](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26895)
+- [CVE-2022-26894](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26894)
+- [CVE-2022-26900](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26900)
+- [CVE-2022-26908](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26908)
+- [CVE-2022-26909](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26909)
+- [CVE-2022-26912](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26912)
+
+## <a name="march-26-2022"></a>2022 年 3 月 26 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定渠道（版本 99.0.1150.55）**，其中包含 Chromium 项目的最新安全更新。 此更新包含 [CVE-2022-1096](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-1096) 的修补程序，Chromium 团队已将其报告为具有在野利用。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+## <a name="march-17-2022"></a>2022 年 3 月 17 日
+
+Microsoft 已发布最新的 **Microsoft Edge 稳定渠道（版本 99.0.1150.46）**，其中包含 Chromium 项目的最新安全更新。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+此更新包含下列 Microsoft Edge 专属更新：
+
+- [CVE-2022-26899](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26899)
 
 ## <a name="march-3-2022"></a>2022 年 3 月 3 日
 
