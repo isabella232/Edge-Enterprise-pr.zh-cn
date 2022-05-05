@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 渠道发行说明
 ms.author: leahtu
 author: dan-wesley
 manager: srugh
-ms.date: 04/08/2022
+ms.date: 04/27/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 渠道发行说明
-ms.openlocfilehash: 8c2fcd1a45d6d6417e10609dec3cf1c669576c92
-ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
+ms.openlocfilehash: 41f9efd48fa9afef215c2fd8e6499b2840ec256c
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2022
-ms.locfileid: "12473560"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505365"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 渠道的发行说明
 
@@ -23,6 +23,26 @@ ms.locfileid: "12473560"
 
 > [!NOTE]
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-1010121031-april-27"></a>版本 101.0.1210.31：4 月 27 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-1010121026-april-22"></a>版本 101.0.1210.26：4 月 22 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-1010121019-april-18"></a>版本 101.0.1210.19：4 月 18 日
+
+修复了各种 bug 和性能问题。
+
+## <a name="version-1010121014-april-12"></a>版本 101.0.1210.14：4 月 12 日
+
+修复了各种 bug 和性能问题。
+
+### <a name="feature-updates"></a>功能更新
+
+- **对Enterprise站点列表管理器的改进。** 现在，可以在企业站点列表的Microsoft Edge和 Internet Explorer 之间配置共享 Cookie。 可以在 [edge://compat/SiteListManager 访问Enterprise站点列表管理](/deployedge/edge-ie-mode-site-list-manager)*器*。
 
 ## <a name="version-1010121010-april-8"></a>版本 101.0.1210.10：4 月 8 日
 
@@ -76,7 +96,7 @@ ms.locfileid: "12473560"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **简化Microsoft 365应用程序协议激活。** Microsoft 365受信任的 Microsoft 云存储服务上的应用程序协议激活现在将直接启动某些Microsoft 365应用程序，包括SharePoint子域和Microsoft OneDrive URL。 可以使用 [策略 AutoLaunchProtocolsComponentEnabled](/deployedge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) 和 [AutoLaunchProtocolsFromOrigins](/deployedge/microsoft-edge-policies#autolaunchprotocolsfromorigins) 根据需要启用应用程序协议激活提示，并定义启用或禁用警告的其他应用程序和服务。
+- **简化 Microsoft 365 应用程序协议激活。** 现在 受信任的 Microsoft 云存储服务上的 Microsoft 365 应用程序协议激活将直接启动某些 Microsoft 365 应用程序，包括 SharePoint 子域和 Microsoft OneDrive URL。 可以使用策略 [AutoLaunchProtocolsComponentEnabled](/deployedge/microsoft-edge-policies#autolaunchprotocolscomponentenabled) 和 [AutoLaunchProtocolsFromOrigins](/deployedge/microsoft-edge-policies#autolaunchprotocolsfromorigins) 启用应用程序协议激活提示（如果需要），并定义启用或禁用警告的其他应用程序和服务。
 
 ## <a name="version-1000118510-march-17"></a>版本 100.0.1185.10：3 月 17 日
 
@@ -84,7 +104,7 @@ ms.locfileid: "12473560"
 
 - **对 IE 模式的云站点列表管理体验的改进。** 可以在Microsoft 365 管理中心的站点列表中为 IE 模式的Microsoft Edge和 Internet Explorer 之间配置会话 Cookie 共享。 **注意：** 这是受控功能的推出。 如果看不到此功能，请在继续推出时返回
 
-- **Microsoft Outlook和文件资源管理器中的预览 PDF 文件。** 用户可以在轻型且丰富的只读预览中查看 PDF 文件。  可用于Outlook桌面 PDF 附件或使用 文件资源管理器 的本地 PDF 文件。  
+- **在 Microsoft Outlook 和文件资源管理器中预览 PDF 文件。** 用户可以在轻量级且丰富的只读预览版中查看 PDF 文件。  可用于Outlook桌面 PDF 附件或使用 文件资源管理器 的本地 PDF 文件。  
 
 - **在所有桌面设备上安装的 Web 应用同步。** 已安装为应用程序的网站或渐进式Web 应用 (PVA) 将在已登录并启用同步的所有桌面设备之间同步。 它们将显示为“可用应用”供你安装。 从一台设备中删除的应用将在所有设备上同步删除。
 
@@ -92,21 +112,21 @@ ms.locfileid: "12473560"
 
 #### <a name="new-policies"></a>新策略
 
-- [AdsTransparencyEnabled](/DeployEdge/microsoft-edge-policies#adstransparencyenabled) - 配置是否启用了广告透明度功能
+- [AdsTransparencyEnabled](/DeployEdge/microsoft-edge-policies#adstransparencyenabled) - 配置是否启用广告透明度功能
 - [DefaultWebHidGuardSetting](/DeployEdge/microsoft-edge-policies#defaultwebhidguardsetting) - 控制 WebHID API 的使用
 - [HideRestoreDialogEnabled](/DeployEdge/microsoft-edge-policies#hiderestoredialogenabled) - 在浏览器崩溃后隐藏还原页对话框
-- [PDFSecureMode](/DeployEdge/microsoft-edge-policies#pdfsecuremode) - 本机 PDF 读取器中的安全模式和基于证书的数字签名验证
-- [PromptOnMultipleMatchingCertificates](/DeployEdge/microsoft-edge-policies#promptonmultiplematchingcertificates) - 在多个证书匹配时提示用户选择证书
-- [WebHidAskForUrls](/DeployEdge/microsoft-edge-policies#webhidaskforurls) - 允许这些网站上的 WebHID API
+- [PDFSecureMode](/DeployEdge/microsoft-edge-policies#pdfsecuremode) - 本机 PDF 阅读器中的安全模式和基于证书的数字签名验证
+- [PromptOnMultipleMatchingCertificates](/DeployEdge/microsoft-edge-policies#promptonmultiplematchingcertificates) - 当多个证书匹配时提示用户选择证书
+- [WebHidAskForUrls](/DeployEdge/microsoft-edge-policies#webhidaskforurls) - 允许在这些网站上使用 WebHID API
 - [WebHidBlockedForUrls](/DeployEdge/microsoft-edge-policies#webhidblockedforurls) - 阻止这些网站上的 WebHID API
 
 #### <a name="deprecated-policy"></a>已弃用策略
 
-- [BackgroundTemplateListUpdatesEnabled](/DeployEdge/microsoft-edge-policies#backgroundtemplatelistupdatesenabled) - 为集合和其他使用模板的功能的可用模板列表启用后台更新
+- [BackgroundTemplateListUpdatesEnabled](/DeployEdge/microsoft-edge-policies#backgroundtemplatelistupdatesenabled) - 对“集锦”和使用模板的其他功能启用可用模板列表后台更新
 
 #### <a name="obsoleted-policy"></a>已过时的策略
 
-- [AllowSyncXHRInPageDismissal](/DeployEdge/microsoft-edge-policies#allowsyncxhrinpagedismissal) - 允许页面在页面解答期间发送同步 XHR 请求
+- [AllowSyncXHRInPageDismissal](/DeployEdge/microsoft-edge-policies#allowsyncxhrinpagedismissal) - 允许页面在页面关闭期间发送同步 XHR 请求。
 
 ## <a name="version-990115039-march-10"></a>版本 99.0.1150.39：3 月 10 日
 

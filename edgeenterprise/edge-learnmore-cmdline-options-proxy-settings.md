@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: '使用命令行选项配置代理设置 '
-ms.openlocfilehash: 99a5f0776ea42f1e26050e0d30adb48a63907b8c
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 5a7a422813b751d2ed120bc5a287564600dba8e1
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978932"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505485"
 ---
 # <a name="how-to-use-microsoft-edge-command-line-options-to-configure-proxy-settings"></a>如何使用 Microsoft Edge 命令行选项配置代理设置
 
@@ -77,7 +77,7 @@ Microsoft Edge 支持以下与代理相关的命令行选项。
 > [!NOTE]
 > 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 可在[此处](https://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)找到原始页面。
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
 ## <a name="see-also"></a>另请参阅
 

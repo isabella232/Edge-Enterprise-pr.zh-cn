@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 更新程序支持的所有策略的文档
-ms.openlocfilehash: 68b59a66f48633b88063ee33acbc71d819b0cbc7
-ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.openlocfilehash: 4698a4eaa0b51a9429f0c1c45da596d625a3791c
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "12297610"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505375"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新策略
 
@@ -30,11 +30,11 @@ ms.locfileid: "12297610"
 ## <a name="available-policies"></a>可用策略
 这些表列出了本版本 Microsoft Edge 中提供的所有与更新相关的组策略。 使用表中的链接获取有关特定策略的更多详细信息。
 
-|||
-|-|-|
-|[应用程序](#applications)|[首选项](#preferences)|
-|[代理服务器](#proxy-server)|[Microsoft Edge 更新](#microsoft-edge-update)|
-|[Microsoft Edge Web 视图](#microsoft-edge-webview)||
+- [应用程序](#applications)
+- [首选项](#preferences)
+- [代理服务器](#proxy-server)
+- [Microsoft Edge 更新](#microsoft-edge-update)
+- [Microsoft Edge Web 视图](#microsoft-edge-webview)
 
 ### [<a name="applications"></a>应用程序](#applications-policies)
 |策略名称|描述文字|

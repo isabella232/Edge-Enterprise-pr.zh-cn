@@ -11,13 +11,13 @@ metadata:
   ms.collection: collection
   author: dan-wesley
   ms.author: kvice
-  ms.date: 02/02/2021
-  ms.openlocfilehash: 5b4735d08b4af0e65cca1cabee04ed8538926932
-  ms.sourcegitcommit: 42f01cad0bf15224222b2aeadb48f03d46c35723
+  ms.date: 05/04/2022
+  ms.openlocfilehash: 0f23894fabb906c76acda41263e3a83f2de6c6d4
+  ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 11/03/2021
-  ms.locfileid: "12154524"
+  ms.lasthandoff: 05/05/2022
+  ms.locfileid: "12505665"
 landingContent:
 - title: 了解有关企业中的 Microsoft Edge 的信息
   linkLists:
@@ -33,7 +33,7 @@ landingContent:
     links:
     - text: Microsoft Edge 视频
       url: microsoft-edge-videos.md
-    - text: Microsoft EdgeYouTube 频道
+    - text: Microsoft Edge YouTube 频道
       url: https://www.youtube.com/channel/UCIGx7oT8p6-jUpOfg98yelA
 - title: 部署和更新 Microsoft Edge
   linkLists:
@@ -51,9 +51,9 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: 在Microsoft Edge配置Windows
+    - text: 在Windows上配置Microsoft Edge
       url: configure-microsoft-edge.md
-    - text: 在 macOS Microsoft Edge配置客户端
+    - text: 在 macOS 上配置Microsoft Edge
       url: configure-microsoft-edge-on-mac.md
     - text: 将 Microsoft Edge 设为默认浏览器
       url: edge-default-browser.md
@@ -65,6 +65,8 @@ landingContent:
       url: microsoft-edge-video-security-compatibility-manageability.md
     - text: 安全性
       url: ms-edge-security-for-business.md
+    - text: Microsoft 安全基线博客
+      url: https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines
     - text: 隐私
       url: microsoft-edge-enterprise-privacy-settings.md
 - title: 策略参考
@@ -77,9 +79,7 @@ landingContent:
       url: microsoft-edge-update-policies.md
     - text: WebView2 策略参考
       url: microsoft-edge-webview-policies.md
-    - text: Microsoft 安全基线博客
-      url: https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines
-- title: 与社区互动或获取帮助
+- title: 与社区接触或获取帮助
   linkLists:
   - linkListType: get-started
     links:

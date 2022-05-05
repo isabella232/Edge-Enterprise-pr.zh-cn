@@ -1,6 +1,6 @@
 ---
 title: 针对易受攻击的旧版应用的新式安全保护
-ms.author: gennlu
+ms.author: v-danwesley
 author: dan-wesley
 manager: kawong
 ms.date: 10/26/2021
@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解使用 IE Microsoft Edge如何为易受攻击的旧应用提供现代安全保护。
-ms.openlocfilehash: 9a0a4b896d9077a04f980340e3b12f3ad18e0b1a
-ms.sourcegitcommit: 42f01cad0bf15224222b2aeadb48f03d46c35723
+ms.openlocfilehash: 0222d4e66e411e9140880eff89e5504956bb7173
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2021
-ms.locfileid: "12154503"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505475"
 ---
 # <a name="modern-security-protection-for-vulnerable-legacy-apps"></a>针对易受攻击的旧版应用的新式安全保护
 

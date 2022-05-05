@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 政策文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 04/08/2022
+ms.date: 04/26/2022
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: d785ab4a06a6972dcc8d85b560bbae5049c9d314
-ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
+ms.openlocfilehash: cae12fba0b2b0b7ff360f7682b2a541a0043916a
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2022
-ms.locfileid: "12473602"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505745"
 ---
 # <a name="microsoft-edge-webview2---policies"></a>Microsoft Edge WebView2 - 策略
 

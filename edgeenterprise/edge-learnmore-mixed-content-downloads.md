@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解关于混合内容下载以及 Microsoft Edge 对此操作的处理方式。
-ms.openlocfilehash: c199a8b763e456daac34bd1ba07e64ced50358f5
-ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.openlocfilehash: 2bee6416f6c4573ed3273264a771bf704bc2ed09
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "12298280"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505385"
 ---
 # <a name="learn-how-microsoft-edge-handles-mixed-content-downloads"></a>了解 Microsoft Edge 如何处理混合内容下载
 
@@ -65,7 +65,7 @@ ms.locfileid: "12298280"
 > [!NOTE]
 > 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 可在[此处](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)找到原始页面。
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
 ## <a name="see-also"></a>另请参阅
 

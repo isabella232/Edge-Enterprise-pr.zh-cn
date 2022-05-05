@@ -10,26 +10,26 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 正则表达式 2 语法
-ms.openlocfilehash: bdb49090a4d9b0611d3485570757fd86946c4ca5
-ms.sourcegitcommit: e7f3098d8b7d91cae20b5778a71a87daababc312
+ms.openlocfilehash: b74a3cbedb12992d4a6a2e92cd7885d8d41dd86a
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "12298270"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505795"
 ---
 # <a name="regular-expression-2-re2h-syntax"></a>正则表达式 2 (re2.h) 语法
 
 正则表达式是描述字符串集的表示法。 如果字符串位于正则表达式所描述的集合中，通常表示正则表达式匹配该字符串。
 
-最简单的正则表达式是单个文本字符。 除了 `\*+?()|` 等元字符，字符匹配自身。 若要匹配元字符，请用反杠转义它： `\+` 匹配文字加字符。
+最简单的正则表达式是单个文本字符。 除了 `\*+?()|` 等元字符，字符匹配自身。 若要匹配元字符，请使用反斜杠转义它： `\+` 匹配文本加字符。
 
 可以更改或连接两个正则表达式，形成一个新的正则表达式：如果 *e<sub>1</sub>* 匹配 _s_，*e<sub>2</sub>* 匹配 _t_，则 *e<sub>1</sub> * | *e<sub>2</sub>* 匹配 _s_ 或 _t_，而且*e<sub>1</sub>* *e<sub>2</sub>* 匹配 _st_。
 
 元字符 _`\`_、_+_ 和 _?_ 是重复运算符： *e<sub>1</sub>* _`\`_ 匹配零个或多个（可能是不同的）字符串序列，其中每个字符串匹配 *e<sub>1</sub>*；*e<sub>1</sub>* _+_ 匹配一个或多个；*e<sub>1</sub>* _?_ 匹配零个或一个。
 
-运算符的优先级从最弱到最强排序，依次是替换、连接和重复运算符。 显式括号可用于强制不同的含义，就像在算术表达式中一样。 一些示例 _：ab|cd_ 等效于 (_ ab) | (cd) _ ; _`ab\`_ 等效于 _`a(b\)`_ 。
+运算符的优先级从最弱到最强排序，依次是替换、连接和重复运算符。 显式括号可用于强制使用不同的含义，如算术表达式中一样。 一些示例： _ab|cd_ 等效于 _ (ab) | (cd) _ ： _`ab\`_ 等效于 _`a(b\)`_ .
 
-目前所介绍的语法大部分为传统的 Unix _egrep_ 正则表达式语法。 此子集足以描述所有常规语言。 常规语言是一组字符串，只需使用固定的内存量通过文本一次传递就可以匹配。 较新的正则表达式 (尤其是 Perl，以及那些已复制它的语言) 添加了许多新的运算符和转义序列。 这些更改使正则表达式更简洁，有时更模糊，但功能并不强大。
+目前所介绍的语法大部分为传统的 Unix _egrep_ 正则表达式语法。 此子集足以描述所有常规语言。 正则语言是一组字符串，只需使用固定的内存量，即可在单次传递文本中进行匹配。 较新的正则表达式工具 (特别是 Perl 和复制它的语言) 添加了许多新的运算符和转义序列。 这些更改使正则表达式更简洁，有时更隐秘，但功能不强。
 
 本页列出了 RE2 接受的正则表达式语法。
 
@@ -482,7 +482,7 @@ ms.locfileid: "12298270"
 | (?&amp;name) | 递归调用已命名组（不支持） |
 | (?P=name) | 匹配已命名反向引用（不支持） |
 | (?P&gt;name) | 递归调用已命名组（不支持） |
-| (?(cond)true|false) | 条件分支（不支持） |
+|  (？ (cond) true\|false)  | 条件分支（不支持） |
 | (?(cond)true) | 条件分支（不支持） |
 | (\*ACCEPT) | 让 regexps 更类似于 Prolog （不支持） |
 | (\*COMMIT) | （不支持） |
@@ -505,7 +505,7 @@ ms.locfileid: "12298270"
 > [!NOTE]
 > 本页面的某些部分是根据 Chromium.org 创建和共享的作品所做的修改，并根据 [Creative Commons Attribution 4.0 国际许可证](http://creativecommons.org/licenses/by/4.0/)中所述的条款进行使用。 可在[此处](https://github.com/google/re2/wiki/Syntax)找到原始页面。
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />此作品通过 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 国际许可证</a>获得许可。
 
 ## <a name="see-also"></a>另请参阅
 
