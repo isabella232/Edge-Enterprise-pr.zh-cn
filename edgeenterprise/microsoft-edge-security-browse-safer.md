@@ -3,19 +3,19 @@ title: 使用 Microsoft Edge 更安全地进行浏览
 ms.author: pchiquini
 author: dan-wesley
 manager: robfranco
-ms.date: 02/17/2022
+ms.date: 04/27/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解增强的安全性如何支持使用 Microsoft Edge 更安全地浏览。
-ms.openlocfilehash: 43c48cb6210ce194a16759c5adb05a6f67b05249
-ms.sourcegitcommit: 556aca8dde42dd66364427f095e8e473b86651a0
+ms.openlocfilehash: 48a40a40a1741da1cc89a180535f4bb568060ba8
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "12445895"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505405"
 ---
 # <a name="browse-more-safely-with-microsoft-edge"></a>使用 Microsoft Edge 更安全地进行浏览
 
@@ -37,7 +37,7 @@ Microsoft Edge 中增强的安全性通过禁用实时 (JIT) JavaScript 编译�
 你可能还有兴趣详细了解 [Microsoft Edge 中的一线安全保护](/deployedge/ms-edge-security-for-business)。 值得注意的是，你可能想要详细了解 [Microsoft Edge SmartScreen](/deployedge/microsoft-edge-security-smartscreen) 如何保护用户免受网络钓鱼欺诈和恶意软件下载的侵害。
 
 > [!NOTE]
-> 此模式目前不支持使用 WebAssembly (WASM) 的网站。 如果需要访问需要 WASM 的网站，请考虑将网站添加到例外列表，如下所述。
+> 此模式目前不支持使用 WebAssembly (WASM) 的网站。 如果需要访问需要 WASM 的网站，请考虑将其添加到例外网站列表，如[例外网站列表](#exception-site-list)中所述。
 
 ## <a name="whats-new-in-microsoft-edge-security-settings"></a>Microsoft Edge 安全设置中的新增功能
 

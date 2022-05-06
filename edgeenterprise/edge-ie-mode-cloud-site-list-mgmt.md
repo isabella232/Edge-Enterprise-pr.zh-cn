@@ -3,19 +3,19 @@ title: 云站点列表管理 Internet Explorer (IE) 模式"
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 03/17/2022
+ms.date: 04/21/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何使用 IE 模式配置和使用云站点列表 Microsoft 365 管理中心。
-ms.openlocfilehash: 4098c0ef769fa2bf8ec60d6697a17e225ea76bc1
-ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
+ms.openlocfilehash: f26f891886ec43356e932ea06a647b1f86f66f5c
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2022
-ms.locfileid: "12473511"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505815"
 ---
 # <a name="cloud-site-list-management-for-internet-explorer-ie-mode"></a>云站点列表管理 Internet Explorer (IE) 模式
 
@@ -217,7 +217,7 @@ ms.locfileid: "12473511"
 "网站反馈"选项卡显示用户要添加到其本地 IE 模式站点列表的网站，以及Microsoft Edge报告的可能配置错误的非特定网站。 你将看到网站地址、添加此网站的用户数，以及哪些已发布的云托管站点列出了反馈来源。 可以通过将单个条目添加到现有网站列表、暂停或删除反馈来对其执行操作。 还可以查看更改历史记录和注释。
 
 > [!NOTE]
-> 此功能当前正在向所有用户推出，预计将于 3 月中旬完成推出。
+> 此功能目前仅适用于世界范围的云实例。
 
 ### <a name="add-a-site-to-site-lists"></a>将网站添加到网站列表
 

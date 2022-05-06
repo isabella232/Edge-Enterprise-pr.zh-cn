@@ -3,19 +3,19 @@ title: Microsoft Edge Stable 渠道发行说明
 ms.author: leahtu
 author: dan-wesley
 manager: srugh
-ms.date: 04/07/2022
+ms.date: 05/03/2022
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Stable 渠道发行说明
-ms.openlocfilehash: 0cf9c2d0ac7a60c03ad6c80d4186629d296a73c6
-ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
+ms.openlocfilehash: bca403e0ae56a5473a2ea4458206fc6262b29640
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2022
-ms.locfileid: "12473668"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505325"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge Stable 渠道发行说明
 
@@ -30,6 +30,60 @@ ms.locfileid: "12473668"
 > 对于稳定渠道，更新将在一天或多天内逐步推出。 要了解详细信息，请参阅 [Microsoft Edge 更新的渐进式推出](./microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不断发展以改进用户体验、安全性和隐私。 要了解详细信息，请参阅 [Microsoft Edge 中即将推出的影响站点兼容性的更改](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-1000118557-may-2"></a>版本 100.0.1185.57：5 月 2 日
+
+修复了扩展稳定版的各种 bug 和性能问题。
+
+## <a name="version-1010121032-april-28"></a>版本 101.0.1210.32：4 月 28 日
+
+[此处](/deployedge/microsoft-edge-relnotes-security#april-28-2022) 列出了稳定渠道安全性更新。
+
+### <a name="feature-updates"></a>功能更新
+
+- **设置默认配置文件的功能。** 使用 [EdgeDefaultProfileEnabled](/DeployEdge/microsoft-edge-policies#edgedefaultprofileenabled) 策略，可以设置在打开浏览器时使用的默认配置文件，而不是已使用的最后一个配置文件。 如果指定了 `--profile-directory` 参数，则此策略将不适用。
+
+- **从收藏夹栏启动渐进式 Web 应用 (PWA)。** 对 PWA 启动体验的改进将从可添加到工具栏的“应用”图标开始显示。
+
+- **管理“允许来自其他应用商店的扩展”设置。** 现在，你可以使用 [ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled](/DeployEdge/microsoft-edge-policies#controldefaultstateofallowextensionfromotherstoressettingenabled) 策略来设置“允许来自其他应用商店的扩展”设置的默认状态。
+
+- **对企业站点列表管理器的改进。** 现在，可以在企业站点列表上配置 Microsoft Edge 和 Internet Explorer 之间的共享 Cookie。 可以访问位于 *edge://compat/SiteListManager* 的 [企业站点列表管理器](/deployedge/edge-ie-mode-site-list-manager)。
+
+### <a name="policy-updates"></a>策略更新
+
+#### <a name="new-policies"></a>新策略
+
+- [ConfigureKeyboardShortcuts](/DeployEdge/microsoft-edge-policies#configurekeyboardshortcuts) - 配置要为其禁用键盘快捷方式的命令列表
+- [ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled](/DeployEdge/microsoft-edge-policies#controldefaultstateofallowextensionfromotherstoressettingenabled) - 配置“允许来自其他应用商店的扩展”设置的默认状态
+- [EdgeAssetDeliveryServiceEnabled](/DeployEdge/microsoft-edge-policies#edgeassetdeliveryserviceenabled) - 允许从资产传送服务下载资产的功能
+- [EdgeDefaultProfileEnabled](/DeployEdge/microsoft-edge-policies#edgedefaultprofileenabled) - 已启用默认配置文件设置
+- [InternetExplorerModeEnableSavePageAs](/DeployEdge/microsoft-edge-policies#internetexplorermodeenablesavepageas) - 在 Internet Explorer 模式下允许页面另存为
+- [KioskSwipeGesturesEnabled](/DeployEdge/microsoft-edge-policies#kioskswipegesturesenabled) - 已启用 Microsoft Edge 展台模式下的轻扫手势
+- [MicrosoftOfficeMenuEnabled](/DeployEdge/microsoft-edge-policies#microsoftofficemenuenabled) - 允许用户访问 Microsoft Office 菜单
+- [SiteSafetyServicesEnabled](/DeployEdge/microsoft-edge-policies#sitesafetyservicesenabled) - 允许用户配置站点安全服务
+
+#### <a name="deprecated-policies"></a>弃用的策略
+
+- [ForceCertificatePromptsOnMultipleMatches](/DeployEdge/microsoft-edge-policies#forcecertificatepromptsonmultiplematches) - 当配置为“AutoSelectCertificateForUrls”的网站具有多个证书匹配项时，配置 Microsoft Edge 是否应自动选择证书
+
+#### <a name="obsoleted-policies"></a>已过时的策略
+
+- [WebSQLInThirdPartyContextEnabled](/DeployEdge/microsoft-edge-policies#websqlinthirdpartycontextenabled) - 强制重新启用第三方上下文中的 WebSQL
+
+## <a name="version-1000118550-april-21"></a>版本 100.0.1185.50：4 月 21 日
+
+修复了稳定版和扩展稳定版的各种 bug 和性能问题。
+
+## <a name="version-1000118544-april-15"></a>版本 100.0.1185.44：4 月 15 日
+
+> [!Important]
+> 此更新包含 [CVE-2022-1364](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-1364) 的修补程序，Chromium 团队已将其报告为具有在野利用。 有关详细信息，请参阅 [安全更新指南](https://msrc.microsoft.com/update-guide)。
+
+[此处](/deployedge/microsoft-edge-relnotes-security#april-15-2022) 列出了稳定渠道安全性更新。
+
+## <a name="version-1000118539-april-11"></a>版本 100.0.1185.39：4 月 11 日
+
+修复了稳定版和扩展稳定版的各种 bug 和性能问题。
 
 ## <a name="version-1000118536-april-7"></a>版本 100.0.1185.36：4 月 7 日
 
@@ -155,64 +209,8 @@ ms.locfileid: "12473668"
 
 [此处](/deployedge/microsoft-edge-relnotes-security#february-10-2022)列出了稳定频道的安全更新。
 
-## <a name="version-980110843-february-3"></a>版本 98.0.1108.43：2 月 3 日
 
-[此处](/deployedge/microsoft-edge-relnotes-security#february-3-2022)列出了稳定频道的安全更新。
-
-### <a name="feature-updates"></a>功能更新
-
-- **增强 Web 安全性。** 这是 Microsoft Edge 中的一种优先考虑浏览器安全的浏览模式，可在用户浏览网页时为其提供额外一层保护。 管理员可以将组策略应用到最终用户桌面（Windows、macOS 和 Linux），以帮助防范自动散布型病毒攻击（也称为 0 天）。 以下组策略支持此浏览模式：
-
-  - [EnhanceSecurityMode](/deployedge/microsoft-edge-policies#enhancesecuritymode)
-  - [EnhanceSecurityModeBypassListDomains](/deployedge/microsoft-edge-policies#enhancesecuritymodebypasslistdomains)
-  - [EnhanceSecurityModeEnforceListDomains](/deployedge/microsoft-edge-policies#enhancesecuritymodeenforcelistdomains)
-
-- **用户代理字符串中即将推出三位数版本号。** 从版本 100 开始，Microsoft Edge 将在 User-Agent 标头中发送三位数的版本号，例如“Edg/**100**”。 从 Microsoft Edge 97 开始，网站所有者可以通过在 *edge://flags* 中启用 **#force-major-version-to-100** 实验标志来测试此即将推出的用户代理字符串，以确保其 User-Agent 分析逻辑可靠且按预期工作。
-
-- **弃用 WebRTC 的 Plan B SDP 语义。** 此更改将弃用名为 Plan B 的旧版会话描述协议 (SDP) 方言。此 SDP 格式将被 Unified Plan 取代，其是一种符合规范且跨浏览器兼容的 SDP 格式。 有关详细信息，请参阅 Chrome 平台状态条目 [PSA：Plan B 应在 M96 Beta 和稳定版中引发异常](https://chromestatus.com/feature/5823036655665152)和 [PSA：Plan B 在稳定版中引发异常，已延长弃用试用版结束日期](https://groups.google.com/g/discuss-webrtc/c/gEHrZyYKsfU)。 请求 [RTCPeerConnection Plan B SDP 语义的试用版](https://developer.chrome.com/origintrials/#/view_trial/3892235977954951169)允许网站继续使用弃用的 API，直到版本 101。
-
-- **添加到 Microsoft Edge 的叠加滚动条。** 我们已使用基于叠加的设计更新了滚动条。 用户可以在 *edge://flags* 中启用此功能。
-
-### <a name="policy-updates"></a>策略更新
-
-#### <a name="new-policies"></a>新策略
-
-- [AddressBarEditingEnabled](/DeployEdge/microsoft-edge-policies#addressbareditingenabled) - 配置地址栏编辑
-- [AllowGamesMenu](/DeployEdge/microsoft-edge-policies#allowgamesmenu) - 允许用户访问游戏菜单
-- [EdgeFollowEnabled](/DeployEdge/microsoft-edge-policies#edgefollowenabled) - 在 Microsoft Edge 中启用关注服务
-- [EnhanceSecurityMode](/DeployEdge/microsoft-edge-policies#enhancesecuritymode) - 增强 Microsoft Edge 中的安全状态
-- [EnhanceSecurityModeBypassListDomains](/DeployEdge/microsoft-edge-policies#enhancesecuritymodebypasslistdomains) - 配置将不会强制执行增强安全模式的域列表
-- [EnhanceSecurityModeEnforceListDomains](/DeployEdge/microsoft-edge-policies#enhancesecuritymodeenforcelistdomains) - 配置将始终强制执行增强安全模式的域列表
-- [InAppSupportEnabled](/DeployEdge/microsoft-edge-policies#inappsupportenabled) - 启用应用内支持
-- [MicrosoftEdgeInsiderPromotionEnabled](/DeployEdge/microsoft-edge-policies#microsoftedgeinsiderpromotionenabled) - 启用 Microsoft Edge 预览体验成员促销
-- [PrintStickySettings](/DeployEdge/microsoft-edge-policies#printstickysettings) - 打印预览粘滞设置
-- [SandboxExternalProtocolBlocked](/DeployEdge/microsoft-edge-policies#sandboxexternalprotocolblocked) - 允许 Microsoft Edge 在沙盒 iframe 中阻止对外部协议的导航
-- [U2fSecurityKeyApiEnabled](/DeployEdge/microsoft-edge-policies#u2fsecuritykeyapienabled) - 允许使用已弃用的 U2F 安全密钥 API
-
-## <a name="version-970107276-january-27"></a>版本 97.0.1072.76：1 月 27 日
-
-修复了各种 bug 和性能问题。
-
-### <a name="feature-updates"></a>功能更新
-
-- **用户代理字符串中即将推出三位数版本号。** 从版本 100 开始，Microsoft Edge 将在 User-Agent 标头中发送三位数的版本号，例如“Edg/**100**”。 从 Microsoft Edge 97 开始，网站所有者可以通过在 *edge://flags* 中启用 **#force-major-version-to-100** 实验标志来测试此即将推出的用户代理字符串，以确保其 User-Agent 分析逻辑可靠且按预期工作。
-
-## <a name="version-960105475-january-21"></a>版本 96.0.1054.75：1 月 21 日
-
-修复了扩展稳定版的各种 bug 和性能问题。
-
-## <a name="version-970107269-january-20"></a>版本 97.0.1072.69：1 月 20 日
-
-[此处](/deployedge/microsoft-edge-relnotes-security#january-20-2022) 列出了稳定渠道安全性更新。
-
-## <a name="version-970107262-january-13"></a>版本 97.0.1072.62：1 月 13 日
-
-修复了各种 bug 和性能问题。
-
-## <a name="version-960105472-january-6"></a>版本 96.0.1054.72：1 月 6 日
-
-修复了扩展稳定版的各种 bug 和性能问题。
-
+<!--- from Version 98.0.1108.43: February 3 to Version 96.0.1054.72: January 6  -->
 <!---- From Version 97.0.1072.55: January 6 to Version 96.0.1054.34: November 23 ---->
 <!---archive from Version 96.0.1054.29: November 19 to Version 94.0.992.57: October 27 --->
 <!-- archive from Version 95.0.1020.30: October 21 to Version 94.0.992.37: September 30 -->

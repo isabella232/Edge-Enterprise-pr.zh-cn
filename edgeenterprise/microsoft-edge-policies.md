@@ -3,7 +3,7 @@ title: Microsoft Edge 浏览器策略文档
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 04/08/2022
+ms.date: 04/27/2022
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 浏览器支持的所有策略的 Windows 和 Mac 文档
-ms.openlocfilehash: 8007ccf6be3169e91d9f2db8832733ef6de9b49e
-ms.sourcegitcommit: dd8cdbd35726c795ddce917e549ddf17ee7f5290
+ms.openlocfilehash: f5766b5ab1d8bf6f39c6a75296c1eeb5c721ae37
+ms.sourcegitcommit: 592f6e40b13e28af588473b2a75c3ae697e5db2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2022
-ms.locfileid: "12473575"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "12505805"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 策略
 
@@ -31,11 +31,11 @@ ms.locfileid: "12473575"
 
 ## <a name="new-policies"></a>新策略
 
-下表列出了本文更新中的新策略。
+下表列出了本文更新中的新的和弃用的策略。
 
-| 策略名称 | 标题 |
-|:----|:----|
-|[AllHttpAuthSchemesAllowedForOrigins](#allhttpauthschemesallowedfororigins)|允许所有 HTTP 身份验证的源列表|
+| 策略名称 | 字幕 |
+|:-----|:-----|
+|[SetTimeoutWithout1MsClampEnabled](#settimeoutwithout1msclampenabled)|控制 Javascript setTimeout() 函数最小超时(已弃用)|
 
 ## <a name="available-policies"></a>可用策略
 
@@ -497,7 +497,9 @@ ms.locfileid: "12473575"
 |[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|启用本机窗口封闭（已弃用）|
 |[NavigationDelayForInitialSiteListDownloadTimeout](#navigationdelayforinitialsitelistdownloadtimeout)|为企业模式站点列表设置延迟选项卡导航延迟的超时|
 |[NetworkPredictionOptions](#networkpredictionoptions)|启用网络预测|
+|[NetworkServiceSandboxEnabled](#networkservicesandboxenabled)|启用网络服务沙盒|
 |[NonRemovableProfileEnabled](#nonremovableprofileenabled)|配置用户是否始终具有使用其工作或学校帐户自动登录的默认配置文件|
+|[OutlookHubMenuEnabled](#outlookhubmenuenabled)|允许用户访问 Outlook 菜单|
 |[OverrideSecurityRestrictionsOnInsecureOrigin](#overridesecurityrestrictionsoninsecureorigin)|控制对不安全源应用安全限制的位置|
 |[PDFSecureMode](#pdfsecuremode)|本机 PDF 阅读器中的安全模式和基于证书的数字签名验证|
 |[PaymentMethodQueryEnabled](#paymentmethodqueryenabled)|允许网站查询可用的付款方式|
@@ -540,6 +542,7 @@ ms.locfileid: "12473575"
 |[SensorsBlockedForUrls](#sensorsblockedforurls)|阻止访问特定网站上的传感器|
 |[SerialAskForUrls](#serialaskforurls)|在特定网站上允许串行 API|
 |[SerialBlockedForUrls](#serialblockedforurls)|在特定网站上阻止串行 API|
+|[SetTimeoutWithout1MsClampEnabled](#settimeoutwithout1msclampenabled)|控制 Javascript setTimeout() 函数最小超时(已弃用)|
 |[ShadowStackCrashRollbackBehavior](#shadowstackcrashrollbackbehavior)|配置 ShadowStack 故障回滚行为|
 |[SharedArrayBufferUnrestrictedAccessAllowed](#sharedarraybufferunrestrictedaccessallowed)|指定是否可以在非跨源隔离环境中使用 SharedArrayBuffers|
 |[SharedLinksEnabled](#sharedlinksenabled)|显示从历史记录中的 Microsoft 365 应用共享的链接|
@@ -3293,6 +3296,8 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites\1 = "[*.]example.e
 如果未设置此策略，则将使用全局默认值。 全局默认值也将用于你指定的模式未涵盖的域上的 Cookie。
 
 全局默认值可以使用 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) 策略进行配置。 如果未设置 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)，则全局默认值将回退到其他配置源。
+
+有关有效 URL 模式的详细信息，请参阅 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。
 
 请注意，此策略中列出的模式将被视为域而不是 URL，因此不应指定方案或端口。
 
@@ -16642,11 +16647,13 @@ Windows 管理员注意事项：此策略仅适用于运行 Windows 7 的电脑�
 
   允许你指定 Microsoft Edge 标签页是否在浏览器下载初始企业模式站点列表后，才会导航。 此设置适用于应该以 Internet Explorer 模式加载浏览器主页的场景，重要的是在启用IE模式后首次运行浏览器时执行此设置。 如果不存在此场景，我们建议不启用此设置，因为它可能会对加载主页的性能产生负面影响。 该设置仅适用于 Microsoft Edge 没有缓存的企业模式站点列表时，比如在启用IE模式后首次运行浏览器。
 
-此设置与以下策略配合使用：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) （设置为 'IEMode'） 和 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 策略 （列表至少有一个条目）。
+此设置与以下内容结合使用: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) (设置为“IEMode”)和 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 或 [InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist) 策略中的一个(其中列表至少有一个条目)。
 
 该策略的超时行为可使用[NavigationDelayForInitialSiteListDownloadTimeout](#navigationdelayforinitialsitelistdownloadtimeout)策略进行配置。
 
 如果将此策略设置为 'All'，当 Microsoft Edge 没有企业模式站点列表的缓存版本时，选项卡将在浏览器下载网站列表时延迟导航。 由站点列表配置为以 Internet Explorer 模式打开的网站将以 Internet Explorer 模式加载，即使是在浏览器的初始导航期间。 不能被配置为在 Internet Explorer 中打开的站点，比如使用 http:， https:，file:， 或 ftp: 以外的方案的站点，不会在 Edge 模式下立即延迟导航和加载。
+
+由于隐式登录需要在 Microsoft Edge 尝试从 Microsoft 云下载站点列表之前完成(原因是这需要对云服务进行身份验证)，因此当与 [InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist) 策略结合使用时，首次启动 Microsoft Edge 期间存在延迟。
 
 如果将此策略设置为 'None' 或不对其进行配置，则当 Microsoft Edge 不具有缓存版本的企业模式站点列表时，选项卡将立即导航，而不会等待浏览器下载企业模式站点列表。 站点列表配置为在 Internet Explorer 模式下打开的站点将在 Microsoft Edge 模式下打开，直到浏览器完成企业模式站点列表的下载。
 
@@ -18439,13 +18446,15 @@ Microsoft 会保留一个列表，列出出于兼容性原因要对某些域执�
 
   #### <a name="description"></a>描述
 
-  此策略使你能够增强 Microsoft Edge 中的安全状态。
+  此策略使你能够增强 Microsoft Edge 中的安全状态。 
 
 如果将此策略设置为‘StandardMode’，增强模式将关闭，Microsoft Edge 将回退到其标准安全模式。
 
 如果将此策略设置为‘BalancedMode’，则安全状态将处于平衡模式。
 
 如果将此策略设置为‘StrictMode’，则安全状态将处于严格模式。
+
+注意: 启用 EnhanceSecurityMode 后，当前不支持使用 WebAssembly (WASM)的站点。 如果需要访问需 WASM 的站点，请考虑将其添加到异常列表，如 [使用 Microsoft Edge 更安全地浏览内容](/deployedge/microsoft-edge-security-browse-safer) 中所述。
 
 策略选项映射：
 
@@ -24252,6 +24261,61 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="networkservicesandboxenabled"></a>NetworkServiceSandboxEnabled
+
+  #### <a name="enable-the-network-service-sandbox"></a>启用网络服务沙盒
+
+  
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 在自 102 起或更高版本的 Windows 上
+
+  #### <a name="description"></a>描述
+
+  此策略控制网络服务进程是否以沙盒方式运行。
+如果启用此策略，则网络服务进程将以沙盒方式运行。
+如果禁用此策略，则网络服务进程将以非沙盒方式运行。 这会使用户面临与以非沙盒方式运行网络服务相关的其他安全风险。
+如果未设置此策略，则将使用网络沙盒的默认配置。 这可能因 Microsoft Edge 版本、当前正在进行的现场试用版和平台而异。
+此策略旨在让企业能够在使用干扰网络服务沙盒的第三方软件时灵活禁用网络沙盒。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: NetworkServiceSandboxEnabled
+  - GP 名称: 启用网络服务沙盒
+  - GP 路径（强制）：管理模板 /Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称: NetworkServiceSandboxEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="nonremovableprofileenabled"></a>NonRemovableProfileEnabled
 
   #### <a name="configure-whether-a-user-always-has-a-default-profile-automatically-signed-in-with-their-work-or-school-account"></a>配置用户是否始终具有使用其工作或学校帐户自动登录的默认配置文件
@@ -24311,6 +24375,67 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 0x00000001
 ```
 
+  
+
+  [返回页首](#microsoft-edge---policies)
+
+  ### <a name="outlookhubmenuenabled"></a>OutlookHubMenuEnabled
+
+  #### <a name="allow-users-to-access-the-outlook-menu"></a>允许用户访问 Outlook 菜单
+
+  
+  
+  #### <a name="supported-versions"></a>受支持的版本:
+
+  - 在自 102 起或更高版本的 Windows 和 macOS 上
+
+  #### <a name="description"></a>描述
+
+  此策略用于管理从 Microsoft Edge 对 Outlook 菜单的访问权限。
+
+如果启用或未配置此策略，则用户可以访问 Outlook 菜单。
+如果禁用此策略，则用户无法访问 Outlook 菜单。
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：是
+  - 动态策略刷新：否 - 需要重新启动浏览器
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: OutlookHubMenuEnabled
+  - GP 名称: 允许用户访问 Outlook 菜单
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：管理模板/Microsoft Edge - 默认（用户可替代）/
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径(推荐): SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名称: OutlookHubMenuEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称: OutlookHubMenuEnabled
+  - 示例值：
+``` xml
+<false/>
+```
   
 
   [返回页首](#microsoft-edge---policies)
@@ -27028,6 +27153,75 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   [返回页首](#microsoft-edge---policies)
 
+  ### <a name="settimeoutwithout1msclampenabled"></a>SetTimeoutWithout1MsClampEnabled
+
+  #### <a name="control-javascript-settimeout-function-minimum-timeout-deprecated"></a>控制 Javascript setTimeout() 函数最小超时(已弃用)
+
+  >已弃用：此策略已弃用。 当前受支持，但将在未来的版本中弃用。
+  
+  #### <a name="supported-versions"></a>支持的版本：
+
+  - 自 101 或更高版本起在 Windows 和 macOS 上
+
+  #### <a name="description"></a>说明
+
+  当策略设置为“已启用”时，超时为 0ms 的 Javascript setTimeout() 将不再固定为 1ms 以计划基于计时器的回调。
+当策略设置为“已禁用”时，超时为 0ms 的 Javascript setTimeout() 将固定为 1ms 以计划基于计时器的回调。
+取消设置策略时，使用 setTimeout() 函数的浏览器默认行为。
+
+这是一项 Web 标准合规性功能，但它可能会更改网页上的任务排序，从而导致依赖于特定排序的站点上出现意外行为。
+它还可能会影响具有大量 setTimeout() (0ms 超时使用量)的站点。 例如，增加 CPU 负载。
+
+对于取消设置此策略的用户，Microsoft Edge 稳定版将在稳定渠道上逐步推广更改。
+
+这是一项临时策略，计划在 Microsoft Edge 稳定版 105 中删除。
+如果企业有需要，则可能会延长此截止时间。
+
+
+  #### <a name="supported-features"></a>支持的功能：
+
+  - 可以强制：是
+  - 可以推荐：否
+  - 动态策略刷新：是
+
+  #### <a name="data-type"></a>数据类型：
+
+  - 布尔
+
+  #### <a name="windows-information-and-settings"></a>Windows 信息和设置
+
+  ##### <a name="group-policy-admx-info"></a>组策略 (ADMX) 信息
+
+  - GP 唯一名称: SetTimeoutWithout1MsClampEnabled
+  - GP 名称: 控制 Javascript setTimeout() 函数最小超时(已弃用)
+  - GP 路径（强制）：管理模板/Microsoft Edge/
+  - GP 路径（推荐）：不适用
+  - GP ADMX 文件名：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 注册表设置
+
+  - 路径（强制）：SOFTWARE\Policies\Microsoft\Edge
+  - 路径（推荐）：不适用
+  - 值名称: SetTimeoutWithout1MsClampEnabled
+  - 值类型：REG_DWORD
+
+  ##### <a name="example-value"></a>示例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 信息和设置
+  
+  - 首选项键名称: SetTimeoutWithout1MsClampEnabled
+  - 示例值：
+``` xml
+<true/>
+```
+  
+
+  [返回页首](#microsoft-edge---policies)
+
   ### <a name="shadowstackcrashrollbackbehavior"></a>ShadowStackCrashRollbackBehavior
 
   #### <a name="configure-shadowstack-crash-rollback-behavior"></a>配置 ShadowStack 故障回滚行为
@@ -27239,15 +27433,15 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   显示Microsoft Rewards体验和通知。
 如果启用此策略：
-   - 搜索和赢得市场中的Windows账户用户（不包括Azure AD账户）将在其Microsoft Edge用户资料中看到Microsoft Rewards体验。
+   - 搜索、新选项卡页面和赢得市场中的 Microsoft 帐户用户(不包括 Azure AD 帐户)将在其 Microsoft Edge 用户配置文件中看到 Microsoft Rewards 体验。
    - 在 Microsoft Edge 设置中启用 Microsoft Rewards 的设置将被启用，并处于开启状态。
 
 如果禁用此策略：
-   - 搜索和赢得市场中的Windows账户用户（不包括Azure AD账户）将在其Microsoft Edge用户资料中不会看到Microsoft Rewards体验。
+   - 搜索、新选项卡页面和赢得市场中的 Microsoft 帐户用户(不包括 Azure AD 帐户)将在其 Microsoft Edge 用户配置文件中看不到 Microsoft Rewards 体验。
    - 在Microsoft Edge设置中启用Microsoft Rewards 的设置将被禁用，并处于关闭状态。
 
 如果未配置此策略：
-   - 搜索和赢得市场中的Windows账户用户（不包括Azure AD账户）将在其Microsoft Edge用户资料中看到 Microsoft Rewards 体验。
+   - 搜索、新选项卡页面和赢得市场中的 Microsoft 帐户用户(不包括 Azure AD 帐户)将在其 Microsoft Edge 用户配置文件中看到 Microsoft Rewards 体验。
    - 在 Microsoft Edge 设置中启用 Microsoft Rewards 的设置将被启用，并处于开启状态。
 
   #### <a name="supported-features"></a>支持的功能：
